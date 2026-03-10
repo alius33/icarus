@@ -1,0 +1,171 @@
+Speaker 1  0:00  
+Specific. This is like, world transformative, and that's why the transition is painful, because they're like, what's going on? That's it. But you're on the receiving end of a lot of that, so that's why I feel super frustrated. But we need to help
+
+Azmain Hossain  0:17  
+you without it. Yeah, I think, no, I'm really glad you kind of put it that way, because I think that's that's the kind of whiplash for me, because obviously, like working with you, with Ben or the manager, Ben Natalia, you know, everyone can adapt fast, move fast, and kind of keep up with stuff, and then suddenly running into people who are grown adults, but they're like, whoa, you need to slow down and explain everything, much less like I was just trying to tell in the call, I was telling Naveen, like me, you've got three names, but in Salesforce, there's only two of them, so you need to go and update your name. And I'm like, why is he not understanding? Like, like any Indian person understands this. We've got too many names, and they're weird resistance To
+
+Unknown Speaker  1:20  
+change, yeah,
+
+Speaker 2  1:34  
+we need to do it. Yeah. Every putting me on this finish line.
+
+Speaker 1  2:10  
+And Katherine to Golden data set to our tables, they need to take one of their most complicated accounts, and they need to sensor check that against the data that's there, but what against the entities? One is everything that what they're expecting. Then they need to go for a worked example, side by side, screen by screen, the data that's Salesforce, the data that's in in the app. And then maybe Lastly, we give them a spreadsheet extract right, which is basically the data model, but in their Excel format that they can read right to see if everything is where they're expecting. And if they do that with a really complicated reinsurer, a really complicated primary, a really complicated broker, a really complicated global entity that has many different types of business, which has like an insurer and a reinsurer and a specialist insurer, right? Then we basically get the coverage of the complexity right, and then that way we know, like, we can at least deal with 8070, or 80, 90% of the data mapping issues in one hit that way, right? So I think that should be the goal for like, that's what we should get Catherine doing this week. Then Ben, hopefully that doesn't lead to a whole bunch of schema changes, but it might right. So if we get Catherine to do that today and tomorrow, that then should help us understand if we need to do a boatload of schema changes or, better case, just data fixes on Wednesday. But that's it. We're not going to do anything else this week. Our goal is to get the data in a place that we can to run a build from to dev on Monday, that is cool, right into staging on Thursday, and prod on Thursday as well. And that's it. And then that's that's successful this week, then next week, we'll do the features that Ben was talking about and the stuff that came up on the call,
+
+Azmain Hossain  3:56  
+if that makes sense. Yeah, yeah. I really like that plan, because the that's, that's the biggest thing that I'm getting pushed back on, is from Josh and Catherine, just every call being surprised. I don't know how many times you can tell the same thing to people, especially the person that gave you the data, when they're like, but this isn't the golden source. I'm like, You didn't give me the golden score. You know this? Who gave me the data?
+
+Speaker 1  4:25  
+Yeah, and be honest, if we don't like tackle it holistically, all that's going to happen is every week there's going to be a new schema change, a new data change, a new data fix, and that's all we'll be doing. We'll just be forever picking these things off the edges because they haven't looked at it comprehensively.
+
+Azmain Hossain  4:41  
+Yeah, I I feel like Catherine's scared to even look around the app. And I don't know why that is this.
+
+Speaker 1  4:50  
+I mean, as I said, it's this the engagement, right? It's people been feeling like they're getting dragged to the finish line rather than being brought to the party, right? And that's the way we change that is by by three. Them in to the process. Because if we keep, if we keep, just, like, trying to, I don't bring analogy that's not appropriate for work, but it's like girls in it, when it goes and they keep trying to impress her, she just is, like, why is this easy? Sad? Like, why does it keep
+
+Azmain Hossain  5:19  
+trying You catch more flies with honey. Yeah,
+
+Speaker 1  5:22  
+exactly, exactly. So gotta just be like, we have to change that our tactic. So I think that's, that's what we'll have to do. So to that end, Azmain, I think we can, we can get the tooling to help us produce the artefacts. So simple. Well, firstly, you've got the Salesforce and golden source data sets, right? The date, like, two different spreadsheets with those data models, right?
+
+Azmain Hossain  5:45  
+Salesforce data like, I don't, I haven't touched, I don't touch the golden source. It's, it's too much of a mess. It's just Catherine going in, putting in random X's and O's random, like, literally in the same column, some fields will have a formula, some of them won't. And she'll be like, Oh, I just do that manually. It's all in her head. It's a nightmare. So I didn't even touch it, and this like manager Ben, he saw it, and he was like, Don't touch that. Just use Salesforce. So I completely understand that there is, there's data gaps. So I'm glad I'm kind of recording this call, because exactly what you said at the top, we need Catherine to go through screen by screen, ideally with these complex customers, and figure out what's missing, figure out what needs to be where, and write it down. And the thing may I know the data model makes sense, but this is in no way meant to be insulting, but it's gonna fry Catherine's brain if you give her a data model.
+
+Speaker 1  6:48  
+Yeah, no, it needs to be, it needs to be like you need to guide her through the process. So she needs to bring, if she needs the high level, you've got help files on the app Hossain it right? So essentially, it's just screen. It's just a couple screenshots to support, like a thing to say, like, Okay, this is where the customer is intuitive. She's not going
+
+Azmain Hossain  7:17  
+to be able to give feedback like that. Like, this is, this is what Catherine will be able to do, she'll be able to go into Allianz and be like, okay, the risk link and risk browser on and off tags should be here. They shouldn't be hidden inside a use case. They need to be here. She doesn't need to know or explain to us what that means, or where in the data model, or what table and what relationship that's going to front your brain, she needs to be able to give feedback in the language and at the level that she's comfortable with, and that's what we need to work off of. So that's why I'm like, let's not give her a data model and be like, look through this, especially if we want it by Wednesday. Man, it's going to take just to get our head around it. What needs to be done is pick exactly what you said. Pick one global customer, one complicated global customer, one complicated reinsurance customer and one complicated primary insurance and go through them, try and recreate exactly what's on Salesforce in here, and find out where the gaps are, make a Word document explaining it, and then send it to us, and then we'll set up a call, because then we need to understand. That's how we need to do it. If you're happy with that, my plan was like, but before the end of today, I want to send an email to Catherine, Josh Natalia, yourself and manager, Ben. CC, just saying, this is our ask, very simple. Go through it if you can give us the thing by end of Tuesday, US time, then Wednesday, we can have a call, and we'll start building stuff out. We'll start
+
+Speaker 1  9:08  
+fixing it. Definitely do that. If we if I need to, like, jump on a call with her tomorrow or something to help, like, navigate it, or help smooth I can do that as well. So whatever it takes to enable those guys and get them moving.
+
+Unknown Speaker  9:23  
+Yeah, yeah,
+
+Azmain Hossain  9:26  
+okay, I like the plan of sticking to that because, man, there's, like, a lot of things were said in that call, and I don't want to make those changes. I want to fix the base level stuff. And, yeah, I mean,
+
+Speaker 1  9:41  
+the key Crux right is the blockers. Is the deal wants analytics on the blockers. So she wants some view of the analytics of the blockers boiled up, some analytics of the blockers across all the clients, or for specific clients, she can just see what the blockers. On. So you've got some statistics up there, really, right?
+
+Azmain Hossain  10:03  
+Yeah, yeah. I mean, these, these won't be, I mean, some of them are relevant, but these will become more relevant. You know, as a in as it progresses week on week, then it can say, like, this is how much change from previous week, whereas now this is like two new I don't know where these numbers are coming from, but this entire thing is needs to be rebuilt, literally, like we did with the portfolio review, to be only the things that are relevant, not the conceptual stuff, because this is an executive would care about. But we need to make it what it actually should be.
+
+Speaker 1  10:42  
+What it actually should be. But that's fine. We need a table for these some the key trends and insight is good, right? But the issue is, we need to validate how these deltas are produced, because right now you don't have, like, you're not doing a trend analysis on the blockers, right? Like, so you, how would you even tell what's changed week over week? I don't know if this has got that level of intelligence in it, but we should definitely that's something we should look at. And then we just need to change the way that blockers are presented into a table below. If you keep scrolling down, yeah,
+
+Azmain Hossain  11:16  
+instead of instead of these cards, it needs to be a table that that's filterable, that you can think, honestly, all these, all these filters in every single screen is just a random bunch of crap. I need to clean this up. Just, you know, you can do all this stuff and you don't have fires
+
+Speaker 1  11:38  
+going on all the time. This is we can, this is what will help you right, because we'll learn. Like, it's actually like a good opportunity, right? We can, like, last week, when we did the UI changing, rather than us doing that manually, we use the tooling to help us right. We got it to do performance training. We got it to do user experience workflow. Now we can, we can now take that one step further right. It's okay. I'll be honest, it didn't
+
+Speaker 3  12:01  
+do anything like, the reason all the pages look different is because I manually did it. Make sure it's collapsible. I did all
+
+Azmain Hossain  12:22  
+this like, right now, there's a massive problem. For some reason, every blocker has an action plan right here, saying these action plans are not limited, so this needs
+
+Unknown Speaker  12:32  
+to be Fixed portfolio
+
+Unknown Speaker  12:36  
+review. So
+
+Unknown Speaker  12:58  
+be a process of older to wiser, while Catherine does
+
+Unknown Speaker  13:10  
+that stuff. So that
+
+Speaker 1  13:13  
+buys me. Yeah, no, that's that's a good and we can all help, like, well, I can help you with this as well, right? We just defined some. We'll do some sanity checking on the numbers, and we can also do some Yeah, so that's why we can do that. And then what does that mean for us? In the mean one is we, we hopefully there's no data changes and there's no schema changes, but if there are, we'll know on Wednesday, right? If we go,
+
+Speaker 4  13:39  
+yeah, no, sorry, to kick off. Sorry. Okay, all right, so I've done a few different things. Can you do me a favour? Azmain, can you go and take flawed as if you're normally going to work on a feature. Yep. Okay. And is this already okay? It's already connected. Cool.
+
+Speaker 4  14:15  
+Yeah, so yeah, just say, work on the Yeah. Say we're working on the development branch. Do a poll down on development right now so
+
+Speaker 4  14:44  
+so I added in a bunch of guard rules, but I also added in something else entirely. So I'll show you all here in a second, just to mitigate a lot of these issues that we're running into. I.
+
+Speaker 4  15:02  
+All right, one second, let me pull up what I was doing.
+
+Speaker 4  15:17  
+This should be fine. Let's see scripts. Okay, so moving forward, if they Oh, it's closing this right here. And there's also a read me strange. I think there's a good head outage.
+
+Unknown Speaker  15:42  
+Okay? I Okay, let me check,
+
+Speaker 4  15:46  
+yeah, investigative notifications, incidents with pull requests, yeah, that's literally just going into Yeah, see, this is why we need, like cloud technology is fantastic, don't get me wrong, but hosting your own infrastructure is the way to go about things. Otherwise, we're just not really all right? So was that that poll, it's cloning. It's
+
+Unknown Speaker  16:16  
+still cloning. Okay?
+
+Unknown Speaker  16:21  
+So when it's done, I don't think
+
+Unknown Speaker  16:25  
+this is going to I apologise in advance.
+
+Unknown Speaker  16:28  
+This is probably not
+
+Unknown Speaker  16:32  
+going to be look right on the chat. I
+
+Speaker 4  16:48  
+So basically, kind of summarising what's going on here. Local Development, you'll be able to run in Terminal One, it's just, it's gonna be a background process, so just somewhere we have to have this running connect to dB that's going to give you a connection string in which you literally just put it in. So I'll show you the steps here, but
+
+Speaker 1  17:18  
+still, I'm gonna leave the court open because I've got to jump from a customer pool, but definitely keep going on with this, and I'll try and it finishes in 30 minutes. I'll try and jump
+
+Unknown Speaker  17:27  
+back on. Okay,
+
+Speaker 4  17:29  
+so this is the flow, just to protect us from a couple different things. One, local development will mitigate a fair amount of these issues.
+
+Azmain Hossain  17:40  
+Yeah, trust me, man, I I can't do it. I can't do local development because I need to update Windows sub service for Linux on my Docker, and despite creating tickets and everything. So just nobody will do it for me, so I don't know what to do.
+
+Speaker 4  17:58  
+So I thought of that, and we're mitigating it. Okay? So basically, the main issue, the main reason why you need that is because you're spinning up Linux sharings basically. So basically, the way it's going, this is going to work right here. So you have this right you run it's within this section here. And then I also cleaned up a fair amount of the repo. Just organise data and Docs, and then we have a bunch of MD files that need review in here. Okay, so when you when you pull it down, it'll be fresh repository. Anyways. So when the script runs, I'll have a background process. It gives you a Mac Linux operator, and then an option for PowerShell. Okay, you do the same thing if you're going to do PowerShell or not. So basically, all you do, you do that,
+
+Unknown Speaker  18:53  
+what it gives you right here and then,
+
+Speaker 4  18:59  
+and local run.sh but for you, it will be.ps one. It's a PowerShell, it's Windows. Blog should be able to do this and figure this out itself. So when you run, how is
+
+Unknown Speaker  19:14  
+it not localhost? Come on.
+
+Unknown Speaker  19:22  
+Yeah. Okay,
+
+Speaker 4  19:32  
+okay, so we have a fair amount of issues here. Just need to resolve the MPM instal one second.
+
+Speaker 4  19:47  
+So these are just issues from local ruling that we haven't resolved yet. Hold on.
+
+Unknown Speaker  19:59  
+One second. Empty,
+
+Speaker 4  20:31  
+sorry, I forgot I was cooking rice and It was boiling over. No, no, no, no, no problem.
+
+Azmain Hossain  20:50  
+I just had a thought, and I don't know if this will work. So one of the things rich showed me is that using Cloud code, you can you can use, like a cloud environment instead of doing everything locally, and it's way faster. So I'm like, Could I spin this up to around locally? Quote, but within cloud, cloud environment
+
+Speaker 4  21:22  
+you should, I mean, there's GitHub workspaces as well that does roughly the same thing. Hold on, what is my I knew I messed this up. 1230, yeah, okay, one second I.
+

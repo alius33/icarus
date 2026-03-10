@@ -1,0 +1,579 @@
+Unknown Speaker  0:00  
+Okay, what are the next steps? An update in
+
+Speaker 1  0:14  
+an hour so we can we'll just have to tell him, Look, we can't get the authentication stuff working. So we may be sorry I misunderstood. But do we need to get VJ to help us to resolve this?
+
+Speaker 2  0:24  
+We are, we are, no, this is, sorry, that was, that was, I was being completely out of left field. Sorry, I'm actively troubleshooting stuff, something, and I just realised, like, as I'm, yeah, sorry, I was being scatterbrained, but I'm resolving the issue right now. One second.
+
+Unknown Speaker  0:42  
+People can just go in and get it installed. We I can just take over the
+
+Speaker 3  0:47  
+development one and start building out all these requests and features. And can you make? I literally got a
+
+Speaker 4  0:56  
+request from safety going, can the app or be less amp?
+
+Speaker 2  1:02  
+Less red? I love that. Sorry. Sorry that. That flashes me back to like 15 years ago, when I was doing UI work. I After, well, that's when you respond back with the Moody's brand guidelines.
+
+Speaker 1  1:33  
+Yeah, everyone's a critic, and so they have to start doing some work themselves. Then, then, then they're screwed. Enough.
+
+Speaker 2  1:39  
+Oh, man, sorry that just that that brought me back to cold fusion days. Oh, my goodness, written
+
+Speaker 1  2:02  
+an essay. Yeah. It. The thing is, though, right? That's the first time the cause had that structure, right? Am I right in assuming that? Is that the first time that even, yeah, even, even having that structure, even having that data driven approach to Customer Success management. You know, we've never had that before. I'm serious. I know it sounds like, it sounds like, Oh, rachel Chad, shit. No wait, bro, I'm fucking serious. Like, if you are gonna ask, what's the state of our portfolio, some client success manager will say, Oh, yeah, I've won a good okay, there was no sorry. I'm swearing, bro, I shouldn't be
+
+Unknown Speaker  2:45  
+Richard's teaching Richard's teaching words.
+
+Speaker 1  2:50  
+Trust me. Trust me, man. The the like I, as I said, the the there was always like, status reporting and stuff. But, and we had project reporting on IRP migration stuff that was reasonably solid, right? Like, states had fallen for that, but that wasn't percolating to the whole programme, right? Or even if you were trying to get stuff on the whole programme, maybe something in Salesforce, very sales driven account managers came up, popped their head when they needed something disappeared another time. This was the first time I've seen on the meeting, like, Okay, let's go through the accounts on this order. This is the priority. This is why we're going through these top 10. This is it, right? These are the ones from q1 and people actually voicing things over. In my mind, it's it was a just even getting the structure was still good. And obviously, like, there's things we need to do with the data, with the app, but where we were before, compared to now is night and day, like you know, Josh can be Piper now families on one of our climate programmes, we have like
+
+Speaker 5  3:48  
+three clients, and we
+
+Unknown Speaker  3:57  
+90 minute
+
+Speaker 3  3:59  
+calls with like, sales guys, product strategy, everybody, what are
+
+Speaker 1  4:12  
+we doing? What are we building? What's the roadmap? Like? This is how we just run stuff, even small stuff. So the fact that wasn't being run this way, yes, trust me, the lead, they basically like, it was, you had a pipeline tracker. It was very revenue focused. We had a pipeline tracker. And then sometimes CSMs would pop up there and be like, Oh, my house got a problem without a Project Tracker. CSMs would never come to that. It was just us an advisory. And then Josh would have a client health dashboard, and there was no connectivity between the three. There was no, like, it was just, like, a status update. There wasn't a focus on the book at the portfolio and how it's moving forward. Do you get what I'm saying? Like, there was no recognition of the client should be live by this and why they're not live by the state
+
+Unknown Speaker  4:56  
+Azmain, can you give me admin permissions? Sorry, I didn't hear that. Can you, can you give me ad information for my user? No, my account, I
+
+Unknown Speaker  5:28  
+if I am, that's all the all the better. That's easier for me to troubleshoot.
+
+Unknown Speaker  5:36  
+Okay, so,
+
+Speaker 2  5:42  
+okay, and all right, and it's not showing up for me. I mean, I initially, I did have the admin view at one point. Now I don't, so, all right, let me
+
+Speaker 1  5:56  
+know. Let me have a look. I was in dev before. Let me go into prod.
+
+Speaker 2  6:06  
+I mean, I'm in, I'm on. I'm in dev right now, me and you are the only people
+
+Unknown Speaker  6:15  
+where it's not
+
+Speaker 3  6:22  
+how not our name. At movies, I actually put in our username. So it's like, do so R I feel like that's why it's recognising just calm, and it doesn't recognise that.
+
+Speaker 2  6:41  
+Oh, wait, it's your it's using the username, not the alias. Yeah, I feel
+
+Speaker 3  6:44  
+like it's using the username, and me and rich are the only people that I knew the username for to
+
+Speaker 4  6:54  
+add in interesting like, I don't know is when Azure passes the email address,
+
+Unknown Speaker  7:01  
+maybe it's passing the username email address. I
+
+Unknown Speaker  7:05  
+email address. Oh, that's,
+
+Speaker 2  7:08  
+well, I'm printing out the object, so I'll be able to tell here in a second.
+
+Speaker 1  7:17  
+All right, so let me check that So Philip, if I look at Philip, right. Philip is Philip, the Oliver moody.com's Are you saying it should be Oliver p
+
+Speaker 1  7:34  
+because then, in that case, I just changed Ben. Ben, it's so I just change Ben Van Houten right now, right. So we got Ben Van Houten as one. Let me view this
+
+Speaker 1  7:57  
+now. All it does is it lets me change his roles. It doesn't let me change his email address, so that's gonna have to be scripted via the back end. Maybe Hold
+
+Speaker 2  8:09  
+on one second. Oh, okay, yep, this is gonna be easier. You know what? This is completely random, but it's kind of funny. RBAC controls and authentication are usually the hardest things to programme in, and like that being said, we are this is of all the times I've had to manually programme our back. This is actually like then the easiest so far, because at least we get to yell at an AI, yeah, this is why I gave
+
+Speaker 3  8:46  
+rich, like, as much time as he wanted to get it done, because I know how complicated. I didn't want to add any of it in, especially first pass around, because I knew that people wouldn't be able to edit stuff. And that's like, the be all and end all of a user's time if I can't
+
+Speaker 1  9:20  
+edit it. How I'm just thinking what to do with the email? If it is, the email, is there any way Ben can update your user on its own, your email address to the alias in the database, and then you log back in and out, and we see and then, if that works, then we know the changes we have to apply to everyone up.
+
+Speaker 2  9:43  
+Yeah, we can. That is definitely. I'm actually trying to set that up right now while I'm talking to cursor, but I think that's the correct path. One second I'm looking at the authentication flow. Here. She's. The backend token extracts email to
+
+Unknown Speaker  10:35  
+Okay, perfect. This will be a little bit quicker while I zip it up.
+
+Unknown Speaker  10:50  
+Eventually we're going to have to clean up this console.
+
+Speaker 1  10:55  
+Yeah, we need to put some you need to put some database optimization in, or some caching, because some of the screens take way too long to load.
+
+Speaker 2  11:04  
+Yeah, I don't think there's pagination on, like, for example, like the team members. Yeah, there's no pagination. So, like, if you added just, like, the ability to just display like, 10 people at a time, it will load a lot quicker. Yeah? So, like, a lot of that stuff can be just done on the front end. But, I mean, I cursor or Claude, they're they're not, they're creating right now. They're not looking for optimizations. So when we get there, we can actually, like, it should be fairly easy for us to ask them, hey, update in like this to be optimised with, like, pagination and everything. All right, so I'm doing that. And now, where do I go for Okay,
+
+Unknown Speaker  11:52  
+great connection.
+
+Unknown Speaker  12:05  
+One too many times. Use your Postgres. I
+
+Unknown Speaker  12:24  
+orange, oh yeah, what is this? I
+
+Unknown Speaker  13:13  
+Oh, goodness, okay, one second I'm
+
+Speaker 2  13:50  
+that work. Oh. RP, underscore adoption, underscore tracker, all
+
+Unknown Speaker  14:01  
+right, and
+
+Speaker 2  14:04  
+discipline it should be done here, so we'll be able to check to see what email we're getting from the API, and then we can cross reference that with the database. And I'm making a connection to the database right now. Awesome.
+
+Speaker 6  14:40  
+Um, sorry, guys, baby is
+
+Unknown Speaker  14:49  
+gone now you have my sole attention. She was getting annoyed that she wasn't being the full she wasn't getting all my attention. She's like, Who are these people?
+
+Speaker 2  14:59  
+You're. He, I don't know that's foreshadowing, but 10 years, 10 years from now, if Liz shouts better, he just runs to me like that.
+
+Speaker 5  15:40  
+By the way, Rich. I just wanted to make sure on the launch
+
+Unknown Speaker  15:46  
+subscription, do you remember to turn off auto review?
+
+Speaker 1  15:52  
+Yeah, I think it kicks in a month after I've done it. So hopefully we've got, like, we've used it for about two weeks now.
+
+Speaker 1  16:04  
+It, yeah. The bigger issue is I got big bollocking this morning, but even using
+
+Speaker 1  16:15  
+it, yeah. So I got big bonic enough to send an email copy Benin, because apparently, our activity has already been noted and audited that we were using it and we shouldn't. Yeah,
+
+Speaker 1  16:37  
+my subscription is going to alter, renew on Feb 10th, so by the end of this week, having to wind off down my usage and go back to like a free plan, I need to change yours the same and I need to basically make sure we're only using our Claude, we're only using personal or not using any model that's not authorised, because it's basically not authorised for use. We've immediately shared it's not been approved, even though I was told that the negotiation was happening. Apparently it's not been approved yet. So we're breaking Moody's like general high policy by using okay.
+
+Speaker 3  17:22  
+Do software,
+
+Unknown Speaker  17:33  
+just make sure we have we would have never even touched any of this stuff.
+
+Speaker 2  17:41  
+Exactly. That's the one second, this is,
+
+Unknown Speaker  17:50  
+oh, what? Where'd it go? Wait,
+
+Unknown Speaker  17:56  
+did it break? No, it doesn't. Okay, cool. I
+
+Speaker 1  18:11  
+The Azmain What I remember now if you just put it to cancel your subscription at the end of your next plan or go back down to the free one.
+
+Speaker 3  18:20  
+Yeah, that's why I just said I'm taking a temporary break.
+
+Unknown Speaker  18:24  
+Cancel my plan, or just, is that free plan? Yeah, but I'm not
+
+Speaker 4  18:32  
+going to use this account anyway. It's literally like the email address. Go back to using my node. Remove the
+
+Speaker 1  18:45  
+payment terms, because that's my personal credit card in there one
+
+Speaker 2  18:53  
+second, just checking something. All right, so we're in. You guys know the database better than I do. Is it in the employee tables that we're connecting to? Or is there a user table? Or is that okay? Let me check that. I'll share my screen now that I have full charge. You ask. I went there, and apparently there's a new fashion cords out there that are lovely, close to $100 for MacBook Pros, and they have fast charge, which I just think means they have more wattage. Yeah. Okay. So okay. Can you see my screen? Okay, so right now we are getting this back from Microsoft. So it's the van help B, and then inside here. So I connected here. So now we can go through, you said it's EMPLOYEES table, and then,
+
+Unknown Speaker  20:11  
+am I not a person? Very possible,
+
+Unknown Speaker  20:18  
+yeah, I'm not a person.
+
+Speaker 1  20:21  
+Let's see. That's fine because we've got Ben van Hossain in there instead of Van healthy.
+
+Speaker 2  20:28  
+I don't I don't see me. Oh, yeah, good job. Let's see. Execute,
+
+Speaker 2  20:47  
+nope, no. I mean it should, it like it would, it would actually just, oh, there we go. Okay, all right, um,
+
+Speaker 1  21:03  
+what's interesting is the user, the email is not in here, though, right?
+
+Speaker 2  21:07  
+It is. It is very good, but it's using, it's using my alias. So let's do this. Let's modify this one. I haven't used this one in a while. Hold on.
+
+Unknown Speaker  21:19  
+Oh, wait, I can go in here. Yeah, there you go.
+
+Speaker 6  21:30  
+Okay, gonna help be.
+
+Unknown Speaker  21:35  
+Okay. Would it work that quickly? No,
+
+Unknown Speaker  21:54  
+nope, all right, let's see I'm
+
+Speaker 2  22:04  
+is it matching? Wait, is employee ID? Wait, is this? This isn't my actual employee ID, right? No, I didn't think so. I'm like, I get there's no way I'm 150
+
+Speaker 3  22:20  
+i Okay, so All right, one second,
+
+Speaker 2  22:32  
+so it's not doing that. Asked it to do something for me real quick. Where was it? Did I mess it up? Yeah, I did.
+
+Speaker 2  22:52  
+Okay, oh, I'll send it unique ID email address.
+
+Unknown Speaker  23:05  
+Okay, so that might actually be the problem. Where is it? This the account ID and username. So we're actually getting back this.
+
+Speaker 2  23:34  
+Also, we're going to have an issue with I can only we're probably going to have an issue with all the emails, because the bend these emails right here, like the van, how B those usernames, that's actually the, that's the email that's going to be returned to us, not the alias, yeah,
+
+Speaker 1  23:53  
+those like, Yeah, but that's okay, right? We have that. I mean, we can just, we'll just bring
+
+Speaker 5  24:00  
+to check. But, I mean, we can just, we'll just reach out to
+
+Unknown Speaker  24:05  
+Stephanie again and just be like, can you include that one
+
+Speaker 2  24:10  
+in the next? Yeah, I'll do it, though. Well, the thing is, like, this is how, if I'm not hold on one second, back end, token, abstractions,
+
+Speaker 6  24:32  
+the back end in this okay, logs, I you.
+
+Unknown Speaker  25:01  
+That it, yeah, oh, really, all right, 1820,
+
+Unknown Speaker  25:34  
+I don't actually have that
+
+Unknown Speaker  25:39  
+email Address. Yeah, I'm asking definitely for an updated version.
+
+Speaker 2  25:49  
+Now, ah, it says I'm a viewer, so okay, that's what's happening, is that it's not pairing the login with the user in the Employees table. So, yeah, so it can't, it can't actually find the permissions from what I can see one second. No rules found, defaulting to viewer. Yep, that's it.
+
+Speaker 1  26:17  
+That's, that's what we just discovered, right? It's the email addresses the wrong way around. So once we get the correct email addresses, or even Ben, if you change your email address in that table,
+
+Speaker 2  26:30  
+yeah, I already, I already did. So the thing that i So, Richard, you're correct and but the there's an additional issue that we are not so, like, right now, for example, if you look at the response that I'm getting here, this is, this is the token that we're getting directly from Microsoft. It's using username, not email. So, like, I'm I just need to change this in the API to transform user, username to email. So once we I have all the users email and I'm able to do this, then it should be good. I didn't pick up the second
+
+Unknown Speaker  27:10  
+one where it's returning email
+
+Unknown Speaker  27:17  
+with the API is absolutely not looking
+
+Speaker 2  27:22  
+for exactly so once we are able to make that connection, it should be Good, but I want to Make sure the user i
+
+Speaker 2  28:04  
+But yeah, like, so the cool part is, if we are able to get to that graph, oh, this is why I was thinking about this earlier, if we are able to get to that graph API integration, we don't need the like to do this, because right, right now All we're doing, like, we'll just have one permission set, or one table for permissions, actually, speaking of Which, where is the RBAC?
+
+Speaker 6  28:32  
+Is it? No customers? Boilerplate. Oh,
+
+Unknown Speaker  28:45  
+god damn. Okay, so the employees in the app,
+
+Unknown Speaker  28:49  
+user roles are completely separate, yeah, yeah, that's okay, right?
+
+Speaker 2  28:52  
+That's the way. Well, it's not able to connect. Well, I mean, yeah, like it just, it just that's that's the problem, which is all we need to do is connect. So what we'll see now is employee email. Check whether you cannot exist in the employee table, the email or the employee name and ID, if found, warning, if the not found in employees. What roles are found in the app table, whether an email? Let's look at this table. That's what I want to see. App user rules. Oh, this is another problem. What's happening, Sir, there's no app user roles in the app user role table.
+
+Speaker 1  29:48  
+There's no roles. But that that that can't be the issue, because me and Azmain wouldn't have had it wouldn't have worked for us, because we don't have any roles in there either. The issue is the email address. That's the wrong way around.
+
+Unknown Speaker  30:04  
+It's got to be,
+
+Speaker 2  30:06  
+well, I'm looking at the thing that's confusing me right now, then is I'm looking at the app user role table right now, and it's empty,
+
+Speaker 1  30:15  
+yeah, but it's not. It's not only empty for you, right? It's empty. You haven't got a waveforce on that SELECT statement. So if this was the if this was the only thing driving the permissions me and Azmain would also not have. We wouldn't be able to see anything. I wouldn't be able to see anything in debt. I wouldn't be able to have access to user controls, right? The only difference is that Azmain scripted my like Moody's user email address and his before. His before you added everyone else's. That's the that's the
+
+Speaker 2  30:48  
+What's your wait, it's not the way Hold on, is that.
+
+Speaker 1  30:54  
+So right now, you're, you're selecting from the app, user roles table, and nothing's coming back. If you remove the filter for van, how B, does any data come back?
+
+Speaker 2  31:03  
+Oh, good. Oh, good point. Wow, I didn't even see the van. Help me. Thank you. Oh, see, my bad I've been I was so down in a troubleshooting rabbit hole that helped.
+
+Speaker 1  31:12  
+Thank you. Richard, no. So these are the 71 entries that I entered by hand. But the reason they're not working is because the email is the wrong way.
+
+Speaker 2  31:21  
+Yeah, okay, yeah, you're 100% right.
+
+Unknown Speaker  31:26  
+And so, yeah,
+
+Speaker 2  31:33  
+so, yeah. So, basically, it's two things. One, no, actually, no, never mind. It's just that you're right. It's just the emails.
+
+Speaker 1  31:45  
+So all we need to do we can truncate this table, because this is, this should be 71 records in there, like, if you select maps right from this table, 71 or so. Yeah. So we can get rid of all of these right? Then the next thing that we have to do is we have to update the user table with the right names, yeah. And I'm just thinking the best way to get that
+
+Speaker 2  32:07  
+well, to update it or to get the emails.
+
+Unknown Speaker  32:10  
+Yeah? Because, like, for example, I don't want to just make
+
+Speaker 1  32:20  
+because we could, if you write an expression or formula to calculate it, we get it wrong. We're only going to know that when each person logs in and they have a like one at the end of their name, because someone created their email address twice. So much stupid like that. So that's why I'll say no, hopefully Stephanie comes back to me, like really quickly. Let me see if she's got back to us on that thread she hasn't.
+
+Unknown Speaker  32:58  
+Let me see if I can get out of co pilot. Hold on. I it
+
+Speaker 2  33:21  
+okay. But what's strange is, Azmain, if you go
+
+Speaker 2  33:33  
+to I should have permissions then, oh, wait, I don't. Actually, yeah, Azmain, can you do me a favour? Share Screen, or you don't. You don't need to remember. You just actually, can you give me permissions again because I changed my user?
+
+Unknown Speaker  33:56  
+Let's see. Let's see if that's a thing. Yeah.
+
+Unknown Speaker  34:05  
+You know, the adding pagination thing in, I'm just like,
+
+Speaker 3  34:09  
+say, Claude, you're smart enough. Why? Why would you not add that in automatically? There's like, 4000
+
+Speaker 4  34:14  
+people, bro, okay, yeah, you changed it so now you're
+
+Unknown Speaker  34:18  
+just a fewer. Just gonna, I'm gonna give you a bit.
+
+Unknown Speaker  34:25  
+Boom, got it.
+
+Speaker 2  34:30  
+Okay, so no, so Richard's 100% right on the email thing as well. And so now what we can do is go back through and that actually should solve the Philip issue as well, because users aren't getting permissions. That's, that's, that's why he can't save and all that stuff. So as soon as we update all the emails, it's fine. I.
+
+Speaker 1  35:09  
+Is enough. I'm just waiting for Stephanie to get back to me and give me a second. I'm just seeing if profile, let's do I'm just writing a
+
+Unknown Speaker  35:19  
+message to Josh and everyone just being like, yes, but also,
+
+Speaker 1  35:31  
+because you can't do any data entry, you don't have to, like, don't even dignify the response. Just leave the gates on red. It's not important. We'll get back to another hour. We finish what we do, honestly, like, he's not like, can you imagine big grow? Man, like that, with children, me acting like that, and come on, man, just for some like, just don't worry. I said, I will try to in an hour. It's not been an hour yet. Just leave. What do you mean? Are we alive? On pause, on data entry, we can't do data
+
+Speaker 2  36:02  
+entry. Yeah, so you know why he's paused anyway, there you go. Why do you need alignment? I like this, like, I like the buzzword
+
+Speaker 1  36:14  
+that's all my words, not even worth it, that even, like, we'll get back to him when we've debug position, we've got it work, and then we've been like, guys the day. The security issues are now finished. You guys can go ahead and test that's That's it. That's the update. Then that's it. And then after that, it's all right, well, until we get something back from
+
+Unknown Speaker  36:41  
+Stephanie, yeah, we can't move forward.
+
+Unknown Speaker  36:43  
+Need? Yeah, we
+
+Speaker 2  36:44  
+can't move forward. And just because I'm pretty certain there isn't a need for, well, hold on, yeah, I'm pretty certain we don't need to update the the UI. The UI. I'm curious to see if we can fix production just by updating the emails directly. So if that's the case, if you want to give me the Excel, the Excel spreadsheet, it's now that I have this connection. Actually, do you guys want to get? Can you, do you guys want to get set up with this as well? I know Richard had that access? Oh yeah, you don't. Yeah, AWS access, Richard, do you what's called, do you want to set up your Visual Studio code to connect directly to the database?
+
+Speaker 1  37:45  
+But I will do you guys that would be helpful, but let me first just go through this with you, because it's telling me that the
+
+Unknown Speaker  37:53  
+short form man,
+
+Speaker 1  37:58  
+hold on copilot can pull this information for me, but it's saying which email, which employees do you want to email For, like the exact list
+
+Unknown Speaker  38:11  
+of employees that we
+
+Unknown Speaker  38:17  
+uploaded.
+
+Unknown Speaker  38:25  
+Yeah, so that's the that's the CSV, and that's like,
+
+Speaker 2  38:43  
+copilot, like, within team can give you, yeah, yeah. Wait, how's it? How's it doing that? Because, like, aren't some of them, like a 20, like a, like, if there was another Van Houten, it could have been like Van Houten 22 or whatever.
+
+Speaker 1  39:02  
+No, but that's I'm asking it to get the information from the from Active Directory. Right? For me, it was life changing that I didn't have to write my self
+
+Unknown Speaker  39:09  
+assessment at the end of the year.
+
+Speaker 5  39:13  
+I just got Copilot to be like, Give me all my
+
+Unknown Speaker  39:21  
+achievements. Oh, actually, that gave me another idea.
+
+Speaker 1  39:37  
+So, man, this thing is other than this is why I hate copilot man, because it can never just do you something similar. It's always giving you some fucking grief, right? So here, yeah, I've put i.
+
+Speaker 1  40:08  
+So you can see here, right the email address is exactly stored in the global user report. I can export this list, but I'm like, I gave you that list. So what's the problem? Only employees whose email address matches a short alias format. I'm like, that's not what we that's not what I asked you to do. Either you want me to convert the names into the short alias format. This is fucking bullshit,
+
+Speaker 2  40:36  
+man. There actually might be. I So,
+
+Unknown Speaker  40:44  
+yeah, just be like, yes, option B, but only from Outlook for Active
+
+Speaker 1  40:59  
+Directory. This is what I thought. So Ben, what's the name of the attribute in the service that you're looking at? Is it called alias, name or email address? What's it called?
+
+Speaker 2  41:07  
+Well, I'm actually trying to get that up right now, but there is. It's called a username. Is the problem? Is the property,
+
+Speaker 1  41:17  
+but, but let's use the name, not the email, right?
+
+Speaker 2  41:20  
+Yeah, I wonder, like, I don't know what what it is. I think it might be very well, like a alias, perhaps. Okay, let me, let me
+
+Unknown Speaker  41:29  
+see if this works on them.
+
+Unknown Speaker  41:36  
+Scopes. I
+
+Speaker 2  42:01  
+I'm pretty certain we can update the token scope in Azure to return
+
+Speaker 1  42:08  
+so they the tools available to me did not provide any ability to query on prem.
+
+Unknown Speaker  42:33  
+Why does it always do a freaking Markdown file? I
+
+Unknown Speaker  42:49  
+Yes, this is what we want. I
+
+Speaker 5  43:00  
+When you say, all,
+
+Unknown Speaker  43:06  
+is it stupid enough to think
+
+Speaker 2  43:10  
+all, I will soon find out. Richard, can you well, it's wanting to do that. Can you do go to Azure for me? I
+
+Speaker 1  43:28  
+The Moody's 365 data does not contain short form Moody's username, such as that these appear in your alias list within your mailbox, indicating that Moody's corporate directory does maintain short yeah, like I told you, important, the search did not return a Global list. Cannot Moody's 365 cannot query Directory objects outside your permitted user scope are returned by Microsoft search APIs. In other words, copilot cannot extract those active directory names. Ah, that was a fucking waste of time. Sorry, guys you were saying. The next thing was, can
+
+Unknown Speaker  44:07  
+you go to Azure for me? And yeah,
+
+Unknown Speaker  44:15  
+this was looking for, okay, I
+
+Unknown Speaker  44:41  
+you get you Yeah.
+
+Speaker 2  44:50  
+Sorry, one second, okay, seeing screen the app registration. Yeah, intra ID, app registration,
+
+Unknown Speaker  45:09  
+yep, and then all
+
+Unknown Speaker  45:16  
+right, where do we go? One second, I
+
+Speaker 2  45:23  
+token configuration on the left hand side, yeah, all right, optional claim.
+
+Unknown Speaker  45:41  
+Let's go. What is it used for? One Second Access Token and IDs are used.
+
+Unknown Speaker  45:53  
+Token type, Oh, one second.
+
+Speaker 2  46:02  
+I yeah, I enabled for ID token, sure it's enabled. Yeah, can you click ID
+
+Unknown Speaker  46:13  
+or access ID?
+
+Speaker 2  46:22  
+One second, I need to make sure if it's ID or access Can you click access token? Sorry, that's what it is. Okay. So now all we need is click Email,
+
+Speaker 6  46:43  
+yeah, enable. That
+
+Speaker 2  46:50  
+should be good. All right, so let me see this. Add, okay, I'm going to try to log in again, and let's see. This might have been the way around it so we don't need new data.
+
+Speaker 2  47:16  
+Let's see. Sorry, I'm testing on my end here. Don't think we need to do anything.
+
+Speaker 2  47:35  
+Email, it's a, it's a email, um, so I think what we're we're getting returned, is the actual username, the email field, good
+
+Speaker 2  47:55  
+access user. I wonder if we have to apply that change one second, click, Add.
+
+Unknown Speaker  48:07  
+You want me to add another optional claim?
+
+Speaker 2  48:10  
+Sure, yeah, add, add another optional claim. I don't know how long it takes to propagate this. You know? What other options are there? Oh, yeah, didn't you want the name their name as well? Yazmain, yeah, yeah, family name and get Yeah, family game, family name and given name. Country, right? What other What other things did we want to return preferred username? Oh, yeah, that's the alias,
+
+Unknown Speaker  48:50  
+preferred username, right?
+
+Unknown Speaker  48:52  
+Yeah, I think so. And then what's UPN, I didn't and identified for the user.
+
+Speaker 2  49:03  
+Used for, can you like, drag it? Is that an option? No, it doesn't. Okay. Well, just click it. We'll request it anyways. We'll see what we'll see what it is. And then what do you want? Tenants? And is tenant city as well? Or, okay, that's fine. Okay, so that's all the data that we can actually get from from there, so we actually don't need to store it in the database. All right, bring out my cash.
+
+Speaker 6  49:36  
+Let's see log in. I'm Oh,
+
+Speaker 2  49:55  
+now the code needs to check for it one second. So. I
+
+Speaker 2  50:20  
+Yeah. Okay, I'm Making a push to dev here to just give us more options, but now we have what are the other email, family name, give name, username, UPN, okay. Do
+
+Speaker 2  51:19  
+Yeah, I compile my way. I'm actually like, at this point, I can fix this issue without us getting new data. So if you guys want to disconnect us, that's perfectly fine now that we have these additional upns. Well, hold on, let me make sure Richard that I'm getting this data back. But yeah, like, we're very close being done. Awesome. All right, I will
+
+Unknown Speaker  51:43  
+hop off. I'll check. I can check messages. So yeah, let me know if you mean anything. Yeah.
+

@@ -90,6 +90,14 @@ class InsightsData(BaseModel):
     overdue_sla_pct: float
 
 
+class AnalysisInsightsData(BaseModel):
+    avg_meeting_score: float = 0.0
+    active_critical_risks: int = 0
+    escalating_risks: int = 0
+    new_contradictions_this_week: int = 0
+    top_rising_topic: str | None = None
+
+
 # -- Health Score -------------------------------------------------------------
 
 class HealthScore(BaseModel):
@@ -124,6 +132,7 @@ class DashboardResponse(BaseModel):
     programme_status: ProgrammeStatus
     kpi: KpiData
     insights: InsightsData
+    analysis_insights: AnalysisInsightsData | None = None
 
 
 # -- Leadership Brief ---------------------------------------------------------

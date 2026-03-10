@@ -1,6 +1,6 @@
 # Open Threads & Unresolved Questions
 
-Last updated: 2026-03-09 (all transcripts through 6 March processed)
+Last updated: 2026-03-10 (all transcripts through 10 March processed)
 
 Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially addressed, needs follow-up), or **CLOSED** (resolved — move to bottom with resolution date).
 
@@ -46,12 +46,12 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 - **Question:** Has the data model been designed? Is User Voice API access available?
 - **Why it matters:** Another integration requirement landing on CLARA's growing backlog.
 
-### 7. Budget / Token Management & Developer Tooling Access
+### 7. Budget / Token Management & Developer Tooling Access — ESCALATING
 - **First raised:** 9 Jan (licences), acute by 23 Jan, still acute 23 Feb
-- **Updated:** 23 Jan — Azmain hit Cursor "team user limit" block. Ben also blocked. Richard personally paid for Azmain's Claude Code Max subscription as workaround (cannot share due to Google SSO). Martin Davies still has 335/500 Cursor credits. Developer laptops approved for Tuesday delivery.
-- **Context:** Azmain burned $750 in Cursor tokens in 3 days. Corporate budget went from $10K to $20K. Opus 4.6 is 3x more expensive. Banking hackathon also consumed tokens.
-- **Question:** When will corporate Cursor/Claude Code licences be properly provisioned? Is the team on sustainable tooling costs?
-- **Why it matters:** Unsustainable costs could force downgrade to less capable models or slow development. Personal payment workarounds are not scalable.
+- **Updated:** 10 Mar — AWS Bedrock costs hit $1,163 in the first two weeks of March — on pace for $10K by month end. Cost tags not set correctly, making per-project/per-user attribution impossible. Richard exploring Max subscriptions ($200/user) as more cost-efficient alternative. Multiple users on a single shared Bedrock key with zero tracking.
+- **Context:** Azmain burned $750 in Cursor tokens in 3 days. Corporate budget went from $10K to $20K. Opus 4.6 is 3x more expensive. Now Bedrock costs are the new frontier of the same problem.
+- **Question:** Can AWS tags be fixed urgently? Is Max subscription viable for corporate use without creating the same personal-account compliance issue? Who is accountable for the $10K trajectory?
+- **Why it matters:** Budget visibility is now worse than before Bedrock — at least personal accounts had per-user limits. The shared key model means costs scale without anyone knowing who is spending what.
 
 ### 8. Infrastructure: CDK vs CloudFormation
 - **First raised:** 26 Feb
@@ -66,12 +66,12 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 - **Question:** What's the retention/mitigation plan? Is anyone documenting Richard's knowledge? Can BenVH/Nikhil conflict be resolved?
 - **Why it matters:** If Richard leaves, the programme loses its strategic brain. If BenVH leaves, nothing deploys. Both are now flight risks.
 
-### 10. Build in Five Scope
+### 10. Build in Five Scope — MAJOR PROGRESS
 - **First raised:** 5 Feb (Martin and Azmain both unclear), demo target shifted
-- **Updated:** 4 Mar — Exceedance event is in May, not March 21. Content due April. Richard: "timelines may not work." Martin tasked with summarising demo approach for Ben. MVP scope defined: three IRP API modules, foundation layer, drag-and-drop UI. No AI/LLM, no persistence, no security.
-- **Context:** Scope expanded from original concept. Martin actively developing. Demo target shifted.
-- **Question:** Is Martin on track for the revised May timeline? Has Ben approved the MVP scope?
-- **Why it matters:** Scope keeps expanding (Ben wants more scenarios), Martin's 12-week assignment has a clock.
+- **Updated:** 10 Mar — Martin's dashboard builder dramatically exceeded expectations. Full drag-drop UI, white-labelling, live Risk Modeller API connection, AI assistant mode, theming/dark mode. Richard compared it to Databricks Genie. Ben Brooks saw it and was positive. Critical next step: wire up Navigator MCP server for live API definitions. Stakeholder cascade defined. Exceedance panel format being planned.
+- **Context:** The "cheating" approach (reverse-engineering Apollo) worked brilliantly. Martin has built something that could be a product feature, not just a demo.
+- **Question:** Can MCP server integration happen in the next two weeks? Will product team want to absorb this? How does Ben frame this at exceedance — product capability or customer self-service?
+- **Why it matters:** Build in Five has gone from "unclear scope" to "potentially the programme's most impactful deliverable for adoption blockers." The product positioning question (Moody's experience vs customer self-service) is strategically important.
 
 ### 11. Alembic Migration / Deployment Sync
 - **First raised:** 19 Jan
@@ -132,6 +132,24 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 - **Context:** Rhett did adoption charter work (Excel-based) without consulting CSMs, Liz Couchman, or following the agreed Word-to-app approach. Richard wasted a day integrating his work.
 - **Question:** Is Rhett being managed? Does he understand the agreed approach?
 - **Why it matters:** Uncoordinated work creates rework and frustration. Richard's time is already scarce.
+
+### 21. Cross-OU AI Enablement (Banking & Life)
+- **First raised:** 10 Mar
+- **Context:** Diya asked insurance team to meet with banking (Gina Greer, Olivier) and Life (Jack Cheyne, Christian Curran) to share the AI enablement approach. Both meetings happened same day. Banking is at the exact same stage insurance was in November 2025 — siloed efforts, no dedicated resources, no deployment solution. Life team shown IRP native modelling engine and App Factory.
+- **Question:** Will this produce tangible collaboration or remain a one-off information share? Who coordinates the cross-OU follow-up?
+- **Why it matters:** Cross-OU expansion validates the programme's approach but risks further stretching an already overloaded team. If banking wants App Factory support, that's more work for BenVH.
+
+### 22. Idris / TSR Automation Project
+- **First raised:** 10 Mar
+- **Context:** Idris formally onboarded to the AI programme with Ben's approval for dedicated time. Immediate project: automating Transaction Summary Reports for cat bonds. Azmain to support with project planning. Richard managing the politics with Arno.
+- **Question:** How will Arno react? Is 500/month Cursor credits enough? Can the TSR process be meaningfully automated?
+- **Why it matters:** First formal expansion of the programme beyond the core insurance CS team. Validates the enablement model. If successful, creates a template for onboarding other teams.
+
+### 23. AWS Bedrock Cost Control
+- **First raised:** 10 Mar
+- **Context:** $1,163 in first two weeks of March on a single shared Bedrock key. No per-project or per-user cost attribution. Tags not configured. On pace for $10K/month.
+- **Question:** Can cost tags be fixed this week? Who approves the Bedrock budget? Is there a per-project allocation model?
+- **Why it matters:** The Bedrock migration was supposed to solve the personal-account compliance problem, but it introduced a new problem: invisible cost scaling with zero accountability.
 
 ---
 

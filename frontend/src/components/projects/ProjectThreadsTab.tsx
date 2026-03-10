@@ -1,102 +1,156 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState, useCallback } from "react";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { OpenThreadSchema, ThreadBoardResponse, ThreadViewMode } from "@/lib/types";
 import { api } from "@/lib/api";
-import { formatDate, getStatusColor } from "@/lib/utils";
-import type { OpenThreadSchema } from "@/lib/types";
-import EntityModal, { FormInput, FormTextarea, FormSelect } from "@/components/EntityModal";
+import ThreadBoard from "@/components/threads/ThreadBoard";
+import ThreadList from "@/components/threads/ThreadList";
+import ThreadDetailPanel from "@/components/threads/ThreadDetailPanel";
+import ThreadCreateModal from "@/components/threads/ThreadCreateModal";
+import ThreadViewSwitcher from "@/components/threads/ThreadViewSwitcher";
+import { Plus } from "lucide-react";
 
-export default function ProjectThreadsTab({
-  threads: initialThreads,
-}: {
-  threads: OpenThreadSchema[];
-}) {
-  const [threads, setThreads] = useState(initialThreads);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [editingItem, setEditingItem] = useState<OpenThreadSchema | null>(null);
-  const [formTitle, setFormTitle] = useState("");
-  const [formContext, setFormContext] = useState("");
-  const [formQuestion, setFormQuestion] = useState("");
-  const [formStatus, setFormStatus] = useState("OPEN");
-  const [saving, setSaving] = useState(false);
-  const [deleting, setDeleting] = useState(false);
-  const [modalError, setModalError] = useState<string | null>(null);
+interface Props {
+  projectId: number;
+}
 
-  const openCreate = () => {
-    setEditingItem(null); setFormTitle(""); setFormContext(""); setFormQuestion(""); setFormStatus("OPEN");
-    setModalError(null); setModalOpen(true);
-  };
-  const openEdit = (t: OpenThreadSchema) => {
-    setEditingItem(t); setFormTitle(t.title); setFormContext(t.description || "");
-    setFormQuestion(""); setFormStatus(t.status);
-    setModalError(null); setModalOpen(true);
-  };
-  const handleSave = async () => {
-    setSaving(true); setModalError(null);
+export default function ProjectThreadsTab({ projectId }: Props) {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const view = (searchParams.get("view") as ThreadViewMode) || "board";
+
+  const [filters, setFilters] = useState({
+    status: searchParams.get("status") || "",
+    severity: searchParams.get("severity") || "",
+    trend: searchParams.get("trend") || "",
+    search: searchParams.get("search") || "",
+  });
+  const [showFilters, setShowFilters] = useState(Object.values(filters).some(Boolean));
+
+  const [boardData, setBoardData] = useState<ThreadBoardResponse | null>(null);
+  const [listData, setListData] = useState<OpenThreadSchema[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const [selectedThread, setSelectedThread] = useState<OpenThreadSchema | null>(null);
+  const [showCreate, setShowCreate] = useState(false);
+
+  function updateUrlParams(newView?: ThreadViewMode, newFilters?: Record<string, string>) {
+    const params = new URLSearchParams();
+    params.set("tab", "threads");
+    const v = newView ?? view;
+    if (v !== "board") params.set("view", v);
+    const f = newFilters ?? filters;
+    Object.entries(f).forEach(([k, val]) => { if (val) params.set(k, val); });
+    const qs = params.toString();
+    router.replace(`${pathname}?${qs}`, { scroll: false });
+  }
+
+  function handleViewChange(v: ThreadViewMode) {
+    updateUrlParams(v);
+  }
+
+  function handleFilterChange(key: string, value: string) {
+    const next = { ...filters, [key]: value };
+    setFilters(next);
+    updateUrlParams(undefined, next);
+  }
+
+  const fetchData = useCallback(async () => {
+    setLoading(true);
     try {
-      if (editingItem) {
-        const updated = await api.updateOpenThread(editingItem.id, { title: formTitle, context: formContext || undefined, status: formStatus });
-        setThreads((prev) => prev.map((t) => t.id === updated.id ? updated : t));
+      if (view === "board") {
+        const data = await api.getThreadBoard(projectId);
+        setBoardData(data);
       } else {
-        const created = await api.createOpenThread({ title: formTitle, context: formContext || undefined, question: formQuestion || undefined, status: formStatus });
-        setThreads((prev) => [...prev, created]);
+        const params: Record<string, string> = { project_id: String(projectId) };
+        if (filters.status) params.status = filters.status;
+        if (filters.severity) params.severity = filters.severity;
+        if (filters.trend) params.trend = filters.trend;
+        if (filters.search) params.search = filters.search;
+        const data = await api.getOpenThreads(params);
+        setListData(data);
       }
-      setModalOpen(false);
-    } catch (e) { setModalError(e instanceof Error ? e.message : "Save failed"); }
-    finally { setSaving(false); }
-  };
-  const handleDelete = async () => {
-    if (!editingItem) return; setDeleting(true);
-    try { await api.deleteOpenThread(editingItem.id); setThreads((prev) => prev.filter((t) => t.id !== editingItem.id)); setModalOpen(false); }
-    catch (e) { setModalError(e instanceof Error ? e.message : "Delete failed"); }
-    finally { setDeleting(false); }
-  };
+    } catch (e) {
+      console.error("Failed to fetch threads:", e);
+    } finally {
+      setLoading(false);
+    }
+  }, [view, filters, projectId]);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  async function handleStatusChange(threadId: number, status: string) {
+    try {
+      await api.updateOpenThread(threadId, { status });
+      fetchData();
+    } catch (e) {
+      console.error("Failed to update status:", e);
+    }
+  }
+
+  function handleThreadClick(thread: OpenThreadSchema) {
+    setSelectedThread(thread);
+  }
 
   return (
     <div className="space-y-4">
-      <div className="flex justify-end">
-        <button onClick={openCreate} className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">+ New Thread</button>
+      <div className="flex items-center justify-between">
+        <ThreadViewSwitcher
+          view={view}
+          onViewChange={handleViewChange}
+          filters={filters}
+          onFilterChange={handleFilterChange}
+          showFilters={showFilters}
+          onToggleFilters={() => setShowFilters(!showFilters)}
+        />
+        <button
+          onClick={() => setShowCreate(true)}
+          className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          <Plus className="h-4 w-4" />
+          New Thread
+        </button>
       </div>
 
-      {threads.length === 0 ? (
-        <div className="rounded-lg border border-gray-200 bg-white p-8 text-center">
-          <p className="text-sm text-gray-500">No open threads linked to this project yet.</p>
-        </div>
-      ) : (
-        <div className="space-y-3">
-          {threads.map((t) => (
-            <div key={t.id} className="rounded-lg border border-gray-200 bg-white p-4 relative group">
-              <button onClick={() => openEdit(t)}
-                className="absolute top-4 right-4 text-gray-400 hover:text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" title="Edit">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
-              </button>
-              <div className="flex items-start justify-between gap-3 pr-8">
-                <div className="min-w-0">
-                  <h4 className="text-sm font-medium text-gray-900">{t.title}</h4>
-                  {t.description && (
-                    <p className="mt-1 text-xs text-gray-500 line-clamp-2">{t.description}</p>
-                  )}
-                  <div className="mt-2 flex items-center gap-3 text-xs text-gray-400">
-                    {t.owner && <span>Owner: {t.owner}</span>}
-                    {t.opened_date && <span>Raised: {formatDate(t.opened_date)}</span>}
-                  </div>
-                </div>
-                <span className={`inline-flex flex-shrink-0 rounded-full border px-2.5 py-0.5 text-xs font-medium ${getStatusColor(t.status)}`}>
-                  {t.status}
-                </span>
-              </div>
-            </div>
-          ))}
+      {loading && (
+        <div className="flex items-center justify-center py-12">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
         </div>
       )}
 
-      <EntityModal open={modalOpen} onClose={() => setModalOpen(false)} title={editingItem ? "Edit Thread" : "New Thread"}
-        onSave={handleSave} onDelete={editingItem ? handleDelete : undefined} saving={saving} deleting={deleting} error={modalError}>
-        <FormInput label="Title" value={formTitle} onChange={setFormTitle} placeholder="Thread title" />
-        <FormTextarea label="Context" value={formContext} onChange={setFormContext} placeholder="What is this about?" />
-        {!editingItem && <FormTextarea label="Question" value={formQuestion} onChange={setFormQuestion} placeholder="What needs to be resolved?" rows={2} />}
-        <FormSelect label="Status" value={formStatus} onChange={setFormStatus} options={[{ value: "OPEN", label: "Open" }, { value: "WATCHING", label: "Watching" }, { value: "CLOSED", label: "Closed" }]} />
-      </EntityModal>
+      {!loading && view === "board" && boardData && (
+        <ThreadBoard data={boardData} onThreadClick={handleThreadClick} onRefresh={fetchData} />
+      )}
+
+      {!loading && view === "list" && (
+        <ThreadList
+          threads={listData}
+          onThreadClick={handleThreadClick}
+          onStatusChange={handleStatusChange}
+        />
+      )}
+
+      {selectedThread && (
+        <ThreadDetailPanel
+          thread={selectedThread}
+          onClose={() => setSelectedThread(null)}
+          onUpdated={() => {
+            setSelectedThread(null);
+            fetchData();
+          }}
+        />
+      )}
+
+      <ThreadCreateModal
+        open={showCreate}
+        onClose={() => setShowCreate(false)}
+        onCreated={fetchData}
+      />
     </div>
   );
 }

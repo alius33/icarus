@@ -1,0 +1,219 @@
+Richard Dosoo  0:00  
+So, so we can authenticate people that are logging in, and we can also have some kind of rule based access control within the application based off of that.
+
+Unknown Speaker  0:09  
+So the application
+
+Richard Dosoo  0:12  
+is going to be used internally only. It's not for customers. It's just that. It's essentially an enhancement on top of Salesforce. While we're waiting for the sales force and some of our other corporate applications to be developed as a stopgap to help us manage some of our customer adoption processes and how to use one of our cloud applications. So it's an internally used tool, and that's the we need to have. We need to deploy it, but ideally we need to enable the networking and connectivity so this tool can be accessed by other people within our group, so far as they're on the Moody's VPN. So that's the background. We've were provisioned some Azure infrastructure by the operations team, which is great. We've had access to it, and you've been going through the deployment process, and unfortunately, we keep hitting security issues that are by design when we're trying to expose either components of the stack or expose the application to the web so it can be accessed by people within the moody suite. PM, and I guess the purpose of this discussion was we wanted to walk you through what we're trying to do to make sure that what we're doing is best practice and it's permissible. And then we wanted to figure out what how would we move this forward, potentially requesting some support or time from either yourselves or the cloud architecture team or the security team, maybe to get maybe some dedicated time with with a cloud architect or security architect to help us go through what we're trying to do and make sure what we're doing is is best practice and it's done in the right way. And the reason why we need to do that is we, like everyone you know on this call here, is part of the tech more, pretty much more or less, the tech advisory team. And we have some proficiency with the infrastructure and have been able to make some, but limited progress, but our actual goal is to have the tool cursor rolled out within our organisation, and actually have more of an automated pipeline so the rest of the team don't have to go through the steps that we're going through now to develop and deploy their applications to our corporate infrastructure. But right now, it's hard to see a straight line to that, like the way we're doing it right now. You can't roll this out to the to the rare study group, because it's, it's too much of a list for some of the users to be able to, you know, log into the Azure infrastructure portal, create resource groups, create subnets, create all the things that are needed for for for these applications to be deployed. So our end state would be to have a standard pattern, have a standard architecture, have a standard text that everyone uses that's been approved. So when people are developing other applications that follow that same architecture and that same tech stack, we can automate the deployment of those applications to the Azure infrastructure. So that's, broadly speaking, that's where we want to go aspirationally, maybe over the next few working days, we've got to figure out how we clear the harm on on the issues that we've got right now. I guess Adrian Thomas Does that all make sense?
+
+Speaker 1  3:37  
+It does to me. Do you have any kind of architectural diagram of what the requirements? Yeah, if
+
+Richard Dosoo  3:45  
+you give me a second, I'm just going to bring out what
+
+Richard Dosoo  4:08  
+Hey guys, we'll just going through the high level requirements with Thomas and Adrian, and we were going to talk through, I'm just going to walk them through the diagram of what this needs to look like. I haven't got mermaid up and running, unfortunately, so I'm just going to show you in the text format, but it's pretty much what we really just described Adrian, which is essentially a
+
+Richard Dosoo  4:49  
+actually, no, that's not the architecture diagram. Give me a second. Just going to bring up.
+
+Richard Dosoo  5:04  
+I think Ben did a really good job of documenting this in his Markdown file. I'm just going to print up now so we can walk through the rest of the
+
+Richard Dosoo  5:35  
+Can you all see the diagram? I'll show you. Yep, so I can't take credit for this, but did all of the work, but we've got, obviously, this is our front end, which we can bring you up the application in a moment. This is the which is essentially that jumping off point, or where will the CSMs are going to not only update some of their customer records, but they're going to be running reports and viewing problem accounts that essentially, we need to manage and monitor. We've got our API layer that's built in Python that sits on top when we were thinking about using visual App Service to host this and it needs access as a simple SQL database. In the back end, the database itself is not complicated. It's not verbose. It has about 10 tables in it. It's going to have maybe, how many customers have we got? Ben, 300 Yeah, 100 customers in the Customers table. And then there's each of those customers will have plans and workflows. So maybe it's order a magnitude of 10, right where you're talking 1000s of rows, not like millions or billions of rows, right? So what we're talking about here is just a productivity tool that we need to figure out how to solve for in the short term. And then obviously, how do we make this pattern repeatable, if 90% of our apps are going to follow this architecture and this tech stack, how could we would it be permissible to have a automated deployment pipeline that allows people to build their application locally, test it once it's been signed off, then deploy it to the Azure pipeline without them having to log into the portal, create all the necessary networking, or VPCs, or anything of that nature. But how do we dumb it down and make it more make it more accessible to everyone? So that's that's the end goal we want to get to. But the first problem is, how do we progress with this app that we've got problem looking into right now?
+
+Speaker 1  7:41  
+We thought about bringing Brandon Smith in from a cyber architect to get his bonus,
+
+Speaker 2  7:50  
+or I think Michael added him to the the email Richard sent out earlier, because I wasn't really sure. Like, this is a lot of architecture stuff, which is a little outside of the scope of what I do here. I just manage, like, our cloud identities and Graph API access. And so I pointed them over there, and it looks like Mike, a lot of the be so team and the cyber architecture and engineering team as well. And there are definitely people in those DLs that should be able to answer these questions.
+
+Richard Dosoo  8:21  
+Okay, no, and that's fair enough. I've got a call with Michael later on just to ask them the same question. But if we need to wait for someone in that team to become available, and then we'll wait for the right person, you know, measure once, cut twice, or measure twice cut once, so the right way around. So that's fine. We can definitely do that then. But I guess directionally, we didn't think this was an unreasonable or overly ambitious request. Do you know if other teams in Moody's are using a similar pattern, or is this something that we're kind of early adopter in in terms of not only the using customer in this way, but using our Azure infrastructure in this way.
+
+Speaker 1  9:07  
+To be honest, I represent the m3 65 area and digital workplace services, so I don't have the exposure to this necessarily, like Brandon would, or some of the cyber architecture, and they would probably be able to answer some of these questions and how we've adopted the integration into Azure, in particular with web apps and whatnot, they may have some foundational requirements, if I may suggest we reschedule This call make sure that Brandon, at a very minimum, can attend, you know, because you do bring up very good points and to your point, right? Huge value in it, just to do a rinse and repeat, not have to build up from the ground up every single time process. That we really need to get architecture into the conversation.
+
+Ben Brooks  10:04  
+I mean, the other part of that though Adrian, is that we sort of started out with the presumption that Azure was the right place to do it, but I'm not, I'm not sure that's necessarily a good assumption. I mean, I don't want to make it any more complicated than it needs to be. We just need to host an internal collaboration application with a front end back end of the database. Ideally, we'll put it behind SSO, because then everybody feels comfortable using it, and we can use role based stuff, and, you know, have people assigned accounts that we know they own, and all of that sort of thing. So I if it's better just to pivot and say, Okay, let's do this on AWS. We're totally happy to do that. I'm just not sure whether this is a common usage pattern within Moody's at the moment, because, you know, I guess I see people trying to do new things, build new capabilities much faster than we ever used to. And I don't know whether this comes up a bunch, and we're just not tapping into the right resources that have already thought about it, or whether it's a genuinely new problem, I'm sure.
+
+Speaker 1  11:09  
+I mean, in my opinion, it makes sense, right? To put it in a jury, because you can leverage SSO that we already have. You're connecting to database, right? Why not stay in the same environment that SQL lives in, which is Microsoft Azure instead of AWS, right? So again, I'm not looking at this from a cyber architecture, but it makes sense that Azure would be the proper home versus AWS, especially if you're looking at using SQL and SSO and native integration. Now you know, Brandon may raise questions about, you know, segmenting this traffic and firewalling it, and all the security considerations that generally they take a look at that I can't speak of, but looking at this from a non security standpoint, I don't have any issues. I, although I don't, I want to be cautious about setting expectations, because Brandon may have a number of things that I just can't think of at the moment.
+
+Unknown Speaker  12:17  
+Yeah, okay,
+
+Unknown Speaker  12:18  
+does that help make sense?
+
+Richard Dosoo  12:20  
+No, no, it absolutely does, and I appreciate you guys support on this. We were, to be honest, we were thinking that, like our learning curve in Azure, like we're missing something obvious, but if after like Ben spending a number of hours myself and the team, what we're coming up against is security constraints that have been implemented by design, not us missing some steps in the deployment process, and that's why we want to reach out. I'll wait for Brandon to come back on the email, and then I'll reschedule this call. It'll probably be next week, I'm guessing by the time Brandon's come back and he's got the context in the brief. And then I'll include you guys in it.
+
+Speaker 1  13:00  
+Another thought you may want to add, Charles Betancourt, right? He's a tower lead for the Cloud team.
+
+Unknown Speaker  13:06  
+Yeah, Queen of Charles,
+
+Speaker 1  13:09  
+to see if he raises any red flags, questions or issues between a connectivity between the various platforms and assure right, such as web apps such as SQL database, I would think that connectivity shouldn't pose any challenges, but yeah, the Cloud team does control and help manage those controls between the platforms, so it might be good to get their insights and sign ups as well.
+
+Richard Dosoo  13:34  
+Yeah. Okay. Now Charles has been helping us with some other permissions issues on the environment, so I'll add into the thread and also get done the next week. So we use a suite to just get alignment on what we're trying to do and the feasibility of it, and then hopefully we can connect next week and come up with some more specific actions about how to move forward with where we are right now.
+
+Unknown Speaker  13:58  
+Absolutely. Okay.
+
+Richard Dosoo  14:01  
+Cool. Thanks to you guys, both for joining, I guess, Azmain, Ben and Ben, would you mind just staying on for a minute and then we can just talk?
+
+Unknown Speaker  14:14  
+Yeah, yeah, let's hang on Cool. Thanks, gentlemen. Appreciate it. Thank you. Cheers. Thanks. Thanks. Bye.
+
+Richard Dosoo  14:25  
+Yeah. Hey guys. So Ben, I think this is what we were alluding to earlier, right? That I've, I've spent some, a lot of time this afternoon just trying to deploy an app and makes part of the public. So right now, yeah, can't do it. So right now we've got three options. Option one is deploy to a VM, deploy on local host, on there, and then people jump into that VM and log on. It means you could only have two people at a time using the app because of the concurrencies of Terminal Server. So that's that's one way to do it. We get the ad integration, but it's not, it's not. There's limited user experience there. The other option, we keep trying to go down this route and have people deploy locally and see if we can connect to a database while we're on the VPN. I think we're going to hit a lot of stumbling blocks with the same summer books have already hit with that.
+
+Ben Brooks  15:22  
+Yeah, I'm guessing, Martin, you didn't get any further today with what you were exploring.
+
+Martin Davies  15:27  
+I Well, I have to stop around 11 things. I've got day full of client meetings tomorrow that I had to prepare for. Okay, I do want to get more time to play. Yeah.
+
+Richard Dosoo  15:40  
+So I think the then the other option where we will make progress, but I completely get what you're saying, that it's not like the because we won't have the ad integration on there, it's going to be a stumbling block, is pivot to AWS, and if we do that, but we have more control of that environment, so we can move a lot faster. And I think that will get us going. And at least we could have something that you can that you could demo next week, right?
+
+Ben Brooks  16:04  
+So, can we not, can we definitively not do ad integration on on AWS? Or, can you make it work?
+
+Speaker 3  16:13  
+No, we could do it. It's just time, right? That's all, yeah.
+
+Ben Brooks  16:16  
+And is that, is that something that we can sort out, or are we going to need to have like, a million different approvals in all sorts of stupid places to make it happen?
+
+Richard Dosoo  16:25  
+So right now we have, like, accelerate authenticates with a platform which authenticates with AD. So now the question is, can we have whatever new thing that we build authenticating with something and then that's authenticating with AD. And then sure what we probably could it's just going to take some time to investigate and figure out. Could we do it this week? Maybe, if we had more time, could definitely do it properly. What we can probably do in the interim, though, Ben is just have have people enter a password, right? If they just use if we create the user accounts in our Azure sorry, AWS, access management, it's still secured. It's just a for the month, for them, for next week, not forever. Just for next week, you got into a username and password. That's it. And then after next week, then we can, we'll have more time and tidy up the integration problem. Now that gets us through next week now, hopefully, or by that time, actually, the Azure solution is, is good, right? We and we can move to that natively and run everything there, but this just gets us moving in the interim.
+
+Ben Brooks  17:37  
+Basically, yeah, and is there a way for us to think about doing that that would PORT across? So if we, if we start setting up users attached to teams, yeah, addresses or something like that, and we always use the email address to log in, it's going to follow through, isn't it?
+
+Richard Dosoo  18:00  
+Yeah, that's that's basically it. We separate the authentication and the access into two separate bits, and then the authentication piece, we'll use what is in AWS natively right now, when we move back to Azure, we'll swap that out to using the Active Directory. Yeah, access control just remains the same, right? You have a table with a username and a group, and then that's it.
+
+Unknown Speaker  18:22  
+Yeah, that could work. I've
+
+Ben Brooks  18:25  
+had a couple of pings back from people this afternoon. One was so I asked you, does he have anybody that knows Azure? He said, Not really, but hosting plus is on Azure. So ask
+
+Richard Dosoo  18:37  
+say, yeah, exactly. Is he still around? I thought he he left right? He's still it. It's good. I don't
+
+Ben Brooks  18:45  
+know his his status is not online. He was last seen 19 hours ago, so presumably, okay, no, that's been five and last five minutes.
+
+Richard Dosoo  18:58  
+That's good. No, that's because like Blaine and all those like, those are the people we normally go to in the past, and they would help us. But Blaine left, so I'll reach out to say even tomorrow. So actually,
+
+Ben Brooks  19:12  
+well, I'll ping him a note, and then I also Ping sirianzin. He runs banking technology. Used to used to used to build me. He worked for me for five years, ages ago, and he's, he said he's quite funny. You should not do this with TSG and cyber. You should treat this like product development and get somebody in the business to deploy to existing Azure. Probably your DevOps can sue man do that for you, for Azure. I know the Life team is using Azure, and we can have them. So that would be hitting up the life risks guys basically,
+
+Richard Dosoo  19:54  
+well, so yeah, and basically deploying our code to their pipeline. That would be great, right? Because then. Everything else after the order code management deployment, we just plumbing into what they've already done, is it? But, okay, yeah, I didn't realise sumat was in control of that as well, but I'll give him a call. And because I forced him out to ask an IRP, right? So he would only do like AWS and map stuff, right?
+
+Ben Brooks  20:24  
+I don't know. I guess. I guess he may or may not be that plugged in on the life stuff details, but, yeah, it's worth an ask, right? Yeah, definitely. But he reports the chi and chi and didn't mention him, so he's probably just not thinking about the life platform.
+
+Richard Dosoo  20:42  
+Yeah, okay, no, I'll definitely, I'll reach out to Suman, if you ping me the other user's name as well, Ben then and then I'll talk to ping as well.
+
+Ben Brooks  20:58  
+I'll ping him. We were in the same team for a while, long time ago, and we all work for Mitch, okay? And I guess, yeah, I do feel like if we don't start seeing some pretty quick progress somewhere, it might be time to pivot and just do it on AWS. How much, how much control do we have over that? If we were to go ahead, do we have accounts we can use admin right?
+
+Richard Dosoo  21:29  
+Listen, like this, if we were doing it, if we said today, 20 past six now, want to do this in AWS. Ben will have this happening tomorrow? Okay, that's why I'm saying like, burn for us for next week. Like, it's not even my closing the door. One option. We just risk mitigating, right? We do that. The code can stay the same, right? We can just say, right. This version of the code works in Azure. This version of the code works in AWS. Ben has already talked about having some higher agnostic versions so that can be deployed anyway, it's just for us to get something up and running. Start pumping it with data. Azmain is going to start looking at the data model anyway. Like, do you know, I mean having doing something where we can put it out there and get more feedback collected,
+
+Unknown Speaker  22:13  
+yeah, all right.
+
+Ben Brooks  22:17  
+Should we just do that? Yeah?
+
+Unknown Speaker  22:19  
+Yeah. That I think as man, what I'll do is, as
+
+Richard Dosoo  22:26  
+well, I've got to just jump off when I finish with you guys here, I've got to take a call, and then Azmain, I'll give you a shout, and then we can start playing about with the data model. I think the only bits that need changing is the the milestones piece. I just flatter out of it. But once you've done that, then I think we're good. And then Ben and Martin, what we can do once we've done that, then we can, well, Ben will connect today, Martin, we can connect tomorrow, in and around the customer workshops that you've got. And we can talk about how we would once you've as many as made the changes to the data model, what changes we need to make to the front end and a car layer, and then we can deploy it on AWS. Sound good.
+
+Ben Brooks  23:10  
+Sounds good. So from a from an app point of view, getting to a point where we show people something that makes sense as soon as possible, we would want to then have a bunch of users in a table, identified by email address, Moody's email address, in the right format, and from that point onwards, we can then just add a different authentication In future, which would pass that email address through anyway, yeah.
+
+Richard Dosoo  23:43  
+So basically we'll use, yeah. Well, essentially we'll use Cognito now, which is AWS access management, user management, and then we're going to flip that out in the future to say, don't use Cognito, use whatever ad provider that we've integrated with. And in this case, it will be the movies one. That's exactly what we did on data archiving. Then when we started out of data archiving, it was just a web page that you logged into, and then we swapped it over and did ad integration. So use the platform. What we're saying is we're not going to use the platform. We're going to use our own Microsoft intra web thing that's been put in place to manage it.
+
+Unknown Speaker  24:22  
+But, yeah, okay, and we, we can't. Is there any, is
+
+Ben Brooks  24:31  
+there any point thinking about going to map at this point or not? No.
+
+Richard Dosoo  24:37  
+I mean, the thing is, you could, right, and we can follow up with Gleb on that. The reason I had deliberately like, not gone there first, right, is because we're not building our production workflow. So I was, I didn't know how much support we'd get from the map team about putting this out there, because they're going to be like, I'm doing match site, I'm doing these other things, right?
+
+Ben Brooks  24:58  
+Yeah, forget that. But. Is, but
+
+Richard Dosoo  25:00  
+that's where we should go, right? Then, once we've once, this is once we're out of PLC stage, and it's production. They're 100% bled, you know, Rogan, all those guys who should be engaged at and say, look, we've got this app that we want to build. This is the architecture. This is the immigrations, okay? Map is the right place, all right?
+
+Ben Brooks  25:19  
+And then what would be the best way to containerize it? So we can move it when we need to.
+
+Richard Dosoo  25:24  
+We'll put it in Docker basically, okay, so doc, like and again, I'm jumping outside my wheelhouse here, but don't keep knowing it. So is this Docker or what would you say is the best?
+
+Speaker 4  25:35  
+Yeah, so the best option is using Docker images, and we can store that in ACR. I wrote a message to Richard, so I've done this type of process before, fairly simply. Basically, we will have any images that, if we want to fully make a CI CD pipeline, any images that get pushed to ACR can will deliver a web hook that a CI tool can provision into infrastructure so no one has to touch anything, and it automatically deploys, and we can do that every time. So I actually started porting things over from AWS to Azure from because I actually have for my own side business, not business, but project I have. I had it for AWS, where I have a full CICD pipeline that uses basically this exact topic, but flow I can, and I was porting it to Azure. The only difference is, obviously, I don't have access to Azure right now, so, but yeah,
+
+Ben Brooks  26:37  
+okay, cool. All right, let's go there. Then let's do AWS behind a login. We'll make it look like a Microsoft login. Yeah,
+
+Richard Dosoo  26:53  
+no, definitely like this is just for us to make progress next week, right? And get back this week, and next week is we're not closing the door or anything. We're just giving ourselves a built room.
+
+Ben Brooks  27:05  
+No, I get that, but there's a, there's an awful lot of pain already that is coming from the fact that, you know, Stacy's managing a deck of 300 slides, each of them the same format to cover an existing account and try and write the success criteria into it. It just makes me want
+
+Richard Dosoo  27:22  
+to cry. Completely agree, like we need to. We can, we can transform that part of the process.
+
+Ben Brooks  27:28  
+The other thing Rich, I think, is going to be really important here is how, and I don't know shit about this, so this is where I definitely need your help. How do we set up the right collaborative development environment to be able to collectively iterate on a solution, and, you know, not put it all on one person, to have to build it the whole time. And someone can just tweak something here, tweak something there, and not break it and all that stuff. So and, or that's a terrible idea, and we shouldn't do it, but, i
+
+Richard Dosoo  28:03  
+Good idea. What we're talking about is just having a good source code management strategy, right? That allows you to have main and then several different branches, right? And main is going to be the one that is our production, one that we ship out, that people are using, and then in the interim, people will be taking creating a branch of that code and developing a local version. Azmain may have some updates around the data model that he wants to push change the UI. He'll test them locally, and then he'll merge those changes into main and then there'll probably be a nightly build process that Ben will will create for us. Right to to not only merge, but then do a whole bunch of tests. Right to say, well, right, has anyone broken the build? And we've put this stuff in now, in cat accelerate, we just used to have one main right, that's it, because we only had one version of production that we wanted to support any one time right after code, because the team was small, we might this. Should have a few different versions, right? You might have a production branch, right that is out there, and then you might have a new feature branch that is separate. And like two versions of the application that we run in parallel, we can decide what we want that strategy to be. The simplest one is to have one main one, and then everyone else checks and builds into that. But we might decide with this that we want to have a few different options, right, depending on where you want to take so none of that is revolutionary. None of that is like, it's just we got to decide. So I think if we just to get up and running, let's just go with production branch like, similar to accelerate. I'm on a repo. People will do branches when there's changes that are needed, but you'll always check into main and that'll be the one level support. After we've got this thing up and running, then we can start making it we can think a bit more strategically, right? Maybe there's a, you know, we've got the main branch that Stacy and everyone else is using a product we might have the the other branch, which is new features that we're adding in and we're incorporating, and we're putting in things from like K. And Liz solution architecture team and that branch that needs to get evaluated right before we push it out, all that kind of stuff, so we can kind of slice and dice this more once we've got the main one up in mind.
+
+Unknown Speaker  30:10  
+Yeah. Okay, all right, cool.
+
+Richard Dosoo  30:14  
+So is this just all going to get written up in a couple of slides? I'll do that and then, as I said, but the main goal will be, let's say, by the end of this week, we want to get a deployment of the app in Azure that is running on a database. It won't be SQL Server, it'll be, you know, DynamoDB, whatever the version is that we can pump full of records. We can have the login. We can have on top of your authentication, like username, password, we have the role based access control, and we have enough data in there that someone can log in and look at realistic records for, you know, n number of customers. So we can drive a demo. We say we want to have that up and running by AWS by the end of the week. Then once we've got that in the following week, we can start thinking about the Azure story, right, and how we bought this and bring it back.
+
+Unknown Speaker  31:04  
+Okay, sounds good to me. All right,
+
+Richard Dosoo  31:11  
+I have to get my front door, guys, since I've got something but more like complaints.
+
+Ben Brooks  31:22  
+All right, let's get out of here. Thanks, guys. I don't know what I'm doing on AWS, so I'm in your hands. Yeah, be great to get something stood up.
+
+Richard Dosoo  31:32  
+Yeah, let me, let me take care of this thing and get hold of Ben first and then, or Martin, if you're online as well, I'll give you guys a shout. I just, I got basically, yeah, I just need to deal with this, and then I can, I can jump back on and we can talk through what that
+
+Speaker 5  31:48  
+looks like. All right, okay, guys, see you soon. Okay, thank you. Bye.
+

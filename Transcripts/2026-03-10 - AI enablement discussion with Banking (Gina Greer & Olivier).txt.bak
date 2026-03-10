@@ -1,0 +1,174 @@
+Speaker 1  0:00  
+Yeah, sorry about that. I was wondering. Nice to meet both of you guys. Let me just do we
+
+Speaker 2  0:09  
+transcribe so we don't have to take notes or really, what is going to do?
+
+Speaker 1  0:12  
+Yeah, let's definitely do that. Azmain, do you want to hit the record button?
+
+Azmain Hossain  0:18  
+I my my laptop blue screen and died. So I'm on my phone,
+
+Unknown Speaker  0:25  
+just transcription, or you want me to record.
+
+Speaker 1  0:28  
+Transcription is fine. I'm recording. I've just kicked off the recording and the transcript. Okay, do
+
+Azmain Hossain  0:46  
+all right, we're all back.
+
+Speaker 1  0:49  
+Excellent Gina and Oliver, I guess is it worthwhile doing introductions first, just so you get the context of what Azmain And Ben and myself, what our role is, and what we do in the insurance.
+
+Unknown Speaker  1:00  
+Ou, Yes, that'd be great, and then we can do the same.
+
+Speaker 1  1:05  
+So my name is Richard desu. I'm a solution architect in the insurance so you in relation to this programme, I've been helping lead out the customer success AI initiative to help leverage some of the technology to solve some of the problems that we have within the customer success group, predominantly that's been focused on three different areas. One is managing our portfolio of customers that migrate to the intelligent risk platform. So we had an initiative to build out reporting, dashboards and tracking customers journey from the on premise systems to our cloud application. But the other two pillars to that programme are, one is around customer intelligence and using the technology that's available to us to be able to analyse customer sentiment and resolve customer tickets in an automated fashion. And then the last piece that we had was enablement, really, for internal productivity, using tools like cursor for application development and building out some infrastructure to host those applications. And then lastly, we've been also looking at cursor for pipeline and pre sales development work as well. So we're using cursor as a means to help demonstrate and demo one of our cloud applications that today has been quite challenging that becomes of a set of public APIs that are risk based, but showing the customer how they can realise that and their workflow has been quite challenging. So we've been looking at ways in which we can make that process easier with the technology that's available to us today. Sorry. Azmain, Ben, do you guys want to go next?
+
+Azmain Hossain  2:39  
+I'll let Ben go next, because I'm still signing into my account and everything on my laptop.
+
+Speaker 2  2:47  
+Richard, are you? Are you a customer success manager, or you are the insurance supporting the customer success management team?
+
+Unknown Speaker  2:53  
+No, I'm actually a solution architect in the advisory group.
+
+Speaker 2  2:58  
+Okay, I heard CSM project, and then got distracted, okay, got it.
+
+Speaker 1  3:05  
+You heard, right? You know, this project supports the customer success managers, and it supports our advisory colleagues, and it supports some of our free sales colleagues. So right now, we're supporting three different stakeholder
+
+Speaker 3  3:20  
+groups, okay, thank you. Yeah, yeah. So I'm on the advisory side as well. I'm more on the infrastructure, basically making sure everything is going according to plan. I don't know how else to best describe my role, but yeah, basically, I make sure everything meets security standards and everything gets up and running effectively, and help architect essentially what needs to be architected. And that's about it cool.
+
+Azmain Hossain  3:57  
+And then I guess I'll go next. So I'm not from the advisory side. I'm actually a project manager with like I used to be a software developer, and I don't like doing manual work, so as soon as they gave me access to AI tools, I just started building platforms and apps to help do all my work, which has led to kind of all of this. It started with the initial thing of, how do we report, you know, our IRP metrics and data and ongoing migrations, like all this multifaceted programme that we have moving people from on prem to cloud. How do we present that to senior leadership without, you know, a 30 page PowerPoint presentation. So what started off as a dashboard that consolidates multiple excels has now almost become a not almost. It's become a platform in and of itself, where it's the primary source of data entry. So CSMs project managers, anybody related to a particular project, can go in and put all their information in there. And on the output side, senior management can see all of the metrics, the data, the dashboards that they want, instead of, you know, relying on Salesforce extracts or individual people's excels. So that's kind of the core product. And then once people saw the iterative speed and how good Claude or cursor is at building stuff, it just expanded. And that's what Richard was talking about. Now we are working with with a little bit of sales, pre sales. We're working with various other people who we're just trying to get people to ideate on small tools, big tools, entire SaaS, kill our platforms, whatever idea they have, because we can build everything in house now any and it doesn't have to be like, oh, we need a six month integration, and we need to partner with EY to do the implementation and all this stuff. We can just build stuff in house with like three guys, because that's literally three guys, me doing front end, Ben doing back end, and rich providing cover for us. And we built essentially Salesforce light in in six weeks.
+
+Speaker 1  6:20  
+I think Gina, just to bring it back to the original ask that dia had made in the group was, we've been working with Idris on the banks and Customer Success side. He had an application that he developed. It was really useful, but he had nowhere to host it. So Ben aligned his application to our tech stack and provided a home for it to be deployed on our infrastructure, so you could share that with others. I think what dia was hoping was, she wanted us to come together as a group to see where, if there were any other opportunities where that kind of collaboration would be helpful, whether that's us enabling you guys, just as a means of sharing what we've already done, or whether it's more tangible and tactical and specific, like what we did from Adrian switch was actually taking his application, re architecting it and deploying it to the platform so he didn't have to worry about those infrastructure capabilities and such. So I think that's where her head space was at. It would definitely be interesting to hear from, from you guys on the banking side, what your perspective is on it, where you guys are in your terms.
+
+Speaker 2  7:24  
+Okay, thank you. So Gina Greer and my team is kind of central to the customer engagement team, trying to kind of map out and track and push forward all of the initiatives, including migrating from legacy products to the, you know, the few products that we want to keep, because we're in banking, we're trying to get down to a smaller portfolio. Also, how do we, how do we prioritise, align and focus on AI initiatives for this customer engagement team that's been the hot topic in the last three weeks, because we had a lot of people doing different things, like injuries, right? Doing a CSN piece over here, and other people trying to solve problems. But we need an overall vision. And so, Olivier, I'll let you introduce your role in the AI kind of world and where you are, yep.
+
+Speaker 4  8:18  
+So thanks, Gina, right? So I'm basically to the lead on the on the AI enablement first on our team. So notice that everyone is working in siloed and we definitely need to find like synergies in between different initiative AI initiatives, based on what I've seen so far, this is something that we need to find a way that to collaborate together and to prioritise and to remove all the all the dust, right? Definitely, like we don't, don't activities being happening across, across customer engagement, but also banking and and also when it comes to enablement. Indeed, not everyone is still aware of, like being pro efficient, into into building something in AI, personal efficiency, or product delivery efficiency. These are still very early stage when it comes to to our teams. So this, there's a big there's a big piece that needs to happening as well there, in terms of like cascading down from from the AI enablement team on MCR level, to our teams. So that's still a very big step that needs to happen and progressively, but it is still early stage at this point. So the AI enablement is about forest. Is about getting getting them into speed, but also like ensuring that we find a good framework to develop those, those AI initiatives. Now it could be any tools. So far, I'm trying to also to ensure that people understand what tool is good for, for them, right? I heard you talking about several times about cursor. Personally, I don't think cursor serves everything. I believe that we can create a lot of things with cursor, but do not. I do believe that we can, we have tools more appropriate to what you know you want to do when people still don't know about this, right? So doesn't mean that you have access to cursor, that you can do, you can do whatever it you need to be aware what are the capabilities of each one of those platforms we have, plus what I just heard that this is so there was also a big gap. What you just mentioned about deployment, right? You can build an app with cursor, great, but then how do you deploy? How clear it is for everyone to do that, and how tough it is. So all these things. So far lately, I've been collecting most of our AI initiative across across the team, and reporting on that, I've been working with the AI enablement team. So from Nick, you're from a kitaki from Kentucky's team, and working closely with Brian and Nick on those aspects.
+
+Speaker 2  11:02  
+So one thing I have a question for you guys about Richard is, do you have people dedicated to this, or do they have day jobs and then they're in these groups trying to work on the solutions in kind of whatever time they can grab?
+
+Speaker 1  11:20  
+We previously, people were allocated just a percentage of their allocation to this. We met with the couple weeks ago and she approved some dedicated resources to work on the programme, because essentially we were in the same spot that you guys were in. We were in that spot in November where we did some enablement and some training. And to Olivier, to your point, we worked with Nick louder's team, with Kentucky's team, we devised a training programme which covered copilot, that studio, copilot, we trained a user base on all those things, and then we had an ideation stage about where the value, what issues would actually drive the most improvement within the group, and then that fed isn't that essentially then drove the body of work that we're looking at right now. Now, within our group, we found that while copilot studio is very useful, a lot of the team got more value out of just building something directly in cursor, because they needed they were comfortable in that environment, and they were used to that flexibility. The issue we found was, well, cursor doesn't give you a deployment platform, right? So while you have all this creativity, where does it go? So that's what then led us to, after we had the cursor guys come in and train us, they didn't give us an answer to that infrastructure problem. So that's why Ben was able to step up and solve that problem for us.
+
+Speaker 2  12:44  
+What happened with Idriss CSM application was he built an incursor and then didn't know how to deploy it, or
+
+Speaker 1  12:51  
+couldn't well, he built it in cursor, which was great for aliating, but he hits the stumbling block that everyone has, like, everyone who doesn't have any SRE, like, operational like experience, you wouldn't know how to stand up a CICD pipeline. You wouldn't know how to stand up infrastructure in whatever cloud environment. And neither should you right, because that's not your job. So that's normally where you hand off to TSG, or you'll hand off to someone else for those guys to spin up infrastructure for you, and then they would handle it. We start to the TSG team and others, and they were able to provide us some support, but we needed to go the extra mile ourselves, which is why that's to be honest, that's been one of the core themes of our programme about enablement and giving the infrastructure to people so they can deploy and host their applications themselves. But it feels like for you guys, where you are at the moment is you're still kind of assessing where the needs are amongst your group, and that will probably necessitate some training and enablement, and then you understand what the priorities are.
+
+Speaker 2  13:54  
+So we've got, we've got a group of people who have been through the AI training and done some of the AI days explain that. And so we've got in each team, including my own right. Olivia's is our expert, ai ai lead. But each of our other teams has people, one or two in each team. So you've got this small group. We've got a list of what meta MENA thinks we want to focus on, not necessarily specific projects, but the area she believes needs a solution, some kind of a genetic solution. On the other hand, like you said, Olivier and Sebastian elay have gone to each team and said, Okay, what are those things you have in progress so that we can collaborate across, prioritise and then maybe map to these identified needs, and then what do we not have anything. So that's kind of the end. And of course, the Ask has been in. Can do it yesterday? Let's get this going. Let's be able to show our priorities, show our progress. Iterate every three days. Am I I wouldn't careful how I say this, yeah, my response is, we have to have some people dedicated to this if we continue to do it as a side job or whatever, we're never going to get across that border, right?
+
+Speaker 1  15:17  
+So, yeah, as I said, the parallels between the journey that you guys are on and the one that we're on is very, very start, right? We literally went through that exact same cycle. Dr Sawney is our equivalent to men on your side, and we had to go through the exactly same process, and then we had to demonstrate to her the value, and we had to have a proof point of this is what we could do within a certain amount of time. These are the other areas where some other dedicated attention will be needed. And we provided estimates ROI all of those things, and then we that will culminated in person, meeting with her in London, where we got approval to move forward on the next 12 weeks of our programme. So we can definitely share with you how we went about that process and what those areas were, but the path that you're on is exactly the same place that we started with, which was enablement training and then ideation, because once people understand what the technology can do for them, then they can start to determine where the value, where the greatest R I would be, and then that feeds into your essentially, what is going to be the core of your programme, where the areas where your guys are going to see the biggest ROI and the biggest return on your investment.
+
+Speaker 2  16:29  
+So all of our teams have similar needs and teams, right? You've got customer success. We've got customer success. We've got partner facing teams. We've got capacity and staff planning. So those are some of the areas that want to tackle. And I think the goal here is, where can we work together, to not build something separate, but use each other's burning power,
+
+Azmain Hossain  16:52  
+I guess. So look at
+
+Speaker 2  16:54  
+what's on your roadmap versus what we've been given.
+
+Speaker 1  16:58  
+Yeah, yeah, more than happy to share with you the stuff that's immediate that we got a line of sight on. I know dia when I spoke to her before, she was very like, mindful that she didn't want to create any interconnectivities or tightly coupled initiatives across the team. So she was like, enable, don't like, necessarily converge, but we're happy to share with you what we've done. We can share with the collateral of the materials, and there's other people within the group that are also like, working on initiatives that are not even tied to this programme. So you mentioned resource planning. We've got people like, oh, actually. So Azmain is looking at a product management application that isn't listed on here, because we need a better way to manage projects more centrally, right? So there's a lot of there's a lot we can talk to you about and show you where we are and see if that stuff is relevant for for your group.
+
+Azmain Hossain  17:56  
+No, no, exactly what you said. We we have an enablement pipeline now where Gina exactly what you said, like, when somebody says, I want three days turnaround time from feedback to live on, on the on the platform, in production, that's when somebody said that to us in November, December. We were like, That's not possible. Where now it's we're doing it. We've been doing it for nearly three months now. Literally, feedback comes in. We work on it, we release, we go through, we go through three environments of like development environment, staging and then production. There's like 1000 tests done per environment, and everything just works. And this is all something that Ben has built, this, this deployment pipeline. So that's how we can enable you guys, literally what Olivier said, It's great people can use the tools. They can build stuff on their laptop. How do we deploy it? This is how we deploy it. What we're working towards is like one to five click deployment, where we have everything set up. We have environments within the Moody's walled garden that uses that is protected by all of our security, Microsoft, Azure, login with your Moody's credentials, and then it just goes into the app, whichever app it is, so single sign on, protected environment, easy deployment. That's our goal.
+
+Speaker 4  19:16  
+Do you need to go over nydam tickets for to reload access to those tools and platforms.
+
+Azmain Hossain  19:24  
+Ben, do we
+
+Speaker 1  19:26  
+not at the moment, we don't, but we can, if that's the short answer. Right now, we've got the SSO make sure you're a Moody's employee, and then within each location, we've got role based access control, but we could use Idam as the means to provision access to not only applications, but data
+
+Speaker 4  19:47  
+as well. I'm surprised from the TSG team that they gave you this possibility to do a quick deployment.
+
+Azmain Hossain  19:55  
+We we built everything with toothpicks and chewing gum like it works, but we've operationalized it, but we need to industrialise it so that we can enable other teams, like yourselves, like asset management, like other teams that we're speaking to.
+
+Speaker 4  20:13  
+Yeah, okay, so I guess you're gonna have to take example of what you guys did to make the same similar request to TSG and have a special, special access also, yeah, environment from copilot. I'm already 11 days down. I still haven't received any any update on my production environment. So it's like, I'll be
+
+Speaker 1  20:40  
+honest the leader, having gone through this cycle before, I would say, ask for an AWS infrastructure, because the market, the Azure infrastructure they give you isn't fit for purpose. So you'll get that Azure infrastructure, and you'll spend a weekend trying to deploy any application to it, and then you'll find out it doesn't have the connectivity or permissions that you need. So ask for an AWS environment, and Ben can get into the next level of detail of what that AWS environment needs to look like for you guys, the only thing you'll use the Azure environment for will be the SSO integration.
+
+Speaker 4  21:19  
+Okay, well, we get into that point, okay, but that's good to know. Thanks. Appreciate the appreciate the support in this one.
+
+Speaker 2  21:29  
+So when you guys, like, I'm looking at this slide, and I like it, it kind of shows not only what you're building, but what it does, and then the impact who is involved in, like, prioritising, setting your requirements, and, like, what's it going
+
+Speaker 1  21:47  
+to do? Yes, that's a really good question. Gina, so we've had, for each of the projects, we've got, like, a, I don't want to say a business sponsor, but a functional lead, and then between the rest of the team, we're acting as the PM, the technical, lead tech consultant. And then we have maybe on one on Clara, for example, Azmain is acting as the project manager and as the lead engineer. And he has four different programme managers giving him requirements so poor as main has got, yeah, all of these four different people's requirements against against that, but we try and staff these as we would any normal software project with people who own their requirements, and then somebody owns the technical delivery as someone who's managing the programme. We I think that the tooling definitely allows you to iterate faster and Italy iterate in parallel, which is great, but it doesn't remove the need for standard software delivery life cycle processor. So what do I mean by that? Great? You can use agents to develop faster and cursor. It doesn't mean you don't have to have to have testing, even if you want to automate your testing and have agents doing the testing that still needs to be defined and done up front, you may be able to execute on that testing faster, because you can spin up an army of agents to execute all those tests for you, but it still needs to be a gate in your process, right? And that's that's the thing that we've realised. The fundamentals become more important, because you can go so much faster.
+
+Speaker 2  23:24  
+Yeah, and to me, coming from a software background, not developer, but programme project management years ago, if we don't understand what success looks like and who are their stakeholders and what the requirements are, create something, and then we don't know how to test it, because we're not sure. And I feel like there's a lot of things being created, they're gonna end up being sent word, besides garbage, you know, technical debt.
+
+Speaker 1  24:00  
+There's definitely that everyone says, right? You get vibe coded applications, then you get vibe code detector, which is hard to compete, right? But I think the one thing that I would probably say is the cost of the software development now has gone down dramatically from what it was one year ago or six months ago, and that means you can ideate faster and get to the valuable requirement quicker, and then your implementation timeframes are moved also go down accordingly. And whereas in the past, we would have been more, quite cautious about something like the Clara workstream that we've got up here, this came about over the holiday period when my manager, my Managing Director and Azmain were just like, there's got to be a better way to solve this problem. And they spent a few days over the holiday period solving that problem. And since then, we had significant cycles of iteration and development, but we got to the finish line significantly faster than if we had spent six weeks in requirement phase, defining everything we were able to define as we go right, more agile. Yeah, exactly that allowed us to get to the answer faster, rather than if we had paused and said, Okay, let's do a six week gap analysis requirement phase, because the ideation phase now is you're essentially using product development as an as a requirements building phase to get to the requirement faster. And that's how we got better quality requirements for each of these, these workshops, yeah, and
+
+Speaker 2  25:29  
+I didn't mean like, huge six week efforts. I meant more, like, at least understand what the ask is before we start. Yeah, yeah.
+
+Azmain Hossain  25:40  
+That's one of the things that I as as we enable more people, and they obviously, they have their own ideas, and they're building stuff out. Like I said, we do want to have a five click deployment, but I want to put, like, a stage gate before that, where we kind of decide, like, this thing you built great, but does it have more than 10 users? Because if it doesn't, there's no point deploying it if we just run it on your on your laptop, that that will drastically reduce the amount of blow that we get in our in our environment, and the stuff that get that gets deployed. But to your question of, how do you make sure that the thing that you're being built addresses the pain that it that's the cause of it, this is where we're relying, really, on the individuals. Because the way that the Clara portfolio, IRP portfolio thing came about is we attacked it from both ends. So I knew, like the information that I had to compile to create the dashboard for a managing director, and then Ben, being the person who's going to read it came in from his side and is like, this is what I need to see. So we attacked it from both sides. So we we knew exactly the pain points. So when, when somebody else comes and they're like, you know, I want to do this. I'm like, Okay, what's the pain point? Who is the end goal? What is the end goal? Have you spoken to people? So we're really kind of teaching a little bit of software development life cycle to non technical people. So that's going to be this
+
+Speaker 2  27:09  
+little one, the one that Idris worked on. Or is that something you guys built? It's similar?
+
+Speaker 1  27:16  
+Yeah, no, this. This one is something that Idris has, something similar to this. But obviously his is is driven by your banking portfolio of clients on those use cases. Ours is obviously targeted for insurance, and we needed a way to get customer health, but more in a more real time fashion, because what we have in game side was always a couple quarters out of date. So we needed customer sentiment, and we needed it faster, so we're using integration to Salesforce to pull that information, analyse the sentiment, but we're also using some of our tooling to help resolve customer incidents that have been raised programmatically, rather than people answering those tickets manually. So that's that's essentially the goal of the Customer Success aid, and it was the call for application called sales recon that is being rolled out more corporately, and we were leveraging components of that to help deliver that capability.
+
+Speaker 2  28:15  
+So I have another meeting starting, but I don't want to leave until we kind of figure out what our way forward is. So So dia she said, you know, let's not tie things together. I know, andrees didn't have a platform. So is our goal to help us understand what we need, to establish some place to publish our own
+
+Speaker 1  28:36  
+Yeah, confirm. But the direction she gave me last week was, try to enable, don't tightly couple the initiatives where they're not necessary, because she was worried about, you know, combined roadmaps across the group, combined priorities. And who agrees? She didn't want us to create so much red tape, but she was like, 100% we should be sharing what we've done and to help you guys.
+
+Speaker 2  28:56  
+That's what I was thinking, right? If we at least compared our our projects, efforts, roadmaps. And then said, Okay, can we reuse anything from either side? And then also, I'd love to pick your brains on how do we set up the right process? And so I met with Neil Patel as well, and he says, Oh, this is how I've got my team working. And it all sounds good, but I'm not sure got to the level of detail you're talking about with how to give people that one to five steps to get it deployed. And you know, he's got some reviews going on in a camera from his bi weekly or monthly where they talk about the technical debt and what they're doing with agents and how people can reuse stuff. So I think each team is doing something,
+
+Speaker 1  29:42  
+well, maybe that some mindful Gina that you've got another call. So maybe I'll set up a call for us next week just to follow up. And we can outline the programme. We can outline, I'll send you over all these materials in advance to you, and Oliver can review it. And then next week we can come together and look at the places where we converge or where we diverge, and see how we move forward from that,
+
+Speaker 2  30:02  
+okay, we should be able to share to kind of what our current map is. You know, what are our projects? What are we aiming towards, and how are we aligning our group, so that might help. Olivia, did you have something you were trying
+
+Speaker 4  30:17  
+to say? Yeah, well, as you have any questions, but do you before the follow up call. Could you guys share, if you have a slide deck about what is the process that you are, the framework you put in place, from from ideation to to deployment, on passing by prioritisation, right? And how is this framework of like, decided what is going to be the roadmap is happening. I would love to see how, because, as you said, or maybe as I'm thinking very out loud, not everyone is going to be able to do that right there. So there's a minimum of knowledge and minimum of like, guardrails that we need to put in place so we don't have a bunch of like, with the trash not piling up, but make sure that we are cautious, cautiously and but fastly deploying those, those efficiency initiatives. So if you have that, that'd be great, because I think that we can together build like an agent development life cycle. That's that Brian and Nick could just actually use as terms of, like, also additional documentation, because those are the things, the feedback I share with them as well. We need to also make sure that we we have departments.
+
+Speaker 1  31:28  
+Do you know Divya Harrier, also, who works in with cloud? Divya,
+
+Speaker 2  31:38  
+I'll follow up with you guys and look at the next meeting. No, I have to hang up. I just need to excuse
+
+Speaker 1  31:46  
+no result. Let me do this, because we have to jump to another meeting as well. The it was a collaborative effort across insurance, and we had an actual governance stakeholder, where everyone draw that and Divya manage that sticker. So we just one part of that statement committee. There's other teams within Moody's that do within insurance that that governance framework that you exactly outline, that was the mechanism where we would get green light order programmes. So I'm going to send a note to her copy you and and then I'll ask her to be involved in the next meeting so she can share with you the governance and the methodology I've been
+
+Speaker 4  32:27  
+I just saw some I've been in touch with Brendan Brenda Solis from the CNG team, the corporate and governance team, because she she she developed like a team called an AI squad within the team actually performing the same similar activities, and the and Dieter Vander stock, my colleague in Brussels, was actually looking for point of contact, for banking, and probably order or use, because I think he doesn't even have that for even insurance. I think I had only for CNG team, but it says that there are too many actors we need to ensure that we we build the structure. So I've been on meetings this and there, but those stuff and what is the need to better structure ourselves to actually have that very fast, right? Anyway, let's continue discussion. Thank you so much, guys, for another bu for these activities.
+
+Azmain Hossain  33:26  
+Cheers. Thank you. Bye.
+

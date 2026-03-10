@@ -1,123 +1,183 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { Suspense, useEffect, useState, useCallback } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
+import { DecisionSchema, DecisionBoardResponse, DecisionTimelineResponse, DecisionViewMode } from "@/lib/types";
 import { api } from "@/lib/api";
-import { formatDate } from "@/lib/utils";
-import type { DecisionSchema } from "@/lib/types";
-import EntityModal, { FormInput, FormTextarea } from "@/components/EntityModal";
+import DecisionBoard from "@/components/decisions/DecisionBoard";
+import DecisionList from "@/components/decisions/DecisionList";
+import DecisionTimeline from "@/components/decisions/DecisionTimeline";
+import DecisionDetailPanel from "@/components/decisions/DecisionDetailPanel";
+import DecisionCreateModal from "@/components/decisions/DecisionCreateModal";
+import DecisionViewSwitcher from "@/components/decisions/DecisionViewSwitcher";
+import { Plus } from "lucide-react";
 
 export default function DecisionsPage() {
-  const [decisions, setDecisions] = useState<DecisionSchema[]>([]);
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [editingItem, setEditingItem] = useState<DecisionSchema | null>(null);
-  const [formDecision, setFormDecision] = useState("");
-  const [formDate, setFormDate] = useState("");
-  const [formRationale, setFormRationale] = useState("");
-  const [formPeople, setFormPeople] = useState("");
-  const [saving, setSaving] = useState(false);
-  const [deleting, setDeleting] = useState(false);
-  const [modalError, setModalError] = useState<string | null>(null);
+  return (
+    <Suspense fallback={<div className="flex items-center justify-center py-12"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" /></div>}>
+      <DecisionsContent />
+    </Suspense>
+  );
+}
 
-  const reload = useCallback(() => { api.getDecisions().then(setDecisions).catch(() => {}); }, []);
+function DecisionsContent() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const view = (searchParams.get("view") as DecisionViewMode) || "board";
+
+  const [filters, setFilters] = useState({
+    execution_status: searchParams.get("execution_status") || "",
+    workstream: searchParams.get("workstream") || "",
+    search: searchParams.get("search") || "",
+  });
+  const [showFilters, setShowFilters] = useState(Object.values(filters).some(Boolean));
+
+  const [boardData, setBoardData] = useState<DecisionBoardResponse | null>(null);
+  const [listData, setListData] = useState<DecisionSchema[]>([]);
+  const [timelineData, setTimelineData] = useState<DecisionTimelineResponse | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  const [selectedDecision, setSelectedDecision] = useState<DecisionSchema | null>(null);
+  const [showCreate, setShowCreate] = useState(false);
+
+  function updateUrlParams(newView?: DecisionViewMode, newFilters?: Record<string, string>) {
+    const params = new URLSearchParams();
+    const v = newView ?? view;
+    if (v !== "board") params.set("view", v);
+    const f = newFilters ?? filters;
+    Object.entries(f).forEach(([k, val]) => { if (val) params.set(k, val); });
+    const qs = params.toString();
+    router.replace(`/decisions${qs ? `?${qs}` : ""}`, { scroll: false });
+  }
+
+  function handleViewChange(v: DecisionViewMode) {
+    updateUrlParams(v);
+  }
+
+  function handleFilterChange(key: string, value: string) {
+    const next = { ...filters, [key]: value };
+    setFilters(next);
+    updateUrlParams(undefined, next);
+  }
+
+  const fetchData = useCallback(async () => {
+    setLoading(true);
+    try {
+      if (view === "board") {
+        const data = await api.getDecisionBoard();
+        setBoardData(data);
+      } else if (view === "list") {
+        const params: Record<string, string> = {};
+        if (filters.execution_status) params.execution_status = filters.execution_status;
+        if (filters.search) params.search = filters.search;
+        const data = await api.getDecisions(params);
+        setListData(data);
+      } else {
+        const data = await api.getDecisionTimeline();
+        setTimelineData(data);
+      }
+    } catch (e) {
+      console.error("Failed to fetch decisions:", e);
+    } finally {
+      setLoading(false);
+    }
+  }, [view, filters]);
 
   useEffect(() => {
-    api.getDecisions().then(setDecisions)
-      .catch((e) => setError(e instanceof Error ? e.message : "Failed to load decisions"))
-      .finally(() => setLoading(false));
-  }, []);
+    fetchData();
+  }, [fetchData]);
 
-  const openCreate = () => {
-    setEditingItem(null); setFormDecision(""); setFormDate(""); setFormRationale(""); setFormPeople("");
-    setModalError(null); setModalOpen(true);
-  };
-  const openEdit = (d: DecisionSchema) => {
-    setEditingItem(d); setFormDecision(d.description || d.title); setFormDate(d.date || "");
-    setFormRationale(""); setFormPeople(d.owner || "");
-    setModalError(null); setModalOpen(true);
-  };
-  const handleSave = async () => {
-    setSaving(true); setModalError(null);
+  async function handleStatusChange(decisionId: number, executionStatus: string) {
     try {
-      const people = formPeople ? formPeople.split(",").map(s => s.trim()).filter(Boolean) : [];
-      if (editingItem) {
-        await api.updateDecision(editingItem.id, { decision: formDecision, date: formDate || undefined, rationale: formRationale || undefined, key_people: people });
-      } else {
-        await api.createDecision({ decision: formDecision, date: formDate || undefined, rationale: formRationale || undefined, key_people: people });
-      }
-      setModalOpen(false); reload();
-    } catch (e) { setModalError(e instanceof Error ? e.message : "Save failed"); }
-    finally { setSaving(false); }
-  };
-  const handleDelete = async () => {
-    if (!editingItem) return; setDeleting(true);
-    try { await api.deleteDecision(editingItem.id); setModalOpen(false); reload(); }
-    catch (e) { setModalError(e instanceof Error ? e.message : "Delete failed"); }
-    finally { setDeleting(false); }
-  };
+      await api.updateDecision(decisionId, { execution_status: executionStatus });
+      fetchData();
+    } catch (e) {
+      console.error("Failed to update status:", e);
+    }
+  }
 
-  if (loading) return (<div className="space-y-6"><h2 className="text-2xl font-bold text-gray-900">Decision Log</h2><p className="text-sm text-gray-500">Loading decisions...</p></div>);
-  if (error) return (<div className="space-y-6"><h2 className="text-2xl font-bold text-gray-900">Decision Log</h2><div className="rounded-lg border border-red-200 bg-red-50 p-6"><p className="text-sm text-red-700">{error}</p></div></div>);
+  function handleDecisionClick(decision: DecisionSchema) {
+    setSelectedDecision(decision);
+  }
+
+  function handleTimelineDecisionClick(decisionId: number) {
+    const found = listData.find((d) => d.id === decisionId);
+    if (found) {
+      setSelectedDecision(found);
+    } else {
+      api.getDecision(decisionId).then(setSelectedDecision).catch(console.error);
+    }
+  }
 
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-gray-900">Decision Log</h2>
-        <div className="flex items-center gap-4">
-          <span className="text-sm text-gray-500">{decisions.length} decision{decisions.length !== 1 ? "s" : ""}</span>
-          <button onClick={openCreate} className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">+ New Decision</button>
+        <div>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Decisions</h1>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+            Track and manage programme decisions with full audit trail
+          </p>
         </div>
+        <button
+          onClick={() => setShowCreate(true)}
+          className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          <Plus className="h-4 w-4" />
+          New Decision
+        </button>
       </div>
 
-      {decisions.length === 0 ? (
-        <div className="text-center py-12"><p className="text-sm text-gray-500">No decisions recorded yet.</p></div>
-      ) : (
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-          <table className="w-full">
-            <thead><tr className="border-b border-gray-200 bg-gray-50">
-              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 w-12">#</th>
-              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 w-28">Date</th>
-              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Decision</th>
-              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 w-48">Key People</th>
-              <th className="px-3 py-3 w-10"></th>
-            </tr></thead>
-            <tbody className="divide-y divide-gray-200">
-              {decisions.map((d) => {
-                return (
-                  <tr key={d.id} className="hover:bg-gray-50 transition-colors cursor-pointer"
-                    onClick={() => openEdit(d)}>
-                    <td className="px-6 py-4 text-sm text-gray-400 tabular-nums align-top">{d.id}</td>
-                    <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap align-top">{d.date ? formatDate(d.date) : "\u2014"}</td>
-                    <td className="px-6 py-4 align-top">
-                      <p className="text-sm text-gray-900">{d.title}</p>
-                      {d.description && <p className="mt-1 text-xs text-gray-500 line-clamp-2">{d.description}</p>}
-                    </td>
-                    <td className="px-6 py-4 align-top">
-                      <div className="flex flex-wrap gap-1">
-                        {d.owner && <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200">{d.owner}</span>}
-                      </div>
-                    </td>
-                    <td className="px-3 py-4 align-top">
-                      <button onClick={(e) => { e.stopPropagation(); openEdit(d); }} className="text-gray-400 hover:text-blue-600" title="Edit">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+      <DecisionViewSwitcher
+        view={view}
+        onViewChange={handleViewChange}
+        filters={filters}
+        onFilterChange={handleFilterChange}
+        showFilters={showFilters}
+        onToggleFilters={() => setShowFilters(!showFilters)}
+      />
+
+      {loading && (
+        <div className="flex items-center justify-center py-12">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
         </div>
       )}
 
-      <EntityModal open={modalOpen} onClose={() => setModalOpen(false)} title={editingItem ? "Edit Decision" : "New Decision"}
-        onSave={handleSave} onDelete={editingItem ? handleDelete : undefined} saving={saving} deleting={deleting} error={modalError}>
-        <FormTextarea label="Decision" value={formDecision} onChange={setFormDecision} placeholder="What was decided?" />
-        <FormInput label="Date" value={formDate} onChange={setFormDate} placeholder="YYYY-MM-DD" />
-        <FormTextarea label="Rationale" value={formRationale} onChange={setFormRationale} placeholder="Why was this decided?" rows={2} />
-        <FormInput label="Key People" value={formPeople} onChange={setFormPeople} placeholder="Comma-separated names" />
-      </EntityModal>
+      {!loading && view === "board" && boardData && (
+        <DecisionBoard data={boardData} onDecisionClick={handleDecisionClick} onRefresh={fetchData} />
+      )}
+
+      {!loading && view === "list" && (
+        <DecisionList
+          decisions={listData}
+          onDecisionClick={handleDecisionClick}
+          onStatusChange={handleStatusChange}
+        />
+      )}
+
+      {!loading && view === "timeline" && timelineData && (
+        <DecisionTimeline
+          decisions={timelineData.decisions}
+          onDecisionClick={handleTimelineDecisionClick}
+        />
+      )}
+
+      {selectedDecision && (
+        <DecisionDetailPanel
+          decision={selectedDecision}
+          onClose={() => setSelectedDecision(null)}
+          onUpdated={() => {
+            setSelectedDecision(null);
+            fetchData();
+          }}
+        />
+      )}
+
+      <DecisionCreateModal
+        open={showCreate}
+        onClose={() => setShowCreate(false)}
+        onCreated={fetchData}
+      />
     </div>
   );
 }

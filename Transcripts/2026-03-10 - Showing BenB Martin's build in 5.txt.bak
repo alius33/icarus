@@ -1,0 +1,126 @@
+Ben Brooks  0:00  
+Be sold. I tell you what, I nearly didn't make it a Moody's app. I was gonna stick it on the app store and see how far I could get. But all of a
+
+Unknown Speaker  0:11  
+sudden, you're retired.
+
+Ben Brooks  0:15  
+I don't need clients. I don't need support and maintenance,
+
+Speaker 1  0:22  
+right? We were in the meeting with the life guys, talking about app factory, talking about building five, talking about putting their models on IRP, for crying out loud, real strategic stuff. Bring up slightly. They were like, Yes, where is this? We want that now.
+
+Azmain Hossain  0:41  
+Christian current, okay, it's the same thing when I mentioned to to Alexandre, when I mentioned it to anybody senior, everything else, they're like, Okay, Clara, all this AI stuff, great. Wait, I can make presentations just by one click. Send it Alexandra. Sit with him and teach him. This is Ben, when you created the very first version of the MCP server. He was like, teach me how to use MCP servers. I need this now. Yeah, yeah. So it's gonna be a big but
+
+Speaker 1  1:09  
+it is. But to that end, actually, then we just wanted to grab you for a few minutes, just to walk you through what Martin has done on building five, because he's done an amazing amount of progress. But I think it definitely helps with the prep for what exceeding stuff needs to look like. So before Martin gets into detail, I kind of the way that we were thinking about this was you're going to have some people panel yet to be decided at exceedance and innovation track. The conversation is going to be around customer challenges and how they change in the light of the tool and that's available today, and why they're no longer paying pediments to adoption. Then you don't pivot to a conversation with one of these panel people about, oh, but you want to embed something in your workflow. You want to analytic. You want to x, y, z, from our platform today, that looks like this. What does that look like in the new age? Then it pivots to Martin, will open up building five and show you the kind of analytics that's built on top of the platform just like prompting. So does that sound like Ben? Is that aligned of what you wear your headspace was what you were thinking about for? Yeah.
+
+Ben Brooks  2:07  
+I mean, I don't know what the right makeup of the hour and however long it is is, but yeah, I want to sort of explore our collective comfort with showing those types of capabilities, and how might we think about that in the in the moment, you know, doing something like super creative versus having it pre canned, and what's, what's like, what, what's just like, a really interesting way to bring the stuff to life for people and I, and I really don't know, so very open, cool.
+
+Speaker 1  2:35  
+So that's the good segue. Martin, are you able to bring up the dashboard that you showed us earlier?
+
+Martin Davies  2:40  
+Yeah. Okay. You can see my screen. Yep, okay, so you have the just the index page first, so you can select between your data flow in, your data flow out, or the one we're looking at at the moment, which is your dashboard builder. So this is done. You've got a split at the top of the page between visual and AI assistant. So I'll start with the AI side and then switch back in a minute. But at the moment, this is just JavaScript acting as an agent until it gets wired up. But the idea is you can come in here and say header, and then it'll prompt you, so okay, like both metrics, etc, and you'll go through the process. And this whole dashboard is drag, drop. So got custom, like customizable components. So okay, actually, this should be up here. This we might want to make a bit bigger, same here, and then each component has three categories. I'll go to the visual builder at this point, so you have a data which is just like table, visual, which is a predefined format, and then custom which is where the AI comes in again. And actually I want to show this as a horizontal bar chart, and it will go and do that. So as you're going through the whole time, you have a preview button in the top so you can actually view the dashboard in a cleaner page and again. So going back to that preview, you might be like, Okay, this is not needed. We might want to rename something. So all of this controlled here, so you can either just change your titles, for example, or you can switch it off completely, just give it a cleaner look. And then we have other components so you can build things out, like tab containers, where you can say, Okay, actually, I want to do my maps in here. So I'll put global and your state, and then you can just bring the relevant, relevant components in. Obviously you can clean it up a bit more as. As you go along. So each component then has its own pre configurable settings as well. So for example, the header you've got, like show pills. On this one, you've got perils, etc. And then the idea is that you've also got themes in the backgrounds. You've got Moody's one you've got dark theme. You can add in logos, etc. So just as a quick example, we could bring in canopious, and then you can just change your branding quickly. Just use the pill so the and we can do this. And suddenly, within
+
+Azmain Hossain  5:47  
+He's created a white label solution somehow, yeah.
+
+Martin Davies  5:56  
+So, yeah, he basically just build it out. And then eventually you can get through things like so I should say in here you've got a lot more settings, like your font, your corner radius, your background image. And eventually you get to what we started with originally, which is the dashboard that looks like this. So at the moment, this is all looking at, well, the side is looking at risk model that the other bits aren't wired up yet, but that's the next step. So, yeah, you can quickly, just with a few track, drop, resize, change, the settings go from a blank page to your full dashboard.
+
+Ben Brooks  6:40  
+Yeah, cool. So what's the kind of what's the like playground that you're doing this in from a from a data context point of view? Is it pulling IRP API's and in from risk modeller or something like that, or elsewhere?
+
+Martin Davies  6:59  
+So the data that you've seen here, a lot of it is just sample data. The data sources is coming from IRP, from the platform API's but yeah, like I said, that's the next step. Is to actually, when you click on this, it's actually going to run the relevant API and bring the data back. But then you have the AI layer on top that will allow you really take into the next level, if, if the predefined component, component doesn't give you what you need.
+
+Ben Brooks  7:26  
+Yeah, okay, yeah, cool. Because I, I'm sort of really interested in what, what's the way we could show people stuff that currently takes a huge amount of time, in no time at all, is this, is there a, like, a common, irritating market workflow, or a problem that people can't get to today, or or something like that. That's demonstrative of the like, the flexibility somehow you see what I'm getting at.
+
+Martin Davies  7:55  
+Yeah, it's probably more on the data side. So yeah, that flows in. Data flows out. So if you think about actually taking a database file and running that process that you saw on the original dashboard, where it identifies locations perils and actually runs your models, so yeah, probably more on that workflow, again, on the on the data flowing out with actuarial data that we can then export, but, yeah, just bringing those three together,
+
+Ben Brooks  8:26  
+yeah, okay, that's cool. And I was sort of wondering about, I don't know whether we'll get anywhere near it for, for exceedance, but like, data lake capabilities and the con the portfolio context and that kind of stuff would be, would be pretty interesting, potentially. I don't know whether you can do that type of integration with with what's there today on risk data lake or not, but I wondered about that. And there's internal use cases around that as well, right? Like the way, the way that we do cat bond analytics or something like that today, but I don't know if we can have that work, given the the tech constraints that we have around the platform right now. Is that something that you've bumped into at any point?
+
+Martin Davies  9:17  
+No, I've not really done much on the on daily side, to be honest. Yeah, I'm still struggling to really understand the full benefit myself. So that's
+
+Ben Brooks  9:29  
+partly why I asked the question, I'm with you. But I think, I think that kind of stuff is going to be a theme from the first day to potentially bring to life for people, I'm not sure. Maybe we don't bother because we can't figure it out either. That's fine. And then I think Rich was asking for the MCP code earlier, like it would be pretty interesting to show how you can prompt your way to some of these things.
+
+Martin Davies  9:59  
+Yeah. Again. As it comes in, with the workflows, I think on the dashboard builder, maybe a lot of the you know, we pretty much know what the data, what data people want to see. So a lot of the predefined stuff can only be set up. But yeah, when you get to your data flows, that's probably where, where that really takes off.
+
+Ben Brooks  10:20  
+Yeah, okay, all right, so what are you? What are you thinking of doing next?
+
+Martin Davies  10:29  
+Within here, I will finish wiring this one up. I said this is currently a JavaScript acting as an agent, so that only is wiring up, and then, yeah, once everyone's happy with this part, I'll probably go to the data flows in and actually start looking at the workflows with it the agent.
+
+Ben Brooks  10:53  
+At some point we should, we should have a chat with the product guys about how we think about this as a potential experience. Like, is it something that we want customers to be doing inside a Moody's experience? Or do we want to just show people how to do it themselves and and have them go for it? I don't know, but I think that's potentially quite interesting. As you know, SAS gets eroded in value, that that's a way in which we retain some some control over that customer experience, I guess. And then also, are there ways we can plug in other bits of the Moody's data estate that would be pretty cool, like, if you could show, I don't know. I mean, you, you probably know Martin or, you know, hook up with Gentilly and think about it. From your joint market experience, if you're going from underwriting a piece of business, what are the things that you need to think about through that process? Do we have information on sanctions, KYC, credit risk, stuff that's interesting, and then kind of follow that through to the point where you're showing it in a in a dashboard, as part of a portfolio, and and that type of thing, like making this the kind of the life cycle of a risk kind of thing would be, would be quite an interesting demo, right? Because then there's something that's relevant to everybody in the audience.
+
+Martin Davies  12:17  
+Okay, yeah, is that data that we have access to those sanctions and credit ratings and things like that, because we could bring that in.
+
+Ben Brooks  12:26  
+There's a whole, there's a whole load of stuff on copilot, on the what's it called, copilot developer site, I think, is it copilot.moody.com and then there's a dev, Developer Tools section or something like that. And I don't know how extensive that is relative to everything else that's going on, but there's a lot of talk about Moody's one view, or whatever it's called, this week at sales kickoff. So we can have a chat with some of the guys positioning that as a way in which we could, I don't know whether we can ingest data from that directly or call the API's behind it, all sorts of stuff in there, potentially that could be interesting.
+
+Speaker 2  13:09  
+Okay, okay, yeah, something to think about.
+
+Ben Brooks  13:12  
+Yeah, for sure, that's very cool. You've got it up and running super fast. Yeah.
+
+Martin Davies  13:19  
+I mean, it's cursor, though, right for me.
+
+Ben Brooks  13:23  
+So you do it all in cursor, rather than Claude or anything.
+
+Martin Davies  13:28  
+Yeah, all in cursor, yeah. I've not hit any limits yet. Which is good?
+
+Ben Brooks  13:35  
+Keeps destroying his Yeah.
+
+Azmain Hossain  13:38  
+Don't look at our bedrock API usage costs. Looked at it this morning. We were sad and shocked. It's up to, I think, like, 1200
+
+Ben Brooks  13:50  
+Okay, that's too bad,
+
+Azmain Hossain  13:52  
+yeah, but that's in, like, I don't know how many days since we all got bedrock access,
+
+Unknown Speaker  13:57  
+definitely, definitely, less than a week. Yeah.
+
+Azmain Hossain  14:02  
+So, yeah, all right, I don't know that's another
+
+Speaker 3  14:04  
+conversation, but I mean, as far as this application goes, I mean, we should be able to consume pretty much any API or data source from there, and then like the next step is obviously introducing this into the app factory so it can spin things up and run things accordingly. Yeah, yeah, yeah.
+
+Ben Brooks  14:27  
+Cool. And then what? What's the, what's the process for that, in terms of, like, the users usage, do you have, like, an API key that gets entered by the user, or something,
+
+Speaker 3  14:40  
+the IRP for, for which part, sorry for that,
+
+Ben Brooks  14:44  
+for this, if you've I'm just wondering about how, how would a how would we use it? Or how would we suggest the customer uses it? They would just punch an API key in for IRP and hit it up that way.
+
+Speaker 3  14:58  
+Um, I guess. Yes. I mean, either way, I guess that's more of, like a an end use case experience of what we would want the customer to do. Like, yeah, this is something that, like, you know, our let's, I'm just gonna say sales or customer success managers or something, if they're the ones using this, and we're just showing to the employee, then we could have a key, specific or employee, I mean, customer, then we can have a key per customer, or anything like that. Or if it's something that we want to hand off directly to our customers, that we can give them their own key, that they can mess with. And then once they're where they want to be, this can hook into the app, like, basically, when they're ready to have their dashboard or anything it is connected to the app factory, and it'll just be another project in the app factory that being said, when we are starting to deal with customers gaining access to things and stuff like that, we may want to consider, like, a different source of authentication, things a lot like those are deeper conversations I'm going to need to have with Security, because, like, ideally what I would like to do, and I'm having conversations right now with with security around this. I mean, we have SSO it's secure, it's fine. The next step, honestly, is I would love to get app factory only accessible via VPN and but any dashboard that a customer wants access to, then we'll just need to have a better understanding of, like, how they gain access, what keys and stuff they want to use. But, I mean, it could very well be just we give a customer, like, like a licence key that they are able to put in and go from there, and they are able to provision stuff accordingly, and that way we can at least track things and stuff like that, because, like, if we're going to be consuming, essentially consuming our own data, we still want to be able to build it to them.
+
+Ben Brooks  16:49  
+Yeah, yeah, absolutely. But I'm also thinking about internal usage, so there could be an interesting chat with the guys doing ILS work about whether there's enough here that you could build out a risk analysis report for a catastrophe bond in an automated way, for example. And they do a lot in risk data lake now, where I think they've made reasonable efficiency gains from pre compiling scripts, running them on risk data lake, all that kind of stuff. But it's still assistant type workflows. There's still a human operating that process, and I'm kind of pushing them to say, how do you take that, end to end? Using platform API's, without the human in the loop. You write all the tests, automatically generate the numbers, and away you go. But they're not that. They're telling me that the limitations of risk data lake are such that they can't achieve that yet. And I'm kind of saying, Okay, well, maybe you shouldn't use risk data lake, then we're not limited by that, in that sense, not for that use case anyway. So, but in doing that, I would assume they need to put an API key in for IRP, for, you know, Lawrence, or whoever's running it, and run it that way. Yeah.
+
+Speaker 3  18:09  
+I mean, we can into like we have our own. I.
+

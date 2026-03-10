@@ -1,0 +1,714 @@
+Azmain Hossain  0:03  
+
+Oh, by the way, is my Can you hear my fan going? By any chance? No, it's clear. Okay, good, good. I've got my desktop and my laptop non stop running odd, and my room is heated up like that's my room is getting boiling up. I
+
+
+
+Martin Davies  0:31  
+
+forgot to mention last week you had that conversation on the Friday before about the poly market, and it ran. And then literally, as literally as you said, you said, you said the week, this weekend, and then it happened, if you actually put
+
+
+
+Azmain Hossain  0:45  
+
+any anything on, I know what's up.
+
+
+
+Richard Dosoo  0:54  
+
+Hey. Martin Azmain, sorry about that. Raffles trying to get hold of me about something, but he says it's only going to be five minutes. Do you guys mind sliding without me and then I can jump back?
+
+
+
+Azmain Hossain  1:06  
+
+Yeah, yeah, happy to
+
+
+
+Ben Van Houten  1:08  
+
+Yeah, sure. I'll be back in a minute.
+
+
+
+Azmain Hossain  1:14  
+
+Cool, all right, so I think I put in like 45 minutes for this, mainly because it's our, it's our first, kind of built in five standard. And I just, I just want enough time to discuss stuff. But what I wanted to start off with is, since our conversation, you know, where you showed me the dashboard and kind of talked up briefly, just an update on like, you know, you and Richard. You guys have been, obviously, been going back and forth, but like, how do things stand now? And what?
+
+
+
+Martin Davies  1:46  
+
+Yeah, yeah. I mean, I'll show you. It might have been better if Richard was there as well, because he probably wants the same update. But let me share my screen anyway. We can always do it when he's back. I said we've got plenty of time, so this is essentially the homepage, where it allows you to select which path you want to go down. So whether it's like data flow in the build on top are the out pillars. At the moment, I'm just working on the build on top, which is a dashboard one. So when you go into here, you essentially have a toggle at the top that allows you to flip between visual builder and AI assistant. So yeah, let's start here for a moment. And at the moment, this isn't wide up. I think it's just some JavaScript in the background. Is something that's acting like an agent. But for example, if I go, you can see my screen, right? Yeah, for example, and then both metrics, so this kind of thing, it's just
+
+
+
+Azmain Hossain  2:59  
+
+JavaScript in the background. Yeah.
+
+
+
+Martin Davies  3:02  
+
+So, yeah. So it needs that wiring up, but I love it. You get the idea of plug
+
+
+
+Azmain Hossain  3:07  
+
+everything in and wire everything up. This is amazing,
+
+
+
+Martin Davies  3:10  
+
+yeah, so then, but it's also like, sort of drag drop. I should say, Okay, bring this up here. And then I think at this point I'll quickly flip back to the visual builder, because you've got more options. So here, for example, remember we said each, each component. So sorry, I should say, down the left, you've got all your different components. And for each component you have three options. So you've got data, visual, custom so for example, if I go data, you're just going to get, like, the table output. So again, this is all everything can be customised, right? So let me bring this down to line it up so you got data, visual, custom So here, I might say, Show us horizontal bar chart. So this is where the AI agent comes into it. Oh, wow, yeah. So the whole time, I should say, you have this preview button at the top, so you can actually view it purely as a dashboard and every like. So everything is customizable. So if you don't like the title, you can change it. If you don't want to show the title, you can hide it. You can hide the borders. Every component has like its own. Keep clicking back between the two so you can see as it progresses. So let me bring some more bits in, so that if I go to the EDM summary by country, you get more options here, like show flags. Okay, we can hide them. Show maps. You can flip between having them on and off. So everything, every component that has its own individual settings as well. And as we go further down, let's have a look at more of the basic components we have, like tabs container. So here, we might say, add a tab called summary, one called A. And what's this above, key losses, for example. And then what we can do, if I hide the head on here, because we don't need it, and then in here I can say, Okay, on The Key losses, I want to show the key losses, and in the summary, show summary metrics. So then you go further down, and suddenly you've got your tabs, you've got your summary, you've got your key losses, and it just allows you to build it bit by bit to actually give you your final output. So on top of all this, you then have an overall settings for the dashboard. So you've got your different presets. You got like, a dark mode, yeah? You can add the logo background. If I go at the background for a moment.
+
+
+
+Azmain Hossain  5:49  
+
+Oh, so it's basically like, we're essentially white labelling it. So they can just put in their own company logos and stuff. Yeah.
+
+
+
+Martin Davies  5:56  
+
+I mean, let's do that, right? So if I go back to a light, let's do, I have a Canopus. In fact, I think I have to. So if I do canopies, and then what I can do is say, Okay, I'm going to use their colours.
+
+
+
+Unknown Speaker  6:14  
+
+Let me remove that background image for a minute. I'm I bring a spacer in just one second,
+
+
+
+Martin Davies  6:32  
+
+so within like couple of minutes, you've got a branded client dashboard. And then this all ties back nicely. Sorry. I should say as well, I have started to, like, link it to the API. So if I go just bring this data sources in, this is actually looking at the risk modular API.
+
+
+
+Unknown Speaker  6:54  
+
+Maybe I, maybe I need to bring that further up. I've been trying it to the top.
+
+
+
+Martin Davies  7:03  
+
+So you can actually see the these are, you know, this is, this is like,
+
+
+
+Azmain Hossain  7:09  
+
+and it's pulling perfectly from, from risk modeller, like the data is live and up to date.
+
+
+
+Martin Davies  7:16  
+
+This one is, yeah, so the the rest is just placeholders with dummy data.
+
+
+
+Azmain Hossain  7:21  
+
+Yeah, that's amazing,
+
+
+
+Martin Davies  7:23  
+
+but yeah. And also, you've got like, a data source list, which, so you've got like, different ways to show it, yeah.
+
+
+
+Azmain Hossain  7:29  
+
+So on all these you've got a custom section, what, what happens, like on these charts, if I click Custom What's the function?
+
+
+
+Martin Davies  7:36  
+
+That's the one I showed you earlier. That's where you get the AI bit. Oh, so you got data, which is, yeah, so here you've got visual custom, is that where you actually give it a prompt and you can, I mean, that's a bit of news wiring up, but combat, for example, so it's your AI, yeah. Oh, it just summarises the countries. So, yeah, that's the pilot
+
+
+
+Azmain Hossain  8:08  
+
+with Richard. I
+
+
+
+Azmain Hossain  8:15  
+
+don't know Richard, have you? Have you seen this? What Martin's built. It's epic.
+
+
+
+Richard Dosoo  8:24  
+
+I've seen some of it, but not all of it mine. I saw the older version of it, right?
+
+
+
+Azmain Hossain  8:28  
+
+Yeah, Martin, please feel free to walk through it and just show rich, because this is amazing.
+
+
+
+Martin Davies  8:32  
+
+Okay, I can't give you a quick from the beginning again. So the new home page is your options of data, flow in, build on top of flow out. So I've been concentrating on dashboard builder. Here you have toggle at the top visual or AI at the moment. This is JavaScript driven, just acting as an agent because I you know only is wiring up, but if I go like, add header prompt, use or like both metrics. So it's building in the Yeah,
+
+
+
+Richard Dosoo  9:06  
+
+this is awesome, Martin, and there's a plugin for Claude code called playground that I want to send to you, because it lets you do exactly what you've done here, but you interactive, so two people can work on the dashboard at the same time. I have downloaded let me send it to you, but you're going to need to deploy Claude to get it to run. But okay, I'll keep
+
+
+
+Martin Davies  9:26  
+
+going just for a second then. So, so this is like, drag, drop, everything's customizable. I'll flip back to the visual build over here. So each one has, like a data, which is like a table, a visual or custom, which is your AI, so I can, like horizontal bar chart, and then that's going to update accordingly. Everything has can be changed. So your titles, for each each panel, everything from your titles, you can hide it. You can hide your borders. And. And the whole time you've got this preview, which allows you to actually view it as a dashboard. We have more things down here, like tabs containers, so you can build up your tabs and bring stuff in. And then here you have all your branding. So like that mode, logo, background, everything from like text and
+
+
+
+Richard Dosoo  10:21  
+
+spacing, and this is running off the API data model right for like, so you're the attributes. The underlying data model that you're hitting is the API right?
+
+
+
+Martin Davies  10:34  
+
+So at the moment, the only one that's wired up is this data source selector, which is your databases. Yeah,
+
+
+
+Martin Davies  10:50  
+
+switch back to Moody's branded so yeah. So this, this is the only API that's actually wired up at the moment, but yeah, it's kind of the next step. So within each one of these as well, you can obviously save them. Each component has its own options. So depending which one you're looking at, it's going to give you different things. Like here you've got show pills or not, and then going back to initial. So you can save each dashboard. You can create a new one, or it's got the original one built in. So I can get on this, and then this should look a lot more familiar. So you've got, like, all of your the one that is basically built off is built in as a pre built example.
+
+
+
+Richard Dosoo  11:34  
+
+What might and this is amazing, right? So first, let me say that this is awesome. And it's like Databricks has something like this, but it's like, no one the product team don't want to show it to anyone, because they don't want to tie themselves into a version of Databricks that would be tied in forever. It's called Genie, but you've basically rewritten that on your own in like, a day, which is fantastic. What we should do next is like, again, I don't want to bring the next things without saying how amazing this is. This is really, really awesome. We want to get you plugged into using navigator as your as the MCP server that gives you the API definition so that that's the living, breathing integration, right? So you're not well, your first step could be, you take all those Wisdom. Was still sorry, I'm showing my age now, talking about, was it? Sorry, these issues show. Take all the young files, the open AI specification for the API's. You can use that as the first thing. Then you replace that with the MCP server that balance built for the risk model APIs. And when you've done that, that can that completes the loop right of someone asking a question, you finding out what APIs are available, then building the dashboard, then pulling it programmatically. That's it, that's, that's, that's it. That's the demo. That's the cleanest demo. Have you got access to the repo that Nicole put the navigator MCP circle?
+
+
+
+Martin Davies  13:01  
+
+I don't remember seeing the link. What's this one?
+
+
+
+Speaker 1  13:04  
+
+Let me. Let me ask him. Anyway, yeah, I don't remember because I thought He said it.
+
+
+
+Unknown Speaker  13:16  
+
+But let me second. I
+
+
+
+Richard Dosoo  14:18  
+
+Okay, hopefully it comes back soon, and then that's, that's, that's how you bring all the pieces together, Martin, too, and that that is amazing. That's mainly gonna have to re baseline the project plan so it's done.
+
+
+
+Azmain Hossain  14:31  
+
+I know this is what I was saying as you just joined. I'm like, when Richard threw us that curve ball, of like, oh, maybe we could get this done by exceedance. I was, I had a mild stress attack. But Martin, you've, you've made it come true.
+
+
+
+Richard Dosoo  14:46  
+
+Like, no, this is it. This is the thing right now. We need to get Martin Ben's that sales kick off this week, right? But when he's back next week? Um, well, I. Yes, you know what? It's cool. Make a V when you I would say, first get the MCP. I'll send Nico an email, a team's message, hopefully he replies in a minute. As soon as he replies, get the MCP. Plug the MCP into this that that that 10x is this like, just straight away, because then no one like that. I challenge anyone right to come and question the value of this once you plug it into, like, just, that's it like, it's awesome. So once that's in, you've got a living, breathing dashboard builder for risk modeller and the so what is not all clients come and buy this. It's like clients, you can do this yourself. Yeah. How many of you got adoption blockers? Right? Are based off UI or not having the thing in the same way? That's not a problem anymore. You don't want to hear that from any customer telling me, oh, well, I don't know how to display the metrics. Sure. Dashboards don't do what I do. Guys got an MCP server, you got API, you got these couple lines of code with AI do yourself.
+
+
+
+Azmain Hossain  15:59  
+
+Richard, like we when we analysed all the blockers in Clara right now, the biggest trend was use UI and UX problems, so this is like a freaking turnkey solution to that as well.
+
+
+
+Richard Dosoo  16:15  
+
+You, I make you right to be honest. Like, what Martin we should do next is one, we should get Bala to see this. When you plug the MCP server in two, we should get the other product teams to see because to say we're going to demo this at exceedance, they will probably ask you to give this to them, to put in the product. And that's cool, right? Because it's basically just a report builder, yeah, but this is it like the for us, the goal is not like, I'll build out a cool product capability. The goal is to tell clients, this shouldn't stop you adopting anymore. This shit is table stakes now, shouldn't stop you adopting anymore. You that the building something is one thing, supporting it is another. But the previously, this would have been a look amliff, right? You know the pain, but I'm live and that kind of pain is like, you just tell them guys, you can do it yourself. It's not a problem anymore.
+
+
+
+Martin Davies  17:12  
+
+Yeah, I think that one's coming as well when we start building these throughout, you, do you? You're basically doing the whole thing, aren't you? You're doing, your ingestion, your Exactly, yeah, like egress, like
+
+
+
+Richard Dosoo  17:26  
+
+exactly, you're doing the whole round trip of what their integration project would look like in five minutes. Forget an 18 month project. It's done it in five minutes. Yeah, that's, that's, this is amazing. This is, like, one thing
+
+
+
+Azmain Hossain  17:39  
+
+putting, putting project manager hat on, we want to take credit for this. Martin has done this. We don't want it to be like, we give it to product. And they're like, Oh, look at this cool thing we built, like, make noise. So people know that Martin built this. Our team built this using AI, yeah,
+
+
+
+Richard Dosoo  17:57  
+
+you're so right. And that's, that's luckily right, Ben. Is the going to be the outlet, the valve for that, right? That Ben has got this standard exceed a stand, sorry, he's got an innovation panel at exceedance, and he's been trying to figure out how to do it, and that was amain, what I was putting in the chat group, right? About getting the person from Munich agree, getting the person from afrofic to come and talk on the stage, this all underpins that panel conversation, right? So Ben has those three people at exceedance, right? Talking about innovation in our space. And he has a living, breathing example of how a customer problem today that normally takes nine months to manage. You, use AI, you finished it in five minutes, like that. That's That's it. That's the Mic drop. That's it. And 100% new view, right? The way we manage this outward communication is in the following way. One, Martin gets the MCP server, plugs in, then it's real, then it's aligned to product two, then we get a meeting with the product team. Well, probably a meeting with a tech consulting team, because to show them what we've done, right? Because I know they're doing something adjacent to this, like you said, Elliot's doing something similar to this. So we do that share out. But in parallel, we did share out with Bala, Lonnie and Alicia. We tell them we're going to show this at exceedance. We get Ben's buying as well. And then the next step is the exceedance content factory. So Evan, all those other guys, right to basically say, Guys, this is our demo script. This is the conversation we want to do exceedance. This is what we're going to go through. This is why. And then there's probably some other people we need to engage, like Steve Gentilly, Liz Rhett and others. But I think we'd go through the gears as we in that order from a priority perspective. But this is, this, is it right? My that's, that's the exceedance, like what we really, actually need to do is get, do you ever met Mike Bibo? Have you
+
+
+
+Martin Davies  19:46  
+
+don't recognise the name,
+
+
+
+Unknown Speaker  19:47  
+
+no. Do you have you met Sam Gibson?
+
+
+
+Speaker 2  19:51  
+
+Oh, wait, oh, maybe I have. Maybe I'm in
+
+
+
+Richard Dosoo  19:55  
+
+Bieber's quality, right? He's like, he's such a cool, like, personally and professional.
+
+
+
+Speaker 2  20:00  
+
+I can actually who was the second one you said? Sam. Sam Gibson, yeah. Halbin, yeah,
+
+
+
+Richard Dosoo  20:10  
+
+yeah. But Bebo runs the team right, and Sam runs the UK part, and they have to demo risk modeller to customers all the time. And they always get asked, How do I demo reach data lake? Or how do I demo reporting? Or how do I demo thing? If I'm going to get a call with BBO, and you're going to show him this, and he's going to be like, yep, give this to me. I'm going to include it in my demo script for risk modelling now, showing that these kind of problems are not problems anymore, then we need to get you in front of Dan Flemington, who's the UK sales guy, and say, Hey, Dan, this is how we're talking about presenting RM now in the future, because it removes that blocker. Right then he, Dan is going to look at a sales pipeline and say, these opportunities, Martin BBO, go in demo this way, I want to see the uptick that's, that's, that's that satisfies the original scope of the projects right that we're talking to. So those are the other stakeholders, as many that are critical that we need to engage.
+
+
+
+Azmain Hossain  21:09  
+
+Yeah, yeah. Thank you for mentioning that, because I'm literally building out stakeholder analysis from transcript engine on my little app. So yeah, thank you for
+
+
+
+Richard Dosoo  21:21  
+
+saying we should let me see if do you well, actually mind? Let me let you finish what you're going to go through and the next steps, and then maybe we bring in Ben Van Houten and Nicole now, because one Ben Van Houten will want to put this on that factory. So we need to figure out with him when he can do that. And then nickel is obviously helping build out the app factory. And he's, I've told him to reach out to you separately, because his work stream has got a slight dependency on what you're doing. So it'd be good to get those guys opinion if you've if Martin, there wasn't anything else that
+
+
+
+Martin Davies  21:53  
+
+you wanted, yeah, I was gonna say, I mean, everything else is just different components. But, yeah, the components can be built out as and when there's not really any other features, it's all, yeah, that's pretty much it
+
+
+
+Richard Dosoo  22:07  
+
+all, right. So let me first. Let's get Ben first. Let's do in priority order. So let's get Ben Van Houten,
+
+
+
+Richard Dosoo  22:22  
+
+mine. I can't say this enough. This is awesome.
+
+
+
+Martin Davies  22:25  
+
+Yeah, I said from the beginning. Is like the day, is that being able to visualise it is is such a big win. So, yeah, doing it this way is even better, I think because you actually build it with
+
+
+
+Richard Dosoo  22:37  
+
+the client. Yep. Hey, but sorry, the impromptu, we still have included you in this from the get go, but apologies, it's just that. It's one other project that has made we're looking into Martin is building out the front end to the, I don't want to say at factory, but it's called like the building five, which is the essentially allowing us to use cursor to drive pipeline. So he's got an app here that he's built right, which allows him to build dashboards on top of risk modeller, which is great right now, obviously you can imagine right, that this should go in the app factory. And maybe, maybe there's some of these components that help you build other stuff right for internal productivity in the app factory. But if we're talking about the goal of just being able to sell risk model and show customers that this isn't a problem, this is like, we probably want to think about putting this, integrating this, into the app factory at some point in the future. And there's going to be, like, sales people that we need to get on this, NPs people that we need to get on it. So wanting to get your input on it now, right? So directionally, we can start thinking about it. And with this is probably going
+
+
+
+Speaker 3  23:47  
+
+to be demo.xc Okay, so is this just to clarify? This isn't part of Clara in itself, or IRP. This is, is this meant to for anyone to build their their applications, or more, I guess, more I guess more context, that would be great. So, yes,
+
+
+
+Azmain Hossain  24:05  
+
+sorry, is it all right? Rich, yeah, so Ben, this is basically the scenario is you're sitting in a room with a with a in pre sales, with a customer, and they're like, all this data is great, but you know, it's going to take me six months to get my guys to build a dashboard. And you're like, let me show you how you can drag and drop. Like, on the left hand side will be all the modules from risk modellers. So location, APIs, hurricane, windstorm, blah, blah, blah, oh, cool. You drag and drop. You're like, I want windstorm and Japanese typhoon. I want to visualise those two you've got your, obviously, your audio already loaded up, and it just visualises everything. That's it, yeah. And what he's built in is you can just type stuff in and it will, it will do it all visually. You can change thingy. And then what Martin's also done is. Made it white label, so you can change all the branding and then publish it and share it if you want. So that's the that's the use case. Awesome.
+
+
+
+Speaker 3  25:10  
+
+That's fantastic. So
+
+
+
+Azmain Hossain  25:12  
+
+eyedropper tool in this app. What the hell?
+
+
+
+Speaker 3  25:19  
+
+Yeah. I think Martin needs more stuff to do. No, this is great. So okay with this would be considered like a, basically, like a different project name, essentially within the app factory that someone can go to and or, yeah, is that what we're envisioning? Yeah,
+
+
+
+Richard Dosoo  25:43  
+
+sorry, guys, I was on mute, so I think we, well, we had the tagline building five, right? And Martin, oh, you as the as the as the dad of this thing, right? Say, Daddy, I don't want a conversation, but the you get the first dibs on naming in it so and then that, then when we forget out the name, then we can have the URL accordingly. But again, like this. This is a, this is a pipeline generation pre sales tool, right, to demonstrate that it's not that hard to build apps in real time that can consume the RM platform APIs, so you can show customers that they're and then the artefacts that you build from this, maybe that's packaged up somewhere, and that application is deployed, I don't know, maybe right, but I think the first thing is just showing this capability right, that you can get this back. So that's, I mean, one second, guys, I'm just going to try and get
+
+
+
+Speaker 3  26:45  
+
+So, I guess my my question so specifically, I guess, around those, those artefacts, so, like, do we, is this something that we want to hand off to the customer, or is that something that, like we want to deploy those additional apps? Or, I mean, oh, I mean this, this is very simple to we can, we can just add it as a project into the app factory. Boom, we have it. And it works. Just, I guess, where are you envisioning the the next step from there? Yeah.
+
+
+
+Richard Dosoo  27:14  
+
+So this is the, this is it, right, that for demo purposes, for pipeline building, strictly speaking, you don't have to deploy the app running to app factory, because you just need to prove out the concept that it's working. But actually, this falls back into that second use case that was kind of adjacent to building five or the consulting AI platform, which is you'd want to deploy these apps somewhere you want there, you'd want a database which holds the list of all the applications we've deployed, the list of all the features. We've deployed, the list of all the use cases, workflows, etc, because next time someone wants to build an application with this, wouldn't it be great if they could go to that database and cherry pick the features and put them together and then go away and build something. That's where the real multiplier effect comes from. So, but we can pick that in stages, right? The first thing is, let's get this up running somewhere so Martin can use it to to drive pipeline. Then the step after that comes in, how do we how do we, like take apps that we've built in here, deploy them to our factory. Then the last piece will be, how do we build the metadata and database around that so people can pick from those list of applications to to come up with new ones? Yeah.
+
+
+
+Speaker 3  28:31  
+
+I mean, those are all very easy things to do, and I can Martin you, and I can work together, and I can make sure to polish up that pipeline. But no, that's That's awesome. So let's see. I think the only thing I will say is, let's see. As stupid as it sounds, is there a login button somewhere or login flow that you have here? No, nothing. Okay, no, that's, that's perfectly fine. It's something that we'll we're just, we're going to need to add just around it, but, like, that's, that's easy, that's just the authentication piece, and that's part of a skeleton application that I have. So we'll get, yeah, we can, we can get this running. We just need an, I guess, like, whatever the name you want, and we can go from there. Okay, great. But not this. I mean, this is amazing. We basically doing the same thing with the app factory core is the central nervous system of the application. I had Nikhil work on the front end. He actually just finished up. So I'm going to be taking that from him for and connecting the dots. So this is perfect timing. So yeah, like I can wire all these things up,
+
+
+
+Richard Dosoo  29:52  
+
+cool, and then I couldn't get Ben, but it's fine. We'll grab him later. But I think Azmain, the stakeholders that outlined Ben. The people we need to get next. So step one is, might embed the MCP server into this, so it's using like, the like you're using that to define the data sources, or where you can pull data from. Then we need to get a meeting with our Ben, the manager, Ben to say, look, this is what we're going to go through the exceedance demo script in parallel. Azmain, we probably want to get a meeting with Bala to show him what we've done and tell him where, this is what our exceedance demo scripts going to look like. And then that meeting would be, you remember the meeting we had with those guys a few weeks back?
+
+
+
+Azmain Hossain  30:34  
+
+Yeah, with Lonnie T hand and Bala, yeah, exactly.
+
+
+
+Richard Dosoo  30:39  
+
+And then, and then once we get there by and then it's Evan, like, what Evan proper, who's the marketing guy from exceedance. Well, anyway, that's fine to get that meeting first, and then we'll cover the rest of the stuff later, because we're going to need Ben's buying. I know Ben is going to add the scope to this thing, right? You know how he does, but that's cool. So let's, let's, I think, let's do that. Let's get the MCP integration done. Let's get a meeting with our Ben next week in parallel. Set up a call. Look for a time with Lee, Shean, Lonnie, whoever else, right? And then, and then, once we had that, then we can start framing up what the storyboard for the exceeding stem was going to look like, and then Azmain, in parallel, we can start doing the outreach for Ben's panel discussion, like the person from the internet, kind of person from Anthro,
+
+
+
+Azmain Hossain  31:28  
+
+yeah, yeah, if I mean the Munich one, I don't know, but, man, if we can get the person from anthropic that would be, what was their name again? Do you
+
+
+
+Speaker 1  31:38  
+
+remember I've got it written down, something that we got some internal,
+
+
+
+Speaker 3  31:42  
+
+okay, and just, I mean, I don't imagine this would be an issue, but how many like in let's, let's say this is used by every team or every salesperson, or anything like that. Yeah, would we expect a fair amount of traffic at once? That's the only concern that I would have. As far as running the LLM directly on the ECS serve. ECS service that we're running the the the application itself on, if like, otherwise, we can just spin up an agent on the side, which is easy enough, nice.
+
+
+
+Richard Dosoo  32:20  
+
+It's a good point, right? That once, once we get out of, like, our demo mode for exceedance, and once might be where and his team start using this, then, then it needs to be scalable, right? Yeah, so
+
+
+
+Speaker 3  32:35  
+
+it's not something that we need to focus on now. I mean, we're not going to cross that bridge for a hot minute. And like you said, there's going to be additional scope added so, but I'll just keep it in mind. Like I said, again, I'm Richard today, actually, you're, I think you're on the call as well for to look at what Nikhil has built on for the app factory core. Yeah. And I just need to basically from there. I just need, he's done a great job, so I'm just needing to take that from him and wire everything up, and I can do the same thing with with Martin's. So, yeah, easy.
+
+
+
+Richard Dosoo  33:13  
+
+No, this is, this is awesome. Guys, really amazing stuff. As I said, Martin the piece after this is what's the MCP? And it's going to be like more, I don't say evangelism, but showing the stakeholders in all the different groups getting feedback from on the demo scenarios that you've already done the first one, the other two, and then working with the exceedance guys on the timeline for what the presentations got. Okay?
+
+
+
+Martin Davies  33:37  
+
+And when you talk about exceedance, are we referring purely to the dashboard builder, or the all three pillars with the, oh, you mentioned the fourth as well on well.
+
+
+
+Richard Dosoo  33:46  
+
+So, yeah, I think we need to discuss that with Ben next week, right? Because the exceedance, exceedance, they're going to have, like, a time window. And, yeah, so we probably will have to ask him, which one of the three does he want to go over, and that would drive the priority. But I think the dashboard in one is the is the one. I think the other two could be like, nice things to have in a back pocket to be like, yeah,
+
+
+
+Martin Davies  34:11  
+
+plus some more workflows, so they're not as exciting to the show. You don't really get the same wow factor, yeah.
+
+
+
+Speaker 3  34:19  
+
+And Martin, if you, if you want, in the meantime, if you want to, because, I mean, your UI looks better than the UI that I can put together. If you want to add your own, like login, just the UI, you know, don't worry about the wiring of it, just like the the UI aspect of the login, and maybe have a login or log out button. Okay, yep, sure, yeah, again, don't, don't worry about the, the actual, how it works. I'll get that going.
+
+
+
+Unknown Speaker  34:48  
+
+Okay, yeah, we'll do thanks, yep.
+
+
+
+Unknown Speaker  34:57  
+
+Oh, all right. Guys, this is awesome. Thank you.
+
+
+
+Azmain Hossain  35:01  
+
+Yeah, yeah. So glad we could get everybody in.
+
+
+
+Richard Dosoo  35:09  
+
+Yeah? Well, I wait for, actually, actually. Now, Martin, you put that we will have to wait for Nicole to come back to us. On the, on the, on the Get repo on the repo for building fights on the repo for navigator. So we're welcome to come back once we have that. Let me configure what we'll do next.
+
+
+
+Unknown Speaker  35:28  
+
+The repo for billing. You guys will have a repo for it.
+
+
+
+Richard Dosoo  35:32  
+
+Or no, sorry, there's a the the IRP navigator, yeah. Bala had the Bala sent the code to nickel, and nickel was going to put it up and get somewhere so we could all have access to it. Have access to it. But I don't know where that repo is interesting. Okay, I don't know the name of it, so I need to, we need to find it, because mine needs to integrate that MCP server into his
+
+
+
+Unknown Speaker  35:52  
+
+application. Yeah, that makes sense. Okay,
+
+
+
+Azmain Hossain  35:58  
+
+all right. So one question that I had is, How often should we have these stand ups? I was thinking like Tuesday and Thursday, or whatever you guys prefer,
+
+
+
+Unknown Speaker  36:15  
+
+yeah, Tuesday, Wednesday, Thursday? Well, no, I don't.
+
+
+
+Azmain Hossain  36:18  
+
+I don't want it to be daily. I want it to I like having it either Monday and Friday, where it's like, what am I going to work on? What have I worked on? Or, like, some people prefer not to have Monday Friday. They're like, let's have it on Tuesday and then catch up on Thursday.
+
+
+
+Speaker 3  36:33  
+
+I have a I have a sense that if we don't start making a notion to not have meetings on Friday that my summer is going to be full of Friday meetings. And I'm, I want to avoid that at all costs. I've already, I mean, I already, Martin, I don't think you were here, but I think that's what the team and the team was doing. I think the last couple years is no no Friday stand ups, and it was fantastic to get all your work done and everything. But I'm like, I don't know if we're gonna run into this this time.
+
+
+
+Azmain Hossain  37:09  
+
+So okay, yeah, to be honest, I prefer Tuesdays and Thursdays much, much better. So yeah, I'll set those up.
+
+
+
+Unknown Speaker  37:20  
+
+Okay, great, that's good.
+
+
+
+Azmain Hossain  37:23  
+
+All right. Well, thank you all for your time. We actually finished ahead of schedule. That's a rare standard that finishes. Can I put 45 minutes in? That's why,
+
+
+
+Speaker 3  37:32  
+
+and I wouldn't. So I guess what time. So I actually, I have a doctor's appointment early this Thursday, but I can make it any other Thursday after that,
+
+
+
+Azmain Hossain  37:43  
+
+if you, if you just block off your pound or just send me a message like, what time doesn't work for you? I'll work around it. Okay, then I'll set up like a series from next week, like this week will just be ad hoc. Perfect.
+
+
+
+Speaker 3  37:55  
+
+All right, thank you. Richard, do you? Do you want to connect around the around Benz app,
+
+
+
+Richard Dosoo  38:04  
+
+yeah, yeah, just sort of check some changes into main. So let's go through you guys. If you want to stay on, I'll show you to you as well the let's have a look. So let me show you.
+
+
+
+Unknown Speaker  38:28  
+
+Give me one second.
+
+
+
+Richard Dosoo  38:37  
+
+I'm pushing some changes as we speak, but just to give you, here's the background.
+
+
+
+Richard Dosoo  38:48  
+
+Is called slidey, and what it does is it basically creates presentations based off using an LLM, but it generates them in Moody's format. So you can imagine, right, all the stuffing around that we have to do when we're creating presentations. You don't have to do that. You don't have to do that anymore. So I've got it running locally, and I'll show you. Let me bring this but I
+
+
+
+Richard Dosoo  39:28  
+
+Yeah, so let me just take this brief I'm.
+
+
+
+Speaker 1  40:01  
+
+Right? So if I take that and give it, let me and
+
+
+
+Richard Dosoo  40:14  
+
+then I'll pick which one of these models I want to use.
+
+
+
+Speaker 1  40:22  
+
+I Damn it, sorry, I've made too many changes on my
+
+
+
+Richard Dosoo  40:34  
+
+okay, sorry, but anyway, Martin, sorry, Ben, what I need to do is the changes that I've made locally. I need to push them to I need to push them to main. When I tried to deploy a build earlier, it was failing, so maybe I've put the errors in code, and I'm trying to resolve them now. And once it's finished pushing this latest build to GitHub, it should have resolved those errors. And then we can walk through what this looks like in maintenance well.
+
+
+
+Speaker 3  41:01  
+
+So, so the changes I made last night, they're they're actually on a pipeline or not pipeline a its own feature right now, feature branch, so I just need to merge what you have and this feature branch, and then we'll merge my branch in, and then that will complete the deployment process.
+
+
+
+Richard Dosoo  41:20  
+
+Okay, cool. So this looks like it's still running, right? So maybe if we connect in like half an hour, and then we can, I can, yeah, once that build is finished, and we can do the merge. And then, guys, I'll show you what this looks like when it's working. Go for
+
+
+
+Azmain Hossain  41:36  
+
+and just from, just for my thinking, this is like a one time thing. This is so that everyone can use it. It's not like a project. Once it's done, it's done, we
+
+
+
+Richard Dosoo  41:44  
+
+just, yeah, it's just, this is just a Ben side project type thing. It's not like, it's not a programme,
+
+
+
+Azmain Hossain  41:50  
+
+I'm telling you right now. This thing like this is when Ben built a very first MCP server to make branded slideshows, slide deck. I mentioned it to Alexandre. I mentioned it to a few people. This got more excitement than anything else that we've talked about. Senior people were like, Oh, my God, you could, can I get that? Like he was Alexander instant, like, can I get this MCP server? So this is, this is going to make people very happy once we get it live. Yeah.
+
+
+
+Richard Dosoo  42:21  
+
+Yeah, no, 100% then it may turn into its I mean, this is the first part of the consulting AI data programme, right? Like, imagine if this could search all of our previous debts, look for content, bring that all together and put them here, right? This. This is just the first step in that journey. So, okay, cool. So let's do this. The bill is finished into main right now. It just needs to be deploying,
+
+
+
+Speaker 3  42:46  
+
+yeah, and it needs to my changes in the main. There's a couple of conflicts, so I need to resolve that, yeah,
+
+
+
+Richard Dosoo  42:55  
+
+so once you've done done that might and then we can reconnect.
+
+
+
+Unknown Speaker  42:59  
+
+Yeah, that works.
+
+
+
+Speaker 1  43:03  
+
+All right, guys, this was a very productive meeting. Thank you both.
+
+
+
+Speaker 2  43:09  
+
+Thank you cool. We'll be excited. Yeah, cheers. Thank you. Thanks everyone. Bye.
+
+
+

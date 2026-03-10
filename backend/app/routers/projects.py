@@ -7,11 +7,12 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
 from app.exceptions import ForbiddenError, NotFoundError
-from app.models.action_item import ActionItem
+from app.models.task import Task
 from app.models.decision import Decision
 from app.models.open_thread import OpenThread
 from app.models.project import Project
 from app.models.project_link import ProjectLink
+from app.models.project_summary import ProjectSummary
 from app.models.stakeholder import Stakeholder
 from app.models.summary import Summary
 from app.models.transcript import Transcript
@@ -19,8 +20,10 @@ from app.models.transcript_mention import TranscriptMention
 from app.models.weekly_report import WeeklyReport
 from app.models.workstream import Workstream
 from app.schemas.action_item import ActionItemSchema
+from app.schemas.task import TaskSchema
 from app.schemas.decision import DecisionSchema
 from app.schemas.open_thread import OpenThreadSchema
+from app.schemas.project_summary import ProjectSummaryBase
 from app.schemas.project import (
     ProjectBase,
     ProjectCreate,
@@ -81,13 +84,15 @@ async def _build_project_base(project: Project, db: AsyncSession) -> ProjectBase
         transcript_count=counts.get("transcript", 0),
         summary_count=counts.get("summary", 0),
         decision_count=counts.get("decision", 0),
-        action_count=counts.get("action_item", 0),
+        action_count=counts.get("task", 0) or counts.get("action_item", 0),
         open_thread_count=counts.get("open_thread", 0),
         stakeholder_count=counts.get("stakeholder", 0),
     )
 
 
-def _transcript_base(t: Transcript, has_summary: bool) -> TranscriptBase:
+def _transcript_base(
+    t: Transcript, has_summary: bool, project_name: str | None = None,
+) -> TranscriptBase:
     return TranscriptBase(
         id=t.id,
         file_name=t.filename,
@@ -96,6 +101,8 @@ def _transcript_base(t: Transcript, has_summary: bool) -> TranscriptBase:
         participant_count=len(t.participants) if t.participants else 0,
         word_count=t.word_count or 0,
         has_summary=has_summary,
+        primary_project_id=t.primary_project_id,
+        primary_project_name=project_name,
     )
 
 
@@ -123,14 +130,14 @@ def _decision_schema(d: Decision) -> DecisionSchema:
     )
 
 
-def _action_schema(a: ActionItem) -> ActionItemSchema:
+def _action_schema(a: Task) -> ActionItemSchema:
     return ActionItemSchema(
         id=a.id,
-        title=f"Action {a.number}",
+        title=a.title or f"Action {a.number}",
         description=a.description,
         status=a.status,
-        owner=a.owner,
-        due_date=a.deadline,
+        owner=a.assignee or a.owner,
+        due_date=str(a.due_date) if a.due_date else a.deadline,
         source_transcript_id=None,
         source_transcript_title=None,
         workstream=None,
@@ -236,15 +243,25 @@ async def get_project_hub(project_id: int, db: AsyncSession = Depends(get_db)):
         )
         decisions = [_decision_schema(d) for d in d_result.scalars().all()]
 
-    # Fetch action items
-    action_ids = links_by_type.get("action_item", [])
+    # Fetch tasks (linked via project_links or direct project_id)
+    action_ids = links_by_type.get("task", links_by_type.get("action_item", []))
     action_items: list[ActionItemSchema] = []
+    # Also include tasks with direct project_id FK
+    direct_task_result = await db.execute(
+        select(Task).where(Task.project_id == project_id)
+        .order_by(Task.created_date, Task.number)
+    )
+    direct_tasks = direct_task_result.scalars().all()
+    seen_ids = {t.id for t in direct_tasks}
+    action_items = [_action_schema(a) for a in direct_tasks]
     if action_ids:
         a_result = await db.execute(
-            select(ActionItem).where(ActionItem.id.in_(action_ids))
-            .order_by(ActionItem.action_date, ActionItem.number)
+            select(Task).where(Task.id.in_(action_ids))
+            .order_by(Task.created_date, Task.number)
         )
-        action_items = [_action_schema(a) for a in a_result.scalars().all()]
+        for a in a_result.scalars().all():
+            if a.id not in seen_ids:
+                action_items.append(_action_schema(a))
 
     # Fetch open threads
     thread_ids = links_by_type.get("open_thread", [])
@@ -282,6 +299,25 @@ async def get_project_hub(project_id: int, db: AsyncSession = Depends(get_db)):
             for s in sh_list
         ]
 
+    # Fetch project summaries linked to this project
+    ps_result = await db.execute(
+        select(ProjectSummary)
+        .where(ProjectSummary.project_id == project_id)
+        .order_by(ProjectSummary.date.desc().nullslast())
+    )
+    project_summaries_list: list[ProjectSummaryBase] = [
+        ProjectSummaryBase(
+            id=ps.id,
+            project_id=ps.project_id,
+            transcript_id=ps.transcript_id,
+            date=str(ps.date) if ps.date else None,
+            relevance=ps.relevance,
+            content=ps.content,
+            source_file=ps.source_file,
+        )
+        for ps in ps_result.scalars().all()
+    ]
+
     return ProjectHub(
         project=project_base,
         transcripts=transcripts,
@@ -290,6 +326,7 @@ async def get_project_hub(project_id: int, db: AsyncSession = Depends(get_db)):
         action_items=action_items,
         open_threads=open_threads,
         stakeholders=stakeholders,
+        project_summaries=project_summaries_list,
     )
 
 
@@ -403,30 +440,44 @@ async def get_project_weekly(project_id: int, db: AsyncSession = Depends(get_db)
                 key_people=d.key_people or [],
             ))
 
-    # ── Fetch action items ───────────────────────────────────────────
-    action_ids = links_by_type.get("action_item", [])
+    # ── Fetch tasks ─────────────────────────────────────────────────
+    action_ids = links_by_type.get("task", links_by_type.get("action_item", []))
+    # Also get tasks with direct project_id FK
+    all_task_result = await db.execute(
+        select(Task).where(Task.project_id == project_id)
+        .order_by(Task.created_date, Task.number)
+    )
+    all_tasks = list(all_task_result.scalars().all())
+    seen_task_ids = {t.id for t in all_tasks}
     if action_ids:
-        a_result = await db.execute(
-            select(ActionItem).where(ActionItem.id.in_(action_ids))
-            .order_by(ActionItem.action_date, ActionItem.number)
+        linked_result = await db.execute(
+            select(Task).where(Task.id.in_(action_ids))
+            .order_by(Task.created_date, Task.number)
         )
-        for a in a_result.scalars().all():
-            if a.action_date:
-                ws = _week_start(a.action_date)
-            else:
-                ws = "undated"
+        for t in linked_result.scalars().all():
+            if t.id not in seen_task_ids:
+                all_tasks.append(t)
+                seen_task_ids.add(t.id)
 
-            if ws not in week_buckets:
-                week_buckets[ws] = {"transcripts": [], "decisions": [], "action_items": []}
+    for a in all_tasks:
+        if a.created_date:
+            ws = _week_start(a.created_date)
+        elif a.action_date:
+            ws = _week_start(a.action_date)
+        else:
+            ws = "undated"
 
-            week_buckets[ws]["action_items"].append(WeekActionItem(
-                id=a.id,
-                number=a.number,
-                description=a.description,
-                owner=a.owner,
-                status=a.status,
-                deadline=a.deadline,
-            ))
+        if ws not in week_buckets:
+            week_buckets[ws] = {"transcripts": [], "decisions": [], "action_items": []}
+
+        week_buckets[ws]["action_items"].append(WeekActionItem(
+            id=a.id,
+            number=a.number,
+            description=a.description or a.title,
+            owner=a.assignee or a.owner,
+            status=a.status,
+            deadline=str(a.due_date) if a.due_date else a.deadline,
+        ))
 
     # ── Fetch all weekly reports, keyed by the Monday of their week ──
     wr_result = await db.execute(

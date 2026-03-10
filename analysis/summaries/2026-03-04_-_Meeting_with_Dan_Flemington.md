@@ -2,46 +2,84 @@
 **Date:** 2026-03-04
 **Attendees:** Azmain Hossain, Richard Dosoo, Dan Flemington (Speaker 1)
 **Duration context:** Medium (~30 minutes)
-**Workstreams touched:** WS2 CLARA (tangential -- Salesforce integration), Sales enablement
+**Workstreams touched:** Sales enablement (new), WS2 CLARA (Salesforce integration)
 
 ## Key Points
-- **New stakeholder: Dan Flemington** -- a sales leader who has already been building his own tools in Cursor. This is a first contact for collaboration, not someone previously tracked in the programme.
-- **Dan's existing tools**: He has already built two Python-based tools: (1) an automated email formatter that takes a Salesforce forecast accountability report CSV extract, transforms it into a narrative email format with monthly stratification and summaries; (2) a variance report tool that compares two Salesforce extracts and identifies what changed (month, probability, value) with hyperlinks back to SFDC. He is also building a dashboard that aggregates opportunities, quotes, growth, and top deals by month.
-- **Dan's roadmap**: He wants to build historical opportunity tracking -- storing daily snapshots to tell the story of how opportunities evolved over 30+ days. Previously did this manually with pivot tables and heat maps.
-- **Salesforce data access opportunity**: Dan introduced Julia Valencia from the sales analytics reporting team who has access to the underlying SFDC data (CDR database). She can explain the data model, which fields to use, and help ensure numbers align with official reporting. Richard and Azmain plan to follow up with her while Dan is at the Vienna SKO.
-- **Convergence with CLARA needs**: Richard identified that CLARA also needs Salesforce integration for Bernard (customer sentiment from tickets) and Courtney (HD models analysis). The pipeline Dan needs from SFDC is "just another data set" they would extract alongside existing requirements.
-- **Variance report concept adopted for CLARA**: Azmain immediately flagged that CLARA users are requesting exactly the same thing -- a variance view showing what changed since the last login (health status, executive status, field changes). He plans to implement Dan's variance approach.
-- **App Factory hosting offer**: Richard offered to host Dan's tools on the App Factory infrastructure once they are validated, giving other sales team members access. Dan confirmed multiple people have already expressed interest in his tools.
-- **Enablement approach**: Richard will send Dan cursor rules files, migration prompts, and training slides to help him re-architect his tools to use the team's standardised tech stack (Postgres, standard API patterns, SSO).
-- **GitHub access**: Richard raised a ticket for Dan to get GitHub access, which will enable version control and sharing.
+- Dan Flemington is a sales leader who has independently been building Python tools in Cursor for his own workflow automation. He is a new stakeholder and potential ally.
+- Dan demonstrated two tools he built: (1) An email formatter that takes a Salesforce forecast accountability report CSV, transforms it, and generates a formatted management email. (2) A variance report that compares two date-stamped Salesforce exports and highlights changes (stage changes, probability changes, value changes) with hyperlinks back to Salesforce.
+- The variance report concept was immediately adopted by Azmain for CLARA -- CSMs have been asking for a "what changed since I last logged in" view. Dan's approach (compare two snapshots, show deltas) maps directly to this need.
+- Dan introduced Julia Valencia from sales analytics as a critical enabler. She has direct access to the SFDC CDR database (the underlying Salesforce data layer, not just reports). She can explain the data model and help gain programmatic access.
+- Richard identified significant convergence: CLARA already needs Salesforce integration (for Bernard, Courtney, Kevin Pern). Dan's needs are "another thing we add to the list." The underlying infrastructure work (Salesforce programmatic access) serves multiple teams.
+- Dan's tools are candidates for App Factory hosting once they mature. Richard walked him through the infrastructure (dev -> staging -> production pipeline), authentication (Moody's SSO), and offered cursor rules files and migration prompts.
+- Richard sent Dan a training document and cursor rules file for aligning his apps with the team's tech stack (Postgres, AWS, their API patterns).
+- Dan needs GitHub access (ticket already raised) to version control and share his code.
+- Dan is going to Vienna for SKO next week; follow-up after his return.
+- Richard explicitly framed the value proposition: "The cost of getting this stuff wrong is practically zero" with modern tools, so iteration is cheap.
 
 ## Decisions Made
-- Dan to connect Richard/Azmain with Julia Valencia for Salesforce data access -> Dan
-- Dan's pipeline requirements to be added to the Salesforce data integration list alongside Bernard's and Courtney's -> Richard
-- Richard to send Dan cursor rules and migration prompts for tech stack alignment -> Richard
-- Dan's tools are candidates for App Factory hosting once validated -> Richard
+| Decision | Type | Confidence | Owner |
+|----------|------|------------|-------|
+| Dan's variance report concept adopted for CLARA | Feature | High | Azmain |
+| Julia Valencia identified as Salesforce data access contact | Resource | High | Dan |
+| Dan's tools to be considered for App Factory hosting | Architecture | Medium | Richard |
+| Dan to connect Julia Valencia with Richard and Azmain | Process | High | Dan |
 
 ## Action Items
-| Action | Owner | Deadline | Status |
-|--------|-------|----------|--------|
-| Send email connecting Richard/Azmain with Julia Valencia | Dan | Today/tomorrow | Open |
-| Follow up with Julia Valencia while Dan is in Vienna | Richard/Azmain | Next week | Open |
-| Send cursor rules, migration prompts, and training slides to Dan | Richard | Today | Open |
-| Send CSV extract of forecast accountability report to Richard/Azmain | Dan | TBD | Open |
-| Get GitHub access approved for Dan | Richard (ticket raised) | TBD | Open |
-| Add Dan's pipeline requirements to Salesforce integration list | Richard | TBD | Open |
+| Action | Owner | Deadline | Status | Confidence |
+|--------|-------|----------|--------|------------|
+| Send email connecting Julia Valencia with Richard and Azmain | Dan | This week | Open | High |
+| Follow up with Julia on SFDC CDR access and data model | Richard/Azmain | While Dan is in Vienna | Open | High |
+| Send cursor rules file and training doc to Dan | Richard | Today | Open | High |
+| Get GitHub access approved for Dan | Dan/IT | In progress | Open | Medium |
+| Add Dan's Salesforce data needs to the access request list | Richard | This week | Open | High |
+
+## Theme Segments
+1. **Dan's existing tools demo** (0:00-10:00) -- Email formatter and variance report
+2. **Salesforce data access opportunity** (10:00-16:00) -- Julia Valencia, CDR database, programmatic access
+3. **App Factory and hosting** (16:00-22:00) -- How Dan's tools could be hosted; infrastructure walkthrough
+4. **Enablement and next steps** (22:00-30:00) -- Cursor rules, training docs, GitHub access, Vienna timeline
+
+## Power Dynamics
+- **Dan enters as a peer, not a subordinate.** He is a sales leader who has already built useful tools independently. Richard and Azmain treat him as a collaborator.
+- **Richard is the connector and enabler.** He frames the conversation strategically (linking Dan's needs to existing CLARA plans) and provides technical resources.
+- **Azmain is opportunistic in the best sense.** He immediately sees how Dan's variance report maps to a CLARA user request and "steals" the concept enthusiastically.
+- **Dan brings something the team lacks**: a direct contact (Julia Valencia) with Salesforce database access. This is a gating resource for multiple programme needs.
 
 ## Stakeholder Signals
-- **Dan Flemington** is a self-starter who has built useful tools independently. He is sales-side, which means the programme is now attracting interest beyond CS. He is practical about not wanting to distribute flawed tools widely.
-- **Richard** sees the strategic opportunity: the same Salesforce data extraction capability serves multiple projects. He is thinking in terms of economies of scale and shared infrastructure.
-- **Azmain** is energised by the variance report concept -- it directly solves a user request in CLARA. This is a good example of cross-pollination across the programme.
-- **Julia Valencia** is a new name -- she sits in sales analytics and has direct access to the underlying SFDC database. She could be a critical enabler for multiple workstreams.
+- **Dan Flemington** -- Self-starter, already building in Cursor, pragmatic about what he needs. Not territorial -- openly shares his tools and connections. Potential strong ally for sales/CS convergence.
+- **Julia Valencia** (mentioned) -- Critical new contact. Has direct access to SFDC CDR database. Could unlock Salesforce programmatic access that has been blocked for months.
+- **Richard** -- Sees the bigger picture: Dan's needs plus Bernard's plus Courtney's plus Kevin Pern's all require the same underlying Salesforce integration. Efficient thinker.
+- **Azmain** -- Energised by the variance report concept. Immediately maps it to existing CLARA user requests.
+
+## Commitments Made
+| Who | Commitment | To Whom | Context |
+|-----|-----------|---------|---------|
+| Dan | Connect Julia Valencia with the team | Richard/Azmain | Salesforce access |
+| Richard | Send training materials and cursor rules | Dan | Enablement |
+| Richard | Follow up with Julia while Dan is in Vienna | Dan | Data access |
+| Richard | Add Dan's tools to App Factory pipeline list | Dan | Hosting |
+
+## Meeting Effectiveness
+| Dimension | Score (1-10) | Notes |
+|-----------|-------------|-------|
+| Clarity of outcomes | 8 | Clear next steps and mutual value identified |
+| Decision quality | 8 | Excellent opportunity recognition (variance report, Julia) |
+| Participation balance | 8 | All three contribute meaningfully |
+| Action item specificity | 7 | Good specificity with travel-bounded timeline |
+| Strategic alignment | 9 | Directly addresses Salesforce integration need across multiple workstreams |
+
+## Risk Signals
+- **LOW: Dan's tools are pre-governance.** He is building on his laptop without version control or security review. App Factory hosting would mitigate this but is not yet available.
+- **LOW: Julia Valencia is a single point of access.** If she is unwilling or unable to help, Salesforce programmatic access remains blocked.
 
 ## Open Questions Raised
-- Can programmatic access to Salesforce be secured? (Previously blocked)
-- What does the CDR data model look like?
-- How many data fields per opportunity are available and which are stable/foundational?
-- Will Dan's tools live on his machine or move to App Factory?
+- What is the SFDC CDR data model and what access restrictions exist?
+- Can they get automated daily data feeds rather than manual CSV exports?
+- Should Dan's tools eventually move to the same tech stack as CLARA?
 
 ## Raw Quotes of Note
-- "The cost of you building something and deciding you don't want to do it is less than it was before." -- Richard, to Dan, on the new development paradigm
+- "I'm definitely going to steal your variance report." -- Azmain, immediately adopting Dan's concept for CLARA
+- "It's like, you're changing your gearbox, you might as well change the clutch at the same time." -- Richard, on combining Salesforce access needs across teams
+
+## Narrative Notes
+This is the most productive new stakeholder meeting of the week. Dan Flemington arrives as an unexpected gift: a sales leader who is already building tools in Cursor, has substantive working prototypes, and brings the single most valuable resource the programme has been missing -- a contact with direct Salesforce database access (Julia Valencia). The variance report concept is a genuine cross-pollination moment: Dan built it for sales pipeline tracking, Azmain immediately maps it to CLARA's "what changed" user request. Richard's strategic framing is excellent -- he positions all the Salesforce integration needs (Bernard, Courtney, Kevin Pern, Dan) as one pipeline, making the infrastructure investment more justifiable. The biggest takeaway: Dan is exactly the kind of self-starter the programme needs as an ally, and Julia Valencia could be the key that unlocks the Salesforce data access that has been a blocker for months.

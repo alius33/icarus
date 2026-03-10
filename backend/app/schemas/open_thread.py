@@ -13,6 +13,10 @@ class OpenThreadSchema(BaseModel):
     workstream: str | None = None
     severity: str | None = None
     trend: str | None = None
+    position: int = 0
+    question: str | None = None
+    why_it_matters: str | None = None
+    resolution: str | None = None
     is_manual: bool = False
 
 
@@ -37,3 +41,22 @@ class OpenThreadUpdate(BaseModel):
     first_raised: str | None = None
     severity: str | None = None
     trend: str | None = None
+
+
+class OpenThreadPositionUpdate(BaseModel):
+    status: str
+    position: int
+
+
+class ThreadBoardColumn(BaseModel):
+    status: str
+    label: str
+    color: str
+    order: int
+    threads: list[OpenThreadSchema]
+    count: int
+
+
+class ThreadBoardResponse(BaseModel):
+    columns: list[ThreadBoardColumn]
+    total: int

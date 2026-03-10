@@ -24,8 +24,7 @@ export default async function ProjectsListPage() {
     );
   }
 
-  const workstreamProjects = (projects || []).filter((p) => !p.is_custom);
-  const customProjects = (projects || []).filter((p) => p.is_custom);
+  const allProjects = (projects || []).sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <div className="space-y-8">
@@ -46,32 +45,13 @@ export default async function ProjectsListPage() {
         </Link>
       </div>
 
-      {/* Workstream Projects */}
-      {workstreamProjects.length > 0 && (
-        <section>
-          <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-gray-500">
-            Workstream Projects
-          </h3>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {workstreamProjects.map((p) => (
-              <ProjectCard key={p.id} project={p} />
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Custom Projects */}
-      {customProjects.length > 0 && (
-        <section>
-          <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-gray-500">
-            Custom Projects
-          </h3>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {customProjects.map((p) => (
-              <ProjectCard key={p.id} project={p} />
-            ))}
-          </div>
-        </section>
+      {/* All Projects */}
+      {allProjects.length > 0 && (
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {allProjects.map((p) => (
+            <ProjectCard key={p.id} project={p} />
+          ))}
+        </div>
       )}
 
       {(!projects || projects.length === 0) && (
@@ -107,18 +87,7 @@ function ProjectCard({ project: p }: { project: { id: number; name: string; desc
 
       <div className="p-5">
         <div className="mb-3 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            {p.workstream_code && (
-              <span className="inline-flex items-center rounded-md bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-800">
-                {p.workstream_code}
-              </span>
-            )}
-            {p.is_custom && (
-              <span className="inline-flex items-center rounded-md bg-purple-100 px-2 py-0.5 text-xs font-semibold text-purple-800">
-                Custom
-              </span>
-            )}
-          </div>
+          <div className="flex items-center gap-2" />
           <span
             className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${getStatusColor(p.status)}`}
           >

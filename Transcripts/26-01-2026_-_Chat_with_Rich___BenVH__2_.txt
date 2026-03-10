@@ -88,7 +88,7 @@ terminal here, and then you should have everything downloaded and stuff like tha
 Speaker 2  10:26  
 So the only thing I could potentially see here is that in the account, the account team, it leverages customers dot name versus customer name, and if I'm gonna remember correctly, we are leveraging custom like inside the customer table, we are leveraging or inside the Customers table, we are leveraging customer.net customer name. So that is the only thing that could See being a potential issue through issue, okay,
 
-Unknown Speaker  11:13  
+Ben Van Houten  11:13  
 yeah,
 
 Azmain Hossain  11:31  

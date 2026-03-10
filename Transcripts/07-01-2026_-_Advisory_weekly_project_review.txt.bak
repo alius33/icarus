@@ -1,0 +1,162 @@
+Diana  0:36  
+Hello everyone, and Happy New Year to those of you that I had a chance to talk. I think we have a good number of people on the call, and we can kick off
+
+Diana  0:53  
+if you follow the usual sequence of the slides. First project is true. I'm not sure if you have any update for today, Billy, apologise, I might have missed your slide with
+
+Speaker 1  1:08  
+Yeah, apologies. I only just sent it through. Is it better if I share my screen? Yeah, go ahead. Yeah, just pull that up. Yeah.
+
+Speaker 1  1:35  
+You see that? Yep, yeah, great. So, really, all there is to say is that development has continued as planned, in a positive way. So So we've gone from 10% up to 25% on the development work, and that's on track. It's showing Amber because we have a an issue internal to Moody's, which we're tracking around functionality, and this was mentioned on the last meeting in December. And I don't know if we've got Amit or Brian on the call, but they have suggested I should expect an update on this by the middle of next week, and we're expecting it to convert on track. So that's really all I can say on that one.
+
+Diana  2:35  
+Great. So my understanding is that this internal challenge is not impacting the progress with the client anyway,
+
+Unknown Speaker  2:45  
+it might have a little bit of scope,
+
+Diana  2:48  
+okay, and we will know next week. Great. Any other questions to Billy before we move to the next project?
+
+Diana  3:00  
+No. Our next one, which is Morgan Stanley.
+
+Speaker 2  3:09  
+Hey, Dana, hello, prashan, Hello, yes. So for Morgan Stanley, the team are still focusing on delivering the stochastic milestone for the end of this month, we did bump into an issue. I think I pointed it out before the holidays, which we thought it was a product related issue, but it turns out to be something on our cat accelerate, where we had some time out issues. So we now assigned an technical resource to take a look at that. And I think there has been a fix made which allows the location model runs to now move forward. So we're still forecasting to deliver this as initially expected for the 21st Jan. But just wanted to highlight that if there is any further issues, like if the workflow does bump into any further issues towards the end of this week, then that might be slight delays in sharing across these results to Morgan, as expected by the 21st But yeah, otherwise, things look very positive at the moment, because the portfolio model runs have completed now, and team have were able to QA that. So we have the state, country and the location model runs to complete, and then the team to QA those results before we can share that across. Okay, I I think that's all. And then, yeah, we had a call with Morgan yesterday around the work order amendment, so that's now with their legal team. So should come come through to us anytime soon. That's what I was told yesterday on the call. But no further. Markets on that, and then also they shared across their interest for another item on the loan level, PLTS, as part of their support bank request on just trying to work out the estimates for those and then the timelines to share those back with Morgan and see what they what they think, whether they want to move forward with those.
+
+Diana  5:29  
+Prashanin here it says local model runs in CUNY. Is this completed now?
+
+Speaker 2  5:35  
+So the both the state, country and the location model runs are still in programme. Yeah, those are, those are the runs that we bump into, issues.
+
+Diana  5:43  
+Okay, okay, these are the impacted one. Yeah, yeah. And stochastic is on track. Yes.
+
+Speaker 2  5:50  
+I mean, both, both of them issues, but with the stochastic we were indicating to complete that before the holidays, but which we weren't able to with the issues that we bumped into. So both of those are still in progress, but there has been a fix applied, right?
+
+Diana  6:05  
+Got it? Yeah. Thank you for the clarification. Any other questions from the audience? No, everything's clear. Next one is Golden Bear.
+
+Speaker 3  6:22  
+Hi, Diana, so Golden Bear, we had a seem to be productive call with them right before the holidays to confirm that they were on track for their development integration and on schedule to start their UAT. We agreed to the UAT support call schedule with them that we had planned to start January 14, run through March 18, having weekly calls as they continued their UAT. So things seem to be on track. Received a bit of a surprise when an email was forward to us by sales on December 29 in which Golden Bears legal team sent a follow up email reiterating their demands associated with the risk I had noted there. So this is currently with Moody's legal team. Daniel from the sales team is working, working closely with legal to determine if we need to start sending communication and correspondence through them, and basically just waiting for their guidance on how we should handle this situation with Golden Bear. So I'll continue to keep this updated, but right now we're really just waiting to hear on further advice. Okay?
+
+Speaker 3  7:58  
+I think that's that's probably it for Golden Bear, right?
+
+Speaker 4  8:03  
+Good. If no questions, we can move to the next project, which is Aspen.
+
+Speaker 5  8:15  
+Yeah, Aspen, we did a job to production right before the holidays. On the 19th they were they had talked about potentially doing some testing through the holidays, but most of their folks were gone. Their key expert is, which is their basically their sign off person is out until the 15th, but I know that they've got people testing. So, Emily, I haven't seen any emails about any issues to date. I don't know if you have. I might just not just be copied on them, but we're just basically waiting for their UAT to wrap up, and then we'll be able to call this one complete.
+
+Speaker 6  8:58  
+Yep, I haven't seen anything from them. I can take a look into their environment to see if they've actually been doing any testing. I can do that today.
+
+Speaker 5  9:07  
+Yes, that would be interesting. I hope they're not just sitting on it. Love for you to be able to be done with this
+
+Diana  9:19  
+good news. Hopefully, yeah, we will get update from the plan soon on the progress. Return to the next which is Axel, yes, so for AXA, I think
+
+Speaker 3  9:38  
+before the holidays, I had updated the project end date for this to mid January, as the client had had some delays on progressing their UAT. So I think right before we were out, they were working on UAT, they identified three additional defects that are not. Critical, but they are high priority, so we will need to address those. The team is working through those, but we have had some shift in the resources. Suma, who's been supporting AXA for quite some time now, has transitioned to other projects. And so we now have ye working on this, which I understand she's also supporting some other projects. So there's a good chance that we're going to need to move out the project end date to mid January, depending on ease availability to look into these defects. I haven't updated that yet, because we just had the handoff call the other day with suma de going through those new defects. So I think probably by next week's call, I should have an update for the project end date, if we do need to move that out to later in the month, I am continuing to track as a risk there that AXA is still doing their UAT, so the three defects they raised, as I mentioned, they're not blockers, so they are able to continue their UAT, but there's a chance that they find other issues as they are progressing throughout that. So I do just want to continue to highlight that as a general risk to the project that also could impact that end date.
+
+Diana  11:29  
+And do we have expectation with the client set, which, what type of issues we will fix? Do we have some kind of SLA or exit criteria from the GCU 80, because they can always find problems.
+
+Speaker 3  11:47  
+Yeah, I know that we have, like the official, you know what we're required to fix, versus what's optional, documented in the phase two scope document, I think with we've reviewed these internally as a team, and these are all things that are internal to Moody's we feel like we we need to fix for the solution to work. But if there are low or medium defects that are raised, those are certainly up for discussion. If those are things that we fix or can defer or accept it,
+
+Diana  12:27  
+hopefully we will not have then defects that require resolution from us. Kate, let's see what is the progress next trick, moving to the next one, which is,
+
+Speaker 3  12:43  
+yeah, this one's also mine, Diana, and it's related to the slide before. And the good news is, is that the defects that have been found are not prohibiting us or preventing our team from continuing with the safeguarding support. So to the right, you'll see that workshop one was completed early December. Brian Amit at the workshop two yesterday with Jeremy. I still need to touch base with them on how that one if there was anything outstanding that we need a follow up workshop, or if we can go ahead and move in to the weekly calls. I think we're still going to try to target for end of January to wrap up the safeguarding, but if that ends up changing, I'll update that before the next call. Oh, and I guess just one note on the scope document, the client had asked for a reassessment of the scope and fee based upon what they felt was a more minimal amount of work than what we had initially expected. So we did provide the updated scope document with revised fee, which they did accept and sign off so we're in agreement there.
+
+Diana  14:01  
+Okay, so my understanding is that we deliver two of the four workshops, so two more will need to be scheduled and agreed
+
+Speaker 3  14:13  
+we had. So typically, it's the two workshops which are lengthier sessions with the client. We've completed both of those weekly calls there that are up to four weeks or more, just touch points as a client is working through their solution. If they have any questions. Okay, so we might not even need all of those again. I'll I'll touch base with Ahmad and Brian and our next catch up
+
+Diana  14:41  
+and those weekly workshops shall continue until end of June, or we don't know.
+
+Amit  14:50  
+Yeah, hey, Diana, and yes, you can chime in. Yeah. We should, based on the workshop which we had yesterday, we should be able to wrap this up by.
+
+Unknown Speaker  15:00  
+Introduction, okay, good, okay, great, thanks. Amain,
+
+Unknown Speaker  15:10  
+I think this is all on that one. Diana,
+
+Unknown Speaker  15:13  
+perfect. Thank you.
+
+Diana  15:15  
+Next one is general, gcnc, underwriting, IQ, transition and safeguarding support. We are on track according to the scope document for the API support. We have completed the training and API overview training, and now we have series of API regular weekly support at the moment, we are on the week three of the regular support, and we hope you we will continue with that support till March on a weekly basis. At the moment, the main concern that we have is that due to Cape Jimmy Capgemini, resource and previous experience, gcnc might have difficulties to meet their deadline to complete the work by March, but yeah, at The moment, we have no much evidences to prove that just they observe they are concerned that the progress might be slow, we are proactively following with the group and gcnc to ensure that they will be able to meet the deadline of March. Any questions, no.
+
+Diana  16:46  
+Moving to the next which is the summary of the cut down, essence, ongoing projects compared to previous time. Also, acorn is completed, and these are the one that are still ongoing. Casey, please advise if we need to add some more updates on that one. So far, this is it on the issuance. All the research has been completed as of end of 2025 so we are on track with the resets as well, and we reach to Other projects dashboard.
+
+Diana  17:38  
+I think the change is about what to say life which is completed?
+
+Speaker 5  17:48  
+Yeah, I reached out to Alice on that one when I was doing month end stuff, the end of December, and she noticed that it had completed. Thanks, Stacey, that's all complete now.
+
+Diana  18:11  
+Wait. Ashmo, the others are on track as presented next slide, we have two projects that are with risks. Any update for PG
+
+Speaker 5  18:35  
+or patron atrium I talked to Martin again when I was working on month end. I changed that one to read because it was supposed to be done quite a while ago, but he noted that shake up my memory. Here, let me see what he said from that one, there's still a second workshop outstanding, and they still don't know what they're going to do. As far as the workshop. They don't have an idea is what the focus is going to be. So that whole one is up in the air. Yet on that, let me see when that expires.
+
+Diana  19:30  
+These challenges, because clients we are not care what is the need of the client or we,
+
+Speaker 5  19:41  
+or it's internal. Yeah, and actually, their their Quick Start should be, I just looked at it, their Quick Start should be expired. It was done at the end of December.
+
+Diana  19:54  
+So what's next steps? Shall we ask for a dental with a. Client that just to extend the end date,
+
+Speaker 5  20:03  
+or we will. We don't really need an addendum there, because their overall contract has a much longer end date. It's just the wording in the contract says the Quickstart is good for the six months. So an addendum isn't really required, because that's jumping through a lot of legal hoops. When the overall contract is good longer it's just us having like a gentleman, gentleman's agreement. Do we want to allow them to extend it? Okay?
+
+Diana  20:33  
+And if you allow them to extend it, shall we follow the approach that we had for other clients, sharing with them a proposal for the scope of API support that we will provide, or, I think
+
+Speaker 5  20:46  
+it depends on what Martin says, like, what we've already done with them, and I'm not sure what we've done with them, like, have we already done? What kind of level of support have we done, and has it been sufficient? I don't know what he's done with them so far, to be honest,
+
+Diana  21:07  
+yeah, but I assume it will be as we have delivered to some, some support to them. And the moment we are unclear how to move forward, maybe the best will be we to formally come with proposal, come back to the client with proposal in order expectations to be set, yeah,
+
+Speaker 5  21:25  
+I'm gonna let me talk to him on our tech stand up, yeah, today, and get a little bit more information on it, since it has expired. And he all he said is, they wanted to experiment with their API's and then reengage once they had some concrete ideas. But you know what we've got to try to get through with our clients. I mean, it's called Quick Start for a reason. It's to get people started, not to drag on forever. That's why we put a six month qualifier out there.
+
+Unknown Speaker  21:59  
+Okay, so we'll come back on that.
+
+Diana  22:12  
+Okay, then we have deployment projects. I mean, do you have any update on that?
+
+Amit  22:18  
+No, So Dan, we just closed out big green China we went from last last year, so to speak.
+
+Speaker 4  22:25  
+And okay, yeah, that's okay. So we keep them like this, and we have also the advisory client satisfaction.
+
+Diana  22:39  
+This is this an updated version of the results as a band of the year.
+
+Speaker 5  22:45  
+No, this was it, I feel so I did get word, like in December, that we now have access to survey monkey again via a new Moody's account, but I still don't have access to all of our surveys and all of our results. So they didn't move over all of our old stuff yet. So I still have to figure out, I sent them an email and it got rejected from them. So I have to figure out how to get a hold of them to get all of our old stuff, because I'd like to see if some of the all the final surveys we sent out we received results on and I mean, I can rebuild all of our surveys. I'd rather not, so it's on my list. Okay?
+
+Diana  23:38  
+I think this was all for today, if there are no other navigates mentions, I think we're good. Thank you very much for your time, and have a good rest of the day. Signing you too. Thanks. Thank you. Bye. You.
+

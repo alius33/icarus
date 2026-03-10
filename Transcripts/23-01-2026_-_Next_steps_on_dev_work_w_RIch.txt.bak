@@ -1,0 +1,69 @@
+Richard Dosoo  0:13  
+So you're going to have two structures, right? You can have a structure like this, which would have the client here, the role would be account manager or CSM. And then this is a look up to the list of CSM. So that, okay, George, right.
+
+Azmain Hossain  0:28  
+And then on the people's help. So this is where I would say, instead of looking for the role of CSM, it's going to be open to anybody. I'm just going to trust the users, and I'm going to tell them this during the demo. It's like, I'm trusting you not to put Colin Holmes as the CSM.
+
+Richard Dosoo  0:46  
+But well, so that was, that was the thing, right? If you force the people to put the role in here, then what you can do is, in this field here, you can say that this field restricts who comes back based off what's in this column.
+
+Azmain Hossain  1:01  
+But are there is every single person who's a CSM, a customer success manager, as their job role, you know, like when you go to, when you go to select the solution architect, you could be the solution architect, but it's, how is it going to know that from your title?
+
+Richard Dosoo  1:21  
+No, but that's, that's the thing. So you need to add a column to the people table with the role. So right now you've got probably, name, division, location to be added.
+
+Azmain Hossain  1:34  
+It's just, I don't, I can't fill it right now because I don't know, not
+
+Richard Dosoo  1:37  
+100% so that, I think, all I would say is, you can fill out the solution architecture. You know, there's five of us. We can pick five CSMs, right? And then, as long as there's an edit screen or or some way to maintain this field, that way, it can be updated afterwards, then you've got this. This is going to give you that data control validation. Otherwise, you have a column called CSM, a column called solution architect, a column called whatever, right and then, and then, obviously, then you can't have more than one person on the project filling that role, you know, all that kind of stuff. So this option is definitely like, again, you can just give the requirement to cursor. I want to capture team members with different roles, etc, and that's it.
+
+Richard Dosoo  2:34  
+But the reason I was wanting to talk to you about it was not because Azmain, I didn't think like I
+
+Azmain Hossain  2:43  
+Yeah, I'm just so nervous about first go round trying this kind of stuff in there in a field, that's absolutely crucial. I don't want anything to break it. This is why I'm trying to leave it as open ended as possible.
+
+Richard Dosoo  2:59  
+Well, this was the thing, right, that I wanted to because we're going to have the schema changes could break the system, right?
+
+Azmain Hossain  3:10  
+Yeah, yeah. This is why, like, rather than adding in a new field called roll, I am literally only going to push through stuff that isn't or will do the minimum amount of change. So any field that's already in the employee field that those are the only ones that would be changed. I'm not going to add any extra ones, and first thing I'm going to do is just map the CSMs like everything else, implementation lead, blah, blah. What I have realised I yeah,
+
+Azmain Hossain  4:12  
+sorry. I'm just thinking, Is there any way for me to roll back a deployment? Oh, I mean, get the last version of thingy and hunting and just, yeah, that's doable, right?
+
+Richard Dosoo  4:37  
+It is, but we've not done it before, so that I'm sure that I would have preferred us to have tested the rollback procedure first, because so we're not, do you know? I mean, because we could leave the system in a completely unusable state if we don't roll the changes back correctly. Yeah. Yeah, that's why I was like, just looking at the database changing, seeing what we should do.
+
+Azmain Hossain  5:19  
+Well, let's do this in the the No, you're right now that I've got the use cases, stuff working, everything is working. Can I just add the high risk and priority things? Because then at least it would be a good bit of progress.
+
+Richard Dosoo  5:41  
+Yeah, the, it's just the the I'm just worried about me, the schema changes, that's all. So maybe you leave any high risk schema changes to last, and then at least if we have to roll back, we've got something that we can roll back to that state. What else would
+
+Azmain Hossain  6:05  
+Okay? Okay. What I was thinking was the two big things that will require schema changes. What I can ask cursor to do is just like, do a write up of what it'll do, I'll post it on the IRP tracker. Now, whenever if Ben gets a chance to check it out over the weekend and he gives a thumbs up, great, if not Monday morning, he checks it, he gives it a thumbs up, and I can just do it then, because claude's pretty fast. Yeah, I just do it like the calls at 230 and then the demo to the actual CSMs is from 330 so there's enough time. So let's not, yeah, you're right. I don't want to do anything that's that might break it. Let me just do all the write up. I have the stuff now. I have the ability whenever needed. You know, Monday morning, I'm not waiting around for anybody to give me budget. I'm I'm ready to go,
+
+Richard Dosoo  7:03  
+yeah, yeah. No, exactly. That's the interesting. Yeah, I'm blocked, yep,
+
+Azmain Hossain  7:07  
+but yeah, now that I fixed the ongoing issues. Let's, yeah, let's hold off on new stuff.
+
+Richard Dosoo  7:15  
+And, yeah, I mean, um, if, but like, if needs be, I'll jump on a call with Banner. Just explain better coming up that way in that, you know, you we, yeah, obviously we don't want to make changes, and then we're spending a whole bunch of time on Monday trying to get the environment back up when we should be, like, if we had Wait, we just, we just lose the time exactly.
+
+Azmain Hossain  7:50  
+Okay, then that's, that's the plan. We can explain it to Ben, we're still not like running behind or anything, just we're being safe and cautious. Don't want to break it.
+
+Unknown Speaker  8:01  
+Yeah, it, yeah, but yeah as well, like
+
+Azmain Hossain  8:08  
+panic rush, I'll just write everything up. Wait for, wait for Ben's approval, yeah.
+
+Richard Dosoo  8:15  
+And then I'll jump on as well and have a look in a bit, if that helps. All right, Azmain, thanks again. I appreciate. It's been quite painful. It's fine. It's nice. I'm going to be working anyway, so I just It's fine. But any problems, give me a shout and I'll jump back on. I will do awesome. Thanks, Azmain, bye.
+

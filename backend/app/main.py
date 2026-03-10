@@ -12,7 +12,9 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(levelname
 from app.routers import (
     action_items,
     adoption,
+    tasks,
     commitments,
+    contradictions,
     cross_project_links,
     dashboard,
     decisions,
@@ -20,16 +22,22 @@ from app.routers import (
     divisions,
     glossary,
     import_trigger,
+    influence_signals,
+    meeting_scores,
     open_threads,
     outreach,
+    project_summaries,
     projects,
     resources,
+    risk_entries,
     scope,
     search,
     sentiments,
+    speaker_review,
     stakeholders,
     summaries,
     timeline,
+    topic_signals,
     transcripts,
     weekly_reports,
     wins,
@@ -62,6 +70,7 @@ app.include_router(stakeholders.router, prefix="/api")
 app.include_router(decisions.router, prefix="/api")
 app.include_router(open_threads.router, prefix="/api")
 app.include_router(action_items.router, prefix="/api")
+app.include_router(tasks.router, prefix="/api")
 app.include_router(glossary.router, prefix="/api")
 app.include_router(search.router, prefix="/api")
 app.include_router(dashboard.router, prefix="/api")
@@ -78,6 +87,13 @@ app.include_router(divisions.router, prefix="/api")
 app.include_router(sentiments.router, prefix="/api")
 app.include_router(commitments.router, prefix="/api")
 app.include_router(cross_project_links.router, prefix="/api")
+app.include_router(speaker_review.router, prefix="/api")
+app.include_router(topic_signals.router, prefix="/api")
+app.include_router(influence_signals.router, prefix="/api")
+app.include_router(contradictions.router, prefix="/api")
+app.include_router(meeting_scores.router, prefix="/api")
+app.include_router(risk_entries.router, prefix="/api")
+app.include_router(project_summaries.router, prefix="/api")
 
 
 @app.get("/")

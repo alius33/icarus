@@ -14,8 +14,15 @@ import type {
   MentionItem,
   DecisionSchema,
   DecisionCreate,
+  DecisionUpdate,
+  DecisionPositionUpdate,
+  DecisionBoardResponse,
+  DecisionTimelineResponse,
   OpenThreadSchema,
   OpenThreadCreate,
+  OpenThreadUpdate,
+  ThreadPositionUpdate,
+  ThreadBoardResponse,
   ActionItemSchema,
   ActionItemCreate,
   GlossaryGrouped,
@@ -49,6 +56,27 @@ import type {
   CommitmentCreate,
   CrossProjectLinkSchema,
   CrossProjectLinkCreate,
+  TaskSchema,
+  TaskCreate,
+  TaskUpdate,
+  TaskPositionUpdate,
+  TaskBoardResponse,
+  TaskTimelineResponse,
+  SpeakerReviewResponse,
+  ConfirmAction,
+  ConfirmResponse,
+  TranscriptContext,
+  TopicSignalSchema,
+  TopicEvolutionData,
+  TopicMomentum,
+  InfluenceSignalSchema,
+  InfluenceGraphData,
+  ContradictionSchema,
+  MeetingScoreSchema,
+  MeetingScoreTrend,
+  RiskEntrySchema,
+  RiskHeatmapRow,
+  ProjectSummarySchema,
 } from "./types";
 
 async function mutateApi<T>(
@@ -133,24 +161,42 @@ export const api = {
     fetchApi<MentionItem[]>(`/api/stakeholders/${id}/mentions`),
 
   // Decisions
-  getDecisions: () => fetchApi<DecisionSchema[]>("/api/decisions"),
+  getDecisions: (params?: Record<string, string>) =>
+    fetchApi<DecisionSchema[]>("/api/decisions", params),
+  getDecision: (id: number) => fetchApi<DecisionSchema>(`/api/decisions/${id}`),
+  getDecisionBoard: (workstreamId?: number, projectId?: number) => {
+    const params: Record<string, string> = {};
+    if (workstreamId) params.workstream_id = String(workstreamId);
+    if (projectId) params.project_id = String(projectId);
+    return fetchApi<DecisionBoardResponse>("/api/decisions/board", Object.keys(params).length ? params : undefined);
+  },
+  getDecisionTimeline: (workstreamId?: number, projectId?: number) => {
+    const params: Record<string, string> = {};
+    if (workstreamId) params.workstream_id = String(workstreamId);
+    if (projectId) params.project_id = String(projectId);
+    return fetchApi<DecisionTimelineResponse>("/api/decisions/timeline", Object.keys(params).length ? params : undefined);
+  },
   createDecision: (data: DecisionCreate) =>
     mutateApi<DecisionSchema>("/api/decisions", "POST", data),
-  updateDecision: (id: number, data: Partial<DecisionCreate>) =>
+  updateDecision: (id: number, data: DecisionUpdate) =>
     mutateApi<DecisionSchema>(`/api/decisions/${id}`, "PATCH", data),
+  updateDecisionPosition: (id: number, data: DecisionPositionUpdate) =>
+    mutateApi<DecisionSchema>(`/api/decisions/${id}/position`, "PATCH", data),
   deleteDecision: (id: number) =>
     mutateApi<{ ok: boolean }>(`/api/decisions/${id}`, "DELETE"),
 
   // Open Threads
-  getOpenThreads: (status?: string) =>
-    fetchApi<OpenThreadSchema[]>(
-      "/api/open-threads",
-      status ? { status } : undefined,
-    ),
+  getOpenThreads: (params?: Record<string, string>) =>
+    fetchApi<OpenThreadSchema[]>("/api/open-threads", params),
+  getOpenThread: (id: number) => fetchApi<OpenThreadSchema>(`/api/open-threads/${id}`),
+  getThreadBoard: (projectId?: number) =>
+    fetchApi<ThreadBoardResponse>("/api/open-threads/board", projectId ? { project_id: String(projectId) } : undefined),
   createOpenThread: (data: OpenThreadCreate) =>
     mutateApi<OpenThreadSchema>("/api/open-threads", "POST", data),
-  updateOpenThread: (id: number, data: Partial<OpenThreadCreate>) =>
+  updateOpenThread: (id: number, data: OpenThreadUpdate) =>
     mutateApi<OpenThreadSchema>(`/api/open-threads/${id}`, "PATCH", data),
+  updateOpenThreadPosition: (id: number, data: ThreadPositionUpdate) =>
+    mutateApi<OpenThreadSchema>(`/api/open-threads/${id}/position`, "PATCH", data),
   deleteOpenThread: (id: number) =>
     mutateApi<{ ok: boolean }>(`/api/open-threads/${id}`, "DELETE"),
 
@@ -285,9 +331,12 @@ export const api = {
     ),
 
   // Upload transcripts
-  uploadTranscripts: async (files: File[]) => {
+  uploadTranscripts: async (files: File[], projectIds?: (number | null)[]) => {
     const formData = new FormData();
     files.forEach((f) => formData.append("files", f));
+    if (projectIds) {
+      formData.append("project_ids", JSON.stringify(projectIds));
+    }
     const res = await fetch(`${getApiBase()}/api/transcripts/upload`, {
       method: "POST",
       body: formData,
@@ -360,6 +409,41 @@ export const api = {
   deleteCommitment: (id: number) =>
     mutateApi<{ ok: boolean }>(`/api/commitments/${id}`, "DELETE"),
 
+  // Tasks (Project Management)
+  getTasks: (params?: { status?: string; priority?: string; assignee?: string; project_id?: string; label?: string; search?: string }) =>
+    fetchApi<TaskSchema[]>("/api/tasks", params as Record<string, string>),
+  getTask: (id: number) => fetchApi<TaskSchema>(`/api/tasks/${id}`),
+  getTaskBoard: (projectId?: number) =>
+    fetchApi<TaskBoardResponse>("/api/tasks/board", projectId ? { project_id: String(projectId) } : undefined),
+  getTaskTimeline: (projectId?: number, fromDate?: string, toDate?: string) =>
+    fetchApi<TaskTimelineResponse>("/api/tasks/timeline", {
+      ...(projectId && { project_id: String(projectId) }),
+      ...(fromDate && { from_date: fromDate }),
+      ...(toDate && { to_date: toDate }),
+    }),
+  createTask: (data: TaskCreate) =>
+    mutateApi<TaskSchema>("/api/tasks", "POST", data),
+  updateTask: (id: number, data: TaskUpdate) =>
+    mutateApi<TaskSchema>(`/api/tasks/${id}`, "PATCH", data),
+  updateTaskPosition: (id: number, data: TaskPositionUpdate) =>
+    mutateApi<TaskSchema>(`/api/tasks/${id}/position`, "PATCH", data),
+  completeTask: (id: number) =>
+    mutateApi<TaskSchema>(`/api/tasks/${id}/complete`, "POST"),
+  deleteTask: (id: number) =>
+    mutateApi<{ ok: boolean }>(`/api/tasks/${id}`, "DELETE"),
+  getTaskLabels: () => fetchApi<string[]>("/api/tasks/labels"),
+
+  // Speaker Review
+  getSpeakerReview: () =>
+    fetchApi<SpeakerReviewResponse>("/api/speaker-review"),
+  confirmSpeakerIds: (actions: ConfirmAction[]) =>
+    mutateApi<ConfirmResponse>("/api/speaker-review/confirm", "POST", { actions }),
+  getSpeakerContext: (filename: string, timestamp?: string, label?: string) =>
+    fetchApi<TranscriptContext>(`/api/speaker-review/context/${encodeURIComponent(filename)}`, {
+      ...(timestamp && { timestamp }),
+      ...(label && { label }),
+    }),
+
   // Cross-Project Links
   getCrossProjectLinks: (projectId?: number) =>
     fetchApi<CrossProjectLinkSchema[]>("/api/cross-project-links", projectId ? { project_id: String(projectId) } : undefined),
@@ -371,4 +455,40 @@ export const api = {
     mutateApi<CrossProjectLinkSchema>(`/api/cross-project-links/${id}`, "PATCH", data),
   deleteCrossProjectLink: (id: number) =>
     mutateApi<{ ok: boolean }>(`/api/cross-project-links/${id}`, "DELETE"),
+
+  // Topic Signals
+  getTopicSignals: (category?: string) =>
+    fetchApi<TopicSignalSchema[]>(`/api/topic-signals${category ? `?category=${category}` : ""}`),
+  getTopicEvolution: () =>
+    fetchApi<TopicEvolutionData[]>("/api/topic-signals/evolution"),
+  getTopicMomentum: () =>
+    fetchApi<TopicMomentum>("/api/topic-signals/momentum"),
+
+  // Influence Signals
+  getInfluenceSignals: (person?: string) =>
+    fetchApi<InfluenceSignalSchema[]>(`/api/influence-signals${person ? `?person=${person}` : ""}`),
+  getInfluenceGraph: () =>
+    fetchApi<InfluenceGraphData>("/api/influence-signals/graph"),
+
+  // Contradictions
+  getContradictions: (kind?: string) =>
+    fetchApi<ContradictionSchema[]>(`/api/contradictions${kind ? `?entry_kind=${kind}` : ""}`),
+  getGaps: () =>
+    fetchApi<ContradictionSchema[]>("/api/contradictions/gaps"),
+
+  // Meeting Scores
+  getMeetingScores: () =>
+    fetchApi<MeetingScoreSchema[]>("/api/meeting-scores"),
+  getMeetingScoreTrend: () =>
+    fetchApi<MeetingScoreTrend[]>("/api/meeting-scores/trend"),
+
+  // Risk Entries
+  getRiskEntries: (severity?: string) =>
+    fetchApi<RiskEntrySchema[]>(`/api/risk-entries${severity ? `?severity=${severity}` : ""}`),
+  getRiskHeatmap: () =>
+    fetchApi<{ rows: RiskHeatmapRow[] }>("/api/risk-entries/heatmap"),
+
+  // Project Summaries
+  getProjectSummaries: (projectId: number) =>
+    fetchApi<ProjectSummarySchema[]>(`/api/projects/${projectId}/project-summaries`),
 };

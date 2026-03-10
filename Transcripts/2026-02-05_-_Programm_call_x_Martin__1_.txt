@@ -7,7 +7,7 @@ Kind of, okay, just just your brain dump, of like, what's the thinking? Because 
 Speaker 2  0:47  
 That's interesting, because I was gonna lean on you a bit as well. Maybe we need Richard a bit more then, because, yeah, his connection earlier wasn't great, so I was struggling to understand some of the things he was saying. But also so I'm not really sure what the end goal is. The end goal correct me if I'm wrong then, but my understanding is we almost want to build a framework that allows people to use cursor within almost like a restricted environment where they're going through a process that allows them to scope design and distribute a project, is that definitely
 
-Unknown Speaker  1:40  
+Martin Davies  1:40  
 yeah, it's good to kind of clear that one. Because Okay, so I'll take you through the kind of project that I've scoped out so far. Mm, hmm.
 
 Azmain Hossain  2:00  

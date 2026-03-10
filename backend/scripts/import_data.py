@@ -28,14 +28,21 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from app.models import (
     ActionItem,
     Commitment,
+    Contradiction,
     Decision,
     DeletedImport,
     Document,
     GlossaryEntry,
+    InfluenceSignal,
+    MeetingScore,
     OpenThread,
+    Project,
+    ProjectSummary,
+    RiskEntry,
     SentimentSignal,
     Stakeholder,
     Summary,
+    TopicSignal,
     Transcript,
     TranscriptMention,
     WeeklyReport,
@@ -43,14 +50,20 @@ from app.models import (
     WorkstreamMilestone,
 )
 from scripts.parsers.action_item_parser import parse_action_items
+from scripts.parsers.commitment_parser import parse_commitments
+from scripts.parsers.contradiction_parser import parse_contradictions
 from scripts.parsers.decision_parser import parse_decisions
 from scripts.parsers.glossary_parser import parse_glossary
+from scripts.parsers.influence_signal_parser import parse_influence_signals
+from scripts.parsers.meeting_score_parser import parse_meeting_scores
 from scripts.parsers.open_thread_parser import parse_open_threads
+from scripts.parsers.project_summary_parser import parse_project_summaries
+from scripts.parsers.risk_entry_parser import parse_risk_entries
+from scripts.parsers.sentiment_parser import parse_sentiments
 from scripts.parsers.stakeholder_parser import parse_stakeholders
+from scripts.parsers.topic_signal_parser import parse_topic_signals
 from scripts.parsers.transcript_parser import parse_transcript
 from scripts.parsers.workstream_parser import parse_workstreams
-from scripts.parsers.sentiment_parser import parse_sentiments
-from scripts.parsers.commitment_parser import parse_commitments
 
 
 def _compute_file_hash(filepath: Path) -> str:
@@ -66,6 +79,14 @@ def _log(msg: str, verbose: bool = True):
     """Print a log message if verbose mode is on."""
     if verbose:
         print(f"  {msg}")
+
+
+def _slugify(name: str) -> str:
+    """Generate a URL-friendly slug from a project name."""
+    slug = name.lower().strip()
+    slug = re.sub(r'[^a-z0-9]+', '-', slug)
+    slug = slug.strip('-')
+    return slug
 
 
 # ---------------------------------------------------------------------------
@@ -427,7 +448,41 @@ async def import_action_items(
 
         for data in item_list:
             try:
-                # Use number + status as unique key
+                # Map old status to new Task status
+                _STATUS_MAP = {
+                    "OPEN": "TODO",
+                    "IN PROGRESS": "IN_PROGRESS",
+                    "COMPLETED": "DONE",
+                    "LIKELY COMPLETED": "IN_REVIEW",
+                    "LIKELY_COMPLETED": "IN_REVIEW",
+                    "BLOCKED": "TODO",
+                }
+                raw_status = data.get("status", "OPEN")
+                data["status"] = _STATUS_MAP.get(raw_status, raw_status)
+
+                # Populate title from description for Task model
+                if "title" not in data or not data.get("title"):
+                    desc = data.get("description", "")
+                    data["title"] = (desc[:200] if desc else f"Action {data.get('number', '?')}")
+                # Default new Task fields — use status suffix to avoid
+                # collisions when same number appears in OPEN + COMPLETED
+                if "identifier" not in data or not data.get("identifier"):
+                    num = data.get('number', '0')
+                    status_suffix = data.get("status", "TODO")
+                    if status_suffix in ("DONE", "IN_REVIEW", "IN_PROGRESS"):
+                        data["identifier"] = f"ACT-{num}-{status_suffix}"
+                    else:
+                        data["identifier"] = f"ACT-{num}"
+                # Map parser fields to Task model fields for the UI
+                if data.get("owner") and not data.get("assignee"):
+                    data["assignee"] = data["owner"]
+                if data.get("action_date") and not data.get("created_date"):
+                    data["created_date"] = data["action_date"]
+                data.setdefault("priority", "NONE")
+                data.setdefault("labels", [])
+                data.setdefault("position", 0)
+
+                # Use number + mapped status as unique key
                 result = await session.execute(
                     select(ActionItem).where(
                         ActionItem.number == data["number"],
@@ -452,7 +507,7 @@ async def import_action_items(
                 else:
                     del_check = await session.execute(
                         select(DeletedImport).where(
-                            DeletedImport.entity_type == "action_item",
+                            DeletedImport.entity_type.in_(["action_item", "task"]),
                             DeletedImport.unique_key == f"{data['number']}:{data['status']}",
                         )
                     )
@@ -1075,6 +1130,374 @@ async def import_commitments(
     return stats
 
 
+async def import_topic_signals(
+    session: AsyncSession, root: Path, verbose: bool = False,
+) -> dict:
+    """Import topic signals from analysis/trackers/topic_evolution.md."""
+    stats = {"inserted": 0, "updated": 0, "skipped": 0, "errors": 0}
+    filepath = root / "analysis" / "trackers" / "topic_evolution.md"
+    if not filepath.exists():
+        _log("No topic evolution tracker file found, skipping", verbose)
+        return stats
+
+    content = filepath.read_text(encoding="utf-8")
+    parsed = parse_topic_signals(content)
+    _log(f"Parsed {len(parsed)} topic signal entries", verbose)
+
+    for entry in parsed:
+        try:
+            topic = entry.get("topic")
+            entry_date = entry.get("date")
+
+            # Match by topic + date composite unique
+            query = select(TopicSignal).where(
+                TopicSignal.topic == topic,
+            )
+            if entry_date:
+                query = query.where(TopicSignal.date == entry_date)
+            else:
+                query = query.where(TopicSignal.date.is_(None))
+
+            result = await session.execute(query)
+            existing = result.scalar_one_or_none()
+
+            if existing:
+                if existing.is_manual:
+                    stats["skipped"] += 1
+                    continue
+                # Update existing record
+                for key, val in entry.items():
+                    if hasattr(existing, key):
+                        setattr(existing, key, val)
+                stats["updated"] += 1
+                _log(f"  Updated: {topic} ({entry_date})", verbose)
+            else:
+                signal = TopicSignal(**entry, is_manual=False)
+                session.add(signal)
+                stats["inserted"] += 1
+                _log(f"  Inserted: {topic} ({entry_date})", verbose)
+
+        except Exception as e:
+            _log(f"  Error importing topic signal: {e}", verbose)
+            stats["errors"] += 1
+
+    await session.commit()
+    return stats
+
+
+async def import_influence_signals(
+    session: AsyncSession, root: Path, verbose: bool = False,
+) -> dict:
+    """Import influence signals from analysis/trackers/influence_graph.md."""
+    stats = {"inserted": 0, "deleted": 0, "errors": 0}
+    filepath = root / "analysis" / "trackers" / "influence_graph.md"
+    if not filepath.exists():
+        _log("No influence graph tracker file found, skipping", verbose)
+        return stats
+
+    content = filepath.read_text(encoding="utf-8")
+    parsed = parse_influence_signals(content)
+    _log(f"Parsed {len(parsed)} influence signal entries", verbose)
+
+    # Delete all non-manual records and re-insert from parsed data
+    del_result = await session.execute(
+        delete(InfluenceSignal).where(InfluenceSignal.is_manual == False)  # noqa: E712
+    )
+    stats["deleted"] = del_result.rowcount
+    _log(f"  Cleared {stats['deleted']} non-manual influence signals", verbose)
+    await session.flush()
+
+    for entry in parsed:
+        try:
+            # Remove entry_kind from dict before creating model (not a column)
+            entry_data = {k: v for k, v in entry.items() if k != "entry_kind"}
+            signal = InfluenceSignal(**entry_data, is_manual=False)
+            session.add(signal)
+            stats["inserted"] += 1
+        except Exception as e:
+            _log(f"  Error importing influence signal: {e}", verbose)
+            stats["errors"] += 1
+
+    await session.commit()
+    return stats
+
+
+async def import_contradictions(
+    session: AsyncSession, root: Path, verbose: bool = False,
+) -> dict:
+    """Import contradictions from analysis/trackers/contradictions.md."""
+    stats = {"inserted": 0, "deleted": 0, "errors": 0}
+    filepath = root / "analysis" / "trackers" / "contradictions.md"
+    if not filepath.exists():
+        _log("No contradictions tracker file found, skipping", verbose)
+        return stats
+
+    content = filepath.read_text(encoding="utf-8")
+    parsed = parse_contradictions(content)
+    _log(f"Parsed {len(parsed)} contradiction entries", verbose)
+
+    # Delete all non-manual records and re-insert from parsed data
+    del_result = await session.execute(
+        delete(Contradiction).where(Contradiction.is_manual == False)  # noqa: E712
+    )
+    stats["deleted"] = del_result.rowcount
+    _log(f"  Cleared {stats['deleted']} non-manual contradictions", verbose)
+    await session.flush()
+
+    for entry in parsed:
+        try:
+            contradiction = Contradiction(**entry, is_manual=False)
+            session.add(contradiction)
+            stats["inserted"] += 1
+        except Exception as e:
+            _log(f"  Error importing contradiction: {e}", verbose)
+            stats["errors"] += 1
+
+    await session.commit()
+    return stats
+
+
+async def import_meeting_scores(
+    session: AsyncSession, root: Path, verbose: bool = False,
+) -> dict:
+    """Import meeting scores from analysis/trackers/meeting_scores.md."""
+    stats = {"inserted": 0, "updated": 0, "skipped": 0, "errors": 0}
+    filepath = root / "analysis" / "trackers" / "meeting_scores.md"
+    if not filepath.exists():
+        _log("No meeting scores tracker file found, skipping", verbose)
+        return stats
+
+    content = filepath.read_text(encoding="utf-8")
+    parsed = parse_meeting_scores(content)
+    _log(f"Parsed {len(parsed)} meeting score entries", verbose)
+
+    # Build a transcript lookup: title -> id (case-insensitive)
+    t_result = await session.execute(select(Transcript.id, Transcript.title))
+    title_to_id: dict[str, int] = {}
+    for row in t_result.all():
+        if row.title:
+            title_to_id[row.title.lower().strip()] = row.id
+
+    for entry in parsed:
+        try:
+            meeting_title = entry.get("meeting_title")
+            entry_date = entry.get("date")
+
+            # Resolve transcript_id by matching meeting_title to transcript title
+            transcript_id = None
+            if meeting_title:
+                transcript_id = title_to_id.get(meeting_title.lower().strip())
+                # Fallback: fuzzy match by checking if transcript title contains
+                # the meeting title or vice versa
+                if not transcript_id:
+                    mt_lower = meeting_title.lower().strip()
+                    for t_title, t_id in title_to_id.items():
+                        if mt_lower in t_title or t_title in mt_lower:
+                            transcript_id = t_id
+                            break
+
+            if not transcript_id:
+                _log(f"  No transcript match for: {meeting_title}, skipping", verbose)
+                stats["skipped"] += 1
+                continue
+
+            # Match by transcript_id (unique constraint on transcript_id)
+            result = await session.execute(
+                select(MeetingScore).where(
+                    MeetingScore.transcript_id == transcript_id,
+                )
+            )
+            existing = result.scalar_one_or_none()
+
+            if existing:
+                if existing.is_manual:
+                    stats["skipped"] += 1
+                    continue
+                # Update existing record
+                for key, val in entry.items():
+                    if hasattr(existing, key):
+                        setattr(existing, key, val)
+                existing.transcript_id = transcript_id
+                stats["updated"] += 1
+                _log(f"  Updated: {meeting_title} ({entry_date})", verbose)
+            else:
+                entry["transcript_id"] = transcript_id
+                score = MeetingScore(**entry, is_manual=False)
+                session.add(score)
+                stats["inserted"] += 1
+                _log(f"  Inserted: {meeting_title} ({entry_date})", verbose)
+
+        except Exception as e:
+            _log(f"  Error importing meeting score: {e}", verbose)
+            stats["errors"] += 1
+
+    await session.commit()
+    return stats
+
+
+async def import_risk_entries(
+    session: AsyncSession, root: Path, verbose: bool = False,
+) -> dict:
+    """Import risk entries from analysis/trackers/risk_register.md."""
+    stats = {"inserted": 0, "updated": 0, "skipped": 0, "errors": 0}
+    filepath = root / "analysis" / "trackers" / "risk_register.md"
+    if not filepath.exists():
+        _log("No risk register file found, skipping", verbose)
+        return stats
+
+    content = filepath.read_text(encoding="utf-8")
+    parsed = parse_risk_entries(content)
+    _log(f"Parsed {len(parsed)} risk entries", verbose)
+
+    for entry in parsed:
+        try:
+            risk_id = entry.get("risk_id")
+            if not risk_id:
+                stats["errors"] += 1
+                continue
+
+            # Match by risk_id (unique)
+            result = await session.execute(
+                select(RiskEntry).where(RiskEntry.risk_id == risk_id)
+            )
+            existing = result.scalar_one_or_none()
+
+            if existing:
+                if existing.is_manual:
+                    stats["skipped"] += 1
+                    continue
+                # Update existing record
+                for key, val in entry.items():
+                    if hasattr(existing, key):
+                        setattr(existing, key, val)
+                stats["updated"] += 1
+                _log(f"  Updated: {risk_id} - {entry.get('title', '')}", verbose)
+            else:
+                risk = RiskEntry(**entry, is_manual=False)
+                session.add(risk)
+                stats["inserted"] += 1
+                _log(f"  Inserted: {risk_id} - {entry.get('title', '')}", verbose)
+
+        except Exception as e:
+            _log(f"  Error importing risk entry: {e}", verbose)
+            stats["errors"] += 1
+
+    await session.commit()
+    return stats
+
+
+async def import_project_summaries(
+    session: AsyncSession, root: Path, verbose: bool = False,
+) -> dict:
+    """Import project summaries from analysis/projects/*/."""
+    stats = {"inserted": 0, "updated": 0, "skipped": 0, "errors": 0}
+
+    parsed = parse_project_summaries(str(root))
+    if not parsed:
+        _log("No project summaries found, skipping", verbose)
+        return stats
+
+    _log(f"Parsed {len(parsed)} project summary entries", verbose)
+
+    # Build project slug -> id mapping
+    p_result = await session.execute(select(Project.id, Project.slug, Project.name))
+    slug_to_id: dict[str, int] = {}
+    name_to_id: dict[str, int] = {}
+    for row in p_result.all():
+        if row.slug:
+            slug_to_id[row.slug.lower()] = row.id
+        if row.name:
+            name_to_id[row.name.lower()] = row.id
+            # Also index by generated slug from name
+            slug_to_id[_slugify(row.name)] = row.id
+
+    # Build transcript title -> id mapping for resolving transcript_id
+    t_result = await session.execute(select(Transcript.id, Transcript.title, Transcript.filename))
+    transcript_lookup: dict[str, int] = {}
+    for row in t_result.all():
+        if row.title:
+            transcript_lookup[row.title.lower().strip()] = row.id
+        if row.filename:
+            transcript_lookup[row.filename.lower().strip()] = row.id
+
+    for entry in parsed:
+        try:
+            project_slug = entry.get("project_slug", "")
+            source_file = entry.get("source_file", "")
+            file_hash = entry.get("file_hash")
+
+            # Resolve project_slug -> project_id
+            project_id = slug_to_id.get(project_slug.lower())
+            if not project_id:
+                # Try matching by generated slug from name
+                project_id = slug_to_id.get(project_slug.lower().replace("_", "-"))
+            if not project_id:
+                _log(f"  No project match for slug: {project_slug}, skipping", verbose)
+                stats["skipped"] += 1
+                continue
+
+            # Try to resolve transcript_id from the source file stem
+            transcript_id = None
+            stem = Path(source_file).stem if source_file else ""
+            if stem:
+                # Try direct match
+                transcript_id = transcript_lookup.get(stem.lower())
+                # Try fuzzy: strip date prefix and match
+                if not transcript_id:
+                    for t_key, t_id in transcript_lookup.items():
+                        if stem.lower() in t_key or t_key in stem.lower():
+                            transcript_id = t_id
+                            break
+
+            # Match by project_id + source_file
+            result = await session.execute(
+                select(ProjectSummary).where(
+                    ProjectSummary.project_id == project_id,
+                    ProjectSummary.source_file == source_file,
+                )
+            )
+            existing = result.scalar_one_or_none()
+
+            if existing:
+                if existing.file_hash == file_hash:
+                    stats["skipped"] += 1
+                    continue
+                existing.content = entry.get("content", "")
+                existing.date = entry.get("date")
+                existing.relevance = entry.get("relevance")
+                existing.file_hash = file_hash
+                if transcript_id:
+                    existing.transcript_id = transcript_id
+                stats["updated"] += 1
+                _log(f"  Updated: {source_file}", verbose)
+            else:
+                # transcript_id is required (non-nullable) — skip if not found
+                if not transcript_id:
+                    _log(f"  No transcript match for project summary: {source_file}, skipping", verbose)
+                    stats["skipped"] += 1
+                    continue
+
+                summary = ProjectSummary(
+                    project_id=project_id,
+                    transcript_id=transcript_id,
+                    date=entry.get("date"),
+                    relevance=entry.get("relevance"),
+                    content=entry.get("content", ""),
+                    source_file=source_file,
+                    file_hash=file_hash,
+                )
+                session.add(summary)
+                stats["inserted"] += 1
+                _log(f"  Inserted: {source_file}", verbose)
+
+        except Exception as e:
+            _log(f"  Error importing project summary: {e}", verbose)
+            stats["errors"] += 1
+
+    await session.commit()
+    return stats
+
+
 # ---------------------------------------------------------------------------
 # Main orchestrator
 # ---------------------------------------------------------------------------
@@ -1097,58 +1520,98 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
 
     all_stats = {}
 
+    total_steps = 19
+
     async with Session() as session:
         # 1. Transcripts
-        print("[1/13] Importing transcripts...")
+        print(f"[1/{total_steps}] Importing transcripts...")
         all_stats["transcripts"] = await import_transcripts(session, root, verbose)
 
         # 2. Stakeholders
-        print("[2/13] Importing stakeholders...")
+        print(f"[2/{total_steps}] Importing stakeholders...")
         all_stats["stakeholders"] = await import_stakeholders(session, root, verbose)
 
         # 3. Decisions
-        print("[3/13] Importing decisions...")
+        print(f"[3/{total_steps}] Importing decisions...")
         all_stats["decisions"] = await import_decisions(session, root, verbose)
 
         # 4. Workstreams + milestones
-        print("[4/13] Importing workstreams...")
+        print(f"[4/{total_steps}] Importing workstreams...")
         all_stats["workstreams"] = await import_workstreams(session, root, verbose)
 
         # 5. Open threads
-        print("[5/13] Importing open threads...")
+        print(f"[5/{total_steps}] Importing open threads...")
         all_stats["open_threads"] = await import_open_threads(session, root, verbose)
 
         # 6. Action items
-        print("[6/13] Importing action items...")
+        print(f"[6/{total_steps}] Importing action items...")
         all_stats["action_items"] = await import_action_items(session, root, verbose)
 
         # 7. Glossary
-        print("[7/13] Importing glossary...")
+        print(f"[7/{total_steps}] Importing glossary...")
         all_stats["glossary"] = await import_glossary(session, root, verbose)
 
         # 8. Summaries
-        print("[8/13] Importing summaries...")
+        print(f"[8/{total_steps}] Importing summaries...")
         all_stats["summaries"] = await import_summaries(session, root, verbose)
 
         # 9. Weekly reports
-        print("[9/13] Importing weekly reports...")
+        print(f"[9/{total_steps}] Importing weekly reports...")
         all_stats["weekly_reports"] = await import_weekly_reports(session, root, verbose)
 
         # 10. Programme debrief (as Document)
-        print("[10/13] Importing programme debrief...")
+        print(f"[10/{total_steps}] Importing programme debrief...")
         all_stats["programme_debrief"] = await import_programme_debrief(session, root, verbose)
 
         # 11. Project pages (as Documents)
-        print("[11/13] Importing project pages...")
+        print(f"[11/{total_steps}] Importing project pages...")
         all_stats["project_pages"] = await import_project_pages(session, root, verbose)
 
         # 12. Sentiments
-        print("[12/13] Importing sentiments...")
+        print(f"[12/{total_steps}] Importing sentiments...")
         all_stats["sentiments"] = await import_sentiments(session, root, verbose)
 
         # 13. Commitments
-        print("[13/13] Importing commitments...")
+        print(f"[13/{total_steps}] Importing commitments...")
         all_stats["commitments"] = await import_commitments(session, root, verbose)
+
+        # 14. Topic signals
+        print(f"[14/{total_steps}] Importing topic signals...")
+        all_stats["topic_signals"] = await import_topic_signals(session, root, verbose)
+
+        # 15. Influence signals
+        print(f"[15/{total_steps}] Importing influence signals...")
+        all_stats["influence_signals"] = await import_influence_signals(session, root, verbose)
+
+        # 16. Contradictions
+        print(f"[16/{total_steps}] Importing contradictions...")
+        all_stats["contradictions"] = await import_contradictions(session, root, verbose)
+
+        # 17. Meeting scores
+        print(f"[17/{total_steps}] Importing meeting scores...")
+        all_stats["meeting_scores"] = await import_meeting_scores(session, root, verbose)
+
+        # 18. Risk entries
+        print(f"[18/{total_steps}] Importing risk entries...")
+        all_stats["risk_entries"] = await import_risk_entries(session, root, verbose)
+
+        # 19. Project summaries
+        print(f"[19/{total_steps}] Importing project summaries...")
+        all_stats["project_summaries"] = await import_project_summaries(session, root, verbose)
+
+        # Generate slugs for projects that are missing them
+        print("\nGenerating project slugs...")
+        p_result = await session.execute(
+            select(Project).where(Project.slug.is_(None))
+        )
+        projects_without_slugs = p_result.scalars().all()
+        slug_count = 0
+        for project in projects_without_slugs:
+            project.slug = _slugify(project.name)
+            slug_count += 1
+        if slug_count:
+            await session.commit()
+            _log(f"Generated slugs for {slug_count} projects", verbose)
 
         # Build transcript mentions
         print("\nBuilding transcript mentions...")
@@ -1171,6 +1634,14 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
             print(f"  Workstreams: {ws['inserted']} inserted, {ws['updated']} updated, "
                   f"{ws['skipped']} skipped, {ws['errors']} errors")
             print(f"  Milestones:  {ms['inserted']} inserted, {ms['errors']} errors")
+        elif "deleted" in stats:
+            # Bulk-replace style: influence_signals, contradictions
+            label = entity.replace("_", " ").title()
+            deleted = stats.get("deleted", 0)
+            inserted = stats.get("inserted", 0)
+            errors = stats.get("errors", 0)
+            print(f"  {label}: {deleted} cleared, {inserted} inserted, "
+                  f"{errors} errors")
         else:
             label = entity.replace("_", " ").title()
             inserted = stats.get("inserted", 0)
@@ -1184,12 +1655,12 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
 
     # Check for any errors
     total_errors = 0
-    for entity, stats in all_stats.items():
+    for entity, entity_stats in all_stats.items():
         if entity == "workstreams":
-            total_errors += stats["workstreams"].get("errors", 0)
-            total_errors += stats["milestones"].get("errors", 0)
+            total_errors += entity_stats["workstreams"].get("errors", 0)
+            total_errors += entity_stats["milestones"].get("errors", 0)
         elif entity != "mentions":
-            total_errors += stats.get("errors", 0)
+            total_errors += entity_stats.get("errors", 0)
 
     if total_errors > 0:
         print(f"\nWARNING: {total_errors} error(s) occurred during import.")

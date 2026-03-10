@@ -1,7 +1,7 @@
 Richard Dosoo  0:00  
 So, so we can authenticate people that are logging in, and we can also have some kind of rule based access control within the application based off of that.
 
-Unknown Speaker  0:09  
+Azmain Hossain  0:09  
 So the application
 
 Richard Dosoo  0:12  

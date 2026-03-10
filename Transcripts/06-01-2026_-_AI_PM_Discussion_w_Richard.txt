@@ -115,7 +115,7 @@ Yeah, that was, honestly, that was my it was starting to worry me. Like, this da
 Richard Dosoo  23:20  
 Yeah, no. 100% and that's that's always the thing with the software development, right? It's not how long it takes to stand up, it's how long it takes to support, operationalize, update, maintain, and it will be much better for us to have like a for this to be handed off to a dedicated team to support a manage, and that team is already doing stuff for the organisation. That's where you get the most value and the most velocity.
 
-Unknown Speaker  23:49  
+Richard Dosoo  23:49  
 So that's the sorry
 
 Azmain Hossain  23:56  

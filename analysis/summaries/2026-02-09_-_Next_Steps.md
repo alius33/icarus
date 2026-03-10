@@ -16,23 +16,60 @@
 - Blocker presentation needs to change from cards to a filterable table.
 
 ## Decisions Made
-- Data strategy this week: Catherine sense-checks complex accounts, no other feature work until data is stable -> Richard
-- Blockers page needs to be rebuilt with relevant analytics only, not conceptual placeholders -> Azmain
-- Blocker display to shift from cards to filterable table -> Azmain
+| Decision | Type | Made By | Confidence |
+|----------|------|---------|------------|
+| Data strategy this week: Catherine sense-checks complex accounts, no other feature work until data is stable | Priority | Richard | High |
+| Blockers page needs to be rebuilt with relevant analytics only, not conceptual placeholders | Technical | Azmain/Richard | High |
+| Blocker display to shift from cards to filterable table | UX | Azmain | Medium |
 
 ## Action Items
-| Action | Owner | Deadline | Status |
-|--------|-------|----------|--------|
-| Email Catherine/Josh/Natalia/Ben with data sense-check ask | Azmain | 2026-02-09 | Open |
-| Catherine to sense-check complex accounts against CLARA data | Catherine | End of Tue 2026-02-11 | Open |
-| Wednesday call to review data gaps and plan fixes | Team | 2026-02-12 | Open |
-| Rebuild blockers page with real analytics, filterable table | Azmain | TBD | Open |
-| Walk Azmain through local dev workaround | BenVH | 2026-02-09 | In Progress |
+| Action | Owner | Deadline | Status | Confidence |
+|--------|-------|----------|--------|------------|
+| Email Catherine/Josh/Natalia/Ben with data sense-check ask | Azmain | 2026-02-09 | Open | High |
+| Catherine to sense-check complex accounts against CLARA data | Catherine | End of Tue 2026-02-11 | Open | Medium — depends on Catherine's engagement |
+| Wednesday call to review data gaps and plan fixes | Team | 2026-02-12 | Open | High |
+| Rebuild blockers page with real analytics, filterable table | Azmain | TBD | Open | Medium |
+| Walk Azmain through local dev workaround | BenVH | 2026-02-09 | In Progress | High |
+
+## Theme Segments
+| Time Range | Theme | Key Speakers |
+|------------|-------|--------------|
+| 0:00-4:00 | Catherine/Josh engagement problem and data strategy | Richard, Azmain |
+| 4:00-9:00 | Holistic data validation plan, golden source vs Salesforce | Richard, Azmain |
+| 9:00-13:00 | Diya's blocker analytics requirement, dashboard rebuild | Richard, Azmain |
+| 13:00-22:00 | BenVH joins — local dev setup, guard rules, cloud environment discussion | BenVH, Azmain |
+
+## Power Dynamics
+- **Richard is the strategist and mentor.** He reframes Azmain's frustration with Catherine into a tactical engagement problem and proposes a solution. The tone is patient and coaching — not directive.
+- **Azmain vents but accepts guidance.** His frustration with Catherine is palpable but he channels it productively once Richard provides the reframe.
+- **BenVH operates independently.** He has already built guard rules and dev scripts without being asked. He joins the call with solutions, not questions.
 
 ## Stakeholder Signals
-- Richard is tactically reframing the engagement approach — moving from "show them the output" to "involve them in the process" to address Catherine and Josh's resistance.
-- Azmain is visibly frustrated with the pace of stakeholder engagement, especially Catherine's reluctance to explore the app and repeated surprise about data she originally provided.
-- BenVH is proactively building infrastructure improvements (local dev, guard rules) to reduce deployment friction.
+- **Richard:** Tactically reframing the engagement approach — moving from "show them the output" to "involve them in the process" to address Catherine and Josh's resistance. Shows strategic patience.
+- **Azmain:** Visibly frustrated with the pace of stakeholder engagement, especially Catherine's reluctance to explore the app and repeated surprise about data she originally provided. Wants to move fast but is blocked by social friction.
+- **BenVH:** Proactively building infrastructure improvements (local dev, guard rules) to reduce deployment friction. His contribution is entirely self-directed.
+- **Catherine (discussed, not present):** Described as scared to explore the app. Richard attributes this to the broader engagement dynamic, not a personal failing. The golden source spreadsheet she maintains is too messy to import programmatically.
+
+## Commitments Made
+| Who | Commitment | To Whom | Strength |
+|-----|-----------|---------|----------|
+| Azmain | Send email to Catherine/Josh/Natalia/Ben with data ask | Richard | Firm |
+| Richard | Jump on a call with Catherine if needed to help navigate | Azmain | Conditional |
+| BenVH | Walk through local dev scripts with Azmain | Azmain | In progress |
+
+## Meeting Effectiveness
+| Dimension | Score (1-5) | Notes |
+|-----------|-------------|-------|
+| Clarity of outcomes | 4 | Data strategy clear, dev workflow improving |
+| Decision quality | 4 | Holistic sense-check is the right approach |
+| Engagement balance | 3 | Two-person conversation until BenVH joins |
+| Time efficiency | 3 | Some repetition of frustrations already voiced |
+| Follow-through potential | 3 | Depends heavily on Catherine's willingness to engage |
+
+## Risk Signals
+- **Catherine engagement risk:** If Catherine does not complete the sense-check by Tuesday, the Wednesday fix session cannot happen, and the weekly cycle slips again. Richard's reframe is good strategy but depends on execution.
+- **Local dev blockers:** Azmain still cannot run local dev. IT has not resolved WSL/Docker tickets. BenVH's PowerShell workaround may help but the underlying issue persists.
+- **Blocker analytics are vaporware.** The current dashboard numbers are not based on real trend analysis. If Diya or other executives look at them, they could be misleading.
 
 ## Open Questions Raised
 - Will the complex-account sense-check reveal schema changes or just data fixes?
@@ -41,3 +78,6 @@
 
 ## Raw Quotes of Note
 - "If we don't tackle it holistically, all that's going to happen is every week there's a new schema change, a new data fix, and that's all we'll be doing." -- Richard, on the data strategy
+
+## Narrative Notes
+This is a strategy and therapy session combined. Richard's reframe of the Catherine problem — from "she won't engage" to "we need to change our approach" — is the most important moment. Azmain is carrying genuine frustration from weeks of stakeholder friction, and Richard absorbs it and redirects it into a concrete plan. BenVH's contribution is characteristically independent: he shows up with solutions already built, walks through them, and leaves. The tension between Azmain's desire to move fast and the reality of stakeholder readiness is the defining dynamic of this phase of the programme.

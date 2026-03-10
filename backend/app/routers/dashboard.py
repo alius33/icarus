@@ -8,7 +8,7 @@ from sqlalchemy import and_, case, desc, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
-from app.models.action_item import ActionItem
+from app.models.task import Task
 from app.models.decision import Decision
 from app.models.dependency import Dependency
 from app.models.open_thread import OpenThread
@@ -22,6 +22,7 @@ from app.models.transcript_mention import TranscriptMention
 from app.models.workstream import Workstream
 from app.schemas.dashboard import (
     ActivityFeedItem,
+    AnalysisInsightsData,
     DashboardProjectCard,
     DashboardResponse,
     InsightsData,
@@ -139,12 +140,12 @@ async def _compute_weekly_counts(
     #    actions completed in future weeks. This gives a rough backward
     #    projection without requiring event-sourced snapshots.
     current_open = (await db.execute(
-        select(func.count(ActionItem.id)).where(ActionItem.status == "OPEN")
+        select(func.count(Task.id)).where(Task.status.in_(["TODO", "IN_PROGRESS", "IN_REVIEW"]))
     )).scalar_one()
     # Get completions per week to walk backwards
     completions_result = await db.execute(
-        select(ActionItem.completed_date)
-        .where(ActionItem.status != "OPEN", ActionItem.completed_date.isnot(None))
+        select(Task.completed_date)
+        .where(Task.status.in_(["DONE", "CANCELLED"]), Task.completed_date.isnot(None))
     )
     completions_by_week: dict[date, int] = defaultdict(int)
     for (comp_date,) in completions_result.all():
@@ -204,6 +205,68 @@ async def _compute_weekly_counts(
 
 
 # ---------------------------------------------------------------------------
+# Analysis Insights helper
+# ---------------------------------------------------------------------------
+
+async def _compute_analysis_insights(db: AsyncSession) -> AnalysisInsightsData:
+    """Compute deep analysis insights from the new entity types."""
+    from app.models.meeting_score import MeetingScore
+    from app.models.risk_entry import RiskEntry
+    from app.models.contradiction import Contradiction
+    from app.models.topic_signal import TopicSignal
+
+    today = date.today()
+
+    # Average meeting score (last 4 weeks)
+    four_weeks_ago = today - timedelta(days=28)
+    result = await db.execute(
+        select(func.avg(MeetingScore.overall_score))
+        .where(MeetingScore.date >= four_weeks_ago)
+    )
+    avg_meeting_score = result.scalar() or 0
+
+    # Critical + high severity risks
+    result = await db.execute(
+        select(func.count()).select_from(RiskEntry)
+        .where(RiskEntry.severity.in_(["CRITICAL", "HIGH"]))
+    )
+    active_critical_risks = result.scalar() or 0
+
+    # Escalating risks
+    result = await db.execute(
+        select(func.count()).select_from(RiskEntry)
+        .where(RiskEntry.trajectory == "escalating")
+    )
+    escalating_risks = result.scalar() or 0
+
+    # New contradictions this week
+    one_week_ago = today - timedelta(days=7)
+    result = await db.execute(
+        select(func.count()).select_from(Contradiction)
+        .where(Contradiction.date >= one_week_ago)
+        .where(Contradiction.entry_kind == "contradiction")
+    )
+    new_contradictions = result.scalar() or 0
+
+    # Top rising topic
+    result = await db.execute(
+        select(TopicSignal.topic)
+        .where(TopicSignal.trend == "rising")
+        .order_by(TopicSignal.date.desc().nullslast())
+        .limit(1)
+    )
+    top_rising = result.scalar()
+
+    return AnalysisInsightsData(
+        avg_meeting_score=round(float(avg_meeting_score), 1),
+        active_critical_risks=active_critical_risks,
+        escalating_risks=escalating_risks,
+        new_contradictions_this_week=new_contradictions,
+        top_rising_topic=top_rising,
+    )
+
+
+# ---------------------------------------------------------------------------
 # GET /api/dashboard
 # ---------------------------------------------------------------------------
 
@@ -232,7 +295,7 @@ async def get_dashboard(
     )).scalar_one()
 
     open_actions_count = (await db.execute(
-        select(func.count(ActionItem.id)).where(ActionItem.status == "OPEN")
+        select(func.count(Task.id)).where(Task.status.in_(["TODO", "IN_PROGRESS", "IN_REVIEW"]))
     )).scalar_one()
 
     critical_threads_count = (await db.execute(
@@ -343,7 +406,7 @@ async def get_dashboard(
             workstream_code=ws_code,
             is_custom=pis_custom,
             transcript_count=counts.get("transcript", 0),
-            action_count=counts.get("action_item", 0),
+            action_count=counts.get("task", 0) or counts.get("action_item", 0),
             open_thread_count=counts.get("open_thread", 0),
             decision_count=counts.get("decision", 0),
             last_activity_date=str(la) if la else None,
@@ -404,7 +467,7 @@ async def get_dashboard(
     # ==================================================================
 
     open_actions_result = await db.execute(
-        select(ActionItem).where(ActionItem.status == "OPEN")
+        select(Task).where(Task.status.in_(["TODO", "IN_PROGRESS", "IN_REVIEW"]))
     )
     all_open_actions = open_actions_result.scalars().all()
 
@@ -637,10 +700,10 @@ async def get_dashboard(
     # ==================================================================
 
     total_actions = (await db.execute(
-        select(func.count(ActionItem.id))
+        select(func.count(Task.id))
     )).scalar_one()
     completed_actions = (await db.execute(
-        select(func.count(ActionItem.id)).where(ActionItem.status != "OPEN")
+        select(func.count(Task.id)).where(Task.status.in_(["DONE", "CANCELLED"]))
     )).scalar_one()
     action_completion_rate = round(
         (completed_actions / total_actions * 100) if total_actions > 0 else 0.0, 1
@@ -696,6 +759,12 @@ async def get_dashboard(
     )
 
     # ==================================================================
+    # 9. Analysis Insights (deep analysis engine)
+    # ==================================================================
+
+    analysis_insights = await _compute_analysis_insights(db)
+
+    # ==================================================================
     # Assemble response
     # ==================================================================
 
@@ -711,6 +780,7 @@ async def get_dashboard(
         programme_status=programme_status,
         kpi=kpi,
         insights=insights,
+        analysis_insights=analysis_insights,
     )
 
 
@@ -733,10 +803,10 @@ async def _compute_programme_status(
     # Health score: weighted combination
     # Action completion contributes positively
     total_actions = (await db.execute(
-        select(func.count(ActionItem.id))
+        select(func.count(Task.id))
     )).scalar_one()
     completed_actions = (await db.execute(
-        select(func.count(ActionItem.id)).where(ActionItem.status != "OPEN")
+        select(func.count(Task.id)).where(Task.status.in_(["DONE", "CANCELLED"]))
     )).scalar_one()
     completion_rate = (completed_actions / total_actions * 100) if total_actions > 0 else 50.0
 
@@ -772,9 +842,9 @@ async def _compute_programme_status(
 
     # Biggest win: most recently completed action
     recent_completed = (await db.execute(
-        select(ActionItem)
-        .where(ActionItem.status != "OPEN", ActionItem.completed_date.isnot(None))
-        .order_by(desc(ActionItem.completed_date))
+        select(Task)
+        .where(Task.status.in_(["DONE", "CANCELLED"]), Task.completed_date.isnot(None))
+        .order_by(desc(Task.completed_date))
         .limit(1)
     )).scalar_one_or_none()
 
@@ -878,7 +948,7 @@ async def get_brief(db: AsyncSession = Depends(get_db)):
 
     # Overdue actions
     open_actions_result = await db.execute(
-        select(ActionItem).where(ActionItem.status == "OPEN")
+        select(Task).where(Task.status.in_(["TODO", "IN_PROGRESS", "IN_REVIEW"]))
     )
     all_open = open_actions_result.scalars().all()
 
@@ -935,10 +1005,10 @@ async def get_brief(db: AsyncSession = Depends(get_db)):
 
     # Health RAG from action completion + risk count
     total_actions = (await db.execute(
-        select(func.count(ActionItem.id))
+        select(func.count(Task.id))
     )).scalar_one()
     completed_actions = (await db.execute(
-        select(func.count(ActionItem.id)).where(ActionItem.status != "OPEN")
+        select(func.count(Task.id)).where(Task.status.in_(["DONE", "CANCELLED"]))
     )).scalar_one()
     completion_rate = (completed_actions / total_actions * 100) if total_actions > 0 else 50.0
 
@@ -979,9 +1049,9 @@ async def get_brief(db: AsyncSession = Depends(get_db)):
 
     # Biggest win
     recent_completed = (await db.execute(
-        select(ActionItem)
-        .where(ActionItem.status != "OPEN", ActionItem.completed_date.isnot(None))
-        .order_by(desc(ActionItem.completed_date))
+        select(Task)
+        .where(Task.status.in_(["DONE", "CANCELLED"]), Task.completed_date.isnot(None))
+        .order_by(desc(Task.completed_date))
         .limit(1)
     )).scalar_one_or_none()
 

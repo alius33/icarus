@@ -32,7 +32,7 @@ export default function RiskDependencyBoard() {
   const loadData = async () => {
     try {
       const [t, d] = await Promise.allSettled([
-        api.getOpenThreads("OPEN"),
+        api.getOpenThreads({ status: "OPEN" }),
         api.getDependencies(),
       ]);
       if (t.status === "fulfilled") setThreads(t.value);

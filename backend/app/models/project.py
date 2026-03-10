@@ -11,6 +11,7 @@ class Project(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String, nullable=False)
+    slug = Column(String, unique=True, index=True, nullable=True)
     description = Column(Text)
     workstream_id = Column(Integer, ForeignKey("workstreams.id", ondelete="SET NULL"), nullable=True, unique=True)
     is_custom = Column(Boolean, nullable=False, default=False)

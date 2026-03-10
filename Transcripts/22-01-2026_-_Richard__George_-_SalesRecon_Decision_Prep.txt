@@ -19,7 +19,7 @@ Sorry, I'm being quiet. I'm using tracer for the first time because I maxed out 
 Richard Dosoo  2:24  
 The awesome I saw that. So basically, the so the way we should be using all these tools, right, is spec driven development. You use one prompt to come up with a really good PRD that clarifies all of your features, your functions. I see George now as well, clarifies everything. And then hold on, let me George is actually just in a room next to me, so let me just go and jump in. Oh yeah, of course, let me do that. Just give me one second. I
 
-Unknown Speaker  3:33  
+Jamie  3:33  
 Hey, hey guys. Hey, George, yeah,
 
 Azmain Hossain  3:37  

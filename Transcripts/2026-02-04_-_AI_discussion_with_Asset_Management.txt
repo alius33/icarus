@@ -295,7 +295,7 @@ And sales recon seems like really high priority, and they're doing so much at th
 Richard Dosoo  38:33  
 So let's do this. Then this has been really helpful, by the way. Thank you guys, and thanks Martin for joining on the phone. I'm gonna The first thing I'm going to do is add you to a thread about the sales recon UAT. They're trying to limit it to eight Customer Success people across the whole organisation, but I'll ask if you can be added to that. The next thing I'm going to do is I'm going to start a thread with the sales recon team, and I'm going to include you and all of you guys in that thread and say, we met internally. We're in customer success, and I want to arrange the follow up meeting where we can go through our requirements, because there's a lot of convergence. So I'll set that meeting up probably next week or latest, the week after. I think while that's happening, probably hasn't made this clear meaning to work out the plan. Yeah, there's probably some session that we need to. Have to just go into a little bit more detail about the code, the app, the infrastructure, and see like, once you've run that product definition script over your app, we can compare it to ours and review the output. So in the meanwhile, I'll be I'm going to just ask Claude what's the right prompt to do that. I'll send it to you, run it, give us the mRNA file, and you can do comparison.
 
-Unknown Speaker  39:51  
+Martin Davies  39:51  
 That can drive what we discussed? Very
 
 Unknown Speaker  39:52  

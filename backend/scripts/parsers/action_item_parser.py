@@ -2,12 +2,14 @@
 Parser for analysis/trackers/action_items.md
 
 Handles three sections:
-  - ## OPEN  — table with # | Date | Action | Owner | Deadline | Context
-  - ## LIKELY COMPLETED — table with # | Date | Action | Likely Status
-  - ## COMPLETED — table with # | Date | Action | Completion Date
+  - ## OPEN  — table with # | Date | Action | Owner | Deadline | Context | Source
+  - ## LIKELY COMPLETED — table with # | Date | Action | Likely Status | Source
+  - ## COMPLETED — table with # | Date | Action | Completion Date | Notes | Source
 
 Number column can be numeric ("1", "10") or alphabetic ("A", "B").
 Date column can be "23 Feb", "9 Feb", "Ongoing", etc.
+The optional Source column (7th in OPEN, 5th in LIKELY, 6th in COMPLETED) is ignored.
+Action descriptions may be prefixed with [C] (commitment) or [D] (decision) tags.
 """
 
 import hashlib
@@ -118,6 +120,8 @@ def parse_action_items(filepath: Path) -> list[dict]:
 
             if current_section == "OPEN":
                 description = cols[2].strip() if len(cols) > 2 else ""
+                # Strip [C] / [D] type prefixes from rebuilt tracker
+                description = re.sub(r"^\[(?:C|D)\]\s*", "", description)
                 owner = cols[3].strip() if len(cols) > 3 else None
                 deadline = cols[4].strip() if len(cols) > 4 else None
                 context = cols[5].strip() if len(cols) > 5 else None

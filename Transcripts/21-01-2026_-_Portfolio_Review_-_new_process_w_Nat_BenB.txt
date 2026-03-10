@@ -91,7 +91,7 @@ want to duplicate on another view what is already available. And this is exactly
 Ben Brooks  24:42  
 All right. So, you know, this was stuff like, who's got the actions across the accounts? It's not currently for the high priorities or for the of the current quarter, but that would be easy to change. Then we've got the sort of knowledge gap stuff of, you know, are there data completeness issues in the current quarter that we should freak out? About, are there stale accounts that haven't been touched, or whatever the right way to think about that problem is. And then, where are the ones where, you know, we are complete, they're nearly done. Why aren't they finished yet? Can we pull them forward from an accelerate point of view? Okay, so one thing that I just wanted
 
-Unknown Speaker  25:17  
+Azmain Hossain  25:17  
 to add, because I had a call with the PM.
 
 Azmain Hossain  25:22  

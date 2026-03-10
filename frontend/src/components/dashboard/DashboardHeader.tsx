@@ -48,7 +48,7 @@ export default function DashboardHeader({ workstreams }: Props) {
           ))}
         </select>
 
-        {/* Workstream filter */}
+        {/* Project filter */}
         <select
           value={filters.workstreamFilter || ""}
           onChange={(e) =>
@@ -56,10 +56,10 @@ export default function DashboardHeader({ workstreams }: Props) {
           }
           className="rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500"
         >
-          <option value="">All Workstreams</option>
+          <option value="">All Projects</option>
           {workstreams.map((ws) => (
             <option key={ws.code} value={ws.code}>
-              {ws.code}: {ws.name}
+              {ws.name}
             </option>
           ))}
         </select>

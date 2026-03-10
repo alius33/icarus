@@ -24,7 +24,7 @@ export default function MyItemsPage() {
       try {
         const [actions, threads] = await Promise.allSettled([
           api.getActionItems("OPEN"),
-          api.getOpenThreads("OPEN"),
+          api.getOpenThreads({ status: "OPEN" }),
         ]);
 
         if (actions.status === "fulfilled") setAllActions(actions.value);

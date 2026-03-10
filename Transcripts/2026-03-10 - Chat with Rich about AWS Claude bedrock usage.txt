@@ -1,0 +1,72 @@
+Richard Dosoo  0:00  
+We're getting charged so much here to use Opus here, if you bought a max subscription for 200 bucks, do you see what I mean? I would be
+
+Azmain Hossain  0:10  
+unlimited like I am. I am building multiple things, like on my personal plan, because I stopped using it for work once I got the bedrock thing me it is, I am determined to finish it every week, and it is hard, like, I'm building up the whole apps, doing massive refactoring design changes, and it just doesn't run out. So I'm just, yeah, that would be the most cost efficient thing to do. But it's like, how do we do that?
+
+Richard Dosoo  0:40  
+So let me see if we can do it this way.
+
+Azmain Hossain  0:43  
+So can I just so currently it's $1,163 a few days ago, it was like $800 or something when you screenshot to Ben,
+
+Richard Dosoo  0:56  
+yeah, but we've been doing a lot of stuff like we've been building out. Benson been using his app slightly. I've been doing stuff, you know, so the we do need to try, we do need to break this out, right? Because this is our second highest cost across the whole month, and we're only two weeks in, so we need to spend some time urgently, right, breaking this out, otherwise it's going to become a problem. But let me see if I can get this breakdown. Yeah, so 1000 bucks over the month, right? Let's see.
+
+Azmain Hossain  1:39  
+There's got to be a line item for bedrock.
+
+Richard Dosoo  1:44  
+Others, it's because we weren't using it previous months. That's why. Yeah, yeah.
+
+Azmain Hossain  1:51  
+Claude Opus, 4.54 4.6 I mean, okay, maybe if you arrange it by cost, because, obviously, oh, there we go, increase
+
+Richard Dosoo  2:12  
+in cost. But let me try and do this cost explorer. Let's go in here and then
+
+Richard Dosoo  2:27  
+yeah, this hasn't given us much. That's why I
+
+Azmain Hossain  2:32  
+don't. Oh, it gives you the month after the month is finished.
+
+Richard Dosoo  2:35  
+Yeah, well, if we want to get
+
+Azmain Hossain  2:38  
+up to like, 10 grand by the end of the month at this pace,
+
+Richard Dosoo  2:42  
+exactly, that's the problem. So I
+
+Azmain Hossain  3:35  
+Yeah, that'll be all the Claude. So, yeah, obviously, the biggest thing. I mean, there's a bunch of sonnet being used as well, which might be just intelligently, like it's rooting some stuff through sonnet.
+
+Richard Dosoo  3:49  
+No, Ben was using sonnet for his app slidey that we built, and I've been doing local builds of it. This one, right, which is the his create presentation
+
+Azmain Hossain  3:58  
+app. Ah, okay, okay. Yeah.
+
+Richard Dosoo  4:01  
+So this covers also, it will also cover anyone using Claude code with the Amazon bedrock key as well, which is nick or which is anyone, right?
+
+Azmain Hossain  4:13  
+Martin, anyone? Yeah. I mean, still, the the the user base is small and it's it's only just a few of us that are using it, right?
+
+Richard Dosoo  4:25  
+This is it. What we need is we need one more level of granularity down than what we see here. So we need not just the service, but we need the API key that's bringing it up, and then we can tie that back to Project spend or whatever. Now what happens is, the way the guys do it, they need to put tag in, or they need to tag the accounts, or something right? So we can see that as a dimension. In here, we can see a tag right, so that we could essentially use to drive the reporting right. Let's see here tags the.
+
+Richard Dosoo  5:11  
+Yeah, the tags are not being set correctly, which is why we're not i
+
+Richard Dosoo  5:27  
+Yeah, yeah. So this is what we need then, and this is what we were talking about last week, right? That we, very soon, we're going to hit a point where the costs are going to start to become an issue. Yeah, yeah. Don't need to manage it. Hello. But let's, let's bring it up. I don't know if we've got a building for we've got a building five stand up today, right? Oh shit. I've got a call with Idris right now. If I'll let you jump, I'll let you send you the invite. I don't know if I'll send it to you. It's just an onboard interest, right? Because Ben wants him to start doing like,
+
+Azmain Hossain  5:58  
+Yeah, send it
+
+Richard Dosoo  6:02  
+through to me, sending it through now we'll jump on all right. Cheers. Speak to you another. Yeah.
+

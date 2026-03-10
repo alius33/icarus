@@ -97,3 +97,35 @@ export function healthRagTextColor(rag: string): string {
   if (rag === "red") return "text-red-700";
   return "text-gray-500";
 }
+
+/** Task status colors for the PM board */
+export const taskStatusColor: Record<string, string> = {
+  TODO: "bg-blue-100 text-blue-800 border-blue-200",
+  IN_PROGRESS: "bg-yellow-100 text-yellow-800 border-yellow-200",
+  IN_REVIEW: "bg-purple-100 text-purple-800 border-purple-200",
+  DONE: "bg-green-100 text-green-800 border-green-200",
+  CANCELLED: "bg-red-100 text-red-800 border-red-200",
+};
+
+export function getTaskStatusColor(status: string): string {
+  return taskStatusColor[status] || "bg-gray-100 text-gray-600 border-gray-200";
+}
+
+/** Priority dot colors */
+export const priorityDotColor: Record<string, string> = {
+  URGENT: "bg-red-500",
+  HIGH: "bg-orange-500",
+  MEDIUM: "bg-yellow-500",
+  LOW: "bg-blue-400",
+  NONE: "bg-gray-300",
+};
+
+export function getPriorityDotColor(priority: string): string {
+  return priorityDotColor[priority] || "bg-gray-300";
+}
+
+/** Check if a date string is overdue */
+export function isOverdue(dateStr: string | null): boolean {
+  if (!dateStr) return false;
+  return new Date(dateStr) < new Date(new Date().toDateString());
+}

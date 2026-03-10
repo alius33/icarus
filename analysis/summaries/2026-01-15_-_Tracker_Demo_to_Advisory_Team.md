@@ -1,61 +1,146 @@
-# Tracker Demo to Advisory Team
+# Tracker Demo to Advisory Team -- First Stakeholder Demo with Feedback
 **Date:** 2026-01-15
 **Attendees:** Richard Dosoo, Azmain Hossain, Ben Brooks, Liz (Couchman), Stacy (Dixtra), Christine, Steve Gentilli
-**Duration context:** Long (~42 minutes)
-**Workstreams touched:** WS2 (CLARA), WS4 (Friday/Adoption Charter)
+**Duration context:** long (~6000 words)
+**Workstreams touched:** WS2 (CLARA), WS4 (Adoption Charter Generation)
 
 ## Key Points
-- First external demo of the CLARA tracker to the advisory team. Richard frames it: the app lifts work from spreadsheets into a web app, deployed on AWS infrastructure. Next steps are getting feedback and then having Stacy prime CSM data entry.
-- Azmain walks through the app: landing dashboard (bare bones, waiting for feedback), customer views with use cases pulled from the December golden source, blocker creation, action plans linked to blockers, and data issues.
-- Liz asks the first critical question: is this existing (sold) customers only? Ben confirms: sold IRP customers only. No sales pipeline tracking -- "that would cause a mass freak out."
-- Stacy raises data quality concerns: there is no guidance on what constitutes a good blocker description. Without structure, the data will be as messy as Salesforce. Ben proposes information icons with example descriptions for v1, and for v2, running blockers through an Anthropic API to validate quality.
-- Steve Gentilli asks for dropdown categorisation on blockers to enable grouping and reporting (e.g., HD could be spelled multiple ways). Ben resists templating for now -- worried it will make data entry lazy ("they're blocked by HD as well, fuck it, move on"). Decides on free-form with good description guidance for v1, categorisation for later.
-- Ben decides against having an owner field on blockers -- the owner is on the action plan, and the blocker is on the account. He does not want people putting product team names in blocker ownership.
-- Discussion of action plans: linked to one or multiple blockers, with individual action items that can be assigned to people. Stacy suggests blocker-action plan linkage should be mandatory (no orphan blockers).
-- Ben proposes client-verified action plans: a toggle for whether the customer has agreed that the action plan will resolve the blocker.
-- Christine asks about internal vs external blocker categorisation (already handled via product/client/enablement type field).
-- Liz raises a dependencies question: when does a known dependency (e.g., product feature on roadmap) become a blocker? Ben says Amber = at risk with dependency, Red = screaming halt.
-- Steve Gentilli asks for a demo mode with complete fake data so people can see the target state. Azmain confirms he is building this.
-- Liz makes a critical stakeholder management point: get Josh and George's feedback before rolling out to CSMs. Josh must feel consulted before CSMs start using it, otherwise he will feel sidelined.
-- Liz also suggests watchlist/favourites functionality so non-CSM stakeholders can track accounts they care about without being assigned.
-- Steve Gentilli suggests different persona-based views (CSM detail entry vs management overview).
-- Ben's phasing: v1 stops after team members/collaboration tab. Get it right, get it populated. Charters/blueprints next. Partners third wave.
+- First demo of CLARA tracker to the advisory team (Liz, Stacy, Christine, Steve Gentilli) -- demoing from Azmain's localhost, not production
+- Richard frames the session: tracker lifts work from spreadsheets into a web app; goal is to get feedback from Stacy primarily, then Liz and Christine, then deploy for CSMs to start populating data
+- Azmain walks through: dashboard (bare bones, waiting for feedback on what to show), customer list (pulled from December golden source), use cases, blockers, action plans per customer
+- Liz asks the scope question: existing customers only, or pipeline? Ben Brooks confirms: sold IRP customers only for now; pipeline tracking would "cause a mass freak out"
+- Stacy raises the critical data quality concern: will there be guidance on what gets entered as blockers? "It doesn't make sense, that's not a blocker, or it's not worded appropriately" -- referencing Salesforce data quality problems
+- Ben Brooks proposes: for v1, keep blockers free-form but add information icons with descriptions of what a good blocker looks like; for v2, use Anthropic API to validate blocker quality
+- Steve Gentilli asks about drop-down categorisation for blockers to enable grouping/reporting -- HD could be "HD", "H-D", "high def" etc.
+- Ben Brooks deliberately keeps blockers free-form initially: worried that pre-defined categories will make CSMs lazy ("they're blocked by HD as well, fuck it, I'll move on")
+- Ben removes blocker owner field: owner belongs on the action plan, not the blocker itself; blockers are owned by the account
+- Action plans link to one or multiple blockers; action items within plans can be checked off; action items have assignees
+- Liz distinguishes action plans (tied to blockers) from action logs (general account activities not tied to blockers) -- Ben clarifies: this tool is migration-focused, not general account management; general action logs are a future/separate application
+- Stacy pushes for mandatory action plans on blockers: "if we just have a blocker out there that has no action plan to it, it's worthless"
+- Ben Brooks introduces "client verified" toggle for action plans: has the customer agreed that this action will unblock them?
+- Christine raises internal vs. external blocker categorisation; Ben says the blocker type (product/client/enablement) already covers this
+- Christine requests last-modified tracking at the account level: catch stagnant accounts where nobody has updated anything in weeks
+- Liz suggests a "favourites" or "watch list" feature: non-CSM stakeholders (George, Josh) want to track specific accounts they're interested in without being the assigned CSM
+- Azmain immediately embraces the idea: every entity has its own URL, so favouriting anything is straightforward
+- Steve Gentilli asks about demo mode with complete dummy data -- Azmain confirms demo mode is in progress
+- Steve raises multiple archetypes per account (multi-select needed) and the "what does region mean" definitional question (sales region vs. head office vs. CSM region)
+- Liz gives strong positive feedback: "this is amazing... it's really good. Massive claps. It's clean, it's intuitive"
+- Richard mentions getting Cursor running on Steve's laptop so advisory team can contribute to the codebase
+- Next steps: v1 scope stops after team members and collaboration; Phase 2 is charters/blueprints/milestones; Phase 3 is partners
+- Richard closes with: Azmain will continue building, reconnect with Stacy to prime CSMs for data entry, then revisit charters with Liz/Steve/Christine
 
 ## Decisions Made
-- Sold IRP customers only for now; no sales pipeline tracking -> Ben Brooks
-- Blockers: free-form descriptions with guidance for v1; categorisation/templates for v2 -> Ben Brooks
-- No owner field on blockers (owner goes on action plan, not blocker) -> Ben Brooks
-- Action plans must be linked to blockers (mandatory) -> Stacy/Ben
-- Add client-verified toggle to action plans -> Ben Brooks/Azmain
-- v1 scope: dashboard through team members/collaboration. Charters/blueprints in v2 -> Ben Brooks
-- Demo mode with complete fake data for people to explore -> Azmain
-- Get Josh and George feedback before CSM rollout -> Liz's advice, accepted
+- **V1 scope stops after team members tab**: Charters/blueprints/milestones deferred to Phase 2 -> Ben Brooks
+  - **Type:** explicit
+  - **Confidence:** HIGH
+- **Blockers remain free-form in v1**: No drop-down categories yet; add guidance text for what a good blocker looks like -> Ben Brooks
+  - **Type:** explicit
+  - **Confidence:** HIGH
+- **Remove blocker owner field**: Owner sits on the action plan, not the blocker; blocker belongs to the account -> Ben Brooks
+  - **Type:** explicit
+  - **Confidence:** HIGH
+- **Action plans should be mandatory for blockers**: A blocker without an action plan is worthless -> Stacy (proposed), Ben Brooks (agreed)
+  - **Type:** explicit
+  - **Confidence:** HIGH
+- **Add "client verified" toggle on action plans**: Track whether customer has agreed the action will unblock them -> Ben Brooks
+  - **Type:** explicit
+  - **Confidence:** HIGH
+- **Add favourites/watch list feature**: Allow non-CSM stakeholders to star/track specific accounts -> Liz (proposed), Azmain (agreed)
+  - **Type:** explicit
+  - **Confidence:** HIGH
+- **Tool is migration-focused, not general account management**: Action logs for non-blocker activities are out of scope for now -> Ben Brooks
+  - **Type:** explicit
+  - **Confidence:** HIGH
+- **Multiple archetypes per account (multi-select)**: Accounts can span multiple archetypes -> Steve Gentilli (raised), Azmain (agreed)
+  - **Type:** implicit
+  - **Confidence:** HIGH
 
 ## Action Items
-| Action | Owner | Deadline | Status |
-|--------|-------|----------|--------|
-| Add information icons with blocker description guidance | Azmain | v1 | Open |
-| Build demo mode with complete fake data | Azmain | Before CSM demo | Open |
-| Add watchlist/favourites feature | Azmain | Next iteration | Open |
-| Get Josh Ellingson feedback before CSM rollout | Richard/Azmain | This week/next | Open |
-| Get George Dyke feedback | Richard/Azmain | Monday or after | Open |
-| Engage Stacy for CSM data priming once build is stable | Richard | After Josh/George feedback | Open |
-| Review charter process with Liz/Christine/Steve (separate session) | Richard/Azmain | When ready | Open |
-| Add client-verified toggle to action plans | Azmain | v1 or v2 | Open |
+| Action | Owner | Deadline | Status | Confidence |
+|--------|-------|----------|--------|------------|
+| Add guidance text/info icons for blocker descriptions | Azmain | 2026-01-20 | Open | HIGH |
+| Remove blocker owner field from UI | Azmain | 2026-01-17 | Open | HIGH |
+| Make action plan mandatory when blocker exists | Azmain | 2026-01-20 | Open | HIGH |
+| Add "client verified" toggle to action plans | Azmain | 2026-01-20 | Open | MEDIUM |
+| Add favourites/watch list feature for all entities | Azmain | 2026-01-24 | Open | MEDIUM |
+| Add last-modified tracking at account level | Azmain | 2026-01-24 | Open | MEDIUM |
+| Change archetype field to multi-select | Azmain | 2026-01-20 | Open | HIGH |
+| Clarify and define "region" field meaning | Azmain/Ben Brooks | 2026-01-20 | Open | MEDIUM |
+| Complete demo mode with full dummy data set | Azmain | 2026-01-17 | In Progress | HIGH |
+| Reconnect with Stacy to prime CSMs for data entry | Richard/Azmain | 2026-01-22 | Open | HIGH |
+| Get Cursor running on Steve Gentilli's laptop | Richard | 2026-01-24 | Open | LOW |
+
+## Theme Segments
+| Topic | Category | Key Quote | Confidence |
+|-------|----------|-----------|------------|
+| Blocker data quality and structure | strategic | "it doesn't make sense, that's not a blocker, or it's not worded appropriately" -- Stacy | HIGH |
+| Migration focus vs. general account management | strategic | "I almost don't want to conflate it with adoption. This is focused on migration right now" -- Ben Brooks | HIGH |
+| Favourites/watch list feature | technical | "there's certain hot ones... these the ones I'm particularly concerned about" -- Liz | HIGH |
+| Demo mode for onboarding | operational | "that kind of brings it to life, isn't it? If you're clicking in for the first few times" -- Steve Gentilli | HIGH |
+| Blocker categorisation debate | strategic | "I'm worried that it gets lazy so that the data entry becomes... they're blocked by HD as well, fuck it, I'll move on" -- Ben Brooks | HIGH |
+| Data quality concerns in golden source | operational | "shit data is, Danton's are probably all over the golden source" -- Ben Brooks | MEDIUM |
+
+## Power Dynamics
+| Person | Role This Meeting | Influence Acts | Engagement % |
+|--------|-------------------|----------------|--------------|
+| Ben Brooks | Product owner, making scope decisions | Defining v1 boundaries, deciding blocker structure, removing owner field, setting migration focus | 25% |
+| Liz (Couchman) | Senior stakeholder, asking sharp questions | Scope question (existing vs pipeline), favourites feature, noting Josh needs inclusion | 20% |
+| Stacy (Dixtra) | Quality gate, PM perspective | Pushing for mandatory action plans, raising data entry quality concerns | 15% |
+| Christine | Operational thinker | Last-modified tracking, internal vs external blockers, dependency vs blocker distinction | 15% |
+| Steve Gentilli | Detail-oriented, definitional questions | Multi-select archetypes, region definition, demo mode data request | 10% |
+| Azmain Hossain | Builder, demoing | Walking through the app, absorbing feedback, proposing solutions | 10% |
+| Richard Dosoo | Framer, closer | Opening context, managing time, setting next steps | 5% |
 
 ## Stakeholder Signals
-- Liz is engaged and providing sharp, strategic feedback. She immediately identifies the Salesforce data quality problem and asks how this tool will avoid repeating it. Also catches that sales people (Danton, Alex Limford) are incorrectly listed as CSMs in the golden source data.
-- Stacy is cautious but supportive -- her main concern is data quality and preventing the Salesforce mess from migrating to a new tool.
-- Steve Gentilli is practical and thinking about usability (dropdowns for grouping, demo mode, persona-based views).
-- Christine is thinking about audit trails and staleness detection (last modified dates at various levels).
-- Ben Brooks is decisive about scoping: firmly keeping sales pipeline out, resisting premature categorisation, and phasing features clearly.
-- Liz's warning about Josh is the most important stakeholder signal in this meeting.
+| Person | Sentiment | Shift | Topic | Quote |
+|--------|-----------|-------|-------|-------|
+| Liz | Impressed, engaged, politically aware | Very positive | Overall tool | "this is amazing... really good. Massive claps. It's clean, it's intuitive" |
+| Stacy | Constructive, quality-focused | Positive | Data entry standards | Concerned about Salesforce-quality data creeping in |
+| Christine | Thoughtful, process-oriented | Positive | Tracking and accountability | Wants stagnant accounts to be visible |
+| Steve Gentilli | Detail-focused, supportive | Positive | Data definitions | Raising important definitional issues (archetypes, region) |
+| Ben Brooks | Decisive, protective of v1 scope | Stable | Scope management | Deliberately limiting scope to migration; deferring everything else |
+| Natalia (referenced) | Impatient for deployment | Escalating | Timeline | Already asking "when can we start giving feedback?" |
+
+## Commitments Made
+| Person | Commitment | Implied Deadline | Condition | Confidence |
+|--------|------------|------------------|-----------|------------|
+| Azmain | Will add guidance text for blocker descriptions | Before CSM rollout | None | HIGH |
+| Azmain | Will add favourites/watch list feature | Before wider deployment | None | MEDIUM |
+| Azmain | Will complete demo mode | Before Josh/George feedback | None | HIGH |
+| Richard | Will reconnect with Stacy to prime CSMs | After Josh/George feedback | Feedback incorporated | HIGH |
+| Richard | Will revisit charter conversation with Liz/Steve/Christine | After v1 data entry is stable | None | MEDIUM |
+
+## Meeting Effectiveness
+- **Type:** Product demo / stakeholder feedback session
+- **Overall Score:** 82
+- **Decision Velocity:** 0.8
+- **Action Clarity:** 0.7
+- **Engagement Balance:** 0.8
+- **Topic Completion:** 0.6
+- **Follow Through:** 0.6
+
+## Risk Signals
+| Risk_ID | Status | Title | Severity | Trajectory | Source_Type | Confidence |
+|---------|--------|-------|----------|------------|-------------|------------|
+| R-038 | New | Data quality in golden source is poor -- Danton/Alex Limford listed as CSMs but are sales | MEDIUM | Stable | Data Quality | HIGH |
+| R-039 | New | 280 accounts displayed but actual IRP sold accounts likely much fewer -- data overcounting | MEDIUM | Stable | Data Quality | HIGH |
+| R-040 | New | Definitional ambiguity: "region", "archetype", "blocker vs dependency" undefined across team | MEDIUM | Stable | Process | HIGH |
+| R-028 | Continuing | Stakeholder impatience growing -- Natalia asking when she can provide feedback | MEDIUM | Escalating | Stakeholder | HIGH |
 
 ## Open Questions Raised
-- What is the proper definition of archetype? Multi-select needed because clients span multiple business classes.
-- What does "region" mean in this context -- head office, sales region, or CSM region?
-- How to distinguish blockers from dependencies? Ben suggests RAG status handles this (Amber = at risk/dependency, Red = halted).
-- When will the charter process be discussed? Liz asks for a separate session when the team is ready.
+- What does "region" mean: sales region, head office, or CSM assignment region?
+- When does an issue become a risk, and when does a risk become a blocker? (PMO nomenclature)
+- Should there be a status field on accounts: not sold, not started, in flight, complete?
+- Where do non-migration activities (renewals, general account actions) get tracked?
+- How will the charter generation feature work -- track charter data or generate charter documents?
+- Who will fill in migration criticality data for each account?
 
 ## Raw Quotes of Note
-- "I don't want people to come away with the incorrect interpretation, because with Andy Frappe that sticks and we can't get them off of it" -- Liz, foreshadowing Josh's exact concern the next day
+- "it doesn't make sense, that's not a blocker, or it's not worded appropriately, to know what the hell it even means" -- Stacy, on Salesforce data quality
+- "I'm worried that it gets lazy so that the data entry becomes... they're blocked by HD as well, fuck it, I'll move on" -- Ben Brooks, on why he resists pre-defined blocker categories
+- "this is amazing... really good. Massive claps. It's clean, it's intuitive" -- Liz, on the overall tool
+- "we added in night mode before we added in favourites" -- Azmain, self-deprecating humour
+- "that kind of brings it to life, isn't it? If you're clicking in for the first few times" -- Steve Gentilli, on demo mode value
+
+## Narrative Notes
+This is the most important stakeholder feedback session of Week 2. The advisory team (Liz, Stacy, Christine, Steve Gentilli) sees CLARA for the first time and the response is overwhelmingly positive -- Liz's "massive claps" comment is the strongest endorsement the team has received. The substantive feedback is gold: Stacy's insistence on mandatory action plans for blockers, Liz's favourites feature, Christine's stagnant-account detection, Steve's multi-select archetypes -- all are immediately actionable improvements. Ben Brooks demonstrates sharp product ownership by holding the v1 scope boundary: migration-focused only, no general account management, free-form blockers with guidance rather than rigid categories. His decision to remove the blocker owner field (owners sit on action plans, not blockers) shows attention to data model design. The one concerning signal is the golden source data quality: 280 accounts showing when the real number is likely much lower, and sales people (Danton, Alex Limford) incorrectly listed as CSMs. This data quality issue, if not addressed before CSM rollout, could undermine credibility with the very users CLARA needs to win over. The session also surfaces important definitional gaps (what "region" means, blocker vs. dependency, archetype as multi-select) that reflect the broader challenge of translating messy real-world insurance operations into clean data structures.

@@ -22,6 +22,15 @@ import type {
   SentimentSignalSchema,
   CommitmentSchema,
   CrossProjectLinkSchema,
+  TopicSignalSchema,
+  TopicEvolutionData,
+  TopicMomentum,
+  InfluenceGraphData,
+  ContradictionSchema,
+  MeetingScoreSchema,
+  MeetingScoreTrend,
+  RiskEntrySchema,
+  ProjectSummarySchema,
 } from "./types";
 
 const defaultConfig: SWRConfiguration = {
@@ -94,7 +103,7 @@ export function useActionItems(
 export function useOpenThreads(status?: string, config?: SWRConfiguration) {
   return useSWR<OpenThreadSchema[]>(
     status ? ["open-threads", status] : "open-threads",
-    () => api.getOpenThreads(status),
+    () => api.getOpenThreads(status ? { status } : undefined),
     { ...defaultConfig, ...config },
   );
 }
@@ -208,6 +217,87 @@ export function useCrossProjectLinks(
   return useSWR<CrossProjectLinkSchema[]>(
     projectId ? ["cross-project-links", projectId] : "cross-project-links",
     () => api.getCrossProjectLinks(projectId),
+    { ...defaultConfig, ...config },
+  );
+}
+
+// Topic Signals
+export function useTopicSignals(category?: string, config?: SWRConfiguration) {
+  return useSWR<TopicSignalSchema[]>(
+    category ? ["topic-signals", category] : "topic-signals",
+    () => api.getTopicSignals(category),
+    { ...defaultConfig, ...config },
+  );
+}
+
+export function useTopicEvolution(config?: SWRConfiguration) {
+  return useSWR<TopicEvolutionData[]>(
+    "topic-evolution",
+    () => api.getTopicEvolution(),
+    { ...defaultConfig, ...config },
+  );
+}
+
+export function useTopicMomentum(config?: SWRConfiguration) {
+  return useSWR<TopicMomentum>(
+    "topic-momentum",
+    () => api.getTopicMomentum(),
+    { ...defaultConfig, ...config },
+  );
+}
+
+// Influence Graph
+export function useInfluenceGraph(config?: SWRConfiguration) {
+  return useSWR<InfluenceGraphData>(
+    "influence-graph",
+    () => api.getInfluenceGraph(),
+    { ...defaultConfig, ...config },
+  );
+}
+
+// Contradictions
+export function useContradictions(kind?: string, config?: SWRConfiguration) {
+  return useSWR<ContradictionSchema[]>(
+    kind ? ["contradictions", kind] : "contradictions",
+    () => api.getContradictions(kind),
+    { ...defaultConfig, ...config },
+  );
+}
+
+// Meeting Scores
+export function useMeetingScores(config?: SWRConfiguration) {
+  return useSWR<MeetingScoreSchema[]>(
+    "meeting-scores",
+    () => api.getMeetingScores(),
+    { ...defaultConfig, ...config },
+  );
+}
+
+export function useMeetingScoreTrend(config?: SWRConfiguration) {
+  return useSWR<MeetingScoreTrend[]>(
+    "meeting-score-trend",
+    () => api.getMeetingScoreTrend(),
+    { ...defaultConfig, ...config },
+  );
+}
+
+// Risk Entries
+export function useRiskEntries(severity?: string, config?: SWRConfiguration) {
+  return useSWR<RiskEntrySchema[]>(
+    severity ? ["risk-entries", severity] : "risk-entries",
+    () => api.getRiskEntries(severity),
+    { ...defaultConfig, ...config },
+  );
+}
+
+// Project Summaries
+export function useProjectSummaries(
+  projectId: number,
+  config?: SWRConfiguration,
+) {
+  return useSWR<ProjectSummarySchema[]>(
+    projectId ? ["project-summaries", projectId] : null,
+    () => api.getProjectSummaries(projectId),
     { ...defaultConfig, ...config },
   );
 }

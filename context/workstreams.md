@@ -1,6 +1,6 @@
 # Workstream Status Tracker
 
-Last updated: 2026-03-09 (all transcripts through 6 March processed)
+Last updated: 2026-03-10 (all transcripts through 10 March processed)
 
 ---
 
@@ -132,13 +132,20 @@ Last updated: 2026-03-09 (all transcripts through 6 March processed)
 
 ## WS6: Build in Five (Cursor for Pipeline Sales)
 **Lead:** Martin Davies | Richard (vision)
-**Status:** ACTIVE — Demo shifted to May
+**Status:** ACTIVE — Breakthrough progress, on track for May exceedance
 
 - Concept: framework for building demo apps on IRP's Risk Data Lake using Cursor during customer conversations
-- **Week 3 (19 Jan):** Richard onboarded George Dyke to Cursor in multi-hour session, building an account planner app. This is adjacent to Build in Five's concept (using Cursor for rapid prototyping). Martin present at Pre-Monday Demo (23 Jan) but barely spoke — workstream has not had attention this week. Martin still has 335/500 Cursor credits.
+- **Week 3 (19 Jan):** Richard onboarded George Dyke to Cursor in multi-hour session. Martin barely engaged this week.
 - Martin back from holiday late Feb, actively developing
-- **3 Mar:** Martin showed Apollo dashboard as reference implementation. Richard articulated three-tier vision (template apps, Build in Five, full custom). Four other apps in App Factory pipeline — BenVH under-resourced.
-- **4 Mar:** Demo target shifted from March 21 to May — exceedance event is in May, content due April. Richard: "timelines may not work." Martin tasked with summarising demo approach for Ben.
-- **MVP scope defined (3 Mar):** Three IRP API modules, foundation layer, drag-and-drop UI. No AI/LLM, no persistence, no security.
-- Martin's 12-week assignment clock is ticking
-- **Next step needed:** Martin to confirm revised May timeline feasibility. Ben to approve MVP scope.
+- **3 Mar:** Apollo dashboard as reference implementation. Three-tier vision articulated. MVP scope defined.
+- **4 Mar:** Demo target shifted from March 21 to May exceedance.
+- **10 Mar (BREAKTHROUGH):** Martin demoed a near-complete dashboard builder that exceeded all expectations:
+  - Full drag-drop UI with data/visual/custom (AI) modes per component
+  - White-labelling: themes, dark mode, logos, branding colours, fonts, corner radius
+  - Live Risk Modeller API connection working
+  - Tab containers, save/load dashboard configs, preview mode
+  - Richard compared it to Databricks Genie. Ben Brooks positive.
+- **Critical next step:** Wire up Navigator MCP server for live API definitions — this completes the demo loop
+- **Stakeholder cascade defined:** Tech consulting (Bala/Lonnie/Alicia) → Demo team (Bibo/Gibson) → Sales (Flemington) → Exceedance content factory
+- **Product positioning question opened:** Is this a Moody's product feature or a customer self-service tool?
+- Martin's 12-week clock ticking but output justifies the investment many times over

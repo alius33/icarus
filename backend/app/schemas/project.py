@@ -5,6 +5,7 @@ from pydantic import BaseModel
 from app.schemas.action_item import ActionItemSchema
 from app.schemas.decision import DecisionSchema
 from app.schemas.open_thread import OpenThreadSchema
+from app.schemas.project_summary import ProjectSummaryBase
 from app.schemas.stakeholder import StakeholderBase
 from app.schemas.summary import SummaryBase
 from app.schemas.transcript import TranscriptBase
@@ -25,6 +26,7 @@ class ProjectLinkSchema(BaseModel):
 class ProjectBase(BaseModel):
     id: int
     name: str
+    slug: str | None = None
     description: str | None = None
     is_custom: bool
     status: str
@@ -42,6 +44,7 @@ class ProjectBase(BaseModel):
 
 class ProjectCreate(BaseModel):
     name: str
+    slug: str | None = None
     description: str | None = None
     status: str = "active"
     color: str | None = None
@@ -50,6 +53,7 @@ class ProjectCreate(BaseModel):
 
 class ProjectUpdate(BaseModel):
     name: str | None = None
+    slug: str | None = None
     description: str | None = None
     status: str | None = None
     color: str | None = None
@@ -64,6 +68,7 @@ class ProjectHub(BaseModel):
     action_items: list[ActionItemSchema]
     open_threads: list[OpenThreadSchema]
     stakeholders: list[StakeholderBase]
+    project_summaries: list[ProjectSummaryBase] = []
 
 
 class ProjectLinkCreate(BaseModel):

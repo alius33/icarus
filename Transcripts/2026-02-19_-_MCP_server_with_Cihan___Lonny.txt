@@ -10,7 +10,7 @@ said? Hi everyone.
 Richard Dosoo  0:29  
 Hey, Bala. I wanted to introduce you to Well, I introduce you to Azmain as well. But also Nicole Nichols recently joined us from he actually was in a team at Moody's working for building out edfx, and we managed to encourage him, entice him to come over to the insurance side of the world to leave banking behind him. So but he's going to be leading up the tech consulting team from a tech standpoint going forward, he's replacing Alex and a little bit of what Tom used to do before. So he's going to be 100% like reaching out to you specifically on this stuff, but also just more generally about our APIs in general, because he's going to be managing the team that is supporting customers with their adoption, integrating with API. So this is going to be the first conversation of many
 
-Unknown Speaker  1:17  
+Bala  1:17  
 awesome Pleasure to meet you. Yeah, thank you.
 
 Richard Dosoo  1:22  

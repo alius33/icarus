@@ -5,49 +5,86 @@
 **Workstreams touched:** WS2 CLARA
 
 ## Key Points
-- **Dashboard confusion cleanup**: The grey box on the portfolio review page showing priority account metrics is inaccurate and confusing. Stacy requested it be removed entirely -- migration numbers should only appear on the dedicated management dashboard. Azmain confirmed this is a quick removal.
-- **Hosting Plus and RBO consolidation**: The scorecard only references "Risk Link" and "Risk Browser." To avoid confusion, Hosting Plus numbers should roll up under Risk Link, and RBO numbers under Risk Browser, with a footnote explaining the inclusion. Azmain confirmed this can be done in the backend.
-- **Scorecard tab request**: A new "Scorecard" tab is needed on the management dashboard showing quarterly migration view (actuals year-to-date + forecast by quarter). The existing annual view stays on the current tab. Stacy wants the scorecard tab to become the default landing page for the management dashboard, as Diya checks it regularly.
-- **Completed migration accounting problem**: There are 10 completed migrations year-to-date, but 4 of them (QBE, ROI, La Previsora, Ms Transverse) were technically completed before 2026. They were on the 2026 target list and counted in the 36 forecast, but their actual switch-off dates were pre-2026. This creates a credibility risk if anyone asks which specific clients migrated.
-- **Proposed solution debate**: Azmain proposed a "reported year of completion" field that auto-fills for future completions but can be manually set for legacy ones. Natalia pushed back, calling it "a bit like hard coding" and questioned whether it was worth the complexity for just four accounts. Stacy was concerned it would raise confusing questions if visible to users.
-- **Compromise approach**: Stacy will dig deeper into each of the four accounts today. RLI can be adjusted (12/31/25 to 1/1/26 -- one day difference). The others need more investigation. Azmain offered to either hard-code the four accounts in the backend or use a temporary hidden field.
-- **Natalia's priority**: Getting the confusing counter off the portfolio review page is urgent because Diya asks about it regularly and gets confused by discrepancies.
-- **Reports feature testing**: Azmain asked Stacy to test the reports builder, as she understands Salesforce reports and that is the model CLARA is cloning. Natalia tried building a report but encountered filter logic issues (multiple filters did not work as expected -- could not exclude "Exposure IQ" while including "TIQ" and "UIQ").
-- **Bug fix workflow**: Chris will work on bugs and features. Azmain and Chris will have a session tomorrow to go through the issues. Azmain's goal is to get fixes done by Friday for the Monday call.
-- **Chris onboarding acknowledged**: Natalia expressed relief that Chris is on board, saying Azmain will finally be able to get some sleep.
+- Meeting focused on redesigning CLARA's migration tracking to align with the insurance scorecard that Diya sees. The existing dashboard was causing confusion due to inaccurate numbers and unclear logic.
+- First request: remove the grey box from the portfolio review page entirely. The zero numbers and priority account counts are inaccurate and confusing. People should be directed to the dashboard for real numbers, not the portfolio review page.
+- Hosting Plus to be consolidated under Risk Link; RBO under Risk Browser. The scorecard only mentions "Risk Link" and "Risk Browser" -- showing separate Hosting Plus/RBO categories could cause confusion. A note will indicate what is included.
+- Year-to-date actuals need to be added to the dashboard. Ten migrations completed YTD; forecast is 24 more (total 34, but they are saying 36 including the problematic four).
+- New "Scorecard" tab requested on the management dashboard, showing quarterly migration view (actuals YTD + forecast by quarter). This becomes the default tab that Diya sees.
+- Credibility risk identified: four accounts (QBE, ROI, La Previsora, Ms Transverse) had migration dates pre-2026 but are being counted in 2026 targets. Stacy is having "heart palpitations" about someone asking for client names and finding that these completed before 2026.
+- Azmain proposed a "reported year of completion" field to handle the four accounts. After debate, a simpler approach was agreed: either hard-code the four accounts or temporarily expose the field for Stacy to update, then hide it.
+- Natalia suggested not counting them at all -- "those are not 2026 migrations." This was the most honest position but potentially problematic because they have already been communicated as part of the target.
+- Reports builder has filter logic bugs -- Natalia demonstrated that multiple filters (contains, does not contain) do not work correctly when combined. Chris to investigate.
+- Chris's arrival on the team was welcomed by Natalia: "fantastic that we have you on board because Azmain will be able to have some sleep."
 
 ## Decisions Made
-- Remove grey box from portfolio review page immediately -> Azmain
-- Hosting Plus rolls into Risk Link, RBO rolls into Risk Browser (with footnote) -> Azmain
-- New scorecard tab on management dashboard (quarterly view, actuals + forecast) -> Azmain
-- Scorecard tab to be default landing page for management dashboard -> Azmain
-- Stacy to investigate the four legacy completion accounts before deciding approach -> Stacy
-- Bug fixes prioritised for completion by Friday -> Azmain/Chris
+| Decision | Type | Confidence | Owner |
+|----------|------|------------|-------|
+| Remove grey box from portfolio review page | UI change | High | Azmain |
+| Consolidate Hosting Plus under Risk Link, RBO under Risk Browser | Data model | High | Stacy/Azmain |
+| Add Scorecard tab as default on management dashboard | Feature | High | Stacy/Azmain |
+| Defer decision on four pre-2026 accounts -- Stacy to investigate further | Deferred | Medium | Stacy |
+| Reports filter bugs to be investigated by Chris | Bug fix | High | Chris |
 
 ## Action Items
-| Action | Owner | Deadline | Status |
-|--------|-------|----------|--------|
-| Remove grey box from portfolio review page | Azmain | Immediately | Open |
-| Roll Hosting Plus into Risk Link, RBO into Risk Browser | Azmain | This week | Open |
-| Build scorecard tab with quarterly view on management dashboard | Azmain | This week | Open |
-| Make scorecard tab the default on management dashboard | Azmain | This week | Open |
-| Investigate the four legacy completed migrations (QBE, ROI, La Previsora, Ms Transverse) | Stacy | Today | Open |
-| Test reports builder and provide feedback | Stacy | TBD | Open |
-| Fix report filter logic (multiple filters, dropdown options) | Chris/Azmain | This week | Open |
-| Send screenshot of analytics elements to remove | Stacy | TBD | Open |
-| Check with Catherine on analytics tab usage | Stacy | TBD | Open |
+| Action | Owner | Deadline | Status | Confidence |
+|--------|-------|----------|--------|------------|
+| Remove grey box from portfolio review page | Azmain | Today | Open | High |
+| Consolidate Hosting Plus/RBO into Risk Link/Risk Browser categories | Azmain | This week | Open | High |
+| Build Scorecard tab with quarterly migration view | Azmain | This week | Open | High |
+| Add YTD actuals to dashboard | Azmain | This week | Open | High |
+| Investigate four pre-2026 completed accounts | Stacy | Today | Open | High |
+| Fix reports filter logic (multi-filter combinations) | Chris | This week | Open | Medium |
+| Check with Catherine on analytics tab usage | Stacy | TBD | Open | Low |
+
+## Theme Segments
+1. **Portfolio review page cleanup** (0:00-4:00) -- Remove confusing grey box
+2. **Product category consolidation** (4:00-8:00) -- Hosting Plus -> Risk Link, RBO -> Risk Browser
+3. **Scorecard tab design** (8:00-14:00) -- Quarterly view for Diya, actuals + forecast
+4. **Migration number credibility** (14:00-20:00) -- The four pre-2026 accounts dilemma
+5. **Reports bugs and testing** (20:00-25:00) -- Filter logic issues, Chris onboarding acknowledged
+
+## Power Dynamics
+- **Stacy drives the requirements.** She is the data/reporting expert and knows what Diya needs. She articulates the ask clearly and pushes back on solutions that create risk.
+- **Natalia is the honest broker.** She takes the most direct position: "those are not 2026 migrations" -- the most honest but politically uncomfortable stance.
+- **Azmain is the implementer.** He offers technical solutions (fields, hard-coding) and defers to Stacy and Natalia on what the numbers should say.
+- **Diya looms over the conversation.** Her confusion about dashboard numbers is the driving force for all these changes. She has been asking about the scorecard regularly.
 
 ## Stakeholder Signals
-- **Stacy** is deeply concerned about data accuracy and credibility. She is having "heart palpitations" about the possibility of someone asking for specific migration client names and discovering pre-2026 completions counted as 2026. She is the programme's data conscience.
-- **Natalia** is pragmatic -- she would rather not count the four legacy accounts at all than risk credibility damage. She is focused on what Diya needs and wants the scorecard confusion resolved quickly.
-- **Azmain** is stretched but responsive. He can make immediate changes (removing the grey box) and is thoughtful about solutions (the "reported year" field approach) even if they get pushback.
-- **Diya** (not present) is checking the dashboard regularly and getting confused by discrepancies -- this is creating urgency.
+- **Stacy** -- Anxious about data credibility. Her "heart palpitations" about client names being questioned is genuine concern about executive-level scrutiny. She is the programme's quality conscience.
+- **Natalia** -- Pragmatic and honest. Willing to say uncomfortable things ("those are not 2026 migrations"). Focused on what Diya needs and how to deliver it cleanly.
+- **Azmain** -- Technically accommodating but defers on data decisions. Admits the migration calculation broke because they removed the completion status field. Ready to implement whatever is decided.
+- **Ben Brooks** (mentioned) -- Told the team to count the four pre-2026 accounts. His "count them" instruction created the credibility risk.
+
+## Commitments Made
+| Who | Commitment | To Whom | Context |
+|-----|-----------|---------|---------|
+| Azmain | Remove grey box today | Stacy/Natalia | Portfolio review cleanup |
+| Azmain | Build scorecard tab this week | Stacy/Natalia | Diya's reporting needs |
+| Stacy | Investigate four pre-2026 accounts today | Natalia/Azmain | Credibility resolution |
+| Chris | Fix reports filter bugs | Natalia/Azmain | Reports functionality |
+
+## Meeting Effectiveness
+| Dimension | Score (1-10) | Notes |
+|-----------|-------------|-------|
+| Clarity of outcomes | 8 | Very specific UI and data requirements agreed |
+| Decision quality | 7 | Good on technical changes; migration numbers deferred but flagged |
+| Participation balance | 8 | All three contribute meaningfully from different angles |
+| Action item specificity | 8 | Clear actions with today/this week timelines |
+| Strategic alignment | 8 | Directly addresses Diya's scorecard needs |
+
+## Risk Signals
+- **HIGH: Migration number credibility.** Four pre-2026 completions counted in 2026 targets. If anyone asks for client names and cross-references dates, this falls apart. Ben Brooks said "count them" but Stacy and Natalia are uncomfortable.
+- **MEDIUM: Dashboard calculation logic.** The migration numbers broke because a status field was removed. This suggests fragile calculation logic that is not well-understood by anyone including the developer.
+- **LOW: Reports builder still buggy.** Multi-filter combinations do not work. This limits usefulness for power users like Natalia.
 
 ## Open Questions Raised
-- How to properly account for the four pre-2026 completions without credibility risk
-- Why the dashboard shows 24 when Stacy counted 26 in the raw data
-- Which analytics tab elements should be removed vs kept
-- How to fix the report filter logic for complex multi-condition queries
+- Should the four pre-2026 accounts be counted as 2026 migrations or held as buffer?
+- What analytics tab content should be kept vs removed?
+- How does the scorecard tab relate to the broader Power BI migration dashboard Andy Frappe wants?
 
 ## Raw Quotes of Note
-- "I'm sitting here going, like, having heart palpitations going if somebody asks for these names." -- Stacy, on the credibility risk of counting pre-2026 completions
+- "I'm having heart palpitations going if somebody asks for these names." -- Stacy, on the four pre-2026 migration accounts
+- "Those are not 2026 migrations." -- Natalia, taking the most honest position on the credibility issue
+
+## Narrative Notes
+This meeting crystallises the programme's data credibility problem. The core tension: Ben Brooks has told the team to count four pre-2026 completions in the 2026 target, which inflates the number from ~32 to ~36. Stacy and Natalia are visibly uncomfortable with this. Stacy's concern is specific and legitimate -- if Mike Steel or Colin Holmes ever ask for the client names, someone will scratch their head and say "QBE shut down a year and a half ago." Natalia's response is the most honest: do not count them. The fact that this credibility risk exists at all reveals how the programme's reporting has evolved faster than its governance. The technical work (removing grey boxes, consolidating product categories, building the scorecard tab) is straightforward and will improve Diya's experience. But the number question is a governance issue, not a technical one, and it remains unresolved.

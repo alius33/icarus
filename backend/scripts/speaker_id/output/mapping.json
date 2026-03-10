@@ -1,0 +1,2314 @@
+{
+  "generated_at": "2026-03-10T12:59:45.428771+00:00",
+  "pipeline_version": "1.0",
+  "confidence_threshold": 0.7,
+  "profiles_used": 18,
+  "transcripts": {
+    "02-02-2026_-_Adoption_Tracker_RBAC_Permissions_Debug.txt": {
+      "meeting_type": "clara",
+      "known_speakers": [],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:12": {
+              "identified_as": "Azmain Hossain",
+              "confidence": 0.68,
+              "method": "azmain_recorder",
+              "evidence": "Azmain records virtually every meeting and is not in named speakers (meeting type: clara)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:12"
+      ],
+      "unresolved": []
+    },
+    "02-02-2026_-_IRP_Priority_Accounts_Migration___Adoption_Review.txt": {
+      "meeting_type": "clara",
+      "known_speakers": [
+        "Diya",
+        "George Dyke"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "1:15": {
+              "identified_as": "Natalia Plant",
+              "confidence": 0.85,
+              "method": "greeting_exchange",
+              "evidence": "Greeted as 'Natalia' by Unknown Speaker at line 496",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "02-02-2026_-_RBAC___Authentication_Debugging.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "33:56": {
+              "identified_as": "Azmain Hossain",
+              "confidence": 0.85,
+              "method": "greeting_exchange",
+              "evidence": "Greeted as 'Azmain' by Unknown Speaker at line 358",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "03-02-2026_-_CSM_Dashboard_Permissions___Testing_Review.txt": {
+      "meeting_type": "review",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "3:03": {
+              "identified_as": "Ben Brooks",
+              "confidence": 0.617,
+              "method": "stylometric_match",
+              "evidence": "Speech patterns match Ben Brooks (score: 0.22)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@3:03"
+      ],
+      "unresolved": []
+    },
+    "03-02-2026_-_Workshop_discussion_with_George__1_.txt": {
+      "meeting_type": "workshop",
+      "known_speakers": [
+        "Azmain Hossain",
+        "George Dyke"
+      ],
+      "title_candidates": [
+        "George Dyke"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "1:55": {
+              "identified_as": "Ben Brooks",
+              "confidence": 0.45,
+              "method": "claude_assisted",
+              "evidence": "Claude-assisted: Short interjections in workshop planning with George; product owner would attend CSM workshop prep",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@1:55"
+      ],
+      "unresolved": []
+    },
+    "06-01-2026_-_AI_PM_Discussion_w_Richard.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Richard Dosoo"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "23:49": {
+              "identified_as": "Richard Dosoo",
+              "confidence": 0.95,
+              "method": "claude_assisted",
+              "evidence": "Claude-assisted: 1:1 meeting, only Azmain and Richard present. Sign-off utterances match Richard style (Cool as mate)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "06-01-2026_-_Ben_explains_new_dashboard.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Ben Brooks",
+        "Martin Davies",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {},
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "07-01-2026_-_Advisory_weekly_project_review.txt": {
+      "meeting_type": "review",
+      "known_speakers": [
+        "Amit",
+        "Diana"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "2:45": {
+              "identified_as": "Azmain Hossain",
+              "confidence": 0.68,
+              "method": "azmain_recorder",
+              "evidence": "Azmain records virtually every meeting and is not in named speakers (meeting type: review)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@2:45"
+      ],
+      "unresolved": []
+    },
+    "07-01-2026_-_Architecture_review_-_IRP_Adoption_Tracker_deployment_constraints.txt": {
+      "meeting_type": "clara",
+      "known_speakers": [
+        "Ben Brooks",
+        "Martin Davies",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:09": {
+              "identified_as": "Azmain Hossain",
+              "confidence": 0.68,
+              "method": "elimination",
+              "evidence": "Only unmatched candidate 'Azmain Hossain' for Unknown Speaker (from meeting type attendees)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:09"
+      ],
+      "unresolved": []
+    },
+    "07-01-2026_-_IRP_Admin_Support_-_PM_Touchpoint.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:00": {
+              "identified_as": "Azmain Hossain",
+              "confidence": 0.68,
+              "method": "elimination",
+              "evidence": "Only unmatched candidate 'Azmain Hossain' for Unknown Speaker (from meeting type attendees)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:00"
+      ],
+      "unresolved": []
+    },
+    "08-01-2026_-_Adoption_Tracker_-_deployment_to_AWS.txt": {
+      "meeting_type": "clara",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Ben Brooks",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:46": {
+              "identified_as": "Steve Gentilli",
+              "confidence": 0.625,
+              "method": "stylometric_match",
+              "evidence": "Speech patterns match Steve Gentilli (score: 0.25)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:46"
+      ],
+      "unresolved": []
+    },
+    "08-01-2026_-_Chat_with_Ben_Rich.txt": {
+      "meeting_type": "1_on_1",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Ben Brooks",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Richard Dosoo",
+        "Ben Brooks"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:46": {
+              "identified_as": "Steve Gentilli",
+              "confidence": 0.625,
+              "method": "stylometric_match",
+              "evidence": "Speech patterns match Steve Gentilli (score: 0.25)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:46"
+      ],
+      "unresolved": []
+    },
+    "08-01-2026_-_Chat_with_Rich_Martin.txt": {
+      "meeting_type": "1_on_1",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Martin Davies",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Richard Dosoo",
+        "Martin Davies"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:42": {
+              "identified_as": "Amit",
+              "confidence": 0.487,
+              "method": "stylometric_match",
+              "evidence": "Stylometric match to Amit (distance: 0.251, word count: 179)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:42"
+      ],
+      "unresolved": []
+    },
+    "09-01-2026_-_AI_Licenses_Request.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "5:13": {
+              "identified_as": "Azmain Hossain",
+              "confidence": 0.85,
+              "method": "claude_assisted",
+              "evidence": "Claude-assisted: Technical point about Cloud agents matches Azmain elaboration later. Transcription lost his label briefly",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "09-01-2026_-_AWS_Deployment_of_Adoption_tracker.txt": {
+      "meeting_type": "clara",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "3:18": {
+              "identified_as": "Ben Brooks",
+              "confidence": 0.68,
+              "method": "elimination",
+              "evidence": "Only unmatched candidate 'Ben Brooks' for Unknown Speaker (from meeting type attendees)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@3:18"
+      ],
+      "unresolved": []
+    },
+    "09-01-2026_-_Chat_with_Richard.txt": {
+      "meeting_type": "1_on_1",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Richard Dosoo"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "3:18": {
+              "identified_as": "Amit",
+              "confidence": 0.5,
+              "method": "stylometric_match",
+              "evidence": "Stylometric match to Amit (distance: 0.333, word count: 315)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@3:18"
+      ],
+      "unresolved": []
+    },
+    "12-01-2026_-_Program_Review_-_Rich.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {},
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "12-01-2026_-_Review_Agenda_for_Sales_Recon.txt": {
+      "meeting_type": "sales_recon",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:16": {
+              "identified_as": "Christine",
+              "confidence": 0.442,
+              "method": "stylometric_match",
+              "evidence": "Stylometric match to Christine (distance: 0.321, word count: 145)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:16"
+      ],
+      "unresolved": []
+    },
+    "13-01-2026_-_Tracker_Discussion.txt": {
+      "meeting_type": "clara",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Ben Brooks",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:41": {
+              "identified_as": "Ben Van Houten",
+              "confidence": 0.625,
+              "method": "stylometric_match",
+              "evidence": "Speech patterns match Ben Van Houten (score: 0.25)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:41"
+      ],
+      "unresolved": []
+    },
+    "14-01-2026_-_AI_Training_DIscussion.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:53": {
+              "identified_as": "Idrees",
+              "confidence": 0.581,
+              "method": "stylometric_match",
+              "evidence": "Stylometric match to Idrees (distance: 0.317, word count: 720)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:53"
+      ],
+      "unresolved": []
+    },
+    "14-01-2026_-_Catchup_x_Ben_Rich_6pm.txt": {
+      "meeting_type": "1_on_1",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Ben Brooks",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Richard Dosoo",
+        "Ben Brooks"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:18": {
+              "identified_as": "Steve Gentilli",
+              "confidence": 0.625,
+              "method": "stylometric_match",
+              "evidence": "Speech patterns match Steve Gentilli (score: 0.25)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:18"
+      ],
+      "unresolved": []
+    },
+    "14-01-2026_-_Chat_with_Ben_B.txt": {
+      "meeting_type": "1_on_1",
+      "known_speakers": [
+        "Azmain Hossain"
+      ],
+      "title_candidates": [
+        "Ben Brooks"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:00": {
+              "identified_as": "Ben Brooks",
+              "confidence": 0.75,
+              "method": "title_parse",
+              "evidence": "Title candidate 'Ben Brooks' with Unknown Speaker",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "15-01-2026_-_Chat_with_Richard_1.txt": {
+      "meeting_type": "1_on_1",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Richard Dosoo"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "10:46": {
+              "identified_as": "Amit",
+              "confidence": 0.589,
+              "method": "stylometric_match",
+              "evidence": "Stylometric match to Amit (distance: 0.171, word count: 120)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@10:46"
+      ],
+      "unresolved": []
+    },
+    "15-01-2026_-_Chat_with_Richard_2.txt": {
+      "meeting_type": "1_on_1",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Richard Dosoo"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "9:28": {
+              "identified_as": "Amit",
+              "confidence": 0.593,
+              "method": "stylometric_match",
+              "evidence": "Stylometric match to Amit (distance: 0.165, word count: 115)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@9:28"
+      ],
+      "unresolved": []
+    },
+    "15-01-2026_-_Chat_with_Richard_3.txt": {
+      "meeting_type": "1_on_1",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Richard Dosoo"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "2:15": {
+              "identified_as": "Amit",
+              "confidence": 0.467,
+              "method": "stylometric_match",
+              "evidence": "Stylometric match to Amit (distance: 0.242, word count: 50)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@2:15"
+      ],
+      "unresolved": []
+    },
+    "15-01-2026_-_Chat_with_Richard_4.txt": {
+      "meeting_type": "1_on_1",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Richard Dosoo"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:19": {
+              "identified_as": "Azmain Hossain",
+              "confidence": 0.644,
+              "method": "stylometric_match",
+              "evidence": "Speech patterns match Azmain Hossain (score: 0.31)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:19"
+      ],
+      "unresolved": []
+    },
+    "15-01-2026_-_Chat_with_Richard_6.txt": {
+      "meeting_type": "1_on_1",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Richard Dosoo"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "8:12": {
+              "identified_as": "George Dyke",
+              "confidence": 0.625,
+              "method": "stylometric_match",
+              "evidence": "Speech patterns match George Dyke (score: 0.25)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@8:12"
+      ],
+      "unresolved": []
+    },
+    "15-01-2026_-_Tracker_demo_to_advisory_team.txt": {
+      "meeting_type": "clara",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Ben Brooks",
+        "Christine",
+        "Richard Dosoo",
+        "Steve Getilli"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "1:58": {
+              "identified_as": "Josh Ellingson",
+              "confidence": 0.466,
+              "method": "stylometric_match",
+              "evidence": "Stylometric match to Josh Ellingson (distance: 0.378, word count: 213)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@1:58"
+      ],
+      "unresolved": []
+    },
+    "16-01-2026_-_Demo_and_Feedback_from_Josh_E.txt": {
+      "meeting_type": "demo",
+      "known_speakers": [
+        "Ben Brooks"
+      ],
+      "title_candidates": [
+        "Josh Ellingson"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "1:28": {
+              "identified_as": "Josh Ellingson",
+              "confidence": 0.75,
+              "method": "title_parse",
+              "evidence": "Title candidate 'Josh Ellingson' with Unknown Speaker",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "19-01-2026_-_Account_Planner_w_George_D.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Ben Brooks",
+        "George Dyke",
+        "Martin Davies",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "George Dyke"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:00": {
+              "identified_as": "Azmain Hossain",
+              "confidence": 0.68,
+              "method": "elimination",
+              "evidence": "Only unmatched candidate 'Azmain Hossain' for Unknown Speaker (from meeting type attendees)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:00"
+      ],
+      "unresolved": []
+    },
+    "19-01-2026_-_Customer_Success_Sales_Recon_Roadmap_Alignment___Pre-Meeting_Preparation.txt": {
+      "meeting_type": "sales_recon",
+      "known_speakers": [
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:02": {
+              "identified_as": "Azmain Hossain",
+              "confidence": 0.68,
+              "method": "azmain_recorder",
+              "evidence": "Azmain records virtually every meeting and is not in named speakers (meeting type: sales_recon)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:02"
+      ],
+      "unresolved": []
+    },
+    "19-01-2026_-_Deployment_Database_Synchronization_Debugging_Session.txt": {
+      "meeting_type": "workshop",
+      "known_speakers": [
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "2:05": {
+              "identified_as": "Azmain Hossain",
+              "confidence": 0.68,
+              "method": "azmain_recorder",
+              "evidence": "Azmain records virtually every meeting and is not in named speakers (meeting type: workshop)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@2:05"
+      ],
+      "unresolved": []
+    },
+    "19-01-2026_-_Deployment_Troubleshooting_Database_Connectivity_Review.txt": {
+      "meeting_type": "infrastructure",
+      "known_speakers": [
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "51:59": {
+              "identified_as": "Azmain Hossain",
+              "confidence": 0.85,
+              "method": "greeting_exchange",
+              "evidence": "Greeted as 'Azmain' by Richard Dosoo at line 196",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "20-01-2026_-_Programme_Alignment_and_Stakeholder_Readiness_Meeting.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {},
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-04_-_AI_discussion_with_Asset_Management.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "39:51": {
+              "identified_as": "Martin Davies",
+              "confidence": 0.85,
+              "method": "greeting_exchange",
+              "evidence": "Greeted as 'Martin' by Richard Dosoo at line 295",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-04_-_SalesRecon_Process_Coordination.txt": {
+      "meeting_type": "sales_recon",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:00": {
+              "identified_as": "Amit",
+              "confidence": 0.506,
+              "method": "stylometric_match",
+              "evidence": "Stylometric match to Amit (distance: 0.170, word count: 95)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:00"
+      ],
+      "unresolved": []
+    },
+    "2026-02-04_-_Tracker_next_steps.txt": {
+      "meeting_type": "clara",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Martin Davies"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "20:37": {
+              "identified_as": "Alexandra",
+              "confidence": 0.75,
+              "method": "direct_address",
+              "evidence": "Addressed as 'Alexandra' by Azmain Hossain at line 118",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-05_-_Portfolio_review_with_Natalia__1_.txt": {
+      "meeting_type": "portfolio_review",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Natalia"
+      ],
+      "title_candidates": [
+        "Natalia Plant"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "8:03": {
+              "identified_as": "Ben Brooks",
+              "confidence": 0.68,
+              "method": "elimination",
+              "evidence": "Only unmatched candidate 'Ben Brooks' for Unknown Speaker (from meeting type attendees)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@8:03"
+      ],
+      "unresolved": []
+    },
+    "2026-02-05_-_Programm_call_x_Martin__1_.txt": {
+      "meeting_type": "programme_review",
+      "known_speakers": [
+        "Azmain Hossain"
+      ],
+      "title_candidates": [
+        "Martin Davies"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "1:40": {
+              "identified_as": "Martin Davies",
+              "confidence": 0.75,
+              "method": "title_parse",
+              "evidence": "Title candidate 'Martin Davies' with Unknown Speaker",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-05_-_Tracker_discussion_with_Josh.txt": {
+      "meeting_type": "clara",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Martin Davies"
+      ],
+      "title_candidates": [
+        "Josh Ellingson"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "4:20": {
+              "identified_as": "Josh Ellingson",
+              "confidence": 0.75,
+              "method": "title_parse",
+              "evidence": "Title candidate 'Josh Ellingson' with Unknown Speaker",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-05_Chat_with_Rich.txt": {
+      "meeting_type": "1_on_1",
+      "known_speakers": [
+        "Azmain Hossain"
+      ],
+      "title_candidates": [
+        "Richard Dosoo"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "9:26": {
+              "identified_as": "Richard Dosoo",
+              "confidence": 0.75,
+              "method": "title_parse",
+              "evidence": "Title candidate 'Richard Dosoo' with Unknown Speaker",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-09_-_Monday_Tracker_Standup.txt": {
+      "meeting_type": "clara",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Ben Brooks",
+        "Martin Davies",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "4:44": {
+              "identified_as": "Amit",
+              "confidence": 0.531,
+              "method": "stylometric_match",
+              "evidence": "Stylometric match to Amit (distance: 0.126, word count: 59)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@4:44"
+      ],
+      "unresolved": []
+    },
+    "2026-02-09_-_Next_Steps.txt": {
+      "meeting_type": "review",
+      "known_speakers": [
+        "Azmain Hossain"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "1:20": {
+              "identified_as": "Richard Dosoo",
+              "confidence": 0.68,
+              "method": "elimination",
+              "evidence": "Only unmatched candidate 'Richard Dosoo' for Unknown Speaker (from meeting type attendees)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@1:20"
+      ],
+      "unresolved": []
+    },
+    "2026-02-09_-_session_with_Josh_Kathryn.txt": {
+      "meeting_type": "workshop",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Diya",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Josh Ellingson",
+        "Kathryn"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "1:11": {
+              "identified_as": "Christine",
+              "confidence": 0.476,
+              "method": "stylometric_match",
+              "evidence": "Stylometric match to Christine (distance: 0.268, word count: 176)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@1:11"
+      ],
+      "unresolved": []
+    },
+    "2026-02-11_13-30-56.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Diana"
+      ],
+      "title_candidates": [],
+      "mappings": {},
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-11_13-59-58.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "2:25": {
+              "identified_as": "Naveen",
+              "confidence": 0.9,
+              "method": "claude_assisted",
+              "evidence": "Claude-assisted: CSM from Little Rock Arkansas. Salesforce name Navinachi Banker. Azmain references session with Naveen earlier today in same-day afternoon call",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-11_15-31-58.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Idrees",
+        "Peter Kimes"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "8:04": {
+              "identified_as": "Azmain Hossain",
+              "confidence": 0.68,
+              "method": "elimination",
+              "evidence": "Only unmatched candidate 'Azmain Hossain' for Unknown Speaker (from meeting type attendees)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@8:04"
+      ],
+      "unresolved": []
+    },
+    "2026-02-11_16-16-12.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Idrees",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "16:33": {
+              "identified_as": "Azmain Hossain",
+              "confidence": 0.68,
+              "method": "elimination",
+              "evidence": "Only unmatched candidate 'Azmain Hossain' for Unknown Speaker (from meeting type attendees)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@16:33"
+      ],
+      "unresolved": []
+    },
+    "2026-02-11_16-33-16.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Josh Ellingson",
+        "Kathryn",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "20:32": {
+              "identified_as": "Kathryn",
+              "confidence": 0.9,
+              "method": "claude_assisted",
+              "evidence": "Claude-assisted: Transcription alternates between Kathryn/Speaker 1/Unknown Speaker for same voice. Only sign-off utterance",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-12_-_CSM_Workshop_Session_1.txt": {
+      "meeting_type": "workshop",
+      "known_speakers": [
+        "Natalia"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "14:15": {
+              "identified_as": "Rachel Gillespie",
+              "confidence": 0.97,
+              "method": "self_introduction",
+              "evidence": "Self-intro detected: 'Rachel Gillespie' → Rachel Gillespie at line 73",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-12_-_CSM_Workshop_Session_2.txt": {
+      "meeting_type": "workshop",
+      "known_speakers": [
+        "Azmain Hossain"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "22:28": {
+              "identified_as": "Philip Garner",
+              "confidence": 0.85,
+              "method": "greeting_exchange",
+              "evidence": "Greeted as 'Phil' by Unknown Speaker at line 124",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-19_-_App_development_with_Rhett.txt": {
+      "meeting_type": "technical",
+      "known_speakers": [
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Rhett"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:02": {
+              "identified_as": "Rhett",
+              "confidence": 0.75,
+              "method": "title_parse",
+              "evidence": "Title candidate 'Rhett' with Unknown Speaker",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-19_-_MCP_server_with_Cihan___Lonny.txt": {
+      "meeting_type": "technical",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Ben Brooks",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Cihan",
+        "Lonny"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "1:17": {
+              "identified_as": "Bala",
+              "confidence": 0.85,
+              "method": "greeting_exchange",
+              "evidence": "Greeted as 'Bala' by Richard Dosoo at line 10",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-20_-_Chat_w_Liz__tracker_feedback_.txt": {
+      "meeting_type": "clara",
+      "known_speakers": [
+        "Azmain Hossain"
+      ],
+      "title_candidates": [
+        "Liz Couchman"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "3:50": {
+              "identified_as": "Liz Couchman",
+              "confidence": 0.75,
+              "method": "title_parse",
+              "evidence": "Title candidate 'Liz Couchman' with Unknown Speaker",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-20_-_Natalia_1-1.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Natalia"
+      ],
+      "title_candidates": [],
+      "mappings": {},
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-20_-_tracker_stand_up.txt": {
+      "meeting_type": "clara",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:41": {
+              "identified_as": "Ben Brooks",
+              "confidence": 0.68,
+              "method": "elimination",
+              "evidence": "Only unmatched candidate 'Ben Brooks' for Unknown Speaker (from meeting type attendees)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:41"
+      ],
+      "unresolved": []
+    },
+    "2026-02-23_-_Meeting_with_Diya.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Ben Brooks",
+        "Natalia",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Diya Sawhny"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "8:19": {
+              "identified_as": "Diya Sawhny",
+              "confidence": 0.75,
+              "method": "title_parse",
+              "evidence": "Title candidate 'Diya Sawhny' with Unknown Speaker",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-23_-_next_2_weeks_plan.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Ben Brooks",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "5:02": {
+              "identified_as": "Ben Brooks",
+              "confidence": 0.85,
+              "method": "claude_assisted",
+              "evidence": "Claude-assisted: Continuation of Ben speech at line 40 about being relaxed. Screen share question. Multiple speakers lose labels intermittently",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-23_-_tracker_standup.txt": {
+      "meeting_type": "clara",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "2:54": {
+              "identified_as": "Ben Brooks",
+              "confidence": 0.68,
+              "method": "elimination",
+              "evidence": "Only unmatched candidate 'Ben Brooks' for Unknown Speaker (from meeting type attendees)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@2:54"
+      ],
+      "unresolved": []
+    },
+    "2026-02-25_-_Clara_Standup.txt": {
+      "meeting_type": "clara",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:00": {
+              "identified_as": "Ben Brooks",
+              "confidence": 0.68,
+              "method": "elimination",
+              "evidence": "Only unmatched candidate 'Ben Brooks' for Unknown Speaker (from meeting type attendees)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:00"
+      ],
+      "unresolved": []
+    },
+    "2026-02-26_-_AI_Infrastructure.txt": {
+      "meeting_type": "infrastructure",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:00": {
+              "identified_as": "Ben Van Houten",
+              "confidence": 0.68,
+              "method": "elimination",
+              "evidence": "Only unmatched candidate 'Ben Van Houten' for Unknown Speaker (from meeting type attendees)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:00"
+      ],
+      "unresolved": []
+    },
+    "2026-02-26_-_Blockers_with_P_Kimes.txt": {
+      "meeting_type": "review",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Peter Kimes",
+        "Stacy"
+      ],
+      "title_candidates": [
+        "Peter Kimes"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "2:56": {
+              "identified_as": "Richard Dosoo",
+              "confidence": 0.68,
+              "method": "elimination",
+              "evidence": "Only unmatched candidate 'Richard Dosoo' for Unknown Speaker (from meeting type attendees)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@2:56"
+      ],
+      "unresolved": []
+    },
+    "2026-02-26_-_Chat_with_Asset_Management.txt": {
+      "meeting_type": "1_on_1",
+      "known_speakers": [
+        "Azmain Hossain"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "3:23": {
+              "identified_as": "George Dyke",
+              "confidence": 0.625,
+              "method": "stylometric_match",
+              "evidence": "Speech patterns match George Dyke (score: 0.25)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@3:23"
+      ],
+      "unresolved": []
+    },
+    "2026-02-26_-_Chat_with_Stacy.txt": {
+      "meeting_type": "1_on_1",
+      "known_speakers": [
+        "Azmain Hossain"
+      ],
+      "title_candidates": [
+        "Stacy Dixtra"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "11:16": {
+              "identified_as": "Stacy Dixtra",
+              "confidence": 0.75,
+              "method": "title_parse",
+              "evidence": "Title candidate 'Stacy Dixtra' with Unknown Speaker",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-26_-_HD_Models.txt": {
+      "meeting_type": "technical_specialist",
+      "known_speakers": [
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:12": {
+              "identified_as": "Azmain Hossain",
+              "confidence": 0.68,
+              "method": "azmain_recorder",
+              "evidence": "Azmain records virtually every meeting and is not in named speakers (meeting type: technical_specialist)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:12"
+      ],
+      "unresolved": []
+    },
+    "2026-02-26_-_Moodys_v_env_s_with_BenVH.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain"
+      ],
+      "title_candidates": [
+        "Ben Van Houten"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "2:51": {
+              "identified_as": "Ben Van Houten",
+              "confidence": 0.75,
+              "method": "title_parse",
+              "evidence": "Title candidate 'Ben Van Houten' with Unknown Speaker",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-02-27_-_Build_in_Five_with_Martin.txt": {
+      "meeting_type": "build_in_five",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Martin Davies",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Martin Davies"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "5:20": {
+              "identified_as": "Richard Dosoo",
+              "confidence": 0.95,
+              "method": "claude_assisted",
+              "evidence": "Claude-assisted: Docker startup narration continues Richards ongoing monologue. Searching for UI mockups. Transcription lost label during screen share",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-03-03 - AI Tool Development Meeting.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Martin Davies"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:14": {
+              "identified_as": "Amit",
+              "confidence": 0.515,
+              "method": "stylometric_match",
+              "evidence": "Stylometric match to Amit (distance: 0.208, word count: 132)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:14"
+      ],
+      "unresolved": []
+    },
+    "2026-03-03 - Discussion with Ben VH 2.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain"
+      ],
+      "title_candidates": [
+        "Ben Van Houten"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "2:31": {
+              "identified_as": "Ben Van Houten",
+              "confidence": 0.75,
+              "method": "title_parse",
+              "evidence": "Title candidate 'Ben Van Houten' with Unknown Speaker",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-03-03 - Discussion with Ben VH.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain"
+      ],
+      "title_candidates": [
+        "Ben Van Houten"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:00": {
+              "identified_as": "Ben Van Houten",
+              "confidence": 0.75,
+              "method": "title_parse",
+              "evidence": "Title candidate 'Ben Van Houten' with Unknown Speaker",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-03-03 - GenAI Program Standup & Next steps.txt": {
+      "meeting_type": "standup",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Chris M",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:09": {
+              "identified_as": "Ben Van Houten",
+              "confidence": 0.663,
+              "method": "stylometric_match",
+              "evidence": "Speech patterns match Ben Van Houten (score: 0.38)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:09"
+      ],
+      "unresolved": []
+    },
+    "2026-03-03 - Life Side SLT.txt": {
+      "meeting_type": "executive",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Ben Brooks"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:28": {
+              "identified_as": "Ben Brooks",
+              "confidence": 0.683,
+              "method": "stylometric_match",
+              "evidence": "Speech patterns match Ben Brooks (score: 0.44)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:28"
+      ],
+      "unresolved": []
+    },
+    "2026-03-04 - Build in 5 Discussion.txt": {
+      "meeting_type": "build_in_five",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Martin Davies",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "3:31": {
+              "identified_as": "Martin Davies",
+              "confidence": 0.85,
+              "method": "claude_assisted",
+              "evidence": "Claude-assisted: Line 49 is Martin acknowledging Richards request to summarize for Ben. Line 19 is split Azmain sentence",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-03-04 - Diana 1-1.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Diana"
+      ],
+      "title_candidates": [],
+      "mappings": {},
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-03-04 - meeting with Dan Flemington.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Dan Flemington"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:40": {
+              "identified_as": "Dan Flemington",
+              "confidence": 0.75,
+              "method": "title_parse",
+              "evidence": "Title candidate 'Dan Flemington' with Unknown Speaker",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-03-04 - New migration dashboard w Stacy Natalia (1).txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Natalia",
+        "Stacy"
+      ],
+      "title_candidates": [
+        "Natalia Plant",
+        "Stacy Dixtra"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "1:52": {
+              "identified_as": "Stacy Dixtra",
+              "confidence": 0.9,
+              "method": "claude_assisted",
+              "evidence": "Claude-assisted: Completion of Stacys own sentence about showing CLARA on screen",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-03-05 - Clara standup (1).txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Chris M",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {},
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-03-06 - Chat with BenVH.txt": {
+      "meeting_type": "1_on_1",
+      "known_speakers": [
+        "Azmain Hossain"
+      ],
+      "title_candidates": [
+        "Ben Van Houten"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "10:38": {
+              "identified_as": "Ben Van Houten",
+              "confidence": 0.75,
+              "method": "title_parse",
+              "evidence": "Title candidate 'Ben Van Houten' with Unknown Speaker",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-03-06 - Chat with Chris.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Chris M"
+      ],
+      "title_candidates": [],
+      "mappings": {},
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "2026-03-06 - Pre Gainsight team meeting.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Chris M",
+        "Kathryn",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {},
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "21-01-2026_-_Data_chat_with_richard.txt": {
+      "meeting_type": "1_on_1",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Richard Dosoo"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "1:09": {
+              "identified_as": "Richard Dosoo",
+              "confidence": 0.606,
+              "method": "stylometric_match",
+              "evidence": "Speech patterns match Richard Dosoo (score: 0.19)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@1:09"
+      ],
+      "unresolved": []
+    },
+    "21-01-2026_-_Data_input_call_with_PM_s.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Diana",
+        "Vlad"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "10:52": {
+              "identified_as": "Amit",
+              "confidence": 0.5,
+              "method": "stylometric_match",
+              "evidence": "Stylometric match to Amit (distance: 0.231, word count: 132)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@10:52"
+      ],
+      "unresolved": []
+    },
+    "21-01-2026_-_Portfolio_Review_-_new_process_w_Nat_BenB.txt": {
+      "meeting_type": "portfolio_review",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Ben Brooks",
+        "Natalia"
+      ],
+      "title_candidates": [
+        "Ben Brooks",
+        "Natalia Plant"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "25:17": {
+              "identified_as": "Azmain Hossain",
+              "confidence": 0.9,
+              "method": "claude_assisted",
+              "evidence": "Claude-assisted: Leads directly into Azmains discussion about PM feedback on data filling. Transcription split his sentence",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "21-01-2026_-_Review_Slides_for_Sales_Recon_Executive_Meeting.txt": {
+      "meeting_type": "sales_recon",
+      "known_speakers": [
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "9:20": {
+              "identified_as": "Azmain Hossain",
+              "confidence": 0.68,
+              "method": "azmain_recorder",
+              "evidence": "Azmain records virtually every meeting and is not in named speakers (meeting type: sales_recon)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@9:20"
+      ],
+      "unresolved": []
+    },
+    "22-01-2026_-_Chat_with_Rich_-_Diya_s_priorities.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {},
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "22-01-2026_-_Richard__George_-_SalesRecon_Decision_Prep.txt": {
+      "meeting_type": "sales_recon",
+      "known_speakers": [
+        "Azmain Hossain",
+        "George Dyke",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Richard Dosoo",
+        "George Dyke"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "3:33": {
+              "identified_as": "Jamie",
+              "confidence": 0.68,
+              "method": "elimination",
+              "evidence": "Only unmatched candidate 'Jamie' for Unknown Speaker (from meeting type attendees)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@3:33"
+      ],
+      "unresolved": []
+    },
+    "23-01-2026_-_Adoption_charter_w_Steve_Gentilli_.txt": {
+      "meeting_type": "clara",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Steve Getilli"
+      ],
+      "title_candidates": [
+        "Steve Gentilli"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "2:04": {
+              "identified_as": "Steve Gentilli",
+              "confidence": 0.75,
+              "method": "title_parse",
+              "evidence": "Title candidate 'Steve Gentilli' with Unknown Speaker",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "23-01-2026_-_chat_with_ben.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Ben Brooks"
+      ],
+      "title_candidates": [],
+      "mappings": {},
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "23-01-2026_-_chat_with_richard.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {},
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "23-01-2026_-_Next_steps_on_dev_work_w_RIch.txt": {
+      "meeting_type": "review",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Richard Dosoo"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "8:01": {
+              "identified_as": "Richard Dosoo",
+              "confidence": 0.95,
+              "method": "claude_assisted",
+              "evidence": "Claude-assisted: 2-person meeting. Unknown Speaker sandwiched between two Azmain turns. Filler language matches Richard",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "23-01-2026_-_Portfolio_review_call_discussion_w_Nat_Ben.txt": {
+      "meeting_type": "portfolio_review",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Ben Brooks",
+        "Natalia"
+      ],
+      "title_candidates": [
+        "Natalia Plant",
+        "Ben Brooks"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "10:57": {
+              "identified_as": "Amit",
+              "confidence": 0.491,
+              "method": "stylometric_match",
+              "evidence": "Stylometric match to Amit (distance: 0.198, word count: 54)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@10:57"
+      ],
+      "unresolved": []
+    },
+    "23-01-2026_-_portfolio_review_contd.txt": {
+      "meeting_type": "portfolio_review",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Ben Brooks",
+        "Natalia"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:35": {
+              "identified_as": "Natalia Plant",
+              "confidence": 0.9,
+              "method": "claude_assisted",
+              "evidence": "Claude-assisted: Was on mute (Azmain said you are on mute). Greeting at meeting start. Line 25 aligns with Natalia driving portfolio review",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "23-01-2026_-_Pre-Monday_Demo_Discussion.txt": {
+      "meeting_type": "demo",
+      "known_speakers": [
+        "Azmain Hossain",
+        "George Dyke",
+        "Martin Davies",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:07": {
+              "identified_as": "Amit",
+              "confidence": 0.476,
+              "method": "stylometric_match",
+              "evidence": "Stylometric match to Amit (distance: 0.268, word count: 118)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:07"
+      ],
+      "unresolved": []
+    },
+    "26-01-2026_-__IMP__SalesRecon__1_.txt": {
+      "meeting_type": "sales_recon",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Ben Brooks",
+        "Idrees",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "1:28": {
+              "identified_as": "Jamie",
+              "confidence": 0.7,
+              "method": "stylometric_match",
+              "evidence": "Speech patterns match Jamie (score: 0.50)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "26-01-2026_-_Chat_with_Rich___BenVH__2_.txt": {
+      "meeting_type": "1_on_1",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Martin Davies",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [
+        "Ben Van Houten",
+        "Richard Dosoo"
+      ],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "11:13": {
+              "identified_as": "Ben Van Houten",
+              "confidence": 0.75,
+              "method": "title_parse",
+              "evidence": "Title candidate 'Ben Van Houten' with Unknown Speaker",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "26-01-2026_-_IRP_Adoption_call_-_Intro__2_.txt": {
+      "meeting_type": "unknown",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Ben Brooks",
+        "Diya",
+        "George Dyke",
+        "Natalia"
+      ],
+      "title_candidates": [],
+      "mappings": {},
+      "flagged_for_review": [],
+      "unresolved": []
+    },
+    "27-01-2026_-_IRP_Tracker_next_steps__2_.txt": {
+      "meeting_type": "clara",
+      "known_speakers": [
+        "Azmain Hossain",
+        "Ben Brooks",
+        "Richard Dosoo"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "1:27": {
+              "identified_as": "Amit",
+              "confidence": 0.496,
+              "method": "stylometric_match",
+              "evidence": "Stylometric match to Amit (distance: 0.189, word count: 82)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@1:27"
+      ],
+      "unresolved": []
+    },
+    "27-01-2026_-_Partners_workflow_workshop__1_.txt": {
+      "meeting_type": "workshop",
+      "known_speakers": [
+        "Azmain Hossain"
+      ],
+      "title_candidates": [],
+      "mappings": {
+        "Unknown Speaker": {
+          "instances": {
+            "0:00": {
+              "identified_as": "Natalia Plant",
+              "confidence": 0.636,
+              "method": "stylometric_match",
+              "evidence": "Speech patterns match Natalia Plant (score: 0.29)",
+              "supporting_signals": []
+            }
+          }
+        }
+      },
+      "flagged_for_review": [
+        "Unknown Speaker@0:00"
+      ],
+      "unresolved": []
+    }
+  },
+  "summary": {
+    "total_transcripts": 98,
+    "transcripts_with_unknowns": 85,
+    "total_unknown_instances": 1209,
+    "identified_high_confidence": 7,
+    "identified_medium_confidence": 18,
+    "flagged_for_review": 48,
+    "unresolved": 0
+  }
+}

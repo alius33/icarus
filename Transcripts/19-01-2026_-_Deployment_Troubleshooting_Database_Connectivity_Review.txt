@@ -196,7 +196,7 @@ Cool. All right, I should be it shouldn't take me long and to just reboot submis
 Richard Dosoo  51:22  
 No Hey, Azmain. Hey, Azmain, Can you hear me? Yeah, no, I managed to restart my machine. I still can't get local host to work, but I can get the build to work on, on, on AWS, so now I've hit the number.
 
-Unknown Speaker  51:59  
+Azmain Hossain  51:59  
 But what? I mean, this is the
 
 Richard Dosoo  52:10  

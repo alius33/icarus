@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import Column, Date, DateTime, Index, Integer, String, Text
+from sqlalchemy import Column, Date, DateTime, ForeignKey, Index, Integer, String, Text
 from sqlalchemy.dialects.postgresql import ARRAY, TSVECTOR
 from sqlalchemy.orm import relationship
 
@@ -18,11 +18,18 @@ class Transcript(Base):
     word_count = Column(Integer)
     participants = Column(ARRAY(String), default=[])
     search_vector = Column(TSVECTOR)
+    primary_project_id = Column(
+        Integer,
+        ForeignKey("projects.id", ondelete="SET NULL"),
+        nullable=True,
+        index=True,
+    )
     source_file = Column(String, nullable=False)
     file_hash = Column(String, nullable=False)
     imported_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
+    primary_project = relationship("Project", foreign_keys=[primary_project_id])
     summary = relationship("Summary", back_populates="transcript", uselist=False)
     mentions = relationship("TranscriptMention", back_populates="transcript")
 

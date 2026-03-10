@@ -8,6 +8,8 @@ export interface TranscriptBase {
   participant_count: number;
   word_count: number;
   has_summary: boolean;
+  primary_project_id: number | null;
+  primary_project_name: string | null;
 }
 
 export interface TranscriptDetail extends TranscriptBase {
@@ -116,20 +118,102 @@ export interface MentionItem {
 
 // ── Decision ────────────────────────────────────────────────────────────────
 
+export const DECISION_STATUSES = ["made", "in_progress", "implemented", "reversed", "superseded"] as const;
+export type DecisionStatus = typeof DECISION_STATUSES[number];
+
+export const DECISION_STATUS_CONFIG: Record<DecisionStatus, { label: string; color: string; bgColor: string; order: number }> = {
+  made:        { label: "Made",        color: "text-blue-600",   bgColor: "bg-blue-100",   order: 0 },
+  in_progress: { label: "In Progress", color: "text-yellow-600", bgColor: "bg-yellow-100", order: 1 },
+  implemented: { label: "Implemented", color: "text-green-600",  bgColor: "bg-green-100",  order: 2 },
+  reversed:    { label: "Reversed",    color: "text-red-600",    bgColor: "bg-red-100",    order: 3 },
+  superseded:  { label: "Superseded",  color: "text-gray-600",   bgColor: "bg-gray-100",   order: 4 },
+};
+
 export interface DecisionSchema {
   id: number;
+  number: number;
   title: string;
   description: string | null;
   date: string | null;
   status: string;
+  execution_status: string;
+  rationale: string | null;
+  key_people: string[];
   owner: string | null;
   workstream: string | null;
+  position: number;
   transcript_id: number | null;
   transcript_title: string | null;
   is_manual?: boolean;
 }
 
+export interface DecisionCreate {
+  decision: string;
+  date?: string;
+  rationale?: string;
+  key_people?: string[];
+  execution_status?: string;
+  workstream?: string;
+}
+
+export interface DecisionUpdate {
+  decision?: string;
+  date?: string;
+  rationale?: string;
+  key_people?: string[];
+  execution_status?: string;
+  workstream?: string;
+}
+
+export interface DecisionPositionUpdate { execution_status: string; position: number; }
+
+export interface DecisionBoardColumn {
+  status: string;
+  label: string;
+  color: string;
+  order: number;
+  decisions: DecisionSchema[];
+  count: number;
+}
+
+export interface DecisionBoardResponse { columns: DecisionBoardColumn[]; total: number; }
+
+export interface DecisionTimelineItem {
+  id: number;
+  number: number;
+  title: string;
+  execution_status: string;
+  key_people: string[];
+  decision_date: string | null;
+  workstream: string | null;
+}
+
+export interface DecisionTimelineResponse { decisions: DecisionTimelineItem[]; total: number; }
+
+export type DecisionViewMode = "board" | "list" | "timeline";
+
 // ── Open Thread ─────────────────────────────────────────────────────────────
+
+export const THREAD_STATUSES = ["OPEN", "WATCHING", "CLOSED"] as const;
+export type ThreadStatus = typeof THREAD_STATUSES[number];
+
+export const THREAD_STATUS_CONFIG: Record<ThreadStatus, { label: string; color: string; bgColor: string; order: number }> = {
+  OPEN:     { label: "Open",     color: "text-red-600",    bgColor: "bg-red-100",    order: 0 },
+  WATCHING: { label: "Watching", color: "text-yellow-600", bgColor: "bg-yellow-100", order: 1 },
+  CLOSED:   { label: "Closed",   color: "text-green-600",  bgColor: "bg-green-100",  order: 2 },
+};
+
+export const THREAD_SEVERITIES = ["CRITICAL", "HIGH", "MEDIUM", "LOW"] as const;
+export type ThreadSeverity = typeof THREAD_SEVERITIES[number];
+
+export const SEVERITY_CONFIG: Record<ThreadSeverity, { label: string; color: string; dotColor: string }> = {
+  CRITICAL: { label: "Critical", color: "text-red-600",    dotColor: "bg-red-500" },
+  HIGH:     { label: "High",     color: "text-orange-500", dotColor: "bg-orange-500" },
+  MEDIUM:   { label: "Medium",   color: "text-yellow-500", dotColor: "bg-yellow-500" },
+  LOW:      { label: "Low",      color: "text-green-400",  dotColor: "bg-green-400" },
+};
+
+export const TREND_OPTIONS = ["escalating", "stable", "de-escalating"] as const;
 
 export interface OpenThreadSchema {
   id: number;
@@ -143,8 +227,50 @@ export interface OpenThreadSchema {
   workstream: string | null;
   severity: string | null;
   trend: string | null;
+  position: number;
+  question: string | null;
+  why_it_matters: string | null;
+  resolution: string | null;
   is_manual?: boolean;
 }
+
+export interface OpenThreadCreate {
+  title: string;
+  context?: string;
+  question?: string;
+  why_it_matters?: string;
+  status?: string;
+  first_raised?: string;
+  severity?: string;
+  trend?: string;
+}
+
+export interface OpenThreadUpdate {
+  title?: string;
+  context?: string;
+  question?: string;
+  why_it_matters?: string;
+  status?: string;
+  resolution?: string;
+  first_raised?: string;
+  severity?: string;
+  trend?: string;
+}
+
+export interface ThreadPositionUpdate { status: string; position: number; }
+
+export interface ThreadBoardColumn {
+  status: string;
+  label: string;
+  color: string;
+  order: number;
+  threads: OpenThreadSchema[];
+  count: number;
+}
+
+export interface ThreadBoardResponse { columns: ThreadBoardColumn[]; total: number; }
+
+export type ThreadViewMode = "board" | "list";
 
 // ── Action Item ─────────────────────────────────────────────────────────────
 
@@ -161,6 +287,119 @@ export interface ActionItemSchema {
   is_manual?: boolean;
 }
 
+// ── Task (Project Management) ──────────────────────────────────────────────
+
+export const TASK_STATUSES = ["TODO", "IN_PROGRESS", "IN_REVIEW", "DONE", "CANCELLED"] as const;
+export type TaskStatus = typeof TASK_STATUSES[number];
+
+export const TASK_PRIORITIES = ["URGENT", "HIGH", "MEDIUM", "LOW", "NONE"] as const;
+export type TaskPriority = typeof TASK_PRIORITIES[number];
+
+export const STATUS_CONFIG: Record<TaskStatus, { label: string; color: string; bgColor: string; order: number }> = {
+  TODO:        { label: "Todo",        color: "text-blue-600",   bgColor: "bg-blue-100",   order: 0 },
+  IN_PROGRESS: { label: "In Progress", color: "text-yellow-600", bgColor: "bg-yellow-100", order: 1 },
+  IN_REVIEW:   { label: "In Review",   color: "text-purple-600", bgColor: "bg-purple-100", order: 2 },
+  DONE:        { label: "Done",        color: "text-green-600",  bgColor: "bg-green-100",  order: 3 },
+  CANCELLED:   { label: "Cancelled",   color: "text-red-600",    bgColor: "bg-red-100",    order: 4 },
+};
+
+export const PRIORITY_CONFIG: Record<TaskPriority, { label: string; color: string; dotColor: string }> = {
+  URGENT: { label: "Urgent", color: "text-red-600",    dotColor: "bg-red-500" },
+  HIGH:   { label: "High",   color: "text-orange-500", dotColor: "bg-orange-500" },
+  MEDIUM: { label: "Medium", color: "text-yellow-500", dotColor: "bg-yellow-500" },
+  LOW:    { label: "Low",    color: "text-blue-400",   dotColor: "bg-blue-400" },
+  NONE:   { label: "None",   color: "text-gray-400",   dotColor: "bg-gray-300" },
+};
+
+export interface TaskSchema {
+  id: number;
+  identifier: string;
+  title: string;
+  description: string | null;
+  status: TaskStatus;
+  priority: TaskPriority;
+  assignee: string | null;
+  labels: string[];
+  due_date: string | null;
+  start_date: string | null;
+  estimate: number | null;
+  position: number;
+  project_id: number | null;
+  project_name: string | null;
+  parent_id: number | null;
+  parent_identifier: string | null;
+  sub_task_count: number;
+  created_date: string | null;
+  completed_date: string | null;
+  is_manual: boolean;
+}
+
+export interface TaskCreate {
+  title: string;
+  description?: string;
+  status?: string;
+  priority?: string;
+  assignee?: string;
+  labels?: string[];
+  due_date?: string;
+  start_date?: string;
+  estimate?: number;
+  project_id?: number;
+  parent_id?: number;
+}
+
+export interface TaskUpdate {
+  title?: string;
+  description?: string;
+  status?: string;
+  priority?: string;
+  assignee?: string;
+  labels?: string[];
+  due_date?: string;
+  start_date?: string;
+  estimate?: number;
+  project_id?: number;
+  parent_id?: number;
+}
+
+export interface TaskPositionUpdate {
+  status: string;
+  position: number;
+}
+
+export interface TaskBoardColumn {
+  status: string;
+  label: string;
+  color: string;
+  order: number;
+  tasks: TaskSchema[];
+  count: number;
+}
+
+export interface TaskBoardResponse {
+  columns: TaskBoardColumn[];
+  total: number;
+}
+
+export interface TaskTimelineItem {
+  id: number;
+  identifier: string;
+  title: string;
+  status: string;
+  priority: string;
+  assignee: string | null;
+  start_date: string | null;
+  due_date: string | null;
+  project_name: string | null;
+}
+
+export interface TaskTimelineResponse {
+  tasks: TaskTimelineItem[];
+  total: number;
+}
+
+export type TaskViewMode = "board" | "list" | "timeline";
+
 // ── Glossary ────────────────────────────────────────────────────────────────
 
 export interface GlossaryEntrySchema {
@@ -174,30 +413,12 @@ export interface GlossaryEntrySchema {
 
 // ── Create/Update Types ────────────────────────────────────────────────────
 
-export interface DecisionCreate {
-  decision: string;
-  date?: string;
-  rationale?: string;
-  key_people?: string[];
-}
-
 export interface ActionItemCreate {
   description: string;
   owner?: string;
   deadline?: string;
   context?: string;
   status?: string;
-}
-
-export interface OpenThreadCreate {
-  title: string;
-  context?: string;
-  question?: string;
-  why_it_matters?: string;
-  status?: string;
-  first_raised?: string;
-  severity?: string;
-  trend?: string;
 }
 
 export interface StakeholderCreate {
@@ -344,6 +565,7 @@ export interface ProjectHub {
   action_items: ActionItemSchema[];
   open_threads: OpenThreadSchema[];
   stakeholders: StakeholderBase[];
+  project_summaries: ProjectSummarySchema[];
 }
 
 export interface ProjectLinkCreate {
@@ -752,4 +974,214 @@ export interface CrossProjectLinkCreate {
   date_detected?: string;
   severity?: string;
   status?: string;
+}
+
+// ── Speaker Review ──────────────────────────────────────────────────────────
+
+export interface SpeakerReviewItem {
+  id: string; // "{filename}::{label}::{timestamp}"
+  transcript_filename: string;
+  meeting_type: string;
+  known_speakers: string[];
+  speaker_label: string;
+  timestamp: string;
+  identified_as: string;
+  confidence: number;
+  method: string;
+  evidence: string;
+  status: string; // "applied" | "flagged" | "unresolved"
+}
+
+export interface ReviewSummary {
+  total_transcripts: number;
+  total_identifications: number;
+  applied_count: number;
+  flagged_count: number;
+  unresolved_count: number;
+  methods: Record<string, number>;
+}
+
+export interface SpeakerReviewResponse {
+  summary: ReviewSummary;
+  items: SpeakerReviewItem[];
+  stakeholder_names: string[];
+}
+
+export interface ConfirmAction {
+  id: string;
+  action: "accept" | "reject" | "manual";
+  manual_name?: string;
+}
+
+export interface ConfirmResponse {
+  applied: number;
+  rejected: number;
+  errors: string[];
+}
+
+export interface TranscriptContext {
+  filename: string;
+  lines: string[];
+  highlight_line: number;
+}
+
+// ── Analysis Engine Types ───────────────────────────────────────────
+
+export interface TopicSignalSchema {
+  id: number;
+  date: string | null;
+  topic: string;
+  category: string | null;
+  intensity: string | null;
+  first_raised: string | null;
+  meetings_count: number;
+  trend: string | null;
+  key_quote: string | null;
+  confidence: string | null;
+  transcript_id: number | null;
+  is_manual: boolean;
+}
+
+export interface TopicEvolutionPoint {
+  date: string;
+  intensity: string;
+  meetings_count: number;
+}
+
+export interface TopicEvolutionData {
+  topic: string;
+  category: string | null;
+  data_points: TopicEvolutionPoint[];
+}
+
+export interface TopicMomentum {
+  rising: TopicSignalSchema[];
+  declining: TopicSignalSchema[];
+  going_cold: TopicSignalSchema[];
+}
+
+export interface InfluenceSignalSchema {
+  id: number;
+  date: string | null;
+  person: string;
+  influence_type: string;
+  direction: string | null;
+  target_person: string | null;
+  topic: string | null;
+  evidence: string | null;
+  strength: string | null;
+  confidence: string | null;
+  coalition_name: string | null;
+  coalition_members: string | null;
+  alignment: string | null;
+  transcript_id: number | null;
+  is_manual: boolean;
+}
+
+export interface InfluenceGraphNode {
+  id: string;
+  name: string;
+  signal_count: number;
+}
+
+export interface InfluenceGraphEdge {
+  source: string;
+  target: string;
+  type: string;
+  weight: number;
+}
+
+export interface InfluenceGraphData {
+  nodes: InfluenceGraphNode[];
+  edges: InfluenceGraphEdge[];
+}
+
+export interface ContradictionSchema {
+  id: number;
+  date: string | null;
+  contradiction_type: string;
+  person: string | null;
+  statement_a: string | null;
+  date_a: string | null;
+  statement_b: string | null;
+  date_b: string | null;
+  severity: string | null;
+  resolution: string;
+  confidence: string | null;
+  gap_description: string | null;
+  expected_source: string | null;
+  last_mentioned: string | null;
+  meetings_absent: number | null;
+  entry_kind: string;
+  transcript_id: number | null;
+  is_manual: boolean;
+}
+
+export interface MeetingScoreSchema {
+  id: number;
+  transcript_id: number;
+  date: string | null;
+  meeting_title: string | null;
+  meeting_type: string | null;
+  overall_score: number;
+  decision_velocity: number | null;
+  action_clarity: number | null;
+  engagement_balance: number | null;
+  topic_completion: number | null;
+  follow_through: number | null;
+  participant_count: number | null;
+  duration_category: string | null;
+  recommendations: string | null;
+  is_manual: boolean;
+}
+
+export interface MeetingScoreTrend {
+  date: string;
+  score: number;
+  meeting_type: string | null;
+}
+
+export interface RiskEntrySchema {
+  id: number;
+  risk_id: string;
+  date: string | null;
+  title: string;
+  description: string | null;
+  category: string | null;
+  severity: string;
+  trajectory: string | null;
+  source_type: string | null;
+  owner: string | null;
+  mitigation: string | null;
+  last_reviewed: string | null;
+  meetings_mentioned: number;
+  confidence: string | null;
+  transcript_id: number | null;
+  is_manual: boolean;
+}
+
+export interface RiskHeatmapRow {
+  category: string;
+  CRITICAL: number;
+  HIGH: number;
+  MEDIUM: number;
+  LOW: number;
+}
+
+export interface ProjectSummarySchema {
+  id: number;
+  project_id: number;
+  transcript_id: number;
+  date: string | null;
+  relevance: string | null;
+  content: string;
+  source_file: string | null;
+}
+
+export interface AnalysisInsights {
+  avg_meeting_score: number;
+  active_critical_risks: number;
+  escalating_risks: number;
+  new_contradictions_this_week: number;
+  top_rising_topic: string | null;
 }

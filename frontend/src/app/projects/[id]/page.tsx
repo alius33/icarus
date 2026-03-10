@@ -3,10 +3,11 @@ import Link from "next/link";
 import { api } from "@/lib/api";
 import { getStatusColor } from "@/lib/utils";
 import ProjectTabBar, { type TabKey } from "@/components/projects/ProjectTabBar";
-import ProjectWeeklyOverviewTab from "@/components/projects/ProjectWeeklyOverviewTab";
+import ProjectOverviewTab from "@/components/projects/ProjectOverviewTab";
+import ProjectTasksTab from "@/components/projects/ProjectTasksTab";
 import ProjectDecisionsTab from "@/components/projects/ProjectDecisionsTab";
-import ProjectActionsTab from "@/components/projects/ProjectActionsTab";
 import ProjectThreadsTab from "@/components/projects/ProjectThreadsTab";
+import ProjectSummariesTab from "@/components/projects/ProjectSummariesTab";
 import ProjectBriefButton from "@/components/projects/ProjectBriefButton";
 
 interface ProjectHubPageProps {
@@ -56,6 +57,13 @@ export default async function ProjectHubPage({
 
   const { project } = hub;
 
+  const counts: Record<string, number> = {
+    action_count: project.action_count,
+    decision_count: project.decision_count,
+    open_thread_count: project.open_thread_count,
+    transcript_count: project.transcript_count,
+  };
+
   return (
     <div className="space-y-0">
       {/* Back link */}
@@ -73,16 +81,6 @@ export default async function ProjectHubPage({
         <div className="flex items-start justify-between">
           <div>
             <div className="mb-2 flex items-center gap-2">
-              {project.workstream_code && (
-                <span className="inline-flex items-center rounded-md bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800">
-                  {project.workstream_code}
-                </span>
-              )}
-              {project.is_custom && (
-                <span className="inline-flex items-center rounded-md bg-purple-100 px-2.5 py-0.5 text-xs font-semibold text-purple-800">
-                  Custom
-                </span>
-              )}
               <span
                 className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${getStatusColor(project.status)}`}
               >
@@ -105,27 +103,32 @@ export default async function ProjectHubPage({
 
       {/* Tab bar */}
       <Suspense fallback={null}>
-        <ProjectTabBar />
+        <ProjectTabBar counts={counts} />
       </Suspense>
 
       {/* Tab content */}
       <div className="mt-6">
-        {activeTab === "overview" && timeline && (
-          <ProjectWeeklyOverviewTab
-            timeline={timeline}
-            project={project}
-            allActions={hub.action_items}
-          />
-        )}
-        {activeTab === "decisions" && (
-          <ProjectDecisionsTab decisions={hub.decisions} />
-        )}
-        {activeTab === "actions" && (
-          <ProjectActionsTab actions={hub.action_items} />
-        )}
-        {activeTab === "threads" && (
-          <ProjectThreadsTab threads={hub.open_threads} />
-        )}
+        <Suspense fallback={<div className="flex items-center justify-center py-12"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" /></div>}>
+          {activeTab === "overview" && (
+            <ProjectOverviewTab
+              project={project}
+              hub={hub}
+              timeline={timeline || null}
+            />
+          )}
+          {activeTab === "tasks" && (
+            <ProjectTasksTab projectId={projectId} />
+          )}
+          {activeTab === "decisions" && (
+            <ProjectDecisionsTab projectId={projectId} />
+          )}
+          {activeTab === "threads" && (
+            <ProjectThreadsTab projectId={projectId} />
+          )}
+          {activeTab === "summaries" && timeline && (
+            <ProjectSummariesTab timeline={timeline} project={project} />
+          )}
+        </Suspense>
       </div>
     </div>
   );

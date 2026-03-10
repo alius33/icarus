@@ -1,0 +1,165 @@
+Richard Dosoo  0:00  
+Minutes and then have proper dinner. Because if you have, like, a big meal now, your body thinks that you're gonna basically, like, it's gonna go straight to fat stores because you've been fasting for so long. Yeah.
+
+Richard Dosoo  0:20  
+But anyway, I digress. Sorry, I'm talking too long again when I need to be quick. So Ben, we Ben, our manager, Ben, dropped the fucking surprise bomb on us that he's meeting with Andy fucking sorry. I'm swearing he's meeting with Andy Fred on Monday to demo Clara. I was like, what?
+
+Unknown Speaker  0:41  
+Wait. Sorry, I'm remember. I'm new to Moody's Who's that?
+
+Richard Dosoo  0:44  
+Okay, so bro, let me show you on this org chart, yeah. Who is, yeah, bro, let me show you you're gonna be he's not. Ben's boss's boss. My man is one down from the board, right? President of Moody's Analytics, yeah, bro. So not, right? So, let me show you, yeah. Let me show you on. Let me quickly show you this thing here. It says, mad, right, right. So, let me show you, yeah, yeah.
+
+Richard Dosoo  1:19  
+So there's, there's us, right, all reporting into Ben. Yeah, Ben reports into dia who reports into Colin. Holmes. Ben's gonna go and demo to this guy, one down from the Exec of Moody's. Wow, yeah, exactly, Colin. I would be okay, because I know Colin. He's a chill guy. Yeah, no, exactly. So this is, like, my point, right? So Ben dropped on the call to us. Oh, yeah, I'm demoing to Andy Fred. We're like, wait, what we mean, you're demoing to Andy Fred. What are you gonna tell it, right?
+
+Unknown Speaker  1:56  
+Bro? Yeah, I hope production works.
+
+Richard Dosoo  1:59  
+But that's the thing we've got, like, as few like, we've got some orphan data in there, right? That is causing some of the APIs to fall over. But we've also got some duplicate data in there for that's come about from one of the fixes that Azmain had worked on, right? So we're like, shit. None of us knew that this was coming on Monday. Now we got these issues. They were like, what's the safest and most risk, least risky. Way to do this, right? Basically, yeah, so the orphan data actually let me share screen,
+
+Azmain Hossain  2:26  
+because you guys will be able to actually validate whether or not loads being a retard. So basically, it said that when we go on the blockers page, it's individually calling each Blocker with the sorry individual calling action plans with the action plan ID, leading to like 60 different 60 plus API calls. And what it's done is reduce them down to a single blockers
+
+Richard Dosoo  3:04  
+query, just a lift, join, basically, and then
+
+Speaker 1  3:09  
+that's, that's Sorry, I have to laugh, because that's such an AI thing, because it's like, it's straight up a junior developer, oh, I'm gonna make 60 freaking queries. Versus, like, No, you just so, I mean, it's fine, it's AI, but, like, it's, that's such an AI thing that's hilarious.
+
+Richard Dosoo  3:26  
+What's What's interesting, though, is we ran performance tuning on the code base and didn't pick this up. Like, it should have looked at patterns right where it was making verbose or additional calls that not required. So Azmain, like, we should, like, let's do this now, right? Get this in email, but we should add like Monday, when we got a bit more time, we should do like a, we need to do like a performance like test, because in one go, me and you, I think we've done five
+
+Azmain Hossain  3:58  
+performance efficiencies refactoring analysis, and we're no but that's the I think, but that's the rich is get a GitHub repo of something someone's built, or like a skill, where it tells you what to do. Because right now, when we tell it to look for efficiencies, again, it goes in, like a junior developer and tries to find efficiencies. It needs, like a skill or something to tell it how to do this.
+
+Richard Dosoo  4:24  
+There's there's so Azmain, there's the your 100% right? There's skills out there that do this for you. But even if we go and get those skills and it does all that work, so what we need to have a performance test suite that we've run, right? That actually we know, yeah, test to make sure these things are good. So we need to go and set up multiple agents to go and mimic CSMs hitting the application at different throughputs and different thresholds, and we need to observe the results, because without that baseline of tests, how do you know what we've done works? Well, right? That's what we need to. To do. But the good news is we can do that. Agents of workflow supports that quite well. We just need to define the tests right to do it. Yeah.
+
+Speaker 1  5:09  
+And honestly, so this is actually, this is kind of along the same vein, but off to the side, I've had a theory for a long time, since I've been in the CICD space, that with AI, with the boom of AI agents, tests must occur. So the increase of tests for every single project should, in theory, exponentially increase, purely because, if they don't, you have no idea what AI is going to eventually break.
+
+Richard Dosoo  5:38  
+Yeah, we've been, we've been kind of like, we've been fortunate enough that we've not had to, like, you know, we get caught out of this sort of stuff. But trust me, if we don't spend a day with a regression test pack and suite, and everyone signed off on it, and that becomes part of our CICD pipeline, that whenever we push a build out, those tests are not automatically run. We're just storing up a bomb here that's going to go off and blow up. Do you get what I mean? Like, trust me, so it's worth doing it, even if we spend much two hours doing it, it's worth just doing
+
+Azmain Hossain  6:14  
+Yeah, absolutely agreed. Okay, so that's a, that's a Monday problem. Let's go back to current problems. So Ben, what? So when I imported the frickin golden sheet crap, yes, I asked it to be very, very careful not to overwrite anything which it didn't override anything. It put in all the data like these on off with the dates and stuff like that. But it created duplicate accounts, which are just empty, like, yeah,
+
+Unknown Speaker  6:47  
+yeah, or duplicate customer accounts,
+
+Azmain Hossain  6:50  
+yeah, duplicate customer accounts, and it looks Yeah.
+
+Unknown Speaker  6:53  
+I mean, we didn't, we didn't tell it to not to do that. Jesus Christ. I mean, honestly,
+
+Speaker 1  7:04  
+yeah, no. I mean, like, the only way to solve that, from like, a prompt standpoint, is literally be like, hey, what type of concerns would you have with doing this and then have it discover it for itself, or you just straight up say, Don't add or whatever. But to be honest, I was even going through the logic soup a tonne because I was worried about data overriding with the users that I didn't I didn't put in that stipulation either. So, um,
+
+Azmain Hossain  7:30  
+creating duplicate accounts,
+
+Speaker 1  7:33  
+yeah, so I mean, it was, it's just we didn't prompt it, right? But like that being said, so, um,
+
+Azmain Hossain  7:40  
+parent account. There's two of each.
+
+Speaker 1  7:43  
+Yeah, yeah. So it will. What we should be able to do is go through and write a prompt and basically say, hey, the import script that you have created duplicate accounts, and then have it suggest its own solution there, just describing an issue,
+
+Richard Dosoo  8:03  
+I think, like that we don't have a state model right for the accounts. If we create one, right and either put a flag on there, which is like inactive or dead or something, or create a separate status table, and then that view only picks out the ones that there's that has the status that we want. Right? That's basically what we need to do, and then that way we're not deleting anything. We're just soft deleting, right? We're just changing the status of certain records, and that defines what comes up in that grid. And then once we've stabilised it, then we can hard delete the stuff that, once we've done some reconciliations and stuff,
+
+Unknown Speaker  8:35  
+great. Okay, that's it.
+
+Azmain Hossain  8:38  
+Yeah, that's a really good idea. The weird thing is, though, like, when this import was in dev or in staging, it didn't create the duplicate records. It's only in prod that it's done it.
+
+Speaker 1  8:52  
+No, yeah, because that was, that was on me, because I was responsible for doing, for running that. So I don't know exactly how you ran it, because that was the other thing.
+
+Azmain Hossain  9:01  
+So like we did, so there was, Do you know what we achieved our purpose. Everything is totally as it was, no data was touched, which
+
+Speaker 1  9:09  
+is excellent. So what I would what I would say is a, let's focus so you know, in the admin dashboard that you the import
+
+Azmain Hossain  9:16  
+data, yeah, yeah.
+
+Speaker 1  9:20  
+So we should focus on this particular so if you click on that, why isn't it? Nothing working? Okay, well, we need to fix the import. But like at the there used to be a form of that import it should have, has a form pop up that says what type of data, yeah. So like, we need to standard. We need to standardise this so that way we know how to, like, we can easily migrate data in the future. So this is what we need, the unit test do, whatever we need to do to go through there. And the other thing that I would very. Much, at least, from what I would like is, can we delete all the data that we're not using anymore in the repo? Because there's like, eight golden sheep names, and I had no idea which
+
+Azmain Hossain  10:12  
+one it was. I don't know either, but once the day,
+
+Speaker 1  10:16  
+so, like, I just, I just saw the like, I went through, literally, the get version history, to see when the files were uploaded. And that's how I chose, and that is not a fun thing to do. Yeah?
+
+Azmain Hossain  10:26  
+No, no, I'm so sorry you have to do that. But you did pick the right one, because they pulled in all the right. Yeah, this, having a standardised process is the best thing to do going forward. So that we don't, we don't run into this crap again. But for again, focusing back on on Monday. How long would it take? Because I'm gonna, I'm gonna sign off so, but then you're still working. How much effort is it to soft delete these? Just hide them for now from prod.
+
+Speaker 1  11:02  
+I mean, should be fine. Air quote, I didn't
+
+Richard Dosoo  11:08  
+It's gonna require a back end change, a data fix, an API change, and a front end change. So let's
+
+Unknown Speaker  11:17  
+target now. I
+
+Richard Dosoo  11:18  
+was gonna say, let me find out what time Ben's meeting is on Monday, okay?
+
+Azmain Hossain  11:23  
+Because I was gonna say, we can, we can just use the created date, because the the original ones would have been created weeks ago, whereas the new one would have been created three days ago.
+
+Richard Dosoo  11:40  
+Okay? Do you know what time the programme review is on Monday anyway,
+
+Azmain Hossain  11:45  
+3pm UK, time. Oh, by the way, Richard, it's time. Man, you gotta eat, drink,
+
+Richard Dosoo  11:53  
+yeah, no, we should be. This feels like a Monday evening. Man, like, don't get me wrong, I know, I know what we need to do. I'm just we don't have enough time now, yeah, and then,
+
+Azmain Hossain  12:06  
+now that I know I hadn't even thought about doing a soft delete now that I know that's that's possible, makes it so much easier, because my worry was, like doing hard deletes causes so many risks. Yeah, yeah.
+
+Richard Dosoo  12:24  
+Well, Azmain, let's, let's do this, right? I think Ben, the only thing that you can probably do to enable us is if you take a copy of prod and restore staging from it, then me and Azmain can test the fix in there before we deploy it to prod. At some point in the afternoon, like we're gonna, we'll go Dev and then staging, but at least we can test the fix in there Monday morning.
+
+Speaker 1  12:45  
+Yeah, good call. That's very good call. Yeah, really good idea. Yeah, let me I'll do that now and restore. I'll take the snapshot now and go from there. Okay, to do the lead.
+
+Richard Dosoo  13:11  
+All right, cool. All right. Well, Azmain, less time to eat and go and play my group. So Ben, we're going to leave you to that, and then, Ben, I'm going to also be I'm not going to be online after probably about an hour from now. I'm going to be signing off soon, but if we will put some time aside for us to catch up more on Monday, Ben, because there's a few things like, you know, the Idris app and all that kind of stuff that I wanted to connect with you on, because he, he's also wants to demo to his like, senior leadership and stuff, because he's already been selling the benefits of what we've been doing. So I feel a bit bad that we made him go to his execs and say how good we were, but we haven't delivered his app.
+
+Speaker 1  13:53  
+Yeah, yeah, that's, that's fine. Um, yeah, I apologise. I haven't been on that. No, no,
+
+Richard Dosoo  13:59  
+it's all good. I just this. It's not sorry. That wasn't a criticism. I didn't mean it to come across that way. The Yeah, it's just, how do we what do we do about it? How do we solve for it? So I might give you a call before I sign off on it, but that will be one of the things we pick up next week.
+
+Speaker 1  14:13  
+That's that sounds good. Okay, I'll make a snapshot of production and go from there and yeah, and then, oh, this is completely random, but I was, well, actually, we can talk about it over next week. So I'll, yeah, go. Y'all need to go eat.
+
+Richard Dosoo  14:34  
+One thing Ben, I might say is, I know you just got back from Poland, but what, how would you feel about coming over to the UK at any point in time, like there's still feels like there's more than enough reason for me to say to Ben, look, get Ben a flight and a nice hotel over here. But I know, like that's not happy to reach like mad for your schedule and stuff, but maybe enumerate on it and think if it's worth it, then we just put that in one of the things that needs to yeah,
+
+Speaker 1  14:58  
+let me, let me think about. I just, I will say I literally just got back, so I'm trying to, but yeah, no, well, let's, let's think about it, because it very well could be a great idea.
+
+Richard Dosoo  15:10  
+Cool. All right, nice. Don't stay
+
+Azmain Hossain  15:12  
+in a hotel and get like an Airbnb with the kitchen and stuff. Yeah, true.
+
+Richard Dosoo  15:18  
+100% All right, thank you, guys. Bye.
+

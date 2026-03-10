@@ -1,43 +1,85 @@
-# Blockers with P Kimes
+# Blockers with Peter Kimes — User Voice Integration Requirements
 **Date:** 2026-02-26
-**Attendees:** Azmain Hossain, Peter Kimes, Stacy (Dixstra), Kevin (Chernelle) (Speaker 1)
+**Attendees:** Azmain Hossain, Peter Kimes, Stacy (Dixstra), Kevin (Chernelle)
 **Duration context:** Short (~21 minutes)
 **Workstreams touched:** WS2 CLARA
 
 ## Key Points
-- Peter Kimes presents a request to improve blocker tracking in CLARA by adding fields that existed in the old Salesforce adoption records but are missing from CLARA: specifically a User Voice URL field, a JIRA ID field, and a case URL field.
-- The distinction between User Voice entries and blockers is clarified: not all User Voice submissions are blockers. Some are enhancement requests or nice-to-haves. But when a User Voice item is a genuine adoption blocker, it needs to be trackable from within CLARA so leadership can see the full picture.
-- Stacy raises a concern about pulling all User Voice data into CLARA: it would create duplicate data in two systems and increase administrative burden on CSMs. User Voice has a widget feature that groups related items together -- CLARA does not yet have that capability, and similar blockers across customers remain hard to reconcile.
-- After discussion, the group agrees on an MVP approach: instead of importing User Voice data wholesale, simply add URL/link fields to the existing blocker form in CLARA. CSMs can paste in the User Voice URL and JIRA link, preserving the reference without duplicating data. This mirrors what they were already doing in Salesforce.
-- Azmain initially proposes creating a separate object for User Voice entries and using the URL to pull data via API, but Peter pushes back -- for now, just a simple link field is sufficient. No need to pull information automatically.
-- Peter also raises the question of blocker categories: the old Salesforce system had "software blocker" and "model blocker" as separate types. CLARA consolidated everything into product/client/enablement categories. Azmain acknowledges the original blocker system was auto-generated from Salesforce data and lacked context for these distinctions. They agree not to revert categories now but to add the missing fields.
-- Stacy emphasises keeping the scope tight: there is too much changing in CLARA right now, and the team should hit the hot-topic items first rather than over-engineering the solution.
-- Azmain commits to implementing the additional fields by the next morning so Peter can test before the Monday CSM call.
+- Peter Kimes presents detailed requirements for User Voice integration into CLARA's blocker tracking, coming from a pre-meeting with Stacy, Kevin, and Chernelle.
+- The core ask: CSMs need to track whether blockers are also tracked in User Voice (the product feedback/feature request system), and have visibility into JIRA IDs and case URLs associated with blockers -- parity with what existed in Salesforce.
+- Key distinction drawn: not all User Voice items are blockers (most are nice-to-haves), but when something IS a blocker AND is in User Voice, that connection needs to be visible in CLARA.
+- Stacy holds the line on scope: do NOT import all User Voice data into CLARA. That would create duplicate data, administrative burden, and the same deduplication problems that already plague blocker entries. Just add URL/link fields to the blocker form.
+- Kevin explains User Voice data complexity: feedback is merged across customers, which means AI analysis could hallucinate and attribute one customer's feedback to another.
+- Pragmatic MVP agreed: add three fields to CLARA's blocker form -- User Voice URL, JIRA ID, and Case URL. No data import, no API integration. Just links.
+- Azmain commits to overnight delivery: fields will be in production by tomorrow morning for Peter to test.
+- Previous blocker categories (software vs model) will NOT be reverted to from the current product/client/enablement split -- there was a reason for the change.
+- Peter volunteers to be the guinea pig for testing the new fields.
 
 ## Decisions Made
-- Add User Voice URL, JIRA ID, and case URL fields to CLARA blocker form (MVP approach) -> Azmain
-- Do NOT import full User Voice data into CLARA -- keep User Voice as source of record, CLARA links to it -> Stacy / Peter / Azmain
-- Do NOT change blocker categories (product/client/enablement) back to software/model split -> Azmain / Peter
-- Peter to be guinea pig for testing the new fields once deployed -> Peter
+| Decision | Type | Confidence | Owner |
+|----------|------|------------|-------|
+| Add User Voice URL, JIRA ID, and Case URL fields to blocker form | Feature scope | High | Azmain |
+| Do NOT import User Voice data wholesale into CLARA | Scope boundary | High | Stacy / Peter |
+| Do NOT revert blocker categories from product/client/enablement back to software/model | Scope boundary | High | Peter / Azmain |
+| User Voice remains the system of record for feature requests | Architecture | High | Kevin / Stacy |
+| Start with MVP fields, revisit in 1-3 months for deeper integration | Phased approach | High | All |
 
 ## Action Items
-| Action | Owner | Deadline | Status |
-|--------|-------|----------|--------|
-| Add User Voice URL, JIRA ID, and case URL fields to CLARA blocker form | Azmain | Tomorrow morning (27 Feb) | Open |
-| Test new blocker fields once deployed | Peter Kimes | 27 Feb | Open |
-| Communicate new fields to CSMs at Monday call | Peter / Stacy | Monday 3 Mar | Open |
-| Continue discussions on deeper User Voice integration (future phase) | Peter / Stacy / Kevin | TBD | Open |
+| Action | Owner | Deadline | Confidence | Status |
+|--------|-------|----------|------------|--------|
+| Add User Voice URL, JIRA ID, and Case URL fields to blocker form | Azmain | Tomorrow morning | High | Open |
+| Test new fields once deployed | Peter Kimes | Tomorrow | High | Open |
+| Announce new fields at Monday portfolio call to CSMs | Peter / Stacy | Monday | High | Open |
+| Continue discussions on deeper User Voice integration with Kevin and Chernelle | Peter / Stacy | 1-3 months | Medium | Open |
+
+## Theme Segments
+1. **Requirements overview** (0:00-3:00) -- Peter outlines the Salesforce-to-CLARA gap and the pre-meeting context
+2. **Data architecture debate** (3:00-11:00) -- Import vs link, duplicate data risks, User Voice complexity, Kevin's API/merger warnings
+3. **Stacy's scope discipline** (11:00-14:00) -- Holding the line on not adding administrative burden to CSMs
+4. **MVP agreement and implementation** (14:00-21:00) -- Three fields, overnight delivery, testing plan
+
+## Power Dynamics
+- **Peter Kimes is well-prepared and pragmatic.** He came with screenshots, a pre-meeting brief, and a clear articulation of the gap. He is a constructive voice.
+- **Stacy is the scope guardian.** She repeatedly pulls the conversation back from "import everything" to "add what we need." Her concern about CSM administrative burden is well-grounded.
+- **Kevin provides the technical reality check** about User Voice data complexity and merged feedback risks.
+- **Azmain is the responsive builder.** Commits to overnight delivery without hesitation. His MVP instinct is strong.
 
 ## Stakeholder Signals
-- Peter Kimes is pragmatic and well-prepared: he sent an email outlining the gaps with screenshots comparing Salesforce fields to CLARA, and is willing to start small with an MVP.
-- Stacy is the voice of caution, consistently pushing back on scope expansion and protecting CSMs from additional administrative burden. She frames every discussion around "let's not give CSMs more work than they already had."
-- Kevin (Chernelle) raises the valid concern that User Voice data is messy: merged feedback from multiple customers means AI could hallucinate if it reads aggregated entries without proper context.
-- Azmain is responsive and fast -- committing to overnight delivery -- but admits he had forgotten Peter's original email amid the volume of requests.
+- **Peter Kimes:** Emerged as a pragmatic, well-prepared stakeholder. Sent pre-meeting documentation with screenshots comparing Salesforce to CLARA. Willing to be guinea pig. Constructive voice.
+- **Stacy Dixstra:** Consistently the voice of scope discipline. Pushed back on importing User Voice data. Insisted on keeping CSM burden low. Worried about running fast and stepping back.
+- **Kevin (Chernelle):** Technical contributor. Raised valid concern about User Voice data merger causing hallucination risk for AI analysis. Confirmed APIs exist but cautioned about data complexity.
+- **Azmain Hossain:** Responsive and solution-oriented. Commits to overnight delivery. Recognises the existing blocker form was auto-generated from Salesforce data without User Voice context.
+
+## Commitments Made
+| Who | Commitment | To Whom | Confidence |
+|-----|-----------|---------|------------|
+| Azmain | Add three fields to blocker form by tomorrow morning | Peter | High |
+| Peter | Test new fields once deployed | Azmain | High |
+| Peter / Stacy | Announce new fields at Monday CSM call | CSMs | High |
+
+## Meeting Effectiveness
+| Dimension | Score (1-5) | Notes |
+|-----------|-------------|-------|
+| Clarity of purpose | 5 | Very clear requirements session with prepared materials |
+| Decision quality | 5 | Pragmatic MVP with explicit scope boundaries |
+| Engagement | 4 | All four participants contributing meaningfully |
+| Follow-through setup | 5 | Clear deliverables, testing plan, and announcement strategy |
+| Time efficiency | 5 | 21 minutes, all essential, no waste |
+
+## Risk Signals
+- **Blocker deduplication problem persists.** Multiple blockers across multiple customers use different verbiage for the same underlying issue. Stacy flagged this explicitly. No solution yet.
+- **User Voice data merger means AI analysis could hallucinate.** Kevin's warning about merged feedback across customers is a real risk for any future automated analysis.
+- **CSM administrative burden is a constant tension.** Every new field, every new tracking requirement risks CSMs feeling like CLARA adds work rather than removing it.
 
 ## Open Questions Raised
-- How will CLARA eventually reconcile similar blockers across multiple customers (the grouping/widget problem)?
-- Should the blocker categories be revisited once the User Voice integration matures?
-- What is the long-term plan for User Voice data in the CLARA ecosystem -- separate object or deeper integration?
+- Should User Voice entries eventually become a separate object in CLARA?
+- How to reconcile blockers across customers (deduplication)?
+- When a product release closes a blocker, how to automatically close all associated blockers in CLARA?
+- What frequency should User Voice data be refreshed if integrated?
 
 ## Raw Quotes of Note
-- "There's so much going on with Clara right now... let's hit the hot topic buttons." -- Stacy, on keeping scope tight
+- "I just want to be really careful with the extra work that could come on to all CSMs" -- Stacy, holding the scope line
+- "I can get this added in tomorrow, so that on Monday's call, you know, it's already in production" -- Azmain, on overnight delivery commitment
+
+## Narrative Notes
+This is the best-run meeting of the week. Peter came prepared, Stacy provided scope discipline, Kevin offered technical reality checks, and Azmain committed to fast delivery. The MVP decision is exactly right: add link fields now, defer deeper integration until the team has bandwidth and the data quality issues are resolved. Stacy's insistence on not adding administrative burden to CSMs reflects hard-won understanding of adoption dynamics -- every extra field is potential resistance. Peter's emergence as a constructive, well-prepared stakeholder is a positive signal for the programme.

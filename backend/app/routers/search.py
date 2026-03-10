@@ -58,12 +58,12 @@ SEARCH_QUERIES = {
         FROM open_threads, plainto_tsquery('english', :q) query
         WHERE search_vector @@ query
     """,
-    "action_items": """
-        SELECT 'action_item' AS type, id,
-               'Action ' || number AS title,
-               ts_headline('english', description || ' ' || coalesce(context,''), query, 'MaxWords=40, MinWords=20') AS snippet,
+    "tasks": """
+        SELECT 'task' AS type, id,
+               coalesce(title, 'Task ' || number) AS title,
+               ts_headline('english', coalesce(title,'') || ' ' || coalesce(description,'') || ' ' || coalesce(context,''), query, 'MaxWords=40, MinWords=20') AS snippet,
                ts_rank(search_vector, query) AS score
-        FROM action_items, plainto_tsquery('english', :q) query
+        FROM tasks, plainto_tsquery('english', :q) query
         WHERE search_vector @@ query
     """,
     "glossary": """
@@ -80,6 +80,43 @@ SEARCH_QUERIES = {
         FROM documents, plainto_tsquery('english', :q) query
         WHERE search_vector @@ query
     """,
+    "topic_signals": """
+        SELECT 'topic_signal' AS type, id, topic AS title,
+               ts_headline('english', coalesce(topic,'') || ' ' || coalesce(key_quote,''), query, 'MaxWords=40, MinWords=20') AS snippet,
+               ts_rank(to_tsvector('english', coalesce(topic,'') || ' ' || coalesce(key_quote,'')), query) AS score
+        FROM topic_signals, plainto_tsquery('english', :q) query
+        WHERE to_tsvector('english', coalesce(topic,'') || ' ' || coalesce(key_quote,'')) @@ query
+    """,
+    "contradictions": """
+        SELECT 'contradiction' AS type, id,
+               coalesce(person, 'Unknown') || ' - ' || contradiction_type AS title,
+               ts_headline('english', coalesce(person,'') || ' ' || coalesce(statement_a,'') || ' ' || coalesce(statement_b,'') || ' ' || coalesce(gap_description,''), query, 'MaxWords=40, MinWords=20') AS snippet,
+               ts_rank(to_tsvector('english', coalesce(person,'') || ' ' || coalesce(statement_a,'') || ' ' || coalesce(statement_b,'') || ' ' || coalesce(gap_description,'')), query) AS score
+        FROM contradictions, plainto_tsquery('english', :q) query
+        WHERE to_tsvector('english', coalesce(person,'') || ' ' || coalesce(statement_a,'') || ' ' || coalesce(statement_b,'') || ' ' || coalesce(gap_description,'')) @@ query
+    """,
+    "risk_entries": """
+        SELECT 'risk_entry' AS type, id, title,
+               ts_headline('english', coalesce(title,'') || ' ' || coalesce(description,'') || ' ' || coalesce(owner,''), query, 'MaxWords=40, MinWords=20') AS snippet,
+               ts_rank(to_tsvector('english', coalesce(title,'') || ' ' || coalesce(description,'') || ' ' || coalesce(owner,'')), query) AS score
+        FROM risk_entries, plainto_tsquery('english', :q) query
+        WHERE to_tsvector('english', coalesce(title,'') || ' ' || coalesce(description,'') || ' ' || coalesce(owner,'')) @@ query
+    """,
+    "meeting_scores": """
+        SELECT 'meeting_score' AS type, id, meeting_title AS title,
+               ts_headline('english', coalesce(meeting_title,'') || ' ' || coalesce(recommendations,''), query, 'MaxWords=40, MinWords=20') AS snippet,
+               ts_rank(to_tsvector('english', coalesce(meeting_title,'') || ' ' || coalesce(recommendations,'')), query) AS score
+        FROM meeting_scores, plainto_tsquery('english', :q) query
+        WHERE to_tsvector('english', coalesce(meeting_title,'') || ' ' || coalesce(recommendations,'')) @@ query
+    """,
+    "project_summaries": """
+        SELECT 'project_summary' AS type, id,
+               'Project Summary' AS title,
+               ts_headline('english', content, query, 'MaxWords=40, MinWords=20') AS snippet,
+               ts_rank(to_tsvector('english', content), query) AS score
+        FROM project_summaries, plainto_tsquery('english', :q) query
+        WHERE to_tsvector('english', content) @@ query
+    """,
 }
 
 URL_PREFIXES = {
@@ -90,9 +127,14 @@ URL_PREFIXES = {
     "stakeholder": "/stakeholders",
     "decision": "/decisions",
     "open_thread": "/open-threads",
-    "action_item": "/action-items",
+    "task": "/tasks",
     "glossary": "/glossary",
     "document": "/documents",
+    "topic_signal": "/topic-signals",
+    "contradiction": "/contradictions",
+    "risk_entry": "/risk-entries",
+    "meeting_score": "/meeting-scores",
+    "project_summary": "/project-summaries",
 }
 
 

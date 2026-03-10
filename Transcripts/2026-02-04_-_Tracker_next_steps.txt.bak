@@ -1,0 +1,300 @@
+Unknown Speaker  0:00  
+You guys hear me now? Yes, sir, yeah.
+
+Speaker 1  0:03  
+So last night, I pushed the build, but when I was doing the pull request, they were still going to main even after we explicitly said go to develop branch. So I didn't want to get into this doom loop of pulling pushing a build and then having to pull it back and that stuff again. I didn't want to break death. So I guess what I thought it would be good just for us to go through this morning is push the builds actually up, push them to death. Then we can observe if some of the changes made it, some of the stability changes and stuff that we spoke about.
+
+Speaker 2  0:40  
+Sorry, Ben, go ahead. One thing I just opened up the back end service logs and looks like, hold on. I can't seem to paste it in here. It's too long. But if you go here, I believe there's an issue with the code on the back end that it might be from your introduction, but yeah, if you, if you want to open that up, it says it cannot import name, role, permissions.
+
+Unknown Speaker  1:15  
+Is that in the pull request? Or
+
+Speaker 2  1:17  
+I know that is in the AW, oh, sorry. I put it in the chat, but basically in the back end log service logs for ECS. I was just looking at it, and it looks like it's been attempting to start up for a little while.
+
+Unknown Speaker  1:44  
+I just log in, guys, give me a second. I
+
+Unknown Speaker  3:05  
+this one, right? Yeah, so if you scroll down,
+
+Speaker 2  3:14  
+start seeing errors here. Dip a little bit lower. There There you go. You're starting to see the beginning of the stack trace. I do not like CloudWatch, but yeah, so we just need to resolve this issue. I don't know how to get the full stack trace easily from CloudWatch, because it likes to do this line by line BS,
+
+Speaker 1  3:44  
+but I guess even Ben, I wasn't even sure that my I know the Build Failed, and I wasn't even sure, because when I was checking in the code, it was going to main, and that's not what I wanted. I wanted it to go to develop. So I just stopped that point. Be honest, I think even I don't think the build is in a complete state right now, and I'm happy to rerun it, it was just obviously I didn't want to, I didn't want to check anything into main because I didn't want us to. I didn't want the release to go over there without it
+
+Unknown Speaker  4:15  
+being tested.
+
+Speaker 1  4:19  
+Makes sense. So in terms of next steps on that, the pull requests that are out there at the moment, let me find it. This one, for example, can I, can I push that now? Or can we push that to develop? You see, here you go, two commits to main where that's not where I want it to go.
+
+Speaker 2  4:39  
+And, can you? You should be able to modify this, edit the PR.
+
+Unknown Speaker  4:51  
+Oh, no, that. Yeah, there you go. Yeah.
+
+Unknown Speaker  5:13  
+Okay, all right, so it's
+
+Unknown Speaker  5:17  
+on the development branch. I'm
+
+Unknown Speaker  5:29  
+okay, so this branch has not yet been deployed, okay, let me go back see if there's any others.
+
+Speaker 2  5:42  
+All right, go back here. All right. So we have something deploying dev environment right now. Yep, it's, it's doing that.
+
+Speaker 2  5:58  
+Hey, there's a GitHub action that's kicked off with this image currently.
+
+Speaker 1  6:03  
+Okay, so let me just go back to this. And then I guess, while we're going through this, Martin, I wanted to bring you back into the loop, to give an update of where we are, and then talk about what we're doing next. And then, obviously, there's also the other work streams on the programme that I wanted to discuss with you as well, but it was more I know you had Canopus and some other safeguarding projects last week, but if those are running down to a close, then I know Ben. Ben's ambition was for us to work collaboratively over on this app to try and get some more pace into it and spread the load of it. Because Azmain And Ben have been putting in a shift, like working non stop over the past five days, over the weekend, to get us to where we are right now. Yeah.
+
+Martin Davies  6:48  
+I mean, when you say coming to a stop, it's probably not that accurate. It's more I mean, I'm kind of at the immersive client, right? So if they have an issue, then then I'm busy, if they've run in smoothly, then then I'm quiet. But yeah, at the moment is it's quiet today, yesterday. The only thing to bear in mind is like, go on holiday nest week, so I'm away for two weeks.
+
+Speaker 3  7:11  
+Yeah. No. Makes sense? Do
+
+Speaker 3  7:40  
+steps on when he gets back? Yeah, sure. Yeah. No.
+
+Speaker 1  7:47  
+100% we can, Martin. We can just use this week to kind of bring you up to speed with what we're doing. We won't start anything significant Azmain point, so it will be when you get back from holiday in two weeks time, then we will be able to roll you on more significantly with in terms of what where we are. Let me just bring this up. Sorry, Ben, is the build still going? Am I okay to keep talking about some of this other stuff?
+
+Speaker 2  8:13  
+Or let me check, yeah, it looks like it's it's doing its thing. Let me check this back end service.
+
+Speaker 2  8:26  
+Yeah, it's, it's provisioning, so we'll see if it errors out here in a second or not.
+
+Unknown Speaker  8:30  
+Okay, so let me bring up this.
+
+Unknown Speaker  8:39  
+Oh, yeah, there's a an error. You
+
+Unknown Speaker  8:49  
+know what I can do this okay while Ben looking at the back end of room.
+
+Speaker 1  9:07  
+Okay. So initially, when we started the programme Martin, we had five projects that were part of the workstream apart five projects that were each going to have their own individual workstream. And the first one was the PMO dashboards, which essentially is now what we're calling this IRP adoption tracker, also known as Clara, right? So that was having a way to track IRP adoptions from pre sales to implementation and manage those those customers, even throughout their rollout. So that's us tracking the opportunity, US tracking it to closure, us moving, adding all of the other issues and risks. So that's the app that we're working on right now. There was a separate ask, which was around a. Of building out our solution blueprints and automating that process so it's can be more the process of generating, essentially an adoption a blueprint, we or solution blueprint could be automated. And that's essentially enter these parameters about a customer. It goes and figures out what solution fit is useful for, for the customer. Then you got what use cases are there, then it spits out solution architecture, really straightforward, really simple stuff. Liz and Kevin and stuff had already looked at this in using Microsoft copilot studio light, and after what they had done, Ben was of the opinion that this doesn't need to be an agent. It's not that complicated. It's just really simple logic that goes away and decides what market segment the customer is, what workflow they're trying to implement, and it gives them and what products they're using, and it gives them a blueprint. So for us, we want to, we want to automate that process so we can capture all of the inputs and then it will spit out a Word document, basically, so that adoption charter process is less complicated and there's less double entry, because right now the CSMs are like, looking at the doc, and they're like, I'm not doing this. It's too hard. So that was the next piece, and we had that as a separate app, but realistically it's just going to be another function within the IRP adoption tracker. So that was this, that's this app. Sorry that you see here, adoption, charter, generation, and then the this piece here Customer Success agent. This was something that essentially, we wanted to get sentiment analysis from. We wanted to be able to report on data from Salesforce, pull that data into an agent, and use the agent to give us insights about the customer sentiment, whether that's looking at Salesforce tickets, whether that's looking at emails, whether that's looking at contract renewal documents, etc. And sales recon does this or does it? Does it in a limited capacity. We looked at doing this ourselves because we didn't know that sales recon did it. Now the sales recon team have seen what we wanted, and they're going to give us an API that gives us access to all of the data sets. So they're going to build a data pipeline. We just need to build the prompts and the essentially the Azure workflow that sits on top of that to derive the insights. So that's the that's one of the other projects that are with us. So summary, we've got two where the PMO dashboards and the charter generation are going to form part of the IRP adoption tracking app that we're looking at. We've only for now really been focused on a couple use cases. We haven't touched this adoption charter piece. That's something that needs to be done next. We also have Azmain. Maybe do you have your wireframe up? Not wireframe your the mock ups that you've changed with all of the different with the landing page? Because then I can walk Martin through. If you don't have it, I'll bring it up. Actually, no, it's cool. I think I've put it here. Let me just open it.
+
+Speaker 4  13:00  
+Give me one second. It's actually really good to hear that sales recon guys will give us a hand with the sentiment analysis
+
+Azmain Hossain  13:12  
+piece, because that takes, yep, per bucket, because I've had a request for another addition to our tracker, kind of like what the adoption thing will be. This is a partner section, which, like Ben,
+
+Unknown Speaker  13:35  
+obviously built it in after speaking
+
+Azmain Hossain  13:41  
+to Alex Liz. I
+
+Azmain Hossain  14:00  
+to do anything with the we need to have, like, a wider ranging conversation of, is it even worth doing if, if Moody's is already paying for a platform and there's a team building it out, is there any point us putting in the effort of building
+
+Speaker 1  14:18  
+a partner section? Yeah, no, Azmain, I, I mean, I hear you. We definitely, I hadn't even had that on my list, but we should add it to the list.
+
+Azmain Hossain  14:24  
+I didn't want to throw anything more at you. Oh, this one, yeah, yeah, I've got, oh, you're running it from
+
+Unknown Speaker  14:36  
+SharePoint. Let me. Let me share my screen. Yeah. Local, yep.
+
+Speaker 1  14:52  
+I think it looks cool, dude, it's Moody's branding, it's good, yeah, yeah.
+
+Azmain Hossain  15:00  
+If people are happy with it. I mean, yeah, it's just little niggly thing. I know it's movies. I mean that this needs to be financier. This
+
+Azmain Hossain  15:15  
+needs to be something else. But, yeah, yeah. Like you guys like
+
+Speaker 1  15:28  
+this, yeah, the next obviously, part after this, Martin is you can see all the, essentially, all the different use cases, all the different functions. On the left hand side, you don't see one for partners out there. That's what Azmain was pointing out so and what the partner feature really is we have, like, imagine that we have a list of partners, and then we have the projects that they're assigned to. And it's essentially managing their pipeline of work and giving having a view that shows their resource allocation. So the part the partner management team, Elizabeth and Alexandra, can, at any point in time, look at the portfolio of projects that we've got coming up. And correctly, it's like a resource management basically, but done at the partner level, not at the resource on the partner level. That's all basically. So right now that's done, yeah, so that obviously Azmain is right. We need to sit with the guys. We need to understand what the workflow is, what the data is to drive it. But right now, that process is not managed by a system elsewhere, and it will be managed if we can do something in the interim that helps those guys out while they're waiting for the strategic solution that will probably be sometime in h2 right to be implemented. And we kind of have this does cause a problem, because we don't have it like it means I'm on the phone to Bevis from imagineera doing something. Liz is on the phone to Bevis, and we're not connected. We're not communicating. No one knows. No one's got visibility across all of our projects and across all of the partners that are being managed. So these conversations are happening tactically rather than strategically, and when, and we've supposed to be bringing on new partners. We've got four right now. We're supposed to have, you know, 20, right if you let's look at Ben's goals for us, we should have, like, you know, a significant number of partners on the bench. So we definitely need something to to manage them. So that's the that's, I think that brings us to a more like that round. Well, actually, no, I'm talking crap. Sorry. There's another feature in here that George dyke wants us to put in, which is account planning. Now, Ben initially said, You know what this is going to come later, because he wants us to have the process for managing existing customers first before we start thinking about how we do account planning. But when we sat down with George and we spoke to him, most of the data that he wants to look at is in here, right? It's just he needs to present it in a different way, and he needs to augment it with some additional information. But 80% of the data that he wants to analyse comes from the same Salesforce that Azmain needs to drive this. So we were initially thinking it was going to be a separate application that Ben was going to build out a separate URL for separate database, separate cluster, but actually probably what needs to happen is we just need to fold it into this as another function. Yeah. So when, again, we had an initial meeting with George. About two weeks ago. We set him up. He started doing stuff in cursor. He's just prototyping on his laptop, local host. He's just using HTML pages. He's not even developing an app in React. But eventually we have to migrate stuff into here so that that then brings out, that brings the all the features that need to be in this app to to a close, once we finish this application. Then there's Idris, who you met last sorry, Azmain, go ahead. Yeah, no, Idris is next, so I don't have a slide for him, but idrises ask, is Idris? Is? You remember Idris from dinner last week, right? He's a CSM just like we're CSMs, but he focuses on the banking clients, and he does. He has a similar process to what we have on insurance, but obviously it's different products. It's different customers, the cadence they review them is different. He's already got dashboards that he's built out in cursor, which is great. He just doesn't have anywhere to host it, so he's hosting it on his laptop and trying to share static HTML pages to his managers. So obviously not working. So we're thinking that will be a different application that we build with a different set of users that can access it. He doesn't have as much data editing. He doesn't need to augment the data as much as we do. He just needs to present it in a different way. So I know Ben looked at some of his app requirements last week, and it's. Initially what we need to do is his application doesn't have any authentication at the moment, so it needs to be refactored to use our ad integration. We need to do the work. Ben needs to do the infrastructure work, create a cluster, create a database, create URLs, DNS, etc, so that can be a separate app. And then we need to have the same pipeline, Dev, product, test production, and give Him and walk him through how he does that and that. Yeah, so that's in terms of these applications. Those are the immediate ones that we got line of sight over. And then what comes next, after all, that is,
+
+Unknown Speaker  20:37  
+oh, you're on mute. Azmain, yeah.
+
+Azmain Hossain  20:41  
+Hey guys. So yeah, this is where I was going to ask. Because when I went through that initial deck, I pulled this out, something was going to work on, so I was going to ask about this.
+
+Speaker 1  20:51  
+Yeah. So this is exactly, this is the this was going to come to you next. So Martin, you know what we spoke about, right, which was cursor, for using cursor, or whatever tool we want, for internal productivity and for pipeline development. And this was what we were talking about last week in your end of year and stuff. And we haven't really touched on this, right? We've kind of talked about it conceptually, but we haven't drilled into exactly what this means. We've touched on it in some areas. Oh, Ben needs to create a way for us to create apps and the users to do that in a pipeline, and we haven't really drilled down on exactly what that means, and we need to right. So I think Azmain is right. We should use this week, while you're around to idea and scope this, and then we'll come up with the estimates, and then when you're back, then we can start really drilling into it in parallel, what Ben is trying to do is get access all to Claude code, and once we have access to Claude code, there's some additional capabilities in that GSD deck that I sent you guys out yesterday that I think will make this project significantly easier, because essentially, it gives us a better framework for technical and non technical users to create apps via prompting like five coding, and it makes that we have a way to make that process more straightforward.
+
+Unknown Speaker  22:17  
+Yeah,
+
+Speaker 1  22:23  
+yeah, no. But for the internal productivity, that's technical and non technical users, right? That's not only people like you and Martin who are technically capable, but it's people like Steve and Liz and Christine that are not as familiar with like an idea, but Ben still wants to get them to be able to idea, right? So that was why I thought it would be incredibly helpful if we can, if we can get that going. But to do that, there's 100 things we have to get agreed. First, we have to get Claude code. We have to get permission to use that software, or use that GitHub repo and our tooling internally. We have to come up with, you know, defined architecture. So Ben needs to be like, right? These are the services you can use in AWS. You can't use redshift, right? So don't be building no application that has uses redshift. Don't be even using a prompt like, that's got to be the first level of validation. What are the components that people are allowed to use on our on our environment, and that Ben will happy build infrastructure For right? That's the next so sorry, I've talked and
+
+Azmain Hossain  23:40  
+reads, and it has like guidelines of how to write code, how not to overdo the logic, just like a massive read me that every person who ideates their Claude agent goes and reads so it has all the Moody's guidelines, security stuff, what can and can't be done, and that way we can just make sure that everything, the agent itself, keeps it within the
+
+Unknown Speaker  24:09  
+walled garden. So
+
+Speaker 2  24:10  
+there is a way to do that with cursor. I'm not certain about the Claude implementation, but there's cursor rules and Agent rules to set up and with like what I'm doing for app generation and making this skeleton app, it already has authentication and baked in. It already has the CICD workflows and stuff of that nature. Basically, the next step that I'm working on is, once I get access to cloud API, will have a prompt form they can put in whatever they want the application to do, and it already adheres to our guidelines. Because I will say, like, I think we might be asking too much if there's non developers talking because, like, if they gave that prompt to people or to Claude, they. No way for them to check it, so having it baked in as much as possible will be the most help we can possibly give them, even if there isn't a system
+
+Azmain Hossain  25:12  
+within Claude, we could just put a layer in before the prompt touches something else I don't know, like
+
+Unknown Speaker  25:21  
+copilot, to just apply some rules. Yeah.
+
+Speaker 1  25:28  
+All. So I know we've run out of time because I spent way too long talking, but maybe if we pivot back to the build, oh and Martin, there is another work stream, which is about IRP navigator, but that's going to take way longer than a couple of minutes to discuss. So I'll send another meeting request for us to talk about that later on, because it ties into what you've been doing, what the team of doing, what Stacy has been kind of doing or not doing. So let me let's definitely talk through that later on. I guess in the time that we got left open, the priorities probably shift to getting dev up and running and seeing if that stability build actually made it. The reason I say that is we also want to apply azmains use User Experience branding changes to dev as well. And I wanted him to use the swarm approach or the GSD framework, so he could have agents and sub agents working on all of his changes in parallel, rather than one at a time, which is what we've been seeing so far. Yeah,
+
+Speaker 1  26:36  
+yeah, okay, well, that's cool, because when I I was worried because I couldn't get, like the times that I tried to instantiate those agents yesterday, they didn't work consistently, or they died, because when they were trying to both write to the same status file, there was contention, right? But if you've got it working Azmain, that's great, because then we can just use that for for your next round of changing.
+
+Azmain Hossain  26:59  
+Yeah. Honestly made a static HTML maybe that's why it didn't have any problems. UI change with it. See what happens.
+
+Speaker 1  27:13  
+Okay, so then maybe Azmain We do this in terms of next steps. Do you want to continue to work with Ben on the build,
+
+Speaker 2  27:25  
+because we should be able to test it. I already fixed it.
+
+Speaker 1  27:29  
+Oh, nice one, sir. Thank you. Don't let anyone say that you're not faster than an agent.
+
+Speaker 2  27:35  
+Well, I would like to hope that my, you know, 20 years of knowledge makes me at least somewhat better than an agent,
+
+Speaker 1  27:44  
+100% cool. So I guess the quick way to test it will be if the user's page has got pagination on it, because that was one of the enhancements that we we had that was flagged and we said we should put in, yeah, and then while you guys are doing that, I'm gonna go and find George, because I need to talk to him about the UAT for copilot studio, for sales, recon, Azmain, what this is important, right? So I'll say definitely stay on with this, and I'll come back and I'll come back and circle back with you once I've had a chat with George. All right. Nice one. I'll leave the line open, guys.
+
+Unknown Speaker  28:32  
+Oh, this is them. One second. Do
+
+Martin Davies  28:49  
+I don't mind saying them. To be fair, my day is very quiet at the moment. I'm quite happy to catch up on what's going on. So yeah,
+
+Speaker 2  29:00  
+well, it's basically us either complimenting AI or hating AI. So it's okay, I can get on board with that. Yeah, as long as, as long as you're okay with that, we're good. All right, let me see here one second. I was introducing the staging environment last night as well. So it's not done yet, but yeah.
+
+Speaker 2  29:39  
+Well, Dev should be your playground to break stuff, honestly, like people that we
+
+Azmain Hossain  29:44  
+trust when we put in changes, I want to be able to send the dev link to them and be like Guys, can
+
+Unknown Speaker  29:50  
+you test? Yeah, well,
+
+Speaker 2  29:53  
+there'll be a staging URL. So staging dot,
+
+Azmain Hossain  29:58  
+whatever. Or I
+
+Speaker 2  30:01  
+can just mess around. No. So, okay, hold on. So the typical process is, Dev is always in development, like always in development. It is you should not it's not a source of truth. Staging is the next step up, which is like, Hey, I built some stuff. Test it for me. Verify that if we need to fix it, we apply fixes to the staging environment, and then once everything's good on the staging environment, we move it to production. Yeah, so that's the typical flow. Let me on
+
+Speaker 3  30:48  
+one second, let me No, no, no, why?
+
+Azmain Hossain  31:00  
+Now I'm like figuring out why one
+
+Martin Davies  31:06  
+of the monitors isn't working. Oh, I always
+
+Martin Davies  31:13  
+have the office was really busy last Wednesday as well. It's really weird. Wednesdays, you just be quiet.
+
+Azmain Hossain  31:18  
+That's why people would come in. That's
+
+Speaker 2  31:27  
+why people would come in. One of my friends just got the notion, literally the first week of January, to return to Office, and the way they did it is a 50 mile radius. And like, he lives 10 minutes from the office, and it takes him at least 45 to him an hour during traffic.
+
+Speaker 2  31:58  
+Yeah, but like, long story short, like everyone is hate is revolting, they're already like they've been remote for the last four years. So there are people who were hired because it was remote that now have to go in the office. It was an entire thing. I
+
+Azmain Hossain  32:20  
+summer parties,
+
+Speaker 2  32:24  
+Christmas parties anymore, but you can work from home honestly. I prefer that because, like, yeah, go ahead.
+
+Speaker 2  32:39  
+Sorry. Oh no, it was me. It was me, but go ahead, yeah, go talk. It's fine. I
+
+Unknown Speaker  33:13  
+Okay, sorry. One second. I'm just fixing things.
+
+Azmain Hossain  33:40  
+Like, a bunch of
+
+Speaker 3  33:53  
+changes have been made. Does that change the things the UI, UX changes and Do it sleep? But yeah, my goodness, let's see.
+
+Speaker 2  34:22  
+Well, one. Well, I will say nowadays, you still got to be careful about American our our humours are vastly different, depending on where you live. British people are way
+
+Unknown Speaker  34:34  
+more brutal in their
+
+Azmain Hossain  34:40  
+comedy. Yeah. When you make the jokes, Americans laugh the hardest. I think it's just oh yeah, because we can't you guys from saying the really mean thing,
+
+Speaker 2  34:50  
+yes, 100% I mean, that's, that's my that's what I think to be true. We're too we're too polite.
+
+Azmain Hossain  34:58  
+Yeah. A British people like we've done worse things than you can ever imagine.
+
+Speaker 2  35:13  
+A joke is nothing, yeah, me being from the colonies, I'm just reversing. Let's see. All right, doing. This blah blah that should let's see if I broke it or, Oh, nope, I think I fixed it. Yeah. All right, refresh. Go to user management. That doesn't seem like his changes cotton, the pagination isn't there? Up for three minutes?
+
+Speaker 2  35:53  
+Yeah, I don't that took me a long time. Let me now, I now I gotta ask Chief,
+
+Unknown Speaker  36:18  
+where, where else would pagination be customers.
+
+Azmain Hossain  36:21  
+It would be in, it would be in customers. Use Case, yeah, use
+
+Unknown Speaker  36:30  
+cases, interesting, okay, where it
+
+Unknown Speaker  36:40  
+should be its team members. Thank you. Does team members load up fast?
+
+Speaker 2  36:50  
+Oh, it's taken me a long time. What are you on? Are you on? Dev? I don't have admin access. Oh, I need to give you admin access. That's something.
+
+Speaker 2  37:08  
+Yeah, you're an editor. Let's fix that. You're now a full admin. Okay, let's see.
+
+Unknown Speaker  37:29  
+Okay, but wasn't
+
+Unknown Speaker  37:33  
+I need to see if his merge was introduced, though. Uh, I
+
+Azmain Hossain  37:41  
+was gonna say, Would it be okay if we end this call and then just give me a give me a message? Yeah? Because,
+
+Unknown Speaker  37:54  
+yeah, I just want to go
+
+Azmain Hossain  37:57  
+around and say hi to a few
+
+Unknown Speaker  37:59  
+people. Yeah, that's perfectly fine.
+

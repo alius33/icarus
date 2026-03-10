@@ -20,6 +20,7 @@ class OpenThread(Base):
     resolution = Column(Text)
     severity = Column(String)  # CRITICAL, HIGH, MEDIUM, LOW
     trend = Column(String)  # escalating, stable, de-escalating
+    position = Column(Integer, nullable=False, default=0)
     is_manual = Column(Boolean, nullable=False, default=False)
     search_vector = Column(TSVECTOR)
     source_file = Column(String, nullable=False, default="context/open_threads.md")
@@ -29,5 +30,6 @@ class OpenThread(Base):
 
     __table_args__ = (
         Index("idx_threads_status", "status"),
+        Index("idx_threads_position", "position"),
         Index("idx_threads_search", "search_vector", postgresql_using="gin"),
     )

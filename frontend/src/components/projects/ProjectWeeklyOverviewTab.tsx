@@ -69,20 +69,23 @@ function isEmptyWeek(week: ProjectWeek): boolean {
  */
 function extractProjectStatus(
   markdown: string,
-  workstreamCode: string | null,
   projectName: string,
 ): string {
-  if (!workstreamCode && !projectName) return "";
+  if (!projectName) return "";
 
   const lines = markdown.split("\n");
   const sections: string[] = [];
 
-  // --- 1. Extract the matching workstream section from "## Workstream Progress" ---
+  // Build match terms from the project name — match on significant keywords
+  const terms = projectName
+    .toLowerCase()
+    .split(/[\s/()]+/)
+    .filter((w) => w.length > 2);
+
+  // --- 1. Extract the matching project section from "## Workstream Progress" ---
   const wsContent = extractSection(lines, (heading) => {
     const h = heading.toLowerCase();
-    if (workstreamCode && h.includes(workstreamCode.toLowerCase())) return true;
-    if (projectName && h.includes(projectName.toLowerCase())) return true;
-    return false;
+    return terms.some((term) => h.includes(term));
   }, 3); // match ### headings
 
   if (wsContent.length > 0) {
@@ -92,7 +95,7 @@ function extractProjectStatus(
   // --- 2. Extract relevant risks ---
   const risksBlock = extractH2Block(lines, "emerging risks");
   if (risksBlock.length > 0) {
-    const relevantRisks = filterBullets(risksBlock, workstreamCode, projectName);
+    const relevantRisks = filterBullets(risksBlock, projectName);
     if (relevantRisks.length > 0) {
       sections.push("## Risks\n" + relevantRisks.join("\n"));
     }
@@ -101,7 +104,7 @@ function extractProjectStatus(
   // --- 3. Extract relevant decisions ---
   const decisionsBlock = extractH2Block(lines, "key decisions");
   if (decisionsBlock.length > 0) {
-    const relevantDecisions = filterBullets(decisionsBlock, workstreamCode, projectName);
+    const relevantDecisions = filterBullets(decisionsBlock, projectName);
     if (relevantDecisions.length > 0) {
       sections.push("## Decisions\n" + relevantDecisions.join("\n"));
     }
@@ -161,10 +164,9 @@ function extractH2Block(lines: string[], sectionName: string): string[] {
   return result;
 }
 
-/** Filter bullet lines that mention the workstream code or project name */
+/** Filter bullet lines that mention the project name */
 function filterBullets(
   lines: string[],
-  wsCode: string | null,
   projectName: string,
 ): string[] {
   // Group lines into bullets (a bullet starts with "- ")
@@ -177,15 +179,10 @@ function filterBullets(
     }
   }
 
-  const terms: string[] = [];
-  if (wsCode) terms.push(wsCode.toLowerCase());
-  if (projectName) {
-    terms.push(projectName.toLowerCase());
-    // Also match key words from the project name (e.g., "Build in Five" → "build in five")
-    // and common abbreviations
-    const words = projectName.split(/[\s/()]+/).filter((w) => w.length > 3);
-    terms.push(...words.map((w) => w.toLowerCase()));
-  }
+  const terms: string[] = [projectName.toLowerCase()];
+  // Also match key words from the project name (e.g., "Build in Five" → "build in five")
+  const words = projectName.split(/[\s/()]+/).filter((w) => w.length > 3);
+  terms.push(...words.map((w) => w.toLowerCase()));
 
   return bullets
     .filter((bullet) => {
@@ -224,7 +221,6 @@ export default function ProjectWeeklyOverviewTab({
       if (week.weekly_report_content) {
         const status = extractProjectStatus(
           week.weekly_report_content,
-          project.workstream_code,
           project.name,
         );
         if (status) return status;
@@ -240,7 +236,7 @@ export default function ProjectWeeklyOverviewTab({
       }
     }
     return project.description || null;
-  }, [timeline.weeks, project.workstream_code, project.name, project.description]);
+  }, [timeline.weeks, project.name, project.description]);
 
   // The week label for the most recent report
   const statusWeekLabel = useMemo(() => {

@@ -11,7 +11,7 @@ import {
   Users,
   Clock,
   Gavel,
-  CheckSquare,
+  KanbanSquare,
   AlertCircle,
   BookOpen,
   Search,
@@ -25,6 +25,11 @@ import {
   Trophy,
   Globe,
   User,
+  AudioLines,
+  TrendingUp,
+  GitBranch,
+  AlertTriangle,
+  BarChart3,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -69,6 +74,11 @@ const navSections: NavSection[] = [
         label: "Upload",
         href: "/upload",
         icon: <Upload className="h-4 w-4" />,
+      },
+      {
+        label: "Speaker Review",
+        href: "/speaker-review",
+        icon: <AudioLines className="h-4 w-4" />,
       },
       {
         label: "Analysis",
@@ -118,9 +128,9 @@ const navSections: NavSection[] = [
         icon: <Gavel className="h-4 w-4" />,
       },
       {
-        label: "Actions",
-        href: "/action-items",
-        icon: <CheckSquare className="h-4 w-4" />,
+        label: "Tasks",
+        href: "/tasks",
+        icon: <KanbanSquare className="h-4 w-4" />,
       },
       {
         label: "Open Threads",
@@ -161,6 +171,26 @@ const navSections: NavSection[] = [
         label: "Scope",
         href: "/scope",
         icon: <Target className="h-4 w-4" />,
+      },
+      {
+        label: "Topic Evolution",
+        href: "/topic-evolution",
+        icon: <TrendingUp className="h-4 w-4" />,
+      },
+      {
+        label: "Influence Map",
+        href: "/influence-graph",
+        icon: <GitBranch className="h-4 w-4" />,
+      },
+      {
+        label: "Contradictions",
+        href: "/contradictions",
+        icon: <AlertTriangle className="h-4 w-4" />,
+      },
+      {
+        label: "Meeting Scores",
+        href: "/meeting-scores",
+        icon: <BarChart3 className="h-4 w-4" />,
       },
     ],
   },

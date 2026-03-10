@@ -1,0 +1,180 @@
+Azmain Hossain  0:34  
+Hello, Hey, Dan, thanks so much for making the time.
+
+Unknown Speaker  0:40  
+Of course, sorry, to have to move this.
+
+Azmain Hossain  0:47  
+All right, even better, before the call to just just sit and think.
+
+Unknown Speaker  0:53  
+All right, sometimes that's helpful. Yeah, yeah.
+
+Azmain Hossain  0:57  
+Hey, rich, are you able to hear us?
+
+Richard Dosoo  1:00  
+Yeah, I can hear you guys and Dan, sorry, we couldn't do this in person. I'm remote today, unfortunately, but we can use this as the kind of start of a turn, and then maybe when you're back from sko we can follow up, because you're going to be in Miami next week, right? Or Fort Lauderdale,
+
+Unknown Speaker  1:14  
+I'll be in Vienna next week. Ah, of course.
+
+Richard Dosoo  1:17  
+Right? Cool, yeah. Cool, yeah. We, what I did was we've obviously, as in the advisory group, we've been thinking a bit more broadly about how we roll out personal and how we get everyone using it after the initial training we did last year, and we came up with a set of, like, initial start of the 10 prompts that help people get moving, and that can be with simple day to day productivity tasks there. There's actually we've put some more thought into if you're building an app, what kind of scaffolding or what kind of rules and prompts get you going? So you don't have to think about the architecture and the structure yourself. You kind of get all of that as a starter for 10 with the work that we've already done. So I was going to take you through where we are with that and see how that could help. And then I guess directionally, Ben had also been kicking about the idea about having a pipeline tracking application, which I thought would be helpful for your team, right? So I didn't know if it's worth spending a few minutes talking about that today, and even if it's just enabling you, so you can come up with that on your own or or if you need me and Azmain to help you bring that together?
+
+Speaker 1  2:24  
+Yeah, we think that's probably going to be a little bit of kind of collaboration. I think that I might I bring some insights to the table as far as what we're trying to do, and you guys might have some insights as to what the best way to go about it is. I pulled together a couple very like rudimentary tools the other weekend and to kind of get the foundation of it. And the more I've been thinking through it, the more I was kind of thinking bigger picture stuff, that it's less of just a quick we'll call it data manipulation, but more of something that actually can bring a little more insight out of it.
+
+Richard Dosoo  3:09  
+Yeah, no, and that's, I'll be honest, that's the same journey we started with on the advisory side. So essentially, we were first Azmain And Ben was just building out dashboards to help manage the reporting aspect of the IRP programme or the portfolio so managing clients adoption that we soon realised that we needed like, a fully fledged, like source of truth. We needed reports, we needed data entry capability. And that's how Clara kind of came about, where we realised we actually could build something fit for purpose to manage the programme. Now, you guys would have sales recon to do that for you going forward. But if you're waiting, if you need something in the interim, that's 100% a way that you could, you could look to the option of you building out something lightweight and hosting and just to repeat your needs in the short term. It's not wasted because, if anything, it also helps inform what the guys are doing for you in the long term, for sales, really Connie, it can even just be ideation, and then give those guys requirements. So I guess maybe, if we do this, is it worth me going through the doc with you to start with Dan, or do you want to come at the problem the other end and talk me and Azmain through what you had to what about strategically?
+
+Speaker 1  4:21  
+It's up to you. So I can, we can walk through that, I can show you what I built, and then kind of go, go from there. But what I had started with was just kind of automating some very manual things that I used to do, and from there, I think the idea is start to build something a little more robust. So if I just show you real quick what I've done. So one of the things that I don't like to do is, at once, a week after right, I write an email to management that basically takes. Everything that's in Salesforce and puts it into a narrative. So it used to be a lot of copying and pasting, and probably not exactly what the company is paying me to do, spending hours copying and pasting stuff so see if I can share my screen. I
+
+Unknown Speaker  5:23  
+this one. So if I do this one, so what I created, can you see this?
+
+Azmain Hossain  5:36  
+It still hasn't come through, taking a moment.
+
+Speaker 1  5:40  
+Oh, sorry it's not sharing properly. Here we go. So basically what I did was I took an extract out of one of our reports in sfdc called the forecast accountability report, and I basically just found a way to go through and take the raw data, and then I wrote, or shall I say, I described in cursor, slash whatever, wrote a Python script that basically took this raw data and quickly turned it into the format of an email. And so if I go to the preview, basically looks like this, and then I can copy and paste this directly into sfdc. I'm not sftc directly into an email. I can make some quick edits, but basically it's just stratifying it by month, providing some songs, bringing in specific data fields and formats and whatnot, pulling notes sections out and organising it in more of a visually, whatever, aesthetically pleasing way, and it saves me a tonne of time. So that was one thing I built, and then the other was for a lot of times in the world of sales, you're trying to find something that changed. Yeah, it's so I was calling it like a variance report. Yep, are you able to see the new GUI? Whoops, so did I stop sharing? I think I stopped sharing. So where's the new one? Hiding somewhere? Not that one.
+
+Unknown Speaker  7:37  
+Let's do this. It
+
+Speaker 1  7:44  
+looks like this. So basically, the idea is, the way the logic works in the background is there's a folder in my cursor project file that, if I load files, and it grabs the two most recent ones and it compares them. So if I just go in and do it manually, that's the baseline. This is a new one, hide those, run the analysis, and it basically stratifies what changes or day. And could say something changed months. It could say something changed in a probability and say something changed in a value, and then I had hyperlinks created to basically jump back in. So, you know, on a day to day basis, when, at my level, you have hundreds of opportunities that are floating around in your orbit, and everybody's kind of tweaking things and a quick way just to say, Okay, who changed what, and is it right, and does it need to be fixed? And then I built this kind of tool into build all of them into one. So it's going to be the idea is this would become more of a dashboard, like with this one. This is now starting to take another extract and start to build up reports about the number of opportunities and quotes and growth and top deals by month and whatever. So it's kind of a the start of a much more kind of robust reporting tool or analysis tool. So that's what I put together in a few hours.
+
+Richard Dosoo  9:22  
+That's awesome, Dan. And like, I didn't know you had gone that far with it. I thought you were just that. So I'm definitely
+
+Azmain Hossain  9:29  
+going to steal your variance report, because literally today, now that within our within our RFP, you know, we have 3040, CSMs going in there, changing account, health status, executive status, even little fields. Now people are like, yeah, when I log in, can I see a variance of everything that's happened since the last time I logged in, like, a few days ago? Yeah? So yeah, thank you for that.
+
+Speaker 1  9:54  
+Yeah. It's like, in the world of sales, it's like, whack a mole, right? You never know. Like, you fix something and all of a sudden, five other things change, and you're always trying to get ahead of these, because there's a whole reporting team that kind of sits under Noah and Helen and others that they tend to have better information than I have. So if I can get ahead of what they're going to come at me later in the day, you already have an answer, then that's like, it makes me look much better.
+
+Richard Dosoo  10:24  
+And how often? How often do you have to do run those reports down? Is it daily or is it weekly?
+
+Speaker 1  10:32  
+Just get that daily if it's literally just as quickly as so what I used to have is basically just a pretty robust pivot table setup. And what it would do is it had some heat maps. And basically what I would do is I would just take an extract and I would update the extract and it recalculate everything. But I would copy one column and put it to the right, so, yeah, see what changed, and then I would have to go hunt to find it. What changed in the underlying data?
+
+Richard Dosoo  11:00  
+Yeah, no, I get it. And if this is definitely something that you do weekly, would it even like if you could basically pull the data from Salesforce, but if the app could pull the data rather than you exporting it and then importing it, would that be like, helpful, or is it doesn't happen?
+
+Speaker 1  11:15  
+Yeah. So I think what the really interesting kind of area that that I think we're at, or where I'm at right now, is basically, I'm taking already formatted reports in sfdc and making them more user friendly for me, but that report is just someone else's ideal, you know, view. So there's so much more data behind that that that if we weren't pulling from a report, or if we weren't pulling from Tableau, but pulling directly from sfdc, yeah, we would have a lot more ability to pull interesting things into it.
+
+Richard Dosoo  11:54  
+The reason I bring it up, Dan is we have to pull so from Salesforce. We have to pull for another project. Tickets, case information, and we have to figure out customer sentiment. And we it's a similar process, right? We extract the data, we then figure out, you know what, someplace, issues of HD models, and we try and citizens that up. And we want a more real time view. So when account managers go and talk to them, or sales people go and talk to them they have that latest position. So we're going to have to build that pipeline anyway. But it sounds like you need from sdfc. You need the pipeline positions like daily or weekly, whatever cadence you need, and you need some other visibility around those metrics. So that could be just another dead set of data that we extract, and then we just put that somewhere. We put it for you. You can download it, or the end state would be your application sits somewhere, and it just pulls that information when it needs it, and does the does the calculation.
+
+Speaker 1  12:54  
+That I mean, because otherwise you'd go and you'd hit a button, you get an extract, you'd put that in a field, and you'd run another thing that would take that in. And if we could actually get to the point where there was a daily, you know, whatever, push into the back of one of those, then that would be super, super helpful.
+
+Richard Dosoo  13:12  
+So the person we're working with, her name's Natalia plant, like me and Azmain, need to follow up with her, and we've got a whole bunch of other information that we need from Salesforce, and what you're asking for is just another thing we have to add to that list.
+
+Speaker 1  13:25  
+Basically, yeah, and so there's the team that does the reporting, the sales analytics reporting for we'll call it the sale, the senior leadership team. There's a woman, Julia Valencia, I think let me write that. And we've been kind of like cursor buddies, where she's building some stuff and I've been building some stuff. She has access to all the data that we want. And I think that she would be probably helpful if we wanted to find a way to tap into it. I think that she would also have a very helpful way of being able to describe the data model, to say, this is the data available. This is, you know, what we're using, this is what we can't use. And if we can kind of describe what we're trying to do, I think she'll kind of bridge the gap on, you know, how we actually leverage that? It's probably going to be a huge chunk of data, because in an S in sfdc, there's a lot of data fields. Every opportunity probably has potentially 100 data points you could pull on it. So how do we get to the most relevant ones, the ones that won't change over time, the ones that will actually be, you know, more foundational to some of the reporting that they do. Because also, the one thing that I found is, if our numbers don't line up to the other reporting numbers, it's a challenge.
+
+Richard Dosoo  14:58  
+But that. Is the beauty, right of you integrating with the data. There's nothing gets lost in translation, nothing gets changed by an unanticipated a bit in a spreadsheet, you're all using the same baseline, the same source, you're just viewing it differently. Basically, no, this is great. And Dan, so I think let me speak to so we can have a chat with her about the essentially ask her about the API, and we can find out the data that needs, that we you need. Um, if there's a way for you to send that report, the CSV extract that you had over to me and Azmain, we could that will use that to drive the conversation, to say we've spoken to you. We're just looking for programmatic access to this data so we can automate the workflow fully. As I said, we're going to be doing something very similar anyway, for Courtney and for Ben, doing our sentiment analysis services. If we're going like, it's like you're changing your clutch in a car, you might as well change the sorry, you're changing the gearbox, you might as well change the clutch at the same time. That's the end that the analogy, right? You're there, you're in there. Your hands are dirty, right? You might as well just change both lists. So we can definitely, we can add that to the list of things. And in terms of like, where this would be long term, it can vary. It can stay on your machine, no problem. Or you could put it if Dan is helpful for other people other than you to do the same thing or analyse the data, then we can host the application somewhere. So if we host that application somewhere, then you can decide what the access controls are, what the permissions are. But I wasn't sure if this is something that is just you're doing it, or whether you wherever you need other people to have access to.
+
+Speaker 1  16:41  
+So I've showed it show my little project to a few people, even just those little almost like calculators, right? So it's just take a data set and transform it and give me something very quick. Everyone's like, I want that, no.
+
+Richard Dosoo  16:57  
+And if that's the case, right? That's, that's where we can help you down, because we're like, Clara was just one app that we needed to build infrastructure for, and we're finding out that there's, like, loads of other apps and consulting that have a similar ask. So what we've done is we've just created some generic infrastructure that these things can all slot into. At the moment, we're manually deploying the apps in there, but our goal over the next month is to fully automate that so you could just register your application, yeah. And then once Azmain says, Okay, it's good, then it goes in a deployment pipeline and gets stood up and gets the gets, you know, the Moody's up to that. Sso already integrated. Get some rudimentary positions and, and so, so that's, that's where we want to go in the Azmain we can, you know, we can add this to the list of things that it would be good for us to host. And then when you're back from Vienna, as I said, we can probably go in the next level of detail. Those scripts that I've sent you are kind of like, start off at 10. But what is they can take the app that you've built and then you can, I want to say, quote, unquote, like re architect it so it uses our tech stack. So essentially, basically use the sign foundation is that we're using, uses the same database, uses the same API, because you've known what that target is, we've created some scripts that help align whatever you've built to that stack.
+
+Speaker 1  18:13  
+Yeah, that. That'd be great. I guess what we could consider is, you know, whether I'm really have the sandbox and you guys are working on the actual production version, and I just kind of use it to hack together and try to come up with some ideas. But yeah, I would probably be a little concerned if I ended up giving a version of something I created out to too many people in the organisation, knowing it might be flawed or whatever.
+
+Richard Dosoo  18:41  
+So there's two schools of thought on that right? 100% you can use your laptop as a sandbox. Then Ben, on our side, not Ben Brooks burn down the house and he sets up a he's got his pipeline, has a development environment, staging and production, right? So that's already there, right? All the apps are going to follow that same pipeline. But yeah, I guess the thing that we've really learned the most about this Clara experience is, in the old days, the bar to develop software was quite high, and you had to have all these really well defined specs and everything all buttoned up before you start development. You don't really need that now, and you get to the idea faster with the tools that we've got. So it's cool, like you, the cost of you building something and deciding you don't want to do it is less than it was before. So it's actually a good thing for you to build out what you want validated with people, if not be changing, right? So that, I think, I think there's a place that you will get both right. You can develop on your local machine, you can push out builds to get people to validate. And if that stuff is good, then it goes to production. If not, you iterate on it
+
+Speaker 1  19:45  
+again, yeah. I mean, I totally agree. I'm just going through and did you was that script in teams? Or did you put it into an email?
+
+Richard Dosoo  19:57  
+I think I put it in an email, but I'll send you a link in this. Chat. Now there was, hold on. Let me send this to you. It's just a word doc that I'll be honest. I use the Gen AI to create it. I gave it our sample scripts, and it created like a training file for you. Just send us now.
+
+Speaker 1  20:14  
+So if I drop that in under a specific agent and said, Can you please leverage this to you know, or do I even say that? Do I just drop the whole thing and copy paste and go,
+
+Richard Dosoo  20:27  
+Well, yeah, so that's what you'll do, is I'll give you another file called a cursor rules file, and you'll drop that into I'll send you some slides as well that talk you through how to do it. You drop that cursor rules file into your cursor, into the cursor project folder, and then you just write a prompt to say, can you migrate the station to use these, use these rules, and it will, it will tell you you need to use Postgres. It'll tell you so far state. But it knows that how our AWS environment is set up. It knows what permission stack and stuff is in there. Let me bring this up now. Actually, give me a second.
+
+Speaker 1  21:04  
+Yeah, I think there's the biggest challenge that I had figuring out cursor was once whatever we I wrote one of the Python scripts, or whatever it was, it's actually how to run those, because I didn't realise for the longest time I had to step out of cursor and go into the whatever the command prompt or the Explorer, and start to run those externally, I was banging my head against the wall. Didn't know what was going on, why nothing was working.
+
+Richard Dosoo  21:30  
+Yeah, no, this is it, sorry. Azmain, good.
+
+Azmain Hossain  21:33  
+No, no. I was gonna say coming. Coming from a non developer person. It was such a learning curve for me. I like, even today, rich and sometimes the technical people, they talk about stuff, they're like, did you check for this in your app? And like, I don't even understand what you're talking about. The AI to check if it's Yeah, but I don't know. Yeah.
+
+Speaker 1  21:55  
+I was having to ask the agent. I was like, I have no idea what I'm doing. Like, help me. And it's like, oh, well, go to PowerShell, do this and drop this and copy paste and tell me what it says. And I'm like,
+
+Azmain Hossain  22:07  
+Okay, I stopped doing that. Now I'm just like, Stop telling me to run commands. Do it yourself. And it's like, Yes sir. And it just does it. Just does it all itself.
+
+Richard Dosoo  22:18  
+So what, what I'll do, Dan, is I'll send you this as well, which basically I'll send you the cursor rules. Well, I'll send you this. I'll send this to you now, and I'll it should be really straightforward, to be honest, just to for you to drop that in. And then I think I've also got some prompts already that do the migration, so I'll put that, I'll send those over as well. I'll put this in the chat here. Okay, and then that way I think, though, Dan, the only thing I would say, though, definitely, what would be the, as you know, you've I raised that ticket for you to get GitHub.
+
+Unknown Speaker  22:54  
+Yeah, okay, yeah.
+
+Richard Dosoo  22:57  
+So once that gets approved, because then it's, it's once you're putting your code in GitHub version, controlling it there and sharing it. It's definitely it makes life a lot easier. You just download the GitHub client for Windows, and it's literally like drag and drop, and your code is always backed up. It's always managed. When you want to share it, you just send people that repository link. It's a lot easier than having a version controller, manager doing all that stuff yourself? Yeah, I imagine.
+
+Speaker 1  23:25  
+So this should be interesting to see what we come up with together.
+
+Richard Dosoo  23:30  
+Yeah, I know 100% as I said, Ben's vested interest in this was the pipeline tracking, but I don't think he knows that you've already done it. I think he thinks that he thinks it's yet to be so 100% we should
+
+Speaker 1  23:43  
+got like something I don't, I don't. I think what Ben is looking for, especially for the partner work, to be able to track by app, by, you know, whatever, a lot of that stuff is not great out of Tableau, meaning the reduced whatever data set I'm pulling. But if we tap into, I think it's called CDR, is the underlying database for a lot of this, then I think we could do some really interesting stuff. Yeah, what I can do is I will send an email after we hop off the phone and connect you guys with Juliet and basically say this is what we're working on, and very kindly ask her to help us gain access to the data, and maybe even do provide some sort of knowledge transfer on the data model and overall structure and stuff that we should be aware of before we start, you know, hacking stuff together.
+
+Richard Dosoo  24:45  
+Yeah, no, that would be great. And me and Azmain can follow up with her while you guys are at in Vienna, and then when you're back, then we will have a better picture of what it looks like going forward. But 100% I'm glad we connected. I think definitely. We should add this to the list of stuff that we should put on the list of things we should put up in our factory, so to speak, so everyone else can have access to it.
+
+Azmain Hossain  25:08  
+This is low hanging fruit, like the fact that you guys have a team that does the reporting, which means, you know, I don't have to wade through a mountain of Salesforce reports to figure it out. Somebody can like, explain it and understands it, and all you're requiring is just surfacing that data and being able to manipulate it however you want. And my data literally, like what you said, the full set of the data, not someone's view of it. Yeah, I think that that's something that can be done in a short period of time, and the value would be really helpful to you? Yeah, yeah.
+
+Speaker 1  25:46  
+So I would say that the reporting team is a little more focused on the aggregation. So looking at, you know, what the monthly forecast for the insurance business unit is by region, right? It could be 1000s of opportunities that are aggregated up. Some of them are renewal, some of our new business. They don't care if it's risk model or exposure IQ or comata like whatever, but we should be able to get to the underlying data. So if we actually want to get in at a product level or at a team level or rep level, whatever may be, we can start to have some interesting insights pulled out of there.
+
+Azmain Hossain  26:26  
+Yeah, and especially now, the AI models have gotten so good where I again, this is another thing of things that I've automated. I was given a very complex Excel sheet, which was being used to track accounts. It had formulas and dashboards. It was, it was a very sophisticated Excel sheet. And then I was given the presentation, the monthly deck that's created for dia using that. And the ask was, I want you to exactly copy this, recreate this Excel Excel sheet and this presentation, and that's what it was able to do. So if, even if the reporting team has, you know, very sophisticated Excel sheets with the underlying data that they manipulate into pivot tables and dashboards, if they just give me the raw file, I can be like, I can recreate this whole thing. And then there's, like, a presentation built being built off of that. Okay, now we can do that as well. Yeah.
+
+Speaker 1  27:25  
+I mean, the cool part is, if once we figure out how to whatever, get the extract we want, it could format an email, could format the table in a monthly PowerPoint, it can be whatever we want it to be.
+
+Azmain Hossain  27:38  
+I mean, once you bring in, I mean, we already have a strategic partnership with Microsoft, so bring in the chat GPT models that can read all that data and give you a verbose executive summary or a verbose email. Like, imagine the the email that you have currently where you copy and paste, it's it's formatted correctly. The data definitions are correct. But imagine if it could verbosely Explain, like over the past month. Here's all the things in a way that a human can read it.
+
+Speaker 1  28:05  
+So that was going to be my next project. Is because I'm just taking daily extracts out, and there are common identifiers at an opportunity level, it's a code. And so what I wanted to do is start to basically store each version of those. So if I wanted to have something, say, tell me the story over the past month at this opportunity, or aggregate all the opportunities that fit under this l4 and tell me the story of how it's evolved over the past 30 days, or whatever.
+
+Unknown Speaker  28:34  
+Yeah, yeah, no, that's
+
+Azmain Hossain  28:36  
+from a data view, is great, but being able to tell that story over a period of time. Yeah, that's, that's, that's the Holy Grail.
+
+Speaker 1  28:45  
+Is what I used to do to track our forecast accuracy, because every day, we have a snapshot that looks at the probabilities, the weightings of quote and everything that kind of aggregates to say, this is roughly what we think we're going to bring in this month, right? And it's $1 amount, and it's expressed as a total dollar amount or a percentage, meaning the percent growth over where we started. And I basically would copy and paste and add a row every day that I pulled out. And so you kind of had, like a heartbeat that can show how we if we maintained a This makes and now I this is a much different way.
+
+Azmain Hossain  29:22  
+This is why, back in the we definitely had assistance.
+
+Unknown Speaker  29:25  
+Yeah, we
+
+Richard Dosoo  29:27  
+definitely should look at this. And I remember, like a few, I want to say a few. I'm showing my age now, back in 2018 we had a guy called Pat who used to lead the sales organisation. And he actually had, he paid Salesforce for a plugin to do exactly that, right? Yeah, yeah, yeah, exactly. He's now a data firm. I forgot the name, but some other colleagues worth it, but he was trying to bring that discipline into the forecast plan and have like good things, but Thank. You so much. No, no, it's all good. I should close off there as well, but definitely do.
+

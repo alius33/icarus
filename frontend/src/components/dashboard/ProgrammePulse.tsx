@@ -16,21 +16,8 @@ interface Props {
   projects: DashboardProjectCard[];
 }
 
-const PROJECT_ORDER: Record<string, number> = {
-  "WS2": 1, // CLARA
-  "WS6": 2, // Build in Five
-  "WS4": 3, // Friday
-  "WS5": 4, // IRP Navigator
-  "WS3": 5, // Customer Success Agent
-  "WS1": 6, // Training & Enablement
-};
-
 function sortProjects(projects: DashboardProjectCard[]): DashboardProjectCard[] {
-  return [...projects].sort((a, b) => {
-    const orderA = (a.workstream_code && PROJECT_ORDER[a.workstream_code]) || 99;
-    const orderB = (b.workstream_code && PROJECT_ORDER[b.workstream_code]) || 99;
-    return orderA - orderB;
-  });
+  return [...projects].sort((a, b) => a.name.localeCompare(b.name));
 }
 
 export default function ProgrammePulse({ projects }: Props) {

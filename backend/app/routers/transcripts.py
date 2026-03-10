@@ -1,11 +1,15 @@
 import math
 
-from fastapi import APIRouter, Depends, File, Query, UploadFile
+import json
+
+from fastapi import APIRouter, Depends, File, Form, Query, UploadFile
 from sqlalchemy import asc, desc, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
 from app.exceptions import NotFoundError
+from app.models.project import Project
+from app.models.project_link import ProjectLink
 from app.models.summary import Summary
 from app.models.transcript import Transcript
 from app.schemas.summary import SummaryBase, SummaryDetail
@@ -15,7 +19,9 @@ from app.services.upload_service import process_uploaded_transcript
 router = APIRouter(tags=["transcripts"])
 
 
-def _transcript_base(t: Transcript, has_summary: bool) -> TranscriptBase:
+def _transcript_base(
+    t: Transcript, has_summary: bool, project_name: str | None = None
+) -> TranscriptBase:
     return TranscriptBase(
         id=t.id,
         file_name=t.filename,
@@ -24,6 +30,8 @@ def _transcript_base(t: Transcript, has_summary: bool) -> TranscriptBase:
         participant_count=len(t.participants) if t.participants else 0,
         word_count=t.word_count or 0,
         has_summary=has_summary,
+        primary_project_id=t.primary_project_id,
+        primary_project_name=project_name,
     )
 
 
@@ -68,10 +76,22 @@ async def list_transcripts(
     )
     summary_transcript_ids = {row[0] for row in summary_result.all()}
 
+    # Fetch project names for transcripts with primary_project_id
+    project_ids_set = {t.primary_project_id for t in transcripts if t.primary_project_id}
+    project_names: dict[int, str] = {}
+    if project_ids_set:
+        p_result = await db.execute(
+            select(Project.id, Project.name).where(Project.id.in_(project_ids_set))
+        )
+        project_names = dict(p_result.all())
+
     pages = math.ceil(total / limit) if limit else 1
 
     return TranscriptList(
-        items=[_transcript_base(t, t.id in summary_transcript_ids) for t in transcripts],
+        items=[
+            _transcript_base(t, t.id in summary_transcript_ids, project_names.get(t.primary_project_id))
+            for t in transcripts
+        ],
         total=total,
         page=page,
         limit=limit,
@@ -99,6 +119,14 @@ async def get_transcript(
 
     summary_schema = _summary_base(summary, transcript.title) if summary else None
 
+    # Get project name if set
+    project_name = None
+    if transcript.primary_project_id:
+        p_result = await db.execute(
+            select(Project.name).where(Project.id == transcript.primary_project_id)
+        )
+        project_name = p_result.scalar_one_or_none()
+
     return TranscriptDetail(
         id=transcript.id,
         file_name=transcript.filename,
@@ -107,6 +135,8 @@ async def get_transcript(
         participant_count=len(transcript.participants) if transcript.participants else 0,
         word_count=transcript.word_count or 0,
         has_summary=summary is not None,
+        primary_project_id=transcript.primary_project_id,
+        primary_project_name=project_name,
         raw_text=transcript.content,
         participants=transcript.participants or [],
         summary=summary_schema,
@@ -151,6 +181,7 @@ MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
 @router.post("/transcripts/upload")
 async def upload_transcripts(
     files: list[UploadFile] = File(...),
+    project_ids: str | None = Form(None),
     db: AsyncSession = Depends(get_db),
 ):
     """Upload one or more .txt transcript files.
@@ -158,10 +189,21 @@ async def upload_transcripts(
     Parses each file using the existing transcript parser, upserts into the
     database (skip if unchanged, update if modified, insert if new), and
     rebuilds stakeholder mentions for each uploaded transcript.
+
+    Optionally accepts a JSON-encoded ``project_ids`` array (one entry per
+    file, in the same order) to set each transcript's primary project.
     """
+    # Parse project_ids if provided
+    parsed_project_ids: list[int | None] = []
+    if project_ids:
+        try:
+            parsed_project_ids = json.loads(project_ids)
+        except (json.JSONDecodeError, TypeError):
+            parsed_project_ids = []
+
     results = []
 
-    for upload_file in files:
+    for idx, upload_file in enumerate(files):
         # Validate file extension
         if not upload_file.filename or not upload_file.filename.endswith(".txt"):
             results.append({
@@ -185,13 +227,36 @@ async def upload_transcripts(
             })
             continue
 
+        # Determine project for this file
+        file_project_id = None
+        if idx < len(parsed_project_ids) and parsed_project_ids[idx]:
+            file_project_id = parsed_project_ids[idx]
+
         # Process the transcript
         try:
             result = await process_uploaded_transcript(
                 filename=upload_file.filename,
                 content_bytes=content_bytes,
                 db=db,
+                primary_project_id=file_project_id,
             )
+            # Create ProjectLink if project was assigned and transcript was created/updated
+            if file_project_id and result.get("id") and result["status"] in ("inserted", "updated", "skipped"):
+                existing_link = await db.execute(
+                    select(ProjectLink).where(
+                        ProjectLink.project_id == file_project_id,
+                        ProjectLink.entity_type == "transcript",
+                        ProjectLink.entity_id == result["id"],
+                    )
+                )
+                if not existing_link.scalar_one_or_none():
+                    db.add(ProjectLink(
+                        project_id=file_project_id,
+                        entity_type="transcript",
+                        entity_id=result["id"],
+                    ))
+                    await db.commit()
+
             results.append(result)
         except Exception as e:
             results.append({

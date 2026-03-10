@@ -22,7 +22,7 @@ So basically, one of the big issues that I've been running into myself when I've
 Azmain Hossain  1:59  
 no, because if you're running it locally, but like, what I do and like, don't tell anybody. I run my cloud code on a virtual environment. I give it, like, full access to the internet. And there today, this is I maxed out my 500 bucks of cursor allowance in a day, yeah, I spun up 30 agents to build a project management app called My Girl Friday.
 
-Unknown Speaker  2:31  
+Ben Van Houten  2:31  
 Yeah, oh, wow. So, okay,
 
 Azmain Hossain  2:34  

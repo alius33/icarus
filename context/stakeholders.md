@@ -1,6 +1,6 @@
 # Stakeholder Map
 
-Last updated: 2026-03-09 (all transcripts through 6 March processed)
+Last updated: 2026-03-10 (all transcripts through 10 March processed)
 
 ## Tier 1 — Decision Makers & Sponsors
 
@@ -97,16 +97,22 @@ Last updated: 2026-03-09 (all transcripts through 6 March processed)
 | Jamie | Sales Recon | Supportive but constrained. Week 3: set clear boundaries ("Sales Recon cannot solve every problem"), transparent about costs (~$3/analysis), proposed Feb pilot |
 | Divya | AI governance | Wants efficiency KPIs and philosophical discussion |
 | Ari Lahavi | Head of Applied AI | Met at Jan 26 executive session |
-| Idris | Banking CS | Week 3: Strong ally. Impressed by CLARA demo (23 Jan). Sees cross-OU scaling potential. Has "Credit Lens 360 hub platform" for lending. Raised hallucination concerns pragmatically. Estimates 3/4 of BU revenue related to IRP. |
+| Idris | Banking CS → Now AI programme member | Formally onboarded 10 Mar with Ben's approval for dedicated time. Working on TSR automation for cat bonds. First expansion beyond core insurance CS team. Strong ally. |
 | Conrad | Banking CS | Week 3: Present at Sales Recon prep (19 Jan). Less vocal than Idris. |
 | Bernard | Life team | Week 3: Built Copilot health dashboard (Salesforce extracts + NPS + Mixpanel). Confident in demo. Acknowledges hallucination risk but says manageable with focused prompts. Sceptical about Q1 timelines. |
 | Alexandra | Life team | Week 3: Wants broader framing ("successful cloud migration" not just IRP). Raised valid hallucination concern for Monday presentation. Working on partner tracking. |
 | Steve Gentilli | Adoption charter (WS4) | Week 3: Enthusiastic about folding Excel tracker into CLARA. Has database/systems experience, wants to help with data modelling. Strong ally for WS4. |
 | Vlad | PM | Week 3: Practical, willing to help populate data in CLARA. Has 3 accounts ready as quick wins. Wants clear scope and timelines. |
 | Diana | PM → Azmain's new manager (4 Mar) | Now Azmain's reporting line. Supportive of Friday development. Planning to present Friday vision to Ben/Charlotte. |
-| Martin Davies | Build in Five (WS6) | Active. Showed Apollo dashboard as reference implementation (3 Mar). Demo shifted to May. 12-week assignment clock ticking. |
+| Martin Davies | Build in Five (WS6) | Exceptional output. Dashboard builder dramatically exceeded expectations (10 Mar). Richard compared to Databricks Genie. Live RM API integration working. Demo shifted to May. 12-week clock ticking but output justifies investment. |
 | Catherine | Data alignment + Gainsight governance | March: Offered to help with governance and App Factory decision tree. Key new ally. |
 | Dan Flemington | Sales | March: New stakeholder with existing tools. Julia Valencia identified for Salesforce access. |
+| Gina Greer | Banking customer engagement (central) | New 10 Mar. Mapping banking AI initiatives. Same stage as insurance Nov 2025. Potential cross-OU ally. |
+| Olivier | Banking AI enablement lead | New 10 Mar. Thoughtful about tool selection. Working with Nick Louder/Kentucky teams. Deployment gap concern. |
+| Jack Cheyne | Life insurance | New 10 Mar. Technically curious about NME. Aware of CAP from banking. Potential cross-OU expansion. |
+| Christian Curran | Life insurance | New 10 Mar. Focused on SSO, security, RBAC practicalities. |
+| Mike Bibo | Risk Modeller demo team lead | Identified 10 Mar as critical for Build in Five. Demos RM to customers. |
+| Sam Gibson | Risk Modeller demo team (UK) | Identified 10 Mar. Under Bibo. |
 | Prashant | Developer (planned) | To be allocated to help Azmain with Friday development. |
 
 ## Dynamics to Watch
@@ -122,3 +128,5 @@ Last updated: 2026-03-09 (all transcripts through 6 March processed)
 9. **BenVH/Nikhil conflict (NEW - March)** — BenVH worn down by Nikhil taking credit for his work. Morale risk for the only person who can deploy.
 10. **Friday as scope creep risk (NEW - March)** — Azmain building a PM app on the side while already stretched thin on CLARA and five other workstreams.
 11. **Security/compliance exposure (NEW - March)** — Personal Claude accounts used for Moody's work. Audit found it. Team spending personal money on tooling.
+12. **Cross-OU expansion pressure (NEW - 10 March)** — Banking (Gina/Olivier) and Life (Jack/Christian) both want collaboration. Validates approach but risks further stretching an overloaded team.
+13. **Bedrock cost trajectory (NEW - 10 March)** — $1,163 in two weeks, on pace for $10K/month. No cost attribution. Tags broken. New frontier of the same budget problem.

@@ -56,22 +56,20 @@ function DashboardInner({ initialData }: Props) {
 
   const d = data || initialData;
 
-  // Extract workstreams from project cards for the filter dropdown
-  const workstreams = d.projects
-    .filter((p) => p.workstream_code)
-    .map((p) => ({ code: p.workstream_code!, name: p.name }));
+  // Extract project list for the filter dropdown
+  const projectOptions = d.projects
+    .map((p) => ({ code: String(p.id), name: p.name }))
+    .sort((a, b) => a.name.localeCompare(b.name));
 
-  // Filter projects by workstream if filter is set
+  // Filter projects by name if filter is set
   const filteredProjects = filters.workstreamFilter
-    ? d.projects.filter(
-        (p) => p.workstream_code === filters.workstreamFilter,
-      )
+    ? d.projects.filter((p) => String(p.id) === filters.workstreamFilter)
     : d.projects;
 
   return (
     <div className="space-y-5">
       {/* Header with filters */}
-      <DashboardHeader workstreams={workstreams} />
+      <DashboardHeader workstreams={projectOptions} />
 
       {/* Programme Status Card */}
       {d.programme_status && (

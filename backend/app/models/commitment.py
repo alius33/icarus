@@ -22,7 +22,7 @@ class Commitment(Base):
     condition = Column(String, nullable=True)
     linked_action_id = Column(
         Integer,
-        ForeignKey("action_items.id", ondelete="SET NULL"),
+        ForeignKey("tasks.id", ondelete="SET NULL"),
         nullable=True,
     )
     status = Column(String, nullable=False, default="pending")  # pending | fulfilled | broken | formalised | conditional

@@ -1,6 +1,6 @@
 # Decision Log
 
-Last updated: 2026-03-09 (all transcripts through 6 March processed)
+Last updated: 2026-03-10 (all transcripts through 10 March processed)
 
 Decisions are listed chronologically. Each entry includes context and rationale where available.
 
@@ -45,3 +45,7 @@ Decisions are listed chronologically. Each entry includes context and rationale 
 | 35 | 4 Mar | Azmain reports to Diana | New reporting line. Diana (not Stacy as Natalia originally considered) becomes Azmain's manager. Supportive of Friday development. | Natalia, Diana |
 | 36 | 4 Mar | Build in Five demo shifted from March 21 to May | Exceedance event is in May, content due April. Richard: "timelines may not work." Martin to summarise demo approach for Ben. | Richard, Martin |
 | 37 | 6 Mar | Gainsight architecture alignment meeting planned | Meeting with Gainsight team (Tina Palumbo, Nadim, Rajesh) scheduled for next Thursday. Catherine offered governance help. Also pushing for Salesforce programmatic access. | Azmain, Catherine |
+| 38 | 10 Mar | Idris given dedicated time for AI programme work | Ben Brooks approved. Idris to focus on TSR automation and become the AI champion back to the risk advisory team. | Ben Brooks, Richard |
+| 39 | 10 Mar | TSR automation treated as a proper scoped project | Not just a side experiment — Azmain to help define plan and scope. Team to support. | Richard, Azmain, Idris |
+| 40 | 10 Mar | Navigator MCP server integration is Build in Five's top priority | Must be plugged into Martin's dashboard builder before exceedance to complete the live demo loop. | Richard, Martin |
+| 41 | 10 Mar | Build in Five stakeholder cascade defined | Sequence: MCP integration → tech consulting team → demo team (Bibo/Gibson) → sales (Flemington) → exceedance content factory | Richard, Azmain |

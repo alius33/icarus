@@ -19,7 +19,7 @@ If you this Markdown file, it's basically the whole plan. And then whichever Exc
 Speaker 1  2:23  
 So let me show you hold on, because I think the I didn't have edit right instead of your file because it was on your drive, so I saved and created a copy, okay, but let me see if I can open up a version of mine and send it to you, and then you can like to be honest, right? Whether you're whether you're using it on yours or mine doesn't, it's not as relevant. The main thing is that if we have some data in Excel, that's the portable mechanism between whether it's AWS or Azure or whatever, we can then just say to whatever environment. Okay, guys, I want you to essentially update this, so let me bring this up.
 
-Unknown Speaker  3:18  
+Ben Brooks  3:18  
 So let me save a copy of This and send it to you to
 
 Azmain Hossain  3:43  

@@ -123,7 +123,10 @@ async def _rebuild_mentions_for_transcript(
 
 
 async def process_uploaded_transcript(
-    filename: str, content_bytes: bytes, db: AsyncSession
+    filename: str,
+    content_bytes: bytes,
+    db: AsyncSession,
+    primary_project_id: int | None = None,
 ) -> dict:
     """Process a single uploaded transcript file.
 
@@ -162,6 +165,11 @@ async def process_uploaded_transcript(
 
     if existing:
         if existing.file_hash == file_hash:
+            # Even if content unchanged, update project if provided
+            if primary_project_id is not None and existing.primary_project_id != primary_project_id:
+                existing.primary_project_id = primary_project_id
+                await db.flush()
+                await db.commit()
             return {
                 "status": "skipped",
                 "id": existing.id,
@@ -177,6 +185,8 @@ async def process_uploaded_transcript(
         existing.file_hash = file_hash
         existing.source_file = f"Transcripts/{filename}"
         existing.updated_at = datetime.utcnow()
+        if primary_project_id is not None:
+            existing.primary_project_id = primary_project_id
         await db.flush()
 
         # Rebuild mentions for this transcript
@@ -198,6 +208,7 @@ async def process_uploaded_transcript(
             content=content,
             word_count=word_count,
             participants=participants,
+            primary_project_id=primary_project_id,
             source_file=f"Transcripts/{filename}",
             file_hash=file_hash,
         )

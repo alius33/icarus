@@ -1,0 +1,207 @@
+Richard Dosoo  0:00  
+I was like, give us all Claude and pro Max subscriptions for six months, right? And that's like, we've done that in almost one more just with the bedrock experiment,
+
+Azmain Hossain  0:08  
+like six months for one person, and that's in 10 days. I One of the things that I kept telling Dutch Ben, you know, with his virtual environment idea that he's got, I'm just like, we need to manager. Ben needs to feel the pain. Because right now it's, it's not a priority for him. He's like, I'll just do the work. It needs to be like, with beers. Like, did you really spend 10 grand in one month? And he'll be like, Oh, how do we reduce this? Yeah, it was here.
+
+Speaker 1  0:38  
+Hey, Idris, how are you slumber.
+
+Richard Dosoo  0:47  
+Yeah, no, this is it the, I think his headsets, not in interest in heroes,
+
+Azmain Hossain  0:58  
+testing, testing, I
+
+Speaker 1  1:08  
+know, it reads, can you hear us,
+
+Idris  1:09  
+yeah, we can hear you now. Can you hear us, yeah, I can hear you guys.
+
+Speaker 1  1:12  
+Yeah, awesome. How's it going?
+
+Idris  1:16  
+Yeah, good, good, busy, but all good,
+
+Richard Dosoo  1:19  
+cool, cool. Now, well, this, this one, take up too much time. It was really just following up for couple conversations I had, like, over the past couple of weeks. You know this thread that Ben has got about TS alternation, right? It's like, like, I told you, God, you know, I want the team do more. They're not blah blah. Just like, complain again, angry, and I said to him, look like, anyway, long story short, I said to him, Look, Idris is the guy. Yeah, he's showing the most like, aptitude and forward thinking about this problem. He just needed more support, right? And more help to get it done, because he's doing all the day job stuff and this at the same time. And I was like, how, like, would you give Idris time to do this properly, like, as, like, more dedicated time, like, as part of his remit in it, rather than than just something that gets to do on the side. And Ben was like, Yeah, of course. And I was like, the reason, obviously, I just wanted to bring you in is because obviously we know you're in it. So more broadly, like me and Azmain are doing this kind of work in relation to, about IRP adoption, and we're basically looking at Jedi and how it can help improve certain internal processes, certain go to market activities, and the tsrps that the the TSR piece that you're looking at is like just one project that the risk and advisory team would look at, but it's probably more right. So the idea of what we were planning for doing is like, obviously you could look at that piece, learn what we're doing more generally on a general programme, and then take that knowledge back with you to the advisory team and show them. Hey guys, this is how these are the latest. This is how we're using generali to do this. This is how we're using agents to do this. This is how we're using models to do this. So it's more like a not secondment, but a kind of like project that lets you focus dedicated on the tooling and the latest models and the latest software. And then you can take that knowledge back to like Philip and M and Ana and whoever, and be like guys I've now gone away and learn how to do things the right way with the best tech. And let me show you guys how to do this. Okay, yeah, so that was the background, but I wanted to obviously talk you through it, get your feedback, see if you're up for that, and if you are then,
+
+Idris  3:32  
+yeah, I think a few of our projects are finishing up, so
+
+Richard Dosoo  3:40  
+because what we can do then is the TSR work like, I think the first thing that we want to do is like, give give you some brain space to think about how to do it. And I set that full up today, Azmain, let me add you to that as well right now.
+
+Richard Dosoo  4:01  
+Oh, no, Azmain, you're already on it the TSR agent testing.
+
+Richard Dosoo  4:10  
+No, no, no, it's cool. So that that's that's the first check in where we can basically have a chat with Philip and M, get their feedback, and then Idris, I can tell them that Ben has given the green light for you to do this, like, more time, full time, and then, and then, once we have that, then, then we can, you can work Azmain on, like, what would you need, like, from a plan perspective, to get it done? Like, what all the things you want to test, you know, we need to maybe get you access to more Claude credits or cursor credits, right? Because 500 bucks a month may not be enough to do all the testing. Help you set out a test plan all that sort of stuff. Sorry, guys, I'm doing about five things at once. Ben is honoured me about something else in the background. So I'm slightly disrupted, but more I guess, directionally, address that was the goal, right to. One give you a bit more time to focus on the TSR alteration piece, but also to learn the technology and learn what tools we're using on our side. Do that with some dedicated time and effort, and then you will be the person that goes back into the risk advisory team and tells them, guys, this is the new way we're doing stuff. So
+
+Idris  5:36  
+you? Okay, that's
+
+Richard Dosoo  5:50  
+um, so then if you're cool, you just if you're open to it, bro, what I need to do, there's a couple of things, like onboard you and get you enabled right? So we need to get you access to the Claude code. We need to get you access to our AWS environment. We need to Azmain. Probably needs to just sit down and spend some time with you about a TSR process and understand like, what the project is. So you can help you define a project plan and a scope and such, and then, and then we'll run it that Azmain will support you like a proper project, right? And that project will may have you, it may have me helping you, may have Ben Van Houten, may have a lot of us in it, but that's the point. You guys are going to define the project, and then we're going to decide how we help them.
+
+Idris  6:51  
+Okay, first, okay.
+
+Richard Dosoo  7:08  
+So let's, let's do this. Then it just maybe like, so first things first, I'm going to get the written okay from Ben, and then I'll drop a note to let him know that this, you're going to be spending a bit more time on this, and then it's probably then, after we've got that, after today's meeting, then you and Azmain can connect on like, like, because Azmain Hasn't, doesn't know as much about the TSR process because he's hasn't really been involved in it. But once you go through with it over him, or go over it with him, that will give him the context he needs to help you come up with a project plan. Yeah. So that was, that's, that's basically the reason behind it. Sorry, as I said, I'm rushing through this, not probably making a lot of sense, but there's that high level interest. Does it make sense? Like, the ask, like, what? What the like, the reason why we're doing what we're doing, if that much, yeah, and it's not too different. Well, it's no it's no different than what you're doing already. It's just you get more time to do it and you get access to the latest tooling to do.
+
+Speaker 2  8:09  
+That's it. Yeah,
+
+Richard Dosoo  8:13  
+that's it. Man, so that's all. That's it. Man, just wanted to, I wanted to try and create opportunity for manning to work, and get opportunity to do things that are fun and that, and that's, that's basically what this is about. Yeah, that sounds good. Cool, man. All right, so let's do this. Then, in terms of next steps, let me drop Ben a note. Now get because he, you know what Ben's like in it, he'll say one thing, and then you gotta pin him to the wall on innit, so he's concrete, so let me do that now and then. And then I'll drop a note to honour on I'll call him in it, because I know he's gonna have something to say about it. But I'll call him on teams in it and tell him, and then after that, throw them a good after you have the meetings afternoon. Alright, that was good, Azmain. Do you have, I know you haven't really seen much TSR projects before, right? Has your project managed? Any of them? Interest? Is it worth just giving Azmain a small primer, just while I chat to Ben about what the TSR project is?
+
+Azmain Hossain  9:18  
+Yeah, just, just just give me, like, a brain dump, if you've, if you've got a few minutes now,
+
+Idris  9:24  
+of what the TSRs, yeah.
+
+Azmain Hossain  9:27  
+Like, firstly, what does it stand for? Like, literally, just talk to me like I'm a small child or a cute puppy.
+
+Idris  9:36  
+Okay, well, we call it TSRs, but basically it stands for Transaction Summary Reports. Essentially all the cat bonds that come into the market, we remodel them, and we kind of summarise the deals, kind of how, like the rating side would do it. They'll rate the bonds and give them metrics, give them like we'll give them a ratings. We would do the same thing, but essentially some. The deal important information that we think investors should look out for, and then also give our remodelled view of risk. So I guess our numbered, numbered metrics, or numbered ratings, if you want. And yeah, so DSR is basically something that we would do for that for every deal that comes to the market. And there's different structure, different power regions being modelled every time. So like, the template is more or less similar, or like consistent, but then the actual information going into each one will depend on the deal. For example, you have some deals that come in every year. So for example, the structure will be exactly the same. The information we put in those TSRs will be the same. It's just the numbers will be updated. And then there's some deals which will have, like, more emphasis on, I don't know, the actual structure of the deal, rather than an actual risk analysis part of the deal. So each TSR is a bit different, but there's a consistent structure, a consistent like, different, how you say different categories that we would put in there.
+
+Azmain Hossain  11:14  
+So I think, all right, I've just realised a big gap in my knowledge, which is, I don't understand how the cat bonds themselves work, because everything you just told me is dependent on understanding how cat bonds work. Who would who could explain it to me in a simple way? Because I don't want to, I don't want to dump everything on you honestly.
+
+Idris  11:39  
+Chat. GPT, I found was to be pretty useful in literally, saying, like, how does the cat bond work?
+
+Azmain Hossain  11:46  
+But then how do I understand? Like, what, what do we do? Like, I keep seeing all these cat bond projects, and I was, I was, yeah, with Arno, where he was going over our ILS projects yesterday, and now one of the other projects that I have is Diana, who's, like, managing and kind of overview of all these ILS projects. She's like, I hate this Excel file that are no uses. You can't do resource planning, nothing. I need a platform to build to, like, manage all of this. And I've built it, but I don't understand how it works. Like, what do we do as companies to make money. Yes.
+
+Idris  12:21  
+So basically we do, we do two different things. So we do one side, which is the TSR side, and one side which is probably the side you were talking about, like the Arno, this is the project side, the issuing side. So the issuing side, those are like the kind of like one to like three month projects where we get, like full exposure data, and we essentially just model the bond and we give it like the proper ratings, and we do all different type of exhibits, like lost by counties, lost by historical store and stuff like that. So that's like the full on cat bond projects, where we model the cat bond and we help the brokers and the students put a cab on to the market. So that's probably the cab on dashboard you're talking
+
+Richard Dosoo  13:08  
+about, sorry, Idris, you guys are using the RM APIs to automate all that process today,
+
+Idris  13:14  
+right? Yes, we use a resisting link now.
+
+Speaker 1  13:18  
+Yeah, no, exactly. So this is it, really.
+
+Azmain Hossain  13:22  
+I even know risk data lake was related to the work on cap bonds,
+
+Idris  13:27  
+yeah? Because now
+
+Speaker 1  13:28  
+you do all the modelling and reporting in one spot, right?
+
+Idris  13:31  
+Yeah, exactly. So basically, a lot of these exhibits, they're very recurrent from deal to deal. They'll change a few here and there, but, like a lot of them, are consistent, because the investors are used to seeing the same type of exhibits. So we just do a script and just like, have it on RDL and just change the input. We it's not as straightforward. We have to do a bit more faffing about but yeah, so it's most of it is on it's on RDL. So that's the issue inside. So that's the dashboard you're talking about, and then the other side, the TSR side, that's the RE characterization. So that's when that's m, that's what M works on. So that's essentially when we
+
+Azmain Hossain  14:11  
+don't Emily Walton, no,
+
+Speaker 1  14:20  
+the job, like that. M school, man, just go.
+
+Idris  14:26  
+And so, yeah, so basically, it's when we don't when we are in the main issue, like we would do, like on the I said, the ILS project Arno side, when, for example, risk is the issue. The investors, they want a second view of risk. And so we do, like a short remodelling, which takes like two to five days to three days. So that's why we created TSRs based off this kind of Yeah. It's to help investors get a better sense of the deal and our view of risk without us doing the full project from the get go. Okay?
+
+Azmain Hossain  15:00  
+Yeah, okay, I think that's enough. Yeah, yeah. If I put all this into Claude and be like, This is what we do. Can you explain everything? Like, what the hell is it just talking about? It'll, it'll explain it to me. So thank you. Yeah, okay, man, I'm, yeah, I'm glad I built an entire command centre for myself to manage this AI stuff, because it's growing now this TSR thing like rich, we've got the Dan Flemington stuff that we're doing with Juliet now Idris is going to come in. Obviously, there's stuff in TSR that can be improved, enhanced. Yeah, I just, I want to be able to the
+
+Richard Dosoo  15:41  
+big thing, the TSR, where the tech comes in, right? Why? Why? Why is it even a project that we're looking at is right now, the guys had, like, manual, well, so many automated processes that took a document that was a PDF file, and they need to take pieces out of the document and turn it into structured data format. And, you know, 545, years ago, you had OCR that could do it, but it wasn't really reliable. Idris has already used cursor to build out some better Python logic to do that scrape, which is great, but there's an opportunity to improve that even more, because the llms are even better right at reading documents than OCR or some handcrafted Python code. And that's basically the scope project that Idris is going to do. He's going to take some he's going to take the work he's already done, and we give him the air cover and the time to spend more time looking at it, and he's going to build, like agents, multiple agents, right, that can analyse historical catalogue of deals, of like, 120 deals, and come up, basically a self improving agent that learns right over the time, amount of times it's done, analyse these deals and improves its logic over the over the course of the deal. So if it does that over 125 transactions that were run last year, when the thing comes in this year, it's had 125 times to learn right and improve its process. That's the whole point. That's really why not just to do and that's why that's why, that's the technology angle. That's why
+
+Azmain Hossain  17:05  
+this is fantastic, because I'm literally building that model, not for this, but a recursive, backdating training model for my transcripts. Because, yeah, because, you know, I try and identify as many speakers as I can, but there's always people that are not so Idris, if you're doing regression back testing with with agents that learn with every single past thingy. Yeah, I'm literally building it for another use case so I can help out.
+
+Richard Dosoo  17:36  
+And what I did, I just was it Philips created a skill, which is great. Let's review it this afternoon. But I also created some skills, right? You know what a skill is, right? Interesting. Yeah, you explained it previously, I think, yeah. And exactly. So I created a skill that basically took your code, turn it into a skill, and made it self improving so it would. And I basically got Claude to write out how you could run it. So what? But I don't want to. I want Philip to show what he's doing. First, get everyone online that you're going to work on the project. Then I can give you that skill, and then you can run it with this.
+
+Azmain Hossain  18:12  
+We should also add interest. We should make like, an Instagram group rich, because like WhatsApp. No, no, I'm like, sending everything to WhatsApp is a pain in the ass. We need just, just an Instagram group that we get because that interest meant, that's how we're learning this shit. Just through Instagram. We just watch something. We're like, fuck, let's try that
+
+Richard Dosoo  18:35  
+on Instagram. Send, introduce the memes that sometimes the Muslim tick tock memes, then the other ones, like the football one, so, but I've been trying to keep it like semi professional and not I sent Azmain everything, right? He gets inundated with all the memes that sending him.
+
+Azmain Hossain  18:50  
+So if you, if you add, if I get involved, it's not gonna stay suitable for work, like the first memo, like, super unprofessional. It's, it's fine, but it means that we can, we can all have the common shared knowledge, where I don't have to, because these these concepts are getting, you know, every day, Africa is releasing new stuff. Everyone is releasing new stuff. There's popping up. It's really difficult to explain this stuff, and even if I understand it because I can't explain it. So being able to share the same thing that I watched, to learn it to you and be like, Oh, check that reel. Let's try that. Yeah, it just makes it so much easier.
+
+Richard Dosoo  19:32  
+And Azmain, where we actually need to the other projects that we do, and about the console in an AI platform, the backlog of skills right? That we need to create like this needs to go into that backlog we you've got a list of about 30 that you already created, but we need to continually update that list of stuff like this and other skills that will be helpful along the way. But that's I think, once we clear the hump with Clara, with Chris and me and Nico, yeah, and then we. Move on to the other project, which is a Salesforce integration. And then we'll do that next, and then we can start really padding out that live.
+
+Azmain Hossain  20:07  
+Okay, this is okay. So the Salesforce integration should be another project that I should track.
+
+Richard Dosoo  20:12  
+Okay, yeah, that's that one. You already have it, right? It's part of the programme that we've already set up. We just haven't
+
+Azmain Hossain  20:20  
+started it. No, it's not, it's not part of the programme, because there's like, like, currently the programme is Clara building five, IRP Navigator, and then adoption charters have been folded into Clara. Solution blueprints have been folded into Clara. It's this middle one,
+
+Speaker 1  20:44  
+you know, this middle one, right?
+
+Azmain Hossain  20:47  
+Oh, okay, yeah, sorry, yeah, but we haven't
+
+Richard Dosoo  20:51  
+got, we haven't started yet, because we've been doing this and getting some of this going. But this will be the one that Nicole and Christopher will do once they've cleared Clara Butler,
+
+Azmain Hossain  21:02  
+okay, yeah, you're right. I haven't, I haven't the brain space to think about these, yeah, the CS, Agent sales, it's on my radar. But what I need to chat like IRP, navigator, I understand the the l1 tickets being analysed. What is intelligence anywhere? API, could you remind me?
+
+Richard Dosoo  21:24  
+Yeah, so that was sorry I drew so pivoting slightly. Just give me a second so you remember, right? Bernard was like, I need to build an agent that reads ticket information to analyse customer sentiment. And Courtney also wants to do the same thing, right? And now
+
+Azmain Hossain  21:42  
+we thought we had with Courtney about user voice, right? Exactly.
+
+Richard Dosoo  21:46  
+Now we thought right that sales recon was going to give us an API that gave all that information. Bernard went and tested sales recon and found out that one, the data is no good to the API doesn't exist. So we need to build out that data pipeline ourselves, and that's why I put together that document last night, right to send out to, yeah, the Salesforce integration. That's like the first step of it, basically.
+
+Azmain Hossain  22:10  
+I mean, may once we get Salesforce integration, it affects so many other things. But in, sorry, in my head, the user voice thing was for the What's for the ticketing analysis for l1 but that's for IRP navigator. And I don't really even understand what IRP Navigator is.
+
+Richard Dosoo  22:30  
+Yeah, no, so it's they relate. Basically, IRP Navigator is like a tool that the product team have built that essentially is an LLM on top of all of our API specs and our documentation, and they can do code Gen and and help you develop like something right whereas right now you just go to an API documentation portal where it doesn't give you an execution platform. It just creates the platform code and gives it to you. You've got to pick it
+
+Azmain Hossain  22:58  
+up and run it somewhere else. Okay, okay, I understand now, what is that's okay. So when tickets come in and AI needs to analyse it, it can use the IRP navigator to read through all the documents. Okay, okay, I got it exactly, exactly.
+
+Richard Dosoo  23:12  
+So right now, the navigator itself is just the tool that gives you the code there's it's not embedded in any workflow to answer l1 tickets, and that's what we're gonna
+
+Azmain Hossain  23:23  
+and then have you got any idea what's happening with the customer success agent that Kevin Pern was working on? Like, is that now Bernard doing stuff on it?
+
+Richard Dosoo  23:34  
+We we need to follow up with Kevin, right? Because some of the things that Kevin wanted have been folded into Clara, some of the things that Kevin wants, Bernard also wants, like Courtney also wants. So we need to bring all of those guys together under this project and then, and then figure out how we're going to execute. But the first is going to be the call with a Salesforce team on Thursday.
+
+Azmain Hossain  23:56  
+Yeah, yeah, that's, that's the big blocker. Cool. No, thank you. Thanks for, thanks for running it through with me.
+
+Speaker 1  24:06  
+No, no, we'll get all good.
+
+Azmain Hossain  24:08  
+So, yeah, sorry, you won't have to worry about all this complicated stuff. But mate, one of the one thing I'll I'll tell you, like, if you're, if you're working on project that that I'm managing, is like my philosophy is full air cover for you guys to be able to work on stuff, any anything you've got, if people are being annoying or trying to take credit for your work or trying to push you off, it just just come to me, and then I'll go fight that stuff. I come from the total wolf School of Management, which is emotional security at all cost. If you can make people feel secure, they'll do amazing work. Very good.
+
+Richard Dosoo  24:50  
+Alright, cool, man. No, that's me. Thanks for that. Alright, so Idris, I think we're, I'll send you the skill and stuff anyway, just so you can see it. But I didn't want Philip to feel like I'm i. Like not listening to what he's saying or encroaching in it. That's why I want him to to talk through what he's done, and then we can talk about how you'll take that forward, and then then, then I can hand you the score from there, and you figure out how to run.
+
+Idris  25:12  
+Yeah? All
+
+Richard Dosoo  25:15  
+right. Cheers, bro guys. I'm gonna let you guys go now, but I'll catch you more up in the afternoon.
+
+Azmain Hossain  25:20  
+Yeah. All right, that's good. Thanks, guys.
+

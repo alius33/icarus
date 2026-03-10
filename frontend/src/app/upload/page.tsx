@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import Link from "next/link";
-import { Upload, X, FileText, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { Upload, X, FileText, CheckCircle2, AlertCircle, Loader2, FolderOpen } from "lucide-react";
 import { api } from "@/lib/api";
+import type { ProjectBase } from "@/lib/types";
 
 interface UploadResult {
   status: "inserted" | "updated" | "skipped" | "error";
@@ -21,11 +22,18 @@ interface UploadResponse {
 
 export default function UploadPage() {
   const [files, setFiles] = useState<File[]>([]);
+  const [projectAssignments, setProjectAssignments] = useState<Record<string, number | null>>({});
+  const [projects, setProjects] = useState<ProjectBase[]>([]);
   const [uploading, setUploading] = useState(false);
   const [response, setResponse] = useState<UploadResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [dragActive, setDragActive] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Fetch projects on mount
+  useEffect(() => {
+    api.getProjects().then(setProjects).catch(() => {});
+  }, []);
 
   const addFiles = useCallback((newFiles: FileList | File[]) => {
     const txtFiles = Array.from(newFiles).filter((f) =>
@@ -33,7 +41,6 @@ export default function UploadPage() {
     );
     if (txtFiles.length === 0) return;
     setFiles((prev) => {
-      // Deduplicate by filename
       const existing = new Set(prev.map((f) => f.name));
       const unique = txtFiles.filter((f) => !existing.has(f.name));
       return [...prev, ...unique];
@@ -44,6 +51,11 @@ export default function UploadPage() {
 
   const removeFile = useCallback((name: string) => {
     setFiles((prev) => prev.filter((f) => f.name !== name));
+    setProjectAssignments((prev) => {
+      const next = { ...prev };
+      delete next[name];
+      return next;
+    });
   }, []);
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
@@ -77,9 +89,15 @@ export default function UploadPage() {
     setResponse(null);
 
     try {
-      const result = await api.uploadTranscripts(files);
+      const projectIds = files.map((f) => projectAssignments[f.name] || null);
+      const hasAnyProject = projectIds.some((id) => id !== null);
+      const result = await api.uploadTranscripts(
+        files,
+        hasAnyProject ? projectIds : undefined,
+      );
       setResponse(result);
       setFiles([]);
+      setProjectAssignments({});
     } catch (err) {
       setError(err instanceof Error ? err.message : "Upload failed");
     } finally {
@@ -116,6 +134,8 @@ export default function UploadPage() {
         return status;
     }
   };
+
+  const sortedProjects = [...projects].sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <div className="space-y-6">
@@ -171,7 +191,7 @@ export default function UploadPage() {
         />
       </div>
 
-      {/* File list */}
+      {/* File list with project assignment */}
       {files.length > 0 && (
         <div className="rounded-lg border border-gray-200 bg-white shadow-sm">
           <div className="flex items-center justify-between border-b border-gray-200 px-4 py-3">
@@ -179,7 +199,7 @@ export default function UploadPage() {
               {files.length} file{files.length !== 1 ? "s" : ""} selected
             </h3>
             <button
-              onClick={() => setFiles([])}
+              onClick={() => { setFiles([]); setProjectAssignments({}); }}
               className="text-xs text-gray-500 hover:text-gray-700"
             >
               Clear all
@@ -189,20 +209,41 @@ export default function UploadPage() {
             {files.map((file) => (
               <li
                 key={file.name}
-                className="flex items-center justify-between px-4 py-2.5"
+                className="flex items-center gap-3 px-4 py-2.5"
               >
-                <div className="flex items-center gap-2 min-w-0">
-                  <FileText className="h-4 w-4 flex-shrink-0 text-gray-400" />
-                  <span className="text-sm text-gray-700 truncate">
+                <FileText className="h-4 w-4 flex-shrink-0 text-gray-400" />
+                <div className="min-w-0 flex-1">
+                  <span className="text-sm text-gray-700 truncate block">
                     {file.name}
                   </span>
-                  <span className="text-xs text-gray-400 flex-shrink-0">
+                  <span className="text-xs text-gray-400">
                     {(file.size / 1024).toFixed(0)} KB
                   </span>
                 </div>
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <FolderOpen className="h-3.5 w-3.5 text-gray-400" />
+                  <select
+                    value={projectAssignments[file.name] ?? ""}
+                    onChange={(e) => {
+                      const val = e.target.value ? Number(e.target.value) : null;
+                      setProjectAssignments((prev) => ({
+                        ...prev,
+                        [file.name]: val,
+                      }));
+                    }}
+                    className="text-xs border border-gray-200 rounded-md px-2 py-1 text-gray-700 bg-white focus:border-blue-400 focus:ring-1 focus:ring-blue-400 focus:outline-none min-w-[180px]"
+                  >
+                    <option value="">Select project...</option>
+                    {sortedProjects.map((p) => (
+                      <option key={p.id} value={p.id}>
+                        {p.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
                 <button
                   onClick={() => removeFile(file.name)}
-                  className="ml-2 text-gray-400 hover:text-red-500"
+                  className="ml-1 text-gray-400 hover:text-red-500"
                 >
                   <X className="h-4 w-4" />
                 </button>

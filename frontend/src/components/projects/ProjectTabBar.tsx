@@ -4,16 +4,27 @@ import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 
-const TABS = [
+interface TabDef {
+  key: string;
+  label: string;
+  countKey?: string;
+}
+
+const TABS: TabDef[] = [
   { key: "overview", label: "Overview" },
-  { key: "decisions", label: "Decisions" },
-  { key: "actions", label: "Actions" },
-  { key: "threads", label: "Threads" },
-] as const;
+  { key: "tasks", label: "Tasks", countKey: "action_count" },
+  { key: "decisions", label: "Decisions", countKey: "decision_count" },
+  { key: "threads", label: "Threads", countKey: "open_thread_count" },
+  { key: "summaries", label: "Summaries", countKey: "transcript_count" },
+];
 
-export type TabKey = (typeof TABS)[number]["key"];
+export type TabKey = "overview" | "tasks" | "decisions" | "threads" | "summaries";
 
-export default function ProjectTabBar() {
+interface Props {
+  counts?: Record<string, number>;
+}
+
+export default function ProjectTabBar({ counts }: Props) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const activeTab = (searchParams.get("tab") as TabKey) || "overview";
@@ -23,18 +34,31 @@ export default function ProjectTabBar() {
       <nav className="-mb-px flex space-x-6 px-6" aria-label="Tabs">
         {TABS.map((tab) => {
           const isActive = activeTab === tab.key;
+          const count = tab.countKey && counts ? counts[tab.countKey] : undefined;
           return (
             <Link
               key={tab.key}
               href={`${pathname}?tab=${tab.key}`}
               className={cn(
-                "whitespace-nowrap border-b-2 py-3 text-sm font-medium transition-colors",
+                "whitespace-nowrap border-b-2 py-3 text-sm font-medium transition-colors flex items-center gap-1.5",
                 isActive
                   ? "border-blue-600 text-blue-600"
                   : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
               )}
             >
               {tab.label}
+              {count !== undefined && count > 0 && (
+                <span
+                  className={cn(
+                    "rounded-full px-1.5 py-0.5 text-[10px] font-semibold tabular-nums",
+                    isActive
+                      ? "bg-blue-100 text-blue-700"
+                      : "bg-gray-100 text-gray-500",
+                  )}
+                >
+                  {count}
+                </span>
+              )}
             </Link>
           );
         })}

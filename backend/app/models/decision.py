@@ -18,6 +18,7 @@ class Decision(Base):
     workstream_id = Column(Integer, ForeignKey("workstreams.id"), nullable=True)
     search_vector = Column(TSVECTOR)
     execution_status = Column(String, default="made")  # made | in_progress | implemented | reversed | superseded
+    position = Column(Integer, nullable=False, default=0)
     is_manual = Column(Boolean, nullable=False, default=False)
     source_file = Column(String, nullable=False, default="context/decisions.md")
     file_hash = Column(String, nullable=False, default="")
@@ -26,5 +27,6 @@ class Decision(Base):
 
     __table_args__ = (
         Index("idx_decisions_date", "decision_date"),
+        Index("idx_decisions_position", "position"),
         Index("idx_decisions_search", "search_vector", postgresql_using="gin"),
     )
