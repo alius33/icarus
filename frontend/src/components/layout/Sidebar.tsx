@@ -216,6 +216,7 @@ function NavLink({
   return (
     <Link
       href={item.href}
+      aria-current={isActive ? "page" : undefined}
       className={cn(
         "flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors",
         indent && "ml-4",
@@ -234,7 +235,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="fixed inset-y-0 left-0 z-50 flex w-64 flex-col bg-gray-900">
+    <aside className="fixed inset-y-0 left-0 z-50 flex w-64 flex-col bg-gray-900" role="navigation" aria-label="Main navigation">
       {/* Logo / Title */}
       <div className="flex h-16 items-center border-b border-gray-800 px-6">
         <span className="text-lg font-bold tracking-widest text-white">

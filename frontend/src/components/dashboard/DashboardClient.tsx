@@ -4,6 +4,7 @@ import { useEffect, useState, Suspense } from "react";
 import { DashboardProvider, useDashboardDispatch } from "./DashboardContext";
 import { useDashboardData } from "./hooks/useDashboardData";
 import { useDashboardFilters } from "./hooks/useDashboardFilters";
+import { useKeyboardShortcuts } from "./hooks/useKeyboardShortcuts";
 import SectionErrorBoundary from "./SectionErrorBoundary";
 import ProgrammeStatusCard from "./ProgrammeStatusCard";
 import DashboardHeader from "./DashboardHeader";
@@ -199,6 +200,14 @@ function DashboardInner({ initialData }: Props) {
       setDeleting(false);
     }
   };
+
+  // Keyboard shortcuts (/ for search, 1/2/3 for tabs, Escape to close modal)
+  useKeyboardShortcuts({
+    onEscape: () => setModalOpen(false),
+    onSearch: () => router.push("/search"),
+    onTabSwitch: (tab) => dispatch({ type: "SET_TAB", payload: tab }),
+    enabled: !modalOpen,
+  });
 
   // Initialize data and filters
   useEffect(() => {

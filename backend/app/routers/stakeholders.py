@@ -27,19 +27,29 @@ async def list_stakeholders(
     result = await db.execute(query.order_by(Stakeholder.tier, Stakeholder.name))
     stakeholders = result.scalars().all()
 
-    items = []
-    for s in stakeholders:
-        mc = await db.execute(
-            select(func.coalesce(func.sum(TranscriptMention.mention_count), 0))
-            .where(TranscriptMention.stakeholder_id == s.id)
+    # Batch fetch mention counts in a single query (avoids N+1)
+    sids = [s.id for s in stakeholders]
+    mention_map: dict[int, int] = {}
+    if sids:
+        mc_result = await db.execute(
+            select(
+                TranscriptMention.stakeholder_id,
+                func.coalesce(func.sum(TranscriptMention.mention_count), 0),
+            )
+            .where(TranscriptMention.stakeholder_id.in_(sids))
+            .group_by(TranscriptMention.stakeholder_id)
         )
-        items.append(StakeholderBase(
+        mention_map = dict(mc_result.all())
+
+    return [
+        StakeholderBase(
             id=s.id, name=s.name, role=s.role, organisation=None,
-            tier=s.tier, mention_count=mc.scalar_one(),
+            tier=s.tier, mention_count=mention_map.get(s.id, 0),
             risk_level=s.risk_level, morale_notes=s.morale_notes,
             is_manual=s.is_manual,
-        ))
-    return items
+        )
+        for s in stakeholders
+    ]
 
 
 @router.get("/stakeholders/{stakeholder_id}", response_model=StakeholderDetail)

@@ -87,7 +87,16 @@ async function fetchApi<T>(
     });
   }
   const res = await fetch(url.toString(), { cache: "no-store" });
-  if (!res.ok) throw new Error(`API error: ${res.status}`);
+  if (!res.ok) {
+    let detail = `API error: ${res.status}`;
+    try {
+      const body = await res.json();
+      if (body.detail) detail = typeof body.detail === "string" ? body.detail : JSON.stringify(body.detail);
+    } catch {
+      // ignore parse errors
+    }
+    throw new Error(detail);
+  }
   return res.json();
 }
 

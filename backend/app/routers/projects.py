@@ -255,7 +255,7 @@ async def get_project_hub(project_id: int, db: AsyncSession = Depends(get_db)):
         )
         open_threads = [_thread_schema(t) for t in ot_result.scalars().all()]
 
-    # Fetch stakeholders
+    # Fetch stakeholders (batch mention counts to avoid N+1)
     stakeholder_ids = links_by_type.get("stakeholder", [])
     stakeholders: list[StakeholderBase] = []
     if stakeholder_ids:
@@ -263,8 +263,22 @@ async def get_project_hub(project_id: int, db: AsyncSession = Depends(get_db)):
             select(Stakeholder).where(Stakeholder.id.in_(stakeholder_ids))
             .order_by(Stakeholder.tier, Stakeholder.name)
         )
+        sh_list = sh_result.scalars().all()
+        mc_result = await db.execute(
+            select(
+                TranscriptMention.stakeholder_id,
+                func.coalesce(func.sum(TranscriptMention.mention_count), 0),
+            )
+            .where(TranscriptMention.stakeholder_id.in_(stakeholder_ids))
+            .group_by(TranscriptMention.stakeholder_id)
+        )
+        mc_map = dict(mc_result.all())
         stakeholders = [
-            await _stakeholder_base(s, db) for s in sh_result.scalars().all()
+            StakeholderBase(
+                id=s.id, name=s.name, role=s.role, organisation=None,
+                tier=s.tier, mention_count=mc_map.get(s.id, 0),
+            )
+            for s in sh_list
         ]
 
     return ProjectHub(

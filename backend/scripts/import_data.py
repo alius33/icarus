@@ -27,11 +27,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from app.models import (
     ActionItem,
+    Commitment,
     Decision,
     DeletedImport,
     Document,
     GlossaryEntry,
     OpenThread,
+    SentimentSignal,
     Stakeholder,
     Summary,
     Transcript,
@@ -47,6 +49,8 @@ from scripts.parsers.open_thread_parser import parse_open_threads
 from scripts.parsers.stakeholder_parser import parse_stakeholders
 from scripts.parsers.transcript_parser import parse_transcript
 from scripts.parsers.workstream_parser import parse_workstreams
+from scripts.parsers.sentiment_parser import parse_sentiments
+from scripts.parsers.commitment_parser import parse_commitments
 
 
 def _compute_file_hash(filepath: Path) -> str:
@@ -981,6 +985,96 @@ async def build_transcript_mentions(
     return stats
 
 
+async def import_sentiments(
+    session: AsyncSession, root: Path, verbose: bool = False,
+) -> dict:
+    """Import sentiment signals from analysis/trackers/sentiment_tracker.md."""
+    stats = {"inserted": 0, "skipped": 0, "errors": 0}
+    filepath = root / "analysis" / "trackers" / "sentiment_tracker.md"
+    if not filepath.exists():
+        _log("No sentiment tracker file found, skipping", verbose)
+        return stats
+
+    content = filepath.read_text(encoding="utf-8")
+    parsed = parse_sentiments(content)
+    _log(f"Parsed {len(parsed)} sentiment entries", verbose)
+
+    # Build stakeholder name->id map
+    result = await session.execute(select(Stakeholder.id, Stakeholder.name))
+    name_map = {row.name.lower(): row.id for row in result.all()}
+
+    for entry in parsed:
+        try:
+            person = entry["person"]
+            stakeholder_id = name_map.get(person.lower())
+            if not stakeholder_id:
+                # Try first name match
+                first_name = person.split()[0].lower() if person else ""
+                for name, sid in name_map.items():
+                    if name.startswith(first_name):
+                        stakeholder_id = sid
+                        break
+            if not stakeholder_id:
+                _log(f"  Stakeholder not found: {person}", verbose)
+                stats["errors"] += 1
+                continue
+
+            signal = SentimentSignal(
+                stakeholder_id=stakeholder_id,
+                date=entry.get("date"),
+                sentiment=entry["sentiment"],
+                shift=entry.get("shift"),
+                topic=entry.get("topic"),
+                quote=entry.get("quote"),
+                is_manual=False,
+            )
+            session.add(signal)
+            stats["inserted"] += 1
+        except Exception as e:
+            _log(f"  Error importing sentiment: {e}", verbose)
+            stats["errors"] += 1
+
+    await session.commit()
+    return stats
+
+
+async def import_commitments(
+    session: AsyncSession, root: Path, verbose: bool = False,
+) -> dict:
+    """Import commitments from analysis/trackers/commitments.md."""
+    stats = {"inserted": 0, "skipped": 0, "errors": 0}
+    filepath = root / "analysis" / "trackers" / "commitments.md"
+    if not filepath.exists():
+        _log("No commitments tracker file found, skipping", verbose)
+        return stats
+
+    content = filepath.read_text(encoding="utf-8")
+    parsed = parse_commitments(content)
+    _log(f"Parsed {len(parsed)} commitment entries", verbose)
+
+    for entry in parsed:
+        try:
+            commitment = Commitment(
+                person=entry["person"],
+                commitment=entry["commitment"],
+                date_made=entry.get("date_made"),
+                deadline_text=entry.get("deadline_text"),
+                deadline_resolved=entry.get("deadline_resolved"),
+                deadline_type=entry.get("deadline_type", "none"),
+                condition=entry.get("condition"),
+                status=entry.get("status", "pending"),
+                is_manual=False,
+            )
+            session.add(commitment)
+            stats["inserted"] += 1
+        except Exception as e:
+            _log(f"  Error importing commitment: {e}", verbose)
+            stats["errors"] += 1
+
+    await session.commit()
+    return stats
+
+
 # ---------------------------------------------------------------------------
 # Main orchestrator
 # ---------------------------------------------------------------------------
@@ -1005,48 +1099,56 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
 
     async with Session() as session:
         # 1. Transcripts
-        print("[1/11] Importing transcripts...")
+        print("[1/13] Importing transcripts...")
         all_stats["transcripts"] = await import_transcripts(session, root, verbose)
 
         # 2. Stakeholders
-        print("[2/11] Importing stakeholders...")
+        print("[2/13] Importing stakeholders...")
         all_stats["stakeholders"] = await import_stakeholders(session, root, verbose)
 
         # 3. Decisions
-        print("[3/11] Importing decisions...")
+        print("[3/13] Importing decisions...")
         all_stats["decisions"] = await import_decisions(session, root, verbose)
 
         # 4. Workstreams + milestones
-        print("[4/11] Importing workstreams...")
+        print("[4/13] Importing workstreams...")
         all_stats["workstreams"] = await import_workstreams(session, root, verbose)
 
         # 5. Open threads
-        print("[5/11] Importing open threads...")
+        print("[5/13] Importing open threads...")
         all_stats["open_threads"] = await import_open_threads(session, root, verbose)
 
         # 6. Action items
-        print("[6/11] Importing action items...")
+        print("[6/13] Importing action items...")
         all_stats["action_items"] = await import_action_items(session, root, verbose)
 
         # 7. Glossary
-        print("[7/11] Importing glossary...")
+        print("[7/13] Importing glossary...")
         all_stats["glossary"] = await import_glossary(session, root, verbose)
 
         # 8. Summaries
-        print("[8/11] Importing summaries...")
+        print("[8/13] Importing summaries...")
         all_stats["summaries"] = await import_summaries(session, root, verbose)
 
         # 9. Weekly reports
-        print("[9/11] Importing weekly reports...")
+        print("[9/13] Importing weekly reports...")
         all_stats["weekly_reports"] = await import_weekly_reports(session, root, verbose)
 
         # 10. Programme debrief (as Document)
-        print("[10/11] Importing programme debrief...")
+        print("[10/13] Importing programme debrief...")
         all_stats["programme_debrief"] = await import_programme_debrief(session, root, verbose)
 
         # 11. Project pages (as Documents)
-        print("[11/11] Importing project pages...")
+        print("[11/13] Importing project pages...")
         all_stats["project_pages"] = await import_project_pages(session, root, verbose)
+
+        # 12. Sentiments
+        print("[12/13] Importing sentiments...")
+        all_stats["sentiments"] = await import_sentiments(session, root, verbose)
+
+        # 13. Commitments
+        print("[13/13] Importing commitments...")
+        all_stats["commitments"] = await import_commitments(session, root, verbose)
 
         # Build transcript mentions
         print("\nBuilding transcript mentions...")
