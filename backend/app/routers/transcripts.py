@@ -1,14 +1,15 @@
 import math
 
-from fastapi import APIRouter, Depends, HTTPException, Query, UploadFile, File
-from sqlalchemy import select, func, desc, asc
+from fastapi import APIRouter, Depends, File, Query, UploadFile
+from sqlalchemy import asc, desc, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
-from app.models.transcript import Transcript
+from app.exceptions import NotFoundError
 from app.models.summary import Summary
-from app.schemas.transcript import TranscriptBase, TranscriptDetail, TranscriptList
+from app.models.transcript import Transcript
 from app.schemas.summary import SummaryBase, SummaryDetail
+from app.schemas.transcript import TranscriptBase, TranscriptDetail, TranscriptList
 from app.services.upload_service import process_uploaded_transcript
 
 router = APIRouter(tags=["transcripts"])
@@ -88,7 +89,7 @@ async def get_transcript(
     )
     transcript = result.scalar_one_or_none()
     if not transcript:
-        raise HTTPException(status_code=404, detail="Transcript not found")
+        raise NotFoundError("Transcript", transcript_id)
 
     # Check for summary
     summary_result = await db.execute(
@@ -122,7 +123,7 @@ async def get_transcript_summary(
     )
     summary = result.scalar_one_or_none()
     if not summary:
-        raise HTTPException(status_code=404, detail="Summary not found for this transcript")
+        raise NotFoundError("Summary for transcript", transcript_id)
 
     # Get transcript title
     t_result = await db.execute(

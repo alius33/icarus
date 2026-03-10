@@ -1,14 +1,17 @@
 from datetime import datetime
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
+from app.exceptions import NotFoundError
 from app.models.resource_allocation import ResourceAllocation
 from app.schemas.resource_allocation import (
-    ResourceAllocationSchema, ResourceAllocationCreate, ResourceAllocationUpdate,
     AllocationEntry,
+    ResourceAllocationCreate,
+    ResourceAllocationSchema,
+    ResourceAllocationUpdate,
 )
 
 router = APIRouter(tags=["resources"])
@@ -42,7 +45,7 @@ async def get_resource(res_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(ResourceAllocation).where(ResourceAllocation.id == res_id))
     res = result.scalar_one_or_none()
     if not res:
-        raise HTTPException(status_code=404, detail="Resource allocation not found")
+        raise NotFoundError("Resource allocation", res_id)
     return _schema(res)
 
 
@@ -68,7 +71,7 @@ async def update_resource(res_id: int, body: ResourceAllocationUpdate, db: Async
     result = await db.execute(select(ResourceAllocation).where(ResourceAllocation.id == res_id))
     res = result.scalar_one_or_none()
     if not res:
-        raise HTTPException(status_code=404, detail="Resource allocation not found")
+        raise NotFoundError("Resource allocation", res_id)
 
     if body.person_name is not None:
         res.person_name = body.person_name
@@ -96,7 +99,7 @@ async def delete_resource(res_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(ResourceAllocation).where(ResourceAllocation.id == res_id))
     res = result.scalar_one_or_none()
     if not res:
-        raise HTTPException(status_code=404, detail="Resource allocation not found")
+        raise NotFoundError("Resource allocation", res_id)
     await db.delete(res)
     await db.commit()
     return {"ok": True}

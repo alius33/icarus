@@ -1,6 +1,6 @@
-from datetime import date, datetime
+from datetime import datetime
 
-from sqlalchemy import Column, Integer, String, Text, Date, DateTime, Index, Boolean
+from sqlalchemy import Boolean, Column, Date, DateTime, Index, Integer, String, Text
 from sqlalchemy.dialects.postgresql import TSVECTOR
 
 from app.database import Base

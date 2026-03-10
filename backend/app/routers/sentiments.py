@@ -1,10 +1,11 @@
-from datetime import date, datetime
+from datetime import date
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, Query
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
+from app.exceptions import NotFoundError
 from app.models.sentiment_signal import SentimentSignal
 from app.schemas.sentiment_signal import (
     SentimentSignalBase,
@@ -50,7 +51,7 @@ async def get_sentiment(signal_id: int, db: AsyncSession = Depends(get_db)):
     )
     signal = result.scalar_one_or_none()
     if not signal:
-        raise HTTPException(status_code=404, detail="Sentiment signal not found")
+        raise NotFoundError("Sentiment signal", signal_id)
     return _schema(signal)
 
 
@@ -84,7 +85,7 @@ async def update_sentiment(
     )
     signal = result.scalar_one_or_none()
     if not signal:
-        raise HTTPException(status_code=404, detail="Sentiment signal not found")
+        raise NotFoundError("Sentiment signal", signal_id)
 
     if body.stakeholder_id is not None:
         signal.stakeholder_id = body.stakeholder_id
@@ -115,7 +116,7 @@ async def delete_sentiment(signal_id: int, db: AsyncSession = Depends(get_db)):
     )
     signal = result.scalar_one_or_none()
     if not signal:
-        raise HTTPException(status_code=404, detail="Sentiment signal not found")
+        raise NotFoundError("Sentiment signal", signal_id)
     await db.delete(signal)
     await db.commit()
     return {"ok": True}

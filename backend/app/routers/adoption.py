@@ -1,12 +1,13 @@
 from datetime import datetime
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, Query
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
+from app.exceptions import NotFoundError
 from app.models.adoption_metric import AdoptionMetric
-from app.schemas.adoption_metric import AdoptionMetricSchema, AdoptionMetricCreate
+from app.schemas.adoption_metric import AdoptionMetricCreate, AdoptionMetricSchema
 
 router = APIRouter(tags=["adoption"])
 
@@ -64,7 +65,7 @@ async def delete_adoption_metric(metric_id: int, db: AsyncSession = Depends(get_
     result = await db.execute(select(AdoptionMetric).where(AdoptionMetric.id == metric_id))
     metric = result.scalar_one_or_none()
     if not metric:
-        raise HTTPException(status_code=404, detail="Adoption metric not found")
+        raise NotFoundError("Adoption metric", metric_id)
     await db.delete(metric)
     await db.commit()
     return {"ok": True}

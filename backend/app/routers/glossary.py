@@ -1,14 +1,15 @@
 from collections import defaultdict
 from datetime import datetime
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
-from app.models.glossary import GlossaryEntry
+from app.exceptions import DuplicateError, NotFoundError
 from app.models.deleted_import import DeletedImport
-from app.schemas.glossary import GlossaryEntrySchema, GlossaryGrouped, GlossaryCreate, GlossaryUpdate
+from app.models.glossary import GlossaryEntry
+from app.schemas.glossary import GlossaryCreate, GlossaryEntrySchema, GlossaryGrouped, GlossaryUpdate
 
 router = APIRouter(tags=["glossary"])
 
@@ -34,7 +35,7 @@ async def get_glossary_entry(entry_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(GlossaryEntry).where(GlossaryEntry.id == entry_id))
     entry = result.scalar_one_or_none()
     if not entry:
-        raise HTTPException(status_code=404, detail="Glossary entry not found")
+        raise NotFoundError("Glossary entry", entry_id)
     return _entry_schema(entry)
 
 
@@ -42,7 +43,7 @@ async def get_glossary_entry(entry_id: int, db: AsyncSession = Depends(get_db)):
 async def create_glossary_entry(body: GlossaryCreate, db: AsyncSession = Depends(get_db)):
     existing = await db.execute(select(GlossaryEntry).where(GlossaryEntry.term == body.term))
     if existing.scalar_one_or_none():
-        raise HTTPException(status_code=409, detail="Term already exists")
+        raise DuplicateError("Glossary entry", "term", body.term)
 
     entry = GlossaryEntry(term=body.term, definition=body.definition, category=body.category,
                            is_manual=True, source_file="manual", file_hash="")
@@ -57,7 +58,7 @@ async def update_glossary_entry(entry_id: int, body: GlossaryUpdate, db: AsyncSe
     result = await db.execute(select(GlossaryEntry).where(GlossaryEntry.id == entry_id))
     entry = result.scalar_one_or_none()
     if not entry:
-        raise HTTPException(status_code=404, detail="Glossary entry not found")
+        raise NotFoundError("Glossary entry", entry_id)
 
     if body.definition is not None:
         entry.definition = body.definition
@@ -75,7 +76,7 @@ async def delete_glossary_entry(entry_id: int, db: AsyncSession = Depends(get_db
     result = await db.execute(select(GlossaryEntry).where(GlossaryEntry.id == entry_id))
     entry = result.scalar_one_or_none()
     if not entry:
-        raise HTTPException(status_code=404, detail="Glossary entry not found")
+        raise NotFoundError("Glossary entry", entry_id)
 
     if not entry.is_manual:
         db.add(DeletedImport(entity_type="glossary", unique_key=entry.term))

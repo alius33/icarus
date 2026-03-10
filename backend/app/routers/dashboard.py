@@ -1,34 +1,35 @@
 import re
 from collections import defaultdict
-from datetime import date, timedelta, datetime as dt_datetime
+from datetime import date, timedelta
+from datetime import datetime as dt_datetime
 
 from fastapi import APIRouter, Depends, Response
-from sqlalchemy import select, func, desc, and_, case, literal_column
+from sqlalchemy import and_, case, desc, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
-from app.models.transcript import Transcript
 from app.models.action_item import ActionItem
-from app.models.open_thread import OpenThread
-from app.models.workstream import Workstream
 from app.models.decision import Decision
+from app.models.dependency import Dependency
+from app.models.open_thread import OpenThread
 from app.models.project import Project
 from app.models.project_link import ProjectLink
-from app.models.stakeholder import Stakeholder
-from app.models.transcript_mention import TranscriptMention
-from app.models.dependency import Dependency
 from app.models.resource_allocation import ResourceAllocation
 from app.models.scope_item import ScopeItem
+from app.models.stakeholder import Stakeholder
+from app.models.transcript import Transcript
+from app.models.transcript_mention import TranscriptMention
+from app.models.workstream import Workstream
 from app.schemas.dashboard import (
-    DashboardResponse,
-    DashboardProjectCard,
     ActivityFeedItem,
-    NeedsAttentionItem,
-    StakeholderEngagementItem,
-    ProgrammeBrief,
-    KpiData,
+    DashboardProjectCard,
+    DashboardResponse,
     InsightsData,
+    KpiData,
+    NeedsAttentionItem,
+    ProgrammeBrief,
     ProgrammeStatus,
+    StakeholderEngagementItem,
 )
 
 router = APIRouter(tags=["dashboard"])

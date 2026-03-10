@@ -1,12 +1,13 @@
 from datetime import datetime
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
+from app.exceptions import NotFoundError
 from app.models.scope_item import ScopeItem
-from app.schemas.scope_item import ScopeItemSchema, ScopeItemCreate, ScopeItemUpdate
+from app.schemas.scope_item import ScopeItemCreate, ScopeItemSchema, ScopeItemUpdate
 
 router = APIRouter(tags=["scope"])
 
@@ -37,7 +38,7 @@ async def get_scope_item(item_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(ScopeItem).where(ScopeItem.id == item_id))
     item = result.scalar_one_or_none()
     if not item:
-        raise HTTPException(status_code=404, detail="Scope item not found")
+        raise NotFoundError("Scope item", item_id)
     return _schema(item)
 
 
@@ -65,7 +66,7 @@ async def update_scope_item(item_id: int, body: ScopeItemUpdate, db: AsyncSessio
     result = await db.execute(select(ScopeItem).where(ScopeItem.id == item_id))
     item = result.scalar_one_or_none()
     if not item:
-        raise HTTPException(status_code=404, detail="Scope item not found")
+        raise NotFoundError("Scope item", item_id)
 
     for field in ["name", "scope_type", "workstream", "added_date",
                   "estimated_effort", "budgeted", "status",
@@ -85,7 +86,7 @@ async def delete_scope_item(item_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(ScopeItem).where(ScopeItem.id == item_id))
     item = result.scalar_one_or_none()
     if not item:
-        raise HTTPException(status_code=404, detail="Scope item not found")
+        raise NotFoundError("Scope item", item_id)
     await db.delete(item)
     await db.commit()
     return {"ok": True}

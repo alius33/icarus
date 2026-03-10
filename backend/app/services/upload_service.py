@@ -13,14 +13,14 @@ from datetime import datetime
 from sqlalchemy import delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.models.transcript import Transcript
 from app.models.stakeholder import Stakeholder
+from app.models.transcript import Transcript
 from app.models.transcript_mention import TranscriptMention
 
 # Import parsing helpers from existing transcript parser
 from scripts.parsers.transcript_parser import (
-    _parse_date_and_title,
     _extract_participants,
+    _parse_date_and_title,
 )
 
 

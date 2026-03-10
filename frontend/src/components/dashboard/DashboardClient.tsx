@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, Suspense } from "react";
 import { DashboardProvider, useDashboardDispatch } from "./DashboardContext";
 import { useDashboardData } from "./hooks/useDashboardData";
 import { useDashboardFilters } from "./hooks/useDashboardFilters";
 import { useKeyboardShortcuts } from "./hooks/useKeyboardShortcuts";
+import { useDashboardModals } from "./hooks/useDashboardModals";
 import SectionErrorBoundary from "./SectionErrorBoundary";
 import ProgrammeStatusCard from "./ProgrammeStatusCard";
 import DashboardHeader from "./DashboardHeader";
@@ -19,11 +20,8 @@ import ScopeTracker from "./ScopeTracker";
 import ActivityFeed from "./ActivityFeed";
 import StakeholderPanel from "./StakeholderPanel";
 import EntityModal, { FormInput, FormTextarea, FormSelect } from "@/components/EntityModal";
-import { api } from "@/lib/api";
-import type { DashboardDataV2, NeedsAttentionItem, ActivityFeedItem, StakeholderEngagementItem } from "@/lib/types";
+import type { DashboardDataV2 } from "@/lib/types";
 import { useRouter } from "next/navigation";
-
-type ModalEntityType = "action_item" | "open_thread" | "decision" | "stakeholder";
 
 interface Props {
   initialData: DashboardDataV2;
@@ -35,178 +33,17 @@ function DashboardInner({ initialData }: Props) {
   const dispatch = useDashboardDispatch();
   const router = useRouter();
 
-  // Inline modal state for entity editing
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalType, setModalType] = useState<ModalEntityType | null>(null);
-  const [modalItemId, setModalItemId] = useState<number | null>(null);
-  const [formTitle, setFormTitle] = useState("");
-  const [formDescription, setFormDescription] = useState("");
-  const [formStatus, setFormStatus] = useState("");
-  const [formOwner, setFormOwner] = useState("");
-  const [formDueDate, setFormDueDate] = useState("");
-  const [formExtra, setFormExtra] = useState(""); // role for stakeholders, rationale for decisions
-  const [saving, setSaving] = useState(false);
-  const [deleting, setDeleting] = useState(false);
-  const [modalError, setModalError] = useState<string | null>(null);
-
-  const openEntityModal = (type: ModalEntityType, id: number, title: string, description: string, status: string, owner: string) => {
-    setModalType(type);
-    setModalItemId(id);
-    setFormTitle(title);
-    setFormDescription(description);
-    setFormStatus(status);
-    setFormOwner(owner);
-    setFormDueDate("");
-    setFormExtra("");
-    setModalError(null);
-    setModalOpen(true);
-  };
-
-  const handleAttentionClick = (item: NeedsAttentionItem) => {
-    openEntityModal(
-      item.entity_type as ModalEntityType,
-      item.id,
-      item.title,
-      item.description || "",
-      item.status,
-      item.owner || "",
-    );
-  };
-
-  const handleActivityClick = (item: ActivityFeedItem) => {
-    if (item.entity_type === "transcript") {
-      router.push(`/transcripts/${item.id}`);
-      return;
-    }
-    openEntityModal(
-      item.entity_type as ModalEntityType,
-      item.id,
-      item.title,
-      "",
-      "",
-      "",
-    );
-    // Fetch full entity data to populate form
-    if (item.entity_type === "action_item") {
-      api.getActionItems().then((items) => {
-        const found = items.find((a) => a.id === item.id);
-        if (found) {
-          setFormTitle(found.title);
-          setFormDescription(found.description || "");
-          setFormStatus(found.status);
-          setFormOwner(found.owner || "");
-          setFormDueDate(found.due_date || "");
-        }
-      });
-    } else if (item.entity_type === "open_thread") {
-      api.getOpenThreads().then((items) => {
-        const found = items.find((t) => t.id === item.id);
-        if (found) {
-          setFormTitle(found.title);
-          setFormDescription(found.description || "");
-          setFormStatus(found.status);
-          setFormOwner(found.owner || "");
-        }
-      });
-    } else if (item.entity_type === "decision") {
-      api.getDecisions().then((items) => {
-        const found = items.find((d) => d.id === item.id);
-        if (found) {
-          setFormTitle(found.title);
-          setFormDescription(found.description || "");
-          setFormStatus(found.status);
-          setFormOwner(found.owner || "");
-        }
-      });
-    }
-  };
-
-  const handleStakeholderClick = (item: StakeholderEngagementItem) => {
-    setModalType("stakeholder");
-    setModalItemId(item.id);
-    setFormTitle(item.name);
-    setFormDescription("");
-    setFormStatus(String(item.tier));
-    setFormOwner("");
-    setFormExtra(item.role || "");
-    setModalError(null);
-    setModalOpen(true);
-    // Fetch full stakeholder data
-    api.getStakeholder(item.id).then((s) => {
-      setFormDescription(s.notes || "");
-      setFormExtra(s.role || "");
-    }).catch(() => {});
-  };
-
-  const handleModalSave = async () => {
-    if (!modalItemId || !modalType) return;
-    setSaving(true);
-    setModalError(null);
-    try {
-      if (modalType === "action_item") {
-        await api.updateActionItem(modalItemId, {
-          description: formTitle,
-          owner: formOwner || undefined,
-          status: formStatus,
-          deadline: formDueDate || undefined,
-          context: formDescription || undefined,
-        });
-      } else if (modalType === "open_thread") {
-        await api.updateOpenThread(modalItemId, {
-          title: formTitle,
-          context: formDescription || undefined,
-          status: formStatus,
-        });
-      } else if (modalType === "decision") {
-        await api.updateDecision(modalItemId, {
-          decision: formTitle,
-          rationale: formDescription || undefined,
-        });
-      } else if (modalType === "stakeholder") {
-        await api.updateStakeholder(modalItemId, {
-          name: formTitle,
-          role: formExtra || undefined,
-          tier: Number(formStatus) || undefined,
-          notes: formDescription || undefined,
-        });
-      }
-      setModalOpen(false);
-      refreshSection("attention");
-    } catch (e) {
-      setModalError(e instanceof Error ? e.message : "Save failed");
-    } finally {
-      setSaving(false);
-    }
-  };
-
-  const handleModalDelete = async () => {
-    if (!modalItemId || !modalType) return;
-    setDeleting(true);
-    try {
-      if (modalType === "action_item") {
-        await api.deleteActionItem(modalItemId);
-      } else if (modalType === "open_thread") {
-        await api.deleteOpenThread(modalItemId);
-      } else if (modalType === "decision") {
-        await api.deleteDecision(modalItemId);
-      } else if (modalType === "stakeholder") {
-        await api.deleteStakeholder(modalItemId);
-      }
-      setModalOpen(false);
-      refreshSection("attention");
-    } catch (e) {
-      setModalError(e instanceof Error ? e.message : "Delete failed");
-    } finally {
-      setDeleting(false);
-    }
-  };
+  const modal = useDashboardModals({
+    refreshSection,
+    onNavigate: (path) => router.push(path),
+  });
 
   // Keyboard shortcuts (/ for search, 1/2/3 for tabs, Escape to close modal)
   useKeyboardShortcuts({
-    onEscape: () => setModalOpen(false),
+    onEscape: modal.closeModal,
     onSearch: () => router.push("/search"),
     onTabSwitch: (tab) => dispatch({ type: "SET_TAB", payload: tab }),
-    enabled: !modalOpen,
+    enabled: !modal.modalOpen,
   });
 
   // Initialize data and filters
@@ -264,7 +101,7 @@ function DashboardInner({ initialData }: Props) {
 
       {/* Needs Attention */}
       <SectionErrorBoundary section="Needs Attention" onRetry={() => refreshSection("attention")}>
-        <NeedsAttention items={d.needs_attention} onItemClick={handleAttentionClick} />
+        <NeedsAttention items={d.needs_attention} onItemClick={modal.handleAttentionClick} />
       </SectionErrorBoundary>
 
       {/* Tabbed Section */}
@@ -290,12 +127,12 @@ function DashboardInner({ initialData }: Props) {
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 p-4">
               <SectionErrorBoundary section="Activity Feed">
                 <div className="rounded-lg border border-gray-200 bg-white p-5">
-                  <ActivityFeed items={d.recent_activity} onItemClick={handleActivityClick} />
+                  <ActivityFeed items={d.recent_activity} onItemClick={modal.handleActivityClick} />
                 </div>
               </SectionErrorBoundary>
               <SectionErrorBoundary section="Stakeholder Engagement">
                 <div className="rounded-lg border border-gray-200 bg-white p-5">
-                  <StakeholderPanel items={d.stakeholder_engagement} onItemClick={handleStakeholderClick} />
+                  <StakeholderPanel items={d.stakeholder_engagement} onItemClick={modal.handleStakeholderClick} />
                 </div>
               </SectionErrorBoundary>
             </div>
@@ -318,63 +155,63 @@ function DashboardInner({ initialData }: Props) {
 
       {/* Inline edit modal for dashboard items */}
       <EntityModal
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
+        open={modal.modalOpen}
+        onClose={modal.closeModal}
         title={
-          modalType === "action_item" ? "Edit Action Item"
-          : modalType === "decision" ? "Edit Decision"
-          : modalType === "stakeholder" ? "Edit Stakeholder"
+          modal.modalType === "action_item" ? "Edit Action Item"
+          : modal.modalType === "decision" ? "Edit Decision"
+          : modal.modalType === "stakeholder" ? "Edit Stakeholder"
           : "Edit Thread"
         }
-        onSave={handleModalSave}
-        onDelete={handleModalDelete}
-        saving={saving}
-        deleting={deleting}
-        error={modalError}
+        onSave={modal.handleModalSave}
+        onDelete={modal.handleModalDelete}
+        saving={modal.saving}
+        deleting={modal.deleting}
+        error={modal.modalError}
       >
-        {modalType === "action_item" && (
+        {modal.modalType === "action_item" && (
           <>
-            <FormInput label="Description" value={formTitle} onChange={setFormTitle} placeholder="Action item description" />
-            <FormTextarea label="Context" value={formDescription} onChange={setFormDescription} placeholder="Additional context" rows={2} />
-            <FormSelect label="Status" value={formStatus} onChange={setFormStatus} options={[
+            <FormInput label="Description" value={modal.form.title} onChange={modal.setFormTitle} placeholder="Action item description" />
+            <FormTextarea label="Context" value={modal.form.description} onChange={modal.setFormDescription} placeholder="Additional context" rows={2} />
+            <FormSelect label="Status" value={modal.form.status} onChange={modal.setFormStatus} options={[
               { value: "open", label: "Open" },
               { value: "in_progress", label: "In Progress" },
               { value: "done", label: "Done" },
               { value: "blocked", label: "Blocked" },
             ]} />
-            <FormInput label="Owner" value={formOwner} onChange={setFormOwner} placeholder="Who is responsible?" />
-            <FormInput label="Due Date" value={formDueDate} onChange={setFormDueDate} placeholder="YYYY-MM-DD" />
+            <FormInput label="Owner" value={modal.form.owner} onChange={modal.setFormOwner} placeholder="Who is responsible?" />
+            <FormInput label="Due Date" value={modal.form.dueDate} onChange={modal.setFormDueDate} placeholder="YYYY-MM-DD" />
           </>
         )}
-        {modalType === "open_thread" && (
+        {modal.modalType === "open_thread" && (
           <>
-            <FormInput label="Title" value={formTitle} onChange={setFormTitle} placeholder="Thread title" />
-            <FormTextarea label="Context" value={formDescription} onChange={setFormDescription} placeholder="What is this about?" rows={2} />
-            <FormSelect label="Status" value={formStatus} onChange={setFormStatus} options={[
+            <FormInput label="Title" value={modal.form.title} onChange={modal.setFormTitle} placeholder="Thread title" />
+            <FormTextarea label="Context" value={modal.form.description} onChange={modal.setFormDescription} placeholder="What is this about?" rows={2} />
+            <FormSelect label="Status" value={modal.form.status} onChange={modal.setFormStatus} options={[
               { value: "OPEN", label: "Open" },
               { value: "WATCHING", label: "Watching" },
               { value: "CLOSED", label: "Closed" },
             ]} />
-            <FormInput label="Owner" value={formOwner} onChange={setFormOwner} placeholder="Who is responsible?" />
+            <FormInput label="Owner" value={modal.form.owner} onChange={modal.setFormOwner} placeholder="Who is responsible?" />
           </>
         )}
-        {modalType === "decision" && (
+        {modal.modalType === "decision" && (
           <>
-            <FormInput label="Decision" value={formTitle} onChange={setFormTitle} placeholder="What was decided?" />
-            <FormTextarea label="Rationale" value={formDescription} onChange={setFormDescription} placeholder="Why was this decided?" rows={2} />
-            <FormInput label="Owner" value={formOwner} onChange={setFormOwner} placeholder="Key people" />
+            <FormInput label="Decision" value={modal.form.title} onChange={modal.setFormTitle} placeholder="What was decided?" />
+            <FormTextarea label="Rationale" value={modal.form.description} onChange={modal.setFormDescription} placeholder="Why was this decided?" rows={2} />
+            <FormInput label="Owner" value={modal.form.owner} onChange={modal.setFormOwner} placeholder="Key people" />
           </>
         )}
-        {modalType === "stakeholder" && (
+        {modal.modalType === "stakeholder" && (
           <>
-            <FormInput label="Name" value={formTitle} onChange={setFormTitle} placeholder="Stakeholder name" />
-            <FormInput label="Role" value={formExtra} onChange={setFormExtra} placeholder="Role / title" />
-            <FormSelect label="Tier" value={formStatus} onChange={setFormStatus} options={[
+            <FormInput label="Name" value={modal.form.title} onChange={modal.setFormTitle} placeholder="Stakeholder name" />
+            <FormInput label="Role" value={modal.form.extra} onChange={modal.setFormExtra} placeholder="Role / title" />
+            <FormSelect label="Tier" value={modal.form.status} onChange={modal.setFormStatus} options={[
               { value: "1", label: "Tier 1" },
               { value: "2", label: "Tier 2" },
               { value: "3", label: "Tier 3" },
             ]} />
-            <FormTextarea label="Notes" value={formDescription} onChange={setFormDescription} placeholder="Notes about this stakeholder" rows={2} />
+            <FormTextarea label="Notes" value={modal.form.description} onChange={modal.setFormDescription} placeholder="Notes about this stakeholder" rows={2} />
           </>
         )}
       </EntityModal>

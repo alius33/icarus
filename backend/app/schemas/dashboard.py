@@ -1,8 +1,6 @@
-import datetime
-from typing import Optional, Literal
+from typing import Literal
 
 from pydantic import BaseModel
-
 
 # -- Dashboard Project Card (Programme Pulse) ---------------------------------
 
@@ -10,14 +8,14 @@ class DashboardProjectCard(BaseModel):
     id: int
     name: str
     status: str
-    color: Optional[str] = None
-    workstream_code: Optional[str] = None
+    color: str | None = None
+    workstream_code: str | None = None
     is_custom: bool
     transcript_count: int = 0
     action_count: int = 0
     open_thread_count: int = 0
     decision_count: int = 0
-    last_activity_date: Optional[str] = None
+    last_activity_date: str | None = None
     trend: Literal["up", "down", "flat"] = "flat"
 
 
@@ -27,9 +25,9 @@ class ActivityFeedItem(BaseModel):
     id: int
     entity_type: str
     title: str
-    date: Optional[str] = None
-    project_id: Optional[int] = None
-    project_name: Optional[str] = None
+    date: str | None = None
+    project_id: int | None = None
+    project_name: str | None = None
 
 
 # -- Needs Attention ----------------------------------------------------------
@@ -38,13 +36,13 @@ class NeedsAttentionItem(BaseModel):
     id: int
     entity_type: str
     title: str
-    description: Optional[str] = None
+    description: str | None = None
     status: str
-    owner: Optional[str] = None
+    owner: str | None = None
     reason: str  # "overdue" | "stale" | "unresolved"
-    days_overdue: Optional[int] = None
-    project_id: Optional[int] = None
-    project_name: Optional[str] = None
+    days_overdue: int | None = None
+    project_id: int | None = None
+    project_name: str | None = None
 
 
 # -- Stakeholder Engagement ---------------------------------------------------
@@ -53,11 +51,11 @@ class StakeholderEngagementItem(BaseModel):
     id: int
     name: str
     tier: int
-    role: Optional[str] = None
+    role: str | None = None
     recent_mentions: int = 0
     previous_mentions: int = 0
     trend: Literal["rising", "stable", "declining", "silent"] = "stable"
-    last_mentioned_date: Optional[str] = None
+    last_mentioned_date: str | None = None
 
 
 # -- KPI Data -----------------------------------------------------------------
@@ -105,8 +103,8 @@ class HealthScore(BaseModel):
 class ProgrammeStatus(BaseModel):
     narrative: str
     health_rag: Literal["green", "amber", "red"]
-    biggest_win: Optional[str] = None
-    biggest_risk: Optional[str] = None
+    biggest_win: str | None = None
+    biggest_risk: str | None = None
     open_actions: int
     overdue_count: int
     critical_risks: int
@@ -133,7 +131,7 @@ class DashboardResponse(BaseModel):
 class ProgrammeBrief(BaseModel):
     date: str
     text: str
-    narrative: Optional[str] = None
-    health_rag: Optional[str] = None
-    biggest_win: Optional[str] = None
-    biggest_risk: Optional[str] = None
+    narrative: str | None = None
+    health_rag: str | None = None
+    biggest_win: str | None = None
+    biggest_risk: str | None = None

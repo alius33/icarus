@@ -27,6 +27,7 @@ import {
   User,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import ThemeToggle from "@/components/ThemeToggle";
 
 interface NavItem {
   label: string;
@@ -235,7 +236,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="fixed inset-y-0 left-0 z-50 flex w-64 flex-col bg-gray-900" role="navigation" aria-label="Main navigation">
+    <aside className="fixed inset-y-0 left-0 z-50 flex w-64 flex-col bg-gray-900 dark:bg-gray-950" role="navigation" aria-label="Main navigation">
       {/* Logo / Title */}
       <div className="flex h-16 items-center border-b border-gray-800 px-6">
         <span className="text-lg font-bold tracking-widest text-white">
@@ -277,8 +278,9 @@ export default function Sidebar() {
       </nav>
 
       {/* Footer */}
-      <div className="border-t border-gray-800 px-6 py-4">
-        <p className="text-xs text-gray-500">Icarus Dashboard v1.0</p>
+      <div className="border-t border-gray-800 px-6 py-4 flex items-center justify-between">
+        <p className="text-xs text-gray-500">Icarus v1.0</p>
+        <ThemeToggle />
       </div>
     </aside>
   );

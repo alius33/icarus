@@ -3,9 +3,9 @@ services:
     image: postgres:16-alpine
     restart: unless-stopped
     environment:
-      POSTGRES_DB: icarus
-      POSTGRES_USER: icarus
-      POSTGRES_PASSWORD: icarus_local
+      POSTGRES_DB: ${POSTGRES_DB:-icarus}
+      POSTGRES_USER: ${POSTGRES_USER:-icarus}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-icarus_local}
     ports:
       - "5432:5432"
     volumes:
@@ -24,8 +24,8 @@ services:
     ports:
       - "8000:8000"
     environment:
-      DATABASE_URL: "postgresql+asyncpg://icarus:icarus_local@db:5432/icarus"
-      SYNC_DATABASE_URL: "postgresql://icarus:icarus_local@db:5432/icarus"
+      DATABASE_URL: "postgresql+asyncpg://${POSTGRES_USER:-icarus}:${POSTGRES_PASSWORD:-icarus_local}@db:5432/${POSTGRES_DB:-icarus}"
+      SYNC_DATABASE_URL: "postgresql://${POSTGRES_USER:-icarus}:${POSTGRES_PASSWORD:-icarus_local}@db:5432/${POSTGRES_DB:-icarus}"
       DATA_ROOT: "/data"
       CORS_ORIGINS: '["http://localhost:3000","http://localhost:3001"]'
     volumes:

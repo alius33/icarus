@@ -1,13 +1,14 @@
 from datetime import date, datetime
 
-from fastapi import APIRouter, Depends, HTTPException, Query
-from sqlalchemy import select, func
+from fastapi import APIRouter, Depends, Query
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
+from app.exceptions import NotFoundError
 from app.models.action_item import ActionItem
 from app.models.deleted_import import DeletedImport
-from app.schemas.action_item import ActionItemSchema, ActionItemCreate, ActionItemUpdate
+from app.schemas.action_item import ActionItemCreate, ActionItemSchema, ActionItemUpdate
 from app.services.action_writeback import update_action_status_in_markdown
 
 router = APIRouter(tags=["action_items"])
@@ -48,7 +49,7 @@ async def get_action_item(item_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(ActionItem).where(ActionItem.id == item_id))
     item = result.scalar_one_or_none()
     if not item:
-        raise HTTPException(status_code=404, detail="Action item not found")
+        raise NotFoundError("Action item", item_id)
     return _action_schema(item)
 
 
@@ -83,7 +84,7 @@ async def update_action_item(item_id: int, body: ActionItemUpdate, db: AsyncSess
     result = await db.execute(select(ActionItem).where(ActionItem.id == item_id))
     item = result.scalar_one_or_none()
     if not item:
-        raise HTTPException(status_code=404, detail="Action item not found")
+        raise NotFoundError("Action item", item_id)
 
     old_status = item.status
     if body.description is not None:
@@ -115,7 +116,7 @@ async def complete_action_item(item_id: int, db: AsyncSession = Depends(get_db))
     result = await db.execute(select(ActionItem).where(ActionItem.id == item_id))
     item = result.scalar_one_or_none()
     if not item:
-        raise HTTPException(status_code=404, detail="Action item not found")
+        raise NotFoundError("Action item", item_id)
 
     item.status = "COMPLETED"
     item.completed_date = date.today()
@@ -133,7 +134,7 @@ async def delete_action_item(item_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(ActionItem).where(ActionItem.id == item_id))
     item = result.scalar_one_or_none()
     if not item:
-        raise HTTPException(status_code=404, detail="Action item not found")
+        raise NotFoundError("Action item", item_id)
 
     if not item.is_manual:
         db.add(DeletedImport(entity_type="action_item", unique_key=f"{item.number}:{item.status}"))

@@ -1,8 +1,9 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
+from app.exceptions import NotFoundError
 from app.models.summary import Summary
 from app.models.transcript import Transcript
 from app.schemas.summary import SummaryBase, SummaryDetail
@@ -45,7 +46,7 @@ async def get_summary(
     )
     row = result.one_or_none()
     if not row:
-        raise HTTPException(status_code=404, detail="Summary not found")
+        raise NotFoundError("Summary", summary_id)
 
     summary, transcript_title = row
 

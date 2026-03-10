@@ -1,25 +1,26 @@
 import re
-from datetime import date, timedelta, datetime as dt_datetime
+from datetime import date, timedelta
+from datetime import datetime as dt_datetime
 
-from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy import select, func, and_
+from fastapi import APIRouter, Depends
+from sqlalchemy import and_, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.database import get_db
-from app.models.workstream import Workstream, WorkstreamMilestone
-from app.models.project import Project
-from app.models.project_link import ProjectLink
+from app.exceptions import NotFoundError
 from app.models.action_item import ActionItem
 from app.models.open_thread import OpenThread
+from app.models.project import Project
+from app.models.project_link import ProjectLink
 from app.models.transcript import Transcript
 from app.models.transcript_mention import TranscriptMention
-from app.models.stakeholder import Stakeholder
+from app.models.workstream import Workstream, WorkstreamMilestone
 from app.schemas.workstream import (
+    MilestoneSchema,
     WorkstreamBase,
     WorkstreamDetail,
     WorkstreamHealthScore,
-    MilestoneSchema,
 )
 
 router = APIRouter(tags=["workstreams"])
@@ -113,7 +114,7 @@ async def get_workstream(
     )
     workstream = result.scalar_one_or_none()
     if not workstream:
-        raise HTTPException(status_code=404, detail="Workstream not found")
+        raise NotFoundError("Workstream", workstream_id)
 
     return WorkstreamDetail(
         id=workstream.id,
@@ -159,7 +160,7 @@ async def get_workstream_health(
     )
     workstream = ws_result.scalar_one_or_none()
     if not workstream:
-        raise HTTPException(status_code=404, detail="Workstream not found")
+        raise NotFoundError("Workstream", workstream_id)
 
     today = date.today()
     two_weeks_ago = today - timedelta(days=14)

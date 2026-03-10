@@ -1,41 +1,42 @@
 import re
 from datetime import timedelta
 
-from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy import select, func, and_
+from fastapi import APIRouter, Depends
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
+from app.exceptions import ForbiddenError, NotFoundError
+from app.models.action_item import ActionItem
+from app.models.decision import Decision
+from app.models.open_thread import OpenThread
 from app.models.project import Project
 from app.models.project_link import ProjectLink
-from app.models.workstream import Workstream
-from app.models.transcript import Transcript
-from app.models.summary import Summary
-from app.models.decision import Decision
-from app.models.action_item import ActionItem
-from app.models.open_thread import OpenThread
 from app.models.stakeholder import Stakeholder
+from app.models.summary import Summary
+from app.models.transcript import Transcript
 from app.models.transcript_mention import TranscriptMention
 from app.models.weekly_report import WeeklyReport
+from app.models.workstream import Workstream
+from app.schemas.action_item import ActionItemSchema
+from app.schemas.decision import DecisionSchema
+from app.schemas.open_thread import OpenThreadSchema
 from app.schemas.project import (
     ProjectBase,
-    ProjectHub,
     ProjectCreate,
-    ProjectUpdate,
-    ProjectLinkSchema,
+    ProjectHub,
     ProjectLinkBulkCreate,
-    ProjectWeeklyTimeline,
+    ProjectLinkSchema,
+    ProjectUpdate,
     ProjectWeek,
-    WeekTranscriptItem,
-    WeekDecisionItem,
+    ProjectWeeklyTimeline,
     WeekActionItem,
+    WeekDecisionItem,
+    WeekTranscriptItem,
 )
-from app.schemas.transcript import TranscriptBase
-from app.schemas.summary import SummaryBase
-from app.schemas.decision import DecisionSchema
-from app.schemas.action_item import ActionItemSchema
-from app.schemas.open_thread import OpenThreadSchema
 from app.schemas.stakeholder import StakeholderBase
+from app.schemas.summary import SummaryBase
+from app.schemas.transcript import TranscriptBase
 
 router = APIRouter(tags=["projects"])
 
@@ -46,7 +47,7 @@ async def _get_project_or_404(project_id: int, db: AsyncSession) -> Project:
     result = await db.execute(select(Project).where(Project.id == project_id))
     project = result.scalar_one_or_none()
     if not project:
-        raise HTTPException(status_code=404, detail="Project not found")
+        raise NotFoundError("Project", project_id)
     return project
 
 
@@ -543,10 +544,7 @@ async def delete_project(project_id: int, db: AsyncSession = Depends(get_db)):
     project = await _get_project_or_404(project_id, db)
 
     if not project.is_custom:
-        raise HTTPException(
-            status_code=403,
-            detail="Cannot delete workstream-backed projects. Only custom projects can be deleted.",
-        )
+        raise ForbiddenError("Cannot delete workstream-backed projects. Only custom projects can be deleted.")
 
     await db.delete(project)
     await db.commit()
@@ -606,7 +604,7 @@ async def remove_project_link(
     )
     link = result.scalar_one_or_none()
     if not link:
-        raise HTTPException(status_code=404, detail="Link not found")
+        raise NotFoundError("Link", link_id)
 
     await db.delete(link)
     await db.commit()

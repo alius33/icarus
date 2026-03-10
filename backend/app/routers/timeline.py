@@ -1,12 +1,12 @@
 import datetime
 
 from fastapi import APIRouter, Depends, Query
-from sqlalchemy import select, union_all, literal, cast, Integer, Date, String
+from sqlalchemy import Date, String, cast, literal, select, union_all
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
-from app.models.transcript import Transcript
 from app.models.decision import Decision
+from app.models.transcript import Transcript
 from app.models.workstream import WorkstreamMilestone
 from app.schemas.timeline import TimelineEvent, TimelineResponse
 

@@ -1,13 +1,14 @@
 from datetime import datetime
 
-from fastapi import APIRouter, Depends, HTTPException, Query
-from sqlalchemy import select, func
+from fastapi import APIRouter, Depends, Query
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
-from app.models.open_thread import OpenThread
+from app.exceptions import NotFoundError
 from app.models.deleted_import import DeletedImport
-from app.schemas.open_thread import OpenThreadSchema, OpenThreadCreate, OpenThreadUpdate
+from app.models.open_thread import OpenThread
+from app.schemas.open_thread import OpenThreadCreate, OpenThreadSchema, OpenThreadUpdate
 
 router = APIRouter(tags=["open_threads"])
 
@@ -46,7 +47,7 @@ async def get_open_thread(thread_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(OpenThread).where(OpenThread.id == thread_id))
     thread = result.scalar_one_or_none()
     if not thread:
-        raise HTTPException(status_code=404, detail="Open thread not found")
+        raise NotFoundError("Open thread", thread_id)
     return _thread_schema(thread)
 
 
@@ -78,7 +79,7 @@ async def update_open_thread(thread_id: int, body: OpenThreadUpdate, db: AsyncSe
     result = await db.execute(select(OpenThread).where(OpenThread.id == thread_id))
     thread = result.scalar_one_or_none()
     if not thread:
-        raise HTTPException(status_code=404, detail="Open thread not found")
+        raise NotFoundError("Open thread", thread_id)
 
     if body.title is not None:
         thread.title = body.title
@@ -111,7 +112,7 @@ async def delete_open_thread(thread_id: int, db: AsyncSession = Depends(get_db))
     result = await db.execute(select(OpenThread).where(OpenThread.id == thread_id))
     thread = result.scalar_one_or_none()
     if not thread:
-        raise HTTPException(status_code=404, detail="Open thread not found")
+        raise NotFoundError("Open thread", thread_id)
 
     if not thread.is_manual:
         db.add(DeletedImport(entity_type="open_thread", unique_key=f"{thread.number}:{thread.status}"))

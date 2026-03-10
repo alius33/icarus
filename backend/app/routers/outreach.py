@@ -1,12 +1,13 @@
 from datetime import datetime
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, Query
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
+from app.exceptions import NotFoundError
 from app.models.outreach import Outreach
-from app.schemas.outreach import OutreachSchema, OutreachCreate, OutreachUpdate
+from app.schemas.outreach import OutreachCreate, OutreachSchema, OutreachUpdate
 
 router = APIRouter(tags=["outreach"])
 
@@ -63,7 +64,7 @@ async def get_outreach(outreach_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(Outreach).where(Outreach.id == outreach_id))
     o = result.scalar_one_or_none()
     if not o:
-        raise HTTPException(status_code=404, detail="Outreach contact not found")
+        raise NotFoundError("Outreach contact", outreach_id)
     return _schema(o)
 
 
@@ -95,7 +96,7 @@ async def update_outreach(outreach_id: int, body: OutreachUpdate, db: AsyncSessi
     result = await db.execute(select(Outreach).where(Outreach.id == outreach_id))
     o = result.scalar_one_or_none()
     if not o:
-        raise HTTPException(status_code=404, detail="Outreach contact not found")
+        raise NotFoundError("Outreach contact", outreach_id)
 
     for field in ["contact_name", "contact_role", "division", "status",
                   "interest_level", "meeting_count", "notes", "next_step",
@@ -120,7 +121,7 @@ async def delete_outreach(outreach_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(Outreach).where(Outreach.id == outreach_id))
     o = result.scalar_one_or_none()
     if not o:
-        raise HTTPException(status_code=404, detail="Outreach contact not found")
+        raise NotFoundError("Outreach contact", outreach_id)
     await db.delete(o)
     await db.commit()
     return {"ok": True}

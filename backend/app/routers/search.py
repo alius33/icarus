@@ -3,7 +3,7 @@ from sqlalchemy import text
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
-from app.schemas.search import SearchResult, SearchResponse
+from app.schemas.search import SearchResponse, SearchResult
 
 router = APIRouter(tags=["search"])
 

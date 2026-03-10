@@ -1,13 +1,14 @@
 from datetime import datetime
 
-from fastapi import APIRouter, Depends, HTTPException, Query
-from sqlalchemy import select, func
+from fastapi import APIRouter, Depends, Query
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
+from app.exceptions import NotFoundError
 from app.models.decision import Decision
 from app.models.deleted_import import DeletedImport
-from app.schemas.decision import DecisionSchema, DecisionCreate, DecisionUpdate
+from app.schemas.decision import DecisionCreate, DecisionSchema, DecisionUpdate
 
 router = APIRouter(tags=["decisions"])
 
@@ -46,7 +47,7 @@ async def get_decision(decision_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(Decision).where(Decision.id == decision_id))
     d = result.scalar_one_or_none()
     if not d:
-        raise HTTPException(status_code=404, detail="Decision not found")
+        raise NotFoundError("Decision", decision_id)
     return _decision_schema(d)
 
 
@@ -85,7 +86,7 @@ async def update_decision(decision_id: int, body: DecisionUpdate, db: AsyncSessi
     result = await db.execute(select(Decision).where(Decision.id == decision_id))
     d = result.scalar_one_or_none()
     if not d:
-        raise HTTPException(status_code=404, detail="Decision not found")
+        raise NotFoundError("Decision", decision_id)
 
     if body.decision is not None:
         d.decision = body.decision
@@ -111,7 +112,7 @@ async def delete_decision(decision_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(Decision).where(Decision.id == decision_id))
     d = result.scalar_one_or_none()
     if not d:
-        raise HTTPException(status_code=404, detail="Decision not found")
+        raise NotFoundError("Decision", decision_id)
 
     if not d.is_manual:
         db.add(DeletedImport(entity_type="decision", unique_key=str(d.number)))

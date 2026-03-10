@@ -1,8 +1,9 @@
-from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy import select, func, desc
+from fastapi import APIRouter, Depends
+from sqlalchemy import desc, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
+from app.exceptions import NotFoundError
 from app.models.weekly_report import WeeklyReport
 from app.schemas.weekly_report import WeeklyReportBase, WeeklyReportDetail
 
@@ -41,7 +42,7 @@ async def get_weekly_report(
     )
     report = result.scalar_one_or_none()
     if not report:
-        raise HTTPException(status_code=404, detail="Weekly report not found")
+        raise NotFoundError("Weekly report", report_id)
 
     return WeeklyReportDetail(
         id=report.id,

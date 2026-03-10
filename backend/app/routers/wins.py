@@ -1,18 +1,19 @@
 from collections import defaultdict
 from datetime import datetime
 
-from fastapi import APIRouter, Depends, HTTPException, Query
-from sqlalchemy import select, func
+from fastapi import APIRouter, Depends, Query
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
+from app.exceptions import NotFoundError
 from app.models.programme_win import ProgrammeWin
 from app.schemas.programme_win import (
-    ProgrammeWinSchema,
     ProgrammeWinCreate,
-    ProgrammeWinUpdate,
     ProgrammeWinGrouped,
+    ProgrammeWinSchema,
     ProgrammeWinSummary,
+    ProgrammeWinUpdate,
 )
 
 router = APIRouter(tags=["wins"])
@@ -86,7 +87,7 @@ async def get_win(win_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(ProgrammeWin).where(ProgrammeWin.id == win_id))
     win = result.scalar_one_or_none()
     if not win:
-        raise HTTPException(status_code=404, detail="Programme win not found")
+        raise NotFoundError("Programme win", win_id)
     return _schema(win)
 
 
@@ -124,7 +125,7 @@ async def update_win(win_id: int, body: ProgrammeWinUpdate, db: AsyncSession = D
     result = await db.execute(select(ProgrammeWin).where(ProgrammeWin.id == win_id))
     win = result.scalar_one_or_none()
     if not win:
-        raise HTTPException(status_code=404, detail="Programme win not found")
+        raise NotFoundError("Programme win", win_id)
 
     for field in ["category", "title", "description", "before_state", "after_state",
                   "workstream", "confidence", "notes"]:
@@ -149,7 +150,7 @@ async def delete_win(win_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(ProgrammeWin).where(ProgrammeWin.id == win_id))
     win = result.scalar_one_or_none()
     if not win:
-        raise HTTPException(status_code=404, detail="Programme win not found")
+        raise NotFoundError("Programme win", win_id)
     await db.delete(win)
     await db.commit()
     return {"ok": True}

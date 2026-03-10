@@ -2,13 +2,12 @@ from typing import Literal
 
 from pydantic import BaseModel
 
-from app.schemas.transcript import TranscriptBase
-from app.schemas.summary import SummaryBase
-from app.schemas.decision import DecisionSchema
 from app.schemas.action_item import ActionItemSchema
+from app.schemas.decision import DecisionSchema
 from app.schemas.open_thread import OpenThreadSchema
 from app.schemas.stakeholder import StakeholderBase
-
+from app.schemas.summary import SummaryBase
+from app.schemas.transcript import TranscriptBase
 
 EntityType = Literal[
     "transcript", "summary", "decision",

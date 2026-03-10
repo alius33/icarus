@@ -1,12 +1,13 @@
 from datetime import datetime
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
+from app.exceptions import NotFoundError
 from app.models.division_profile import DivisionProfile
-from app.schemas.division_profile import DivisionProfileSchema, DivisionProfileCreate, DivisionProfileUpdate
+from app.schemas.division_profile import DivisionProfileCreate, DivisionProfileSchema, DivisionProfileUpdate
 
 router = APIRouter(tags=["divisions"])
 
@@ -34,7 +35,7 @@ async def get_division(division_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(DivisionProfile).where(DivisionProfile.id == division_id))
     d = result.scalar_one_or_none()
     if not d:
-        raise HTTPException(status_code=404, detail="Division profile not found")
+        raise NotFoundError("Division profile", division_id)
     return _schema(d)
 
 
@@ -59,7 +60,7 @@ async def update_division(division_id: int, body: DivisionProfileUpdate, db: Asy
     result = await db.execute(select(DivisionProfile).where(DivisionProfile.id == division_id))
     d = result.scalar_one_or_none()
     if not d:
-        raise HTTPException(status_code=404, detail="Division profile not found")
+        raise NotFoundError("Division profile", division_id)
 
     for field in ["name", "status", "current_tools", "pain_points", "key_contact", "notes"]:
         val = getattr(body, field)
@@ -77,7 +78,7 @@ async def delete_division(division_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(DivisionProfile).where(DivisionProfile.id == division_id))
     d = result.scalar_one_or_none()
     if not d:
-        raise HTTPException(status_code=404, detail="Division profile not found")
+        raise NotFoundError("Division profile", division_id)
     await db.delete(d)
     await db.commit()
     return {"ok": True}

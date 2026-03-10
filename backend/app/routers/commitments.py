@@ -1,10 +1,11 @@
-from datetime import date, datetime
+from datetime import date
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, Query
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
+from app.exceptions import NotFoundError
 from app.models.commitment import Commitment
 from app.schemas.commitment import CommitmentBase, CommitmentCreate, CommitmentUpdate
 
@@ -53,7 +54,7 @@ async def get_commitment(commitment_id: int, db: AsyncSession = Depends(get_db))
     )
     item = result.scalar_one_or_none()
     if not item:
-        raise HTTPException(status_code=404, detail="Commitment not found")
+        raise NotFoundError("Commitment", commitment_id)
     return _schema(item)
 
 
@@ -90,7 +91,7 @@ async def update_commitment(
     )
     item = result.scalar_one_or_none()
     if not item:
-        raise HTTPException(status_code=404, detail="Commitment not found")
+        raise NotFoundError("Commitment", commitment_id)
 
     if body.person is not None:
         item.person = body.person
@@ -129,7 +130,7 @@ async def delete_commitment(commitment_id: int, db: AsyncSession = Depends(get_d
     )
     item = result.scalar_one_or_none()
     if not item:
-        raise HTTPException(status_code=404, detail="Commitment not found")
+        raise NotFoundError("Commitment", commitment_id)
     await db.delete(item)
     await db.commit()
     return {"ok": True}

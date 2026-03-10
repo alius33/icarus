@@ -1,16 +1,21 @@
 from datetime import datetime
 
-from fastapi import APIRouter, Depends, HTTPException, Query
-from sqlalchemy import select, func
+from fastapi import APIRouter, Depends, Query
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
-from app.models.stakeholder import Stakeholder
-from app.models.transcript_mention import TranscriptMention
-from app.models.transcript import Transcript
+from app.exceptions import DuplicateError, NotFoundError
 from app.models.deleted_import import DeletedImport
+from app.models.stakeholder import Stakeholder
+from app.models.transcript import Transcript
+from app.models.transcript_mention import TranscriptMention
 from app.schemas.stakeholder import (
-    StakeholderBase, StakeholderDetail, StakeholderCreate, StakeholderUpdate, MentionItem,
+    MentionItem,
+    StakeholderBase,
+    StakeholderCreate,
+    StakeholderDetail,
+    StakeholderUpdate,
 )
 
 router = APIRouter(tags=["stakeholders"])
@@ -57,7 +62,7 @@ async def get_stakeholder(stakeholder_id: int, db: AsyncSession = Depends(get_db
     result = await db.execute(select(Stakeholder).where(Stakeholder.id == stakeholder_id))
     s = result.scalar_one_or_none()
     if not s:
-        raise HTTPException(status_code=404, detail="Stakeholder not found")
+        raise NotFoundError("Stakeholder", stakeholder_id)
 
     mc = await db.execute(
         select(func.coalesce(func.sum(TranscriptMention.mention_count), 0))
@@ -87,7 +92,7 @@ async def get_stakeholder(stakeholder_id: int, db: AsyncSession = Depends(get_db
 async def create_stakeholder(body: StakeholderCreate, db: AsyncSession = Depends(get_db)):
     existing = await db.execute(select(Stakeholder).where(Stakeholder.name == body.name))
     if existing.scalar_one_or_none():
-        raise HTTPException(status_code=409, detail="Stakeholder with this name already exists")
+        raise DuplicateError("Stakeholder", "name", body.name)
 
     s = Stakeholder(name=body.name, tier=body.tier, role=body.role, notes=body.notes,
                     is_manual=True, source_file="manual", file_hash="")
@@ -103,7 +108,7 @@ async def update_stakeholder(stakeholder_id: int, body: StakeholderUpdate, db: A
     result = await db.execute(select(Stakeholder).where(Stakeholder.id == stakeholder_id))
     s = result.scalar_one_or_none()
     if not s:
-        raise HTTPException(status_code=404, detail="Stakeholder not found")
+        raise NotFoundError("Stakeholder", stakeholder_id)
 
     if body.tier is not None:
         s.tier = body.tier
@@ -135,7 +140,7 @@ async def delete_stakeholder(stakeholder_id: int, db: AsyncSession = Depends(get
     result = await db.execute(select(Stakeholder).where(Stakeholder.id == stakeholder_id))
     s = result.scalar_one_or_none()
     if not s:
-        raise HTTPException(status_code=404, detail="Stakeholder not found")
+        raise NotFoundError("Stakeholder", stakeholder_id)
 
     if not s.is_manual:
         db.add(DeletedImport(entity_type="stakeholder", unique_key=s.name))
@@ -148,7 +153,7 @@ async def delete_stakeholder(stakeholder_id: int, db: AsyncSession = Depends(get
 async def get_stakeholder_mentions(stakeholder_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(Stakeholder).where(Stakeholder.id == stakeholder_id))
     if not result.scalar_one_or_none():
-        raise HTTPException(status_code=404, detail="Stakeholder not found")
+        raise NotFoundError("Stakeholder", stakeholder_id)
 
     mention_result = await db.execute(
         select(TranscriptMention.transcript_id, Transcript.title, Transcript.meeting_date, TranscriptMention.mention_type)

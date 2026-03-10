@@ -1,10 +1,11 @@
-from datetime import date, datetime
+from datetime import date
 
-from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy import select, or_
+from fastapi import APIRouter, Depends
+from sqlalchemy import or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
+from app.exceptions import NotFoundError
 from app.models.cross_project_link import CrossProjectLink
 from app.schemas.cross_project_link import (
     CrossProjectLinkBase,
@@ -86,7 +87,7 @@ async def update_cross_project_link(
     )
     link = result.scalar_one_or_none()
     if not link:
-        raise HTTPException(status_code=404, detail="Cross-project link not found")
+        raise NotFoundError("Cross-project link", link_id)
 
     if body.source_project_id is not None:
         link.source_project_id = body.source_project_id
@@ -117,7 +118,7 @@ async def delete_cross_project_link(link_id: int, db: AsyncSession = Depends(get
     )
     link = result.scalar_one_or_none()
     if not link:
-        raise HTTPException(status_code=404, detail="Cross-project link not found")
+        raise NotFoundError("Cross-project link", link_id)
     await db.delete(link)
     await db.commit()
     return {"ok": True}
