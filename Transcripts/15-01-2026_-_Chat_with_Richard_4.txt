@@ -1,0 +1,240 @@
+Speaker 1  0:00  
+And wavelength. Just do a Control Shift R and just do a refresh or close the browser just because I'm there's a brand new instance up there. I'm not currently getting any errors. Okay,
+
+Unknown Speaker  0:19  
+this was when I was going into a tab that we
+
+Unknown Speaker  0:23  
+are going into a tab, yeah,
+
+Unknown Speaker  0:25  
+let me just bring this up. Hold on.
+
+Unknown Speaker  0:30  
+I'm going through every tab right now.
+
+Unknown Speaker  0:34  
+So let me put this up.
+
+Richard Dosoo  0:48  
+The reason I came into the tab was because the I was like, oh shit, migration statuses were not coming up. And so I was like, okay, no worries. I think maybe it's team members, right? So, so this is use cases Azmain. I forgot we might want to add pagination to this table as well the use case ones, but that's why we can do that in a subsequent field. So then customers are flying. Customer use cases is fine. Data issues was fine. And then I think it was this team members. When I came in here to try and add a team member, then this is where I got that error that I just posted in the chat. But it looks like you're right now. Refreshing. Oh no, here you go. You see team member not
+
+Unknown Speaker  1:35  
+found. Okay, so
+
+Richard Dosoo  1:38  
+this may be this. This may not be a deployment issue. This may be a issue in the code.
+
+Speaker 2  1:49  
+Yeah, no, that's cool. That's all right.
+
+Speaker 1  1:55  
+Yeah, I didn't, yeah, I didn't know which functionality to test. But like, this is where, like, unit testing for the API and unit testing for the front end would be very helpful. So the errors that we were sorry go ahead.
+
+Richard Dosoo  2:16  
+Can I just ask, like, none of the changes I made are on the live version? Oh, okay, let me, let me bring this up, right? Because we, this was the
+
+Unknown Speaker  2:32  
+So,
+
+Richard Dosoo  2:41  
+yeah, this was the build that Azmain checked in. This is the, this is the deployment of that build. This, I don't know why they're saying it did it a minute ago. It did it. This is the pull request that we kicked off manually. And then, as you can see, the black end deployed and the front end deployed. And so, I mean, we can do it again now, because Azmain scripts to
+
+Speaker 1  3:08  
+do it here one second, and it was this in Maine, I'm assuming, yeah,
+
+Speaker 2  3:12  
+he first did a branch, and then we did a pull request to pull that into me.
+
+Speaker 1  3:16  
+Okay, one second, more than likely, what happened is just a conflict between my fix on one second.
+
+Unknown Speaker  3:30  
+Okay, I'm pushing out a new one, and that should include his fixes as well.
+
+Richard Dosoo  3:42  
+The the, I guess Ben, the question will be like, what? I just want to make sure we do it right the next time, right. So what Azmain did, or even
+
+Speaker 1  3:53  
+Azmain, so what Azmain did is perfectly fine. What the The issue is, when? When was his deployed? Just now. It was three hours ago. Yeah, about that, okay, um, now that, I mean, that should have taken, I think, but there was some other lingering issues with the, what you call it, with the application load balancer. So I just want to show you what, what was the the initial fix there? So here, let me share my screen. Actually, I'll be easier. All right. I hate this little tab. Okay. Can you see my screen? Yep, okay. So basically, initially there was a flaw, but now I had resolved it. So the API docs exist here, the swagger docs, yeah, so before it was routing essentially incorrectly, and had to fix it, so that probably was in line with. The the error that you guys were experiencing earlier and now, yeah,
+
+Unknown Speaker  5:09  
+old UI build, right?
+
+Speaker 1  5:12  
+There's one, hold on. Let me check to see there, all right. There's one pending right now, which is it should contain his if not, we'll, we'll look into that. And so Azmain, just to make sure, so you created a branch, yep, and then created a PR and merge that into main. Correct, yeah, okay. All right, that's all correct. All right, while we're waiting for this to provision, okay, and then this needs to be commissioned, what is this error? Again? Okay, one second.
+
+Unknown Speaker  5:59  
+Interesting. Okay, let me try this again. Okay, that's deactivating. There you go. Okay, hold on. I'm
+
+Speaker 1  6:28  
+okay, yeah, it takes a second or two, and that's why there was getting a little error. But so that should be let me click through and see if there's any i
+
+Speaker 1  6:46  
+Um, but yeah, the the initial errors that we were seeing before, at least with like, anytime you see something like one of these errors one, let me see if I can go back through one of the errors that you shared, like this one right here, so on undefined column that basically saying that the database that currently exists does not have this so it's not an issue, necessarily an issue with the front end or back end. It does. It is saying that the back end is referencing a column that doesn't exist in the database. So like that could be considered a back end problem. What I'll do, we will probably need to have, like a database schema just stored somewhere that we can all reference to make sure we go doing things right. We need to make sure it might be in our best interest to make make sure that the local DB because I'm assuming, when you run the code locally, it's probably using this, where is it? It's probably using this.db file, I had to guess. So it's just like little conflicts that, yeah, we can definitely
+
+Richard Dosoo  8:10  
+see we can tie that to the schema, and we can make, even though we've been creating databases locally, we can make sure we like the database schema. We have a database project or whatever the Yeah, so serious, right? So any schema changes can give you managed as part of the deployment process?
+
+Unknown Speaker  8:27  
+Yeah, no, like, perfect example, right here. So I'll show you right now.
+
+Speaker 1  8:34  
+So, like, I just pulled in the changes, right? And it looks like there's with some back end changes, and there's an issue where action name doesn't exist, and stuff of that nature and blockers is referencing a column that doesn't, that doesn't exist. So the way we can resolve this it, sorry. Go ahead, I've actually now been working on
+
+Azmain Hossain  9:01  
+on a version from the main and literally, the first thing I did, I was like, can you just fix all these problems every time? Because when I tried to deploy it locally, literally hit the problem, because field were named differently and stuff like that. So I fixed all of those, some other stuff that I'm going to push it. Okay.
+
+Speaker 1  9:20  
+Yeah, so. So basically, the best way what we can do is, every time we, like run the code, we'll want to run an API back end test, API, or an API unit test, if you will. That will be our that would be the best way of going about things.
+
+Azmain Hossain  9:47  
+Okay, so I literally populated it now with only the real data. Literally, I've taken all the dummy data out the version I'm running locally. So what if I push it? Literally? Out.
+
+Speaker 1  10:05  
+I mean, if you push it now, it'll be updated, and then we'll see if there's an error, and then we can go through and fix that. Yeah. I mean, if it's these two so basically, if it's these two errors, and you, like, handed these errors to cursor and gave it the URL it should fix it. So if you want to commit those changes and put a pull request, we can merge it in and go from there. Because Rich,
+
+Azmain Hossain  10:40  
+I was just thinking, what, what Ben said about doing the demo with dummy data? Yeah, even if we fix all these issues now, it's still going to be dummy data, whereas I've just, I the Just purely the real data, which just helps we have
+
+Speaker 1  11:23  
+All right, so if you want to let us know when you made a PR, yeah, let me share my screen that way. You guys can perfect, yep, but yeah once. Oh, that's not good for my computer. Sorry. I just one second
+
+Speaker 1  11:49  
+I've been moving my my desk around, and I have a charger now that's underneath my foot, and I apparently kick it out. Okay, so compare. Pull Request is fine. Let's see I have now access as well. So it's saying
+
+Speaker 1  12:19  
+able to merge. So should I click a great, yeah, great pull request. So when it says able to merge, that just means that there's, in theory, no conflicts between what's currently out there and the changes that you're about to make. So all your changes are essentially new, more or less, they're not conflicting with anything else. So create the pull request, and then let's see, all right, I see that there. All right, okay, cool. All right. Well, merge this. So do I click it, or do you click it? Yeah, so I will approve it. So one second, actually, I even have to approve it. I'm just gonna confirm merge. Okay, all right, that works. Okay, cool. So now what that should do is kick off a new process. Yep, to deploy. Yeah, okay, yeah. So the, there's a here, am I sharing my screen? So, or no, you are okay, okay, yeah, so, right, yeah, you can see it's, it's doing its thing. There's actually two deploy to ECRs, which is a little weird, but should be fine.
+
+Speaker 2  13:48  
+One of them always fails, and then one passes.
+
+Speaker 1  13:52  
+Oh, really, yep. Oh, I apologise. I haven't looked at that, so I'll, uh, I'll make sure that that is resolved. That's very strange.
+
+Speaker 1  14:05  
+Yeah, well, there's only one on my end. Very interesting. Oh, wait, it
+
+Unknown Speaker  14:09  
+may have been when we were doing the deployment with
+
+Speaker 1  14:14  
+are there two? Ah, there are, okay, there are two files. All right, yeah, hold on one second. We're gonna we can fix this, just for my own sanity purposes. No, I know what the problem is. There are actually two separate workflow files, but they're just named the same thing, like you can have a literal name property, and that's, it's a thing, so let me so that's just, it's fine. We can let it do its thing.
+
+Unknown Speaker  14:56  
+Where on earth is my i?
+
+Speaker 3  15:15  
+So Rich it looks like this, out of three to have failed. So it's all up to
+
+Unknown Speaker  15:22  
+you. Uh, let's have a look. So okay, that
+
+Unknown Speaker  15:29  
+one worked on, let me see.
+
+Richard Dosoo  15:33  
+No, but you know your failures, right? The ah ones, yeah, one of them is basically because that was your branch. And Ben's code doesn't look at branches, so it just comes in. It looks at the build, it's like, no, I don't give a shit about that. And then it doesn't go through to the deployment of the front end or the back end. Then the other one is the actual with the unit test for the build right to see if it works. Now, because when you merge into main, then Ben CICD pipeline looks and says, Oh, me, actually, I need to do something with this one. And then, basically, then picks it up from there,
+
+Speaker 1  16:08  
+all right, so I have, let's see one minute ago. Okay, so the front end is populating, which is good. So it looks like that is deployed. Now the back end is being built and being processed. So the front end is switching over right now. So if we wait a bit or so, it will pick up the new changes.
+
+Speaker 1  16:35  
+Not bad. And then the back end will should allow us, let's see. All right, there are two new back ends. They are switching over now, so it'll Take a moment.
+
+Unknown Speaker  17:19  
+All Right, created,
+
+Unknown Speaker  17:31  
+all right,
+
+Unknown Speaker  17:44  
+all right? It Looks like it's still building, right now.
+
+Speaker 1  18:40  
+Oh, sorry, guys, oh, good. The still taking its dear sweet time building out this image.
+
+Unknown Speaker  19:23  
+There we go. Okay, it's finally finishing up that build for the back end.
+
+Speaker 1  19:40  
+When you are running locally, um, you said there's, like, a, I'm assuming there's a local database, right? Yeah, yeah, I believe so. Can you ask cursor where that is? I mean, I can. I could probably ask that, but, yeah, where's the database for the local.
+
+Speaker 1  20:10  
+Okay, we're publishing to ECR, Great, all right, it's in back end. Then, yeah, okay, yeah, it's that DB tracker. Okay, so that right there, that DB and the one in production, we need to verify are aligned, and they should probably not change. I'm not 100% certain. I need to, I'll need to double check. But like I did use the data initially from adoption tracker to publish, to push to production, but if there were any changes to that DB or anything like that, like if there's any mismatch between them after my my merge, then that could have, that could cause problems, if that makes sense. So it should be as simple as we just need to check to make sure that the scheme is aligned, and then go from there. All right, let me all right. I really,
+
+Unknown Speaker  21:41  
+okay. Logs.
+
+Speaker 1  21:56  
+I'm just watching the back end here to Make sure everything populates effectively, yeah, activating.
+
+Speaker 1  22:22  
+Okay, so all of that pushed everything should be up to date. I don't know why that's it continues. There we go. That's my thought. Make sure that the back end is doing what it needs to do. Now, this is very strange, but okay, you
+
+Unknown Speaker  23:32  
+Hey, it looks like it came through customer not found.
+
+Unknown Speaker  23:42  
+I literally alright. So what was happening last time? Hold on, but then it can't pull the thing out.
+
+Speaker 1  23:55  
+All right? One One second, I'm still having issues loading on my end. Let me try a new tab. I think this is an
+
+Azmain Hossain  24:02  
+older an older version, because on my latest one, this field should be complete because
+
+Speaker 1  24:15  
+it has a target data. One of the changes I put that there customer, all right, mine is still loading on mine one second. Let me new population.
+
+Richard Dosoo  24:31  
+That's my worst case scenario. We can demo off your local post for the meeting and then figure out the so don't, don't panic. We will. We'll get it, we'll demo what we've got locals for the thing, and then we'll sort the build out today.
+
+Unknown Speaker  24:48  
+Okay, log in
+
+Unknown Speaker  24:55  
+and see what the issues are here. I'm.
+
+Unknown Speaker  25:02  
+This moves, Okay,
+
+Speaker 1  25:10  
+looks like action plan is causing is still an issue, all right? One second, yeah, it's all right. Fetch blockers, okay, so these didn't seem to be resolved the way we wanted. So one second I'm
+
+Unknown Speaker  25:45  
+okay, going through the list here and well, I swear teams is just right in your face. Always i
+
+Speaker 1  26:32  
+All right. Blockers, okay, Action Plan blockers, Action Plan blockers, sorry, I'm just going through a list here to make sure there's anything else that I haven't seen. Oh, there we go.
+
+Unknown Speaker  26:59  
+Okay, where's
+
+Unknown Speaker  27:07  
+customer adoptions.
+
+Unknown Speaker  27:15  
+All right, I'm
+
+Unknown Speaker  28:26  
+okay, that should do that One second. I'm making some changes right now. I'm
+
+Unknown Speaker  29:35  
+okay, all right, pushing that change.
+
+Unknown Speaker  29:58  
+I'm. Merge, which had
+
+Speaker 3  30:41  
+We've got one minute till the next call. Should we join that one?
+
+Richard Dosoo  30:49  
+I'll kick that one off. Just join from local host. Just go through the go through the UI, and then we can Ben, you're on the call as well, right?
+
+Speaker 1  31:01  
+When is it? It's it's now, the other it's now, okay, yeah, I do have that meeting.
+
+Richard Dosoo  31:07  
+Yes? Cool, yeah, let's just jump on that one, and then we can get stuck. Okay, do.
+

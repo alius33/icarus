@@ -1,0 +1,534 @@
+Richard Dosoo  0:00  
+That's, yeah, that's not what we would normally do for like these POCs. We would do like, we would scope the POC. That basically allows us to say you're only doing testing up until this amount this scope. It's not production testing. It's not production rollout. So I think that number should come down by like two thirds, to be honest. But I want to have a call with Tim to make sure he's comfortable with that. So let me yeah, that's, that's the that kind of cost is what we would think the implementation because not the and I want to basically say to Tim, Tim, that's the amount of money that's on the table, right? So that's, let me reach out to him and get, yeah, no, exactly. So that that's, that's, that's it.
+
+Speaker 1  0:55  
+I will, yeah, if what timelines do you need the numbers back on so if I got, If I
+
+Unknown Speaker  1:09  
+Okay,
+
+Richard Dosoo  1:21  
+okay, so I'll, what I'll do is I'll get steam. I'm in the office now, but when I leave and I have better internet, I'll give them a call when I get home, and I'll go through them. I'll go, we'll catch up tonight, so tomorrow Morning.
+
+Unknown Speaker  1:39  
+Cheers. Jeremy, thanks You too, What do
+
+Richard Dosoo  2:20  
+I Yeah, so what I can do is, I can, I can just do a peer review. You remember some of those commands that I sent you, those prompts? That's one of them, is peer review a whole bunch of changes, and tell me what you think. And so we can be using that in this instance to help us right review the output it's
+
+Unknown Speaker  3:11  
+so let me show you. So what I would do is,
+
+Azmain Hossain  3:20  
+by the way, what does this one mean? Where it says multiple migration heads detected.
+
+Richard Dosoo  3:29  
+This is the Albert one, right? Yeah, I haven't even looked at this before, so this is, this is good. We're all learning at the same time. So what it must mean is that maybe there was
+
+Azmain Hossain  3:38  
+this error before, and I told cursor, and it just fixed it. It was like, Oh, I know what the problem is, because I did something
+
+Richard Dosoo  3:46  
+sometimes with these scheme markets, right? Some of them might need to be applied in sequence so, but we can, but the migration script should be doing that for us. Yeah? Chuck that back into cursor, and let's see what. Yeah, it's just the slowness.
+
+Azmain Hossain  4:13  
+Don't worry about like losing the context window and constantly having to switch between auto and other.
+
+Unknown Speaker  4:22  
+Need to the entire, you know what was ironic? We were like, Yeah, that's mainly, I It's.
+
+Richard Dosoo  5:20  
+The feelings are Weird, changes and stuff. We've done some moderate amount of check ins, but to you, I mean the amount of physical new features that we've shipped in the past couple like, that's that movie would take teams weeks to do. Basically been smashing it through, right? And it's good, but you get what I mean, like, there's things that come with that. Yeah? So you
+
+Azmain Hossain  6:02  
+can't the amount of tech debt that builds up when you're just
+
+Richard Dosoo  6:05  
+even like, the magnitude of change that we're doing, the amount of testing we should be doing, oh my god, we haven't, like, all the time, right? Because we've been going home now, you can only do that for so long before it catches you up. Yeah, to go on me before.
+
+Azmain Hossain  6:17  
+This is my worry, that everything looks great on the front end. Let people use it. Then buttons don't work, things don't work. Data doesn't get pushed.
+
+Unknown Speaker  6:27  
+Yeah, exactly. So that's where we need to be like, yeah.
+
+Unknown Speaker  6:43  
+But we should write it.
+
+Azmain Hossain  7:08  
+An entire list of guidelines, best practices, or cursor from like doing hundreds of hours. That's what.
+
+Richard Dosoo  7:18  
+Well, this is the thing that I was saying to Ben, right, that this is the guys that written Claude code. They did a similar thing, but they were like this, I'll send it to you know, like to do multiple roles within the development team simultaneously. So they have one term of core code running, and it's doing the dev they have another one doing the QE. They have another one doing the so the agents are acting all in parallel, right at the same time. And I was like, we've not been using it this way at all. We've just been using it as a football, just as a glorified chat, I would like. But if we do it this way, we have to be really slick about the way we send our stuff into memory in the context, because otherwise we're just gonna burn through our tokens, right? Yeah, that's where we start. Using things like obsidian for managing markdown files, using markdown files for memory management. That's where we'd start. If we're going to do it this way, we need to meet it. I don't know if it worked, but it
+
+Azmain Hossain  8:22  
+worked also for worked, yeah, I got to do A Hard Reset.
+
+Speaker 2  8:27  
+Portfolio Review. Not Found. Whatever you get,
+
+Unknown Speaker  8:40  
+going to know
+
+Unknown Speaker  8:48  
+you're ageing, but tell us, bro. But anyway,
+
+Unknown Speaker  8:52  
+I will be Thursday on Friday in Kanye world.
+
+Speaker 3  8:59  
+Maybe I'll be sure you so,
+
+Azmain Hossain  9:11  
+yeah, the main thing, the reason I put up this call is to ask you, basically what I asked you, if people start putting data in, is it going to be there,
+
+Unknown Speaker  9:22  
+the data, obviously, The way it all works, right, is from
+
+Richard Dosoo  9:41  
+the vehicle. Within the VPC, yeah. So if you really wanted to access it, you'd have to get a Bastion, or what we call a jump post the VPC, to a machine inside the network, and then you can start interacting. So what that means is, right, the app can access it by the API, via the API layer. That all works, but when we're doing a release. Any scripts or anything else that we need to interact with the database, even data fixes, all needs to go in that outbreak file, because that runs from within the VPC, right? So that's how it can change tables. It can put data in there, etc. So that's cool. Chris has built that. It's all working. But what it means is, let's say, for example, now we hand this off to Natalia Stacy and these guys, they start populating customers. We go and add a new table called Customer Reference, something blah, blah, blah we want. And from today, any schema changes we make, must ship data fix with it, because otherwise, all that's gonna happen is we'll go to that screen in the application then they're going to encounter an error because we haven't primed it with the data. Yeah, so the onus is on us, right? That if once people start putting production data in it, then we any data changes. We make new fields, deleted fields, added fields, we have to have a data fixed script that goes along with that change.
+
+Azmain Hossain  10:56  
+So I'm thinking two. One, we need a script, maybe in like the cursor management thingy just to pick up any changes, yeah, and then trigger the data fix script. Yeah, well, no,
+
+Richard Dosoo  11:07  
+you would write the data fixed script. You would then put in our in album X to say, run this data fix script after you made all these schema changes, because that's the place the data changes have to be run as part of the album.
+
+Azmain Hossain  11:19  
+Also, the data fix file doesn't have to be changed for every release. It knows what it has
+
+Richard Dosoo  11:23  
+to do, no. So it's, let's say you release the release you want to do tomorrow, you introduce a new entity, and it's called customer. Yeah, I know. What was that table you released? What was it called portfolio, portfolio review, right? So if you can see, if we don't prime it with data in the application, you get an error. So we need to say, not only are we creating an entity, partner or portfolio review, we need to then say how you're going to create data to populate that table as part of the migration. So we need to see like data, maybe an Excel spreadsheet, but we also need to have the script which is going to create that data, do the ETL and populate the tables, and we have to do that now with every deployment, not every deployment, but every time we introduce a new new object in a data model, we have to have these scripts as well. Otherwise, our users are going to hit errors in the application that you know that are going to inhibit the use of the tool. So we need to, because now we've got users doing it in production, quote, unquote, then we start, we need to start following a proper release management. We can't just be kicking out changes, yeah, and because you get what you can imagine, if the users hear this, right, they just say, Look, we can't. And is it the what? What's the area you're getting so this is bad response. Is the deployment finished? You think,
+
+Azmain Hossain  12:47  
+yeah, yeah, it's finished. I've done like this one had finished. You know, you need to
+
+Speaker 1  12:54  
+refresh. Yeah, but it may be running. Hey. And cough.
+
+Speaker 1  13:14  
+Now, before I head off to look for 20 minutes away at five, I
+
+Azmain Hossain  13:30  
+maybe these rooms are empty, right? We can jump down these Shannon's booked until five. Actually, we can write that. What I'll do is I'll see if I can, because we're in that now, I'll just book it till 530 that way you can just go and then list it's already
+
+Unknown Speaker  13:51  
+in there. I'll come find
+
+Azmain Hossain  14:02  
+you. Yeah. Sorry, it still hasn't deployed. Yeah.
+
+Speaker 1  14:06  
+But even I need to get access to I also want, even though you shouldn't need to make any changes to the infrastructure, see that it's still running,
+
+Azmain Hossain  14:24  
+because I run all my stuff on railway, backend,
+
+Azmain Hossain  14:33  
+deployment errors, fixing them. I just I do it anyway. I instance,
+
+Richard Dosoo  14:49  
+essentially all of these our builds are deployed onto something called elastic container service, which is basically a way for you to host your applications that deployed in a container. Yeah, and. Was a setup has set up clusters for us, for the front end, for the back end, for the eight by all we're doing, because we, when we publish our code on GitHub, it then goes and deploys it to one of
+
+Unknown Speaker  15:10  
+those containers. Yeah,
+
+Azmain Hossain  15:17  
+219 deployments in like a insane numbers. When you, when you look at the get like thinking of when it was created. We've got yesterday we were up to 100 commits, 105
+
+Richard Dosoo  15:32  
+small world is the team is small, and we're kicking out that number. This is like, only what big, big teams. So in here,
+
+Richard Dosoo  15:49  
+just to give you the context, these are, this is where we host all of our cat accelerate. Oh, okay, okay, we've taken all of our accelerate customers, and they've got their own customers, but he's created another cluster for us just to support this app factory process. Yeah,
+
+Azmain Hossain  16:10  
+yeah. You set up the dev ones as well. Just not set up, set them up properly.
+
+Richard Dosoo  16:21  
+Application, the front end into it, yeah? And then that, once he's done, because the process is, then, like, most of it is done. It's just a little bit more tweaking, yeah, what I said to him was, obviously, because he had his race today, I was like, Don't do the race, yeah, cool. Like, we're not gonna disturb you in it. And then once, once he comes back from doing the race, back online, then we can work through like, not only our app dev test, but George's app, yeah, yeah, yeah, the other app that I've got, exactly, do you see what I mean?
+
+Azmain Hossain  16:54  
+So, yeah, what you said we need to thingy to Ben, because we already agreed that from the moment we let it loose on people, that's the end of data changes, yeah.
+
+Richard Dosoo  17:06  
+What is we just need to do in a structured manner after that, and our deployments to production should be like, at a frequency that is like, we shouldn't be deploying at the same frequency, yeah, yeah. We need the two environments at that point. Ben's gonna do that for us tomorrow. We'll have Dev, we'll have prod. Can deploy to dev as many times as we want, but to prod, we only want to deploy once a week, basically because of the testing that we need, because all the other things, the cost of deploying to production is quite high.
+
+Azmain Hossain  17:33  
+Right quick question, how do I export logs
+
+Speaker 1  17:39  
+from the console? So right now I've just been copying and pasting.
+
+Azmain Hossain  17:42  
+Yeah, that's what I'm doing. But I'm like, Okay, so I'm keep getting the same errors. Man. I don't know what's what I've done, but I'm like, what if I open these up and give it everything here,
+
+Unknown Speaker  17:54  
+this star still running here?
+
+Azmain Hossain  18:19  
+Call an API, no, no, no, that's that's way more hassle here.
+
+Richard Dosoo  18:22  
+So that's why to raise a service now ticket, in fact, let me find it and I'll raise it for you now. So let me do it now.
+
+Richard Dosoo  18:50  
+That's this, what we're going to formally as may invite you into tech consultant, formal invitation bro, into the group. So let me do this channels
+
+Azmain Hossain  19:02  
+my my recording line is so weird, man,
+
+Unknown Speaker  19:08  
+but it's this is this is the thing.
+
+Unknown Speaker  20:08  
+Should be both of Those. Let me i i
+
+Unknown Speaker  21:00  
+i Are you going to accept The invite on teams?
+
+Azmain Hossain  21:41  
+Because I'm not getting anything. I thought I added you.
+
+Speaker 1  22:01  
+Yeah, you should add a request saying, have members, hopefully it comes soon.
+
+Richard Dosoo  22:24  
+And then what we're going to do is agitate AWS, but I've got, like, a more formal onboarding dock that definitely should get you to okay to go through, but we need to get your new laptop first.
+
+Azmain Hossain  22:42  
+What? Are these people? Right? Billion tokens. They're like, Oh, I've spent three grand.
+
+Richard Dosoo  22:54  
+Like, there's some people, right? There's some because a lot of this right is, I the NVIDIA share price is driving price, yeah, but like, it's all fucking fake, nice,
+
+Unknown Speaker  23:15  
+exactly, Exactly, this is it.
+
+Richard Dosoo  23:20  
+This is or last. I'm gonna create an item access
+
+Richard Dosoo  23:32  
+first, but I'll go through the proper like onboarding dock if you want time. But first, let me do this marriage access.
+
+Azmain Hossain  23:53  
+And my daughter keeps going in my room and looking for me, bro,
+
+Speaker 1  23:57  
+you should be getting out of here to go home to anyway, yeah,
+
+Azmain Hossain  24:04  
+like, sometimes when I leave it, like 430 or like five on the door, Sneha is like, Oh, see you later. Part time. I'm like, me, I've got a baby. I would drop kick all of you to hang out with my babies. Is happening, right? There's no conversation you could give me that that's better than just her being like, Gaga.
+
+Richard Dosoo  24:26  
+That's it, and as it should be. Man, there should be none of this like his brother, trust me. Man, there's no
+
+Azmain Hossain  24:33  
+it's like, I read this thing where it was like, in 20 years, the only people that will remember that you work late are your children? Yeah, this is, trust me, like I and that hit so hard, because that's literally what my dad did, and that's what I remember.
+
+Richard Dosoo  24:51  
+Obviously, it's good when you have like, it shows that you've got
+
+Azmain Hossain  24:55  
+a good work ethic. Is good to have you.
+
+Richard Dosoo  25:03  
+They can't at the expense of the like, the time that's needed,
+
+Azmain Hossain  25:06  
+the stuff that matters. Everything is a means to an end, and that's the end. I
+
+Richard Dosoo  25:37  
+i and then it goes through the usual approval nonsense. But once that's done, then you should see in your Octa,
+
+Unknown Speaker  25:47  
+yeah, how
+
+Richard Dosoo  25:48  
+much you have that, then you can you have, like, the same rights that I've got to, I mean, guessing, if I click on it, it's not gonna, it's not gonna give you access to our tenant, basically, oh, right, okay, because we have environment, but once you have that, then you'll be able to see the clusters that are running. You
+
+Azmain Hossain  26:25  
+by the way, are those tasks still running?
+
+Unknown Speaker  26:27  
+That checking it looks like they're still running.
+
+Azmain Hossain  26:32  
+Can you click on it and see what the task is on
+
+Unknown Speaker  26:35  
+our last deployment? Can
+
+Unknown Speaker  26:44  
+one is still running.
+
+Azmain Hossain  26:46  
+I mean, that's the dev one. That's fine.
+
+Richard Dosoo  26:52  
+So all I know is obviously a container being deployed, but I can't tell what have the image requested. Your previous private team has been denied.
+
+Unknown Speaker  27:06  
+What the hell? Why do you design
+
+Azmain Hossain  27:10  
+advisory? I mean, another advisor anymore? I
+
+Azmain Hossain  27:27  
+I saw that. Okay, yeah, if it's under Ibu all,
+
+Speaker 1  27:33  
+it should like that. I don't believe it. Oh, yeah,
+
+Azmain Hossain  27:36  
+they've hidden it because it's, it's not public, yeah,
+
+Richard Dosoo  27:41  
+anyway, but the, I think the we we need to, normally, it takes three to five minutes. It doesn't take that long for for these tasks to finish running.
+
+Azmain Hossain  27:56  
+I mean, is it because I was avoiding
+
+Azmain Hossain  29:04  
+I mean, literally,
+
+Richard Dosoo  29:22  
+Karen, can, if it doesn't work tonight, we'll just connect with Ben in the morning on it, because he's in the Euro I think the main thing is we can connect with them tomorrow and get them to slide into date if They have a slider from the data already. Yeah, yeah, and
+
+Azmain Hossain  29:53  
+we open everything is working on the back.
+
+Speaker 1  30:00  
+And do you have a build locally to review the changes?
+
+Azmain Hossain  30:05  
+I can load up the front end, but the whole point is I need to be able to, like, click into an object like a blocker, and see the changes. And if there's no data, it doesn't do anything. Yeah, it's fine, because deployments been working okay? And I don't have any more changes to push now.
+
+Unknown Speaker  30:24  
+Okay, no, so that's cool, right? So let's do that, and then,
+
+Azmain Hossain  30:31  
+and then, I really want to get some headspace to think about the programme stuff, because we had the call with Alexandre today. I've got, like, I recorded that call, so I've got everything there, but just the other stuff, like the stuff that Martin's doing, I need to catch up with him, what's going on. And the other thing, and I don't know if this is within even my purview, is like, if we're gonna, like, I was telling you, if we're gonna expand out this cursor availability, we need to figure out some way that this, these like, what's it called, cursor settings files are automatic on every single person that instals it, yeah. And without even knowing they're adhering to those rules,
+
+Richard Dosoo  31:11  
+yeah, exactly. We haven't even thought like we've right now, just been figuring out how to get us up and running, yeah. But once we get up and running, they really need to go to like Christine, Steve, Joe, Tilly Liz, get them up and running. Those would be the priority next people. Then it would be whoever else in consulting benches is the priority group, because we need to show people how to build like the same way that we've created those slides that were like, This is how you update the app. This is how you deploy locally. We need to do that exactly same thing for everyone else, but you can imagine they're going to be creating their own apps, right? So what's the process for you to build your own app locally? Once you've built it locally, then you need to call Ben up and be like, right? Put this in the CICD pipeline to dedicate this proper app once it's done, it has a dev test, prod. Do you see what I mean? There's going to have to be some gating criteria, because not every single application is going application is going to need all that, right? So applications, we might just say, you just deploy locally and you just get dev instance, right? Yeah.
+
+Azmain Hossain  32:09  
+So here's the bigger question, are we going to just start training people on, like, software development lifecycle?
+
+Richard Dosoo  32:17  
+Well, so this is the question, right? So we kind of came about it unfortunately the wrong way around. Gave everyone the tooling and didn't give them the process.
+
+Azmain Hossain  32:26  
+Yeah, anybody, anybody who has the experience and the knowledge, could start working on it right away. Other people see, and they're like, oh, it's that easy. I can do it like, but also not.
+
+Richard Dosoo  32:37  
+But this is the issue, right? That when we talk about the training programme that we want to get, this is
+
+Azmain Hossain  32:43  
+what I was going to say, like the training and enablement as a separate project. Sounds like we're just going to give training, but all this other stuff, it's it's making sure that there's a smooth process for people to request access to get the training. They need to raise problems once they're up and running. Yeah, so, but once they're up and running, maybe more training if they want to learn more stuff.
+
+Unknown Speaker  33:05  
+So this is what I was saying to Pietra
+
+Azmain Hossain  33:10  
+Natasha, yeah. I
+
+Richard Dosoo  33:12  
+was like, we've been dealing with this, like, we dealt with the last round of training very tactically, yeah. It was like, right? Because we were like, We need to deliver the training because the end goal is to get the team to ideate on what the requirements need to be for this next body of work. Yeah. So we were just like, how can we do this as quick as possible, to train people up on the topics that make sense, right? So they can start using the tools and earnings. But what we need to actually be doing is figuring looking at the training agenda for the next 12 months, right? What are the objectives that Moody's wants to deliver on over the next year, right? What training is needed to deliver on those objectives? Because then it's tangible, right? Then we're coming off, yeah, and we can, we can do it right in what? Let me show you why. These are the OKRs, right, that Ben has put for us in insurance. Okay? We can also look at the ILS team. We can look at the SAT team, maybe even we look at we bring in the, well, not, it's not Ben, it's Natalia, right? But it should look say, PMO, yeah, you need then it would be like, right? We talked to Alex those and we then consolidate. This is what Pietro was talking about, saying he wants to do an audit of the workforce to help come up with the needs. We, 100% should do that. But what more we should do is we need to tie them back up to core projects, because then we can say, right wireless team. Why are you actually even here? Why are you in a course learning about data science and how these tools help you? The reason why is because we think the tooling can help you improve your time to resolution of cat bonds by x. This is so that accepts the context for everyone up front, right? Which is, this is why you're here, yeah, this is the KPI that the group wants to achieve, right? This is the training. Do you get? What I'm saying that helps do that, right? Yeah. So that's, that's but that we.
+
+Azmain Hossain  35:00  
+Mean, you've just answered, like, one of my main questions, because that's what I always want to do. I want to tie it to something that a senior manager would understand, because they understand, they think of things in terms of KPIs and OKRs and larger objectives. We need to tie it back to that.
+
+Richard Dosoo  35:13  
+Yep, no, 100% and that's the but we can do that, right? KPIs, but let's has probably got KPIs across all of the years org. So that would be good. If you can grab that, then we can fold them all together, and we can look at the I've also got the list of all of deer's employees, and we can then start to say, right, which goals are relevant to which group, which training do we need to deliver for which group, which type of people are within each group that the training will be relevant for. Do you see what I mean? Yeah, that's something we can do like, very quickly between us. And then we next meet with Natasha and Pietro. We can be like we did a assessment of the group's goals, and we did an assessment of what their objectives are, and we did an assessment of how like that. We've had a look at how the technology can support those objectives, and we think that this is the training that's needed across these different user personas, yeah, because I'll show you actually, just give me one second to set up This. Yeah, no worries. I out
+
+Azmain Hossain  37:52  
+Yeah, so i i Do you know roughly what the file is called.
+
+Richard Dosoo  38:19  
+So this is, this is that she gave me a list of people that were registered for the session, but she sent me a separate document, which was basically everyone in Dias org, because we cross referenced that to to find out, like, What? What?
+
+Azmain Hossain  38:50  
+Send, you know. So what I've started doing, you know, copilot can read all your emails. Yeah, I've literally just started asking you.
+
+Richard Dosoo  39:32  
+What used to piss me off is that before I could have gone to Stephanie's chat here and said, find it in the chat.
+
+Unknown Speaker  39:39  
+Yeah, would be I
+
+Unknown Speaker  39:41  
+could just say the words,
+
+Speaker 4  39:54  
+yeah. So I'll send this to you so. This is the list of everyone,
+
+Unknown Speaker  40:03  
+okay, yeah,
+
+Richard Dosoo  40:04  
+you can then take that and then use this to inform like we can look at the Yeah, yeah.
+
+Speaker 5  40:19  
+This could be functions.
+
+Richard Dosoo  40:31  
+Can you get a list of discrete people job types and then training that would help facilitate them in their day to day job and can you come up with a training agenda for each job category. Take that prompt. Take this data. You stick it in. You ask it, please, for certain, please, certify your assumptions about job type with job descriptions from the internet. Then take it will loop through each of these job descriptions. It will go and find a relevant job role. It will compare to what season the market. It will use that to then go and figure out what to train the train. That's a, do, you know, I mean, like, that's, that's, that's how we should be. That's, I did a little bit of that before, but I did it manually.
+
+Azmain Hossain  41:10  
+I didn't think, Yeah, honestly me, I didn't know this existed because me building the orc structure in the app for everyone under here. No, no. But now what I'm realising is it needs to be like everyone who will be in this platform, who could be assigned something is going to be within Dias organisation, right? There's not going to be anybody else.
+
+Richard Dosoo  41:34  
+So she pulls this from Salesforce, or pulls it from wherever, so I can, what I'll do is I'll send it to you, but I'll start a thread with Stephanie, and you can tell her that you want to incorporate this data in your app. Where does she get it from? Because what you want to do is get the endpoint that she pulled.
+
+Azmain Hossain  41:48  
+I would ideally like to get everyone under Colin Holmes. I'm sure she
+
+Speaker 2  41:52  
+can get that. Yeah, we don't need like Andy frap level, just like, let me start a thread with
+
+Unknown Speaker  42:01  
+I need to interact with all of you and Stephanie,
+
+Azmain Hossain  42:26  
+make the same error over and over.
+
+Richard Dosoo  42:30  
+If it, if it doesn't, don't worry, we'll get Ben to look at it tomorrow. Yeah, it's a good idea to we want to know why this is happening, because then we can stop it happening again. And if that means you've got the main, upper shore is probably the Alembic thing, because that
+
+Azmain Hossain  42:44  
+was, I mean, but here I'm literally seeing stuff like object adoption stage does not have attribute stage name, right? So what that unlike is what that adoption stage was working before.
+
+Unknown Speaker  42:57  
+So this, this is where is that a sequence that
+
+Unknown Speaker  43:02  
+we because what I
+
+Unknown Speaker  43:15  
+think is probably
+
+Azmain Hossain  43:18  
+happening, here's a question, is there Any way to expand all because I'm having to, like, click into each of the you can.
+
+Richard Dosoo  43:24  
+You can highlight it and just collect, click on it, right? I mean, you can, like, yeah, that you can,
+
+Azmain Hossain  43:31  
+would that actually copy stuff that's nested? Yeah? Oh, okay. Do
+
+Azmain Hossain  43:54  
+nearly at the top there. I think it's gonna
+
+Unknown Speaker  44:00  
+do that as well. Yeah,
+
+Unknown Speaker  44:03  
+let's do this. I'll start the photo. Stephanie,
+
+Azmain Hossain  44:12  
+yeah, see instantly it's like, why is it looking for something called stage name? The column is called name, like, Why
+
+Richard Dosoo  44:19  
+did you call it stage name? The UI is out of sync with the database, so that the UI, but this is what's weird, because that should have been picked up in the build, right? Dependencies, right? So the API, the A prime database, should be in sync, right? I'm not sync, but they should understand, yeah,
+
+Unknown Speaker  44:44  
+any other internal servers i. Up.
+
+Richard Dosoo  45:12  
+Yeah, don't worry. Go, yeah, you get home. That's more important. If you're online later on, I'll be online anyway, but if not, we can pick it up with Chris Ben first one in the morning.
+
+Azmain Hossain  45:20  
+Yeah, yeah. I'm, I'm just, this is also for my thing of, like, how do I debug stuff?
+
+Richard Dosoo  45:25  
+Well, this exactly it that, like you, I need to get you access to the infra so you know how to debug, yeah? Or if I can't get you access to the infra, we need a way. It
+
+Azmain Hossain  45:39  
+was literally in the last days, like, can you give me the logs from the back end server? I'm like, Nah, mate, I can't all. I can give you with console logs, figure
+
+Richard Dosoo  45:46  
+it out. Yeah, this is it. But that that's I'm gonna find the buy down ticket and raise it. Yeah, I just need to
+
+Azmain Hossain  45:53  
+honestly once, once Ben is back and he's not dying from the race, it's become so much easier. I don't I can just reach out to him, and with you've got the knowledge to actually fix it without googling it a bunch of times.
+
+Azmain Hossain  46:19  
+Okay, once, once this pressure thing is we need, I just it just be nice to catch up
+
+Richard Dosoo  46:25  
+and then in the meanwhile. So, like, the one thing that George has sent a call tomorrow, because I'm sure Diaz basically reached out to me, like this meeting is happening. I haven't seen the slides. What the fucks going? Yeah, so I forward you the meeting invite tomorrow. I'm gonna finish tightening up the slides and send them out to Georgia, to dia tonight, and then, okay, tomorrow morning, we can review George, and then I'll try and put a call with dia in tomorrow or Friday after Jummah with dia, just so she has a lot of sight over what we're asking her to present on Monday. Yeah, yeah, I wanted to get it done today.
+
+Azmain Hossain  46:56  
+Just, Oh, I think you sent it
+
+Richard Dosoo  46:58  
+to me. I've basically started to tidy up the slides. But put in the feedback from so many people I haven't been able to reach it because it's been so busy. Is we need, I need to get with George and George, like Catherine and Kevin.
+
+Unknown Speaker  47:16  
+Oh yeah, because for those guys,
+
+Speaker 1  47:17  
+because the agent is also going to support them, right? The adoption
+
+Unknown Speaker  47:22  
+tracker also. Adoption
+
+Unknown Speaker  47:24  
+tracker. So I might put that call in tomorrow. I
+
+Azmain Hossain  47:27  
+don't know if, how much notes you took in the call with Alexander earlier, but yeah, I can, I can, like, give you a summary. Yeah, that would be I didn't write because I was just, yeah, that's why, that's the thing, man, that's my job. That's why I like doing just invite me to calls. I'll just sit in the background, record it, not tell anybody I'm recording it, and then I just put it through clock. Man. People get so weird about recording calls, and I'm just like, You know what? Fuck it. I need it for my own mental thing. Context switching between programme level conversations and debug level conversations. It makes your brain hurt
+
+Richard Dosoo  48:02  
+the I remember that when I first read and agree and I was also the same thing. I was like, I can't keep up with all this more conversation. So I said, right, record the meeting. So I hit record so I could listen to later.
+
+Unknown Speaker  48:16  
+I didn't ask the German people for permission, and in German, permission.
+
+Richard Dosoo  48:23  
+And in German, in Germany, big against legal employment regulations to record a conversation without explicitly asking for their permission for so much shit. Because all I was like, You guys talk about too much shit too quickly. Yeah, and I'm new on this project. I don't even know what fucks going on. I don't like, do you know? I mean, know?
+
+Azmain Hossain  48:43  
+I mean, it's literally this, yeah, it's literally that. That's the only reason for me. I'm not, I'm not gonna come up in
+
+Unknown Speaker  48:48  
+a deposition, yeah, exactly.
+
+Azmain Hossain  48:51  
+And it's the same, like the new people like Prashant, they were asking me, like, now they're on project with imaginary like, so much is happening.
+
+Azmain Hossain  49:12  
+How need to build it. There are services that do it, an entire company of people that iterating, improving we but the problem is we can't get it through security. There's regulatory problems, yeah, and people get weird when an AI agent joins a call. Bernard was telling me, like, the African clients he has, they just have them join and they're like, because when it's a client doing it, we can't say anything. Just like, Yeah, whatever works for you.
+
+Richard Dosoo  49:35  
+This is exactly me and Ben were meeting with this guy who's wiping the cap on it. He basically had the same thing. He just invites this thing to the meeting and it does the note taking it, yeah? And I'm sure, like, we can get I'm
+
+Azmain Hossain  49:45  
+sure make the amount of steps that I have to go through is insane right now. I'm recording this call on my watch. Yeah, you see, because I gotta be all sneaky, and this is
+
+Speaker 1  49:57  
+the problem. And then I'll put the minutes to something to. And then.
+
+Azmain Hossain  50:00  
+So what I've got to do is I got to push this from my watch to my phone, upload to otter, because otter has the best transcription, but I don't trust their summary. Get the transcription out, put it to Claude and get the thingy.
+
+Richard Dosoo  50:13  
+One thing to do with that, bro is just document the workflow steps, and then we can I've got a call tomorrow with some of the platform engineering guy, because I've been asking, how do we get access to some of these APIs programmatically? Yeah, so we can build our workflows around it, and I'm hoping that when we do that like, you could build that workflow programmatically in cursor or wherever you want, and then you can use the APIs that are available to us to those llms to drive that work from the right so you don't have to keep doing it. Me.
+
+Azmain Hossain  50:44  
+I literally spent an entire weekend doing this where, basically I can upload a chat and then underneath, I can literally run it through Claude or Gemini, yeah, and get the action items. Next thing is, I need to figure out a way to take these action items and add them to my action item section.
+
+Unknown Speaker  51:02  
+Yeah, but that's it for your action item affects you, or maybe the amount of time for
+
+Azmain Hossain  51:22  
+an Hour, of just taking an output, I've literally
+
+Azmain Hossain  51:42  
+got trouble. Kind of,
+
+Azmain Hossain  51:54  
+like building features and stuff you.
+

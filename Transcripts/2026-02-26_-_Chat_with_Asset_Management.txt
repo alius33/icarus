@@ -1,0 +1,306 @@
+Speaker 1  0:00  
+I think so, yeah, were you in the we in the call we had where we were in the RMS office? Yes, yeah, yeah. Hi, Azmain,
+
+Speaker 1  0:25  
+did that downgrade to sonnet work for you? Azmain. Oh, is it Nikhil who is using it?
+
+Azmain Hossain  0:31  
+No, no, it was me. Yeah, I hadn't considered that. But I was like, Why didn't I? It's just, I'm just so used to just stick it on, sticking it on all person just making it one, yeah,
+
+Speaker 1  0:44  
+you have to search a little bit like, but yeah, because like, Sonic 4.6 didn't work either. But, I mean, yeah, solid 4.5 if we were like four months ago and you had something 4.5 available, it'd be like the best model in the world. So it's still more like six months ago, maybe, so it's still pretty good.
+
+Azmain Hossain  1:02  
+No, it's, it's really good. It's just the budget that we have is ridiculous.
+
+Speaker 1  1:10  
+Like, yeah, so they, they increased it. I did think, like, is this going to happen? Because they increased it from 10k to 20k but then, like, Opus 4.6 is, like, three times more expensive than what people using before. So I think basically, and probably more people were using cursor. So people
+
+Azmain Hossain  1:27  
+are using cursor banking. Bu had a hackathon yesterday, so they were, they were using it massively.
+
+Speaker 1  1:35  
+Yeah, yeah. Well, I've got access to access to Claude code at the moment, and that is unbelievably expensive, so it's gonna be pretty interesting when we roll that out. It's still good value. What it does
+
+Azmain Hossain  1:51  
+or like, yeah, yeah, I need to, oh yeah. Rich needs to give me a higher access I tried using the key, and it was like, No, you don't have access.
+
+Speaker 1  2:03  
+Interesting, okay, yeah, I think maybe what we're doing might be Asset Management specific. There's also now, I think as of like today, there's an item on service now for it, but I think it still goes through bedrock. But yeah, maybe chat to rich about that, because that might make it a bit more and maybe if you do the ServiceNow thing, it just gives you get set up.
+
+Azmain Hossain  2:25  
+One question that I had is, can so you can set up Claude code, like the desktop version, to work with the bedrock API key?
+
+Speaker 1  2:36  
+Yeah, so I have it basically like it runs on my machine in a terminal, or you can do it in VS code, and it's just like
+
+Azmain Hossain  2:44  
+every because we're trying to build a platform for non technical users. And yeah, so yeah, the Claude extension, it gets to an ID for normal people. Yeah.
+
+Speaker 1  2:55  
+I mean, I don't think we have access to that yet. I think eventually, right? I guess what you're kind of talking about is like Claude co work, rather than Claude code,
+
+Azmain Hossain  3:04  
+which is like Claude code. We want, we want Claude code the front end. You know how clean and nice it is. It's not an IDE like, VS code.
+
+Speaker 1  3:13  
+You mean, like, where it's like, it's like a normal chatbot, but it has pulled code under the hood,
+
+Azmain Hossain  3:18  
+not have you used Claude code for desktop. No, I
+
+Unknown Speaker  3:23  
+just want. I just have it in the terminal.
+
+Azmain Hossain  3:25  
+Ah, let me, let me kind of show you, yeah. So essentially, this is what we want, like Cloud code. You know, you can go between chat and code. And in code, it's just really simple. I mean, you still have the plan,
+
+Unknown Speaker  3:49  
+oh yeah, I see Yeah, yeah.
+
+Azmain Hossain  3:51  
+It's just a nice, clean Yeah, that we want to do, because, like, the moment you start introducing an IDE, people start getting confused. And code and stuff. So I couldn't figure out any way to get this working. So my solution is, I'm just going to build it. I'm just going to build a front end for non technical users to use through AWS bedrock this, yeah, and I got like, where is it? I got, yeah, I have some other ideas like this, which is mainly copilot sucks when it comes to doing work, and we can't use Claude co Claude co work because it's not Moody's approved. But what if we make a system where we get all the, you know, the emails, OneDrive, SharePoint, teams, everything that copilot can get from the Microsoft Graph API, and shove it through Claude and then get the results.
+
+Speaker 1  4:51  
+Have you used the it's not quite like that, but have you used like, the VS code extension for Claude code? Because it's kind of that. It's kind of like that. It's like.
+
+Azmain Hossain  5:00  
+Chatbot, yeah, that's what I was using because I ran out of cursor, like midway through January. So I got the 200 bucks Claude Max subscription, and used that for a while, and then I got access to windsurf, the Moody's approved one, and now I'm just using that until I run out of money.
+
+Speaker 1  5:20  
+Yeah, yeah. I mean, I think, yeah. I'm not sure if I would spend loads of time trying to build your own, like, chat wrapper, a UI around the clock because, I mean, you have to think, as soon we'll all have access to or Moody's will approve that. But I don't know. It's hard to tell with like TSG how things
+
+Azmain Hossain  5:41  
+can happen. We have a strategic partnership with Microsoft. How they'd feel about
+
+Speaker 1  5:47  
+movie, well, we now, we have a strategic partnership with anthropic, right? We've, we've given them a bunch of stuff, and they're supposed to be giving us a bunch of stuff.
+
+Azmain Hossain  5:55  
+Yeah, Oh, damn, I didn't know that. Okay,
+
+Speaker 1  5:59  
+so we have so far, they're like, financial expert stuff. We were one of the companies involved in that.
+
+Azmain Hossain  6:07  
+Oh, wonderful. Okay, that saved me a lot of headache. Thank you.
+
+Speaker 1  6:11  
+Because, I mean, I mean, it's very the, yeah, the TSG process seems to be very opaque. So we should, we should be getting there. It feels like we should be getting access to everything, let me I mean, yeah, I think it was September, yeah, yes. The idea is we should be putting, like, Moody's, mcps and tools and things like that on the anthropic like marketplace for Claude and yeah. So SMP have done that in like the last week or so, and lseg as well. So there's, like, an SEP tall code plugin that's like, yeah, if you have an S and P account, then you can access data and models and things like that. So we should be doing that at some point. I think
+
+Azmain Hossain  7:08  
+we will Ben, you saw the that's part of our plan. Yeah, yeah. I'm guessing Rich is running late because he's eating it's sunset, so he can finally eat and drink now.
+
+Speaker 1  7:23  
+All right, yeah, okay, I saw him in the office earlier, and he did seem to be I had to come home, but it was like he was joining he i
+
+Azmain Hossain  8:05  
+If not. I mean, while we while we wait, I was like, let's not kill time. We can. We can go ahead and get started. I I'll be honest, I wasn't sure if there was anything from us you guys wanted, but I am very interested in seeing Amanda's changes and kind of, again, stealing ideas from you.
+
+Speaker 2  8:27  
+Yeah, let me share my screen. I honestly don't remember what I showed you guys already, just because I think you kind of get lost when you're coding and what you're doing, I know I did spend a lot more time getting together, like the starts of trends, with data in the system, and adding SRB, because the sales team was more focused than that number, refining the reports to be a little bit better, and then spending A lot of time in the cross selling, upselling opportunities, and built a heat map of where there's opportunities and with what products. So this section is new, and then under prospecting. I don't know how much you guys do that, but one of our issues was trying to figure out who we've talked to, who talked to them, when we talk to them, were they interested? If they were, why didn't it go any further than an initial conversation? So now we have pre demo stage sets that we have actual product demos that we're working on, or in any active trials and opportunities that are lost once all of those things happen, and in sequence, I'm going to end up building a report that kind of starts looking for why we're not converting from the different stages. So the hope is that we have a pre demo, there's interest, then we go into a full demo, then there's more interest than they want to trial, then they buy. So what percentage of conversion are we having if we're not converting? Why aren't we converting? Is it because of price? Is it because of functionality? And start keeping more important metrics than in one spot than I think we've been historically doing. So that section is new as well. And then under renewals, going through the process, we decided to flag things a little bit differently, so instead of just at risk from, like, a budgetary standpoint, now there's other risk metrics that could potentially stop a contract from getting renewed. It could be cost, it could be turnover at the client level. It could be functionality. It could be a vendor competitor has come in and kind of, you know, lower prices on their end to get the new business. So now we're starting to look at renewal strategy a little bit more in depth, of what is their current use case. Why did they initially licence the software? How are they using the tool? Are they using all the different aspects of the tool or not? And then my report is starting to aggregate that into actionable steps to secure renewals. And then I changed the way we put proposals together a little bit. So instead of just a standardised process of their paying x, we're going to increase it by y. By this many years, we now have like, if there's promotional periods, if there's opt out clauses, how does that work? So the streamlining of the process of the renewal will start reflecting based on all of those metrics, and not just the start and end of a contract date. And I think that's the major change.
+
+Azmain Hossain  11:33  
+Could I ask, how are you pulling the reports out from from the platform?
+
+Speaker 2  11:41  
+So I just generate a PDF. So because of how much AI I have built into this, it does take quite a bit of time for it to come up with an actionable report solution. Actually, I can pull one up that I just ran today.
+
+Azmain Hossain  11:58  
+Oh, wow. Wait, this is all just using the copilot API. This is for everything. Oh, this is the open AI API.
+
+Speaker 2  12:08  
+Okay, yep. So it will pull all the metrics from a timeframe that I have selected. So this is looking at the next 14 months of renewals, and then it tells you where you're at in an overall view, gives you at risk stats. What success did we have in the last six months? So did any clients renew? Did we lose any? And then each client has their own page where it's looking at all of the meeting notes, any of the timeline notes, any of those metrics that I showed you in the renewal strategy, and it's coming up with what we think each client should look like, and then it will pull in any proposals that are actionable too, and it does it for every client, and it's not repeating the same commentary. I had that issue when I first built the report. It was quite annoying, because all the next steps were the same, all the current steps were the same. So I spent a lot of time trying to refine this to make it actually useful. So if I were to send this report to the commercial team, they would know exactly where we're at and all of our renewals. Wow.
+
+Azmain Hossain  13:13  
+So I did the quality of the report is because the underlying data is so detailed, but that's, yeah, that's so far away from for us. I'm just like, how do we how do we get there? Because you're, you're able to do this yourself, putting the data, and, you know, within a small team, we got to rankle like, 50 CSMs who are, yeah, to click a button, because they're like, Oh, what if I break it? Like, okay, yeah, so I did,
+
+Speaker 2  13:43  
+I did put permissions in when I built this out to make sure, like, if they're an admin, they can have full access to do whatever they want, if they're just used, if they're limited on what they can do, so they can't break the system. But it is important, like, if there's a meeting, to go in and enter the meeting notes, and it's really easy to just have ai do it for you. So you can put in meeting notes here, and then have aI create the tests for you. It creates the meeting notes for you. It's very easy to do. My goal is to integrate with Outlook, to have a tag that automatically sends it to we're not there yet. I did build it originally with the drag and drop of an email in here to in case there was a summary in a meeting note. That way it it did it, but not to my liking. So I actually took it out and I'd rather copy and paste the text in and then it tagged the appropriate people to that go internally and externally. Except for now that's duplicated, and I don't know
+
+Azmain Hossain  14:46  
+why, because I'm not working with Outlook. So what we're trying to do is we have, like, a weekly call where seniors and and the CSMs, everybody, the CSMs give update on every priority customer. So. And what we're currently doing is recording that call, taking the transcript, running it through copilot or plot or whatever, getting the updates for each customer, by the by the person, and then, like, doing a data import into the platform to put in updates. I'm just like, there's got to be a better way to do that, so it's not so manual.
+
+Speaker 2  15:24  
+Yeah, I I personally might, because of my age too. I personally like to go in and do my own notes for all of my clients. I like to make sure so under each client, there's a way to track a lot of information to make sure that it's what I am expecting to see. So it's even with the task generation of like, do we have an open Task? Who is it signed to? Are we progressing? Are we not? Are we blocked? My at risk profile, I don't really agree with NPS metrics. I think they're a bit outdated and a bit shallow. So I created my own risk metrics, which gets updated quarterly. And this I'm going to start building my trend so you'll be able to see if the health of a client changed for a very specific reason, which will filter into the dashboard once I get March 31 done, because I'll have my first very real quarter of change to track. I have the products that we have if they're interested or not. So that way, if there's a cross sell opportunity, it's very easy, whether it's a service or a product. I have a project management timeline, so this actually generates a report as well. So if we do have open tests, this is something that a CSM could really quickly at a at a hit of a button, say this is where we're at with this client and everything that we're working on. And then I have an engagement tracker that I created specific metrics. So if a client pays us X amount of dollars, then the expectation is we see them in person, X amount of times and virtually X amount of times. And I'm starting to track that, making sure we have strategic annual meetings who I want at those meetings. And that way it can kind of help make sure that not any of your clients important meetings are missing, and that you're seeing all of them enough to keep those relationships really strong. So there is manual entry to this, because there has to be. But I really think each CSM should own that process and own the data they put into it, and not be afraid to keep track of it, because really, it's only going to make them better.
+
+Azmain Hossain  17:26  
+Yeah, I thank you. Literally, completely agree. But it's getting to the point where right now we're having to get somebody to sit with the CSM, like, it's freaking 2001 and somebody's teaching them data entry and literally be like, click here. Okay, put in the data customer, turn the thingy off, and they're like, I can click this. Yeah, you can click this. Boy, yeah, it's, yeah. It's just a really frustrating situation. And I don't this is a user problem I don't know how to fix, because they've been putting updates into Salesforce for years, but suddenly, on a new, brand spanking new platform, they're scared to press a button.
+
+Speaker 2  18:08  
+Yeah, you know it so Salesforce I never used because I actually hated the tool and thought that it was useless at like it's in some ways, but for me, I would even have a hard time trying to find out what client, you know, if it's Bank of America, there's so many different instances of Bank of America, and I wouldn't want to put my information in something incorrectly, so I was tracking everything in Excel. I think I would be happy to show any sort of tool to a group of CSMs and try to explain to them why it's important to track the data and how it can help them do their jobs better, more efficiently, like this has helped me a tonne. I'm the only one that's currently using it, because it hasn't been fully deployed yet, and it's helped me so much. Just with like my internal meetings with my senior management of where are we at, holistically? Where are we at with renewals prospects that are coming in, being able to track them and print out like, very client ready information of like, you're going into a trial, what does that look like? And then I can put in here, it's a four week trial, and then spit this out immediately, and then they'll know exactly what to expect during their trial. It's so much simpler than going back and forth into like, SharePoint trying to find a document that we sent for an old email. So I think change can be scary, but when it actually helps you do your job, I don't see why you would get any pushback.
+
+Azmain Hossain  19:32  
+What I'm really, really loving is the is the outputs that you're showing me, obviously the exact report, but even even that trial overview, would you be able to send me some like, I can see that for this account, for this trial, there's like, a generate PDF report. Any because with CSMs, I want to start with the end product first be like, see how cool this report is. If you guys fill in updates and shit, we can make. Yeah, asset management are doing look because, like, I'm not going to tell them, it's just you doing it. I'll be like, look at their CSMs. They're so diligent. They're putting in so much information that these reports can be generated for everyone, from someone your level up to MD level that can read it so and I can, I can share this with like, some of the seniors, and be like, don't you want to report like this? They'll be like, report like this? They'll be like, hell yeah. Like, okay, yeah, yeah.
+
+Speaker 2  20:28  
+This is the difference the report. This one's an internal report that we share with our senior management of how the trial is going. So once we once this trial starts, then this will start getting backfilled with the information of the data that we put in through the trial. So you get a really nice summary of, you know, this is what the value prop is, from there the client's words, and this is our plan of what we want to do during the four week trial. And then once that data comes in, then each week, we will get a summary, but then this dashboard will start filling out too, with each week's data compiled on top of each other.
+
+Speaker 3  21:04  
+So I apologise. I have a question. I don't necessarily, it's not necessarily related to the data. It's just, I saw a couple things where you said, like, it's like, create an AI, ask AI to create a task for you, and stuff like that. So can you explain to me? Like, is that a task within here, or is that, is that in JIRA, or what, what is like aI doing in that scenario?
+
+Speaker 2  21:27  
+So currently it's only in here. So I would love it to be able to link to other things and even send out outlook reminders of when you have open tasks in here, but currently it's everything is just within the app.
+
+Speaker 3  21:41  
+Got it? Okay, so, and how is, I guess, is it just, sorry, this is my, I don't know anything too much about the data, but this is me, my technical brain. So is it just, so it's just creating a task within the site right here. Yes, is there? Is there actual? Like, is AI actually had? Are you having it? So it's like the AI is actually being called and parsing it, or is it just saving it to
+
+Speaker 2  22:10  
+yep, that's exactly it. So it will, I'll type notes during a meeting, and then I'll hit this AI process and create tests button. And anything in here that is visible as a task, it will create the task. And if it knows who to assign it to, because it was written in there, it will automatically assign that test that person as well.
+
+Speaker 3  22:29  
+Okay, so AI is actually reading these, these notes and creating the tasks accordingly. Okay, correct.
+
+Speaker 2  22:38  
+And then that. Then I have this other I have PDFs everywhere, then I have this report as well that I can share with the client that kind of lets us know. So I send this weekly, because these are contractual things during the renewal. So every week I send this to the client that kind of just say it's where we're at, there's the overall view, and then where we're at with each one of what percentage and are we on task or not, who's it signed to, and then it'll even pull out any type of bullet notes that go within those tasks as well.
+
+Unknown Speaker  23:07  
+Okay, wow, perfect. Thank you. Sorry.
+
+Azmain Hossain  23:10  
+No problem. So much. Ben, so because we're talking about tasks, you know, the Task tab on the left is that where you should be, like all the tasks for every, every account, yep, oh, with the assignees as well. Well, hot dog, that would be very nice to have,
+
+Speaker 2  23:28  
+and then another report and checking, right? Um, but yeah. So for me, it's really hard when, especially because, like a CSM, we're really babysitting multiple different departments to ensure success, right? So if we have different products, people working on different parts of the tasks than other products, people, you don't always get the same amount of information from those updates. So this kind of forces them to give me the data I need to make sure that the clients know exactly where we're at. Yeah, yeah, but it'll I haven't updated this because I've been in Build mode. So a lot of these look overdue, but it works.
+
+Speaker 3  24:04  
+I mean, it looks amazing. Thank you. Yeah, and, I mean, I don't this is neither here nor there, but I used to be a Technical Liaison for the CSM, so yeah, entering this information really was horrible.
+
+Azmain Hossain  24:20  
+Yes, yep, oh my god, I found out yesterday that one guy in our team, and this is a guy with like, 1012, years of product consultant, project management experience. His entire job is that the CSMs for life insurance products, email teams, chat, whatever him with their updates, and he just does data entry into Salesforce. And I was just like, What the hell? Like a colossal waste of an experienced person's time, and yeah, also such a low hanging fruit, like such a quick win that we can do and just make their lives easier. Yeah, absolutely. I'm just thinking how we need to, yeah, I need to incorporate the the updates feature that you have, creating tasks would be awesome. But, yeah, I don't think our CSMs are used to writing like that. They're more used to writing like this is happening. And I spoke to the CRO and he's a little unhappy and blah, blah, blah,
+
+Unknown Speaker  25:29  
+yeah. I mean action
+
+Azmain Hossain  25:31  
+orientated updates, yeah.
+
+Speaker 2  25:33  
+So a CSM role really should be 80% or proactive and 20% reactive. And you can only do that if you start taking the time to pen and paper what your conversations were and what what your next steps are from those conversations. If they don't do that, it doesn't matter what app they have to use, it's not going to really help anybody. So it could be a way to, kind of like, reframe their roles too, and get them, you know, a little bit more responsibility. Maybe it's a little bit more job enrichment, because they'll feel like they have a little bit more control. It's an interesting one,
+
+Azmain Hossain  26:12  
+yeah, just like, yeah. It's behavioural changes that that we need to initiate through making certain things difficult and making other things easy. Yes, like, like, one, one thing. So if I could, if I could share my screen, and this is where, again, like rich Ben, your experience would be massively helpful. So within our, like a customer page, you've got an executive summary, which is literally meant to be for senior leadership. And then you've got an add update button, you know, for updates of what's happening on a day to day, week to week basis. If you've had a meeting and stuff, except all these idiots, keep going and updating the executive summary, like, Look last updated five hours ago. Why are you updating the executive summary? So it's like, behavioural changes. So I'm like, Okay, I should put this up, and
+
+Speaker 3  27:06  
+then, yeah, it could very well be that's a UI specific probably, yeah,
+
+Speaker 2  27:13  
+you could also do permissions that doesn't allow certain people to update the executive summary once it's locked.
+
+Azmain Hossain  27:19  
+I mean, CSM, like, the CSM for the account has to have access to to update, like, anything and everything.
+
+Speaker 2  27:28  
+Yeah, true. I mean, I would write my own executive summaries too. So, yeah, yeah.
+
+Azmain Hossain  27:33  
+I it's, yeah, maybe, maybe just a little thing here going executive summary is not for weekly updates, yeah? Or I could hide it under one of these tabs and make this the update, update. What I've put all the way down here, yeah, one of the biggest complaints we had was I don't like scrolling. Why do I have to scroll so much? Which I was just like, God, seriously. Yeah, this is the level of users that I'm dealing with Amanda, where I'm like, okay, tabs, fine. You guys can have tabs just, yeah, Salesforce. You hate Salesforce, but you seem to just want everything exactly like Salesforce. So I'm just right, same, same thing with, like, the reports. So built in, like a reporting function created it exactly like Salesforce. You choose data source. You have all the columns. You select whichever column you want. You can add in another related object, bring in those columns, delete whatever you want, keep whatever you want, save, extract it.
+
+Speaker 3  28:36  
+I would be concerned that we're just making another Salesforce versus actually being efficient. Because, I'll be honest, even, I mean, this is completely irrelevant, but even the person who the CEO of Salesforce in an interview doesn't even know how to describe what Salesforce is, yeah, exactly, yeah. So I would say, like, I think
+
+Azmain Hossain  28:56  
+the problem is, then nobody thinks structurally. Nobody thinks how to structurally improve this process. Everyone is just like but I used to be able to do that. Why can't I do that? And I want to do that with the exact same or fewer clicks. And right now, I'm just fighting to get people to use this thing so they stopped complaining. And yeah, that's my kind of goal, like one like Amanda, one of our things was so my manager, she was like, Oh, our, our MD, she gets a PowerPoint presentation with these charts. And she sent me some sent me some screenshots. I literally, exactly recreated them. That that's yeah, because I'm just like, Okay, if she's used to seeing it in this format, I don't want her to take the brain space of getting used to something else. So I'm going to present it exactly the same format with the enhancement that you can click into anything. And it's like Power BI. You can get the whole thing. You can extract it, and as a plus bonus, verbosely explain how this filter works. Because. That's the first version. Everybody asks, What am I looking at? Why did you select this? Read the thing that, yeah, this is the level that I'm kind of working on, because we have so many other things that we want to build out, like what you've done by bringing in the open AI API. We want to bring in any API, and we want it to really analyse our blockers, because right now, blockers are written in everything from a giant paragraph where it's very detailed Thank you, or counting modelled locations. I don't understand. How is that a blocker, and what is so? Yeah, something that will, like I did one as an example of read through everything and find trends, find the impact score. And turns out our biggest issue is UX and usability. But what we want to do is have it read through each individual one and give us a potential solution to fix this blocker.
+
+Unknown Speaker  31:02  
+Yeah, that makes sense.
+
+Azmain Hossain  31:05  
+So, yeah, this is you are very lucky that you don't have to deal with users.
+
+Speaker 2  31:11  
+It's because I am the user Exactly. So sorry, Richard, I'm not how much of that you were able to see. But it sounds like the new code is worthwhile to reshare.
+
+Speaker 4  31:30  
+Yeah, so thanks Amanda, and sorry about that. The My manager was is contemplating about adding an account planning feature to Clara, the application that Azmain just showed you. So we can, we can pick this up on your back, right? Do the same thing again, you just give us a PRD, and then we'll use that PRD as the baseline for any features that we want to add to Clara going forward, or completely separate app, but I wanted to just check over that suddenly, you said you had some enhancements in that space.
+
+Speaker 2  32:08  
+Yeah, I went through and did I walk through? And basically refined a lot of the information that was in there, made it look a little bit better, work better. I think I removed some functionality that I felt was like, Okay, I don't really need that. It just was cool, and I was happy to build it, and then I enhanced, like, trends, data and a lot of stuff in the new business front, in the task management. So it'll be a bit different, I think, than than what you had, but not significantly.
+
+Speaker 4  32:36  
+Okay, so, yeah, what we can do is we can definitely pick this up when you're back. And yeah, we will, by that time you should have got through some of the other things that are on Azmain plate for Clara, the next set of enhancements. And yeah, we can let you know we can reconnect when you're back from holiday. Get the PRD, do your analysis, pick out the account feature, account planning features that we want, and decide to
+
+Azmain Hossain  33:07  
+Okay, yeah, that would be awesome.
+
+Speaker 4  33:10  
+Sounds great. All right. Well, I apologise, guys, sorry. I'm late.
+
+Azmain Hossain  33:15  
+Amanda was awesome. She took us through all the all the changes that she made. Kind of gave obviously, we always keep stealing from Amanda, so gave us some ideas. And Rich, I think one of the awesome things that Amanda has is the outputs. So, you know, she's able to generate these PDFs, which I want to take them and I want to show them to like Ben Natalia and stuff, and be like, how cool would it be if we could generate reports like this for yourself or other senior management. All we need is the CSMs to actually do the work and make like, put in the data. Make sure the fields are filled in, make sure the data is accurate. Make sure they're putting in weekly updates all this stuff. And by the end of q1 by March 31 we can generate PDFs like this. Yeah.
+
+Speaker 4  34:01  
+No, that's definitely, you know, it goes Azmain, right? Anyone that we're not gonna access the app, it's a PDF. So let's add that to the list of stuff, and we can go through the plan about how we want to implement it later on.
+
+Speaker 1  34:13  
+Just on that point, what Amanda's done there with the PDF reports, and I guess using AI to generate the reports. We haven't yet done this for Amanda's app, but if you want to deploy an app like that that has is making calls to open AI API has AI features, you're going to need to go through like a AI governance process. AWS, Claude,
+
+Azmain Hossain  34:33  
+bedrock API in there, just everything.
+
+Speaker 1  34:36  
+Claude, yeah, but you'll have to go through AI governance process for that. Is there
+
+Speaker 3  34:43  
+more like, How can I find out more information around that particular process?
+
+Speaker 1  34:50  
+I will send you a link to the form. So there's an intake form. Then it might I'll send you some notes. Ben, intake form. You got to chase some people. There might be some cyber security review. Shouldn't be too bad in, like, an internal use case, but it's a, it's a risk process, so it takes a bit of time. Yeah, so if you, if you're gonna say, if you are confident, you want to do that, start that as early as possible to get the ball rolling,
+
+Azmain Hossain  35:18  
+do we need to give them, like, exact details, everything we're going to do with it, because we're not sure everything we're going to do with it. Yeah.
+
+Speaker 1  35:26  
+I mean, I think they would, they would tell you, Yes, I think you can give them a broad outline. I think it's more about the distinctions are more like, will this data be used by clients, or will it be used internally? You know, who's going to be consuming this data, the exact, precise use cases, you can probably keep open ended, but, yeah, you'll see, when you get the form, it's, it's quite extensive, but I didn't go into loads of detail under the questions, and they were pretty comfortable with it because it was internal. It may be, in my case, I wasn't sending any client data to the open AI API. So that may be different in your case, if you're doing that, we'll find out what Amanda's as well.
+
+Speaker 3  36:08  
+So yeah, is this part of the security team, or is this a separate team
+
+Speaker 1  36:14  
+there is? So there's two differences. There's like, cyber security review, which is, I called Frank Cifuentes, I think it started with, and then there's like the, I think it's more like the risk function. So the head of the team, I think, is called Melinda tigerino, and I don't know if they only look AI stuff, but yeah, it's more like risk governance kind of stuff.
+
+Speaker 3  36:36  
+Yeah, if you could send me all that, that'd be great. I and love to meet with them as well. So, yeah, yeah.
+
+Speaker 1  36:42  
+And definitely best to, like, I sent off the form then, and I didn't hear anything for like, two weeks, and then I found Melinda's name somewhere, and I mess, and you have no visibility of, like, where your use case is in the stack. So then I just dropped her a message, and she responded straight away and set up a call with the team. So if you want, you know, fill out the form and drop our message straight away to get the ball rolling, and just meet the team and, like, socialise them on what you're doing as early as possible.
+
+Speaker 3  37:08  
+Got it? Okay, yeah, that'd be great, yeah. And any information you can send me that would be amazing. Thank you. Cool.
+
+Speaker 4  37:16  
+Do you know because we're using anthropic models that we've been told to deploy in our own AWS environment. Yeah. So Dennis Clement gave us that instruction. We thought, oh, we should be using a centralised AWS account. And I was like, no, just deploy in your antenna and make sure you give users access. Does even that still have to go through the API governance?
+
+Speaker 1  37:42  
+I'm sorry, the AI, yeah, I believe so, because it's not that might help, that that might impact, I guess, the kind of cyber security aspect of the review, like, are you? Are we? How are we making the calls to the models? But the AI, governance is sort of part of that is more around who's using these outputs? Are they aware these outputs are being produced by AI models? Have you done a thing to make sure that the outputs are good, and stuff like that? So I still think you would need to go through that process. Yeah. Yeah. I mean, yeah, you should it. Could try and skip it and feed ignorance later. But I, I was told, like, you definitely should. But the AI governance part of it seems like lighter touch, and we got through that quite quickly once I was on their case. The Cyber security bit is maybe a bit more heavy, but I assume, presumably, once you've done that, once, then you're kind of good to go. It's my hope. You know, if you've got your platform where you're deploying stuff, once you've got your sign off, from a cyber perspective, then you shouldn't need to go through the process again when you add in some, you know, different features or whatever, or different app.
+
+Speaker 4  39:00  
+Yeah, no, it makes sense. Thanks for clarifying that. But we'll let you know how we get on. And speaking of which, like we, well, when Amanda's back, I'll set some time for us to catch up again. But the Well, I had a meeting with my manager yesterday, and his boss, oh yeah, yeah, his man, her his manager, and they were very encouraging about the collaboration between the teams, but they were like, they're like, do you formalise it? And I was like, No, we just got a team chat. We just occasionally message each in there share stuff. And they're like, no, no, it's fine. You've got permission to like formalise any like process or whatever, right? Whether that's between us and you guys, whether that's between us and a different department. You know, we've got few people in that thread, so I might set up something like just a monthly check in. Ben is doing a whole bunch of stuff on the infrastructure side that would perform the basis of what we want to talk about in the next meeting. And we're also, because we're now rolling out cursor to the Group, we've had to come up with some cursor rules, like to some guardrails to basically make sure people don't build something that contravenes a moody cyber security policy or our stack. So I can share that with you, and we can talk through I can send you the rules file, and there's some slides, but we can cover it in more detail in that next catch up on Amanda's.
+
+Speaker 1  40:24  
+But, yeah, okay, yeah, it sounds good. It would be interesting on that. We can do that separately, but with the rules and that kind of stuff. I guess that's kind of a cursor specific framework. It might be worth looking at. You know, I didn't like agents skills or something like that, which, if you move to the torque code, you might all be using broad code in a month instead of cursor.
+
+Speaker 4  40:47  
+Well, this is it, right? The skills is a better framework for it, but not everyone has got access to
+
+Unknown Speaker  40:54  
+it right now. So as well,
+
+Speaker 4  40:57  
+I thought you could only use cursor rules and cursor and they applied the settings applied to the whole any, any project that you run with skills, is much more for skills you could only use in Claude, but I'll check it
+
+Speaker 1  41:08  
+anyway, use skills in cursor, Windsor, Claude.
+
+Speaker 4  41:13  
+Okay, cool. That's cool. I was pretty they're
+
+Unknown Speaker  41:15  
+pretty good. I would recommend.
+
+Speaker 4  41:18  
+Yeah, no, I'll definitely take a look at that now. Awesome. Well, guys, thanks very much. Sorry about being tardy and Azmain and Ben. I'll catch you up in a few minutes on that next call.
+
+Speaker 2  41:28  
+Yeah, awesome. Thanks everyone. Thank you. Thank you. Bye. You.
+

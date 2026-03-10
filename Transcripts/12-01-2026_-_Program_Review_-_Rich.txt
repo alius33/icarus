@@ -1,0 +1,192 @@
+Richard Dosoo  0:00  
+This was really just a pre read to get buy in from Jeremy and these guys. Oh, great. You put the sales recon slides in already, which is cool,
+
+Azmain Hossain  0:08  
+yeah, yeah. I Yeah. It's obviously, this isn't like, I don't know how formal this is going to be. So I was like, Okay, I'll make a few changes, because my main thing is the the actual slides for the actual session.
+
+Richard Dosoo  0:26  
+Yeah, no, this is it.
+
+Azmain Hossain  0:29  
+And that's this kind of gives you, obviously, we can show it to Jamie and the other person, but this kind of gives you an idea of, like, this is how we should build it for the big presentation, so it just looks all polished and stuff.
+
+Richard Dosoo  0:44  
+Yeah, no. 100% that this is more just about framework, straw man, storyboard, the content like, I wish I had time to update it, but I haven't had time to fill out the meat and potatoes of the slides yet. And then for us, yeah, this is, this is great. So these are the the insurance perspective, this is what we're focusing on. And then the adoption charters and the PMO dashboards and the customer success agent. These are the things that would highlight in yellow that would these are the things that ideally we'd want to put in sales, repo. Okay, so that's the then we can jump into that with them in more detail. So, yeah, exactly the time set. So this, this is really cool, because right now we don't have a consistency amongst the group about how we measure ROI and what ROI is gating criteria to actually start the project. Yeah, so we've got a separate meeting. I'll need to forward that to you, where the guys that run the the working group, the stairco, acknowledge because I asked them before the holidays, I was like, I don't want to come and present these ideas. And someone tells me that your ROI is only 30% it's not enough. We only deal with like. And they were like, We haven't got a group wide metric for that stuff. We don't have that's we're trying to get alignment on all of that now.
+
+Azmain Hossain  2:08  
+So, I mean, yes, other than the internal efficiency, which we can kind of, that's for us to kind of define how we define it commercially. What's the what's the goal? It's, it's new business, right?
+
+Richard Dosoo  2:26  
+Or, well, so this is it, right? This is we. This is a conversation me, you and Ben, need to have, and when dia comes, we need to talk about how we message it. Because if you ask Ben, he's going to tell you, look at as a value at risk model, which is, I've got 30 implementations that without this tooling, they're gonna it's not gonna happen like that. Without this governance, without this process, you're you're actually at your the risk that you're taking on is the commercial impact and the relational impacts of those things not being well managed or not being well executed. So Ben would say that the ROI is actually, you know, you managing a pipeline of 40 customers, which is x GMB, right? Because without this tooling, they're not going to get managed correctly, and they're going to result in failure. So that's one extreme, right?
+
+Azmain Hossain  3:20  
+Yeah, Ben's perspective is perfect, because we're in customer success. That's exactly what Ben should be thinking about. Is the contract's been signed. How do we ensure customer success? And that's the part that we're gonna we're gonna push in terms of, like, CSM capacity getting unlocked. You know, they can serve the customers better, and also all the all the nitty gritties of the implementation become much easier to monitor that. That's that side of it. But it's also the the adoption Charter, the fact that that's becoming a thing, it's going to help not just with the internal I mean, the adoption chart is not really going to affect an implementation. They won't even look at it more than a few times, but it is going to affect the commercial negotiations.
+
+Richard Dosoo  4:10  
+Well, I would to be honest, it's more that the it's the the adoption charters basically help mitigate the risk in the implementation right and help mitigate remove the the likelihood of failure of implementation, because all the parties involved agreed, have agreed and signed up to a scope. Now the issue is, right? You You know we could continue to do the option adoption charter process manually, right? The problem is, if it's done manually, it's less likely going to be done, or so slightly going to be complete, right? So, so we take this into you,
+
+Azmain Hossain  4:50  
+can I just ask? I mean, I think I've, I'm understanding where you're going, but can I just ask the adoption charter is done in conjunction with the customer, right? Like. Yeah, both parties agree, like, this is the scope. This is when we'll consider adoption. Is checkmark, and here's what we do to get there.
+
+Richard Dosoo  5:10  
+Yeah, 100% and I'll be honest, right? Even, like, we've been trying to encourage some customers to do it, and they're like, why do I need to do this till I'm licencing the software from you. What I do is kind of your piss without having that challenge, right? The problem so we've got to sell but the way in which we sell it right is by making it easier to do and manage this, right and this stuff. That's it. So, because we know what happens when we don't have the customers to an agreed scope, right? And agreed KPIs and agrees exceptions, criteria, we know what happens. Right? That means the probability of you having a successful implementation. You don't have no framework, you don't have no governance. It's just you. It's just vibes, right? It's not
+
+Azmain Hossain  6:00  
+simply helpful to us. So even in the case that, like, we get challenged and they're like, I'll just figure it out yourselves. We'll figure it out ourselves. We'll create an adoption charter to use internally to make sure that the implementation goes well.
+
+Richard Dosoo  6:19  
+And then I think I would even say with this, the CSM capacity unlock is probably higher. We will get the input from Kevin and Josh and Natalia and stuff. But once we implement the integration into Gainsight and Salesforce that should, that number will be a lot higher.
+
+Azmain Hossain  6:39  
+I wasn't even thinking about that. I mean, obviously, once you put it into Gainsight, and then the Gainsight is connected to all of Salesforce, that's a massive value add that comes in. I was saying just just off the back of this gen AI initiative, it's going to be 30 to 40% capacity.
+
+Richard Dosoo  6:59  
+We should what I meant by that is the app that we build now that I'm working on right now doesn't have any inspiration in its gain site, but it should. So in fact, let me bring you into this thread, because we started a thread with the with the Gainsight team to ask for group.
+
+Richard Dosoo  7:35  
+What's this guy's name? Do you know the guy from sales ops that is now going on, Matt, leave.
+
+Richard Dosoo  7:52  
+Yeah, I'm you're in this thread already. Actually, Azmain, you're already in here. So you know the thread with Natalia plant where we were asking for the gain side, eight parts, yes, yeah, yeah. So, because that's what we want to do, is that should be part of the scope. Once we've basically nailed the the workflow and the date model, then the next step we should be building is an integration adapter that we basically called against that a bias, and essentially, upon a certain state of the adoption charter, or the adoption record gets updated, we should go and create a record or update a record in Gainsight accordingly. So that should be the that should be part of our project scope. Now that's something that we're going to do in the short term, but in the longer term, like when sales recon does all this stuff, we don't need an API, because we're just hitting sales recon or hitting Salesforce, and that has a native integration to gain.
+
+Azmain Hossain  8:41  
+So, so this is something that Natalia, Natalia, oh, actually pointed out to me. Do you remember we got a message from Natalia plan, yeah, at the end of last year, just saying they can't give any API access. It needs to go through internal review all of this stuff because of the cyber security problems.
+
+Richard Dosoo  9:08  
+Yeah, no, 100% but what so what we do is, in the meanwhile, we'll build out our data model within our database and our tool, but we need to direction. If you signal into the sanitalia plant to others to say, right, when is, when can we get engaged with you on this integration and when? What's the time enough for that? So maybe she's going to tell us this March, right? So okay, cool. Between now and March, we're not going to have any integration, but the idea will be, after March we'll do it. So then we'll start having conversations about, what does the data model look like? Do the API's look like? Where does the integration fabric need to live? All these kind of stuff? But once, but we should have that like that should be a goal of our project. So we can update this number so it's higher, right? That's, that's all us,
+
+Azmain Hossain  9:52  
+yeah, yeah, yeah. I'm so glad you said that, because, like when I told Natalia, oh, about what our. Plan is, that's the first thing she said. She was like, how are you going to connect to the gain side? Do you not remember this thing? Say you can't do it? And I was like, plan is, we're going to keep everything in house, do it within our app, and then we'll have a big chunk of data to push the gain site whenever it's ready to receive. Yeah.
+
+Richard Dosoo  10:17  
+Now the where I think we're going to have challenges, right? Is the like, if you speak to Kevin and Kevin, they're going to be like, listen, we need a bit more to understand conceptually that this thing is going to work. So they're going to ask us, rightly so, can you show this working in Salesforce, while the Gainsight integration and while the gains are applications being developed, I don't think that's unreasonable, but Natalia doesn't want to give us programmatic access to Salesforce, because she's like, no development has been done against Salesforce, yeah, but I think, like, let's look at one, let's say the Gainsight project. We can start engaging in March. Okay, if that happens, maybe it's not too late. What happens if gain size late?
+
+Azmain Hossain  11:04  
+Yeah, which it will be like, I'm telling you right now,
+
+Richard Dosoo  11:07  
+right then we're going to be exactly so then we've created a dependency, which means we can't demonstrate value, can't demonstrate these efficiencies, because we have to wait for Gainsight to be finished before conceptually, we demonstrate the workflow in the ntmp so that, I think, but that's where we'll get Natalia and Ben to help push right and help us challenge these guys to be like, no. They need to give us this access. We need to be able to work.
+
+Azmain Hossain  11:32  
+Literally, that is the bottleneck. It's not capacity. It's not taking technical capability. It's like, let us do the thing that we need to do. You can, you can have all the oversight you want. You can review the stuff that we're doing, but just let us do it. So, yeah, yeah, if we can get Natalia and Ben and anybody else to push on, that would be excellent. On the Actually, no, I'll let you finish if there's any thoughts you had,
+
+Richard Dosoo  12:02  
+because that was all I wanted to say that we'll, we will basically here. We'll just make sure that we our short term objective is to prove out an integration to something so there's no double keying of data. But longer term, obviously, it would be great if the integration between Salesforce and games like basically meant there was no double keying up of all this information.
+
+Azmain Hossain  12:24  
+Okay, that's something you want highlighted in, like the main deck that we present, or that you present on the 27th
+
+Richard Dosoo  12:33  
+Yeah, in the 26th Yeah, we should. We need to pick up. I don't want to present any surprises, so we probably have to before then have a meeting with what we need to set up a pool with Natalia, Kevin and all these guys. Anyway, we need to get their guy into what we're doing. Because otherwise, if we don't get consensus when we go to that meeting, all that will happen is these guys will push back and yeah, you know, so we want to get consensus before, yeah,
+
+Azmain Hossain  13:06  
+I don't know how tough that will be, because every I've heard this thing about like we can't touch Salesforce from like everyone. But yeah, if we can, if we can present enough of an
+
+Richard Dosoo  13:18  
+argument, I'll be honest, the big one like I speak to, do you know Bernard? Yeah, yeah, yeah. So I had a child Bernard about this before the holidays. I was like, Oh, they're telling us that we gotta use Gainsight future you as you use it already. Now. I'm also like, bro, shit that's
+
+Azmain Hossain  13:37  
+literally firstly. Bernard is a power user of Gainsight. He tries to use as many of his capacitive capabilities as possible. And I've been talking to him for three years. Literally, since I joined Moody's, he's been talking about gainshad adoption, gain side adoption. Three years down, he's like maybe 50% adoption.
+
+Richard Dosoo  13:59  
+Yeah, so, and that's why he was like, let me just take the extract from Salesforce and do all my stuff in an agent co pilot. Yeah? Because he's like, I've been able to make more progress with that, right? Do you see what I mean? Like, that's so that's these are the real issues in which that we've got. Yeah, that gay. So it's a pile of dog shit, and we're waiting for it.
+
+Azmain Hossain  14:22  
+This is why? Yeah, I honestly the integration with Salesforce that was just like a complete no go to me, like I was racking my brain, of like I am so sure gain side is going to be a mess. So how do we how do we push the data into something that's actually valuable. That's not isolated, yeah, okay, yes, that's one kind of problem solved. What I wanted to ask about was the banking thing I really didn't understand.
+
+Richard Dosoo  14:56  
+Like, have I sent you the Document? That Idris, there was
+
+Azmain Hossain  15:02  
+just a couple of bullet points on the thing. And I was like, What is this? Focus on enablement, not functionality. What does that mean?
+
+Richard Dosoo  15:10  
+Okay, let me bring up. Hold on.
+
+Richard Dosoo  15:22  
+Yep. So Idris, who you're going to speak to on the call, but he's going to also come to London that week. He's the customer success person for the banking team, okay? And he has actually been, he's about four or five months ahead of us. Right where he is right now is he's building out a load of apps in cursor. He's taking those prototypes that he builds himself on his local host, and he's giving them to like Ari la Harvey and giving them to those guys and saying, Could you build something like this for us in banking and customer success? So he he started already right where he's already ahead of where we are. Because not only has he documented his requirements, let me share this with you as well. He's also, like, prototyping them and and getting those in front of the sales recon team now and
+
+Azmain Hossain  16:10  
+dia, obviously, they're like, deployed and in production, and he's able to share them around.
+
+Richard Dosoo  16:15  
+No, he's just been, he's been deploying them locally. He hasn't got an infrastructure. He hasn't got a CICD pipeline. Yeah. So when I spoke to him, obviously, he was like, how many of your requirements line up with us? And you will see in this document that some of them are pretty similar to us. Yeah. What he doesn't have is, he doesn't have the adoption charter process. He doesn't have, like in his requirements. He doesn't have like, an adoption charter process. Charter process. And the reason he doesn't is because his ops are a lot smaller, right? They don't need to go to that level of detail to get them up and running on the product. So he doesn't have that. He doesn't have like, an RMB type process, and he hasn't really listed, like, dashboards reporting. So he's got, like, meeting preparation tools, okay, we use that. He's got identify at risk accounts? Yeah, we'll do that. That's that content and solution education. So this is, I guess, like our adoption charter, but it's, it's his is just a queryable interface that responds to questions. It's not like for us, right? Which is, actually, yeah, you know, ours, ours is one level more deeper than this, right? Providing extra workflow, then he's like, right? Cdre, agent, craft, customer solutions. Okay, this is our adoption chart, process, create pitch presentations, create internal education. So this is where our requirements diverge, because the products are different, right? Process is the same, but so this is where we've gone, like a mile deep, an inch wide, that we've gone really deep on our requirements and blueprints and solution sets, whereas he's just got this high level pitch presentation stuff, which is great, right? So maybe there's a this is where do our requirements coalesce, it or do that diverge? Right? This is a conversation we want to have an interest this week, where we want to go through our requirements, when he's here in person, and go over them, and go through his and see where there really is alignment and where there is divergence, but it's appropriate, and then see like, then we're presenting a combined requirement to Harry's team, rather than to supplement, yeah, he got identified Most recent updated topics on inflow, related solutions. We don't really have. Like, you know, we, we, we may say, Okay, what industry trends are related to a certain peril region or model, but it's, it's a different, like, there's a significant difference between what he's doing there and what we're doing, yeah, and these are the day to day tasks that generate meeting agendas, like, really a boilerplate kind of stuff that is just like Apple do. So the what we want to do is, we want to meet with Idris. We want to go over our stuff in a bit more detail, where there's alignment. We want to see where there's divergence. Here. We want to then figure out what's the combined requirement that we present to Ari and the history. And then we want to say, right, where is the deviations that actually matter and that value? But that's a we want to get agreement. That's the approach. DIA is already happy with that. And then when Idris comes for that meeting that week, we're going to arrange or schedule with him for that week, like a load of workshops with us, with Bernard and Alexandra, with some of the KYC team that have already also reached out to us and asked that are very keen to you know, they literally look they don't even know what we've done in cursor. They just looked at what we did with Microsoft copilot in terms of understanding how to interrogate Salesforce data. And they were like, Yeah, we want this. They were like, keep us posted. And that's just, that's just essentially having a way to interact with Salesforce data that's not even the Reporting Suite the other metadata that helps manage the opportunity. Yeah. Okay, but we we definitely need to follow up on this bit, because right now it's Idris is going to come over anyway. He's going to be on the meeting that we have in 10 minutes where we're going to go over the agenda, and we can go over the pre read, but I need to come up with an agenda for the week that's here, of all the topics that we want to cover. Okay, he's gonna be here Monday, Tuesday and Wednesday that week. So he's gonna fly back first, 2627
+
+Azmain Hossain  20:37  
+28 Yeah, okay. Uh. Um, Alexandre, he's here. Wait, no, actually, I remember that you messaged him. He said he's not coming.
+
+Richard Dosoo  20:52  
+He's he was supposed to come this week, but he couldn't get his flight. So I'm hoping he comes before the 26th so that's another meeting that we need to Well, what we need to do, Azmain, first is me, and you need to draw up across all the different project work streams, stakeholder map, who's the case stakeholders, who's involved, who's accountable for, like, a racy and also like a stakeholder.
+
+Azmain Hossain  21:15  
+It's literally if you just have a call with me and just tell me about it, like, rather than spending an hour or something writing it out, just tell me this person, this person, and he reports to him, and he reports to him. I'll record the call and just use AI to map it out.
+
+Richard Dosoo  21:31  
+Yeah, okay, yeah, we can definitely do that. And even a lot of that we can get from Moody's copilot as well, we can, we can put in there what we want to do, and it knows who's wrong, who's responsible for what as well, so we can use that too.
+
+Azmain Hossain  21:45  
+I've, I've had like, hit or miss with that, because people's titles are different from what they're doing, and it gets confused.
+
+Richard Dosoo  21:56  
+Yeah, no, this is it. We'll start small, right? I'll get the relevant people out into a spreadsheet and just start with them, and we can build on that. Yeah?
+
+Azmain Hossain  22:08  
+So, yeah, we've got a couple of minutes. Let me go back manager band. He's just discovered that you can change models in cursor. He's like, have you tried Opus? Amazing? I'm like, yeah, man, I told you days ago,
+
+Richard Dosoo  22:29  
+yeah, I'm using Opus in broad code.
+
+Azmain Hossain  22:34  
+Okay, I've been doing what you suggested, where I make plans with Opus now, and I run it with sonnet, whereas before I was doing it the other way around, because I remember you saying you should plan with the most advanced one, but then you can build with something not as good.
+
+Richard Dosoo  22:55  
+But it's like, if I show you presentation that it kicked out, describing me out, and I compared it to the presentation that chat GPT did for me. I was like, there is a real difference right
+
+Azmain Hossain  23:08  
+in what needs like I I haven't used cursive for like, something like this, but I was like, Can I use it? It seems really basic, so I've been using Gemini to make the presentation. That's why everything looks all Googly and modern and stuff.
+
+Richard Dosoo  23:25  
+Let me show you. Let me put in the link. I'll put it in the in the folder that you sent me. Okay, yeah.
+
+Richard Dosoo  24:08  
+Nope, stop that one, I guess this one. Yeah, so let me show you the it's just that you can tell that some of the models are just much significantly superior to like chat, GPT, the other, but that's why there's so much more expensive. I'll tell you how many fucking credits are burnt right on rebuilding this app. But it should be unfair. It's phenomenal, like we've just limited information. It just unknowns, fucking everything. So I gave it, I just said, look at the repo. Give me a presentation that summarises what it does. Two prompts. Look at what it
+
+Azmain Hossain  24:50  
+came out with. Bang,
+
+Richard Dosoo  24:52  
+yeah, just off the repo. Gave me the architecture summary this, I told you this, that. Thing is legit, and it's been,
+
+Azmain Hossain  25:03  
+did you use, like, auto or no.
+
+Richard Dosoo  25:07  
+So I didn't do, I'm not using my cursor is busted, right? So I'm using, yeah,
+
+Azmain Hossain  25:11  
+you're using Claude code. So, oh, so used Opus. You gave it the Git repo, and it just did it all in the web app. It didn't even, yeah, exactly, yeah. Me, I'm telling you how Wait. Is this your personal cloud code? Yeah, yeah, okay. I was like, how did you get access so quickly?
+
+Richard Dosoo  25:37  
+Well, this is it like we're hoping that we get enterprise access soon, right? But you heard, you heard the feedback we got last week, right? We're still waiting.
+
+Azmain Hossain  25:48  
+Yeah, yeah. I was gonna say, could you ask it to just expand that presentation out with way more detailed because then helpful for me, if you've got the credit,
+
+Richard Dosoo  26:02  
+yeah, it's fine. I had to, so I'm now on Max, Max. It's like this, how they get you. It started being really helpful, helping me debug the app. And then I ran out of pro, then I had to go to max, then I had to go to max, max, which is four times, but that's how they get you.
+
+Azmain Hossain  26:25  
+Oh, how much even is Max Max?
+
+Richard Dosoo  26:30  
+I'm just saying to burn now, man, it's like, we can't it's not sustainable for us to all do that, because we're all we'll all end up hitting the same thing. You'll start using it, you'll start having really detailed conversations with it, and then they'll be like, you're out of money.
+
+Azmain Hossain  26:44  
+Let me. Let me show you the how much Google has nerfed the context window, right? So I gave it this slide that from the presentation. It's just got a bunch of text. And I was like, Can you please make it look pretty. It gave me this, what the hell?
+
+Richard Dosoo  27:05  
+I'll be honest, I only use Gemini for photo editing because it's bullshit for anything else, if you're trying to use Gemini to do actual work, right? But it gives you some bollocks, even when you even when you're asking to do photo editing, if you don't give it a precise prompt, yeah. So you don't have the issues that you said with a context window, the context are up. It was sometimes it will flip you back the same answer. You're like, you didn't do anything. So, yeah, yeah. Like chat, GPT for overall thinking and stuff. For deep dive, proper analysis, work, Opus and and, yeah. Then some of the other models for for think, but it looks like we've got Iris has jumped on. Now, let's jump on.
+
+Azmain Hossain  27:45  
+Let's jump on that call. Yeah, cool. I.
+

@@ -1,0 +1,150 @@
+Azmain Hossain  0:00  
+Yeah, thank you for for putting in the time. I know where we're going to talk about the project, stuff and everything, yeah, but yeah, I just wanted, this is kind of our first one to one as Manager and Manager, I don't know what the
+
+Diana  0:19  
+Yeah, yeah, yeah, that's it. That was really a surprise that Natalia will come already this week with the announcement, but I'm glad that it is now official. We have been expecting that. And yeah, how to say I'm very pleased that you give me a credit, because I so I'm sure that will be, yeah, I mean, it will be good for both of us,
+
+Azmain Hossain  0:49  
+very receptive to, like, personal requests and stuff like that. So, yeah, that's why I kind of made the personal request of, like, I think she was originally because she told me she was thinking about putting me under Stacy, because I'm working on so many internal things, yeah, but I wanted, I mean, I made a case to Natalia that, yes, I want to obviously be customer facing project manager, but also an understanding now, as opposed to six or eight weeks ago, that this gen AI thing has grown so much and got so much visibility that, like for the next at least 12 to 16 weeks, this is just going to be my focus. These, these projects, obviously Clara as well, but delivering as many of them to dia satisfaction, to Ben Brooks' satisfaction, yeah, and everyone else that's involved. So it will mean that, because of me, you're keeping one foot in the in the enablement part of our team, thinking, what is it? And engagement, execution and execution, okay, well, then you're in both part because
+
+Diana  2:07  
+it's, yeah, I'm in both parts and execution. And our, and my Centre of Excellence is programme and project management, but it's not set for client facing only. It's for all, for internal initiative and client facing, of course, client facing projects, etc, is always the priority, but acknowledging the demand in the stage. Where are we now with advisory team on RP? I think, yeah, we will be all more or at least 50% focused on the enablement part rather than on the execution. Yeah, because some of each of us, in fact, has one or two clients where we are doing client facing, but most of the work is related with coordination, relating to internal improvements of the process, or defining the process in general. Yeah, I think, yeah, it will be good to although it's not first of April, but we have almost one almost a month. We to schedule one to one on regular basis. If you have any preferred date or time, let me know so I can
+
+Azmain Hossain  3:27  
+my preference would be Thursday. Thursday, okay, if you, if you have the availability, okay, Friday is just, it's, it's the last day of the week, and I am now as I'm realising I keep putting off so many things until, like, I'll do it on Friday, because I have the most free time and the fewest calls. Yeah? So just, yeah, just having it kind of empty at least the morning would be really helpful.
+
+Diana  3:58  
+Okay, yeah, okay, I will double check, how is my Thursday, because I have usually a lot of things for generality that day. But yeah, it won't be Friday, definitely, because also Friday, I'm using it for these tasks that I where I need to to focus and not to jump from one topic to another, but to be able to produce something. Okay, good.
+
+Azmain Hossain  4:23  
+The same thing for Clara. Like, right now, I listen to Richard do so's advice, because he's, he's the person who knows the technical things. And he was like, we do a Wednesday to Wednesday release cycle. But it's killing me. Like, right now I have six hours of calls, but also all this expectation that you know by the end of business today, at least US time, Clara will have you know, all these feedback fixes, bug fixes, new features and stuff that people have asked for. So what? Yeah, after today. Okay, I'm going to send out like a big mailer to the portfolio review group. Just saying, one, we are moving to a two week release schedule, and releases will go out Friday to be ready for the Monday call.
+
+Diana  5:16  
+Yeah, makes sense. Yeah, it otherwise, it's insane if we don't put some kind of a proper governance where the Yeah exactly, the tool can be maintained,
+
+Azmain Hossain  5:28  
+where I have to put the project manager hat on and just be like, as we need to manage Yeah, in a way that's that's actually
+
+Diana  5:36  
+makes sense. Yeah? Sustainable. Because sustainable, yes, that
+
+Azmain Hossain  5:41  
+we can with resources that we're getting like 50% of their time or 25% of their time. So it's, it's always being aware that every person, like we only have two people Now, additionally, that's joined at 50% FTE, but it's keeping in mind that they do have other work and I need the requests and the tasks that I assigned to them, has to take that into account. So it just means, yeah, it needs a lot more planning, but actually, but it just makes our life easier. Yeah?
+
+Diana  6:21  
+Yeah, absolutely, yeah. Planning usually makes our life easier, yeah, yeah, and we and when we discuss about the planning, I was exactly the way I was, in fact, organised. I decided to organise this call with you is to understand what is the plan? What is your Yeah, best guess vision regarding the evolution of Clara, in order we to extend that tool or to build another AI tool for monitoring projects, I know we exchanged that you started to make some section in Clara. But I was wondering how, yeah, is this something that we can use as a base and text and really start collaborating, included in the plan that Clara will be the primary tool for monitoring the projects or, yeah, I need to get in touch with further where Charlotte and Charlotte and Ben to see what's their preference. Yeah, what's your view?
+
+Azmain Hossain  7:35  
+So let me so one I've moved quite far ahead with Okay, so let me, if the website loads, I can actually show You should be 3001
+
+Azmain Hossain  7:58  
+Okay, there we go. So using Clara as a base, well, the Project Management section that I've expanded it a lot more, so I'll show you that. But this was yesterday night. I woke up at 430 and I couldn't sleep, so I started watching one of my favourite movies, which is His Girl Friday. It's from 1940 I don't know if you know it doing Clark Gable
+
+Diana  8:33  
+or Cary Grant. No, I don't recall. Yeah, but Yeah, we'll definitely look at these.
+
+Azmain Hossain  8:38  
+Will be thinking, I don't know why my internet
+
+Diana  8:43  
+is being so slow, because you're at the office. Should not take this long.
+
+Azmain Hossain  8:51  
+Yeah, I came up with an idea of building a project management app, basically a project management software taking into account. So basically, this was my request to the AI. What I love most as a project management tool, in my experience, has been Jira, not because software projects or anything like that. It's for the reason of it's highly customizable. You can add in custom fields, and then you can make dashboards with those custom fields, and you don't have to keep going through an admin and stuff like that, like Salesforce. So that was kind of my base, and I especially love their advanced roadmaps, which lets you create, like, really good gap charts with dependencies and things like that, basically Microsoft Project, but more user friendly. That's what that's what is. And then my request was, go out there, do a complete research of every project management tool, Asana, Trello, monday.com, all. These, get all their best parts and build a tool that does everything. And so I'm not letting someone else name it this time. It's called Friday, because it's, it's this movie called his
+
+Diana  10:18  
+No, I haven't, yeah, I don't think I have watched it ever, but yeah, I will use the opportunity, yeah.
+
+Azmain Hossain  10:26  
+So yeah, most people know it, but what it does have is basically, in my mind, every project management functionality that you could want. And for this, okay, I basically built out a dummy project which none of the data will now load, because why would it? But it has, oh, okay, some of them, yeah, some of them are loading, but it has everything from, obviously, Kanban board, a list view of the tasks, a timeline view milestones, budgeting decisions that you can track from that you can add in and track as well stakeholders, and a heat map of like, you know, the traditional project management access, yeah. Access, yeah, for monitor. So you can do stakeholder planning. You can obviously do time tracking as well, if you want to anything and everything that that you could want is is in here, and it's, like, fully built out. It's just doesn't have any dummy data. But you can, you can go in and, like, mess around, but this is the tool that I'm going to use to run the Gen AI projects at a programme level. Okay, so that's okay. The fire test for this over the next six weeks is okay? Well, can I track it? And obviously, I'll keep building out features on top of it. But the main thing is to to allow project managers. We can start it with just our team to manage their projects, and when you do it here, because you know, everything is in house, Clara and Friday are both in house. I can feed all the project information from this into Clara so I see right now, where's the live version. If you go into the Projects view it. I've expanded it out a lot, so you'll see roadmaps as well here, because this was the but basically, why does not things always break during during demos, but it should have all these things, so the weekly review still work, because that's something I built out earlier. So this is fully up to you of how you want to do your weekly reviews, or even if you want to do them, because I saw the discussion happening on whether or not we do them, or how do we structure the weekly reviews for projects, this is very much a placeholder. It's fully up to you how you want to run them, so if or not run them, even monitor them. So if it's something like how Natalia has it, where you want a dashboard of things, not the one slide format that is currently being used that Stacy set up. If you prefer something different, we build you a dashboard that's specific to you. People go in and still use the projects function to track each of the projects, put in milestones, risks and stuff like that. But how that data is brought out and presented to you or presented to anybody that wants to know, that's what we need to build out.
+
+Diana  14:03  
+Yeah, exactly because yeah, now, yeah, you, you're part of the exchange. I think everyone agreed that we will stop this is today, is the last weekly project review meeting. And yeah, preference of Charlotte is we to have a kind of a consolidated dashboard for all the advisory projects. I can share with you, one Excel that advisory team is using now with the projects they're using this tracker to monitor, at the moment, mainly updates and resource needs. So yeah, weekly review dashboard will need to contain, contain these parameters, and what I think we will need to take into consideration that advisory team is monitoring. In fact, I would say it's at least three type of different process. Projects that the one that are RP, transitions, iOS projects which has a bit more specific, how to say, specific activities, which are predefined into we it might, it might be useful, extremely useful, for the team. For those type of projects, we do have a dashboard that shows the progress versus these phases. Indeed, internal projects, the internal projects like where they're supporting some enhancements in the product or working with partners on some analytics. So for them, yeah, probably we will need to have very light.
+
+Azmain Hossain  15:44  
+So the question I would have is, obviously IRP projects and ILS falls under IRP. So yes, our projects that we can track here, we can, obviously, I can expand this out to have separate sections for IRP versus ILS with separate dashboards. That's fine, yeah, but for any other projects, internal change and stuff like that, the distinction I'd like to put in is anything IRP related goes into here and you create a project and we manage it, that's that way anything non IRP related goes into here because we need, yeah, we need to draw a distinction between them. We can't keep putting everything into Clara if it's not IRP related.
+
+Diana  16:40  
+And what about if we have a Friday for all the projects, and only the ones that are RP are somehow synced with Clara, because the the advisory team and the aim of this Wednesday meeting, in fact, from its existence, was the team to review everything, where advisory members are involved. And this is not only Rp. Even in the slides that we are used for this, we have first the RP, of course, but after that, they have these other projects, which are, in fact, internal projects or small, loaded support client. And after that, we have also the cat bonds, which are with this fancy dashboard. So if we would like to have to fulfil the needs of
+
+Azmain Hossain  17:38  
+Yeah, because what we would want is everyone to use Friday to do all of their projects, but the IRP projects, we just put a toggle in like IRP project. Yes, those get essentially copied exactly like every everything from the project gets copied and put into here. But the Edit process is bidirectional, So Kristin, if she's managing, you know, AXA XL and Golden Bear, but then also some internal stuff, she can go in and put updates in for all of our projects in Friday, or if yes, in an IRP mode, she can go into IRP put in just the updates for AXA and Golden Bear, yeah, the internal these will get synced into Friday, yeah? So there's no, there's no doubling of effort, okay, yeah, yeah, this would be excellent, because it, it's a controlled way to test something that Steve Gentilly is asking for other people are asking for, is, Can apps talk to each other?
+
+Diana  18:41  
+Yeah, yeah. In fact, I would like we to have a dashboard with this Friday that replaces the whole this deck where we go through different type of projects. Starting with projects are also there, yeah, but also Yeah, cat bond projects are here, and other projects I was wondering, given if we cannot use, but you will tell me, maybe in one of our next probably we can extract from sfdc all the existing projects set up, because they are usually the team is setting projects in advance for the duration of the contract, in order We to ensure that we have the full coverage, yeah, that everything that is in the to do it in
+
+Azmain Hossain  19:25  
+the format that sale, that it works in Salesforce, because obviously we want to push this data into Salesforce when, yeah, in real time, yeah. So that when you update something Friday, it updates in Clara and Salesforce Correct.
+
+Diana  19:39  
+Yeah, yeah. So, so is it correct? My understanding that, for example, we can announce, with to Natalia bensharo that we can collaborate on building this dedicated project management tool. I can collaborate with you. Come with suggestion from what is the current demand on the advisory projects as a wall, which will not be focused just RP, but internal cat bond
+
+Azmain Hossain  20:12  
+advisory, it means Ben Brooks as access our umbrella, correct?
+
+Diana  20:18  
+Yeah. Everything under Ben Brooks, exactly, yeah, push
+
+Azmain Hossain  20:21  
+it through and be like, This is my remit, and I need this done that that's our kind of shield so far. Yeah, yeah. I think would you like me to do excellent initiative, and I would like to get started on it as soon as possible, because now, okay, I have the other resources. I can offload a lot of the Clara work to them, which leaves me more time to programme, manage all the different projects and also work on this.
+
+Diana  20:57  
+Okay, then Azmain, would it make sense, in order we to keep the momentum, and I set up, probably for next week, just a brief checkpoint with Ben and Charlotte, because Ben is the the umbrella of all the advisory and to Yeah, just Yeah, share with them our long term vision how the advisory projects can be monitored in the this new tool that you are setting up in relation with Clara, and kind of share with them our vision is that, in fact, everything that we have monitoring within this weekly status reports will be there, and also they're using, at the moment, on weekly meetings, on Monday meetings where I ask all the PMS. This, this Excel. I posted it on on our meeting chat, but here they have all the ongoing projects. I will check whether or not what is his source for information, but they use this dashboard now to go project by project, and each implementation date to give an update, and they are discussing for particular week if they have some risk and whether they need to increase mobilise the team or Not. It's awful. It's awful. But yeah, as I stopped now this advisory weekly project review, I will ask, and this is also a question to would you be able to join these Monday meetings, because you have AXA still, right? AXA is really,
+
+Azmain Hossain  22:40  
+it's with Kristen. But like, I approve, okay, it's real Kristen, yeah. It's with Kristen, yeah.
+
+Diana  22:45  
+So I will check with Christian because as a temporary solution, short term solution, we don't have any more Wednesday meetings. What I will ask PMS is to join the Monday advisory team meeting where they are going through the whole list of projects and even the pipeline of projects and PMS to contribute with the status of the project, until we build a more sophisticated dashboard and process. But otherwise, but for the moment, we stopped producing this slide. Prashant Vlad snare will join the meeting starting from Monday. Yeah, if you have, I think I forwarded you the invite if you're able to join as well, just to see what is the dynamic of the discussion, might be helpful, but what I will ask or know, because he is the host of the meeting for the moment, at least, we do have a column which indicates who is the assigned PM, if we have a pm and at least a rack status, red and Amber, green in order, if we have some red status pm to be able to explain, what are the the challenges? Yeah. Think about it, I have to join another meeting in three minutes.
+
+Azmain Hossain  24:09  
+I mean, I have, I have a vague idea, because I have the framework now of, you know, issues and milestones and bugs, yeah, tasks and subtasks, project team. It's literally a case of giving it this Excel and being like, create one project for each line item with this details, and then then we go from there.
+
+Diana  24:31  
+Yeah, yeah, good, yeah, because I think this is the more complete list than what we have in the PowerPoint, and it is more useful we to start as a base, as they have also some data in pipeline, and later on, we can probably extend and verify if we have all the project also properly registered in sfdc. Because what is my big kind of I don't know. I don't understand it, how we are working on a project. Project, especially those that are client facing and we don't have a project, or people are reporting or not reporting.
+
+Azmain Hossain  25:09  
+How do you be like, how is Thailand OYC going? Oh, I don't know. Go ask Jack or Camille,
+
+Speaker 1  25:17  
+yeah, yeah, yeah. This is
+
+Azmain Hossain  25:20  
+It's fine. Okay, good. But yeah, I'm I'm glad that things are syncing up. This is also one of the things I spent a lot of my cursor budget on. I finished my monthly allowance of cursor in one day yesterday.
+
+Diana  25:37  
+Oh, and is it this allowance? Is it per per per employee, or for the whole team. I think we can, it's per employee.
+
+Azmain Hossain  25:45  
+So we get $500 included, and then $500 in demand, on demand, which you can use after the original so I'm already, like, $200 into my $500 so what, what I'm doing, what me and rich are doing is basically we bought with our personal cards, the 200 pound a month Claude subscription, which gives us almost unlimited access. And we're using that to work, because the budget that they give us is insanely stupid. And I'm just like, you're giving us $1,000 a month, and I'm running through them. If you just give me a $200 a month subscription to Claude, I have unlimited usage. Why are you not doing that? We're trying to solve it. There's there's so many architectural questions going on. We're trying to solve it. But one thing that I would request, if it's possible, is, Could I get a second person to help me with building up the problem?
+
+Diana  26:49  
+Yes, this is something that I was about to ask you, and I'm thinking either of Prashant or of Lot supporting you.
+
+Azmain Hossain  26:59  
+I would very much prefer Prashant.
+
+Diana  27:02  
+Okay, I don't need to talk with him.
+
+Azmain Hossain  27:05  
+He's, he's already shown an interest in this AI stuff. Okay? He's, like, doing his own stuff. Both Prashant and Sneha, are they? They asked me when I'm in the office, and I go and show them. Okay? So he's a little okay. And also, I don't want to hear about Vlad launches into a tangent of like, how Natalia is an awful person every 15 minutes. And, yeah, dude, you know I like,
+
+Diana  27:30  
+oh yeah. I know. I know that for Vlad, he has Yeah, other things that keep him busy. So for him will be really challenging. But now, when you mentioned that is also interested, at least, I would like to have two people that could dedicate some time and work with you on this. Because, yeah, me, I'm overlooking on everything, I will be glad also to help, especially contributing with my this
+
+Azmain Hossain  27:58  
+is where, if you if I can, okay, that would be excellent. I don't great building stuff. Obviously, Prashant can help me. He can run the prompts, and AI will build anything. Yeah, it's more kind of sitting down and talking about the structure
+
+Diana  28:14  
+of it. This is, this will remain with me,
+
+Azmain Hossain  28:18  
+yeah, yeah. So, yeah, that's, that's where I it would be really good for like, the four of us to have a regular cadence of a forum.
+
+Diana  28:26  
+We have a meeting with the people. Yeah, I have to jump to another meeting. And yeah, it's with red and I don't want to be late. But yeah, we have a meeting, and I will invite you to that meeting or set up another one. But yeah, let's discuss in our next round one, thank you.
+
+Azmain Hossain  28:41  
+Thank you so much. Thanks. Thank you. Bye, bye.
+

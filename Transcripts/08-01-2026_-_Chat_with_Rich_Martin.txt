@@ -1,0 +1,468 @@
+Speaker 1  0:20  
+You Oh, so Martin, I Yeah, put the thing in there, man.
+
+Unknown Speaker  0:42  
+All right, so let me
+
+Richard Dosoo  0:53  
+right. So while I'm just running a query,
+
+Richard Dosoo  1:01  
+sorry, guys, my computer's freezing. Give me a second.
+
+Richard Dosoo  1:10  
+Yeah, I don't know what it is. As soon as I get home, whether it's the VPN running everything on my computer grinds their fucking home, I'm sure it's the VPN. I'm sure of it. But anyway, what was I going to say? So I think Ben had mentioned that he's checked in his code, okay, which is, which is great. So all that means that's me. Oh, did lose Martin? Yeah, hopefully jump back on it. Let me just
+
+Azmain Hossain  1:45  
+see Yeah. Two hours ago,
+
+Richard Dosoo  1:48  
+yeah, so can you pull that down locally? Azmain, I'm not sure if you're going to have rights to do it.
+
+Azmain Hossain  1:58  
+I can. Yeah, I got the the main brand, branch down.
+
+Azmain Hossain  2:11  
+The only thing is, how, yeah, I need to host it. Or what would you like me to do with it,
+
+Richard Dosoo  2:21  
+no, once you've got it locally, then make the changes local to update the data model to be the one that I just sent you. And then instead of checking it back in, we'll create another branch and make sure that it works. You
+
+Speaker 1  3:24  
+nope, that's fine. Can you hear Can you can you still win? Yeah, I can still hear you, yeah.
+
+Richard Dosoo  3:30  
+So I guess that will let me just outline the steps that would need to happen, but it should be straightforward. You'll you will pull version down locally, and then I'll get the commands that you need to put in terminal to create a Branch. You will name the branch the IRP adoption of four, and then you
+
+Azmain Hossain  3:50  
+would it be okay if I shared my screen, and then you could guide me through it. Yeah, go.
+
+Azmain Hossain  4:08  
+Um, so, yeah, I've got it locally.
+
+Richard Dosoo  4:15  
+Yeah, do you not have a folder, a separate folder, or you store all your cursor projects?
+
+Azmain Hossain  4:22  
+I do not know. No,
+
+Speaker 1  4:24  
+you don't have Git on your machine, dude, no, I don't. Yeah, no, this is all good. Let me do it. Then we'll get Martin's do it. Hold on. Okay. Do
+
+Richard Dosoo  4:54  
+so let me see if we can get this. Hey, Martin. Sorry, I was having internet traffic problems earlier. But what we're planning on doing is so we we created a separate version of the data store earlier. So the only changes we need to make is we need to update the data model and refactor the application to use that version of the data model once we've done that, as I mentioned earlier on, when we were in the office, me and Ben met with some colleagues in in the cyber security team, and essentially the changes that they have made was rather than using fast API, they were saying we should use Azure functions as an app instead. And then they were able to create APIs and then also expose some others APIs to the internet, whereas we're using fast API, and obviously that's where we're hitting in some of those issues. So Well, I think the first thing that we want to do, though, before we even think about that, is just making the changes to the data model, and then we'll get Ben to deploy the app on AWS, just to make sure it worked, so that, yeah, I think that's essentially what we were going to do next with it. I'm going to try now and create drag Ben's version of the app down and create a branch, and then put in some prompts to update the app. And then we'll probably get Ben to deploy it, or we'll build it locally make sure it works. Once it's worked, then we'll get them to deploy it to to our AWS environment somewhere. Okay, so that's the plan, what we're going to do next, and then probably what we'll do after that is if once we have it somewhere working, then we can start to figure out what do we need to what changes do we need to make to the app to get it to run on Azure? I was contemplating doing it all in one step. I just wanted us to have the thing up and running somewhere first before before we start making our architecture changes, just to try and get it well, probably
+
+Speaker 1  7:07  
+make sure everyone yep and let me bring down a version of the app.
+
+Unknown Speaker  7:18  
+Sorry, guys, this won't take me a second. I so
+
+Richard Dosoo  7:56  
+and Azmain, you'd sent me this link in the chat right before the it's IRP adoption 03 right? That's where,
+
+Azmain Hossain  8:06  
+yeah, that's the main branch.
+
+Unknown Speaker  8:20  
+Sorry, give me a second. I'm
+
+Speaker 2  8:50  
+sorry, guys, this is taking me ages because everything's running slow.
+
+Azmain Hossain  8:57  
+Did you get your laptop approval approved? Japan?
+
+Speaker 1  9:04  
+I don't know if he's approved it yet.
+
+Azmain Hossain  9:18  
+Give him a nudge, because I asked Natalia, and she was like, Okay, I'll just approve it right now, Ben
+
+Speaker 2  9:25  
+is saying that he's gonna get the work from home divorce if he joins the school so
+
+Speaker 3  9:32  
+but no worries, we'll get it done. I mean, it
+
+Azmain Hossain  9:36  
+doesn't have to be Ben that deploys it. Richard you or Martin, you guys have got access, right?
+
+Richard Dosoo  9:43  
+Yeah, no, I'm just going, I'm going for it now. I'm just picking up the code and the steps I need to do.
+
+Unknown Speaker  9:57  
+Let's do this. Might give me a second, let me bring this up.
+
+Richard Dosoo  10:15  
+It was funny. I had the same conversation today with Mike Steele in the office. He was like, Yeah, I was at home for Christmas and I wasn't in the office. And he was like, my wife just keeps on giving me fucking chores to do, and the chores
+
+Speaker 2  10:32  
+don't end, right? The chores never end. They reserve the right to always fucking add more to the list. I
+
+Azmain Hossain  10:43  
+I think my my wife, made the decision that she's just not gonna go back to work anymore.
+
+Richard Dosoo  10:50  
+Yeah, but then she's got all the time in the world right to come up with a longer list for me.
+
+Azmain Hossain  10:54  
+Oh, man. Like, that's literally her number one. And only reason we have one child, and she's like, there's so much to do. I'm like, it's, it's two and a half people in the house, and I'm like, in my room all day working.
+
+Richard Dosoo  11:18  
+Yeah, no. It's just, this is what my friends were always telling me when we were younger. They were like this, Happy wife, happy life. You basically just got to learn how to say yes dear all the time.
+
+Azmain Hossain  11:29  
+It just means that my my daughter, is going to keep getting a tasting menu for every meal. Literally, man, it's like five courses and three desserts three times a day.
+
+Unknown Speaker  11:42  
+Yeah, of course, right, yeah, this
+
+Azmain Hossain  11:45  
+baby is eating better than entire families in Syria,
+
+Speaker 2  11:50  
+yep, oh, yeah, yeah, no, this is it, because
+
+Richard Dosoo  12:00  
+the database scripts in the repo. Sorry, I'm just going through the steps like, let me bring this up. Let me just show
+
+Azmain Hossain  12:08  
+you're you're following the plan from from chatgpt, yeah,
+
+Unknown Speaker  12:12  
+yeah, yep, yeah.
+
+Richard Dosoo  12:14  
+So basically, it's now telling me put the scripts in a repo where the DB scripts live. So let's do this,
+
+Azmain Hossain  12:22  
+by the way, by the way, tell me to stop talking if you're doing something and you need to bring to think. But the Do you remember I sent you a version of the Golden source, but like, map to the data model. Obviously there's like, massive gaps in that where entire tables are just empty. But I created another version with just dummy data, because Ben's version has that little toggle where you click demo mode, and my thinking was, when you click that demo mode, it fills it up with the dummy data.
+
+Unknown Speaker  12:59  
+Yeah, I
+
+Richard Dosoo  13:02  
+mean, the, I guess the bigger issue is the gap between the the golden source, right, and what would be valuable. How big is it? Because eventually we're gonna have to put real data.
+
+Azmain Hossain  13:15  
+Yeah, that's that. Do you remember that data quality tab that Ben showed where they were? Like, each category had hundreds and hundreds of data fields that needed, like, filling in or correction. That's the scale we're talking about. It's literally, yeah, hundreds of fields per category that needs to be corrected. Yep. But the advantage the where the dummy data is helpful, is that you can basically show how it would look. It's an ideal end state to show people to get them. Yeah, wide eyed. I
+
+Richard Dosoo  14:03  
+I don't know why I wasn't able to check out the fucking Martin, are you? Do you have Git open right now, or command line where you could try and just grab a local version of that, download that file?
+
+Martin Davies  14:20  
+I don't have it open, but I can do well, where's the file?
+
+Azmain Hossain  14:22  
+I can send it to you. Hang on, on this chat.
+
+Azmain Hossain  14:33  
+Hopefully that sentence, yeah, it's a zip file. Just give it a minute.
+
+Azmain Hossain  14:44  
+Yeah, Rich, I just sent it on the chat. Do.
+
+Unknown Speaker  15:06  
+Okay,
+
+Unknown Speaker  15:26  
+what am I doing with this? Richard,
+
+Richard Dosoo  15:30  
+so I think Azmain, is that as if, is that zip for the whole direct Yeah, that's not just the data model, right? So that's
+
+Azmain Hossain  15:39  
+No, that's everything from the main branch.
+
+Richard Dosoo  15:42  
+Okay, yeah, I guess we could do it this way, then I could just bring it in. I guess my what we were trying to do was create a version of this with the new data model, update the database, update the API, update the user interface to reference the new fields in the date model. And then once we had that build, we were then going to check that in, but we were going to create a branch, but that way, in case we broke Anything before Ben's version to go back to,
+
+Unknown Speaker  16:11  
+okay, do?
+
+Richard Dosoo  16:40  
+But what, I don't know why I wasn't able to pull down the version that's in in Git from command line. I don't know why that didn't work. And that's while we're doing all this stuff. Now that's definitely something like, yeah, this process needs to get tidy, tightened up a little bit, tightened up a little bit, so when we hand it off to other people in the team, because they're not going to be able to go through what we're doing. Yeah. So I'm
+
+Richard Dosoo  17:38  
+trying to run it locally at the same timeline to see if we get to the same but if we can. But hopefully, the version that Ben had in there the build words, and it compiled, and there was no issues, but we'll soon find out. I
+
+Martin Davies  19:13  
+it's just let me clone it into VS code. No problem.
+
+Martin Davies  19:33  
+Hello Santa, looks like just my directory.
+
+Richard Dosoo  20:56  
+I'm running it now, and it looks like it's doing it. Let me show you what it's doing on my machine, but I might, I'm mindful that it didn't,
+
+Azmain Hossain  21:07  
+yeah, please, if I could see it. Mine still, okay, it's just finished making the plan to run it.
+
+Richard Dosoo  21:15  
+So all I did was I put the data model files in the in the folder that I exported, and then I'd asked, I was like, Can you update the schema changes with with the information that I put in there in models? And that's where the free files were. They started to look at and then after that, it started to generate the new Python files that relate to the database structure. So you can see in here the parent account model, archetype customer model. So it's building all of these up now. Now, once this is done, then we'll need to then go through the steps to say, okay, these are the other these are the APIs that need to update. And then this is the user interface that needs to update in Azure.
+
+Richard Dosoo  22:32  
+Martinez has it, were you able to pull the build down?
+
+Martin Davies  22:34  
+Luke, I did it in VS code. Yeah, no problem.
+
+Richard Dosoo  22:40  
+Okay, so, but you, I guess, are you gonna then manually update the data model and a power you're gonna get cursed?
+
+Martin Davies  22:49  
+No, I can bring into cursor. It's fine. Do
+
+Unknown Speaker  23:27  
+writes for a panellist. Finish.
+
+Richard Dosoo  24:47  
+Just gonna do all this shit, and I bet you're gonna fail the bill.
+
+Azmain Hossain  24:54  
+You need to start selecting the model you want and stop letting it run on all.
+
+Richard Dosoo  25:00  
+Cool. Well, so it's funny, you say that, right? I was talking to Ben about this today, budget for this shit, and I was like, listen, yeah, there's about, there's a budget for Moody's as a month, and we burn for it in about a week. And we've already had emails because, you know, the training that we're going to do last we ran out of credits, right? Because we get burnt through, like the people already Moody's burning through the allocation. So when we start using this more broadly within the team, that budget's going to last all of about two days. So I need to reach out to the product owner for for this internally and ask her, like, how do we get a better size budget for the team, basically, yeah,
+
+Azmain Hossain  25:44  
+I've, I've been, like, really conscious of things. I use sonnet for, like, planning, and I literally don't even use, I don't use Opus unless it's really heavy stuff. Yeah, but yeah, mostly even planning on Gemini is pretty okay.
+
+Richard Dosoo  26:09  
+I mean, the there's definitely some best practice that we need to set up, but like we need to, I think once we've got this app up and running, and we have a tech stack that's repeatable, that we could actually go to, we could go to the team and train them on how to do this, and deploy to build locally, and deploy when we get to that stage, that's when we will be like, Okay, guys, this is the model that you should be using in these instances. This is the model you should be using in this instance. This is how we find out our budget that's remaining. This is what you need to do if you've got projects running and you're running out budget all this sorts,
+
+Azmain Hossain  26:47  
+can I just ask, do you know a number value?
+
+Richard Dosoo  26:53  
+Yeah, no, the budget we have right now is like, I'll send you guys this chat, the budget that we have from the email. I think it's like 1000 bucks a month. What? It's not a lot at all, right? For, for Yeah, it's, hold on, yeah. Our budget is, I'll forward you guys the emails on this. No, it's a budget of $10,000 with 1200 users. I
+
+Richard Dosoo  27:24  
+So that's each user has $8 a month on average. But it never works out like that, because one person will use, like, 150 bucks. And this so that we need to right size this. It needs it needs changing. Yeah.
+
+Richard Dosoo  27:48  
+Yeah. And basically, what's happening now is everyone's using the tier a models, and we blow our budget instantly with a few power users. Yeah, yeah.
+
+Richard Dosoo  28:19  
+So we use the tier one models for the planning and then implement you use the slower ones if we're using boilerplate stuff, which is Tier C, which is what we should be doing once we've got all this up and running. Then
+
+Azmain Hossain  28:36  
+wait, I thought it should be the other way around, that we should use a slower one for planning and a more powerful one for building.
+
+Richard Dosoo  28:44  
+No the way it's saying here is that we should use a more powerful one for planning. And if we're writing something that we're if we're writing something that is coming off a boilerplate stack, then we should be using, Ah, fuck off. So it's not working.
+
+Azmain Hossain  29:07  
+Yeah, mine's throwing up all sorts of errors. I Hey,
+
+Martin Davies  29:42  
+Richard, what you get on that local host and not loading anything? I'll show you.
+
+Azmain Hossain  30:07  
+Yeah on the 303,000
+
+Unknown Speaker  30:13  
+port, saying,
+
+Unknown Speaker  30:21  
+localhost, refuge, refuse to connect this some fucking mood is bullshit.
+
+Martin Davies  30:29  
+No, I think I had a similar thing with the risk mother dashboard. If you get cursor to restart the proxy server, it should work. Okay, it can normally handle this. I've had the same issue. I
+
+Unknown Speaker  31:32  
+can understand something.
+
+Unknown Speaker  31:43  
+Now it keeps failing. I
+
+Richard Dosoo  32:09  
+could not reach package. Dot JSON, no such file or directory exists. I it.
+
+Speaker 2  32:40  
+But let me see if this connection error. So I'm getting this connection fails, no. It says starting proxy service sets. Okay, all right,
+
+Martin Davies  32:52  
+let me can you now Pass that log file into cursor? Yep. I
+
+Unknown Speaker  33:41  
+I can't get this far. Live on. I
+
+Unknown Speaker  34:45  
+let me try this again. Halloween.
+
+Unknown Speaker  35:10  
+Nope, still can't Do it.
+
+Richard Dosoo  35:41  
+Oh, man, man, this is gonna end up taking a while debugging this, which is just annoying that it's this hard, I guess, Martin, were you able to even download pull the files down locally?
+
+Martin Davies  35:56  
+I was yes, I'm not entirely sure what meant to be seen now I can see the effectively, the swagger.
+
+Speaker 2  36:15  
+Now, what you should see did, I'm sorry, did I send you the new schema files for the database.
+
+Martin Davies  36:25  
+No, I've not. I've just cloned what was in the repositories.
+
+Unknown Speaker  36:29  
+That's my fault now. So
+
+Unknown Speaker  36:33  
+he's working. I guess that's a good start,
+
+Richard Dosoo  36:36  
+because at least you've been able to get the thing to work before we made any changes,
+
+Unknown Speaker  36:41  
+I'll quickly, I'll show you what I'm seeing,
+
+Azmain Hossain  36:46  
+yeah, please, because I'm just trying to host it locally and like, Oh, you're in the docs, yeah.
+
+Richard Dosoo  36:57  
+But if you go to localise 3000 that's to meet the UI, right.
+
+Azmain Hossain  37:01  
+Yeah, could you try going to the UI?
+
+Martin Davies  37:20  
+But the documents work for you guys. Yeah, I don't know.
+
+Azmain Hossain  37:26  
+Good point. I haven't really. I've been trying to just access the UI and keep getting,
+
+Azmain Hossain  37:39  
+oh yeah, the docs work. I mean, they're weird and empty.
+
+Unknown Speaker  37:52  
+Yeah, I can't get the docs to open at school.
+
+Azmain Hossain  37:55  
+Could I just share my screen to because I'm getting yours? Unlike you guys, I don't know if I'm because I'm doing it badly. I'm getting these weird fail to resolve, resolve, import things, and it just keeps finding new ones and apparently fixing them. And then a new one comes in. I
+
+Azmain Hossain  38:32  
+Yeah, and then it's like, oh, I fixed everything, and it should work now, and it's literally showing a massive error in the browser.
+
+Richard Dosoo  38:49  
+Yeah, so it's missing some files, so the Build Failed, right?
+
+Martin Davies  38:59  
+Yeah, I've got similar error now, not the same, but very similar. Okay,
+
+Azmain Hossain  39:18  
+yeah, it's like it builds the file, and then it's like, oh, now this new file is missing, so it does that.
+
+Azmain Hossain  39:41  
+Oh, let me, let me refresh it over here. Well, hello, okay, there's no left side bar, but we have something. I.
+
+Richard Dosoo  40:06  
+It might be because some of the tables are empty, right that drive?
+
+Azmain Hossain  40:14  
+Should I have pushed the data model into it first before trying to run it.
+
+Richard Dosoo  40:27  
+Yeah? So that that was what I tried to do. I made changes to the data model, and then tried to
+
+Azmain Hossain  40:33  
+try to do it the other way, where I'm like, let's just get it up and running first, even if everything is empty, and then I can tell it to shove the data in. Yeah, okay, it seems
+
+Azmain Hossain  40:52  
+okay. Refresh. Do I get the whole thing? No, yeah, it's not the, you know, the full one that that Ben showed to us, yeah, but I don't know what more to do,
+
+Richard Dosoo  41:13  
+yeah, because I'm hoping that these are the that's this is just the latest build that he's checked in. It's not a functional, something I've regressed, but it's like, yeah, the apps aren't completely awful. It's missing. I don't think it's your build. I think it might just be the code.
+
+Unknown Speaker  41:30  
+Okay, yeah, that's fine.
+
+Azmain Hossain  41:35  
+Tell you what. This is the backup. This is the version that Ben told me, he was like, he's not sure if the main branch will even run. So he was like, if it doesn't, then use this one.
+
+Azmain Hossain  41:59  
+So I am going to attempt to run that one. Now locally, I'm
+
+Richard Dosoo  42:50  
+if that one works, then we can use that as the baseline and change the date model from there. But if it does, let's just pick it up with Ben in the morning tomorrow. Yeah. Because without knowing what version of the application is definitely running, we could be doing this all night.
+
+Azmain Hossain  43:08  
+Yeah, yeah, I'm gonna do what you suggested. Rich. I'm gonna use the high, powerful one for the planning.
+
+Richard Dosoo  43:19  
+I wouldn't even worry about it for now. Just use like you're gonna run out anyway, with the changes you make or not, we're gonna run out. We're gonna burn for it. So it's all good.
+
+Azmain Hossain  43:35  
+But what I suggest get it done as fast as possible.
+
+Richard Dosoo  43:39  
+I'll put some time I started burn about 1030 tomorrow morning and see where we get to. Yeah, I might, I might. You sent me the data model, right? Already populated some data,
+
+Azmain Hossain  43:55  
+yeah, yeah. I have,
+
+Richard Dosoo  43:59  
+yeah, okay, it's not what I want to do. I might play with this tonight and try and do something, but let me put some time aside with Ben tomorrow morning, and we'll figure
+
+Martin Davies  44:07  
+it out just on that. Richard, I've got Canopus pretty much well, holidays looking pretty full tomorrow, but I've got between 12 and two. It's three or as I'm in meetings again. Shit. Okay, although nine till 10 is three as well. If it was early, good work.
+
+Richard Dosoo  44:27  
+I can do nine till 10. But you just reminded me that I need to go over DPS with you, right for
+
+Martin Davies  44:35  
+No, I think I spoke to Amit and Liz, and I've got a meeting with Liz before there's a more, just to run over as well. I think it's fine. Okay.
+
+Richard Dosoo  44:44  
+Well, if you need me to look at it, just ping it me and I'll review it and then give you some feedback back. But if you're all good, don't worry about it. Yeah, I'll see them good. Thank you. I'll drop I'll try and do 930 to still 10, just to check in with Ben and see where we are, and then take it from there. It alright. Thanks, guys. Sorry about this.
+
+Azmain Hossain  45:06  
+Yeah, I'll just, I'll just keep, keep it running and rich. I'll give you a shout if I can get it to work.
+
+Unknown Speaker  45:13  
+Yeah, I'll be here anyway. I'm just going to get some food and put arsenic. Oh, who they're playing Liverpool. Man, got eight points clear. I'm sorry,
+
+Richard Dosoo  45:30  
+you guys are going to be adopted arsenal. Fans, don't worry. I'm gonna get you guys choices,
+
+Azmain Hossain  45:36  
+using Gemini to do research on which club I should support. Because I was like, here's my 2000 hours of Football Manager playing history using what club should I support?
+
+Richard Dosoo  45:51  
+Oh, man, there's a memes I'm gonna send you. Azmain. They say Arteta plays a haram bull because he basically parks the bus. So there's all these memes, right? Going about then, like, having him dressed up in like a toppy and everything, and they're playing the sheets, right? And it's like playing it's so funny. They're too hilarious. But you guys are going to be Arsenal fans, though,
+
+Martin Davies  46:13  
+no, I can't do it. I have my team, Richard, it's okay. Who's your team? Mine? I'm a Stockholm County fund.
+
+Richard Dosoo  46:21  
+Yeah, that's bro. This different leagues. It's fine. Support them still, but don't worry. For Premier League, even that scarp, I get you an arsenal scarf. That's fine. That's it. And then we're gonna go to the office and torment the top no fans like five. I don't
+
+Martin Davies  46:41  
+mind doing that. That's always fun.
+
+Azmain Hossain  46:44  
+According to Gemini, I should support childhood athletic
+
+Speaker 2  46:51  
+I mean, they're close, at least they're local, right? You can get down there, South East London,
+
+Azmain Hossain  46:56  
+yeah, that's because it knows where I live. It was like using the transport links close to your home. This is a good club for you to support.
+
+Martin Davies  47:07  
+I've got season tickets top four, and I go maybe home games, maybe once a month. I can show more away games than anything. And when I was living in Canada water, we were playing charlatan away last season, it was like 15 minutes from the house, and it was the only game I was late for all season. Is literally the closest stadium, and the one that I got that late, and I missed the goal as well. We scored after five minutes.
+
+Richard Dosoo  47:34  
+But that would, you would have been at the away and at chart and fucking out. But yeah, because it's just by the Blackwell tunnel, right? That's all they
+
+Martin Davies  47:44  
+brown, yeah, so close, yeah, sent too long in the pub, so missed the start.
+
+Speaker 2  47:50  
+Yeah. All right, guys, well, thanks again. I'll put I'll try and get a call in with benefits fruit at 930 tomorrow, just to check in. Okay,
+
+Unknown Speaker  48:05  
+cool. Thanks. You.
+

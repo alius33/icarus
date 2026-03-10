@@ -1,0 +1,192 @@
+Azmain Hossain  0:00  
+Uh, okay, so sorry. I just, I just want to write this down, so pull down.
+
+Richard Dosoo  0:06  
+It's cool, like, so basically, go to the playground right now, right? I'll show you what's in the playground is basically just a dashboard in widget, right? That lets you move stuff dynamically with data that's that's all the framework is doing, and then our requirements are in there. So there's three widgets here, right? This one, and you basically want, whereas this is working off use cases, you want an account burn down, which is based off the risk link and risk browser switch off dates, right? Same logic, but just based off those different fields. So you want maybe this, these fields up, maybe there's two different tabs, right? The account breakdown has got two tabs, which is, one is going to be migration and one is going to be adoption, right? And then the migration one is based off those new fields that you've added, and then you have the same set of metrics, total accounts fully complete, on track at risk challenges this quarter remaining, same breakout by team, your burndown is going to reflect off the new field. And again, if there's a risk link, it's going to it's going to give you the burn down when risk link and risk browse are switched off for the customer, if there's both of them, and then this per use case, account timeline. You're not going to be target. You're going to basically have for each client. There's going to be basically two rows in there, the wrist link or risk browser rows per client. So that's the only so you're basically asking to it to create, either do one or two things, right for all of the information that's currently on this account, burn down tab on a separate tab called migration, adoption, burn down and then create another tab underneath, called migration. Burn down and and replicate the widgets based off the new date. That's it. That's the prompt.
+
+Azmain Hossain  1:56  
+Oh, amazing. Okay, yeah, I can, I can do that. The Okay, so I'll do that now. The next thing I was gonna say is Rhett's issue shit, I'm putting builds into dev that actively need to be promoted up to, up to,
+
+Richard Dosoo  2:21  
+it's gonna be I'll be honest, I'm testing your shit now and it's still not working. So, and it's my fault, because I didn't migrate to it exactly as it is. I kind of reverse engineered it thinking that would be faster, but that was the worst mistake that fucking made. So I'm now in testing hell, right? Basically, fucking testing out every single feature that he put in to make sure it worked. So that's going to, I'll be honest. That's going to take me this afternoon. I don't to do that.
+
+Azmain Hossain  2:47  
+Why are you doing the testing? Why can't you be like, read the build is done, go test it. Make an Excel sheet with all the issues you find, send it back to me.
+
+Richard Dosoo  2:56  
+Now he did the test, and it basically like, this is the thing that pissed me off, right? I had his code running, and I was like, hey, Lord, migrate this code into my app, please. And it migrated. It didn't migrate the code, it integrated it. So it was like, Oh no, here's a cool way you can integrate to I was like, I didn't ask you to do that. I asked you to migrate the code base. So then I had to reverse engineer Rhett's app, create a PRD for it, create pumps to create that PRD in the playground. Oh, my God. And I was like, okay, cool. Then I started testing it, and then I realised it was like, oh, sorry, I made a mistake with a spec. Half of it's not there. I'm like, Are you fucking joking, though? So that's, that's basically where I am. Now I've redone the spec. Really, the amount
+
+Azmain Hossain  3:40  
+of effort going into it is because manager Ben wants it done, right?
+
+Richard Dosoo  3:47  
+Well, rep wants it done right, so he can start shopping around, because he's saying that the CSMs are not filling out the adoption charters, because it's too hard, right? So that was the reason why. But it's taken me a day.
+
+Azmain Hossain  4:01  
+Okay? Again, this is me just looking at at a higher level. Has he spoken to anybody about what he's doing?
+
+Speaker 1  4:12  
+Because No, I think this single CSM
+
+Azmain Hossain  4:15  
+I've spoken to that have come to my daughters and charters, or Liz Couchman, or anybody. The plan that we have agreed is word document to app, app to Word document. Where the fuck is this Excel coming from? Red's head like he's not talking to anybody and he's doing
+
+Richard Dosoo  4:33  
+shit well. So this is the thing I asked Christine the same question, because I was like, we've already got a place where this information is stored in the app. So why is, like, where's this come from? Yeah, and, but I'm the reps telling me that. No, I'm in conversations with the CSMs and sales guys, and they're telling me this is a priority. So I was just like, okay, cool, bro. Let me just get into the way he's doing
+
+Azmain Hossain  4:56  
+he wants to do it. Has has he gotten consensus on that?
+
+Richard Dosoo  5:00  
+I'll be honest. I don't think so. I think this is another one of those things, right? When people are like, let me just do what I want to do, and I'll be honest, but I don't care. I really don't give a shit. I just want to get out of the way so it doesn't look like I'm holding
+
+Azmain Hossain  5:17  
+up. I'm gonna, yeah, I'm gonna raise this with manager banner. Be like,
+
+Richard Dosoo  5:24  
+can you trust me? Won't you won't. It's not, it's not going to be to your benefit, bro. You're going to be taking shots at his favourite so it's not just less. What can get on, trust me, just just get on a bit of a trust me, I've been there, but doesn't work out. So just just, we just get it done right, and then we move past it. I want to, that's I just want to get it done as quick as possible today. Possible today, and we move through it and get back to the important
+
+Azmain Hossain  5:47  
+issue that we do all this. And then if we find out that red didn't talk to anybody and just did this, and see a sense like, wait, but adoption charters are Word documents.
+
+Richard Dosoo  5:59  
+What's this? Excel? Shit we already know that happens. I've spent fucking my whole weekend rebuilding Steve's app and basically bringing it into a framework that we could put it in there, and he went to work to rebuild it anyway, just wasting my time when I could have been doing other shit on Clark. Like, that's, that's, that's where we're at. That's what anyway. But you get on me, I brought I'm tired. I'm tired. I don't even want to argue anymore. I just want
+
+Azmain Hossain  6:20  
+to completely understand. Okay, all right, then I don't want to, I don't want to take up any more time, just just staying in the call. But that that that's the running order. Then Chris, you look at the features, run it through, cursor, get a new report on what still needs to be done and what's already done. You're working on red stuff. I will firstly, and then
+
+Richard Dosoo  6:46  
+what I'll say is, Chris, if you filter on the defects right, and then what you I'll do is, then I'll, when I finish, let's I'll start looking at the change request, feature requests that are in there, and even just coming up with a plan about which ones are sensible, which ones are not.
+
+Chris M  7:00  
+Okay. That
+
+Azmain Hossain  7:01  
+works after cursor does the analysis of what's done and what's Chris you focus on the bugs and breakages. Rich. Can look at the features and yeah, I'll work on the data model changes for the calculation the migration burn down and the new management dashboard, that's that's the aim for today.
+
+Chris M  7:27  
+Okay, cool. Two things. One, can I just why we have a little bit of time? Can I just ask a quick question on getting the setup of Clara running locally? Yeah, yeah.
+
+Richard Dosoo  7:43  
+Go ahead. No, no, I was gonna say, let's do that now.
+
+Chris M  7:46  
+Yeah. So I had it running, I mean, the front end of the back end, but I think it's just the link of the table. So it's just the environmental file. I went to the read me, went to the readme, went through everything, the front ends, installed Docker everything. But I guess it's, I don't know what these variables are. It doesn't really say what I need to do in the any of the information for the READMEs.
+
+Azmain Hossain  8:19  
+I'll be honest, I have never looked at these. I just tell cursor, deploy this locally. And literally, that's it. I just give it that, come on, deploy it locally, so I can test and see
+
+Chris M  8:31  
+you've never actually gone through and done the okay, because I went and installed it. I i have it running, and it gives me, I started the server and everything. I mean,
+
+Azmain Hossain  8:46  
+it should just be local host. Yeah, yeah, back ends, not done.
+
+Chris M  8:53  
+Okay, so that's the air. Okay, cool. So if I just tell Claire to do it back, and it's something, because it says the SQL alchemy.
+
+Azmain Hossain  9:03  
+I know it does SQL alchemy for the database schemas, but the database is a Don't, don't debug it. Just put it on agent and don't say, like, can you debug why something's not working? Just say, deploy this locally so I can test
+
+Chris M  9:25  
+it will, literally, I just didn't break anything. So that's why,
+
+Azmain Hossain  9:28  
+no no, because it should have all these config files and stuff with instructions of how to deploy this locally. And as long as you've got Docker running, which you have, it'll just okay. So it's apparently backend is running. Yeah, it'll just figure everything out and do it and be like, Okay, done. So what I would do is, instead of clicking Run, where's the run, everything button. Add Docker to allow list.
+
+Chris M  10:10  
+Okay, I usually do this on my own little spots, but I just don't like this was my first foray into it. I didn't want to break anything. No, no. I usually Cavalier. I just
+
+Azmain Hossain  10:28  
+technical person who's like, I'm gonna into the readme and see what the environment variables are. And I'm just like, shut up, slave, do the work. I was joking with, with Ben. I was like, war,
+
+Richard Dosoo  10:52  
+slaves are awesome.
+
+Chris M  10:55  
+I actually, I still say thank you and good morning to my agents, because I just want to be on their good side when they take over,
+
+Azmain Hossain  11:03  
+yeah, but when I was telling rich, I'm like, Look, in like 50 years, they're gonna kill us anyway. Let's work him while we got
+
+Chris M  11:13  
+him. It's so true. Okay,
+
+Azmain Hossain  11:17  
+yeah, it should set everything.
+
+Chris M  11:20  
+I'll get that to work. Then I just didn't know what the best way to go about it, because I was trying to go through and read these are somewhat antiquated, because there was missing parts. So that's why I didn't know.
+
+Azmain Hossain  11:30  
+So for example, one thing I did yesterday, last night, like 2am I generated, generated a full documentation and a user facing User Guide, like a knowledge base for Clara. It's it's in dev now, so I'm going to push it through. But literally, the thinking behind that was, we need very detailed user guides so that when we incorporate Claude into Clara, I want to create an AI chatbot so people can be like, they can literally ask questions about the app, like, one of my customers was supposed to migrate yesterday, but they haven't. How. What do I need to change to make this app up to date? And it will literally be like, go to the customer page, click on this field, update it to this and then that's it. That's all you need to do. It's basically an assistant, a Clara assistant.
+
+Chris M  12:25  
+Okay, that makes sense. Okay. I'll read through this and see what it was doing. So I know
+
+Azmain Hossain  12:35  
+just go in your browser and see it should be running now. I
+
+Azmain Hossain  12:47  
+Yes, okay, no, it shouldn't okay. I would. I would just tell it like, get rid of the authentication on the local build. Why? Why is there authentication in the local build?
+
+Azmain Hossain  13:32  
+Just say, remove the authentication so
+
+Azmain Hossain  13:44  
+telling you, man, this thing's going to spoil you. You're going to realise how easy it is just to do stuff by natural conversation, like sometimes when I get I start swearing at it. It's like the user is clearly frustrated. I will work extra hard.
+
+Chris M  14:00  
+Well, it's funny. I actually, I was playing with it like we're going to do a little presentation, but I created an entire API library with 1300 35 endpoints from the developer website. It was just using cursor. I was just playing around in the back end, but I was trying to create the MCP server before I knew that there was one that we had into in just for fun, just like we were trying to come up with, like an agent, trying to map out some ideas for migration of cat accelerate. And, yeah, it's, it's so incredibly powerful. It's scary, especially if you just know how to prompt it, yeah.
+
+Azmain Hossain  14:37  
+And I mean, why are you living like a peasant running sonnet 4.50
+
+Chris M  14:46  
+is it because that's just the first one that came down. I just, yeah, that's true. I should be running Opus 4.6
+
+Azmain Hossain  14:51  
+right? Yeah, exactly.
+
+Chris M  14:53  
+It's, it's the bottom one. It's the bottom one.
+
+Azmain Hossain  14:59  
+Work harder. Yeah. You ain't a house. Fair
+
+Chris M  15:04  
+enough. Fair enough. It was just, you know, I wanted to save a little bit. We'll move it up after this. Yeah.
+
+Azmain Hossain  15:12  
+I mean, now that that's the thing I was I was saying in the call, the solution that Ben Van Houten has is, is what we need to deploy to save on costs. But I know that manager Ben's thinking is not cost right now, so yes, take advantage of that and just use the best models to do the work, you know, so that it doesn't make any mistakes when the bill comes due and he starts asking questions, we've got a solution already so that I'm at least comfortable. There we go.
+
+Azmain Hossain  16:03  
+You got to start putting, like, screenshots in it, being like, why is it asking me to register and all this stuff? Like, it never does okay to me. Did you do? Yeah, I don't know why it's doing that.
+
+Chris M  16:15  
+You know what I can do. What I'll do is I can start with a fresh now that I know that I can do this since I already, because I had it running, I installed things, so I'll start fresh and just go through the process. What you said, so I shouldn't have to sign in and
+
+Azmain Hossain  16:32  
+no, like on my local build, it just, yeah, it just loads up. I
+
+Chris M  16:51  
+That's so I'll go through the features defects and start putting them through once I have this up and running. And then at a certain point, whenever you get to the point of going through and and pushing. And I'm obviously never going to get to that point for a while. But, um, I would love to sit through and watch you go through the process and, yeah, yeah, all that good stuff.
+
+Azmain Hossain  17:13  
+So kind of explaining to you the the workflow of the CICD pipeline, exactly. Yeah, happy to get through that because I've got a very good understanding of it now.
+
+Chris M  17:23  
+Yeah, so whenever you you get to a point where you're going to go through that whole thing, let me know, and I can sit and watch you through it. Yeah, yeah. Take some notes. That'd be great.
+
+Azmain Hossain  17:33  
+All right, awesome. Well, thank you guys, thank you.
+
+Chris M  17:36  
+I appreciate that. You too, and
+
+Azmain Hossain  17:41  
+we'll keep speaking on the group chat. Sounds good. All right, thanks rich.
+
+Chris M  17:46  
+Have a good afternoon, guys. Thanks, Rich. Thanks Azmain, speak soon.
+

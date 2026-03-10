@@ -1,0 +1,477 @@
+Speaker 1  0:00  
+Hopefully. Hey, Richard, hey address, how are you
+
+Unknown Speaker  0:07  
+good? Just at the airport right now.
+
+Richard Dosoo  0:10  
+So you land you learn tomorrow you're getting a red eye, right? And you land it tomorrow morning.
+
+Speaker 2  0:16  
+So I live about a 30 minute flight from New York City. So I was initially planning to leave here tomorrow morning to go to New York City then take the red eye, but there's like this major storm that's coming through. So I'm actually going to New York City now, staying the night there, and then taking the Red Eye tomorrow from JFK. Otherwise, I might have been at risk of missing my flight. It might have been cancelled.
+
+Speaker 1  0:49  
+Hopefully get through. You don't get held up.
+
+Speaker 2  0:53  
+Yeah, so I just, like, I spoke to Irina, and she's like, just leave a day earlier. So just to be safe.
+
+Richard Dosoo  1:01  
+Well, the good news, it's not snowing over here. It is wet, but it's not cold.
+
+Unknown Speaker  1:08  
+For you guys, is different, right? Us, like, minus Celsius, you know, minus 15 Celsius?
+
+Azmain Hossain  1:16  
+Yeah, that's That's true. There's a lot of people that coming from Canada, and they actually complained that it feels colder, because this is an island, everything is wet, so it's not like dry cold, like Minnesota cold. It's like, yeah, it seeps into your bones kind of cold,
+
+Richard Dosoo  1:35  
+cool. Well, um, but um, Idris, I want to give just one minute for Bernard, who is works in the Life team. I don't know if you've met him before. He works for Alexandre. He does. He's responsible for, like, customer success.
+
+Unknown Speaker  1:53  
+Yeah, I think. Hey, Bernard, thanks for joining the and what
+
+Richard Dosoo  2:02  
+we wanted to really go through, just in this conversation, address George and Bernard was the we have as part of the agenda on Monday to go over the priorities from what customer success are, and I wanted to give Jamie and his team an overview of what what we've been working on and what our priorities are, broadly speaking, on the insurance side, Idris, that's we need. We've been building an application to help manage the adoption of our customers that transition into the cloud, and we'll need for that to be in Salesforce or for sales recon. But obviously, we don't have the ability to change that yet, so we're going to spend a few minutes going over that. We also have a we've been looking at myself and Bernard using Microsoft Copilot to deliver sentiment analysis when you import sales from state your internet. Bernard's got a really good dashboard that is built for somper that leverages some of the work that we've done on a train. So we want to share that with Jamie and his team, because the intelligence anywhere feature that they've talked about delivering, there's a straight line between that and what we need, right? So we want to cover that ground. And then lastly, we've got two other applications. One of them is a what I call like a Customer Insights tool that allows us in services to compare customers, to look at their different levels of maturity across several different dimensions, and give them feedback about how well they're doing against their peers, and what, what, what, what improvements they need to make to to improve their processes and move along that access of maturity. So that's the kind of thing that could very well help in a renewal conversation or customer conversation. So we want to share that with with Jamie's team and see if they can add that to not add, or if that data is useful to them. Then great, we can talk about incorporating. So I guess just a
+
+Speaker 2  3:59  
+quick question, because George is here. Hey, George, how's it going? So, you know, George, similar to how we manage the banking and I apologise. I'm off camera, just the airport right now. So you know how we manage the banking segment, where we look at the entire segment irrespective of the workflow, right? So, for example, in the banking segment, you know, almost half of our book is credit view, followed by banking, and then, you know, we have KYC, we have insurance and all that stuff, right? So, and that's like, you know, the whole ma 3.0 so from an insurance standpoint, just because we're talking about, you know, retention and AI and all that stuff, have you guys started to now look at the entire book within insurance that include non insurance workflows. I just want to get a sense of kind of how you're looking at the book, because it it'll impact some of these discussions as we work through, like, you know, recon and some of this AI stuff.
+
+George Dyke  4:49  
+So we Yes, we thank you for the question yes we have, although it is a much smaller scale that that view as what you see in banking. Right, right? With with the sort of the product range that you have, it's so we do, yeah, we do have those. We've probably still, I'd say we're still in the very early days of looking like some of this. The area where we're most ahead on that is on the kind of the asset side. And Alex arms here as well, right? He's probably a little closer, well, no, much closer than I am to some of the more recent details on all of that. That's an area where we've made, and we've got more of a sort of an intentional structure, where over the last 12 months or so, with the MA 3.0 changes, we've gone from having an insurance product that served mostly insurance asset managers right to now. They're looking after these products that come from elsewhere in Moody's that go to them as well. So that's where we've got more we're taking the first steps around other areas like Orbis, like grid, like price catalyst, etc. Yeah. But it's, I would categorise that still is sort of exploring rather than anything established.
+
+Speaker 2  6:09  
+But hopefully, like the stuff that we're talking about, will start help accelerating that work that you're doing around there as well. Because even from a banking side, like our people only know lending, risk and finance in terms of being, you know, somewhat of an expert, right? But, like, you know, if we have a credit view, huge account that comes up for risk, it's more difficult for us to do anything about it, right? And that's where we feel that AI will really help accelerate some of that. Yeah, thank you. Sorry to take the conversation off topic. I just need to ask that question.
+
+Richard Dosoo  6:44  
+No worries at all. So I guess what we wanted to cover in this call was just to go over what those demos look like. And then I just because you haven't really been as close to the work that we've been doing on the insurance side, wanting to bring you up to speed on that before the meeting, because I know there's probably some crossover between what we're doing and what you were doing on the banking side, but so I guess with that, excuse me, Azmain, I know we've got some issues with the build, but is the Can we is it possible to walk Idris through just the first couple landing pages of the tracker app, and then that will we can exclude the pieces that we're having problems with in the build at the moment.
+
+Azmain Hossain  7:29  
+Yeah, yeah, yeah, absolutely. Let me just so that things don't break in the middle. I'm just gonna open a few of the pages already, kind of like have them ready. Okay, yeah, just want to avoid any issues. Cool, let me share my screen
+
+Azmain Hossain  8:00  
+so hopefully you guys can see my screen. So interesting, one of the, one of the, actually the most mature kind of idea that we have right now, using using AI products, is a platform that essentially brings together data input and data visualisation that is currently like fractured into who knows how many pieces data is either not captured while migrations are happening in IRP, and IRP is our big push to get everyone onto off of on prem solutions and onto cloud solutions, as well as get them to adopt our new HD models of windstorm and all sorts of natural catastrophe modelling. So it's a it's a big project programme that has the objective of moving every customer onto the cloud, and everyone has, you know, multiple workflows, and everything needs to be migrated. So it ends up becoming this huge thing. What we were having is updates in Salesforce, updates in Excel, in emails, everywhere that you can imagine, there was information sitting, and they would only surface in calls when the right people were there and the questions are being asked, and then they would again go away because no one was writing them down. They usually not recorded or transcribed. There was just no centralization. So this is the central repository that we are envisioning. We build
+
+Speaker 2  9:56  
+it so Azmain, as I'm so sorry to interrupt you here. So just as I'm looking at this, is it, is it fair to assume that you exported all this multiple unstructured data, whether it's Excel or whatever, stored it somewhere on your computer or somewhere, and then you coded this using React, tailwind type thing, and then you push this to a server? Is that what I'm seeing here, like, I just want to understand where the underlying
+
+Azmain Hossain  10:21  
+data is coming from? Yes. So the process of taking all these disparate sources and making one golden source that was compiled by a human, maintained by a human, because there was just for anything to be automated, we just took that, we took the golden source, and we visualised it that was kind of, you know, v1 and then it became a case of, okay, why can we just look at data? Why can't we just use this as the place where we put in the data? Because we can push it back out to Salesforce on the other side after we capture it, and we can push it back out in an organised way.
+
+Speaker 2  10:57  
+So you actually cap you're actually capturing new information on this, and it's saving on the back end, yeah, yeah, yeah. So very impressive.
+
+Azmain Hossain  11:06  
+The big push that we're that we're doing right now at launch is having a data completeness push so that every, every account, everything has a data completeness and we literally get the CSMs, the PMs, or anybody else to go ahead and fill this in. And for the moment, this will be a standalone system, because we're waiting for Gainsight to get implemented into Salesforce, and then we can push this into Gainsight and through that into Salesforce. But for the moment, it's completely standalone, and the advantage of that is we can mould it however we want, whenever customers, sorry, whenever users want something. We can make it as easy as possible, and we don't have any of the constraints of working with a third party software like a SaaS platform.
+
+Azmain Hossain  12:01  
+Any questions
+
+Speaker 2  12:08  
+one second. So the goal here, so this is great, by the way. So the ultimate goal is what to take this kind of concept and integrate it into, like a recon workflow, where this is just like enterprise type accessible, or, or, or is it something that, like, you're planning to maintain and update on your own, but then have connectors that come from Gainsight, Salesforce or wherever into this, like, I just want to understand that that part of it, I think,
+
+Azmain Hossain  12:41  
+Richard, please correct me if I'm wrong or if I'm visualising this incorrectly. My understanding is the back end of where does the data go is going to be what I just described Gainsight and the Salesforce, the front end of how do we get the data in? That's what I believe is long term, the plan is that sales recon will take over. So sales recon essentially forms the thing that goes all the way from the very top of the funnel of discovery, you know, crafting a story and making the pitch, all the way through to signature, contract signature, then the implementation all the way through to the product being actually adopted. Because one of the big things that we're doing here is not just, you know, not just counting the migrations of, okay, implementation over, you know, hands up. We want to make sure that our clients are actually using our products downstream in their workflows, and they've actually adopted the things that they've bought, so that we can have an adoption charter in here that links back to, you know, all these other data sources of blockers and stuff, so we can have one holistic system when it's in sales, recon,
+
+Richard Dosoo  13:47  
+yeah, okay. Just to add to that, Azmain, that's that's directionally, what we want to do, but we haven't got approval for that yet, so that's one of the things that we want to get out of the meeting on Monday, which is, and we spoke to Jane about this. He's like, when that's where we need my calling dear to to greenlight that. And they might say, No, right? They might say, look, sales recon pipeline is really full. You know what you guys have got? Can support you less defined interfaces between the two systems and that is also fine, right? But our preference would be to align to the strategic initiatives to reduce the support and maintenance overhead whilst this thing's up and running.
+
+Speaker 2  14:31  
+Just a quick question on this quick I'm not so close to IRP or whatever, right? So what percentage of the book of the insurance business is made up of this product. Sorry, I apologise. I'm not, I'm not, like well versed
+
+Richard Dosoo  14:45  
+in this product. I probably should excuse me on this one to George, but all of them, we have, what, 300 customers to. Total for IRP, of which the target is to migrate 40 this year and another 40 next year. I'm not sure the timelines for the remaining customers that will be left after that, but obviously on the insurance side, this is a significant portion of our revenue stream and our pipeline, right? So it's always a it's the top priority for for the Insurance Group to migrate customers to intelligent risk platform, which is why
+
+George Dyke  15:29  
+that's right, rich and we've got there are some of those IRP migrations. The numbers on that, I don't know how it's landed or if it's even finalised, but they're on the MA scorecard as well. So yeah, these are small number of total projects, but the projects are big, high visibility, large revenue, large growth associated. So, yeah,
+
+Speaker 2  15:48  
+because I guess George, where I'm going with this, right? And I think you remember, like, remember, we were working on that Moody's wide playbook with the and, you know, we sort of put a little matrix together, right? So if I'm looking at, like, you know, the insurance book of business, let's say, you know, it's roughly $691 million of ARR per year, right? And then you have, like, insurance, actual solutions, I think they're like, you know, close to $490 million 409 accounts, right, something like that, right? And then you have like, yeah, yeah, right. So is it fair to assume that, like, most of that is impacted by this, I guess, like, because I'm going with it, right? Like, especially when you're looking at, like, enterprise processes that need to get food for, like, a recon release, for example, right? So if you're thinking about, you know, a process where everyone will see something driven by a stage in Salesforce to say, hey, this may be at risk. This is why it's at risk, because we're looking at NPS scores, we're looking at tickets, we're looking at usage decline. You know, that's where it becomes a little bit more scalable, right? So I think that especially when we're positioning a solution on, you know, how we're using AI to handle retention, like, we also need to think about scalability, right? And this part is, you know, I think super important, right? But, and it probably fits into what Ari team is doing anyway, for sales recon, right? So I think it's more so like saying, you know, this is what we're doing, this is what we need, and I don't think it should be a problem, right? Because this is, like, super important, right? For your book here.
+
+Speaker 3  17:19  
+Well, it's, sorry important. It's, it's the major focus of the business unit. Yeah, there you go. It seems we've lost Idris.
+
+Speaker 2  17:36  
+So can you hear me? Sorry? Just no, oh, okay, I'm here.
+
+Speaker 3  17:44  
+Yeah, sorry, so, yeah, no, what I was trying to know? It's George who has disappeared. Sorry. What we just described in in the previous demonstration by Azmain is related to the major, most important initiative for the business unit for 2026 if not 26 and 27 and it's about three quarter of the business unit revenue. I could be slightly off, but three quarter is probably a good
+
+Richard Dosoo  18:28  
+assessment the Idris. So this was one of the things we want to go over and get by and we want to show me and Azmain will work on the demo more on Monday morning. But essentially, we're going to just go through the process that we use to track and manage the customers. And then we really want to give that back to just to give those guys visibility of what we're trying to do, and then give us feedback on where that sits, and we've got slides that talk to it as well.
+
+Speaker 2  18:54  
+And then, Richard, just one more thing that I think super important. Can we pull up the flow again? Azmain, can can you share? Oh, let's just say that, you know, I'm a CSM, or I'm part of advisory services. Like, I'm sure there's different stakeholders that need to go in here and look at something or do something. Right? How are you guys envisioning the workflow? Like, I see that there's some fields to say, like, CSM not defined or something. Is it like somebody logs in and like they have their own view based on the accounts that they manage? Like, how are we thinking about it from like, a workflow standpoint?
+
+Azmain Hossain  19:30  
+You hit the nail on the head. We want it to be kind of similar to Salesforce right now. We haven't assigned the CSMs, but we'll, we'll upload all of those because I have them in an Excel file. But the thinking is that you, as a CSM would sign in, and you would see your view of your customers and what needs updates. And you know all the things that you need to do is specific to you. And then on top of that, there will be a teams. View which managers will be able to access where they see their teams. And then there's the all accounts view that everybody can see. And the way that we're thinking about doing that is we just use SSO based on an employee list that we have in the back end and your your office, 365 login would just know who you are, which also helps us. The fact that we have, for example, within within insurance, like we have the complete organisational list, means you can assign people so we can, you know, at a forward, at a future day, we can just add in more and more contextual information. Like, not just who's the CSM, but who's the solution architect, who's the implementation lead, who's the etc, etc,
+
+Speaker 2  20:50  
+yeah, this is really cool. I mean, this is kind of like, we have, like, a credit lens, 360 hub platform, like, for, like, our lending suite type things. And it's similar that, like, you know, I think our advisory, like Richard, like your type of, you know, equivalent, on our side, sort of manages it, and then from there, data goes into gain side, or Salesforce or snowflake, or whatever, right? So, like, it may be an opportunity for you guys to actually, you know, kind of have this and as like, the central source of data that feeds out into other systems for like sales and whoever right it's cash flow that
+
+Azmain Hossain  21:26  
+it definitely has that potential, because this allows the problem with capturing data is the people don't like the way they have to input the data, because usually they don't have a say in it. They're like, put it into Salesforce, even though they hate Salesforce. This to adapt data capture, like, if somebody doesn't want to fill in, like a long, you know, page, we make it into a form with like eight different screens that they can scroll through whatever it allows us to change the mode of capture of data to whatever works best, but then still share out like organised, structured data sets to the actual systems that need it later down the workflow. No, that's,
+
+Speaker 2  22:12  
+yeah, that makes, that makes so much sense, versus like, SharePoint Excel this that right as long as like, it's very easy these days to do data connectors that go out externally. Like, to me, this is fantastic.
+
+Azmain Hossain  22:25  
+Custom allows us to do things, and this is only possible, obviously, because we can just vibe code all of this out before it would be like a project instead of, I don't do this for four weeks. Yeah, Ben wants to add in. Ben Brooks is the copilot and GPT or Claude API's. So that we can have not just like fields where it says like, who's the owner and is the customer, verify, we can actually ask them to put in text boxes of what is happening this week. And we can do whatever. We can get that update from like, five different people, put it through an LLM and get an update.
+
+Speaker 2  23:03  
+You can even put a conversational agent on top or the CSM can just talk to it even
+
+Azmain Hossain  23:07  
+that is what Rich so that's what Ben wants to do. Separately. He wants to create an API between this platform and another platform, and that will be the, I don't know, moody GPT, where you can ask with this customer in IRP, and it'll look at this and find out, but yeah, controlling the input point allows us to do whatever we want. Yeah, go ahead.
+
+Richard Dosoo  23:32  
+No, no, I was gonna say I was made. Let's definitely talk through what that looks like, because we had a call yesterday with a platform engineering team about API access to some of those llms. So let's definitely follow up on that next week. I'm just mindful of the time guys and I know, but I wanted actually Bernard and Alex to bring up what the sample dashboard Bernard that you had Idris, because this is something that I think you guys are looking at right now, and this, Bernard has created a really nice set of prompts that take data from Salesforce and provide this kind of dashboard and give you the sentiment analysis. And that was the one of the key things I wanted us to talk about, how we collaborate on that going forward, once we get the prioritisation on that insights and it works, because that will help deliver, that will be the the interface right the data pipeline that helps drive a lot of this intelligence. Bernard, is it okay if you bring up the sample dashboard that we spoke about last week?
+
+Speaker 4  24:32  
+Yeah, let me see if I can. I should be able to find him. Just give me a second. Second.
+
+Speaker 4  25:15  
+You see that? Yep, so I guess the background really is what we were trying to, you know, when we're looking at, you know, can we get, you know, and can we get a picture of a client that we don't know that well, you know, in an easy way, by by using, you know, all the data that's out there. So, so what I did, essentially, was to extract meeting data and case feeds from Salesforce, extract the NPS from the NPS dashboard, extract some usage data from from Mixpanel in its case, and it just put it all into, you know, a SharePoint folder and pointed the co pilot, lite agent at it. So it's nothing complicated from an IT perspective, and then just prompted it to to create, you know, a health assessment. And what I found as well, this was actually quite nice that he could, he could just by prompting it to create HTML, you can actually get quite some, some nice formatting, very easily. Whereas, you know, everything else doesn't really work PowerPoint or so, it's very difficult, but HTML seems to work quite well. And it kind of did that, you know, pretty much just by saying that do a moody style template wasn't, you know, it came up with lot of formatting itself, and so, so I asked you to give it in our particular structure. So, you know, summarise the MPs feedback, provide a breakdown of the of the SRB. So this one was specifically focused on the RMS subscription. But there's nothing really specific to RMS products here, other than the usage data. So I think the usage data, to my mind, is quite different for each for each product. But you know, so you can get some information on key themes from cases and meetings. And I guess I use some, but because Richard is quite close to it, so he was quite a good way of validating where that is made sense. And I extracted some sort of summarised data from from mixed panel, which kind of keeps the life usage data from, you know, from the model adoption. And so it's, again, it was able to, kind of do say, Now look the, these are the models that are used well, and these are the ones that aren't used so well, and you can prompt it to, obviously, to provide some recommendations. So I think, yeah, that's, that's kind of what I done. So, so I guess
+
+Speaker 2  27:43  
+you were able to do this out all of co pilot light, or you use cursor and you
+
+Speaker 4  27:48  
+copilot light and putting the files on the inner SharePoint folder.
+
+Speaker 2  27:53  
+Wow, this is so impressive. Like, we've, we, that's great. I mean, we, we've had a lot of issues with copilot light, with, like, hallucinating. If you ask, like, what's the SRB? And then you say, No, I think you're wrong, then it'll change the number. So we actually are working in copilot studio, and we hard coded the rules on how to pick up the dollar amounts, and we found a lot of hallucinations. So if you, like, for example, went and said, Okay, do the same thing for another account. It'll do it consistently, yeah,
+
+Speaker 4  28:22  
+it does. But the one thing I found you do need to focus the prompt. So I started to give a health assessment of some but for all products. And then the prompt gets more complicated, and then it does, sometimes hallucinate the SRB. So, so, but I think I mean, yeah, I mean, nothing is guaranteed with these things, is probabilistic. So it might, sometimes might be wrong, and you might need a product, but, but generally, you know, and I think it's useful you know for you know, if you're not, not so close to that particular product, but you know, if you're going to talk to their client, you might want to just get an overview on what's happening there. So, so I think, yeah, I mean, and I suppose that challenge is for us is at the moment, so I think there are plans right to make the Salesforce data available. But, you know, to make this really useful, I think we need, would need some type of usage data, which is quite sits in different places, right, for different products and the NPS data, I mean, I mean, my sense is the golden source is a PowerPoint dashboard at the moment, rather than anything that's in a in a system. But that's obviously NPS very helpful, right? If, especially, I mean, this one didn't have any comments, but that can be very helpful as well to get get a view.
+
+Speaker 2  29:43  
+And these products aren't in Gainsight yet, so there's no qualitative health scores around this, right?
+
+Speaker 4  29:49  
+So I suppose the what I was, I was always thinking about it noble works overall. So the moment, customer success for RMS products isn't in Salesforce, right? It's not even in Gainsight. Yeah. So Salesforce works for everything, because the meeting notes are there for all products, and the tickets are there as well, I think now for all of the insurance products. But the the I'm not sure there's a, there's a way of getting NPS out of Salesforce. Um, I'm not sure maybe there is. I'm not sure the comments are in Salesforce. I think the score might be one
+
+Richard Dosoo  30:22  
+of the issues burnout that we're having is the been not been given permission to use the Salesforce APIs to pull data that the latterly plant has basically said that we should be targeting Gainsight as the endpoint that we need to use. But game that implementation is not going to be finished in Gainsight until the end of March. So we're kind of stuck in this holding pattern of like, where do we
+
+Speaker 4  30:47  
+we expect them to do replicate all the Salesforce Ticket data and meeting data and
+
+Richard Dosoo  30:55  
+Gainsight when I make sure I caveat this correctly, we the, I don't think the ticket information is going to go there, but maybe some of the other high level customer sat information that you mentioned. We've been directed to pull that information from gain side, and we were told specifically not to target Salesforce, because that's going to like that, isn't it, in the future. But now I'm supposed to catch up with Natalia and Catherine and one of our other CSMs to get a bit more insight on their timelines and their scope, but I haven't done it yet because we've been quite busy. But I guess the reason why this is important for our meeting on Monday is Jamie and his team are actively working on the data pipeline to surface data from not only Salesforce gains, I think, is in their roadmap. Mixpanel is in their roadmap. So if they can deliver that for us, you know, half of our challenge here was the data pipeline, right? How do we collate all the data sources together to drive this kind of report. So we got an opportunity there to for those guys to accelerate our timelines by just delivering that capability in a discord or slightly other surgery, and then it significantly reduces the overall effort, because you only then worried about the prompts, right? You're not worried about the data pipeline or the data exactly.
+
+Speaker 4  32:21  
+I mean, it's one thing to do is for PC, but you really want to do this with up to date data, which means you would update the Salesforce reports manually. So, yeah, I mean, it depends. It doesn't really matter if it's coming out of Salesforce or gainside or combination. You know, as long as it's it's accurate. I think we, at the moment, I think the the MPs data in gain side is not so accurate sometimes, so that makes more difficult to use than right? I guess it's with everything, right? If the data isn't data, quality isn't good, and you know it's it's become people will have less confidence, right, in anything that comes out,
+
+Richard Dosoo  33:02  
+but I realised we're slightly over and as as Idris, we had one more demo to go through, but we run out of time, and I know you're on the way to the airport. So what definitely keep us posted on your travel? Are you going to be? Will be in the office myself, Azmain and Alexandra, hopefully will be in the office Monday morning. So Monday morning as
+
+Unknown Speaker  33:32  
+well. Yeah, I'll be around. Oh, perfect.
+
+Richard Dosoo  33:35  
+Bernardy as well. So we can go up, maybe set up some time, and we can go the, we can look at that, the customer insights component, the rich maturity benchmark in that rich maturity bench, right in that, mine actually has looked up what,
+
+Speaker 2  33:50  
+what time is our I'm just looking at my calendar here for Monday.
+
+Speaker 1  33:56  
+It's two, 230 local time, which is a line. So we have the morning to work through any more details and work
+
+Speaker 2  34:07  
+through some I'll probably come, I'll probably come into the office around like, you know, nine o'clock and 839 o'clock. I got, I got some meetings to take before that. And then, and then, yeah, let's catch up early. Let me know. Look really. Looking forward to meeting you, like this work that you've showed us, like very impressive. Happy to see other groups doing this stuff.
+
+Richard Dosoo  34:29  
+It's great. Likewise, looking forward to catching up. Um Bernard, Alexandra, are you guys giving me the slides, or is there any other concerns or feedback that you rented me to incorporate before Monday. I didn't know if you had a chance to have a look.
+
+Speaker 4  34:44  
+I haven't had a chance to say, Do you want me to review? Right? Sorry, I've been busy because we had a demo with the client.
+
+Richard Dosoo  34:55  
+It's not a problem. I just included the slides that you sent me Bernard in there. But. So, so we can, we can talk for that, yeah, if
+
+Speaker 4  35:01  
+you think they're suitable, that's fine, yeah. So, Alexander, these were exactly the same slides that I presented in the other meeting. So if you're happy that they're suitable, yeah,
+
+Speaker 3  35:13  
+that was good. I'm a little concerned by the remark of Idris about hallucination on SRB. So the more you can somehow cover for if yes or no, there is hallucinations, or how do we protect ourselves? For from that, that would be great. But no, it's it. It's very good.
+
+Richard Dosoo  35:38  
+Yeah, no, that's definitely deep. I think there's a route forward with that, with using some like persisting more in the data, but let's talk about that more on Monday morning.
+
+Speaker 4  35:46  
+And that's like, it's an assistant, right? So there's always a need for someone to actually read what it produces. I mean, sometimes I find it just for whatever reason, it doesn't actually look up the data, and then you need to say, oh, have you looked at the data? Though, I forgot that, yeah. So, you know, guaranteed with these tools, I think that's just as angry, but you know, yeah, it's nothing left. It's, you know, statistical model, right? So, but I think you can, I mean, I think what I found is, you know, the more complex you make it, and more then, then the higher chance. And I think that's standard guidance. I think if you read some of the literature and that they're more likely, you know, it'll hallucinate, you know. So it's, that's why I think they built this sort of, if you look at the credit memo, kind of agent they built, also little dedicated agents, right? And then one agent that combines it. I think that's why they're doing it that way. So each agent has a very, you know, specific task, and rather than give a massive prompt to one, one agent, excellent.
+
+Richard Dosoo  36:56  
+Well, Bernard, thanks very much for the slides and the demo again. And I'm looking forward to and Alexandra, thanks you guys. I'm looking forward to catching up next week, and I'm hoping it's going to be really good meeting on Monday. Okay, Azmain, I'm not saying, Would you guys have just a few minutes?
+
+Unknown Speaker  37:12  
+Yeah, thank you. Okay, bye, then bye.
+
+Richard Dosoo  37:18  
+Hey, Azmain, sir. I just saw your notes. So we are,
+
+Azmain Hossain  37:23  
+this is the absolute worst time.
+
+Richard Dosoo  37:29  
+Yeah, no, this is it so that I think, let's pivot then to
+
+Richard Dosoo  37:39  
+think, they have to get your Lord pro max or Max 20 licence and just see my thing expensive back later on, because otherwise you're going to be blocked waiting for this thing, right? So, yeah, all right, so I will do that. And I'll just, I'll just, I'll just tell Ben, look, we had to do it. I wanted us to get the approval first, because then there's no The thing is, we can't be blocked going into this. You guys not being able to run anything in person. This is like, it's just not so, alright. So let's do this then. Azmain, do you want to? Yeah, maybe. What's the way to do it? Do you want to?
+
+Azmain Hossain  38:20  
+I could, I could use my company card, but the problem is, then we'd have to get natalia's.
+
+Richard Dosoo  38:27  
+Yeah, nice. It's cool. I mean, I didn't use my company card for this because I didn't get this one. Don't worry, just send me the let me see if I can log out here and then
+
+Azmain Hossain  38:42  
+mate you. I don't know if you go to Claude and then create a user with, like my email address, with whatever password, and then you sign in, you buy the thing,
+
+Richard Dosoo  38:55  
+that's what I've been saying, and just send it back to you,
+
+Azmain Hossain  38:59  
+but the password, and I'll just find
+
+Richard Dosoo  39:01  
+let me do this. Let me just create an account for you. Now I can't use your RMS account because that it that then triggers an SSO, like going,
+
+Azmain Hossain  39:10  
+I don't have an RMS account. All I have, I
+
+Richard Dosoo  39:12  
+mean, Moody's, yeah, I can't use the Moody's one, so just ping me a personal email address and I'll do it now.
+
+Azmain Hossain  39:18  
+Go for email@azmain.co.uk because I own the domain, it's fine.
+
+Richard Dosoo  39:25  
+Let me just put it in the chat here, because I mentioned I want to get it wrong,
+
+Azmain Hossain  39:32  
+and that way also doesn't read like a personal email. It reads like a company email. I second.
+
+Unknown Speaker  40:01  
+One second.
+
+Unknown Speaker  40:14  
+This is piss me off. Say one second. I
+
+Speaker 1  40:31  
+Azmain, did it give you a in that email address of verification code? I just
+
+Azmain Hossain  40:36  
+got an email Yes?
+
+Azmain Hossain  40:46  
+Link, okay. The code is 774, 98,
+
+Speaker 1  41:15  
+has been what's your birthday? 0608, 91, so 0608, 91 Jesus, such a baby. I can't
+
+Azmain Hossain  41:37  
+remember when this was like you're when I first joined Moody's, I was talking to like, one of natalia's friends, and she was like, oh, yeah, back in 2002 I was I was working in this part of insurance, and I was like, I was in primary school.
+
+Richard Dosoo  41:55  
+The worst one is, right now I've got analysts that are joining the team that were born after the 2000
+
+Azmain Hossain  42:04  
+Oh, my god, yeah. My sister's like that. She was born in 2000 so anytime she hears someone's from 19 to, like, a century, people, sorry.
+
+Richard Dosoo  42:14  
+Azmain, I think I paused this up already. Just give me a second. No, no,
+
+Azmain Hossain  42:17  
+that's alright. There's no rush. Just
+
+Unknown Speaker  42:29  
+sit in
+
+Speaker 1  42:47  
+Yeah, send me the verification code again. It should have sent you another E, yep.
+
+Azmain Hossain  43:08  
+Log in with a
+
+Azmain Hossain  43:23  
+Oh, my God, wait. Me do this on incognito mode or something. It keeps logging me into my like, you know, the the personal account I have with Gmail. It logs, yeah, and it, then it generates A code for that I
+
+Azmain Hossain  44:01  
+up? Could you tell me the password that you set up for this for this account? Think if I log out? Oh, I
+
+Unknown Speaker  44:17  
+haven't even got that far yet. Azmain, oh,
+
+Azmain Hossain  44:19  
+okay, okay, yeah, now I've tried to sign in with that email. I have the email sign into Claude, hi, okay, okay, I've signed in. Let me Okay, my name, password, sorry, but date of birth,
+
+Richard Dosoo  44:53  
+hmm, Martin, I'm guessing you're also blocked on cursor as well, right?
+
+Martin Davies  44:58  
+No, I don't think I am. Yeah. Out, I think I haven't ran out of my credits.
+
+Azmain Hossain  45:13  
+Okay, Richard, if you try logging in now, when I check the code, it'll generate you for the right account.
+
+Unknown Speaker  45:22  
+Yeah, okay, let me see that now.
+
+Martin Davies  45:25  
+Yeah, Richard, I've used 335 out of my 500 so I still have some. When does yours reset? First of February, so another week.
+
+Richard Dosoo  45:35  
+Okay, cool. That's good. Alright. So, Azmain, you're in now. You've got you on the Azmain Let's see account.
+
+Speaker 1  45:53  
+Okay, so then I just need to do the billing upgrade Plan and
+
+Azmain Hossain  46:19  
+saying that a year of Pro is less expensive than a month of Max Pro,
+
+Speaker 1  46:27  
+yeah, but trust me, you run out of it, yeah,
+
+Azmain Hossain  46:30  
+yeah, oh my god, I yeah, I ran out of it like four prompts, the max Pro. That's, is it unlimited?
+
+Richard Dosoo  46:41  
+It's 20 times, like, your your limits get reset, like, every four hours, so you just basically don't run up. So what we're going to do is, okay, okay. So you're going to use that now for this month, and then obviously next month, we're going to turn it off so I don't get hit with a bill again.
+
+Azmain Hossain  46:56  
+Oh man, I'm just going to turn off automatic billing. Like, after this first one goes through and it gives it to me. I'm just going to turn off the village. Yeah, by the
+
+Azmain Hossain  47:11  
+way, did you hear back from
+
+Richard Dosoo  47:16  
+No, he didn't get back to me. So okay, so you should be on max now,
+
+Azmain Hossain  47:22  
+yep, yep, all right, I've got it.
+
+Speaker 1  47:28  
+Let me Oh, crap is it, does I need me to sign out?
+
+Azmain Hossain  47:35  
+No, no. I was just thinking, you know this, this plan that I created on my personal account. On, yeah, can I just copy this and be like,
+
+Richard Dosoo  47:50  
+this one? You can it, well, you're going to connect it to your GitHub repo, and then called code will work locally with your stuff. And then you can, yeah, so I'm
+
+Azmain Hossain  48:00  
+just going to copy this, and it does say it's a temporary workaround. Wait, okay, I'm just going to talk to it her.
+
+Azmain Hossain  48:31  
+Up into passwords, passwords.
+
+Azmain Hossain  48:40  
+I don't have the app. You stupid.
+
+Azmain Hossain  48:58  
+It's just, what is it doing log in with code.
+
+Richard Dosoo  49:38  
+Nope. Is it? Does it want me to is it giving you grief because you're logging in in two
+
+Azmain Hossain  49:42  
+different it's the standard process. Now I gotta instal cloud code.
+
+Richard Dosoo  49:48  
+Yes, no. So what happens is, it's going to instal some stuff on your terminal so Claude code can access files on your local machine. So that's fine. Just hit, hit, yes. Just. It a desired database like, it doesn't matter. This is just some Oh, okay, okay. Now what happens is, if you click on that thing on the left hand side, that box next to design database schema, right? Can you see on the right there's a code box? Yeah, right. So then when you do that now, you can see this is going to look at files on your local machine, but if you go to like your settings, yeah, no, exactly. But this is the actual better bit Azmain, if you go to your local if you go to your settings, you can connect this to your GitHub repo. So connectors. Is the GitHub so you can and then, obviously, once you can connect it to your GitHub repo, it can actually work directly with your it basically, it will obviously pull stuff down to your local machine. But it can, once it has your credentials, it can push stuff for you.
+
+Azmain Hossain  51:05  
+I don't know which GitHub it's connecting to. Man, wait, gonna disconnect and do it manually? No,
+
+Unknown Speaker  51:18  
+yes, Yep, there you. How
+
+Azmain Hossain  51:27  
+many layers of like authentication are there?
+
+Martin Davies  51:32  
+Richard, do you say you're using Cloud more now? Do you prefer to cursor?
+
+Richard Dosoo  51:38  
+I mean, the thing is, I'm old, right? Mine, so my eyebrow is good. So this fucking dark road, IDE, right? I just can't I'll use it.
+
+Azmain Hossain  51:46  
+I was looking so long like, How do I turn off? Why is everything dark? It's not connecting.
+
+Richard Dosoo  52:01  
+It definitely does. I've used it. I'm connected to it with my I
+
+Richard Dosoo  52:25  
+oh yes, it worked, yeah. So now you've got opportunity to work with files locally and work with files in the cloud. Yeah, yeah. Basically what the difference is between these two, right? Claude code is all about execution. You give it like a markdown file, you tell it to do something, it doesn't really work. If you want to do thinking tasks, you can still use the plan mode on here, but the chat is much more about okay, here's a Word document. Do some analysis on it. Here's a whatever. But the whereas code is really about just writing code, executing code, analysing code. So that's how you kind of split your workload between the two different the two different processes.
+
+Azmain Hossain  53:08  
+I'm still, if I make a plan on the web chat, can I just pick it up here from the sessions list and then do the building on code?
+
+Richard Dosoo  53:17  
+Yeah, exactly. Well, you have to cut you have to create a markdown file and then put that here, and code will ask you, put it on your check it into a git repository, or put it on a local folder you saw when you clicked into code, right? It had a drop down of where are you working locally, or you working on the cloud that's going to determine where it picks up all the files from. No No, not there, not there, not there. Go, but just on that code box on the left hand side, when you Yeah. So actually, if you go to Yeah, if you, let's say you click on chat and then click on code again, click code right. Can you see where it says, Select folders? And this is working locally. I always select the local clone of the Git. Yep. But you can also see you could connect to GitHub.
+
+Unknown Speaker  54:24  
+I wonder
+
+Richard Dosoo  54:31  
+why? Yeah, it's probably some caching issues, so maybe just close your browser and open it again.
+
+Azmain Hossain  54:36  
+Yeah, but no, honestly, I'm happy working with the local version, because that's, oh, wait, no, you said for planning, it's better to use the thingy.
+
+Richard Dosoo  54:45  
+That's just the difference between chat and code. The real reason why it's actually where this becomes important is, you know that screenshot I sent you the other day where you can have multiple instances of Claude code running. Which means you can have multiple jobs running in parallel. So you can have one planning one, executing one QA, and you can have them all like talking to each other. But for now you, I think you just run it. You can use the web one. You can use the desktop installation. Both of them can work if your kit are brief. Perfect something
+
+Richard Dosoo  55:35  
+not working here, so I go back to Chloe again, right? So you might drop down local. Yeah, I don't know why it's not picking up your GitHub connector. I don't know if it's just we have to log in and out, but you, you've already got this. I'm going
+
+Azmain Hossain  55:57  
+to try restarting. After this call finishes, I'm going to try restarting.
+
+Speaker 1  56:02  
+It'll research, yeah, why don't you do that? And then what I'm gonna do,
+
+Richard Dosoo  56:09  
+Martin, what we can pick this up on Monday morning, because I know you said you had to run. I just wanted to see if you're blocked with with cursor. But if you're not blocked at
+
+Martin Davies  56:18  
+the moment, but I can be back online later. I mean, worst case scenario, could you not log in as me on cursor?
+
+Richard Dosoo  56:28  
+I don't think you can, right, because he's going to have to log into your Moody's domain with that, with your password, because that's how cursor will authenticate, right?
+
+Martin Davies  56:36  
+Does it not authenticate through the website and then links? I don't know. Do
+
+Richard Dosoo  56:48  
+but hopefully, what might, as I said, Mike, let's definitely pick up Monday and then, and then you should and then you should be good from there,
+
+Martin Davies  57:00  
+yeah, better, yeah, like that. I can be back online now if you wanted to try it. No, no problem. But, yeah, give me a shout. Cool.
+
+Speaker 1  57:11  
+Alright. Well, Azmain, once you reset, just give me a shout, and then you should take it. We should
+
+Azmain Hossain  57:16  
+be good for me. I figured out why that's happening. What's happened, you know, when it went to Claude to authorise my thing? Turns out, inside claude.ai, on my work browser, I was signed in with my personal account, so authorising it from my personal account, not my this account. Yeah, swear to God.
+
+Azmain Hossain  57:45  
+I mean, I know the robots will eventually take over and kill us all, but for a while, could they just be good? Remember to
+
+Martin Davies  57:59  
+say please and thanks, when you're doing Your points, you'll be all right connect to GitHub.
+
+Azmain Hossain  58:34  
+Yeah, I keep authorising it, and it just doesn't work, even when I'm doing it by the web browser. Okay, I'm going to shut everything to a restart,
+
+Richard Dosoo  58:47  
+yeah, log out of everything, and then just log in with your max plan and your movies kit, and then hopefully that then, just like I've never I'm sure it's probably just getting a Snickers and a twist because you've got two different GitHub accounts, and it doesn't know which one to use?
+
+Azmain Hossain  59:03  
+Yeah, I don't know if there's session cookies, or if I know for a fact that when I close edge, it doesn't actually close this like edge is weird, it just constantly keeps going. If so, yeah, I'm going to restart, and then I'll give you a shot, Richard, if I can get it working, then the problem still is, I don't have access to Azure to get the back end logs and give it to Claude and be like, diagnose this.
+
+Richard Dosoo  59:31  
+Yeah, no, that's the I'm I think I'll raise the ticket for you, but I'm going to look at that now. Okay, okay, thanks to my list. But yeah, just give me a shot and come back on Yeah. Will do thanks. Azmain, bye.
+

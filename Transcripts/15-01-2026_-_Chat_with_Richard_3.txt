@@ -1,0 +1,75 @@
+Richard Dosoo  0:00  
+Just, we're doing some pipeline stuff, and we're trying to do up and does the BRG stuff, so it's challenging about that, but we're trying to do some other charitable stuff, but I'll leave you into that later on. But I think this is the issue, right? So the the resource responded with a status of 500 so basically, what's happening is the API is failing, and that this must be networking or infrastructure, because obviously the build work locally. So what we can do is, here you go. Can you see the internal server error? Undefined, column, blockers. Customer D does not exist in this so customer ID, there's so we can literally, let me show you the way that I got to this, right is.
+
+Richard Dosoo  0:58  
+So this was the thing that when what's interesting is, is, if I go here, the build passed, right? So, so I think it must be, it this must be on the there must be something on one of these services in AWS that didn't deploy. So let me bring up this, but a way, just to recap the way that we're looking at this now is, do you know how to find developer tools in Yeah? So when you look in a console, This lists all the API calls right that are working, and you can see the ones that fail to load right. So then let me do this here. And this is, this is great because we're literally debugging the whole stack right now. We're seeing everything that's going on. Normally, you wouldn't need to do this because this is the Ben part of the process, but just for the to get us going right, yeah,
+
+Unknown Speaker  2:15  
+shit outlined, Octa Sorry, I'm In the wrong thing one second. No.
+
+Richard Dosoo  2:55  
+So it's running, right? So the question would be, you can see here the tasks are running. Fargate is running,
+
+Unknown Speaker  3:08  
+but that let's have a look.
+
+Speaker 1  3:18  
+So this one is still running. So why still provisioning? Why is it still? Is it taking that long? It's loaded up.
+
+Richard Dosoo  3:37  
+Half the data where, like I can look at but this was when you started the build, right? So, so let me do this, right? Let's, let's, let's say to let me just add Ben in the chat. He will be in about half an hour to deploy changes
+
+Unknown Speaker  4:20  
+successfully. You.
+
+Unknown Speaker  5:09  
+Uh, let me screenshot this.
+
+Azmain Hossain  5:34  
+A chat. I don't want to distract you.
+
+Speaker 1  5:37  
+No, no, no, it's cool. I'm just doing a screenshot. It's fine, good, because
+
+Azmain Hossain  5:42  
+I wanted manager Ben to have a have a look at everything, like on a on a version, obviously, live version. We're still trying to fix. I just wanted to message him and be like, just type this into your cursor. It'll pull it down and
+
+Richard Dosoo  5:58  
+deploy it locally. Deploy it locally. Yeah, exactly to basically, you can send Ben the prompt, right? That does all of it, and then he can look at it locally. That's it. That's exactly it. And that he that's that's telling him, like, wild, wild. This obviously is still being looked at, and he can give you feedback that way before the call. But we should get this. This should be like, very quick for Ben to sort out as soon as he comes online. I'm just aware, like
+
+Azmain Hossain  6:28  
+it's getting to one o'clock and yeah, Want to give it to Ben at a time that he's got enough, a little bit of time to actually look at it and have a think.
+
+Richard Dosoo  6:38  
+Yeah, no. 100% that's definitely the way to go right now to get him going, and it won't take him long either, right? If it does like we can, I'm happy to jump on a call with Ben and go through that process of but it should be really straightforward, actually.
+
+Speaker 1  7:04  
+Yeah, that's it. That's it, right? The speed so, but no, this is cool, definitely. Well, Ben is normally up
+
+Richard Dosoo  7:14  
+pretty early because he's training for race. So he will be, yeah, he's one marathon, triathlon,
+
+Azmain Hossain  7:22  
+Ultra. Marathon.
+
+Richard Dosoo  7:24  
+He's training for something called High Rocks. I say training. He's got the race on Monday. He's flying out to compete, like, Dude is legit. Like, no messing about, like he's on his training properly. So he's always, like, early and stuff, so it's all good. So he'll be up, he'll be just literally, all it will be is he'll wake up in about half an hour, if not woken up already, if he's not at the gym already, and then he'll come online and help fix this up pretty quick. If for any reason he doesn't come online. I'll get some of the other tech team to help us debug this, figure out why this task is taking so long.
+
+Azmain Hossain  8:06  
+It's just like giving. Giving manager, Ben,
+
+Richard Dosoo  8:11  
+yeah, yeah, exactly. Cool. All right. Well, Azmain, let's do this. Then definitely, I'm just gonna go and grab some food quickly and come back. But I won't be long. I'll be about 15 minutes, and then I'll be available if you need me to jump on a call with you and Ben as well.
+
+Azmain Hossain  8:33  
+Okay, no worries. I actually another thing that we can test is I'm gonna start a new cursor chat, pull down
+
+Richard Dosoo  8:42  
+the changes so we could have different branches going at the same time. Yeah, that's it. The key will be when we as long as the branch right is there. That's it. So we can, we can still debug the one we've currently deployed, which we will be all good, exactly.
+
+Azmain Hossain  9:01  
+Actually, I'll include that in the prompt for for Ben, yeah, he pulls it down under a different branch. Just make whatever changes
+
+Richard Dosoo  9:11  
+without having to worry Exactly, exactly. Awesome. Thank you for your time. No problem. Cheers. Azmain, I'll speak to you in a bit. I
+

@@ -1,0 +1,591 @@
+Richard Dosoo  0:00  
+Wanted to talk about some of the tactical and short term objectives that we have from customer success, and how those align to the roadmap that you and your team are working on for the rest of 556, so to that end, we have representation from insurance. We have representation from banking. State address has joined us as well. We've been working collectively on our requirements, which the group and the Life team of Ronald Andrew as well. So the structure of today's session is
+
+Speaker 1  0:29  
+going to be, sorry, Richard, and also the corporate team. There have been some emails on Friday and over the weekend with Jamie and others. I think this is a common theme across a number of the Customer Success units. So Ari and Jamie, we extended this invite to them. I think some of us have been speaking to Keith key as well in terms of how to enable some of this. And so it seemed like a good idea to include others. Matt couldn't make it, but Rupert and Craig are here. Irina is here. So just adding that little flavour as well,
+
+Speaker 2  1:04  
+wonderful and others can watch the recording, I guess,
+
+Richard Dosoo  1:11  
+absolutely so. To that end, we've got some slides to help drive the discussion, but it's going to be pretty informal, informative, just to go over the requirements that we've gathered so far. And Jamie, if I bring up the slides that we walk through, are you happy to cover the sales recon?
+
+Unknown Speaker  1:28  
+Yeah, sure start there.
+
+Speaker 1  1:38  
+And Jamie or Richard, do you want to just give a bit of the context. I guess we folks may not be aware. We started talking to you all, kind of mid last year. The banking team and insurance team kind of did a bit of a vibe coding session, and sort of then that was a bit on pause. But I think there's been some further good work by various teams, so might be helpful just to level set. Yeah, good
+
+Speaker 3  2:00  
+point there. So we met with, as you said, the banking and insurance, or some of the insurance Customer Success teams in New York, and we had a very good day. We ran a workshop where we spent about 90 minutes trying to figure out what it is the customer success was and how it was different to what the sales problem was. And then we basically chose four problems, split up into four groups, and the teams basically by coded for the rest of they came back about four o'clock, and I think Ari and I were very surprised at the amazing demos that we got back. Now, a lot of this stuff wasn't tied up to real data, but it showed that people had thought about the user experience and where that data might
+
+Speaker 2  2:39  
+come from. We assigned each of the four groups to we sent somebody on our team to each of the four groups so they didn't need to know how to do the whole vibe coding and set up and everything. So we were able to really get the ideas actually implemented in a in four prototypes, and I don't know whatever happened.
+
+Speaker 3  3:03  
+So one of the challenges was it was a bit early for us. We were we were focused on the sales use case. The day afterwards, we had our first proper meeting with Salesforce, and that took us down a very different journey, and we had to spend quite a lot of effort and time getting the whole sales force sales recon thing sorted out for Dreamforce, and that's where we were, and it was always our intention to come back to those requirements, and we've been working a little bit with Idris on the side, but it's now's the time that actually that we want to bring it all back together and think about how the requirements of customer success are going to be put into sales recon. And we've got some things that we know a quick wins, and we've got some exercises that we're going to do very shortly, but I think this is a good opportunity for us all to just get on the same page. And as dear as you were, as you pointed out, we're having conversations with Divya, who's trying to set up a bigger programme, and so we're just trying to make sure that it's all well connected across the various different business units.
+
+Speaker 2  3:58  
+Just on that, I would say that Jamie, if you're going to go into it, but I was just at a high level. You know, the effort of sales recon mentioned is started out with kind of, we're developing it outside of kind of the the Salesforce thing and and once, once the Salesforce partnership started, we had to move everything into that environment, in that very, very blue G environment, and not a very steep learning curve. In a very steep learning curve and enormous amount of constraints associated with the way that they've had. It's that they had it, set it up. Set up. So they had to, there was a lot of changes they had to make to accommodate the complexity, or the sophistication, I should say, of kind of the application. That's just not what it was designed to do. So that really, really just sucked our team into a whole vortex of hell that had not been. And I had not anticipated, but just as a high level, they the initial effort in and and now it's kind of the cleanup of it is is associated with the, you know, going from signal nudes into mapping of how those events impact customers through the lens of our capable our capabilities so things that we could actually help solve for crafting a narrative and helping the seller get to that first meeting and be successful at running it. The next phase is, is about, okay, you know, you got that first meeting. How do we shepherd the the the deal, the opportunity to signature, so kind of the sales cycle associated with it. And after that, the idea was okay, now that you've got signature, what is the mechanism for managing the account for success and for growth? And I don't know exactly, you know, like to whether we can do that in parallel. I help with that. I don't, you know, I don't know, Jamie, your current thinking about how we do that, whether we still are in a sequence mode, I think
+
+Speaker 3  6:29  
+we can deliver both. You just want to move a slight forward. So the first thing I'll mention is, because we just made this decision a couple of weeks ago, is there's a lot of confusion, particularly in the sales team, or we don't want a lot of confusion as we roll this confusion as we roll this out. Within the sales team, there's an intern, there's an internal tool that this team building, right? And then there's a tool we're going to take to market, right? They might have the same name the go to market. Haven't decided on the name yet. Internally, it's going to be called sales recon, but we're going to brand it in sales recon zero, because we're customer zero into the product. And the idea being that our sales team are very much part of feedback process, that part of the product build, if you like. If it's successful for them, they can sell it, right? And if it doesn't work, then we don't necessarily need to sell that. So it's a way of onboarding ourselves team and giving them some skin in the game, if you like, right? So we want to use it, break it, and report when it doesn't work, right? And then there's another team that go to market team. There's a whole go to market effort now, around taking sales recon to market. It's kind of been led out of the Keith's group, but Christina's group's very involved in helping build it out, along with us supporting So ideally, we're going to end up with a common platform that sits in Salesforce that we can deploy ourselves and make it work for us. That's not where we are today, but we got a very distinct internal build which is ready to roll out. Right? We've done some, we did some pilot back in, back in October, with a number of sales team, and we got some, we got some really good feedback, both on terms of the content that sales, recons creating, and where it's useful and where it wasn't useful. And some people found it super useful. Some people found it less useful. One of my favourite stories was a guy who was he was trying to figure out how Trump's tariffs were going to impact Caterpillar, and he'd seen a news article in the elevator in New York when he got on the bottom floor, and he got out on the 50th floor, and he got to see this news article about what the impact for Caterpillar might be. When he got to his desk, there was an email from me with some sales recon content I wanted him to review. And basically, based on that, he now has an opportunity of quite a large opportunity with Caterpillar. And it just all came out with that kind of, you know, it helped him tell the story. It gave him the confidence to go have that conversation and have that conversation and
+
+Speaker 2  8:43  
+understand what was going on. Sounds, we already picked up that article. Yeah, yeah, yeah.
+
+Speaker 3  8:47  
+It was an earlier version. It didn't have an interface done, but we were running the same process in the background and getting feedback on the content. So that was a that was good. So it figured out that this was a problem for Caterpillar, and that our solution, I forgot my solution. It was now, was a help. Was going to help solve this problem. It was quite interesting to read. Yeah.
+
+Unknown Speaker  9:08  
+So, one more, yeah. Next slide, yeah. Next slide, please.
+
+Speaker 3  9:12  
+Thanks. So it's worth understanding what's available today. So we're in a process where sales, if you're a salesperson and you're in Salesforce, and you know where to look, you can find sales recon. It's there. It's live. There's going to be some training. Conrad, I think it's next week the training starts, right? Yes, and the salespeople starts next week. And so you know it's available, and they're going to be using it for account planning. And all the sales people have access to sales recon. So what's in sales recon? Today, we've got some AI curated summaries of business context, stakeholder, engagement and relationship health sitting there for people to see. So the idea is being they quickly understand the current position that they've got with a client, right? And that's pulling information from Salesforce. It's put. Information from the web, and it's pulling information that people are putting themselves into the into the interface the sales ops team want to do some account planning, and we've gone interface to lab to do account planning, very much following the prompting and the guidance that they gave to people to do manually last year is now all in the tool, and there's thinking that that's going to save a lot of hours sales people's time this month as they prepare for their sales kick off meetings.
+
+Unknown Speaker  10:26  
+One of the things that Ari was
+
+Speaker 3  10:27  
+talking about, the kind of the big ticket item, if you like, is what we call lead generation. On this slide, we might call them conversation starters. This is where we've got the AI going out and looking for reasons to sell a particular product to a particular client, trying to understand the gaps, trying to understand the pain points the client has, and helping fill those gaps with the product right to get to a solution. And that's the kind of thing that can be quite successful. Now, not all of them will be very good, but some of them are really, really good, and we're trying to figure out how much are those there so and I think the thing there for me is that why? Now it's actually telling you why it's relevant to go and have a conversation today. It's about making it topical for the salesperson to pick up the phone and go out. When we talked about this, when Steve was here, Steve always liked this idea, because it's the idea of giving the salesperson confidence, right? Confident, giving them the confidence to pick up the phone right
+
+Unknown Speaker  11:21  
+and make those next steps.
+
+Speaker 3  11:25  
+There's a feature in there called for to generate meeting prep, and you can go in and have a conversation with an agent, either about a particular account or about one of these conversation starters that have gone there, and that agent that you're talking to has all that context, rich context in there loaded into the system. So you don't need to pull it in from somewhere else and make sure it's correct. It's correct. It's there ready. It knows everything about that client. The Salesforce perspective, it's done some you know, this knowledge that we've created and any other information that we pulled in through interacting with the users. And the final part is to share knowledge. So the idea being that we want sales recon to be an interactive system where sellers and others can put in information. Now we've got a bit of a thing here to help the salespeople generate better meeting notes. So hopefully they'll use it to generate better meeting notes, but they can go and then in there and have a conversation about the account, and all load up documents about the account, and those become what we call memories and sales recom, and the idea being that that's not a memory for you, and it's a memory about that account. So Colin, if you went to a meeting and you decided to do one of these interviews, and it went in there, and then Mike, you went in and did another interview at the meeting, you both of those would be available for Richard, which need to go and speak to that client, right? And that goes across the board. I think there's a real opportunity here for the customer success team to add in knowledge that's unused and it crosses the boundaries of our organisation, right? Because it's in this system which doesn't really respect those boundaries. It's just about knowledge of being corrected.
+
+Speaker 2  12:52  
+One of the pain points that this addresses, that was highlighted as a significant pain point is when somebody like, you know, Rob, wants to go see a client and that sellers and would have to go and, like, if you know, emails to 50 people trying to figure out what we know about the account and what's current. So you kind of get that largely in one area. You know, certainly once we have the customer success input into it and it adjusts it, at that point, I think we will have a complete picture. Yeah, this is probably one more, one more dimension to that picture that we might miss, because sometimes the like, say, Colin goes and sees a client or, like, a product person, you know? And so we probably have to, you know, I think we get, we're gonna get most of it, but there's still gonna be, there's a bit more,
+
+Speaker 3  13:56  
+yeah, sure. And then we still, we still got a little bit work on there. I can't, oh, Mike is on your screen. Now, Mike, I heard that you use sales recon, or somebody use sales recon for you to generate some meeting notes. Is that correct?
+
+Speaker 4  14:09  
+Yeah, this was for the meetings with generali. And I guess I, I'm a real big fan of all of this, because I've sat on the other side of the table as a client. When you get get these meetings, and the value of going into that discussion, not just knowing exactly what was going on with the account and the last engagements, but but also what was going on with the company, the some of their key initiatives and whatever. And you could just sit those meeting with the CEO and the Group's CEO, and you could sit in the room with them and talk to them, almost as if, generally, was the only thing that we'd ever, were ever working on and never, ever looked at. And they just opened up about their strategy and about other things that we could do to. Other, and we got about what two or three different leads from, from that that we could then move forward with. And I, as a customer, I used to get sort of sales people come into me and say, Tell me, tell me. Or here's a solution. Now, can you buy it? And you think, Well, what is that useful to me? And I think this, these sorts of tools just put us directly in the flow of information with a customer. And I say that they're really powerful.
+
+Speaker 3  15:38  
+Actually, the what you see in sales recon today was we those processes were used in the before exceedance and before the banking conference to generate content for Mike Steve and Bachmann and others. So these this same process has been used the event and marketing team used to spend quite a lot of time with the sales team to put it all together, and then we can somebody sending an PDF, somebody sending it in Excel, somebody sending it in PowerPoint, and we were just sending the same, exactly the same one each time. So we're looking at making sure we can do this a bit more, a bit more at better scale, so everybody can get access to it. But if you can access sales recon, you should be able to do this yourself, right? That's the whole
+
+Speaker 1  16:24  
+Yeah, and Jamie, are you already pulling in the gain side data that's integrated into Salesforce?
+
+Speaker 3  16:33  
+The next slide, we got some very rudimentary gain force, gain side data coming in. Now, I forgotten what? But we are now as we work in the teams, actually, I think last week started to pull more across so product uses and NPS is on the list to come through next. To give a rounder of that. I think some of the work that we did in New York in that workshop with address develops was to help identify some of that additional information. One of the things that we found out through that exercise is that we are we aren't showing Arr, so we plan to show Arr, because that's a more common use. We're basically putting numbers straight outside of from Salesforce. I think it's contract value that you're seeing at the moment. So we're going to fix that. And then there's lots of service ticket metrics as well we can bring in. And I know you guys work have an account health, which is a very quantitative thing. It'd be nice to pull that across and to surface that as well, find summaries of that. That would be really useful for not just your team, but for the sales people to see as well, right? It'll be there in
+
+Speaker 2  17:31  
+their face. So we have the current account health, you mean? So the current account health
+
+Speaker 3  17:35  
+is very much AI generated. It's not the kind of quantitative approach
+
+Idrees  17:40  
+that we actually have a qualitative score that CSMs put in, which is, you know, red, yellow, green type thing. And now working, you know, with all the other like with Craig, we're basically now adding the layer of, you know, is there a problem with the account, like, is it actually at risk, irrespective of the colour? And then we're going to input more qualitative data on what's going on, what's the game plan, and, yeah, potentially,
+
+Speaker 3  18:09  
+that's the kind of thing that you would want to do in sales recon, because then we can capture that knowledge and just add it into the add it into the knowledge that we're creating.
+
+Richard Dosoo  18:17  
+Jamie, one of the things we've been looking at within insurance is analysing customer sentiment from some of the more recent tickets that have been raised, looking at issues, trends and providing recommendations. Is that something that will also form part of your scope that you're looking so
+
+Speaker 3  18:32  
+certainly, I think that's roadmap. It's probably not q1 q1 is more about getting the data in place and doing some rudimentaries for the customer success. What we're planning in February is a quite a short and limited trial where we get some customer successfully pull off the platform, ask them perform some exercises and see how much the platform can do today. Right? Is it worth giving them, giving you sales recon today? Is it going to save you time? And then how much of these things that you that will make it better? You know, where do we sequence out on the roadmap? So one's quite busy, but we're, you know, we're nearly through q1 now we're
+
+Speaker 5  19:07  
+definitely, definitely very interested in that type of data, because
+
+Richard Dosoo  19:12  
+we can share with you some of the agents that we've built within copilot studio, and we can share the prompts that we were using to generate the insights, yeah, and that was just a very tactical, short term thing that we've done so, but we can show you some of the reports, but others got one of them that we can show you later on today.
+
+Speaker 3  19:30  
+So, you know, talking about the roadmap, we, you know, we're busy now building this stuff out, but then, you know, we can, we can put things onto the roadmap afterwards, the things we have on the moment. We've talked a bit about account intelligence. Ari talked a bit about moving through, putting, you know, getting deals to progress through the sales cycle quicker, right? So, identifying how to move it to the next stage. And if you like, coaching the seller on, okay, you need to find this information out. You need to go and work out who the budget holder is, for example, and then it can move through. Those are the kind of things that we're. Looking to do that
+
+Speaker 6  20:02  
+either hands? Yeah, yeah, Jamie, you gotta, gotta pay attention to your to our hands here raised.
+
+Unknown Speaker  20:09  
+You know, I don't take it. Start
+
+Unknown Speaker  20:11  
+speaking. Don't be shy.
+
+Speaker 6  20:13  
+Yeah, thanks, thanks. I just, just real quick. I sorry. I don't know somebody in the room said in terms of the monitoring cases, very important. But if you could maybe connect with the DRIs afterwards to monitoring support cases and Gainsight as part of the quantitative health score calculation. So I'll just leave it at that. There's it's already being populated in Gainsight. So maybe we can just take this offline and see how it could be married, because it's a really impactful indicator.
+
+Speaker 3  20:43  
+Yes, that's useful. I mean, I think one of the things you may have missed was Richard said they do some sentiment analysis cases, which is more than just, I'm not sure if that's
+
+Speaker 7  20:53  
+looking at the description the feed and actually plug that and do, yeah, that's, I don't know how
+
+Speaker 3  20:58  
+it is today, but that's definitely something to worth picking up on.
+
+Speaker 6  21:01  
+Thanks. Exactly sounds, sounds like that, we can improve things that is already in place using what Richard, I think, just said, Yeah,
+
+Speaker 2  21:08  
+I'd like to. So I know Ben's got his hand, but so my experience has been that, you know, when, over the years, when we looked at the health of an account through different means of usage and NPS, they captured accounts that were raised, and then the cancellations would come from accounts that we thought were perfectly fine and and that is a lot of different we looked at it every which way back in the day, which was what the PA and before predictive analytics for, you know, one of the, one of the So one issue is that, not necessarily getting the feedback from those that are putting pressure on, you know, from a budget perspective, and like, how critical it is things like that, the dynamics overall, that kind of influence whether or not this account is truly at risk. So you got to, we're defining is at risk through a certain lens. And then the other thing that I think we should look at, and I don't know if your agent or if you're already doing that is with a sentiment, in some fashion, is there's ways to kind of look at transcripts and figure out the tone right, so that that helps also. But a lot of times, you know, the issue with the accounts at risk sometimes is that we put all our efforts around those accounts at risk, and then those that we thought were happy end up cancelling. And it's, you know, I don't know how to solve it, but I think it was always blindsiding us. It was very frustrating.
+
+Speaker 3  23:03  
+But we're not the only ones. We talked to Salesforce about this, and they were so surprised when we cancelled slack. They didn't know it was coming. They just got a notice that we cancelling slack. We all knew, right? We all knew long before that, but you know, the people
+
+Unknown Speaker  23:14  
+at Salesforce have you, mate,
+
+Speaker 3  23:19  
+so, yeah, I think it's a different, really difficult problem to have, because you can capture, you know, it's like the known and no, they
+
+Speaker 2  23:26  
+sometimes don't tell you, but, but we couldn't, we could understand one key indicator, I think, is when a company is having some form, some form of financial trouble, and not an EDS type, an ED effects, type financial trouble, more like they're not going to hit their lofty budget. And you know, their their their Andy will be saying, you know, expenses need to be high, yeah, yeah. So we could hit our you know, we're not in trouble, but we are not necessarily going to meet what our shareholder, what we committed to the street, and that actually tends to have the most influence in my, my experience, on whether the account will cancel.
+
+Speaker 3  24:09  
+Sorry. Ben had his hand up. He must be getting quite tired with it. He's still patient.
+
+Speaker 2  24:13  
+Oh my god. Let's just see how long you can wait.
+
+Unknown Speaker  24:16  
+Then I was about to come in on you go.
+
+Ben Brooks  24:21  
+Not at all. So I'm really interested in, like, what's the sort of intelligence layer in here that determines solution fit to the customer? And I say this partly selfishly from the customer enablement standpoint, but we've been doing a lot of work on which segments Should we go after with which solutions, where they're most mature, and how do they fit? Because that then makes the customer satisfaction part of the follow on from the sale that much easier. And it's kind of counter to the sales white space analysis, where you look for the gap where the customer doesn't have the product, and then you try to put the product in the customer, but that product may not fit right? So there's a lot of places where we've been working on blueprints. Solution fit concepts that I would love to feed into this for the insurance BU, especially for the property side and IRP, because that, I think, is what brings this kind of account intelligence and the opportunity to sell something really compelling to life. But I'm not sure what we would need to engage with there to be helpful.
+
+Speaker 3  25:19  
+So what we've done is a bottom up analysis, and then initially I would, I'm going to use the word naive without probably meaning really naive. But we haven't done much prioritisation, right? So when we're basically saying to the agent, here's a description of our product, right? And we've got that information working with the go to market teams, it's come out of high spot, right? It's supposed to be what our sellers are trained in. So this is the product, and this explains what the product does. And we basically tell the LLM is, go out and find a reason to sell it to this client. And we've got a description of all the clients pain points, because it's already done that analysis so understands the client quite deeply, right? And we basically go out and go and we tell it to go out and find a reason. Now it will always come back with a reason. Sometimes the reasons are very generic and sometimes they're very poor, but sometimes are very poor, but sometimes they really resonate, right? And we were thinking about prioritisation. And then early prioritisation was, oh, you know, insurance products should just be for insurance, right? And so things like that. And then I looked at the caterpillar example. I looked at the caterpillar example, and it explained to me why, you know, catastrophe modelling was really important for Caterpillar, right? And I was like, Okay, this is a reason to go and talk to Caterpillar about selling environments right now, whether that's land or not, you know, that's not there, but it's that it spins up those different ideas that you may not think about yourself. So we're trying not to constrain it initially. We do need to do a lot of work on prioritisation, and I'm not sure if Gustavo has got any plans for that yet, but it's something that we plan to do soon, is to think about that. And Ben to your point about how it all fits together, we have these product descriptions, and there'll be a lot of information we can put there into help guide the AI, and then it could be part of that prioritisation, because
+
+Unknown Speaker  26:56  
+it's more than part of a description.
+
+Unknown Speaker  26:58  
+It's more about the work capturing data.
+
+Unknown Speaker  27:00  
+Call it a product description. Sorry, it's
+
+Speaker 5  27:03  
+a lot. Go to Market. Strategy is the but, and that intelligence, then that you are building, we would want to capture it there. We want the agents to be to be aware.
+
+Ben Brooks  27:12  
+Yeah, perfect. There's something about like we've defined the concept of an archetype within the insurance space. So are you a broker? Are you reinsurer? Are you primary insurer? Because you want very different things from us. From us, depending on where you sit in the market and what you're trying to do with our solution. So, you know, Caterpillar isn't going to want our treaty reinsurance purchasing application, but they are going to want other things that we would be able to define for that archetype in a way that would be quite interesting.
+
+Speaker 2  27:37  
+That's what that's what we would like to ingest. We ingest any material that provides insight on the product, use cases, audience, Target, you know, value prop, any you know,
+
+Speaker 3  27:47  
+but we're trying to go through the high spot lens, because we're trying to go through the same intelligence that we're giving to our sales people, so they can go back and reference the training that they're having, right? Yeah, understand what's going on and make that repository of communication to the sales team about all these things that you're talking about. And I'm wearing on partnership with sales operations.
+
+Speaker 5  28:08  
+We know that you guys are working on getting that knowledge in high spot, but we have actually been working directly with a go to market teams. I know that many of you will have heard in my dinner's name because he's been bugging a lot of people around. But so, yeah, so we've been trying to be as thorough as possible. And I don't know if I've seen the the materials are put together, but would be great to us to get your feedback as well, to see what I
+
+Speaker 2  28:36  
+will say. One more thing here, the idea that of we're coming in, coming into this recognising we're not going to get it quite right from all this material, there's going to be a lot of you know, even as you're kind of painting the personas and the in the value proposition, you start getting into more granular sub segments of the market where, where it starts with, the messages need to be adjusted slightly nuanced. So we're going to try to pick up from the transcripts. You know how the the message lands with the with whoever you're talking so you might say that a, you know, a certain role in a certain region would have a slightly different set of preferences given the dynamics of that region, or that, you know what I was, there's a regulatory environment there. So there's some kind of there's a learning system that needs to be that we're overlaying here to be able to get later, a much better longitudinal cross, set cross kind of seller or customer understanding of the sub. Segments of the market, and that's going to that's going to inform products that inform customer. You know what you guys do, but it's also going to inform better marketing and messaging different audience.
+
+Richard Dosoo  30:14  
+I guess, just to pick up from what Ben has said within the advisory group, we have a lot of value and customer specific customer data points that could help shape the proposition. Maybe that's a customer analysis of where they sit amongst their peer group, within their segment. And sometimes we give these customers recommendations. So if there's a way for us to also put that in HubSpot or provide that so we could provide the agents more learning and insight. I think that's beneficial to it. Yeah, definitely, yeah.
+
+Speaker 3  30:44  
+And there's, there's room to do that. Now, if we move on to the next thing, retention and growth, I think we stop calling it growth on another bend. It's called expansion, expansion, expansionary. So yeah, Retention and Expansion. The idea here is that we can take in that there's, I know, there's some teams like yours, and there's other teams that are looking to do this is what we're selling today. This is how we can sell. This is how we sold to similar companies in a peer group, and this is how we can land and expand. So there's definitely something there in the first instance. At the moment, if you think about got the kind of lead generation workflow we're thinking now about how to fit retention in, because retention is not that different. Just have to resell the proposition, right? And so giving them evidence to resell, you know why they bought it last time, and you know what's changed, and that customer problem may have changed. The AI can arm the seller with a better conversation for that. But I think this is also a really good opportunity. This is where all the information you're putting into the system is needed, because it's all about retention, right? I think expanding the
+
+Idrees  31:44  
+class on this point, if you look at any ou, right? So you have your strategic accounts, and then you make your way down from tier one all the way to tech touch, right? And it's like the 8020 rule, right? Where you know you're 20% of your clients are generating 80% of your revenue, right? But you know you have, like we, for example, we have about 1600 accounts that sit in tech touch where we don't have enough resources for everyone to know what's going on. Like, if you look at HSBC, $45 million account, we know everything that's going on. There's regular touch points, right? But it's like the lower touch accounts, they have the lowest retention rate, right? So if there was something like a prescriptive action to say, hey, you know, the usage has gone down year over year, do something about it proactively, way before we hear about a cancellation. That might be a sign to Ari's point that, you know, they ran out of budget because they're doing something else, and that's the
+
+Speaker 3  32:41  
+plan is to look at the map. To look at the metrics that we're picking up and seeing if we can add those. It won't be in this first instance, but that's where
+
+Speaker 2  32:48  
+it's kind of going. There's there's a there's certain teams, business units, of Moody's that have some a natural sequence of cross selling, where you kind of land with one thing, and then you kind of build on top of it, and there's a certain pattern associated with it. And I think, I think it's gonna be important to kind of understand that as part of the okay, you know, we know that they are, you know, comfortable, and this is getting broad usage. And now what is, what is the natural next step here? And then there's a separate question that I don't know, that I want to really have a conversation on right now. I just kind of just, we need to think about calling Mike the I don't know how much, how important right now it is, but it's probably going to become important to start reframing some of this through the lens of what we talked about last week around capabilities moving away from, you know, like that whole shift, it's going to start looking really odd when the entire organisation is moving into a different way of framing our our story, and we're still stuck in the in what is actually in it, you know, written in the contract itself. And so it's just kind of a different, you know,
+
+Speaker 1  34:33  
+yeah, the solution selling, as opposed to, kind of the, maybe, that's the simplest way of thinking about it. Ari, right? Yeah. I mean, it's kind of related to Mike's point earlier, right? One of the customer problems and workflows, rather than, here's a solution that Moody's can offer you, yeah?
+
+Speaker 2  34:53  
+But I'm just wondering, like, how, I don't know quite how to place it in terms of the i. Priorities here, because it's not, you know, the business units haven't really moved to it yet. Is really just starting and but everyone's kind of reframing their product set, pulling back on the names of products. Everything is Moody's for something and, you know, is kind of shit.
+
+Speaker 3  35:22  
+Once it makes it through into high spot, and all the go to market teams done all that work, we'll
+
+Speaker 2  35:27  
+pick it up. So that'll be the flow.
+
+Speaker 5  35:29  
+Yeah, we're tagging. We're talking on Julia's framework whereby every six months is going to ask the go to markets team to either verify or update the documentation crap.
+
+Speaker 3  35:42  
+But that's that, you know, that's the point, right? You go to market, should be going through the sales ops team to educate the sales people, so they can go out and talk about all the stuff that you're talking about, and the business units are changing around, right? And so then we can just follow on the same process. It's not nothing particularly different. Yeah, it and what we call product descriptions is a solution description, and we can put whatever names we want it there.
+
+Speaker 2  36:05  
+No what we're calling product descriptions in the way that we've been discussing it is what actually ends up being written into the contract. But when
+
+Speaker 3  36:16  
+we call product descriptions and sales recon, isn't that it's just a generic This is a solution we can sell you. We can put whatever we want there. We can put want there. We can picture that you got it framed. It's quite expensive. All right, I'm going to finish up just on this slide. I know people are building copilot agents themselves. That's happening across the organisation. We don't want to stop that. We don't want to we don't want to be in the way of people getting value out of the system. But what we do have is we have this great connection to Salesforce. We'll pull out all this information. So what we want to do is make that available to anybody who builds it, so they don't have to build their own Salesforce connectors. They don't have to keep asking us how to get information out of Salesforce. They don't have to download it in a special report and move it onto a SharePoint and get Copilot to look at it. They can just point it to our tool. So that's something we want to try and get doing really quickly, because we really appreciate the innovation that's going on around we want to be basically a part of our ecosystem so people can concentrate on the innovation rather than the really boring tasks, getting data Salesforce. So and the other thing then, is all the information that anybody's putting in to sales recon is now available for these other agents as well. Yeah, don't want you to necessarily come into Salesforce and sales recon, to have those experiences when you could design them outside, right? Also, I want to be the bottleneck. I think there's the other way around. Is say that there's intelligence is going to get picked up through these agents that they're building, that we want to bring back. Yeah, yeah. This whole notion of what we read and what we write is it kind of an area that we could talk about,
+
+Speaker 2  37:51  
+but there is, there's information. We're ingesting their information. We're gathering information, we're generating the information we're delivering. So those things, you know, we need to kind of play nice in the sandbox, pick up other agents, traces of intelligence,
+
+Speaker 3  38:16  
+and then finally, we're rolling out to the sales people that bound, you know, there's bound to be some problems. We need to we're going to, bound to fix stuff, and we're going to get lots of feedback. I sat in a taxi from Canary Wharf here with Ari, and he gave me an ear for feedback. So, yeah, I was hoping she's written it down, and we'll address that as well. So there's room in our roadmap for making some fixes and getting stuff done.
+
+Speaker 8  38:40  
+Jimmy, just move a couple of quick thoughts. Just, I think the thing that really resonates with me, and I guess this would perhaps be a foundational capability across a sales application of this, as well as a CS application of this. You know, I think what you talked about just really creating a central institutional understanding and knowledge source of our customers that takes in any touch point, any that Moody's has had with it, combined with that external environment information we can get from the AI digesting company reports and news and so on. So I think for both sales and CS, I think that's a very powerful concept, that if we can get that working, that feels to me like that's the fundamental enabler of this,
+
+Speaker 2  39:26  
+yes, well, I gotta tell you, that was the that's everything we are doing is an excuse for that to happen. I mean, that is the main objective. I want us to have an understanding, a shared understanding, across the organisation of our customers, both individually but much, but equally important to start being able to use that as a as an analysis surface for trends and for, you know, for needs and you know. You know, shifting needs and priorities, and get ahead of that in our product development.
+
+Speaker 3  40:06  
+And when you think about that joint intelligence layer that you've got, there's so much you can do about it, right? You can go in as a product manager, you can imagine going in and say, Okay, what's actually going on with this subset of clients, right? And rather than guessing or doing some strategy or finding out. You know, you don't hear about the problems of particular product, but when you go in there and look at it across many clients, you can just extract that information out. So there's kind of what we call the client intelligence layer, or what have you called it before?
+
+Speaker 2  40:33  
+Other things. You know, Richard's written my my muses on LinkedIn, but
+
+Speaker 3  40:39  
+yeah, the centric substrate. Yeah, that, that whole thing on it, I think, is exactly what Ari says, a thing we're trying to get to, and it requires not just us collecting information from the outside, but taking all the knowledge about a client that's in our head and giving it to the system. And so the idea when a salesperson walks out the door, they don't walk away with all the knowledge about client, right? That history is being documented. It's in the system, and we want to try and do that in a light touch way that is not another admin task for the salesperson, right? We want to do it a way that gives
+
+Speaker 2  41:08  
+them value. I want to also, one of the things I'd like to measure that we haven't included in our KPIs is the is the ramp up time for a new rep.
+
+Speaker 3  41:18  
+So we do there's two KPIs for that time to first meeting, time to first sale.
+
+Speaker 2  41:23  
+No, oh, that's right, that's right, that's right. That is for yes, they
+
+Unknown Speaker  41:27  
+already monitor it. Yes, I think Mike's got his hand
+
+Unknown Speaker  41:31  
+up. This is polite.
+
+Speaker 4  41:35  
+Anyone to interrupt you. Doesn't show I guess I was just going to say that to me, there are also two other dimensions to this. One is about what's going on within the Well, certainly from the insurance segment point of view within the insurance industry, in terms of those key themes, and really mapping that to relevant customers, so that we can say, if there is, say, for example, a a wildfire in LA, here are all of the customers that that is relevant to, that we should be engaging with and we should be talking to. And so we've, we've got some, some piece on that. And then I think the second, second element, which I think we're pretty poor at doing, is is looking for cohort themes that are going through, like, if we go into a discussion with one customer, something really resonates well. And there's an opportunity. There's a great opportunity to sell. There are probably five other customers that we should be having that same conversation with and what tends to happen is we have a great conversation, we close the deal, and then we move on, and we should be really getting that information into those sort of, those plans and those discussions for that that that level of that next engagement with those follow up customers. So for example, trade credit is an obvious is an easy one for us. There are four or five major trade credit players in insurers, in the in the insurance market. We have great conversations with three of them, with one of them, we've never talked to them, and with the other one, we've never really brought up what we're doing with the others. And so I think it's those types of things, those currents and those themes I think can really drive opportunities for future growth.
+
+Speaker 3  43:30  
+Yeah, we certainly have plans as a at the moment, our conversation starters are generated by the AI, and they're very much bottom up approach. We have plans to take, you know, if we've sold something to to, you know, something new to a certain type of institution. We'll look at the peers, and that will then generate content, a card, if you like, a conversation starter for their sales reps who aren't associated with that account, but associated with the other accounts. So look, you know, we've sold this to HSBC. Maybe you should try and sell this
+
+Speaker 2  43:59  
+to Barclays, right? We have more than that. We, you know, we have this particular piece of news impacts. We have the first order and other companies impacted kind of by the same
+
+Speaker 3  44:13  
+thing in the bottom up analysis. Yeah, that's the following that in the middle there, you got following patterns spotted across all that.
+
+Speaker 2  44:19  
+We also have a whole work stream by the Jude around, what are the key themes in Yeah, and who's impacted by them. And that looked to me like a fairly mature kind
+
+Speaker 3  44:31  
+of that is, but we're not surfacing it the way that Mike's suggesting, which is to look at it. We're surfacing it for what's keeping a client up at night. We're pulling in both company and industry level things, right? But those, somebody should be able to read those industry level themes and take broader but there might be a different way of saying
+
+Unknown Speaker  44:49  
+I told you that that needs to happen. So guys, just conscious.
+
+Speaker 8  44:53  
+We've got 10 minutes or so left to know what we need to achieve by the end of the call and where we go next. Maybe we should spend. The last 10 minutes. Just focus on
+
+Speaker 3  45:03  
+that a bit. Jamie, was there any other points now, just one more slide, just to say it's rolled out through the sales ops team, and there's a plan that's all that says,
+
+Speaker 4  45:16  
+finish at three or does it finish at 330 I've got 330 in the
+
+Unknown Speaker  45:19  
+calendar. Yes, should be 330 maybe
+
+Unknown Speaker  45:22  
+I'm just, I'm just assuming you write me. Okay,
+
+Speaker 9  45:27  
+can I ask one quick clarifying question? And hi everybody, sorry, I've been listening in the background. I was out on Friday afternoon. This jumped in my diary today, so I'm just lacking a bit of context. I mean, it's really interesting stuff. But just trying to get my head around this, is this sort of, is there an ask of us here? Is it sort of just for information purposes? This is where we're up to. Are we trying to drive our customer success teams to now, adopting, I mean, I think all of those things could be applicable. But just wanting to understand if there's something specific,
+
+Speaker 3  46:02  
+purpose of the meeting is to think about what's next. All we've done, without giving you, is a view of where we are with sales recon and why we haven't looked at success yet, and now that's part of our plans going forward. This was initially a meeting with the banking and insurance, but it's kind of grown. I think. I was speaking to Divya last week, and she decided just to try to get us all involved, get everybody she's probably why I jumped in late on Friday,
+
+Speaker 1  46:29  
+Matt, we can catch up separately or or Richard or Ben, someone can bring you up to speed. But, yeah, just extended it to you. I think you missed the introduction on that, but we can chat separately on it.
+
+Speaker 9  46:42  
+Yeah, perfect. Okay, I guess briefly, is there a plan already afoot that I can piggyback on, I guess, to roll this out to customer successful
+
+Speaker 1  46:54  
+point of it? Yeah, I don't think we're at the rollout point yet, but Idris, Richard, others, I think folks in Rupert's world have been all kind of working a little bit in parallel, and part of this is to build awareness, at least with the work that Jamie and Ari are doing with some of our teams. And then we'll we can talk about the extensibility of it. That's the me. That's the email from Divya.
+
+Speaker 3  47:19  
+Thanks. We are going to run a small pilot, so we might as well try and include people from every team so we get a good broad a good broad base across I know you guys on customer success, have a kind of meeting once a month. Is that right? I think something like that. So I think there's maybe one next month I'm being invited to where we can kind of think about that and make sure everybody's on the same page and review whatever plans we come up with on that call.
+
+Speaker 9  47:49  
+It'd be good to actually get a couple of our customer success people, you know, rather than just me, if I can, you know, involved and onto some of this. I think that would be super helpful. Sorry, yeah, I
+
+Speaker 1  48:01  
+was just going to come back to, I mean, look, Ari and Jamie. I think a lot of this comes down to, like, how good is the data that's sitting in Salesforce and Gainsight? So what is kind of the thinking or planning there, right in terms of either incentivizing data going into the system or incentivizing better data going into the system. Any any thoughts on that, and especially with, I guess as we think about the CS version of this, right? We actually maximise the benefit. I think we we have an opportunity to set the tone.
+
+Speaker 3  48:36  
+I can't talk about gain sites. I don't know about data gain site. You guys are filling it all in. So I'm assuming it's wonderful. The Salesforce has issues, right? Everybody knows Salesforce status has issues. Sales recon isn't and the applied AI team aren't going to fix the Salesforce, right? It's helping surface some of it, and it's helping surface some of it in a way that now the sales ops team, you know, Julia, has been talking to Noah and Helen for years or for months, about trying to get stuff fixed, they're now seeing it right, because they're seeing it in sales recon in a way that they didn't see it before. So it's helping surface some of those issues. And it's only just through discipline that that's that the data is going to get fixed and get better, right?
+
+Speaker 5  49:16  
+So, but one, one key, I think the important idea here is that we are designing the system so that the more it gets used and the more data is put into it, the more you're going to get out of it. So so was, we're not going to fix the underlying data, which is broken now we're going to do this is to try and capture as much of that, you know, knowledge the seats in people's heads. And people know, you know that they they will actually work around issues with the data, as we have always done as humans. So our agents would. But the idea is that we will actually have, you know, to give them as much context as possible. That is the goal. The other thing
+
+Speaker 3  49:57  
+is, if you go into Salesforce and come. Well, you can go and then see all the emails that have been sent to a client, right? And you get, get reports just a little less. You can't, you can't consume that, especially if there's been lots of emails of going to a client in sales recon, you've got a bit that kind of summarises those kind of conversations and summarises any issues that are coming up in support cases. So it can provide that level above. I think
+
+Speaker 2  50:20  
+there's a, I mean, there's a question here around there's two questions. One is, you know, the population or the cleaning up of the underlying CRM. The other is, is really about the thought was about the motivation and the incentive to capture the right information, and the right information is going to be stored and captured and surfaced in sales recon, not yet automatically repopulate or cleaning up any issues in Salesforce, but, but that's neither here nor there that that's going to get done. But my sense is that this will substantially become the ground truth mechanism for what we know about a customer, because, frankly, Salesforce was never the ground truth for what we know about a customer now so, so that you know we will, we will probably want a separate system that is an intelligent system, which is what we're building, that is a that sits above a layer, above the system of record, and that is what people access and use. And the incentive around it is we're going to be prompting and asking and nudging for information, but we're also going to be very obvious in the output that you get as to, you're going to get much better output when you give it information. If you don't give it the information that you have. And you know, if you're not sharing your emails or your transcript, you're going to get you're going to get bad, bad, you know, leads and shitty narrative, right by so, you know, it's kind of like how you work with chatgpt or whatever you got to give it information to to, you know, every I think it's, it's going to become more natural for people to assume that they need to enrich the system we and We're just there to ingest it. Yeah, I agree
+
+Speaker 8  52:42  
+with that. As the data gets used, that will put more of a focus on it, and any issues with it, which there will be many of will come more into focus. I i guess Salesforce data quality has been an issue for years, so I think surfacing it through this is the right way to start improving. I think, yeah, I
+
+Speaker 1  53:02  
+was just thinking, is there some gamification to encourage that at a faster pace, right? So, I mean, the data is, you know, and I mean the point around digital engagement and tier two and tier three, I mean, that's where we really could see some value out of this stuff here.
+
+Unknown Speaker  53:18  
+But maybe, maybe the scorecard,
+
+Speaker 2  53:21  
+well, the ED, well, the way that we've been conceiving, and I think we need to fine tune this a bit, is, is we need some kind of a measure of of the completeness of the of the file, if you will. So when, when you are provide, when you're interacting with the with the system, you you get information. There's going to be gaps that are either things that are incomplete or things that are just insufficient. Information is like, if the system doesn't know what or why, it will separate the surface that is a gap, and we can measure how many gaps are. You know, exist at any point in the in a sales cycle. So initially you're going to have a lot more areas. You may not, you may not be aware of who are all the, who are all the people influencing the decision, who's holding the budget, who's, who's, you know, what other what other vendors are they considering things that you might not know, but as a sales cycle progresses, and if the gap remains, you know pretty wide as to the things that we believe are important to know in order for in order for a deal to close, then the manager will look and say, What do you mean? You're for? You're putting you've got this at 75% when you don't even know you know who, or you haven't talked to the key decision makers, or there's a big blocker out there that you haven't you know. So that's going to be the mechanism of the interaction. The manager with that view is the way I kind of see it.
+
+Unknown Speaker  55:04  
+Is there going to be some sort of function that
+
+Idrees  55:10  
+calls out these things, to poke at someone, to say, hey, this information is inconsistent.
+
+Speaker 3  55:16  
+Yes, through their interactions, is the idea that it will start. It says, Start to nudge. And you know, you might have a conversation about something, and it's saying, well, actually, I need some information to help. You know, these two things are inconsistent. They can't both be true. Can you help me figure out?
+
+Idrees  55:32  
+Like, if Gainsight says that it's green, usage is low, probabilities high for renewal, those three things don't
+
+Speaker 2  55:39  
+make Well, the way that, the way that Gustavo correct me from wrong or Kiara, but the logic right now is not to adjudicate who's right. So customer success says that. But you know, I actually, I'll just quote my post from LinkedIn. Customer Success says it's, Maria is responsible for the policy, budget. Seller says it's, it's, it's address. The system will just surface both and in, you know, for the time being, because I don't know who's right and who's wrong. I don't know what rules to apply to do that, and so over time, those inconsistencies will clear themselves up. But initially the idea is to just, let's just expose them and let the seller kind of have the information to be able to make the decision. Yeah.
+
+Speaker 5  56:40  
+So the system works now is, if we don't know, then the agent will ask, practically, will say, hey, we have this governing knowledge in this account. We know who decision maker is. If it is, have told me is John Doe and Richard, say it's Jane Doe, then it would actually make it as a conflict. And next time I speak to one of those, hey, you told me it's this, but or anyone else will say, Hey, I have a name, but I have two names, in fact, and they are inconsistent. I need a clarification, please. So he knows where there are conflicts, he knows where there are gaps, and he tries to reconcile and to expand the knowledge as much as possible,
+
+Idrees  57:20  
+but all through interaction. So we go back to the more it's used, and the more it gets information from the users. The battery is going to be just as much information as you can. It'll surface as we go.
+
+Speaker 2  57:29  
+Yeah, it's just like, this is a, you know, it's very important to remember that we're collecting very the information, very intentionally. So this whole thing is guided by a view as to what one needs to know in order to progress a deal. That's key and and so the system has this objective in mind. I need to get this deal closed, and I need to know certain things in order to be able to guide you to close this deal, and so it's always aware of what it knows and what it doesn't know. Otherwise, you just get it s3 dump of crap and you don't know what to do with it, right?
+
+Richard Dosoo  58:17  
+I think that's where on the customer success side we can provide indicators or metrics or data points about what would impact a customer renewal, and we've got markers that we speak to customers about in service reviews and other efforts that will be kind of directionally telling you if something is wrong at the customer that could impact a client or lead to cancellation. So yeah, I think that's that next step that we should try and surface as much of that as that as possible. A lot of that can go,
+
+Speaker 2  58:45  
+yeah, that fits right into the structure of the the architecture, yeah,
+
+Richard Dosoo  58:51  
+I'm just in, I guess, in the interest of time, we've got 30 minutes left, we have a few items that we want it to cover, but the key is really just aligning on the priorities and the goals, or what's important for customer success in 2026 and how that aligns to your roadmap, and then after that, we wanted to just spend a brief bit of time touching on some of the solutions that we've built in customer success and get your input on whether They sit
+
+Unknown Speaker  59:18  
+long as the show moves over there.
+
+Richard Dosoo  59:25  
+And dear Is that you, are you good at that approach, if we touch on the key, yeah. So for us in customer success, what's really important for CSMs, and this is aligned to our customer scorecard, is we need a mechanism to make sure we have high retention rates. Do you think that within the insurance is successful migration to our intelligent risk platform? That's significant part of our portfolio? So that's the risk that we need to manage. Again. To address this point earlier, we want to. Proactively managing these risks. So we'll be really good if there was a way that we could look at some of these indicators that determine the health of an account or the direction of account and managing them proactively, rather than reactively, which is what we're doing today, and improve customer health. And to that end. As we mentioned earlier, one of the key things that we've been driving at is a customer success agent. So how do we determine insight, sentiment based off the interactions that we've had with the customer? And we've built out some stuff in copilot studio to help facilitate that, and built out some reporting, but we definitely want to share that with you, and we'll jump into that in a moment. And what we've also been looking at in terms of successful ad migration and attract the customer adoption process, and right now that's largely managing spreadsheets, PowerPoint, dashboards, but we were looking for a much more robust mechanism to help manage that centrally, not only so everyone has visibility over it, but that information can also feed into any account planning, any renewal activity, and that's something that we're going to spend a little bit of time walking you through in a moment as well. Sorry, Craig, you had a question.
+
+Speaker 10  1:01:19  
+Yeah. Maybe there's a more on another slide. But one thing I noticed missing, just if we're kind of comparing to the CSM scorecard that we're working on, is that initial identification of, we refer to csql as customer success qualified leads the queue may be over and stated there, but identifying initial use case leads, you know, is for a corporate you know, they may be using us for their their compliance today. And a simple question is, hey, are you also using, you know, this, this data, this tool for your reviewing your supply chain as well? And the simple answer may be, no, we're using XYZ on there, but that's one thing that we kind of a problem statement that we have is, you know, customer success, naturally. You know, a lot of the people who become good in sales and customer success move to sales. But can we use this sales recon is in a way for CSMs to identify potential use case type of questions or opportunities that would at least just be not a, let me try to drive a sale, or necessarily, you know, solution for you. But you know, are there things that are we either see in Salesforce or articles that are just simple topics that could be raised at the end of a, you know, a weekly meeting, or a QBR that would maybe identify a potential warmer lead that would then be passed on to sales. So that's the only thing I don't see on here. Is that expansion side is if we could be able to solve for that, just to kind of the ideas that, or topics or solution, just feelers that the CSMs could have at their fingertips walking into a conversation to feel those. So that'd be the only thing I see missing on here, unless it's identified elsewhere.
+
+Richard Dosoo  1:03:05  
+Thanks Craig for that insight, I think, broadly speaking, like we call it the white space report, which identifies cross selling opportunities within a client and within insurance. That's, I guess, more sales people, sales team are driving that conversation, but sales recon needs to surface Sales Team developers check for customers. I think if we can provide Ari and his team products, detailed product information about what's being used at our client, usage information about how these products that then will give better insights about what upsell opportunities exist, whether that's across their existing product base or other bit of stuff.
+
+Idrees  1:03:46  
+And just to add to that, Craig, so that functionality exists pretty it works pretty well today. So Jamie, when we did the pilot, we shared some of the accounts that were loaded up for some CSMs, and it gave just that insight. Because sometimes, you know, the CSMs role is not to focus on the commercial activities, but oftentimes the CSM tees it up for the salesperson, because it's like, Good cop, bad cop type thing, right? So to you know, Craig's point, if the CSM goes into recon before their meeting and says, Okay, this bank just got some fines, or, like, something's going on here, they can ask probing questions as their normal check in and just tag in sales, right? So it works pretty well from
+
+Unknown Speaker  1:04:24  
+the lead generation conversation starters. Yeah,
+
+Unknown Speaker  1:04:27  
+yeah. Definitely look up for that.
+
+Richard Dosoo  1:04:33  
+Okay, so I guess what we want to move to now is just spend a brief amount of time just showing you through some of the roadmap items or some of the items that we're looking at, and then see if they can fit into your list of priorities for 2026 I don't know. Bernard, is it possible to start with the report? Yes, let me bring it you.
+
+Unknown Speaker  1:05:22  
+Azmain, sorry, gave me a second. Just bring
+
+Richard Dosoo  1:05:42  
+this so, yeah, this is Bernard, maybe if you can just give the team a brief overview of the kind of insights that you've been out of through the agent and co pilot student.
+
+Speaker 7  1:05:51  
+Okay, yeah. So I guess what I was trying to do is we, you know, combine the various different, you know, data sources that we've got to get an overview of what's happening with the client in particular. Now, I think I was thinking more of a use case where I want to know about products that I don't look after. So again, you know, when I have a conversation with the client and this, this was really and it's really quite closely connected. I think that what you guys are doing anyway, because in most of the information would have come out of Salesforce, so they would have been Salesforce reports, be the MPs data set from from the Power BI and then for some of our products, we do have usage data, which, you know, helps us to see which features they're using, or, you know, the uses going up or down. So I think that that's probably quite product specific. I mean, I'm not sure you can kind of shoehorn that into a, you know,
+
+Speaker 3  1:06:44  
+you could go into Gainsight, the product usage,
+
+Speaker 7  1:06:47  
+no, this is, this is more, much more granular. So we have a Databricks data store which has got operational usage data for RMS as mixed panel, which, again, stays in quite granular. But I did then, you know, aggregated in, you know, some very high level way, haven't, actually, don't work with software, RMS. So it was more like a test, really, you know, Richard works with them very closely. So you could kind of validate to see whether that makes sense. I mean, the other thing I was really quite pleased with that is, you know, this is generated by a copilot. Was just saying, do an HTML report in moody style, right? So I didn't kind of give it that the structure. So I found that was quite successful compared to trying to do PowerPoint or PDF, which, I mean, my experience doesn't really work. Yeah,
+
+Unknown Speaker  1:07:36  
+long time. I
+
+Richard Dosoo  1:07:37  
+think the key thing as well, Bernard here is being able to pull in case issues and look at recurring themes that are happening across this customer so we can take them so this particular client has a lot of issues with their adoption and using some of our APIs so that then is a data point that someone can take into a customer review session, or a salesperson can be aware of going into a renewal that You know adoption has been slow for these reasons. What can we do to recommend or partner with them to help alleviate some of those issues, to help drive the adoption forward? And we did that just by looking at the tickets and looking at common themes and so just prompt engineering, we didn't have to do
+
+Speaker 2  1:08:15  
+any stuff when you when you see a moderate score, does that trigger a certain set of activities that are is different from from what might be in red or green. So, so do you have like this is due for this?
+
+Richard Dosoo  1:08:37  
+Yeah, the short answer is yes, but this is strategic account so it gets
+
+Speaker 1  1:08:42  
+the right so I guess the overlay would be the account classification. Ari, right? And that's something where more institutionalising across Ma, as you know, right, with the strat accounts versus, let's say, if it was a mid tier, the follow on actions for that would be much more important, I would think,
+
+Speaker 2  1:09:04  
+yeah, that makes sense. Does? You know, they just sometimes wonder whether it's like, needs attention, doesn't need attention. You know, it's a kind of a binary thing, you know, like the middle one always seemed like, well, what am I supposed to do about that?
+
+Richard Dosoo  1:09:22  
+That so in terms of next steps, there's a we can obviously share the agent that we've built. We can share the prompts, but this is the kind of whether it's a report in the application, whether it's a
+
+Speaker 3  1:09:33  
+yes, we have something similar in account at the moment, not as deep as this, right? And we certainly don't have, you know, the information, some information that you have here around product usage and NPS, but that's some of the stuff we want to get in. Yeah, that we really have. We need to, we need to put it from a different source, again, something that's all possible. So, yeah, I think it's part of the pilot we're talking about, is having a look what we've got and then seeing what's missing, right? Think about that, and how does it differ to what the people are doing the. Banking team as well. You obviously got a bit more of a you got a different approach to account health, right? You got a much more quantitative it's
+
+Unknown Speaker  1:10:11  
+a different approach.
+
+Unknown Speaker  1:10:14  
+Core, this core they Yeah.
+
+Idrees  1:10:18  
+I mean, I think there's like five different factors. Some of them are just automatically generated based off of, like, you know, support cases. And you have your qualitative at the end where the CSM can manually write a score and with comments. And we usually go by that to determine, you know, actions really require.
+
+Speaker 3  1:10:34  
+But the support case, you just, there's just the count of just the frequency of support.
+
+Idrees  1:10:38  
+It's like, what's the severity? Type, how long have they been opened?
+
+Speaker 3  1:10:42  
+So quantitative metrics, rather than the kind of analysis, yeah, agents done here, right? Yes, yeah.
+
+Speaker 7  1:10:49  
+And I think, I mean, I think generally usage, I mean even for the two products that I'm familiar with, you know, risk integrity, which is, you know, financial reporting solution might get used every month or so in a certain way, and then you have to, sort of, the RMS is really about, you know, how many HD models have they been using, or not? So it's kind of, I think you would look at it quite differently. So try at the same data structure for both. For example, might be, might be, but
+
+Speaker 3  1:11:14  
+I think with the elements, you don't necessarily need to, as long as you're explaining,
+
+Speaker 7  1:11:18  
+yeah, I think that's another key thing. Now we expect this product to be
+
+Speaker 3  1:11:21  
+working once a month. If it isn't, that's a problem, and this other product should be used by multiple people many times a day. You're looking for the different plans.
+
+Richard Dosoo  1:11:32  
+So been on swiftly. We also have managing our customers, adoption, IRP, managing our custom to cloud transition is something that's a key focus to us, and the process right now is pretty manual. Ideally, we'd want to manage that in gain site, but we have a very we have a problem that we need to manage in the short term, and we want to give you visibility over that so at least you can make an assessment if this will be included in sales or economy in the longer term. Azmain is just now a point to
+
+Azmain Hossain  1:12:03  
+yeah, let me, let me just
+
+Speaker 1  1:12:07  
+a public service announcement for Mike and Colin. This is unveiling the brain child of Ben and Azmain the adoption tracker.
+
+Azmain Hossain  1:12:20  
+So really, the thinking behind this was that all of our information is in very different disparate places, in various different formats. We've got Salesforce updates, we've got PowerPoint presentations, we've got Excel sheets, we've got information in people's heads. It it makes it very difficult, so that when someone asks a question like, what's going on with Aeon, what's going on with this client, you need to talk to four different people and look at three different excels to answer that question, what we what I wanted to do, what we want to do is one centralised place, and because it's something that we're building, and we control every feature, every functionality, it's it's within our environment, we can iterate very rapidly. We can build in features that people want. We can remove stuff, change stuff that people don't like. So the thinking behind this currently is, this is a platform for CSMs to go and monitor their account health, put in any updates, check for errors. So this is for example. This is just a random example. You sign in your Rhonda, you come in, you see that AON is red. This one of your clients. You are able to go in and see, you know, what's missing, the fact that there are like this thing. There are 13 use cases for Aon. Now you can see everything in one sheet. Previously, you'd have to go through a bunch of different excels just to get this information within that so if I click into broker advisory, it's in red, but there's no blockers. Why is there no blockers? This is something for the CSM to go and confirm for anybody senior, their team manager, anybody else within the account team, can go in and be like, Okay, this is red. Okay, I get it's not, it's not migration critical, but why is there no update? Sorry, why is there no blocker? And then we can set up more and more processes. Like, if you have a blocker, you have to have an action plan to fix that blocker. And then you can attach people into the action plan. You can talk, you can tag people, and it avoids all of the setup that you have to do within Salesforce. Like, if you want to set up something like, when I text someone I want them to send an email, you got to go to the Salesforce admin and get that done. This allows us to do everything, get all the dirty data into one centralised place, and from here, once we've cleansed it, once it's organised into these categories, we can push the data out. We can push it out into game site. We can push it out into sales recon, wherever you want. And alternatively, we can pull data in if it's like, nicely formatted and it's cleansed. So it allows for both ways. It also allows us to just just keep implementing. So we can include, like, Project charters in here. Adoption charters that Ben is very keen on, because we don't want our customers to just migrate. We want them to actively adopt our products into their workflow. So it's not just, oh, migration finished. Check. No. It's like, let's go back to the adoption charter. Migration is part one. What else do we have to do? What other conversations do we need to have? Another thing that we're going to add in is partner management. A lot of our IRP customers right now, they are, their implementation is being done by partners. So that's one level of abstraction away from us actively being able to monitor what's going on in there. So that requires a bit more careful, details orientated approach. Which this allows, which what we have currently, which is just a hodgepodge of office products doesn't
+
+Richard Dosoo  1:15:47  
+and the but you can see right the we have a process for managing these transitions. Some of that information is going to be pertinent for CSM, because they're managing the account on the day to day. But that information could be relevant to the sales leader or a sales customer, client director on the account comes across really so it's how do we gravitate all of this information around a customer? How do you have that centralised place on customer intelligence? And right now, we manage this, and we're going to have some milestones with us in the short term, but we wanted to have this conversation with you about, is there a place for this in sales recon in the longer term. And the short answer might be no. If it is no, how do we pull the information we need from sales rep and what API keys need to be given to us to help us get the relevant information we need out of sales rep, when to help manage our place?
+
+Idrees  1:16:35  
+And Richard, this was built because the RMS business didn't make its way into kingsight, right?
+
+Richard Dosoo  1:16:41  
+It's not there yet, and we can't wait. We can't have that risk unmanaged. It's all that implementation.
+
+Ben Brooks  1:16:46  
+Well, it's a bit more than that. It's all sort of very it's all very deliberately designed around the specific problem that we're dealing with around IRP adoption, and the sort of four or five major things that we have to get done in order to do that, we've got to understand use cases statuses are use cases blockers that are stopping them from being green. What are the charters? What are the blueprints being used? It's very, very bespoke to the IRP problem. You could abstract from it, and it would be in a, you know, a SaaS migration application in general, but that's not where we were going with it. So I think in that sense, it does make sense for the insurance business to own this. But to Richard's point, how do we get the right interface with sales recon, Customer Success recon, in order that the intelligence is kind of used pervasively, that that's where I think it comes to life.
+
+Speaker 4  1:17:32  
+Because Ben, this, this, this is fun. This is fantastic, having having this all together, the and to be able to look at this, and I guess it's those integration points to make sure that this is live, and it just doesn't, you don't just look at it from one month to the next, and it's just all steady, stale information, how it feeds feeds from things like games site and sales recon feeds into so the product team have a version of this so that they can see which customers and and so on, so that we can tie all this together. So this is a real time view, but this is fantastic. Yeah, it's great to see the work.
+
+Azmain Hossain  1:18:11  
+Yeah, and and Mike, just to your point, because, because it is custom, because we control everything we can create, like our own incentives to get people to go and update stuff that they haven't, rather than asking them to do it on this platform, on that platform, it's all in one centralised place, so as
+
+Speaker 4  1:18:30  
+much of this as possible can be automated, pulling from other sources where that's naturally updated. So without having to do any additional new work, or the new work that we're doing is because it's outside of the use case, or uses which would be valid for other purposes. Because I think having to put information into three different sources, it means that it probably doesn't get into one.
+
+Speaker 1  1:18:55  
+Yeah, yeah. And I think there's a broader point here, right? Like every team, Craig, you know, you guys are dealing with migrations. Moody's view, team is dealing with migrations. Banking has several migrations. So there's some version of it that all of us have probably come up with, right? And maybe part of the abstraction of this is exactly that point around what is the appropriate connectivity between something this offline, operational reporting, which we all need to manage the business and the knowledge we want to exist in Gainsight and Salesforce for other stakeholders, right?
+
+Speaker 2  1:19:33  
+So I mean one, one question in my mind. So there's two questions. One is, what is the preferred interface or experience, is it? Is it? You know, my sense is that, to the extent that we can make it a singular place, a single, you know, one place to go to that's that's better, and the other is kind of the. The mechanism of getting there. And so one is, you know, you can have a link to this, or you can have an API that grabs this information. It just, you know, aggregates it into this, the kind of the account knowledge and the information that we gather, all my view is, is this is very important information to have. What I'm more what I'm less certain about is, you know, my sense that if we don't have a central place for this, we're going to have a lot of a lot of screens, a lot of like that people are going to have to worry about. And then we have a decoupling, potentially, from where you enter the information, or where is there any information that you actually enter here, or is
+
+Azmain Hossain  1:20:56  
+it all, yeah, yeah, no, no. Every we want this to be the central
+
+Speaker 2  1:21:01  
+that's the thing. So now you're like, Well, I enter this, but I can see it there, or I can enter something else over there, but I can see it here. So I think the answer to the questions of this should be bridges and kind of harmonisation of the experience. Right now. I would say it's a question Jamie as to whether we just have within sales or, you know, just links right now, before we integrate so that. And then we should be, we should
+
+Speaker 3  1:21:35  
+definitely, we should definitely, the quick, the easiest thing is going to be passing information out, right, right? That's going to be available this soon. Linking in shouldn't be hard, but then we just have to think about the frequency of that's done. It becomes a problem of moving data around you, up a day, every day, job day, every time you add something here, but anytime you anytime you do that, we could link that into our memory process, and it just becomes a memory that then
+
+Azmain Hossain  1:21:58  
+so because if you guys have an account health page, when a CSM adds a blocker, it automatically shows up there, so they know, oh, there was something happened on Tuesday, and now there's a blocker. So those
+
+Speaker 3  1:22:08  
+that you know that those are the say easy I'm not doing the work. Those are the easy things, right? Do we want to own the user interface and the management of it? I don't know, but I think they made a good point. The whole one view migration is coming up, right? They're going to need something similar. There is a need for this kind of tool within the organisation. I just worry that the 19 of us in in our team
+
+Speaker 2  1:22:31  
+forget about who's doing the work so much is, what is the, what is the experience we want to have here in you know, we, I mean, I think this is, this is great. It could, it could stay here. There could be a link to it. And behind the scenes of API integrations into the account help.
+
+Idrees  1:22:54  
+Like, I feel like, like, a lot of depends on who you are. You want a different view of something, right, like Andrew Bachman versus MENA versus IRENA versus me, we want to look at things differently, but the data I feel is all stored somewhere. It's the same, right? So, Jamie, we talked about this, you know, we talked about hypothetically, using this example, if there's a ad permissioning in teams based off of, I'm an executive, I'm this person, you know, give me what I want, and it's just querying and pulling like, I think a lot of people, including myself, have customised, different views that are appropriate to what you want to see. But at the end of the day, the data is the data.
+
+Speaker 1  1:23:36  
+Okay, so is there a specific action on this? Like I said, I think there's Craig, you know, you guys probably have some kind of a tracker or using Asana or something else, but I think there's a theme here around there's a data pull and push that needs to happen with these more operational dashboards or systems. And maybe that's kind of a common agreed next step, right?
+
+Speaker 10  1:24:00  
+Yeah, yeah, just from the corporate guy. I think a lot of what you were describing, my mind's going directly to from where we want the CSMs to push the information in and kind of see the initial as gain site and like so we're, we're probably a little further along with things. So there's things like journey, orchestrator and a lot of other tools that are very native to that and are leveraging a platform that's already built. And then I agree with interest, right? Like is we you would get that information in and identify issues, blockers, what have you. You know, everybody does want to see that differently. So I think what you showed us is great, but a lot of what I'm seeing is, you know, I think we'll have the different tools I do think across the board, and from a migration and project standpoint, an idea we talked about this on this last one. I think that's probably one of the biggest gaps across the board, is just where is a project added a given time, by group? Yeah, potentializing the success team with Salesforce and Gainsight. But yeah, no, this is good information. And as far as actions, I can we can walk through what we've got there, but I agree on that view. Side you can. Slice and dice it. But as long as we're getting the data into the central place clean, then I think sky's the limit on the different views we need to see.
+
+Speaker 3  1:25:07  
+So one of the things we need to go around each of the Customer Success teams and work out what processes they're using and where they're inputting data right, and then so where it's being input, we can extract it right. So that's one thing that we need to do. So kind of catalogue. And then the other thing we just make sure everybody's aware of how to get information out once you've solved that problem, having information out of sales recon and add it into either a copilot agent or to a system like this, right? Make sure that's really easy for them.
+
+Speaker 2  1:25:33  
+You could also make these dashboards agent ready, so that there's, you know, the information. Just goes into the dashboard, brings it so you don't need it back in API. Could just do a computer, no, just instruction a computer, whatever it's called, when you
+
+Speaker 3  1:25:54  
+go down there, somebody's having to write API at some point
+
+Unknown Speaker  1:26:00  
+and again, that actually over touch sales frequently, yeah,
+
+Speaker 3  1:26:03  
+oh, interact with sales week one. Headline, yes, that's my point. It'd be much more efficient to have an API, but we can talk about that in a taxi,
+
+Idrees  1:26:14  
+access to a few CSM folks. Yes,
+
+Richard Dosoo  1:26:16  
+we're putting a plan together. Silence, yeah, be in touch and with the various different teams, and kind of get planned if that's kicking off in February. So deal, we've got a few specific action items that came out of this discussion. We need to set up a regular check in amongst the teams. Jamie's point, yeah, to get across all of the Customer Success groups, or us presenting a consolidated list to Jamie in this group, we need to plan the users for the key pilot. Plan the key users for the pilot in February, we needed to talk about more specifically, some of our requirements and where or if they sit on a roadmap. I think the conversation we had earlier, we're leaning probably more towards you guys enabling us through the Interface or API, rather than us adding stuff to your roadmap, but we need to consolidate that. I think
+
+Speaker 3  1:27:03  
+there's some stuff we're doing already, like some a lot of that account, there's a good overlap already with what we got and what we're planning. There's a good overlap. There's still some stuff missing because we don't have access to the product data from RMS, where that can be fixed, right? We can work out what that's done, and
+
+Richard Dosoo  1:27:17  
+then lots. We need to have an eye on the fact that we need to work with Conrad and team on planning the UAT and rollout for April. So that's a little way to run the track that's going to require some planning, and get everyone aligned, trained, and get the acceptance.
+
+Speaker 3  1:27:33  
+Yeah, I'm we need to. We need to decide who's going to do that rollout, because the sales ops team might it might not be Conrad, because he might not be, because they might just be dealing with the sales team, but that
+
+Unknown Speaker  1:27:45  
+needs to be decided. Again.
+
+Speaker 1  1:27:46  
+Decided, yeah, so I guess maybe just as a next step. So Jamie, we have that group that Divya has suggested getting together. I'm going to add Richard to that from my side. I'm sure mana and others will designate folks on their team, but that might be the place to kind of specifically carry these actions forward, right, so that you have a unified view across all the business units.
+
+Richard Dosoo  1:28:13  
+Yeah. Okay. Mike, must add from your side you're going to see any other specific items or follow up on anything we covered it?
+
+Unknown Speaker  1:28:27  
+Sorry. Did was that addressed
+
+Richard Dosoo  1:28:29  
+to me? Yeah, no, Mike, I know you had some questions about some of the items we showed. Did you have anything else that you wanted us to make sure we followed up on and get
+
+Speaker 4  1:28:37  
+back to No, no, no. This is this is great. This is really great to see the both from the sales recon piece, but also the work that we're doing on this, the implementation, it really pulls a lot of these things together, which can only benefit us and our customers. So great. Well, great work, everyone. Thanks.
+
+Richard Dosoo  1:28:57  
+All right. Barry and team, thanks for coming today. Ari, I know you had a long flight.
+
+Unknown Speaker  1:29:01  
+So thank you. Thanks everyone
+
+Unknown Speaker  1:29:06  
+that's really in mind, right? Yeah.
+

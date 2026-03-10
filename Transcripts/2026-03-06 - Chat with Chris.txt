@@ -1,0 +1,105 @@
+Chris M  0:00  
+Around like a chicken with his head cut off right? Like this is just everywhere because it's crazy.
+
+Azmain Hossain  0:05  
+I'm, I'm both project manager, programme manager, product manager, lead engineer, and also just general AI guy,
+
+Chris M  0:15  
+yeah, it's that's crazy.
+
+Azmain Hossain  0:18  
+This is why. Okay, man, so I could only have one job, but I keep getting myself into these situations where I have five jobs.
+
+Chris M  0:25  
+I think you're secretly a masochist, right? Maybe you're subconscious. I think that's where it's going. It's leading you. Anyways, yeah, well, hopefully I can try and take something off your plate, like I so I went through, obviously, and wouldn't try and characterise things. And a lot of things require the data, right? So, yeah, the code seems to be fine just to verify, like I given that I haven't worked with it, I can't go through and 100% the confidence go there and check these without verifying the data.
+
+Azmain Hossain  0:57  
+So, and honestly, I like when I'm doing testing, because I've got so much in my head. There's literally sometimes where I look at something and I'm like, Yeah, that's exactly how I want it to be. And then I tell the user, they're like, that's not at all how I wanted it to be. Why is it like this? Is it not like the logic in my brain, like my brain is trying to shut down, where people talk about this complex logic, and I'm like, can we just make it a field that says yes or no? Like, what is this? Why are we trying to over engineer the hell out of this thing? Just a feel, okay, yes or
+
+Chris M  1:29  
+no, right, right,
+
+Azmain Hossain  1:34  
+with a fresh perspective. You know where it says, like, like the user has said, if I go on this screen and I click on this, this doesn't happen. You can recreate that exactly without the pre knowledge of me being like, Oh fuck. Like, I fixed it three times already. I don't want to do this
+
+Chris M  1:49  
+right precisely. So that's, I guess that's where I'm at on this. So what, what would be useful at this point? So most of these are undetermined and then unresolved and then.
+
+Azmain Hossain  2:01  
+So what I would what I would say is, in the in the analysis sheet that you, that you created, you should bring in the date when that feedback was given, because basically, it's anything from, like, first two weeks of February. It's probably fixed, like I did it, I just didn't mark it, or, like it's not written down anywhere that it was done. I would start with the most recent feedback, first testing those out, because those will be actual issues that nobody's actually fixed or looked at, and then go down by date.
+
+Chris M  2:37  
+Yeah, that's that seems to be what that aligns with what the findings were. Most of the stuff in the earliest were fixed. There's a couple that weren't okay, and the most somewhere were undetermined, okay, yeah,
+
+Azmain Hossain  2:51  
+stuff in there where somebody's like, I want to be able to do this. And we've just completely removed that functionality and replaced it with something else. So those are where you where you can just note it down. Be like, I don't even see this. Like, yeah, I can't even test this. And that's something that me and rich can look at, because honestly, man, there's shit that he's fixed that he hasn't told me, and I don't even know, and I don't even care. So it's all just up in the air, and I'm sorry that you're having to come in and make some sense out of it now,
+
+Chris M  3:23  
+no, that's fine. Hey, that's fine. I mean, thank God for cursor at least goes through and gives me, I the first pass, at least gives you some semblance of where there could be markers or not. And, you know, yeah, directly, at least in the right direction.
+
+Azmain Hossain  3:36  
+So that's the biggest thing, right? Like starting from a blank page, is that the hardest thing? And this gets rid of that problem. You at least start with a list. Yeah.
+
+Chris M  3:46  
+I mean, in a traditional sense, this would have taken a month to go through. And if you had literally no idea, and you had to go one by one and test these things, I
+
+Azmain Hossain  3:54  
+know, especially if you that would be the code base, the tech, the functionality, none of it. Whereas now, like, listen, slave, you understand everything do
+
+Chris M  4:05  
+exactly, exactly. Well, see, again, I'm a little nicer, because when it takes over, and, you know, makes me a slave, I just want it to be a little nice to me, and, you know, put a roof over my head and give me some water, because, you know, let me sleep a little
+
+Azmain Hossain  4:20  
+bit like when you're paying out of your own pocket, you're like, do my work. 200 bucks for this thingy. And then the next day, you were in the cold, the bedrock API started working. And I was like, God damn it,
+
+Chris M  4:35  
+dude, I would still expense it. Be like, there you go.
+
+Azmain Hossain  4:38  
+No, I got I got told, like, you absolutely cannot expense it, because what we're doing is mildly illegal,
+
+Chris M  4:46  
+really? Yeah,
+
+Azmain Hossain  4:47  
+the security audit caught it. Like the security guys, they were just like, What the hell are you guys using personal cloud accounts and doing Moody's work in it? And we were just like, there's no there's no customer data in there. It's literally just people putting in updates or marking fields yes or no, like there's no proprietary information, which is wildly a lie, but whatever Ben is providing cover for us, okay, but now that we have the bedrock feed all that is sold, right?
+
+Chris M  5:20  
+Right. That's funny, yeah, but I love Ben flies by the feet of his pants. I respect him for that. Yeah?
+
+Azmain Hossain  5:29  
+I, I just, yeah. I just want to stop this from flying over, like, off the handle. It's, it's, yeah, like you said, we're already flying by the seat of our pants. And the moment where we start letting other people come in and start deploying apps, I'm scared, man, and this is why I kind of put that message on the on the core chat where I was like, Yeah, we need, we need to verify this stuff. I know that's just like, people are like, Oh, stupid project manager being like, you need to approve shit. Nah, man, do you want to pay for this? Because, like, we need to pay for this stuff. You can't just put, yeah, take up resources and computing power. And the other thing of I was like, like, when Nikhil spoke up, firstly, I didn't even know nickel was working on this. I'm like, Ben Van Houten created this. It's called app factory. Why are you trying to rename it and do all this stuff? And I know you reported to Nikhil, but yeah, it's whatever I'm just like, I need, I need one single source of truth, because I'm already dealing with, like, on the on the business side, I've got Katherine and Stacy constantly, like you're in the IAP adoption chat, right? You see the essays that they write about one single field. So Right? I don't want to recreate that on the technical side, because a I don't understand the technical side. So if I've got nickel and Ben Van Houten talking at me, so I need one single source of truth, and yeah, I'm always going to go with the guy that created the thing
+
+Chris M  7:00  
+right now that makes sense. They have the context. So, um, so is there anything that needs to be added to this that I can Is there anything in that chat I just because I don't know what has been added, like I don't cross reference, or what has been fixed, or other
+
+Azmain Hossain  7:15  
+than that list, the only thing was that that little thing I sent you yesterday were and that I did, that was the only new piece of feedback that's come in, nothing more.
+
+Chris M  7:25  
+Okay, so we're good,
+
+Azmain Hossain  7:29  
+yeah, that list is everything other than the, you know, the features and addition stuff, which you've thankfully extracted out, because that was just a complete it just calls confusion. We'll, we'll get to that next week, but features and bugs have to come first. You got to break, fix the broken stuff before we add more stuff.
+
+Chris M  7:46  
+Got it? Okay? So I'm on the bugs. I'll focus on that and just start going back from there. Hopefully I get the data access. We get that data access, so then and iterate and resolve honestly.
+
+Azmain Hossain  8:00  
+Man, the the bug fixes right now are a nice to have, not a must have, because anything that's a must have I've I've already done so that okay, like my manager, Natalia, can run the portfolio view Ben Brooks and BIA can look at the management dashboard and see the numbers that they want. Everything else is user problems. And the thing is, the users don't even want to use it. They they sign in on like Sunday evening, put in a few updates, and then, you know, ready for the Monday call, and then that's it. They don't touch it for the rest of the week.
+
+Chris M  8:35  
+Okay, so Well, that's good to know. So this is a good learning opportunity. It's almost where I can get learning and get it acquainted with
+
+Azmain Hossain  8:41  
+it exactly. It gives you a chance to work through it, and it's fine, literally, what you just said, it is great, because I'm, I'm gonna get two rotating grads in April. I was supposed to get them in March, but they're going to come in in April, and this would be a great way to introduce them to the overall process. I mean, this is this what I did as a junior developer as well. It was like, go fix bugs, understand the code base. Yes, yes. So this would be a great way to start them off as well.
+
+Chris M  9:13  
+Okay, cool, yeah. I just need a little more context. So, yeah,
+
+Azmain Hossain  9:17  
+once you go through this list, you're not going to be on bug fixes anymore. I need your help on like the other pieces. This is just like, yeah, I didn't want to throw huge things at you. This lets you get thingy, and then all the bug fixes that that accumulate over this month, is what the grads will take over. Because I'm getting two of them from seventh of April, one's in New York, ones in London, so we can across work, across times on brain, time zones. That's the word, got it fair enough coffee. I can't go into this demo with the senior director in 20 minutes and be like English words i.
+
+Chris M  10:00  
+All right, I will give you, I'll give you 20 minutes so you can go prepare. So thank you. Yeah, we can take that meeting later. I appreciate it. Yeah, I'll cancel later. Talk to you. Have a great thank you. You too. Get some rest. All right, I'll talk to you.
+

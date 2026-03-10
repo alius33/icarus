@@ -1,0 +1,249 @@
+Unknown Speaker  0:00  
+Numbers. I don't know if I would have come into the new lap.
+
+Azmain Hossain  0:09  
+Give it a minute. It'll it'll
+
+Unknown Speaker  0:18  
+have you or Alexandra on the inspector. Harry, on the on the UAT for sales refund. So let me show you
+
+Richard Dosoo  0:36  
+right. Look, this is the email ID to the thread. Okay, basically, Idris from last week have pointed out George, the people following on from this session last week, we need eight CSMs across auto use to go through this. So I forward this to you and and then, essentially, George is going to coordinate. And then we need basically eight, so two across each of these, maybe a little bit more.
+
+Speaker 1  1:04  
+You need someone from the PNC group, right? So George is George is gonna do it.
+
+Richard Dosoo  1:09  
+George is nominated someone from his group. So George is nominated, Julia from casual e you from life, and Kevin Pern from Hossa.
+
+Azmain Hossain  1:20  
+Julia Fuller, no.
+
+Richard Dosoo  1:22  
+Julia Yeah. Oh, Julia Fuller, yeah, okay, yeah. So then we're gonna have Azmain from our side, you from property, plus one of the solution architects, just to support the process. Yeah. And then that's great, right?
+
+Speaker 1  1:39  
+Because, yeah, I mean, it's because now you can probably still provide some feedback. The sales guys tested already. Oh, we're the first ones.
+
+Speaker 2  1:54  
+I've asked a couple of my colleagues in sales, are you not using it your account plans? And they're like,
+
+Speaker 1  2:02  
+No, you they're like, no available. No, I think it's not available. Someone told me it's not even available if you want it.
+
+Speaker 2  2:08  
+Even if it's not available, people are doing account plans right now. So that would seem to me like, but on paper
+
+Speaker 1  2:15  
+and Word and stuff, I wonder if you would miss it if you don't make it available now, end of February,
+
+Richard Dosoo  2:21  
+it's done right, even just using this process that we're doing right now as a way to validate, yeah,
+
+Speaker 1  2:26  
+but I guess the trouble is, you know, if people aren't confident, then you don't roll it out, because then people really lose confidence, right? So it's kind of wonderful. But you thought someone in sales would take it, not just us, right? Because it's
+
+Speaker 2  2:42  
+so I know Mike. I know obviously Mike Steele's
+
+Unknown Speaker  2:46  
+user, right? So he's actually not just once, he's
+
+Speaker 2  2:48  
+actually, yeah, I know. I know Dan Flemington. I know he's been using it, and him and know each other from New York, so that's what really good. And Dan
+
+Richard Dosoo  3:02  
+Steen, her fan, I've asked Michael Akon. I'm like, are you guys using because we support them in account planning? This is like, Michael's got loads of accounts, small value. I'm like, you should be using this tool to automate your account planning.
+
+Speaker 1  3:15  
+But maybe Dan isn't confident yet. I guess that's the risk. Once you roll it out, people have spent most of people start to spend time on it. On it, right? And the sales guys, maybe, you know, you know, I don't know, right?
+
+Richard Dosoo  3:28  
+This is it. But even so, one of the, in addition to finding the people who are going to join the pilot, we also needed to, I need to set up a touch point with Ari's team.
+
+Unknown Speaker  3:41  
+So do you know when that pilot's gonna start or finish, or uot?
+
+Richard Dosoo  3:48  
+That was one of the action items that I've got to coordinate. So let me show you.
+
+Unknown Speaker  4:01  
+Recap.
+
+Richard Dosoo  4:07  
+So this is what I need to work through. So we follow up tasks, integration of support, case monitoring and gain site data sharing, customer success, Agent insights. So this is the action item that I need to work with you and Azmain on, where we need to share the agents that we've already built, the data that we use to drive it. I need to share that with them, and we need to set up the session to go through it, pilot inclusion and planning for Customer Success teams. That's what we're doing right now. And then you can see here regular check ins for customer success and consolidation of customer success requirements. This is where we kind of are now, and we need to go forward. So the good news is, have you and Alexandra as the life representatives, but we still need to arrange the follow up session to do a deep dive on the agent that you've built and the one that I built, and show what specific data are we pulling from Salesforce to help drive? So let me do this. I'm gonna forward you the email, but I'm definitely gonna be I need to, like, more than forwarding an email, I need to set up the cadence. And actually, oh, Julius said that Matthew Lewis should be the casualties here. Do you know who Matthew Lewis here? No,
+
+Azmain Hossain  5:35  
+under Julia, it's a lot of predicate people so. But you know Sean we spoke to, he now reports up to
+
+Speaker 1  5:48  
+Julia. Matters too much. You know, as long as there's a good cross section of people and with different backgrounds, you
+
+Unknown Speaker  6:06  
+whatever we call them nowadays.
+
+Richard Dosoo  6:10  
+The good thing is that the predicate team, no, not predicate Kate, are a lot of xrms, so one of the like heads of customer success. She's actually Matthew Nova, Matt Novak's wife. Oh, used to work together at they used to work together RMS, obviously. They met RMS on a grad programme. They got married at
+
+Azmain Hossain  6:37  
+RMS. And then, oh, wow. And then she went to Cape.
+
+Speaker 2  6:41  
+She went to Cape. Now, capes come back. They can't be in the same reporting. He won't mind me saying,
+
+Richard Dosoo  6:49  
+but the good thing is, they carry a lot of like for bad or worse, RMS process with them when they find that company up. So when they're coming back, it makes the inspiration a little bit easier. But we definitely need to for Bernard for this particular project here, this is where we need to set up the meeting, go through the collateral. We've already gone through the Customer Access agent, but this is where we need to, like, formally document our requirements. And to be honest, we can do that by taking the agent we've already built and taking the requirements that were in the prerequisites and all the things that it does. You can automate that process to extract environments for it and give that to them as a like this is our this is what we've done so far. This is the minimum. And then if they can add more to that, that would be great. Have you seen Azmain? Azmain, of those pages that we built in copilot studio.
+
+Azmain Hossain  7:45  
+One question I was gonna ask you, because Amit was asking me. He was like, Is there any way to get data out of Salesforce? Yeah. I was like, how did you get data out of Salesforce? Just copilot.
+
+Speaker 1  8:00  
+There isn't, I mean, you need system access to do proper like, yeah, you can do, if your end user, I only use end user stuff I'm not doing, yeah. Dev, so the only option you've got is up to 2000 rows.
+
+Azmain Hossain  8:16  
+Yeah, that's what I told him.
+
+Speaker 1  8:18  
+You can, you can connect it in Power BI, which I did, but so it's still, yeah, and there's another limit that I hadn't realised. It's also 1000 words, or there's another limit on the field size as well, so it doesn't even on the road size, but also the feeds can be quite long, so it cuts that all at some point. Now that's not a Sarah bad thing, because maybe you don't need more than that, right? Yeah, this, I mean, there's gonna be a lot of data, but,
+
+Azmain Hossain  8:46  
+yeah, that's basically what I
+
+Speaker 1  8:47  
+haven't answered the question, you know, what about, you know, the security, kind of access requirements, that kind of stuff, right? Because, you know, and I didn't realise it, but not everyone actually got access to Salesforce, right? What if people have got different so and so you, you might not have the same access as me, for example, exactly, yeah, but I seem to have access to everything. So I guess anyone who is client facing has got access to everything. You raise
+
+Richard Dosoo  9:14  
+a good point there that we need to take so you're you as a user. We need to make sure that whatever we build, you're authenticated, and then the permissions that you have are applied to the data. Because you can imagine, let's say, I don't have access to look at all of the accounts in the US. This as an example, I only have access to accounts that I've been told I can access. You can't enable an agent that allows you to circumvent those access controls and see something that you shouldn't. So that authentication step needs to include data access control, not just the Yeah, and this is the
+
+Speaker 1  9:48  
+kind even realise there's any access control, but there is some, because some people told me they can't go to particular they can't do something, whereas I seem to be able to do everything, and I don't have any special access right? So there's no, there's no sort of account level restriction. I can see any account. So you can't, can you I don't
+
+Richard Dosoo  10:07  
+even have access. So this is where, like, if we were doing this ourselves, we would have to build all of that out, so like we did for the tracker.
+
+Azmain Hossain  10:15  
+So here's my question, Bernard built this with his own credentials and what access he has?
+
+Speaker 1  10:21  
+Yeah, that's why I'm not giving everyone access, right?
+
+Azmain Hossain  10:24  
+Because to operationalize it, we can't use a person's credentials. We need a separate user, a machine user that I
+
+Speaker 1  10:33  
+think what Richard is saying it just follow whatever their permissions are in Salesforce, right? So what be the most obvious thing to do?
+
+Richard Dosoo  10:39  
+Essentially, you see, like, the way we've done it on the tracker app, right? The first thing we do is authenticate with SSO to make sure you are someone who we know should access this app, yeah. And then we've configured the permissions right to say you have access to this data, and you can do x, y, z. Now what should happen is the pipeline that these guys are building. The first thing it should do is say, give me a user ID. Then you should go and check that in Salesforce and say, what access, what row level data do you have access to? And then it serves you up the data that is aligned to your permissions. But they should be doing all of that on the data pipeline side from Salesforce or in the sales recon integration layer. That's where I must
+
+Speaker 1  11:19  
+have done that already. I mean, if, because the sales guys should, don't need to. I mean, if I'm a salesperson in Europe, I don't need to say us accounts, right? I mean, I probably should only see my own accounts, right? But you'd think they've done but I'm not sure, because typically in Moody's, we don't seem that any restrictions, right, even on under the BKB, and pretty much everything, everyone seems to have access to anything. And even on gain side, they said they could only give me a read write API access for everything. That was the only option available, right? So, yeah, but, but I suppose that it is what it is, whatever, I guess restriction that sales relationship just mirror that should be going down the route saying, Oh, we want more restrictions to Salesforce, that's kind of, you know, it's whatever it is, right? And, yeah, and I guess that naturally would apply to other data sources as well, right? That the, you know, and not just to Salesforce. So if we take usage data and you don't have access to mixed panel, then I guess
+
+Speaker 2  12:19  
+you should be able to, you know. And that's the principle. That's exactly the point.
+
+Speaker 1  12:24  
+The it is kind of needed, right? The rest is kind of simple,
+
+Richard Dosoo  12:28  
+but that's it. The advantage we have of us not having to fill the pipeline is we don't have to do any of that work. We should just get no absolutely, yeah,
+
+Speaker 1  12:36  
+but that's, that's the harder piece, right? To kind of identify their fields, and I guess there should be some flexibility that you can add a field in future, right? Yeah, but that's relatively simple, but the storage access and this kind of Yeah,
+
+Richard Dosoo  12:52  
+so what we can do Bernard is I'll set up a call next week with the sales recon guys or Azmain. We can set up, yeah, but the same way that we've got, like, a project scoping doc for, like, this was one of the five programmes that we want to work on, yeah, now we just need to flesh out, like a requirement, not requirement stock, but just the scoping document, yeah, and then, and I will show you the agents that we've already built, we can use this to facilitate the requirements that coming out. We've got Bernard has been, has given us an output, right? Given us a sample report, data, so we have all of those things, and that will help inform the conversation that we have
+
+Speaker 1  13:28  
+next week. Yeah. Do we have any documentation of what's already available in sales speaker? Because, you know, things like the, you know, hierarchy, structures, stuff like that. All of that must already be there, right?
+
+Richard Dosoo  13:40  
+All I have, all I have is this, okay slides. Let me see if I got only the directional slides that we went through in the meeting last week. I haven't even logged in. I haven't seen it. Okay, so, and this is, this is why, in my head, I want to we should get ahead, not ahead, but you know, I mean, the sooner we share what at least our needs are, the sooner we'll know whether they're in there or not, and then we have the opportunity to do something about it. Whereas if we come in, come into UAT having not done that, the risk of it not meeting our needs is okay. So in terms of next steps, then Azmain will do this like tomorrow or Friday. When things come down, we need the other projects on the programme. It's basically doing the due diligence. And yeah, this is one of them. Basically, I'll find out the dates for you 18 so we can start blocking out the schedule.
+
+Speaker 1  14:36  
+Yeah, I'll be around, except for last week of March. Hopefully, yeah, we keep doing that.
+
+Speaker 2  14:46  
+Yeah. They say end of q1 right, which is really the last day of March. Let's see, wasn't it going
+
+Speaker 1  14:54  
+to be live and end of Q What was? What was going to happen at the end of q1
+
+Azmain Hossain  14:59  
+game size was going to be live at the end of q1 allegedly, right?
+
+Speaker 1  15:04  
+Well, allegedly, the SRP will be updated, maybe, if they're lucky, really, it's all been set to zero now the SRP, if any CSM, goes into gains. And now all the SRPs are showing zero because we had a new sales here. So a lot of people have noticed that, because it's just the clarity on your home screen zeros. So, so yeah, there is, there is a lot of stuff to be done in gains are generally so whether everything is gonna be there by the end of March, it gets
+
+Richard Dosoo  15:35  
+and this is Idris. Was gonna introduce us to Natalie Clark, yeah, we could tell her what we're doing and ask her, like, directionally, can we funnel some of these requirements through to her for this delivery, or is it gonna have to ask? Yeah, yeah, sure. Okay, so I'm Bernard. I forwarded you the email. I'll set up the call next week. I will. I think you sent me all the data, but if I can't find any of it, I'll reach out, and then I'll get the dates for the UAT as well,
+
+Speaker 1  16:04  
+and then they can take it. Yeah, let me know if you need anything. Yeah. I think
+
+Richard Dosoo  16:07  
+the only other thing that we didn't discuss that we were supposed to, but this is going to require a follow up meeting with Alexander as well, where he was suggesting that he wants to reimagine the customer success role. Because right now, we've been very like, deliberate and very tactical in what we do. But he was like, I wanted to actually pause and think a bit more broadly about what the customer success role would look like with new tooling and new capability. And I want to start that conversation this afternoon, because we have people from other ou's in the office together. It would help to just even plant a seat. But we definitely, I think as a team, should, should reconnect.
+
+Azmain Hossain  16:40  
+That's a really good idea. Because, yeah, all the CSMs, you know, the roles are changing. They're changing teams. They're changing all use or what, not OUs, but like going from property to casualty and stuff like that. Yeah, it's really good. Moving on property. Sean Pauline, they were all working with me on climate stuff,
+
+Speaker 1  16:59  
+and now the same thing, no climate and all these people move from, but I guess, really, from property. I guess you have some of the, some of the modelling people moved over,
+
+Azmain Hossain  17:11  
+no like front and pulling. Used to report to Alexandre. Now they report to Julian,
+
+Speaker 1  17:17  
+in terms of reporting land, more in terms of specialty, right? So, I guess, you know, if you're, if you're focused on property cap, you don't really know anything about, you know, the
+
+Azmain Hossain  17:25  
+CSMs aren't focused on anything. The CSMs I'm talking about, they have a specialisation.
+
+Speaker 1  17:33  
+I mean, I work with people like, you know, the guys that work with partner really, like Shane and Julia. Julia data training on the software, right? So they are very special in the property card, so it's not so I'm not. I didn't think they're all generalist coming up, you know? I mean, maybe there are some, but I think they have been around for a while, a lot of them as well. No, I mean, so so they know, they know a lot of stuff, right?
+
+Richard Dosoo  18:02  
+But this is what we want to talk to George about later, because the operating model is supposed to be like the MA Free dot oil print model supposed to be like customer success manager, and talk to us all about any insurance related product, not just the property one or the casualty one. Yeah, that's, but that's, that's still formulated.
+
+Speaker 1  18:21  
+I loved the theory and reality. I mean, you know, you know,
+
+Azmain Hossain  18:26  
+she doesn't
+
+Speaker 1  18:29  
+even talk to the CRO. So let's, you know, let alone they haven't got access to, they've got even less access than we have got. I think some of them got, but they should talk to the basically, there's a cat modelling analyst, right? So then, so that's kind of, you know, can suddenly expect Julia to talk about, I don't know, after 17 reporting or axis or whatever, right? It's kind of, and a lot on the client, you know? And what the relationship you have the client, there'll be a lot of, everyone understands this
+
+Azmain Hossain  19:02  
+is where the generalists have an advantage, because they're not so deep down. They can go and talk about, oh, you're buying climate stuff, and you're buying IFRS 17, and you're buying flood models. Let's talk about it. Yes, but see, that's not how you need to stop. You need to stop before the buyer. I spend
+
+Speaker 1  19:21  
+a lot of time on this because we have got this idea about segment. CSM, you know that Alexander has been pushing for George has been pushing back, right? The thing is, you know, it's not the same person that buys his stuff. It's the assets management division, price credit view it. PNC, risk team, as you said, it's not even the underwriting guys that buy the cat models, and it's the finest team have bought a team as the life actors report axis there, you know. So if you ever wanted to engage with a person on that, it'll have to be like the CEO or something. And sometimes you do, because I think, you know, Mike, Mike richeley went to speak to the partner is CEO. But it'll happen at that kind of level for the CSMs kind of to speak to the CAO and a client. That's not gonna happen like steel must be.
+
+Richard Dosoo  20:09  
+It's definitely like, you know why? Right? The reason why they want to do is because they want everyone to be trying to expand the opportunity with a customer, right? Because they've realised that new logo opportunities are not as are not going to allow us to meet our corporate goals. So they're like, we should be selling into our existing customer space. But I hear you like, that doesn't make no sense. If the person you're talking to, the economic buyer is not accountable, responsible anything you're trying to sell them, like, 100% Yeah.
+
+Speaker 1  20:38  
+So that's even when we sort of think about, you know, this kind of business review and so on. You can only so in some cases, you know, the client has nominated a Moody's contact, yeah. And then with that person, you can talk about all the Moody's products that works if the client. But if I take, if I take Fairfax, probably the most extreme example, their head office only buys risk integral. Essentially, they're not going to talk to me about risk modelling, because they say that's not their remit. It's the breadth and policy they need to buy the risk model. And we're not recommending anything, because that's not the Fairfax culture, right? They wouldn't even recommend them to come to an event. So, you know? So it varies a lot depends on how centralised the companies are, you know, some companies are very centralised, you know, and then you can have some others on so it's not, you know, I don't think there's a model that works for clients, you know. Having said that, clearly, we should all be more knowledgeable about various products. But we just went to the special specialty modelling seminar, great stuff.
+
+Richard Dosoo  21:46  
+It's definitely we've set that call up in 20 minutes. I've just got to change the room that it's in. But the reason being was, like, the conversations that we're having are very similar, but they're just happening across different OUs. So that was why I thought, let's
+
+Speaker 1  22:05  
+Yeah, because I think they, I think they're banking CSM work quite differently as well, though it's, it's and also there's a difference between based on size. Yeah, you cannot spend as much time with the client that pays us 100k versus one pays us 25 million. And I think there, yeah, someone said in the meeting that we were now that had like, was it 20,000 clients?
+
+Azmain Hossain  22:36  
+Especially that interest showed us it was like 1000s of clients under 100k Yeah, exactly. And he was like, How is an RM supposed to manage these?
+
+Richard Dosoo  22:45  
+Yes, but the point is, what those are the clients, that they're very price sensitive, and if you don't have touch points with them, it's very easy for someone to come and outbid you and just use the
+
+Azmain Hossain  22:54  
+Yeah, that's what we're losing to the startups and the small little income.
+
+Speaker 1  22:59  
+Well, let's but the good thing is to talk to this other EU this
+
+Azmain Hossain  23:05  
+way, like, as soon as I saw you, I was talking to Sean. I'm like, Okay, let's pull right in. It's a conversation. I'll set up the other meetings as well for me as.
+

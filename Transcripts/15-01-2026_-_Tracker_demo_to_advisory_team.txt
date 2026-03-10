@@ -1,0 +1,381 @@
+Richard Dosoo  0:00  
+Azmain is just going to walk you through some of the well, some of the work that Azmain has been working on to build out the IRP tracking application, which is essentially lifting a lot of the work that currently happens in spreadsheets and other tools into a web app. Where we are in the process right now is we've been updating the application to deploy it on some more centrally managed infrastructure, which Bern has been looking at, which is great. I made some good progress on that, and the work to update the application with the build that Azmain is looking at is ongoing. So that's happening today. What we want to do next is once we've gone through today's demo, the goal is to really get some feedback from Stacey, primarily yourself, and then obviously Liz and Christine afterwards, Stacy, you want to obviously get the publish the build and get it to a state where you can start priming the data that is necessary, or hand it Off to the CSMs to sign from the data that's necessary, and then Christine Liz and Steve the next portion, or the next item one azmains to do this is to flesh out the adoption charter process, not only obviously capturing adoption charters, but also capturing workflows, capturing adoption milestones, all of the key data points that go in the chart today. So that's what's going to go next. But we wanted to get this first check in just to give you an update on what's been happening, because I know you haven't seen it, and that was an action item from the call of Monday. So with that, Azmain, do you want to bring up your local deployed version with the changes that you make, and then just walk through. Do you want? Should we record this? Or, before we start? Is it worth it?
+
+Azmain Hossain  1:48  
+Or it's completely up to you guys. Is
+
+Unknown Speaker  1:58  
+there anybody missing? I
+
+Speaker 1  1:59  
+was about to say that was that only if anybody's missing that couldn't make this cool.
+
+Unknown Speaker  2:05  
+It's fine, sorry, I pressed the button already. Can you guys all still hear me?
+
+Unknown Speaker  2:14  
+Yep, yeah, yeah, we can
+
+Unknown Speaker  2:17  
+hear you. Over to you, Azmain, yeah.
+
+Azmain Hossain  2:24  
+So wanted to start off with showing you guys how the first landing page looks kind of for every account. One of the kind of trends that you'll see as I take you through the different pages is the lack of data, and that's really one of the main things, the first thing that we need to work on just fleshing this out with as much data as we want. So starting off with it's really very bare bones at the moment. It's really waiting for your feedback on what do you want to see? This dashboard is primarily meant to be used by CSMs and by managers to monitor their teams, and then anybody more senior or adjacent can come in and look at all accounts and see everything. We can expand this out. We can have different views based on role or persona. PMS can have their own view anybody like we do have, like an executive dashboard section, but we can add in pages based on your role and what people might want to see. But the real meat of it is really in the customers and being able to see each customer and everything that's attached to them, really from the from the dashboard in so if I find one that has a bunch of them. So this, all this data right now is pulled from that December golden source document. So anything that's kind of missing on there will be missing here, and maybe more stuff missing here, because it might not have understood some things. But these are the use cases. So within use cases, we really just want CSMs to be to go in review, the things edit, anything that they see is wrong, and add in anything that's needed. So if there's a blocker that needs to be added, that they can add in the blockers, anything that an action plan that may be currently ongoing, they can add that in as well. It really will help us build up a full complete picture of every customer so that we can make those calls when it comes to resourcing, when it comes to prioritisation. Any questions so far on how it looks already? Anything else?
+
+Speaker 1  5:00  
+So big picture. What we're talking about here are existing customers only. Is that the intent? The intent? Because if we think we have like existing we have clients that are on the already on their adoption path, clients that are not yet on their adoption path, and people that are not clients at all yet. And the last two categories are both pipe. We consider pipeline. So I just want to make sure
+
+Ben Brooks  5:20  
+anyone that's it's anyone that's been sold, been sold, should be anyone that's been sold. And then I think sold. IRP, yeah, the data set that we're using may have not sold yet as well, but there's going to be pretty sparse if they haven't been sold, so they should essentially have no use cases. I'm with you, and we probably want to put a flag on there Azmain, says, you know, not, not sold. Maybe there's a status needed, but in flight, complete, yeah, not started.
+
+Richard Dosoo  5:48  
+But Liz is talking about the other side of the coin, right? Ben, which is the adoption, which is the pipeline tracking, stuff that you spoke about, right? Which is like, where eventually, we're
+
+Ben Brooks  5:58  
+not going to do sales yet, we might get there at some point, but for the time being, no, that's going to cause a mass freak out if we do that. So we'll do it later. Makes sense.
+
+Speaker 2  6:08  
+So Ben, is there going to be any guidance on, like, what gets entered, as far as blockers or actions, so that it doesn't get loaded with a bunch of shit out there that, like, that's in Salesforce right now, where somebody enters something, and you read it and you're like, it doesn't make sense. That's not a blocker, or it's not worded appropriately, to know what the hell it even means. So structure
+
+Ben Brooks  6:31  
+one, no, not yet, but this is exactly the sort of like control we should start to put in there. So when you open up a new blocker, maybe there's a blurb in there that says a good block of description should contain the following and just make it really hard. Well, someone can submit crap if they want, but we'll just It will then be very visible to everybody, and we'll call them out on it later. So maybe, maybe there's a little, you know, we've got the little information icons all over the place Azmain, like, if we, if you get a couple of descriptions from the team of what a good blocker looks like. We could just paste that in there super quickly, and it'll be really obvious to everybody what they would be entering.
+
+Azmain Hossain  7:08  
+We can even put like little like in very small font, just like a little example, there's already like, a little blurb of what a blocker is and how you should think of it.
+
+Ben Brooks  7:19  
+Yeah, when we let's not do it for v1 but for v2 We should catch stuff like that, run it through an anthropic API and say that's a pile of shit. Do it again, because it's not good enough as a blocker description.
+
+Speaker 1  7:31  
+And what can also be helpful for later is what isn't you mean something that's annoying, something that's a feature, a feature request, which isn't a block. I mean, sometimes the putting the the negative of something can actually be more instructive,
+
+Ben Brooks  7:46  
+but some of that can come out of the pipeline review as well. Because, you will, we'll sit down every Monday with everybody, and we'll look at the blockers, and then we can just say, hey, you know, come on, come on last let's not block her. That's something else.
+
+Unknown Speaker  7:56  
+Yeah, that's just it would be nice to have.
+
+Steve Getilli  7:59  
+So I was gonna say, is the blocker gonna have a drop down list? So if, if you want, obviously, to be able to group stuff up, to be able to report so it's like, if you get a schedule, and it's, you know, a frame building can be multiple different spellings of frame type thing, is it going to have a drop down list? And if it doesn't, that list doesn't satisfy you can create a new one so that you can start grouping up.
+
+Ben Brooks  8:18  
+We haven't, we haven't templated it yet, but I think that would be a pretty interesting place to go over time. Once we've got a collection of good understanding of what we think the blockers look like, maybe we can then categorise them. And there's obviously going to be loads for HD, so there'll be some tagging on things like that, but it might be that we can come up with some templates for blockers at a point later. Or we could say, Use existing and you could choose something with a keyword in it, or something like that. But because it
+
+Steve Getilli  8:51  
+was, yeah, because HD could be HD, H, hyphen, D, high def, you know you you're going to get loads of different. One of
+
+Ben Brooks  8:59  
+the reasons I haven't gone there to start with. I did think about blockers can be across multiple customers. I'm worried that it gets lazy so that the data entry becomes or they're blocked by HD as well. Fuck it. I'll move on to the next thing. And it's not a real problem, and we we need to sort of force the clear up a bit. So, so for the time being, let's just go free form, but with a description of what a good description looks like. That makes sense. And then later on, I think we could easily, well, this is part of the purpose is we'll get a very rich data set of all the things that are holding somebody up, and then we can triage them and say we need to address this with this product feature, or what have you down the line.
+
+Ben Brooks  9:40  
+I don't know if you want to block an owner on a blocker. I'm not sure about that. I think the owner is on the action and the and the block is on the account, and the account is owned. Okay, I'm not sure you want somebody to be entering Ji Hans name in there, because it's not he doesn't own that. He owns product, yeah,
+
+Azmain Hossain  9:58  
+okay, I can just prove. Yeah, cool. And then I wanted to talk about action plans and how they relate to blockers next. So the idea is that you'll create an action plan and it will be linked to. It can be linked to one blocker. It can be linked to multiple blockers, which then allows us to pivot the data in various ways and see, you know, when you are looking at something like, why are all the reds in that state? You can see that there are action plans. You can find gaps where there aren't. So that's kind of the thinking that's built into the dashboard. Do you guys, anyone have any thoughts on that, or ideas
+
+Speaker 1  10:53  
+anyone think through? And it depends on what you mean by action plan here, versus action log, because the CSMs will also be tracking, having action logs on a lot of stuff, and some of those won't be blockers. Should I mean that would just be if we're trying to prevent things being in multiple places. It might mean, what do you mean by a plan versus a log, a tracker or whatever it is. Stacy's usually better at this than I am. Yeah, I PM, structure,
+
+Speaker 2  11:28  
+yeah, I think I think of everything as an action item, because you're right. Liz, because you can have an action item to tackle a blocker, and you can have an action item on the account that has nothing to do with a blocker. It's something like, oh, I have to take this action to do something for the migration. I have to do this action to do something for the renewal. Like you could have a whole action log associated with a client that has nothing to do with a blocker, but it you could have a whole action log associated with this which would be great to have all in one place.
+
+Ben Brooks  12:03  
+Yeah, so that. So that's, that's later, and potentially a different application that ties in. If we stand this up and it starts to work, we're going to start seeing strategic account planning applications, sales, pipeline management applications, overnight. And that's, that's great, but I don't want to conflate this with I almost don't want to conflate it with adoption. This is focused on migration right now, hence the blockers and the action plans and migration critical flags and all the rest of it. But it could very easily be extended to there is just some action I have to take on this account, like going to the weekly review meeting and taking some notes, but that's not unlocking a blocker, so we don't care right now. So the action plan is all about the blocker, and it contains a bunch of items.
+
+Azmain Hossain  12:52  
+Yeah. And then within each action plan, you'll have multiple items which can then be checked off. And these are the things. One of the things that I wanted to ask is these action items, whether or not we should have an assignee, so that when somebody logs in, yeah, you know, obviously they're going to get their dashboard, they're going to be like, I'm this person, and I want to see my own account, that they see all of their action items. What? What's happening is, if you own an account and there are action items, it gets assigned to you, so it shows up in this section. But I wanted, do you want people to be able to assign stuff to others? That's where that comes in.
+
+Ben Brooks  13:38  
+Yeah, we want to be able to assign an implementation lead, potentially in future, a partner, we'll get to that point. Yeah. So there's definitely a person per item.
+
+Unknown Speaker  13:49  
+Okay, well, yeah, that's gonna be my question.
+
+Speaker 1  13:53  
+If we need to be conscious, who would have access to this in what phase?
+
+Ben Brooks  13:57  
+Yeah, maybe that's the visibility is all about getting those guys to see what's going on for sure, whether they're going to be willing to use a CE system, I don't know, but we'll find out. And then, related to that Azmain, like when somebody makes a new action plan and sticks your name on it, it would be good to fire off an email. Be good to bring you back into the app to check it out as the assignee. But again, that's that can be v2 stuff just to make the user usability better later.
+
+Azmain Hossain  14:24  
+Yeah, yeah, that's a great idea. Anything that's I want to do
+
+Ben Brooks  14:28  
+things like daily summaries, like, let me get a daily summary email of all the progress that's been made on my accounts today from the whole cross functional team that's been working on it. Yeah, but that will show up in the dashboard as well if we, if we choose to. So we don't really need to do that without any urgency.
+
+Azmain Hossain  14:45  
+Yeah, I think the primary goal has to be, how do we make it the easiest possible for CSMs to input data? Because the thing that we're missing right now is data exactly. It will be a manual exercise, but. In any way that we can help, all the way from from functionality to like, make the buttons easier, to click it bigger, whatever feedback.
+
+Ben Brooks  15:09  
+Just a quick data point. I'm at the top. You've got 280 accounts. I don't think there are 280 accounts. I think there might be something going on with the number of use cases, number of accounts, double counting somewhere, looks like we've got 155 rag statuses, which also seems a bit low. So you might want to, you might want to check that. But if that's if that's pulling for Danton, then it's doing something weird on on the Yeah.
+
+Speaker 1  15:34  
+Anyway, I was also about to say you had Alex limford and Danton as CSMs, and none of those are, they're both sales. So I don't know what your pool of Asher is
+
+Ben Brooks  15:44  
+shit that shit data is, danton's are probably all over the golden source,
+
+Azmain Hossain  15:49  
+fair enough, literally pulling from that it's I didn't, kind of think I wasn't managers or or role, anybody that is a person pull their name in and make it a
+
+Speaker 1  16:03  
+thing, just make sure we've got the ability to change it. Yeah, where it's wrong right?
+
+Azmain Hossain  16:09  
+Now, basically none of the accounts have a CSM assign. This is like the first big gap. So that's why big, big button that you can just assign a CSM. But one of the main things that we have to do, which is in this team member section, is we need to add everyone that works on things. What is their role? What team do they fall under? Who is their manager? All of this stuff. We want to have it mapped within so that we can report on things and managers and team members can see how things are going.
+
+Christine  16:44  
+When Ben made a comment a couple minutes ago about wanting a daily report or something, it sparked data thing here. So I see here you have a last modified date on this action plan. Is it that makes sense to have like the last modified date on some other level of detail, like, just generally speaking, across the account, because I could see it getting really annoying if we're getting the same report with data that's six months old. Or also, just for general tracking, making sure that we understand whether an account has been kind of stagnant for a couple weeks, or nobody's doing anything with it. That could be a red flag. And is that possible?
+
+Ben Brooks  17:29  
+Yeah, so one of one of the iterations on dashboards that we had a while ago had a panel, I think, was in the exact one I was being provocative with the most active and the least active accounts shown in a table. And it's just one sort of had records changed, versus not in recent past. Yeah, things like that would be, would be very helpful.
+
+Speaker 1  17:48  
+Like, because I was thinking Christina long same signs Azmain, when you had like, a dashboard per client, like, I think acquisition, or whatever it is you and you had all your widgets, even if it had, like, last updated in the widget. So it would be really obvious if we're on those weekly calls, and it's just like, it's not just the actions, but it's just like, when was the last time you updated any of this? So yeah, you've got, like, migrations to enter. So all those widgets, like, you've got the use case blockers migration, if there was just a tiny during small text, where it's where it's where you've got, like, ad block, and there was a last updated and some of these might not change that often, but others is like, Well, why haven't you updated your use case during if you haven't updated your use cases every three months, that will be weird. But if you haven't upgraded X, Y and Z every week, why not? Especially if that person's on holiday or sick, we would know if it's up to date or not.
+
+Azmain Hossain  18:45  
+Yeah, one of the things that I've been speaking to rich about adding in this is, like a whole other functionality is a full like updates functionality, so that within each blocker, within each use case, whether action plan, action item. There is a way for at every level, for you to add an update of this happened, talk to this person about this, and all of those get stored in the database in the back end and can be referenced and searched, and you can report on them as well. It allows anyone and anyone that's related or wants to put in as much information as they want to, into the into the platform,
+
+Christine  19:29  
+on the blockers too. Do we have an option? I see have all status and all types? Is there a category where we could specify whether it's an internal blocker to meeting that migration date or an external blocker. I think that would be helpful. I think good like, let's say they're delayed on an update to one of their systems
+
+Ben Brooks  19:50  
+that's in there. It should be down as product, client or enablement, so we know whether it's basically C has to do something, product has to do something. On the client has to do something
+
+Azmain Hossain  20:02  
+awesome, and we've made it so that blockers have to be assigned to a use case. Can be assigned to multiple use cases. And, yeah, you can't add an action plan doesn't but it isn't mandatory any other fields or information that
+
+Speaker 2  20:23  
+you guys, I think it should be mandatory. If we just have a blocker out there that has no action plan to it, it's worthless. Yeah.
+
+Ben Brooks  20:30  
+And then the other thing I wondered about on action plans is whether they should be client verified or not. Let's start forcing an issue of whether the customer has agreed that that thing will unblock them, even if it's on us, if we have to go and release exporting from risk data lake, has the customer agreed that that solves that problem. And therefore, when it's met, we can all move on.
+
+Azmain Hossain  20:52  
+So we can add in a toggle of whether or not, yeah, this action plan is customer approved or not, and then a report of all the non approved action plans. Yeah, exactly, just for the ease of use. I think then, like, because this is the functionality since your build, I think this is what Opus did, just for ease of use. If you want to create a create a blocker, you don't want to be like, Oh, now I got to close this thing. Go into another thing. It lets you create the blocker, yeah, and then just kind of, you can, sorry,
+
+Ben Brooks  21:31  
+where is it within the I think that's right. Then on this page, it should smack you between the eyes that you don't have an action plan, you need to create one, yeah?
+
+Azmain Hossain  21:37  
+So I've there's this, but you're right. It needs to be kind of like a warning sign somewhere up here that says there's no block Action Plan
+
+Christine  21:50  
+attached. Can we go into a definition conversation on a blocker versus a dependency? Again? I mean, what I'm where I'm going with that is, if there's a blocker, when does that get identified as a blocker because something's been missed or because we've already missed it, we anticipate missing it, right? Versus, like a dependency could be a known thing where, if there's a client that was like, we can't go into production until, I
+
+Ben Brooks  22:20  
+think that comes from the RAD status. So the rag status is obviously red, amber, green. Stupid That statement was and if it's not green, it must be blocked. It must be something in the way of it being green. It can be green with dependencies, but, but I hadn't thought to try to track dependencies in any meaningful way. I was focused on, what is it that's making this slower than it needs to be, which is more of a blocker notion.
+
+Richard Dosoo  22:49  
+But Christine, this was what we were talking about before the holidays, right, where you want to have the dependencies and link them to product features so you could, you could see where their heat map is right, or stuff that is causing problems to our
+
+Speaker 1  23:00  
+Yeah, yeah, and I think that's where that you've got, like, a talk with their migration critical once we aligned with which use cases mate are a migration critical one and which ones are not. You want those at the top of the list? Yeah, we've been
+
+Richard Dosoo  23:21  
+thinking about it in a few different ways, right? But we can definitely have those dependencies, and then that we can have a link to epics into JIRA or into something else, right? So we can, you can have that relationship between the US and the feature that's on the product roadmap. Yeah. A,
+
+Christine  23:43  
+maybe that's a phase two, I think, isn't
+
+Ben Brooks  23:46  
+that a, isn't that you, you make it Amber, you put a blocker, and the blocker is product, and you shove the epic in there, yeah,
+
+Unknown Speaker  23:55  
+it can be a link, or if you want, I think that's a blocker,
+
+Azmain Hossain  23:57  
+yeah, yeah. You can always just put it in the Issue Details, and
+
+Ben Brooks  24:02  
+then, and then, I think we just help people understand best practice that green is green, everyone's happy. Red is, we've come to a screaming halt. Amber is, we might be fine. We might not. There's some dependency that is in the future that we need to work through.
+
+Unknown Speaker  24:17  
+Yeah, whether, whether it says Amber
+
+Ben Brooks  24:19  
+is at risk, but it doesn't really define what at risk means. Yeah.
+
+Richard Dosoo  24:22  
+At risk means. Open for was, like, we could very quickly and easily figure out which features have the highest number of customers dependent on them, if there's not any changes. But like, we have to go and communicate to customers, right? Something is shifted. It's mutual,
+
+Ben Brooks  24:43  
+yeah, but I think, I think we just, we use AI for that on our on our back end, rather than trying to define it, design it in and if the if the CSM or the adoption lead isn't taking good notes, that will make that difficult. But otherwise, I think we'll just get into a pickle where people are inventing blockers, or we. Using existing blockers, and you've got different versions of the same thing floating around. We might as well go the whole hog and have it relatively free form. But then do trend analysis on top of it just keeps it simpler from the user point of view.
+
+Speaker 1  25:15  
+And again, this could be a phase two, but from where there's a product blocker, whether we want some kind of best practice of what to put in there, or there's a specific thing of, is it on the roadmap, and who at product said on what date it is on the roadmap versus which ones are not on a roadmap?
+
+Ben Brooks  25:40  
+Yeah, that's that's an amber dependency versus a red stymied,
+
+Christine  25:49  
+although in theory. Liz, if we are switching over to this solution, fit matrix being more widely accepted, hopefully there's less and less of those product dependency situations, right? Like we're selling something that exists and that we know can be accomplished, versus selling something that hypothetically in the future could help.
+
+Speaker 1  26:17  
+I agree. I just don't think they're going to come up. Yeah, just hopefully not as many. But I'm also thinking about, I mean, if 10 people are waiting for some feature to be I mean, RDE feature to be released, for example, and it's on the roadmap for June, and then it slips, yeah, you then know which 10 clients that was that that's going to impact. Yeah,
+
+Richard Dosoo  26:45  
+we're coming up at the top of the album. I know Azmain, you probably had a few more tabs that you wanted to go through. We haven't covered charters, blueprints, adoption milestones, yeah.
+
+Azmain Hossain  26:57  
+So although I'm really glad that we really kind of dove into blockers and got to have this discussion about.
+
+Ben Brooks  27:04  
+So yeah. So my proposal is v1 of this thing sort of stops after team members in the collaboration tab on the side menu, because we just need to get this right. We need to get it out there. We need to get it populated with data, and then we'll have a much better chance of actually making some progress very quickly after that. I want to get to charters, blueprints, that, and then partners, is probably third wave after that.
+
+Azmain Hossain  27:31  
+So yeah, Liz, for example, when, when we do get this live, one thing that I would love, if you have time, is to go through the charters like I wanted to. But this is, this is its whole thing, with multiple stages. We just didn't have time. But if you have time,
+
+Speaker 1  27:50  
+please have a look. Yeah, I guess is the purpose here to track what's in the charter, or to create the charter, or both. And it gives me a phase one, phase two. Yeah.
+
+Richard Dosoo  28:00  
+Will be both. So once we press the button, and that will generate the Word doc, so you guys then have to put it together, and then that can be sent.
+
+Ben Brooks  28:09  
+That might, that might be hard, because I think there's a lot of stuff in there that is linguistic, but what I was hoping we could do is draw out the nuggets that matter to the way we work in something systematic,
+
+Speaker 1  28:21  
+yeah, I think it's far more realistic to once one's created, or there is a version, it goes and says, it goes and reads X, Y and Z table and chucks it in.
+
+Ben Brooks  28:31  
+Yeah? Because there's things like the your your plan on a page type setups that would be very useful in a system that could also go into a document, but it's not the whole charter at that point.
+
+Unknown Speaker  28:47  
+You don't yeah,
+
+Ben Brooks  28:49  
+I gotta jump, and I'll let you guys carry on. Thank you.
+
+Richard Dosoo  28:52  
+In terms of next steps, then,
+
+Unknown Speaker  28:55  
+sorry guys, thanks.
+
+Richard Dosoo  28:59  
+We're going to continue with the build, and then I think we'll The first part will be, we'll have to reconnect with Stacey to get her to start working with the CSMs on populating the bare bones data. And then, as Bernard mentioned very shortly after that, Liz and Steve and Christine will revisit the charter conversation. We're basically working down these tables right you see on the left hand side, and in this order, because that's the priority.
+
+Speaker 1  29:25  
+So, yeah, definitely focus on the first two bits. So child a bit you you tell me when you want to have that chat, if that helps, because there's no point talking about stuff if your head's in deeply in other things, I thanks.
+
+Richard Dosoo  29:43  
+The good news is Azmain is fully up and running on this anyway, so Azmain not to speak for you, but once we get this data in with Stacy, start having a conversation. Chris is deploying me in for so we've. Moving, which is good. So this should stop coming to life, and we get more iterations out of this over the next the next two weeks, especially,
+
+Unknown Speaker  30:08  
+yeah, can I ask you a question? Can you sorry?
+
+Azmain Hossain  30:11  
+Azmain, no, no. I was just saying yes, but please continue. Okay.
+
+Steve Getilli  30:17  
+I was gonna say, Do you have a version like dummy data set that you think is largely complete in, like, made up so that people can actually see what we're shooting for.
+
+Azmain Hossain  30:27  
+We thought of this so there is a demo mode that I'm currently working on. It's basically going to be the ideal scenario, just everything filled in, you know, with fake people, fake companies. And I'm going to put this like up here, just for everyone. As soon as they sign in, they can click it, and they can see what it would actually look like when there's a team structure, when there's hierarchies and there's dependencies and things that, you know, things are blocked because of other things, they can really see it and how it works.
+
+Steve Getilli  30:57  
+Yeah, that's good. Yeah, it's great. I mean, that's that kind of brings it to life, isn't it? If you're if you're clicking in it for the first clicking in it for the first few times, you don't really know what to put but if you've got a an example, it makes life a lot easier to see. Oh, okay, I'll do it like that. So yeah, no, that's really good.
+
+Speaker 1  31:12  
+Yeah, exactly one thought I just had, because obviously CSMs are going to care. They're the principal bit for the first bit you're starting off with. So they're going to have the witch when their dashboard presumably which are, which are my accounts that they're assigned to, for others. For others, it might be useful to have either like a favourites or a watch list type tag. So for example, Christine has a watch list, because you mean we may not be SATs, may be assigned to specific clients, but we're keeping an eye on them, or we have history, or it's our region or studio something else. So it might or so we we might that want, like JIRA has a watch list thing, or you have a favourite where you know the star or something,
+
+Azmain Hossain  32:00  
+yeah, that's a really good idea. Liz, I don't know why we didn't think of that. We Okay, yeah, that's definitely something that I'm going to add in. We added in night mode before we added in favourites.
+
+Speaker 1  32:13  
+But, yeah, thank you so but that's kind of on an account basis, because it might be that people, oh, there's certain hot ones. Do you mean someone like a George or a Josh might want to not just all of their reports, but might have a these the ones I'm particularly concerned about, though I'm going to keep them in my hot list kind of thing.
+
+Azmain Hossain  32:33  
+Every every single thing has its own URL link, so I can just make it that you can just favourite anything, and in your favourite section, it's just organised. You can have your favourite blockers and your favourite people and action items and stuff like that. So, yeah, I'll just add it everywhere, and then just have a separate page for your favourites. That'd be great.
+
+Steve Getilli  32:55  
+I think also, this is really good from an individual CSM, so like Philip, well, when he was a CSM there. But also, I think Liz mentioned it a moment ago, kind of like Josh's view and George's view might be slightly different. They might want to see a table, you know, like a like, different persona, isn't it? It's kind of like, right? What can I see very quickly? So the peak, there's difference between, I think, the kind of little detailed entry versus the management of those. So I know it's just a different way of slicing and dicing, but I think that would really come come to life
+
+Azmain Hossain  33:25  
+this part. Honestly, I'm still thinking it through. So far, I've only thought two levels, CSMs and their managers. Given this is the landing page for now, it would be helpful to have other things. But one of the things that you'll notice when you first sign in is that it'll like you'll have to log in with SSO, that's one of the things we went to great pain to make sure. But given who you are it, we can make it so that you see a different dashboard. So if you are, I don't know, Ben, then you see something different than if a CSM signs in.
+
+Speaker 1  34:00  
+Yeah. No. So thinking in the golden sheet, there is data is accurate, there is region, for example, when there's archetype, yeah, yeah.
+
+Azmain Hossain  34:11  
+So this, this happens, like, if you go to add a new customer, it will ask you, like, what is the what is the archetype?
+
+Unknown Speaker  34:17  
+But actually, what is the region?
+
+Steve Getilli  34:23  
+You can says a couple of questions there. I know. Devil's in the detail is it, can you assign multiple archetypes? Because we think of archetypes as segments within or classes of business, potentially within clients. So you know, class example, Beasley, yes, a multi select, yeah, it's not, it's not a one size, sorry, a one entry fit. So also, you know, Bz, for example, have an ens, well, they have an ens in the States, or have Lloyds, which, that's the same, same archetype. But also, then they've got reinsurance. Insurance and blah, blah, blah. So there's lots of companies that have that ultimately go across multiple archetypes, and then region. What is region? Is it region of the head office, or is it the sales region? Because I think we, when we've been looking at our SAT tracker, it's the same sort of thing. You know, it's kind of it could be a UK domiciled risk, but it's been placed with ursula's team at Azure. It's just, it's like everything. It's just definitional of, how do you What does region mean to you?
+
+Speaker 1  35:32  
+Yeah, or it could just be this, which CSM region, which is different in itself, yeah. So it's
+
+Steve Getilli  35:40  
+really good, but it's just, unfortunately, the devil's in the detail for some of these things, isn't it? And this
+
+Azmain Hossain  35:45  
+is the little things that you guys are noticing that we didn't know about,
+
+Speaker 1  35:49  
+yeah, but I would say, Guys, this is amazing. Yeah, it's really good. Massive head, massive claps. It's great. It's clean, it's intuitive. Yeah, there's always going to be little refinements, but that's what, that's what we're talking here for these first two sections. It's refinements. So this is, this is, this is
+
+Azmain Hossain  36:10  
+heads up to you guys, like, right now, Ben's a bit worried about all this white space, but it's kind of like that's just real estate that we can add in more stuff and we can customise things right now, we just need to get stuff in there so that it's
+
+Richard Dosoo  36:28  
+actively useful to do like once the dust settles. Is like, Steve, I know we need to get cursor and running on your laptop.
+
+Steve Getilli  36:36  
+It's fine. It's fine, cool.
+
+Richard Dosoo  36:40  
+But like, would want to get, like, all of you guys in a position where, if you wanted to contribute to the project, you can as well, so you will know how to change the screen and test it locally and then deploy it. Do you know what I mean? So all have, like, because we, we're creating, like, I say we, Ben is very kindly doing this work for us. Ben and Hatton. He's creating, you know, multiple environments for us. So we can have a dev environment where we can do stuff, and then be a prod environment for the CSMs, and then we have a test environment that, you know, whoever can be going in and validating stuff. So we got, we've got all that stuff behind this. It's just now we're going to get the value out of it by getting all of you guys access. So you can also make the changes and at length and speak to it once you get up and running. Do you know? I mean, he's been doing exceptional stuff all morning, Jesse using a person. So I'm sure, like, you guys can, once we get you up and running, you can do the same as well, if that's good, if that,
+
+Unknown Speaker  37:38  
+yeah, yeah, absolutely.
+
+Unknown Speaker  37:42  
+All right, sorry if you guys were keeping you from
+
+Speaker 1  37:49  
+I guess one question I had is, and maybe this goes into Ben's content, of like the sequencing of what's on the left hand side. Where? Where does that executive dashboard feature in the sequencing? So I would have thought that would the amount D is bugging people on like the how many have migrated, generally, is that high up on the list as well?
+
+Azmain Hossain  38:12  
+So we initially started with this, so v zero was only this, and then we realised this is completely terrible if this crap, yeah, so this got moved all the way down. We were like, Okay, let's start from scratch. Let's do a bottom up approach. We need data first.
+
+Richard Dosoo  38:32  
+Cool, but we're gonna that. We went down the route of synthetic data, and then we were like, right the way we're gonna piss the CSMs, or people are going to not engage. It's if the data is not real. Then we started migrating a golden source data, and it's half empty, right? So now we need to make the golden source data actually pad it out, but we need to make sure our data model has got everything that's reasonable in it first, which is why we want to get feedback.
+
+Richard Dosoo  39:01  
+Cool, all right. So then I think next steps, the good thing is that we recorded this call, right? So we can get the action items, get the features that we want put in, come out the minute. So that's great. And then
+
+Azmain Hossain  39:17  
+big picture, the aim is literally what Ben said, get the team members in. And as soon as that's good, and you know, we've fixed all the little bugs, just launch it. Have a chat with Stacey, get her to talk to the CSMs, and just start putting stuff in. We'll start getting feedback on charters everything else, and start keep working on that stuff.
+
+Speaker 1  39:37  
+And just really, and I know they've already got access, but make sure you spend a good amount of time with George and Josh. Okay, so you're saying, like it get Stacy to get the CSMs to fill in. It is not Stacey's job to get the CSMs to fill stuff in, Jim. I mean, it needs to come from the CSMs managers. And to do that, you need to make sure you. Have and I Josh will be George will be Josh. Do you mean, yeah, it's going to be in everybody's interested to get Josh comfortable.
+
+Richard Dosoo  40:11  
+That's really good. We Azmain, let's, let's touch base on the stakeholder list and make sure all those guys are in it, right? So we've got the gates and make sure we're getting everyone's feedback at the right points and stuff. So we'll add those guys into the list. Yeah.
+
+Speaker 1  40:25  
+But also your messaging, because those first two sections are all about the CSMs, so you don't want to doing Josh will think of things that our group wouldn't have done because he's been leading the CSMs forever. But also it's important that he, he he, he sees that he's been able to provide feedback before it starts getting rolled out. Yeah, yeah. There's definitely hints of him feeling a bit sidelined between us so and therefore he's not going to so just, just be careful. Josh is lovely to work with, so that's not the issue. It's just, yeah, get him on board. Spend, spend some one on one on time, one on one time, or at least George and Josh together time. Richard, I
+
+Azmain Hossain  41:20  
+think we need to think we need to before,
+
+Richard Dosoo  41:28  
+yeah, yeah, not exactly with those guys. Let's do this. Azmain, so first, thanks, everyone. Let me stop recording. Now and then I will send out the minutes.
+
+Speaker 1  41:39  
+Maybe, maybe take that bit off. I just said we should probably shut the recording.
+
+Richard Dosoo  41:43  
+It's fine. The minutes always certainly passwords, just for us to create the action items and the feature requests, is all going to not external. And then, yeah, Azmain, let's catch up this afternoon before I head out tomorrow on the stakeholders Yeah, and kind
+
+Azmain Hossain  42:03  
+of make a make a list, so yeah, thank you everyone for your time. Looks great. Thank you.
+
+Unknown Speaker  42:11  
+Bye, now, bye, bye, bye.
+

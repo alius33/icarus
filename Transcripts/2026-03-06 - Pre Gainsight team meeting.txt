@@ -1,0 +1,144 @@
+Richard Dosoo  0:00  
+Own. Hey, Catherine, we wanted to Thanks for setting up the call next week with the gainslight team. But wanted to just connect with you to to just help understand a little bit more what the goals and objectives of that call was, and the timelines where it ended worked because we had it connected on it, and I thought we'll be good to align before we go into the meeting with the gainslight team.
+
+Kathryn  0:22  
+Yeah, absolutely. So it's really for so the Gainsight team understands now that we live in a world where people are going to want to build their own tools, because there's always going to be some type of gap for something that you know, it's very specific, like what Clara solves for so but the overall Moody's view is that Gainsight should be the home for CSM work. So they want to understand how we like what integration would look like, if it makes sense. So they have a proposal, idea of, like, what architecture could look like, and then it's understanding, does this make sense to even integrate? And if so, what? What pieces do we want to integrate? Because we don't want to replace, like just pull Clara into Gainsight or vice versa. So what do we need at CSM fingertips that doesn't duplicate work anywhere? Okay?
+
+Richard Dosoo  1:36  
+And Who's Who's the woman spoke to Natalie plant about this in the past, I think that you're on that thread, Catherine, like you, there's a timing issue, right? So I'm glad it looks like that's been unblocked, right? So now this gets the support and the visibility that it needs. But who I guess? I guess what I'm trying to come at this film is that it feels like there's some conversations that have happened which are great, but who's who's designing the interface, who's deciding what data goes, where, what's the source of truth, like, what the integration pattern is like, who's the counterpart on the gain side, side that we can have those tactical detail conversations with to understand, like, how to proceed. Is there someone specific? Is it Natalia plant, like, what? How I don't have much visibility into the games like team, or what their onboarding plan is, or who their roles and responsibilities are, so I guess maybe if we start there and they can figure out what is happening.
+
+Kathryn  2:39  
+Yeah, yeah. And these are also all good questions for for the call. So part of it is, is going to be me, because I work with the Gainsight team of what we do and what the configuration looks like for any insurance, CSM, and then it's really gain there's probably a few individuals on the Gainsight team that has to actually build what those pieces are. So I don't know if you've met with Nadim on their team. He would be I work with him on like, what should be built within Gainsight. I sort of advise him from the business perspective. Tina Palumbo, who's probably going to run the conversation tomorrow, has sort of an executive view on the overall strategy for Gainsight at Moody's, and then they have a technical contact on their team that would help in terms of the actual, like data integration, and that would be Rajesh, okay?
+
+Richard Dosoo  3:58  
+So, yeah, no, it definitely that the stakeholder list is helpful, and then what we can do is like the reason, the other reason why I was bringing this up was obviously because the conversations we had before were pretty much we're not ready for you yet. Let's revisit the conversation when the Gainsight had an opportunity to progress in its development masters, and then then we can talk about integration with an Italia plan and and others. We don't have, like, a resource plan right now. We just did one, like, two weeks ago, about resource plan for the next 12 weeks for Clara and for some of the other things that we've been asked to look at. And this wasn't obviously included in that or an interface into gain site isn't in the resource plan right now because we didn't plan for it, because we didn't because we didn't know that these guys were available, or that work could even stop. So we're going to if, if the expectation is that we do it, there's just some replanning that we're going to have to do that needs to be aligned to the Gainsight team, right? Because it's an integration. It's going to be a joint effort. It's not, it's not just a. Doing something on our own like we need to. We need to align with that.
+
+Kathryn  5:06  
+No, I completely agree. And again, this isn't like, Hey, we're ready to do this. Now let's go. This is, do we want to do this? And if so, what would it look like? What does each team need to make this successful? Maybe we want to do a small POC. But yeah, and it's helpful to know, like, other pieces that you're building, like, if that would if there's any overlap in Gainsight functionality there, like, I don't know if you're building anything around, like, account plans, success plans, anything that, like, would touch on client management. We want to make sure that we aren't doing anything duplicative, that we can integrate and cooperate where it makes sense without slowing anyone down. Yeah, no,
+
+Richard Dosoo  5:55  
+so I'm not really sure on this. That's my place to even talk like account planning, right? That's a really good one that one gets thrown around all the time. George is building an account planning app injuries from the banking team is building account earning app that he's sharing as a best practice, right, that the other groups can can use. I can't tell any of those two guys to stop doing that because it's on the gainstar roadmap. But who am I to tell those two senior customer success managers to to stop the innovation? I can't like, I'm just being real with you, right? I can't, that's not me. Like, but I completely understand the point, right? Which is, how do those things feed into Gainsight in the long term? From a Clara perspective, we've just been really focused on the IRP piece of the problem, and that's, that's that's really been taken up, as you know, right? Most of the effort and the energy, the only other piece that we've been really thinking about enabling for George or others is the infrastructure to host any apps that they build. Right? Because we're like, we had to create infrastructure for Clara, so we might as well make anyone else's apps be able to share that infrastructure, so it minimises the amount of effort that we need to put in, and inevitably, people want to push these apps out. So, so that's the touch points, right? But, yeah, the reason I put it bring the account planning one up is that George is already building one
+
+Kathryn  7:19  
+that we're saying not build. It's saying, if that exists, how do we make sure it integrates into all other tools so that we aren't creating silos? This is sort of the new normal we work in, where anyone can, like, go ahead and create what they need. So you know, if they're, if we're all hosting it in the same place, what could an integration look like so we aren't creating fine spots for ourselves.
+
+Richard Dosoo  7:48  
+And that's, that's, that's great. That's exactly what I was hoping that, yeah, and that's, that's what I got, Ben and crystal on you as well. Ben and again, Ben, this isn't on your radar right at flat tree, because we didn't know about it until, until this call was set up. But you dissimilar to the Salesforce conversation that we've already been having, right? That people are going to want integration of Salesforce in a number of the apps that are being developed, whether it's Clara, whether it's an app for Stacy, whether it's Bernard, right? So there needs to if we maybe then we need a dedicated pattern for integrating with Salesforce, whether it's an MCP server, whether it's API connectivity like but those those applications will have that common need, right? And to what Catherine speaking to, we're probably also going to have it for gainslight as well.
+
+Kathryn  8:37  
+So this team can also help for Salesforce. So I think, sorry, I didn't mean to cut
+
+Richard Dosoo  8:42  
+you off. Then. No, no, I'm glad that you brought that up, because we've got one of the projects that we've been asked to do is Salesforce integration for Bernard and for Courtney. So if we can also, like, figure out that in the same meeting, that would kill two birds with one stone, because the previous answer that we always got was no one's allowed to get programmatic access to Salesforce, but we need it right for, for for these other projects.
+
+Kathryn  9:08  
+Yeah, I think the overall, like, maybe goal we could take away from this meeting, because I think the business system team really understands now, like, we gotta, we have to play nice with these apps. Is what's the architecture that your team is building out? What is the like enterprise level data and strategy, and how can we make that play nice?
+
+Richard Dosoo  9:33  
+Yeah, sorry, Ben, go ahead. Yeah,
+
+Speaker 1  9:35  
+no. I mean, that's, that's, I mean, that's exactly what we've been kind of thinking about, even from the initial conception of the app factory, because ultimately, you know, we don't want the data to live multiple places at once. So if we can pull and sustain from one position particular place, that would be phenomenal. It's just gaining access. So we can, we can do. Things effectively?
+
+Kathryn  10:02  
+Yeah, it's, how do we do it fast and safe? Because I know exactly. I don't want to say, like, there are a lot of restrictions around pulling data in and what's allowed to live, and they can help us with that 100%
+
+Speaker 1  10:18  
+Yeah, yeah. Like, that's something we knew the conversation was going to going to happen eventually. So we were, our architecture is flexible enough to be able to handle whatever is coming through. It's just, you know, we're, we're building these, these, these apps because, you know, we just need it in ways that make sense to us, in that way. But I also, yeah, I want to keep the data in one secure location, yeah, yep, yeah.
+
+Richard Dosoo  10:46  
+So in terms of the meeting that we go on Thursday, it'll be great Catherine, if you can set the expectation with them to include Salesforce in there as well, for the reasons that we just described, right, because we get, we got these asks. So if they can, if we can nail both of those things in next week's meeting, that would be great. And then we can share, like the app factory infrastructure that Ben's put together, and we can then talk about the Clara data model, because that's the first port of call. And then what we can also do in the meeting as well is, I've got some high level requirements of the information we need from Salesforce for the customer success agent, ie the tickets, yeah, the other information we need from mix panel, Bernard's going to give me some more detailed requirements on Monday, and then I'll also follow up with Courtney and get her requirements for and Kevin Right? They both got. Kevin Pern has got some requirements. Courtney's got some requirements. They're they're similar, there's some crossover, but they're diverse, also a little bit. So I'll get those going into that meeting, because, like we, we those are both things that we needed to work on in the next 12 weeks. And obviously gains light is now a new thing that we also need to think about. So it'll be good to just nail all of them.
+
+Kathryn  12:00  
+Yeah, I guess I have a philosophy question for you guys. I don't know. I guess overall question is, how do we like how do I help communicate with you so that you can build and get the tools out there, but we aren't doing any duplicative work that we're doing with the Enterprise team, if that's even possible.
+
+Richard Dosoo  12:32  
+Yeah, that's That's why I brought the example of the account planning app right up. Like what should happen is George should have visibility over the gain side road man, and before he even comes up with an idea of doing something, he should be like, is it already in a plan, but I don't know that George has got visibility, or Idris has got a visibility into that. If they do right, and they're making a decision to do it anyway, then there's some business justification, some rationale to do it. And then what would come with that decision would be, I know this is coming in Clara. In this day, I'm doing something very specific, because I need to manage the risk. Now. That's what we had in Clara, right? That was what Ben wanted us to do. So, so we did it, right? Because he couldn't go two quarters without managing IRP portfolio. He needed to do something about it. And that's right. So it's, how do you encourage that thought process with with the rest of the all? Basically, if we there's probably a formal way and an informal way to do it, but, like I, personally, I don't have any visibility into gates, like roadmap feature. I don't have access to it, right? So I think that's the first thing. There's an there's an education like enablement piece for people to who are supporting customer success or supporting adjacent teams to customer success, to have visibility into what's coming in Gainsight and what's the roadmap is. And then, if we're plugging gaps, people cannot at least know whether it's temporary or if it's long term.
+
+Kathryn  14:05  
+Okay, I honestly, I think I'm probably the best person to help you with that. Like, I don't know if you're building a governance process around the app factory. But say, for example, George comes to you with an idea is, I don't know if there is a decision tree of like, hey, go build this yourself, or your team has to is has any gating process in place, but I can help at least provide visibility from Other tooling perspective, because within my small team. It's responsible for those enterprise tools.
+
+Richard Dosoo  14:46  
+Yeah, so not 100% with you. We're talking about it just before you jumped on that, along with the technology we need, the governance framework that supports like not everyone's app is going to go on that factory. You. Because someone's app may not be relevant or it may not need to, like, we've got sales guys that want to put stuff on there, but maybe the number of people using it is not enough, so it doesn't go there, or it goes into sales recon. So there's going to be a governance framework that defines what the intake mechanism is into our factory. Even though the process will be automated. There'll still be a governance framework that defines when something goes on there. But again, that's more about us. We were more thinking about that, more about aligning, about the, you know, the the tech, the the implementation, what you're talking about is even before that, which is like the idea that you have, should you even be building something to do with this? Because there may be, it may already be in mind, right for gain so, or it may already be in another enterprise tool, and that's an education piece, right that we need to tackle first.
+
+Kathryn  15:52  
+Yeah. And I would love to help with that in any way possible. Yeah.
+
+Richard Dosoo  15:59  
+Azmain, this one's gonna have to go on the on the list of things that we need to like right now, we've touched on it briefly, right? But it falls back more into the like the stakeholder management, the programme management, because now people are enabled right, to do all this stuff, right? That's the governance framework that goes along that. And right now we're doing it, but it's quite easy to do because the team is quite small now, but as soon as Ben encourages this capability to be rolled out across your soul, it's going to be much more difficult to manage. So we're going to need this, this kind of stuff to support.
+
+Kathryn  16:34  
+Yeah, yeah. And I don't want to slow it down in any way. I just want to make sure that
+
+Azmain Hossain  16:40  
+no, no Catherine, it needs to slow down the pace that we're running at all of us, like everybody except you and Chris on this call. So just me rich and Ben, we're exhausted, and it's leading, yeah, it's leading to doing stuff too quick and it not being right, which is why you know me, see, are having to have calls for one field. We going forward, we need to do it right from the beginning, the fast but safe approach, even if that means a little bit there's a little bit of a slowdown.
+
+Kathryn  17:16  
+I would love that, and to help with that,
+
+Azmain Hossain  17:18  
+yeah, like, especially, I'll be completely honest, mine and Richard's biggest fear is like Gainsight team could crush us. So we need to keep them on our good side. Yes. And step one of that is, is really understanding, like Natalia plant did a did a demo of Gainsight, how it is right now. But what we need is an understanding of what is the architecture behind gain site. It needs to be the other way around. They will drive us like they're not gonna. We don't expect them to take change their architecture to fit us. We will change ours to fit them.
+
+Kathryn  17:58  
+Yeah, okay. I'm going to bring this information back to them. We only have 30 minutes for the Thursday call, and it's a lot of people, so I think we're going to have a lot of follow up calls to it, but I think this is an overdue first conversation. Yeah, yeah.
+
+Richard Dosoo  18:22  
+Before the call Catherine, we can send over, like, more detailed documentation about the art factory and and Clara. That would be so helpful. That way like it, they can pre read it, right, and then come with question
+
+Kathryn  18:38  
+that would be amazing.
+
+Richard Dosoo  18:42  
+I and then, I guess then we need to and Azmain and Chris as well. We need to start thinking about what the integration patterns look like. I'm going to make some assumptions, right, that they've got some REST services. But again, the conversation we're having earlier this week, right, which is API key base of the environment, is it user tokens that are passed around between the two apps like the SSO? I don't even know. Like, one thing that we had that was always an issue in the past was this access accounts to Salesforce were not like, not everyone in the team had access to Salesforce, and the accent and the number of user accounts were restricted, right? Because, you know, there was a cost to it. Is the same thing applicable in Gainsight, or is it? Is it, for example, let's say I wanted to log into Gainsight. Is it, does it just work off my Moody's domain account? Or is there a separate account that is a separate gain site login? Like, how does the access control work?
+
+Kathryn  19:42  
+Yeah, those good question, I have assumptions, but I think it's best to ask that to the Gainsight team directly.
+
+Richard Dosoo  19:50  
+Does that that may influence how we decide, how we decide to integrate? Yeah, no, those are the questions that help Ben and others. Understand what the immigration score look like. Yeah?
+
+Kathryn  20:05  
+Those are all yeah things we can cover next week or in working groups, because I think there's a lot of topics to go over there.
+
+Richard Dosoo  20:21  
+I guess I'll start running on the top. Azmain was, Does this give you enough like, I feel a bit more prepared for next week now. But was there any other things that top of mind that I might have missed that we should cover before?
+
+Azmain Hossain  20:34  
+No, no. I mean after, after, we kind of after I make the pitch to the gain side team. Of like, look our like, the whole IRP piece in term, from a Gainsight context, forms a small part of the overall customer health, which is the which is the purview of Gainsight. Like ours is just a little thing that we can we can feed it, feed into it, so we are in no way like trying to replace Gainsight in terms of usage after that, as long as you know, after we answer any questions about that, then it becomes a technical question of, how do we get them to work with each other? And that's where you and Ben and Chris are much more qualified than me to talk about the technical stuff. Yeah,
+
+Richard Dosoo  21:24  
+cool, Ben, anything from your side, or Chris, anything standing out that you want us to cover before next week, I'll send over the app factory slides, but not put together, but it's all aligned to pretty much what we already have. But we can pad it out if needs be with more with more content.
+
+Speaker 1  21:41  
+Yeah, I mean, everything makes sense. And honestly, this is perfect timing, because, I mean, now that we're getting more and more attention, as Azmain said, like, we can't keep iterating like this. And there's a lot of people who are just wanting the same honestly, I've already talked to a couple different people. They're like, Oh, I have this app that does this. I'm like, you know someone else is kind of already working on this. So, yeah, having more control in governance is is where we need to be right now.
+
+Kathryn  22:09  
+So you're speaking my love language. Ben, finally.
+
+Azmain Hossain  22:17  
+Ben, yeah. Ben, we all want things to slow down, and we just needed an excuse to present be like, This is why we're slowing down, and this is the perfect reason. So thank you, Catherine, good.
+
+Kathryn  22:29  
+I'm glad. I think, I think, hopefully this will help everyone,
+
+Azmain Hossain  22:32  
+yeah, yeah, and we can actually do things properly.
+
+Chris M  22:37  
+Yeah, perfect. I'm just a fly on the wall for this one. So I'm, I'm just listening, and everything sounded reasonable to me. So thank you,
+
+Richard Dosoo  22:45  
+Chris, nice. Chris, this is coming down the pipe press. I wanted you to like that next project that you guys are supposed to be working on is the Salesforce integration. So do you know? I mean, I'll forward you to meet and invite for next week as well, because that's when we're going to start getting into questions about the, you know, how what data do you pull across? Is it a REST service? Is it asynchronous? Is it file based, like that sort of stuff we'll start getting into next week.
+
+Speaker 1  23:10  
+And me, personally, I would, I would, I've said this, I think from the very beginning, it's like, I would prefer less and less data stored on our end so that, yeah, all the all the better. Cool.
+
+Richard Dosoo  23:23  
+All right, perfect. Well, guys, I'm gonna give you four minutes back, yeah, and I will catch the all next week.
+
+Kathryn  23:29  
+Awesome. Thank you everyone. Thanks
+
+Speaker 2  23:31  
+everyone. Thank you. You too. Bye, thank you. Bye.
+

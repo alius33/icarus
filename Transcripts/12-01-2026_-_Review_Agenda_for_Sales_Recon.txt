@@ -1,0 +1,189 @@
+Speaker 1  0:00  
+It the interest of you met Hossain before? No, I have that.
+
+Azmain Hossain  0:05  
+No, I saw interest on a call. I think you were, you were presenting some of your, some of your prototypes, but other than that, yeah, it's like first.
+
+Unknown Speaker  0:16  
+So I apologise. I'm just in transit right now. So,
+
+Richard Dosoo  0:22  
+okay, we're Connie's going to be a bit late. We'll wait for Jamie and stuff to join. We So, I guess, by way of introduction. So Azmain is very kindly offered to help programme manage the number of initiatives that we've got coming out of insurance, ou on Gen AI, so we've got about six projects that we're going to be running in parallel. So Azmain very kindly offered to help support us programme, manage that, and he's and he's also building out the more importantly, he's still building out a lot of our PMO dashboard reporting. He's doing it in cursor at the moment, and we're basically, he's not only going to be doing that, but he's also going to help project manage the
+
+Azmain Hossain  1:07  
+rest of the workshops. Yeah, it's nice to, it's nice to have a bit of skin in the game where I'm doing the programme management, but I'm also actually deploying one of the one of the projects.
+
+Speaker 2  1:17  
+Yeah, it's nice to have people on the project that are actually using cursor and building front end prototypes. So yeah, yeah. And then
+
+Richard Dosoo  1:27  
+when you, when you, when you're in London, interest that week, we'll definitely have some Azmain will be in the sessions. And when we're having crossover time with the live teaming with some of the other guys. Will, will, will definitely meet face to face, then that's
+
+Speaker 2  1:41  
+great. I'm looking forward to Hi.
+
+Richard Dosoo  1:43  
+Chiara, nice to meet you. Jamie suggested that I include you in this meeting, and I hope you. Jamie Conrad, can join shortly, and I'll give the context about the agenda of what I guess why we're here to discuss today, and it's in preparation for an executive meeting that we've got planned for the 26
+
+Unknown Speaker  2:07  
+here's Jamie. Hey
+
+Richard Dosoo  2:11  
+guys. Sorry, Jamie, nice to meet you. Jamie, we've got, I know, obviously, the first time we've met kind of virtually, I should say, I'll just do brief introductions before we get into the real context of the meat. Myself and Idris are from the insurance, so you Sorry. Azmain are from the insurance OU and we've been supporting dear Sony on a number of initiatives in the Gen AI workstream. And predominantly those initiatives have really been focused on us managing the customer journey and adoption process of implementing one of our cloud applications called Risk modeller, or intelligentness platform, and to do that, we're interacting with Salesforce, not only to create Adoption records, not only to manage customer adoption, but also once the sale has been made, we're then using it as a mechanism to track the delivery. And then once this, once the implementation is finished, obviously all of our support and business as usual, usage of how we manage the customers and support the customers, is also going through Salesforce. So for us, that's central and pivotal to a lot of our workflows and customer success. Right now, we've had some challenges, capturing that data, reporting on that data, interacting with that data, and we've been working on a number of initiatives to to help optimise that process. And we've been looking at different tools to solve for that, whether that's Microsoft copilot studio copilot, or even now, we've been looking at building applications in cursor to help mitigate some of those problems that we have in the short term, longer term, obviously, we'd love to be able to leverage sales recon and leverage sales recon to solve for some of these customer success use cases that We have, and that's where we've been having conversations with Conrad and walking him through what our objectives are in the short term, but we very much want to be aligned to what the plan is for longer term. Obviously, sales, we roll down, not only within the sales organisation, but also within the customer success organisation. And then obviously we did working with Idris, because he's doing the same thing in the banking segment. So you can imagine there's a significant amount of crossover between what a customer success person in insurance needs to do and what's a customer success person in banking.
+
+Speaker 3  4:34  
+Yeah, that makes sense. And we've got a meeting. What two weeks? What day is it? Two weeks today?
+
+Richard Dosoo  4:40  
+Right? Correct, yeah, so I guess just a bit more context on that, and then I'll shut up and we can get into the actual content. So we, during our last insurance, steer code around some of these AI initiatives. And. I mentioned that Harry was going to be in London on January 26 and our general manager, Mike still had gave some really growing feedback because he had used sales reponse prepare for a customer meeting with General Ali CEO. And he was one, obviously the feedback was positive, but two, he read he also supported the fact that we should be aligning on what our customer success use cases are, and presenting them to you more broadly. So the idea was, if Ari's going to be in London anyway, it'd be a great opportunity for Mike Steele and Colin Holmes to meet with him and also then talk through not only the feedback from a sales perspective that Mike will be able to give, but then we could also coalesce the feedback of what we wanted to see in customer success be like a secondary priority for Yeah.
+
+Speaker 3  5:47  
+So I spoke to Dear last week. One of the things that she wants to make sure happens during that meeting. I think she's planning. She was good. She was looking to see if she can attend as well. In person,
+
+Richard Dosoo  5:58  
+she's gonna she's gonna be there in person as well.
+
+Speaker 3  6:01  
+One of the things you wanted to make clear was that this isn't a new initiative. This is something we started off. Last was it June? We came to New York, Idris and we ran some workshops. Yeah.
+
+Speaker 2  6:13  
+In June we kicked it off, yeah. So a long way since then, yeah.
+
+Speaker 3  6:19  
+So in June, we kicked it off. We haven't been able to do much on our side. On the customer success side of things, it's kind of next on the roadmap, right? It's been next on the roadmap, and we're finally, I think, this week, getting to the point where the the blocker, the getting it working for sales, and getting it released for the sales kickoff meetings, is is kind of on our side anyway, the build is ramping down, and we're starting to think about other requirements. And so there's quite a timely meeting, actually. So I think as long as the messages is, this is something that's gone on, you guys have been doing some work. It just has been doing some really good work. And you know, what we can do in the meeting is kind of really present what that work is, and then also kind of just align everybody saying that this is the next thing that we're working on right and then hopefully, by in the next couple of weeks, we'll get a bit of a better picture of what prioritisation might be on our side, of how we might prioritise around some of this stuff.
+
+Speaker 2  7:19  
+And Jamie, I thought, maybe also for the benefit of this group. So we have a separate steering committee specific to customer success, where George dyke is part of those meetings. Okay, and that's happening with the gateside team. So in parallel to all of this happening, we've been fleshing out requirements with Kadam team, who is reports up into Charlotte in terms of, you know, what are all the fields and data points that we want to capture in Gainsight, keeping in mind that everything ultimately is going to feed the AI engine, right? So, for example, you know, we're moving the retention process into Gainsight. We're adding fields such as, you know, what stage is the customer in? Is it a new customer? Are they going through a project? Are they at risk, right? And so my point is that, you know, from a customer success standpoint, Moody's wide, we are working to capture accurate and clean data points that can further feed into this engine and marry with all of the other inside of data points that you know already feeding into sales recon. So I think that we're all tracking towards,
+
+Speaker 3  8:26  
+yeah, and I think when you talk about Gainsight there, you know what we're I think we have a very minor integration with Gainsight at the moment, but we'll be doing this quarter is to make that happen. And we know how, we know, technically, how it's all going to happen. So you know that's that's a good thing. So anything in Gainsight, we can pull through and use in sales recon, so then it's just about making sure the experience aligns and gives you guys something back what you need, and also gives you the opportunity to get knowledge out of your heads into the system, and the teams and people working on the brand can actually capture that knowledge, and because that's really important, right? And then that's kind of it moves across silos, which is the most important thing. So you can go and have a meeting with a client, and you know the and then if Mike Steele goes and has a conversation with that same client, all that knowledge that you've had is captured in the in the system, and Mike doesn't need to go and speak to 12 people to find out, actually, what's going on on the
+
+Richard Dosoo  9:25  
+ground Exactly. And so Jamie, that exactly what you described was the once the assets, the context, gives like the executive like intro, we had you pen to do that introduction about, like, not only a salary on update. You know, what's in scope, what's out of scope, what the next steps are, yeah, not to be that kind of guy, that IBM, guy that's got all timings and everything, but I wanted to make
+
+Speaker 3  9:51  
+sure we keep, first of all, Richard with Ari in the meeting. You know, any agendas? Just, yeah. I bet some topics that he might touch upon. So it's good to have, don't get me wrong, it gives us an idea about what we want to say. But yeah, it's fine. Don't worry about
+
+Richard Dosoo  10:12  
+the time. I'll just put 30 minutes in there for now and can flex up. We've got an hour and a half. The rest of the content was around about an hour. So yeah, I just want to make sure we give enough time to cover everything.
+
+Speaker 3  10:23  
+I'll probably use that to, you know, Mike has used it, as you said, Colin got access and was starting to use it to look at legal in general. So it'd be interesting to see how they're getting on with it, right? One of our, I say, soft use cases was to support people like Mike Colin and others senior executives to access knowledge in the system easily, right? And so it wasn't our main focus, but it was a kind of side focus, because our feeling is, if we can get, if we can get the people to say, look, Andy frappe is going to be going to speak to a client, and is going to be using the content here, you got to make sure your content is up to date. It might give them a bit of a carrot and a stick to update it right? They don't want to be the one where their stuff stale, and the senior execs are talking out of line because the information stale. So
+
+Richard Dosoo  11:21  
+there's a whole world of artefacts that we engage what we get from the customers that we want to if there's a way in which we can also provide that information to you guys, whether that's in the form of documents, requirements, workflow, reviews, anything that helps aid in that discussion or provide more insight? You know, whatever, wherever we need to put that information to help drive the intelligence, absolutely we should do that. Sounds good.
+
+Speaker 2  11:52  
+Just a just a question. Maybe Jamie for you and Conrad. Have we made progress in sales recon to get the annual spend and the existing relationship data correct. Because ultimately, any types of insights that go up to Andy or whoever need to be accurate from like, you know,
+
+Speaker 3  12:11  
+that was fixed. I think we get, I think we get the same feed from Charlotte's team that gets sent to gain site now address memory.
+
+Speaker 2  12:18  
+Okay, so you're using the Databricks ARR data at the account level, then I
+
+Speaker 3  12:21  
+believe so, yeah, okay, we can double check with James. I think we've got a call later in the week. We can ask him that question as well.
+
+Speaker 2  12:28  
+Yeah, because it'd be nice that that like that in itself, is a huge win, because it makes it a lot easier to feed in data from Unique Identifier points right to get because, like, because when we first started playing with it. You know, the AI hallucinates and doesn't understand how the accounts roll up from child to parents and spend and then once that hallucinates and everything else starts hallucinating. So that was something that, you know,
+
+Speaker 3  12:53  
+yes, I'm not sure we've addressed the kind of rollout question necessarily yet, but yeah, let's let you know. Let's have a look at what we've got and make sure it's it's correct, and then we can figure out what needs to change if it's not.
+
+Richard Dosoo  13:08  
+And this might be a question more for for well actually, Conrad, you may have a bit more insight in this, because this is more related to some of the existing data we get out of Salesforce. We have a report that we run today called the white space report, which basically says, for a specific customer, what products are they licenced and what other products could we talk to them about? Have you guys seen that report before?
+
+Speaker 4  13:36  
+Yes, that's the I love the white space report. That's the one in Salesforce, and that question is something that you could ask sales recon,
+
+Richard Dosoo  13:45  
+yeah, so that would be great if, like, I'll send up. We had some feedback from some of my colleagues on the product side, and they like if we could give you guys more granular insights about the products and the offerings, that then would make that report more compelling, because then we could talk about more specific upsell opportunities, or, like, more opportunities to actually drive more penetration into the customer. If we have more detail in that in that report, whether that's details about the products that they licence, or the sizings or the infrastructure that they have, or their current usage in mixed fund, all of those things together help tell the story. So what I might do, Conrad is I might send you a note with some of those feedback that I have from the product team, and we probably won't get to that level of detail in this meeting, but it'll definitely be good if that week we could connect, maybe separately, on it, and talk through how, how that data could help drive additional
+
+Unknown Speaker  14:39  
+insights. Sure. Yeah, I'd love to do that.
+
+Richard Dosoo  14:44  
+So Jamie, after you've very kindly gone over the roadmap, then we pivot into some of the more customer success specific. So myself and Azmain will talk through the proper statement that we have in customer success today and how in. Insurance and how and what we're doing to manage that in short term, tactically, so we can go through the five different bodies of work, the projects, the initiatives, and how they roll up, broadly speaking, that's an application to manage reporting of customer adoption, a kind of PMO dashboard. One of them is what we call a customer success agent, which is once the customer is live. It's essentially an interface for you to be able to access the data from Salesforce, access tickets and use prompts to gain customer insights and customer sentiment from the data. I kind of added myself spent some time training users on how to do this today in Microsoft copilot studio like, so we can share those prompts and what that workflow looks like. But I think broadly speaking, that should already be there.
+
+Speaker 3  15:47  
+And then the other idea to kind of move that move down to sales recon as well.
+
+Richard Dosoo  15:54  
+I mean, it would, that would be nice. But I think with all these things right, it's timing right? So we've demonstrated that we can use copilot studio to give us that capability today, but it would be great if we didn't have to find you around and move data out of Salesforce and put it in Microsoft copilot students. So I think what we will do is we'll share the workflow and we'll share the prompts that we already have, and if there's a way for that to come in a bit of sales recon, that would be good.
+
+Speaker 3  16:23  
+One of the things we have explored is the idea, and the game you played around with this car, just for your information, is to have copilot trying to think of the best name, copilot agents, one of the better word that people can access through so pre configured copilot agents that people can access through teams, right? And it would link to the content in sales recon, right? So they can use it like they would do other copilot agents, but it would be kind of a team. It would be a team. It would exist in teams so they could go there and access it, but it'd be specific to all the content that we have in sales recon, right? That would probably be what, where we would start. So if you're putting in all the content that your agents have from different places, maybe sales recon can be the way of gathering that if it's client specific, that makes sense, right? Because we want to know everything about a client. So there may be some opportunities there, Richard as well, to look at some stuff.
+
+Speaker 2  17:20  
+Yeah, just, just on that point our we have, we spoken about this initiative, right? So this is like manna, and Tim Daly, from a banking standpoint, are kind of sponsoring this. So I've met with, you know, all of the MS teams, co pilot people, and also met with Trevor last week as well. So I actually have a small little POC, to your point, where I have full access to copilot studio. So outside of the light and what we're working on is, you know, building an orchestrator agent that has sub agents reporting to them. So, you know, one agents focusing on, you know, what the annual spend is. Another agents focusing on health scores. And maybe, to your point, another agents querying sales recon. And then we're exploring using ad permissioning to push that ultimate, you know, CSM agent into teams that, you know you're speaking to that orchestra agent who's speaking to the other agents that have access to all these different knowledge sources, be it recon or whatnot. So we're also thinking along those same life in terms of an entity.
+
+Speaker 3  18:22  
+I'm just interested in what you're if you're interested in data about a client, and then it probably should be in sales recon anyway, right? Yeah, yeah. But that doesn't mean that. Doesn't mean these things can't happen in parallel or, yeah, it's just an idea of a way of providing another interface for sales recon, so people didn't necessarily have to go to Salesforce right to have the interactions. So, yeah, that's that's when we speak later in the week. Let's speak about that as well. Because I think it's important to capture everything that you're doing and see what we can do to support because we might be able to move some of this stuff quite quickly when we went, you know, once we've delivered what we deliver?
+
+Richard Dosoo  19:05  
+Yeah, that would be awesome and interesting that maybe I can follow up with you as well. First, I'll just send you the prompt library that we have. And I'm sure what you guys are covering is more comprehensive than that, but it will definitely we can show you some of the insurance specific stuff that we that'll be helpful. And then after that, then Idris, this is where we would connect and talk about the convergence between, or divergence between some of the insurance requirements and the banking requirements. We there's a lot of crossover from the work we've already discussed, but there's some places where they're different and they're intentionally different, right? And that's more related to the type of products that we offer and the type of use cases and workflows that our customers have, and how we want to document those so we'll spend some time talking about that. And the purpose of that is so that we can give Jamie Conrad and inshara. We're not going to. Come to you with two different sets of requirements that are not consolidating. We ask banking and insurance are going to come together. We're going to get the economies of scale. We're going to present you with a consolidated list where it makes sense, where it doesn't make sense, there will be some divergence. Well, that's the point of what we want to get alignment on in that segment. And then lastly, then dia closes out with the priority decision. So what's, what do we need to really agree on for the most for customer success in 2025 what should be tackled? First, what should be deferred? Where's the Where should the leadership attention be focused? And then lastly, then I'll close out with, well, what does this mean for the next 90 days. So this is the broad agenda. What I know we're running short on time. We're going to wrap in about 10 minutes. But what I'd like to do for Jamie, for char and for Conrad, is we've created, like a storyboard PowerPoint presentation which basically has placeholders for all these topics and where we have content, we're gonna we're gonna put that stuff in there, but I'd love to, obviously, over the next week or so, share that with you and get agreement and make sure you're happy with all of the points that we're raising before going into the meeting on the 26th get you a rough copy of the slides with Like, where we have content. Well, we have the storyboard, we have the content where we have it. If we can get that over to you by like, the end of this week, would you be open to a meeting next week, Monday to to connect some of you to content, just to make sure everyone's good with the messaging that we want to present?
+
+Speaker 3  21:36  
+Yeah? Works for me. Yeah. Connor, is that good for yourself, yeah, would be great.
+
+Richard Dosoo  21:43  
+And I'm sure are you based in London as well? Yeah, I'm based in London. And I'm assuming you guys go to the Canary Wharf office, right? You don't go to the minister court Yeah?
+
+Speaker 3  21:55  
+Normally Canary Wharf office, yeah, that's correct. We can never be I've never been to the midst of the court office? I don't want
+
+Richard Dosoo  22:06  
+to set you guys up. I think your office is better, to be honest, but you've definitely got a better coffee machine, and that's that one. I'm 100% so So do you guys have any plans to be in the office in person next week? Yes, I normally try to go Tuesday and Thursday. Conrad, what about yourself
+
+Unknown Speaker  22:30  
+next week? I am going in
+
+Speaker 4  22:34  
+on the Wednesday briefly in the morning, and then also I'm going in for the day on Thursday.
+
+Richard Dosoo  22:41  
+And Jamie, will you be around on Thursday? That's looking like the day. That may work
+
+Speaker 3  22:45  
+if I'm going to be in Edinburgh, in Edinburgh, so I'm not gonna be in London. Oh, okay, all right, I'm based in Edinburgh, so I'm coming down on the Monday for the meeting, and then on Tuesday, Monday, Tuesday next week in London, and then finally, going next week Milan, no week after, not next week, week after week after, yeah. Okay, well,
+
+Speaker 2  23:05  
+Jamie, I have a quick question for Jamie. So, you know, similar to how you guys did a sort of like, you know, pilot for sales recon, you know, loaded up 10 accounts or whatever are, your team also potentially thinking about pushing some customer success type features for teams to test across the different old user like I'm just trying to understand what you're thinking about in terms
+
+Speaker 3  23:32  
+of so we're we're very much focused on this release for that's underway, and we're just starting to think about our planning. My feeling is one of the things I'd like to do is to get a small number of customer success people access to the live environment in sales recon, once it's ready. I think it's the end of this week. I think we'll be we'll have the version that we're happy with live in in production. We'll make we'll give a handful of people access. And basically, we want to run a pilot where we basically say, Look, this is sales recon today, right? How useful is it for a customer success person? What can you do? What can't you do? And maybe, you know, maybe within sort of three or four weeks, we can, you know, just let a handful of people have a have a go, you know, maybe those guys involved in the New York meeting, that kind of crowd, and say, Look, this is really good. I can do loads of stuff now, but it would, you know, it's not good enough until I have these other things. And it'll help prioritise the kind of core features that, along with this meeting, I think, will help prioritise our core features. And then we'll just start building it out. We plan to drop, we plan to drop features monthly. There's a kind of monthly process that our business ops team use, so we want to be able, we have to follow that. But we plan to then just slowly add more and more features. And then there'll be, there'll become a point where it's useful to roll out across the whole customer success team, across banking and ensuring. That's our kind of major focus at the moment. The other teams, we have to see, we have to see how they're doing it. But I think the main focus is, you know, you guys, initially, does that answer your question?
+
+Unknown Speaker  25:13  
+Address, yeah, exactly where I was getting we're
+
+Speaker 3  25:17  
+going to run a short pile with what we've got, but rather than kind of build stuff and test it in a pilot setting, we'll just build it and test it in a
+
+Unknown Speaker  25:24  
+live setting. I think it's a plan.
+
+Speaker 3  25:28  
+And as soon as if you guys say, Look, this is going to be useful for everybody to have access to, I'm happy for us to release it right. There's no, there's no there's no necessary need to hold anything back.
+
+Richard Dosoo  25:39  
+We can definitely, we've already, had, to be honest, the interest from some of the some of the years leadership team to get access to sales recon already, and we've been kind of holding those guys back until the till you were ready. So you know, definitely, there's, I know, a handful of people that have been asking already, and I've been working with Conrad on it, so we can get those names for those guys, and you can include them in the UAT your POC programme.
+
+Speaker 3  26:05  
+Yeah, we, when we get to the we have to work through because it's a live production environment. We have to work through the business ops team to make sure everybody has access, and add people to idams and things like that. So it's all done very properly. So we need to figure out what that is as we as we kind of get operation in the next few weeks.
+
+Richard Dosoo  26:27  
+Okay, well, definitely what Azmain and myself can take that away and get you a list of names, but I'll also bring it up with dia. I'd get her support as well. So the people that are doing it have the time and energy to focus on. Give you guys priority, but not just like tangential. Oh, I use it for half an hour and then, and then kind of sort of off. So we'll make sure that it gets the priority and attention that it deserves cool. So then, in terms of next steps, as I said, we've started some slides and material already, but if me, Azmain and Idris can connect this week and tighten up some of the content, we'll send that out to you as soon as it's ready.
+
+Speaker 3  27:09  
+Yeah, I'll try and add, if that's a deck you got, I'll probably put a couple of slides in on my side, but I'll be slide light for sure.
+
+Richard Dosoo  27:18  
+That sounds good. And then, if our main ops, then maybe for a virtual meeting next week, Jamie, if you're going to be in Edinburgh anyway, yeah, but if I'm in the office, normally Tuesdays, Wednesdays and Thursdays, so maybe me and Azmain come pop over and see you guys for a bit of lunch on land and shower on a Thursday if you guys are around anyway, if you're open, let's do it. Yeah, excellent. Okay, well, guys, this has been really helpful. Thank you. And I'll send out those slides, as I said, the shore man, at the end of this week, and then look for a virtual meeting for me next week, for us to connect more on that's on content and review. Brilliant.
+
+Speaker 3  28:04  
+Thanks. Thanks for organising this. Richard, much appreciated. Thank you very much.
+
+Unknown Speaker  28:09  
+Everyone you.
+

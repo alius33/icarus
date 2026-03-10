@@ -1,0 +1,423 @@
+Speaker 1  0:00  
+Clients generally across CSM, implementation, whatever. So you're probably aware the way that we work with a lot of stuff, defects, features, functionality, gaps, all that kind of thing. A lot of them collated in spreadsheet format. We then transfer them to adoption records. We put them into user voice, all that kind of stuff. A lot of the time, clients want to have a trackable kind of thing with notes and all of that kind of stuff on progress and where we are and what have you. And I'm just wondering, is there any kind of simple way of having some kind of dashboard like this that would be shareable between us and clients that would give us all of that information, that would give them kind of a, you know, real time update, or at least something that gives an indication of what's happening, progress, road updates, all that kind of stuff that we can fill in from this side, that they can see as kind of a live workbook or or dashboard, as I said,
+
+Richard Dosoo  0:45  
+yeah, no, Philip, it's definitely a good issue. We know that problem, right? Transparency with the client and them knowing is the big, biggest issue, right? So right now, the way that products will tell us to do that is by user voice, but user voice doesn't have the granularity, right, and it doesn't also track this. And obviously, if we build and anything we provision to a client has to be blessed by products, right? Because otherwise So, but you feel you hitting the nail right on the head, right? It's not, this is it's not a technical challenge. It's a process like alignment challenge right now, what we're trying to do is like, Alicia has been really cool about this, to be honest with all the PM, she's been the most forward thinking, open about it. She wants us to list out in this tool or somewhere else, all of our customer requirements map to product features. She's going to then have a link to, or we're going to link our product model, use cases to features, and then whenever she does roadmap planning or updates ticket in JIRA, we can re baseline like a project plan and see what dates are impacted. That's the kind of workflow she wants to implement. Diagnosis will still be on us to manually go and tell a client every time there's a shift, but at least we've got an auditable traceable like we can do that requirements traceability, from workflow to use case to product feature, and then when they're shipped, we can run a report every month and see what the impact is to a client. So we are that's that's 100% where we want to go. Ben wants to go there. I've been saying that we should go there for ages. Alicia wants to support us. It's still going to require a CSM to meet with a client and give them a monthly update, so we can include it in your service packs, like or customer monthly meeting reviews, to talk about what the milestone changes are and how they're affected. Awesome. Yeah, yeah, no, that sounds good. Sounds like it's already in thought, which is, which is perfect. So yeah, I look forward to see how that progresses. Yeah, no, I think it should be like, once we've got the data correct and we've sorted out these usability issues, then the next thing is getting the adoption charter process much more straightforward, because right now it requires of too many steps and it's too onerous, right? Once we've got that adoption charter process sorted, then I think what you've described is going to be next. Awesome.
+
+Unknown Speaker  3:03  
+Sounds good. Appreciate it.
+
+Speaker 1  3:11  
+No worries. All right, guys, thanks very much for your time. Speak
+
+Richard Dosoo  3:19  
+soon. Bye, bye. Sorry, good. No. I was gonna say, Azmain, what we need to do is like, we're gonna have to do the testing, not in pairs, but we're gonna have to basically fiddle around with your user permissions and make you when. So whenever we do a build, then one of us is going to act as the tester that's going to act in the CSM role, do test, then someone else's admin, change the person's user group around. We don't really, we don't have a user account that we can use to simulate separately and log in because of the ad, right? The ad is the first bit of off, right? So that means to clear that you have to be a person at Moody. Then the next thing is, what permission if you get when you enter the application that we have control over, right? So that we're going to, one of us is going to remain as an admin and keep fiddling around with our permission, and we'll test out these use cases.
+
+Speaker 2  4:15  
+Well, yeah, I actually already removed myself as that so I can, I can make that change. I know where it is right
+
+Speaker 2  4:26  
+now. Yeah, it's this right here. Also that that push has already gone through so and I synced everything with production as well. So once we push this next image to production from, from the latest dev we should be good to go as far as, like, syncing CSMs and stuff. But, yeah, so this right here, this override emails, like, do you want? I mean, I can delete if we remove
+
+Azmain Hossain  4:59  
+that. Yeah. I'll just be a normal admin where you
+
+Speaker 2  5:02  
+can just check are you. Are you currently an admin? I don't know what you let me. Let me do this.
+
+Unknown Speaker  5:17  
+Cred. I need a shorthand for this.
+
+Speaker 3  5:24  
+123, there's step okay. Um, so let's see.
+
+Speaker 2  5:34  
+Hold on one second. I just want to make sure here. Um, where is that user? App roles, yeah, okay. And then A, wait, yeah, I don't think you're actually in here, because, if I'm not mistaken, how what I looked into last last night. Um, yeah, I see I'm wow, I have, oh, this is audit. Oh, that's right, okay, easy, yeah. So I think, if I'm not mistaken, the This overrides everything, so you actually won't be an admin on here. So let me, let me push this, and then I'll remove everything. And then, since I'm an admin, I can add y'all back. Let's hold on, let's make sure I'm an admin. Currently, it doesn't look like I am.
+
+Azmain Hossain  6:55  
+It okay, if you do a refresh
+
+Speaker 2  6:59  
+now, okay, perfect, all right, so I'm going to remove this.
+
+Speaker 4  7:06  
+Oh, good status. Okay, I'm
+
+Speaker 2  7:24  
+okay, so once that goes through, and then I can actually already go in Manage Users.
+
+Unknown Speaker  7:35  
+Wait, where'd I go? URL?
+
+Azmain Hossain  7:41  
+It just takes a while to load up.
+
+Speaker 2  7:43  
+Well, okay, yeah, we don't have pagination. Okay?
+
+Speaker 2  8:13  
+Yeah, okay, yeah, so you're currently an admin, but
+
+Unknown Speaker  8:20  
+that's or wait
+
+Azmain Hossain  8:21  
+profile that takes you to the author employee
+
+Speaker 2  8:32  
+profile. Oh, interesting one where you can assign people roles. Well, that's fine. We just need to start making notes of these little UI things that we want to change, but All right, see,
+
+Azmain Hossain  9:11  
+contract customer and assigned CSM from Our
+
+Unknown Speaker  9:18  
+database, an extract of customer and assign CSM.
+
+Richard Dosoo  9:26  
+Yeah, should just be a it should just be a select statement from that customers table, the CSM fields on there, right?
+
+Unknown Speaker  9:32  
+Yeah, I can have it do that real quick. I
+
+Azmain Hossain  9:57  
+up. Oh, by the way, Rich, I didn't have a chance to look at the link you sent yesterday. I just
+
+Richard Dosoo  10:13  
+realised, oh, actually, you know what? That's actually not a bad use case for what we want to do. Basically. Why?
+
+Richard Dosoo  10:31  
+Yeah, some people are calling it spawn. Some people calling it swarm, is basically setting up a job and giving having multiple agents splitting the job so multiple agents can work on it in parallel, and it reduces the overall time. Some people call it Ralph loops. Some people call it swarm processing. For us, doesn't matter what the name is, it's just us. Get doing a big job with the support of any agent you can. You can give different agents in the in the swarm different roles. One connects a QE, one connects a dev, one connectors so you basically set up a team and let them go ahead and execute the job for before you had to define all of that stuff yourself. But now fraud code just does it for you. You just tell it use this model to operate, and then it goes and does it for you. It obviously burns more. It burns more credits well, so that's what everyone was saying online. So, and I think obviously, because it's going to use more credits, because you're going to be running or you're going to burn credits faster, all right? Feel good use of that money. All right, I think, to be honest, I was mean, it's the time, because I have to send that email. Probably close your business today. I've stretched it from yesterday, I did today, and then after tomorrow, then they're going to be like, Why are you still using it, even though you emailed us and said you're not using
+
+Speaker 2  11:58  
+it, okay? I made you admin again. And Richard, Richard, I'm going to need to make you admin as well.
+
+Unknown Speaker  12:07  
+You are, oh, what? Hold on,
+
+Unknown Speaker  12:15  
+yeah, we need pagination in these lists.
+
+Richard Dosoo  12:17  
+Yeah, this is, this is exactly what I'm saying in it that right now, if we go about it at what, we're going to miss pieces.
+
+Speaker 2  12:26  
+So okay, and then who else do we want? Ben as well. Yeah, I
+
+Speaker 3  12:43  
+right? Who? There's two of them.
+
+Richard Dosoo  12:51  
+One looks like it has already no one's one's wrong. The one without the E is wrong. So you want to take a top one. Okay?
+
+Speaker 2  13:03  
+Right? And is there any other users we want to add?
+
+Speaker 2  13:13  
+Okay, we'll probably have to do the same thing in production as well. So assign the users and stuff. So let's I think now would probably be a good time to promote to production. Where am I?
+
+Azmain Hossain  13:40  
+With, with, again, with the not authorised, yeah, after everything that we did yesterday, could it just be that the right email address? Is it being
+
+Unknown Speaker  13:53  
+passed? I mean, we changed one field that
+
+Azmain Hossain  13:56  
+went to change it again.
+
+Speaker 2  14:00  
+I mean, it could be just who, I don't know, is it he was able to edit other fields, right? Yeah,
+
+Unknown Speaker  14:15  
+that's
+
+Speaker 2  14:31  
+uh, unlikely, um, that's, I don't know, um,
+
+Unknown Speaker  14:45  
+Hmm,
+
+Speaker 2  14:52  
+do we know what field did he try to edit? Or.
+
+Azmain Hossain  15:02  
+Okay. And then he went to change it again, and got a 403, interesting. And every subsequent time kept on getting
+
+Unknown Speaker  15:17  
+okay, very strange.
+
+Speaker 2  15:22  
+Um, I think the best option for us in that regard is to clean up the error handling for that. So we'll create a proper pop up so that it can tell a user that. But at the same time, it will give us a better idea of what actually happened, because I'm not 100% certain, unless we get him back on again and have him do it again, which I think we don't need to do just yet. And then what I'm going to do as well as I'm going to so let me take a look here. It should have my most recent commit, January 29 What day is it? The third? Oh, we're all the way down here. Yeah. Okay, so it has all of my changes, so I'm going to merge this, PR, this development, with, uh, production here, so we're up to date. Yep. Okay, so all of that's in there now, and we're pushing the dev cluster, or, sorry, the production cluster is being doing its thing right now. Let's make sure we're good. I'm
+
+Unknown Speaker  17:02  
+okay? That looks good. An eye on the services here,
+
+Speaker 2  17:47  
+right? So all the fixes and everything should be in production now, and I'm going to switch over to production and give you all permissions.
+
+Speaker 5  18:09  
+Hey, Azmain, hey, I'm just trying to see if I can get that error back again, not getting involved when I wanted to show it to you.
+
+Unknown Speaker  18:22  
+Okay? But okay, I just wanted
+
+Azmain Hossain  18:30  
+to ask if you could share your screen and just like, Yeah, sure. Pick an account, sorry, pick a customer and just make some changes. Because when we when Phil was testing it, yeah, we weird, like he could, he could edit a field, and then two seconds later he can. So I'm just like, is that something?
+
+Unknown Speaker  18:47  
+So, yeah, like, if you assign me as a sales manager or
+
+Unknown Speaker  18:50  
+something, or, yeah, add a blocker or something. Okay, do
+
+Speaker 4  19:04  
+that's doing that, and then I'm just going to put that test. Say, Okay, product I test.
+
+Speaker 4  19:20  
+And oh, it's not such a okay.
+
+Speaker 5  19:27  
+Okay, that's that now, like when I refresh, obviously I told you, right, goes back to the dashboard. That's fine, okay? So, yeah, I think from an update, point of view, it's working. I
+
+Azmain Hossain  19:58  
+like. Yeah, let's see. Let's see. What's happening
+
+Unknown Speaker  20:05  
+is it shift at all? Just F 12, just ftolls. It should open
+
+Azmain Hossain  20:13  
+the console, if not,
+
+Speaker 4  20:17  
+try control shift. I control shift. I so
+
+Unknown Speaker  20:29  
+so yeah, and can you go to the Network tab? Sorry, Ben,
+
+Unknown Speaker  20:38  
+what do you want me to go to?
+
+Unknown Speaker  20:41  
+Yeah, network Okay, let's
+
+Azmain Hossain  20:52  
+click save now on executive
+
+Unknown Speaker  20:57  
+summary, let me just come out. Should I come out of this? I
+
+Speaker 2  21:03  
+Yes, yeah, you can actually, there's a little blue icon, so in on the right hand side, where that network is, yeah, where you just clicked it. The Is it this one to the left? Oh, it looks like, yeah, that unclick it. There you go. All right now, click into that, yep, click into the network, yeah. And then response.
+
+Speaker 2  21:45  
+Insufficient permission is not assigned to the customer. That
+
+Azmain Hossain  21:52  
+is, yeah, that is actually as
+
+Unknown Speaker  21:55  
+expected, because, okay, because it's not assigned to, okay, okay,
+
+Unknown Speaker  22:05  
+right, got you?
+
+Speaker 5  22:08  
+Okay. So who is the sorry, who's the assigned person? So is it the CSM that determines this? Okay, okay, do
+
+Azmain Hossain  22:20  
+is, and this is a good test. If you go to customers and just create a new customer, it's called test, then that will be under like you will own that, and you can
+
+Azmain Hossain  22:36  
+make whatever changes you want, and then just create,
+
+Unknown Speaker  22:39  
+is there anything else, any input here,
+
+Unknown Speaker  22:44  
+and then I'll do a test one
+
+Speaker 6  22:58  
+here, then I can Yes. Working. Yeah, yeah. Ben, I feel like it might be Phil. I'm gonna, I'm gonna reach out to another
+
+Unknown Speaker  23:07  
+person and get them to do the same
+
+Azmain Hossain  23:08  
+later in the day.
+
+Azmain Hossain  23:19  
+But I feel, yeah,
+
+Speaker 5  23:25  
+yeah. I think maybe if, like, you know, if it's not assigned to me, and I want to edit any fields out here, that's not there's something that I'm not supposed to edit, or it doesn't I don't have the permission, maybe a pop up box.
+
+Speaker 5  23:41  
+I then you went to change it, and it would, Ah, okay, redoing or undoing things. Okay?
+
+Azmain Hossain  24:00  
+One person,
+
+Speaker 5  24:07  
+yeah, but I've tested all the other like specific accounts, making few edits, adding blockers and stuff like that. That's working. It's saving I put I've closed, closed here, reopened it. I mean, you know, we use the link. Everything else seems quite fine, but I'll still continue to play around with it. Yeah. The only thing is, like, you know, if CSM is working on, say, multiple accounts, they want to go back and forth. That's the only feedback. We absolutely need
+
+Azmain Hossain  24:44  
+to fix that one quick way is so like if you click into alias, but if you click it to anything that has a CSM and then click on that CSM name, yeah, yeah, click on Alexander Schneider's name, you'll see all their customers, all the use cases.
+
+Speaker 5  24:59  
+Okay? Everything right so they can still basically toggle through here, but definitely so that,
+
+Azmain Hossain  25:10  
+yeah, I hate it, the fact that every time I refresh it goes, the fact that team members and customers take so long to load. Yeah, we need to fix that.
+
+Speaker 5  25:22  
+But I'm seeing here like, for example, if Alexander was going to work on updating multiple accounts, for example, Munich Re and then he wants to go back to DBK. That's working. That perspective is working. Yeah.
+
+Azmain Hossain  25:34  
+The thinking is that if you are a CSM, you would use the
+
+Unknown Speaker  25:40  
+dashboard, so you should even have
+
+Azmain Hossain  25:43  
+to select it. Should just know, right? You'll see that, so scroll up to the very top. Yep.
+
+Azmain Hossain  26:00  
+Yeah, my customers. And then if you're Ricky, you'll see only yours. If you Alexander, or if you are Demi, you see just those, and you
+
+Unknown Speaker  26:11  
+just Okay, super. So
+
+Speaker 5  26:20  
+that's the thinking. But again, everything, yeah, I'm trying to the refresh. It's it's working. Actually, it's saving things when you refresh. So I was telling you, is there a different refresh you're talking about?
+
+Speaker 5  26:37  
+Because, for example, look, I did this test in a on and like, an hour ago, it's still there.
+
+Speaker 5  26:50  
+Yeah. So the other thing is, see, I updated this an hour ago, yeah. If I go back here and if I see a on, it says that where was, I think it was in the dashboard.
+
+Unknown Speaker  27:01  
+Like all accounts, where is it?
+
+Speaker 5  27:10  
+Oh, see a on it says, updated three days ago. So that was something else. I quote.
+
+Speaker 7  27:20  
+Yeah, oh, wait, so make sense, because you didn't
+
+Speaker 4  27:26  
+update a on you update the blocker. The blocker is okay, oh, you haven't actually updated
+
+Azmain Hossain  27:30  
+or changed anything in the customer
+
+Unknown Speaker  27:35  
+so if you create, oh, okay, sorry.
+
+Speaker 5  27:45  
+Like the fields, okay, okay, so what would that like, any blockers and risks and stuff that we add? Why wouldn't we going to account for those on the date stamp. Date stamp.
+
+Unknown Speaker  28:07  
+Because, if I'm toggling through the just want
+
+Azmain Hossain  28:10  
+to see account updates, because we can easily expand this section or create more sections that say account updates, reset, block updates,
+
+Speaker 5  28:20  
+reset, whatever else. Yeah, yeah, I think that would be quite beneficial, because things like executive summary and most of these fields would stay the same. Won't be updated for a long period, but the blockers and the action plan and the use cases would be something that gets updated regularly.
+
+Speaker 4  28:41  
+But yeah, otherwise looking good. It's quite so.
+
+Speaker 5  28:53  
+Yeah, I'll still continue to play around it through quite enjoying it actually getting quite different perspective without
+
+Azmain Hossain  29:03  
+having to
+
+Speaker 5  29:07  
+talk. No worries, no worries. Cool, yeah, I'll continue to play around with you and let you know if anything. Thanks guys. Thanks, Richard, Thanks Ben, thank you.
+
+Speaker 6  29:15  
+Well, thanks for sure. Okay,
+
+Azmain Hossain  29:24  
+so, yeah, I will have someone else from my team. I'll get my hat to test it as well, hopefully
+
+Speaker 2  29:36  
+no issues. Also, I have it generated this a list of,
+
+Speaker 3  29:44  
+where is it? CSMs for us, I'm going to put it in here, reveal folder. Teams is horrible.
+
+Speaker 6  30:00  
+Okay, that's occurrence. Sorry, I just remembered this. And Richard, given that you're on the call, I'll ask you, do you
+
+Unknown Speaker  30:06  
+know that there's Client Success
+
+Richard Dosoo  30:17  
+Workshops happening this week? I mean, I wasn't involved, I didn't even get invited to the meeting until you guys invite me. So I haven't, I don't have a lot of visibility over the stuff they're doing. But and this actually speaks to the like, the disjointed management, like Josh and Ben are at loggerheads, and Josh is resistant to this change, and you're seeing that manifesting a lot of the feedback you're getting, but Ben's accountable for the customer, like transition journey, right? So, yeah, there probably is csme. They're going
+
+Richard Dosoo  30:56  
+to be in person in the office. Yeah. I mean, listen, we haven't been invited, so it's cool, man like,
+
+Unknown Speaker  31:07  
+but that's good, Then you should go and get feedback.
+
+Richard Dosoo  31:22  
+Yeah, I mean, like, I wasn't involved, right? Liz. Liz has decided not to include me on it. That's up to Liz. So I'm not gonna, I'm not, like, I'm just not, bro, I'm not getting involved in this shit that these people organise and don't tell me about. I don't get intentionally excluding you, gatekeeping this stuff, so just go and just show them what we've been up to.
+
+Richard Dosoo  31:54  
+Bro, it's fine, man. I really like, listen, I can give shit. Like, sorry. I'm being very candid light now, and I shouldn't be holding my mouth a little bit, but, bro, I don't care. I really can give fuck. Let whoever wants to do whatever they want to do and do this thing like, Fuck it, bro. It's not just like we've got a specific task to do and we're doing it, and let everyone else, let everyone just carry on with what they do. Yeah, all I would do is keep Diana. Just keep Diana involved and Dinah. So keep Natalia involved, because Natalia is your backup for any escalation, right? Any bullshit. I'm not doing out this week so, but I'm I just focus on what you need to focus on. And we focus on getting a build out and getting it running and getting production working, because that's what Josh is going to also use the hammer to beat us with, yet to fucking be running his gums about X, Y and Z. So let's just focus on what we need to do, if and and even if it like, just, it's cool, like, I'm not even gonna Well, it's not just to be, like, understanding of what is happening.
+
+Azmain Hossain  33:08  
+Like, are they going to sit down and because there's something else called, like, adoption squad group review, I'm like, are
+
+Unknown Speaker  33:18  
+they going to sit around and come up with a
+
+Richard Dosoo  33:21  
+bunch of stuff about how, what? They're doing. What they're doing is Ben actually did tell me this a few weeks ago. So for some of those high priority accounts, they're coming up with this adoption squads, which is a specific group of people to help move the count from where it is right now to high risk to green. So that's that's probably what most of that is. But the rest of the context of the session, I've not been invited. I don't know. I don't give a shit. I'm just like, bro, what I need to do? This lies.
+
+Unknown Speaker  34:13  
+It. This is what
+
+Richard Dosoo  34:19  
+I mean. And it's like the reason why this is happening is happening is because people have not got fucking job to do. Meanwhile, me, you Ben, have been working over the whole fucking weekend while these fucking jar heels, right fucking go there and do no work and just can't fucking chat shit. This is the number one bullshit that fucking pisses me up. There's no balance right about who's doing the work and who's getting rewarded for it, and you end up getting dragged into some bullshit navigate project, like, what you're getting dragged to right now to show guys a demo of a system that they're not even going to fucking use. It's such a waste of time. So, like, just as I said, the main thing is to just, like, minimise. The thing is just be like. Cool. The main thing we've got to do today is this, get product and run and get the guys in and get them testing, get them validate the data. After we've done that, the next priority for us is figure out what we want to do focus over the next, like, week or two weeks, to get that app, like, to a place where we can draw a line under it, because we've got the other four projects on the Gen AI workstream that haven't really touched it, which DIO is basically moving forward without us, but she thinks we're not involved. There's the meeting from last week. Haven't even set up minutes and action items and everything from that. Yeah. And while in that void, right then, these other dickheads that have not got work to you are soon going to start stepping into it, and I ain't got time for that. Do you get what I mean like? So that's you.
+
+Azmain Hossain  35:40  
+Don't take the reins of people that have no idea but have a million words to say one thing.
+
+Richard Dosoo  35:49  
+So yeah, that's what I would say. Now, keep Natalia involved. Be like I'm being asked to spend my time across these different initiatives, just in Ben's absence. Can you set tell me which one we should be focusing on? That's it. Alright, guys, I've got to do it because I got another meeting in 10 minutes, and I need to check, but I'll speak to you guys later for customers
+
+Speaker 2  36:18  
+and CSMs, yeah, I already added it. I already added it. Yeah, no worries. It's great that I have support of Ben and Richard, but like I am so
+
+Unknown Speaker  36:38  
+Junior rank. Yeah.
+
+Unknown Speaker  36:44  
+Yeah, a British and B, a
+
+Speaker 2  36:51  
+junior, yeah? No, I, trust me, I understand that quite, quite a lot. So I just mind my P's and Q's, but I mean, Richard's doing a great job of protecting me. So I have, yeah, I don't have anybody, so Richard's thankfully helping me,
+
+Unknown Speaker  37:15  
+helping protect
+
+Speaker 2  37:21  
+Yeah, that makes sense. Okay, so I added, let's see. Well, yeah, I added you as admin and Dev. I'm gonna, I'm adding you as admin in production right now.
+
+Unknown Speaker  37:41  
+Boom, boom, saving.
+
+Speaker 2  37:44  
+And then add Ben and Richard as well. Yeah, and if there's anything else, let me know. But I think we should be good for the time being.
+
+Azmain Hossain  38:00  
+Smartest, UX engineer ever fix everything?
+
+Speaker 2  38:07  
+Yeah, all right, well, yeah, let me know if there's anything you need, and we'll go from there. Yep. But.
+

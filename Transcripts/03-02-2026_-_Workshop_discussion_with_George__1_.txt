@@ -1,0 +1,84 @@
+Azmain Hossain  0:03  
+And kind of maybe give a bit of an overview, because I didn't know that there was going to be these. It seems like at least two days of workshops. Will it just like, you know, what's the what's the general aim? What are you guys hoping to get out of it?
+
+George Dyke  0:22  
+Do? So really, I mean really simply, there's so I've got two days with my team. Clara is now a part of what we're going to talk about more broadly on that topic, but it fits the broader theme is, how can we get some near term, Practical Action updates working together, just like, so I've in my little agenda, I've I've suggested we have, which I've asked a couple of people to take the lead on, but I've suggested we have some kind of background sync discussion, and Then we have some sprints of just like, let's everyone get hands on. Let's get messy in amongst all the records. Let's get updating. Let's find things that don't work, you know, let's chat about things that don't feel right. Let you know, simple things like, Oh, look, Philip, you're still the the name on this right? Let's just edit it immediately and and it might, I'm sure it's going to unlock some things that that the app isn't quite working for properly. And if we've got you in the room, right? You know, maybe we can. I mean, at the very least, we can talk very clearly to that, but maybe even we can fix some of that stuff, semi on the fly. I mean, I know it might not be live there in the room, right? But if we're talking about it in the morning, and it's something super simple, right? Maybe we can so just because we were talking Richard, we were like, We need To have a feedback
+
+Unknown Speaker  1:55  
+gathering session. Yeah.
+
+Unknown Speaker  2:05  
+Exactly, yeah, yeah.
+
+Unknown Speaker  2:32  
+Yeah, no, I get it, yeah,
+
+George Dyke  2:37  
+oh, yeah. And, for what it's worth, like, I'm like, I'm totally fine and good with all of that, right? Like, it's no worries. But I'm also not the person you know, managing my work through this tool, so it's hard for me to pick at the very granular detail, right? That is the difference between like, this all run, start to finish, versus like, well, I want to do this thing now, but this is kind of a blocker for me, or whatever it is, right? Or wouldn't it be amazing if we could just bring this other data point through, and then we could get a view on this right, which we don't have today, that, I think that sort of stuff, I really want to come out. And then part So, part of it is the goal. It kind of, yeah, we can iterate on that. Part of it is we actually, you know, for all the conversation of, oh, well, you know, all these people have been updating it, and we've lost the update Well, I actually don't think there's that many people that have been working on this, right? You know? I think that's probably the reality. So let's actually whip the data into shape, right, and get people really familiar with what it looks like, going through it and using the different views to get a summary of what they're doing. Hopefully we can actually have. So this is, you know, I guess what would be a miss is if we didn't have the ability to do things like add or edit a blocker or add an action plan, right? That would that, or all of these things, right? Because I would actually, really love people to to actually say, hey, look, we've got some old stuff. It probably isn't amazing, let's use it as the base. Let's start again a bit or like, I haven't updated this actually, for months, but no worries. You know, we're all in the room. Let's just get it done right now, right in this half an hour. So yeah, if it's on the basis that it's sort of fully functional, and then any edits that are made are obviously permanent, everyone's freaking out about at the moment, and that'd be great. Yeah. Bye.
+
+Azmain Hossain  4:40  
+Obviously one of our plans is to be in alignment with Gainsight and Salesforce in the medium. So we kind of spoken to the Gainsight team and been like, look, this is kind of what we're doing as a stopgap. Because, you know, we can't leave this huge IRB programme on track, not. What if it
+
+Unknown Speaker  5:02  
+takes Exactly, yeah,
+
+Azmain Hossain  5:57  
+yeah, yeah. Strategy. So that's our current thinking. Using that thinking there is like we're good to take on any feedback, any enhancement.
+
+George Dyke  6:14  
+So what I think, what we just need to really, really, I mean, it gets complicated when you start thinking about what all the data fields are, but conceptually what we need to make sure we distinguish, they're not mutually exclusive, right? But they are different. Everything that is IRP, adoption and migration focus, which is in Clara gain side, which in general, is about customer health. So the stuff that's in Clara is a component of that and more. So there's a Venn diagram right where there's an overlap. Yeah,
+
+Azmain Hossain  7:00  
+yeah, because it will at the end of the day, yeah, it will just form a component of every other
+
+Unknown Speaker  7:10  
+programme that's happening all
+
+George Dyke  7:11  
+the other products. Yeah, exactly, exactly. So like our life team today is already using Gainsight, right for customer health, and some of that won't change, right? Our property team haven't been using it, and we will need some uniform kind of organised data so that when deer needs to report up, right, what customer health is when we're running our monthly customer health reviews, which isn't an IRP review, although obviously some of that detail feeds into it, like we've got one way of reporting on that across all of the activities that we're doing. And there's a, there's a single source of truth for all round account customer health that will that is not our current plan to have it in Clara, which is an IRP adoption and migration tool. Yeah. Yeah.
+
+Azmain Hossain  8:26  
+Yeah, point with the end of March where they're like, right? We're ready for your data. All our data is organised differently. Field names are different, and it becomes Yes.
+
+Azmain Hossain  8:51  
+Yeah, yeah, so, yeah. This is an ongoing conversation we
+
+Unknown Speaker  9:00  
+need to make check. But the way that you just presented it, I
+
+Azmain Hossain  9:03  
+think, is a really good way to sell it to them, like, Look, guys, yeah, we're just doing
+
+George Dyke  9:11  
+this for our own because we have, well, in theory, right? There is an example where customer health is green, right? Customer health is green. IRP migration project is red, right? Or, you know, these use cases, four out of six of them are red, and two are amber, or something like that, right? And customer health is green, right? We're not concerned. The project is, has got lots of blockers, lots of challenges, right? But, or, you know, all the other way around, right? Where, commercially, there's a very worrying situation where we're expecting to lose this, but from a pure project perspective, then Zurich Insurance is a good one of these, right? That they're progressing well with their adoption of risk modeller, right? But actually they're looking at changing their overall relationship with this. So there is a Yeah, that's right. Okay, so, so, so, you know, for next, yeah, for net, for next week, right? As you're thinking about that, and I guess I wouldn't want to confuse the conversation in terms of all around customer health, and I'm happy to have that conversation, right? But let's make sure. Let's make sure we're clear on, you know, there's, there's the goals for the IRP migration effort, right? And then there's probably not much of an update we're doing with the team right now on the gain site and broader customer health side. And for what it's worth, the other day that we're doing is around account planning, right? Which, again, aligns with some of the broader stuff in Salesforce, in Gainsight and so on, right? That's, yeah, I think
+
+Azmain Hossain  10:41  
+that's kind of Yeah, not right now, but yeah, just the fact that I mentioned it to you. You just gave me a great idea. Oh, cool. All right.
+
+Speaker 1  11:14  
+Yeah, yeah,
+
+George Dyke  11:21  
+I think Julia had a question to you about could you sort of kick off with a bit of an overview or something? I'll let you just sync up with Julia on that. Yeah.
+
+Azmain Hossain  11:40  
+Everyone can go in and edit, speaking to a couple
+
+Unknown Speaker  11:56  
+of CSMs by the time we come to the
+
+George Dyke  11:57  
+beginner introduction, yeah, Julia, right about finding it might not be Julia, but finding the person on the team, right, who you could maybe co demo with, right? You know, I think that's always a good idea, right? A bit of you know, what I don't want is the idea that you've got a room full of people who are sat there having had the big introduction, having had the first couple of calls, now they're getting another introduction, right? And there's like, no ownership in the room, and everyone's just like, All right, well, you know, maybe I'll get started or something like, you know, there should be way more people in that room who have actively used it in a meaningful way than haven't, and we just need to kind of help them over the line, right? So I also don't want the tone of this is brand new. You know, this should be about really enabling immediate activity and accelerating it, rather than getting started, yeah, yeah.
+
+Azmain Hossain  12:45  
+Six months for implementation. Just quick, yeah, right, right. We build it. You start using it, yes, all right, guinea pig, you will find problems, but let's just, let's just work
+
+Speaker 1  12:59  
+through it together. Oh, all right, sounds good. Thank you so much.
+
+George Dyke  13:09  
+Sounds good. Azmain, all right. Really appreciate it.
+
+Unknown Speaker  13:12  
+Thanks. Thank you so much. Cheers. Bye.
+

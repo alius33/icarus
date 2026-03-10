@@ -1,0 +1,56 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: icarus
+      POSTGRES_USER: icarus
+      POSTGRES_PASSWORD: icarus_local
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U icarus"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: "postgresql+asyncpg://icarus:icarus_local@db:5432/icarus"
+      SYNC_DATABASE_URL: "postgresql://icarus:icarus_local@db:5432/icarus"
+      DATA_ROOT: "/data"
+      CORS_ORIGINS: '["http://localhost:3000","http://localhost:3001"]'
+    volumes:
+      - .:/data:ro
+      - ./backend/app:/app/app
+      - ./backend/scripts:/app/scripts
+      - ./backend/alembic:/app/alembic
+    depends_on:
+      db:
+        condition: service_healthy
+    command: >
+      sh -c "cd /app && alembic upgrade head && python -m scripts.import_data --data-root /data && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: "http://localhost:8000"
+      INTERNAL_API_URL: "http://backend:8000"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:

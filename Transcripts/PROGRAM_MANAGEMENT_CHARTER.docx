@@ -1,0 +1,518 @@
+# PROGRAM MANAGEMENT CHARTER: CUSTOMER SUCCESS GEN AI
+
+## GENERAL PROGRAM INFORMATION
+
+  -----------------------------------------------------------------------
+  **Field**                 **Value**
+  ------------------------- ---------------------------------------------
+  **PROGRAM NAME**          Customer Success Gen AI Program
+
+  **PROGRAM MANAGER**       Azmain Hossain
+
+  **EXECUTIVE SPONSORS**    Ben Brooks (Managing Director) / Richard
+                            Dosoo (Senior Director)
+
+  **EMAIL**                 \[Your Email\]
+
+  **PHONE**                 \[Your Phone\]
+
+  **ORGANIZATIONAL UNIT**   Customer Success (CS) - Insurance Operating
+                            Unit
+
+  **EXPECTED START DATE**   January 7, 2026
+
+  **EXPECTED COMPLETION     Q4 2026 (Ongoing Evolution & Continuous
+  DATE**                    Improvement)
+
+  **EXPECTED SAVINGS**      TBD - Primarily driven by a projected 30-40%
+                            unlock in CSM capacity, reduced L1 support
+                            ticket volume, and increased pipeline
+                            conversion velocity.
+  -----------------------------------------------------------------------
+
+## 
+
+## PROGRAM OVERVIEW
+
++-----------+----------------------------------------------------------+
+| **        | **Description**                                          |
+| Section** |                                                          |
++===========+==========================================================+
+| **PROBLEM | The Customer Success organization faces operational      |
+| OR        | friction due to manual, labor-intensive workflows that   |
+| ISSUE**   | scale linearly with headcount. Analysis indicates that   |
+|           | CSMs allocate **30-40% of their weekly capacity** to     |
+|           | non-strategic administrative tasks, including manual     |
+|           | data aggregation from Salesforce, client call            |
+|           | summarization, and routine correspondence drafting.      |
+|           | Additionally, the fragmentation of adoption data across  |
+|           | disparate systems (Salesforce, local files) impedes      |
+|           | real-time visibility. Leadership forums frequently       |
+|           | expend valuable time reconciling data accuracy rather    |
+|           | than executing strategic decisions, due to the absence   |
+|           | of a unified \"Golden Source\" for customer health       |
+|           | metrics.                                                 |
++-----------+----------------------------------------------------------+
+| **PURPOSE | To operationalize Artificial Intelligence across the     |
+| OF        | Customer Success value chain, transitioning the          |
+| PROGRAM** | organization from a service-based model to a             |
+|           | technology-enabled engagement model. This program        |
+|           | consolidates isolated pilot initiatives into a unified   |
+|           | **\"Process Management System.\"** The strategic         |
+|           | objective is to drive **high-velocity innovation** by    |
+|           | unifying \"Migration\" (Technical Debt Retirement) and   |
+|           | \"Adoption\" (Value Realization) activities under a      |
+|           | single, rigorous governance framework, ensuring          |
+|           | alignment with operational efficiency and commercial     |
+|           | growth targets.                                          |
++-----------+----------------------------------------------------------+
+| *         | Automating administrative workflows and standardizing    |
+| *BUSINESS | the adoption process will unlock significant CSM         |
+| CASE**    | capacity (Operational Efficiency), enabling a shift in   |
+|           | focus toward high-value advisory work that drives Net    |
+|           | Revenue Retention (NRR). Concurrently, equipping the     |
+|           | pre-sales team with live, AI-driven prototyping tools    |
+|           | will accelerate sales cycles (Commercial Value). This    |
+|           | program strategically repositions Gen AI from a          |
+|           | back-office efficiency lever to a **front-office revenue |
+|           | accelerator**, differentiating our service offering in   |
+|           | the market.                                              |
++-----------+----------------------------------------------------------+
+| **PROGRAM | 1\. **Operational Efficiency:** Achieve a measurable     |
+| GOALS**   | reduction in \"time-to-report\" for CSMs and reduce      |
+|           | weekly stand-up duration by \>50% through management by  |
+|           | exception.                                               |
+|           |                                                          |
+|           | 2\. **Data Integrity:** Achieve \>95% Data Completeness  |
+|           | in the new system (eliminating undefined status fields)  |
+|           | to enable accurate forecasting.                          |
+|           |                                                          |
+|           | 3\. **Commercial Impact:** Demonstrate a measurable      |
+|           | \"Pipeline Conversion Lift\" for deals utilizing         |
+|           | Cursor-based live demos versus standard static           |
+|           | presentations.                                           |
+|           |                                                          |
+|           | 4\. **Support Deflection:** Deflect a significant        |
+|           | percentage of Tier 1 support tickets via IRP Navigator   |
+|           | L1 automation, optimizing support costs.                 |
+|           |                                                          |
+|           | 5\. **Upskilling:** Achieve a high \"Competency          |
+|           | Conversion Rate,\" defined as the percentage of staff    |
+|           | who deploy a working agent or automation within 30 days  |
+|           | of training.                                             |
++-----------+----------------------------------------------------------+
+
+## 
+
+## 
+
+## 
+
+## 
+
+## 
+
+## PROJECT 1: TRAINING & ENABLEMENT (UPSKILLING)
+
++-----------------------+----------------------------------------------+
+| **Field**             | **Details**                                  |
++=======================+==============================================+
+| **Project Lead**      | Training Lead (TBD) / Richard Dosoo          |
++-----------------------+----------------------------------------------+
+| **Strategic Context** | To scale innovation effectively, we must     |
+|                       | democratize technical capability beyond a    |
+|                       | centralized team. This project transitions   |
+|                       | the workforce from passive \"AI Awareness\"  |
+|                       | to active \"AI Competency,\" fostering a     |
+|                       | culture where functional leads are empowered |
+|                       | to resolve efficiency challenges             |
+|                       | independently.                               |
++-----------------------+----------------------------------------------+
+| **Scope**             | \- **Microsoft Copilot & Moody's Copilot     |
+|                       | Platform:** Integration into daily workflows |
+|                       | (e.g., meeting summarization, content        |
+|                       | generation) to drive productivity gains.     |
+|                       |                                              |
+|                       | \- **Copilot Studio Lite:** Training a       |
+|                       | designated group of \"Citizen Developers\"   |
+|                       | within CS to build custom \"Smart Agents\"   |
+|                       | for specific team use cases.                 |
+|                       |                                              |
+|                       | \- **Cursor for Non-Engineers:** Enabling    |
+|                       | functional leads to utilize code generation  |
+|                       | tools for prototyping and understanding      |
+|                       | technical possibilities.                     |
++-----------------------+----------------------------------------------+
+| **Target Metrics**    | **Competency Conversion Rate:** Success is   |
+|                       | defined as the percentage of attendees who   |
+|                       | deploy a working agent or automation within  |
+|                       | 30 days of training, ensuring practical      |
+|                       | application.                                 |
++-----------------------+----------------------------------------------+
+| **Benefits &          | **Customer:** Customer Success Team (CSMs,   |
+| Customers**           | Managers, Directors).                        |
+|                       |                                              |
+|                       | **Benefit:** A digitally fluent workforce    |
+|                       | capable of self-service automation; reduced  |
+|                       | reliance on Central IT for minor             |
+|                       | enhancements; increased employee             |
+|                       | satisfaction through skill acquisition.      |
++-----------------------+----------------------------------------------+
+| **Risks &             | **Risk:** **Adoption Inertia.** Staff may    |
+| Assumptions**         | deprioritize new tools due to existing       |
+|                       | workload pressures.                          |
+|                       |                                              |
+|                       | **Mitigation:** Emphasize immediate          |
+|                       | productivity benefits (\"Time Returned\")    |
+|                       | rather than theoretical application.         |
+|                       |                                              |
+|                       | **Assumption:** Necessary licenses (Copilot, |
+|                       | Cursor) are procured and provisioned prior   |
+|                       | to launch.                                   |
++-----------------------+----------------------------------------------+
+
+## PROJECT 2: PMO PROCESS MANAGEMENT SYSTEM 
+
++-----------------------+----------------------------------------------+
+| **Field**             | **Details**                                  |
++=======================+==============================================+
+| **Project Lead**      | Azmain Hossain (Product Owner) / Ben Brooks  |
+|                       | (Technical Sponsor)                          |
++-----------------------+----------------------------------------------+
+| **Strategic Context** | This system serves as the program\'s         |
+|                       | \"Central Nervous System.\" It resolves the  |
+|                       | historical ambiguity between \"Migration\"   |
+|                       | (platform transition) and \"Adoption\"       |
+|                       | (usage depth) by utilizing distinct data     |
+|                       | models. It replaces passive reporting with   |
+|                       | an active system that enforces operational   |
+|                       | discipline and data governance.              |
++-----------------------+----------------------------------------------+
+| **Scope**             | \- **Unified Dashboard:** A centralized view |
+|                       | providing a definitive assessment of client  |
+|                       | health, distinguishing between Migration     |
+|                       | status and Adoption depth.                   |
+|                       |                                              |
+|                       | \- **Pipeline Management:** Tools to         |
+|                       | automate weekly stand-ups, transforming them |
+|                       | from status-gathering exercises into         |
+|                       | strategic pipeline reviews of \"Blockers.\"  |
+|                       |                                              |
+|                       | \- **Data Hygiene (\"Compliance              |
+|                       | Dashboard\"):** Features that visualize data |
+|                       | gaps (e.g., missing \"Next Action\" fields)  |
+|                       | and prompt users for remediation, ensuring   |
+|                       | downstream reporting accuracy.               |
+|                       |                                              |
+|                       | \- **Executive View:** High-level            |
+|                       | aggregation enabling leadership to assess    |
+|                       | business health efficiently.                 |
++-----------------------+----------------------------------------------+
+| **Target Metrics**    | **Data Completeness %** (Minimizing          |
+|                       | undefined status fields); **Stand-up         |
+|                       | Efficiency** (Reducing status gathering time |
+|                       | by \>50%).                                   |
++-----------------------+----------------------------------------------+
+| **Benefits &          | **Customer:** CS Leadership & CSMs.          |
+| Customers**           |                                              |
+|                       | **Benefit:** Real-time visibility into       |
+|                       | business health; standardized data           |
+|                       | definitions eliminating reconciliation       |
+|                       | debates; ability to manage by exception.     |
++-----------------------+----------------------------------------------+
+| **Risks &             | **Risk:** **Integration Latency.**           |
+| Assumptions**         | Infrastructure challenges with Azure Private |
+|                       | Endpoints may delay the connection between   |
+|                       | the Web App and Database.                    |
+|                       |                                              |
+|                       | **Mitigation:** Program Lead will act as     |
+|                       | Release Manager, interfacing directly with   |
+|                       | IT to resolve infrastructure tickets and     |
+|                       | shield the development team.                 |
+|                       |                                              |
+|                       | **Assumption:** The proposed \"Migration\"   |
+|                       | vs \"Adoption\" logic is applicable to \>90% |
+|                       | of client scenarios.                         |
++-----------------------+----------------------------------------------+
+
+## 
+
+## 
+
+## 
+
+## PROJECT 3: CUSTOMER SUCCESS AGENT (INTERIM DB → GAINSIGHT)
+
++-------------+--------------------------------------------------------+
+| **Field**   | **Details**                                            |
++=============+========================================================+
+| **Project   | Kevin Purn / Richard Dosoo                             |
+| Lead**      |                                                        |
++-------------+--------------------------------------------------------+
+| **Strategic | To alleviate administrative burden on CSMs, this       |
+| Context**   | project deploys autonomous agents for data entry and   |
+|             | content creation. The strategy prioritizes             |
+|             | **velocity** by utilizing an interim database for      |
+|             | immediate value realization, while planning for a      |
+|             | scalable enterprise architecture.                      |
++-------------+--------------------------------------------------------+
+| **Scope**   | \- **Phase 1 (Velocity):** Immediate deployment of an  |
+|             | \"Interim Database\" solution. This enables agents to  |
+|             | summarize calls, draft emails, and update status       |
+|             | fields immediately, validating use cases.              |
+|             |                                                        |
+|             | \- **Phase 2 (Scalability):** Migration of the backend |
+|             | to the official Salesforce/Gainsight infrastructure    |
+|             | once the data model is proven and APIs are available.  |
+|             |                                                        |
+|             | \- **Functionality:** Auto-summarization of calls,     |
+|             | automated follow-up email drafting, action item        |
+|             | extraction.                                            |
++-------------+--------------------------------------------------------+
+| **Target    | **Hours Saved per CSM/Week** (Measured via usage);     |
+| Metrics**   | **Agent Utilization Rate** (Daily Active Agents).      |
++-------------+--------------------------------------------------------+
+| **Benefits  | **Customer:** Individual CSMs.                         |
+| &           |                                                        |
+| Customers** | **Benefit:** Reduction of administrative overhead;     |
+|             | increased capacity for high-value client interaction;  |
+|             | consistent documentation quality across the team.      |
++-------------+--------------------------------------------------------+
+| **Risks &   | **Risk:** **Technical Debt.** The potential for the    |
+| As          | \"Interim Database\" to become a permanent legacy      |
+| sumptions** | system if migration is delayed.                        |
+|             |                                                        |
+|             | **Mitigation:** Strict dual-track planning documented  |
+|             | in the roadmap with a defined \"Sunset Date\" for the  |
+|             | interim solution.                                      |
+|             |                                                        |
+|             | **Constraint:** The interim solution must adhere to    |
+|             | existing Salesforce data hygiene standards.            |
++-------------+--------------------------------------------------------+
+
+## PROJECT 4: ADOPTION CHARTER WORKFLOW (ENTRY POINT)
+
++-----------------------+----------------------------------------------+
+| **Field**             | **Details**                                  |
++=======================+==============================================+
+| **Project Lead**      | Richard Dosoo / Liz Couchman                 |
++-----------------------+----------------------------------------------+
+| **Strategic Context** | Standardizing the \"Input\" layer is         |
+|                       | critical for the success of downstream AI    |
+|                       | agents. This project digitizes the           |
+|                       | onboarding process to ensure every customer  |
+|                       | journey begins with structured, high-quality |
+|                       | data, mitigating \"Garbage In, Garbage Out\" |
+|                       | risks.                                       |
++-----------------------+----------------------------------------------+
+| **Scope**             | \- **Digital Charters:** Conversion of       |
+|                       | unstructured Word documents into dynamic     |
+|                       | digital data models queryable by AI.         |
+|                       |                                              |
+|                       | \- **Auto-Documentation:** Utilization of    |
+|                       | Copilot Studio to generate draft charters    |
+|                       | from standard templates and Salesforce       |
+|                       | records via CSM interview.                   |
+|                       |                                              |
+|                       | \- **Blueprint Integration:** Linking        |
+|                       | customers to standard \"Blueprints\" (e.g.,  |
+|                       | Treaty Pricing) to ensure standardized scope |
+|                       | definitions.                                 |
++-----------------------+----------------------------------------------+
+| **Target Metrics**    | **Onboarding Time Reduction** (Time from     |
+|                       | Sales to First Value); **Charter Data        |
+|                       | Accuracy** (% of fields populating correctly |
+|                       | downstream).                                 |
++-----------------------+----------------------------------------------+
+| **Benefits &          | **Customer:** New Clients & Implementation   |
+| Customers**           | Team.                                        |
+|                       |                                              |
+|                       | **Benefit:** Accelerated time-to-value;      |
+|                       | high-quality data ingestion for AI           |
+|                       | consumption; reduced administrative burden   |
+|                       | during onboarding.                           |
++-----------------------+----------------------------------------------+
+| **Risks &             | **Risk:** **Process Adherence.** CSMs may    |
+| Assumptions**         | bypass the digital charter for complex       |
+|                       | clients.                                     |
+|                       |                                              |
+|                       | **Mitigation:** Mandating the digital        |
+|                       | charter as the requisite mechanism to unlock |
+|                       | downstream resources (e.g., Implementation   |
+|                       | Engineers).                                  |
++-----------------------+----------------------------------------------+
+
+## PROJECT 5: IRP NAVIGATOR UPGRADE (L1 AUTOMATION)
+
++-----------------------+----------------------------------------------+
+| **Field**             | **Details**                                  |
++=======================+==============================================+
+| **Project Lead**      | Richard Dosoo / Matt Allen / Navigator       |
+|                       | Product Team                                 |
++-----------------------+----------------------------------------------+
+| **Strategic Context** | To decouple support volume from customer     |
+|                       | growth, we must deflect Tier 1 support       |
+|                       | tickets through self-service AI. This        |
+|                       | project validates the technical feasibility  |
+|                       | of utilizing the IRP Navigator as a          |
+|                       | programmatic support agent.                  |
++-----------------------+----------------------------------------------+
+| **Scope**             | \- **API Validation:** Rigorous testing of   |
+|                       | Navigator APIs to ensure support for         |
+|                       | programmatic access and high-volume          |
+|                       | querying.                                    |
+|                       |                                              |
+|                       | \- **L1 \"Salesforce Skill\":** Development  |
+|                       | of a specialized agent \"skill\" to          |
+|                       | intercept incoming tickets, reason against   |
+|                       | the knowledge base, and propose immediate    |
+|                       | solutions.                                   |
++-----------------------+----------------------------------------------+
+| **Target Metrics**    | **Ticket Deflection %** (Percentage of       |
+|                       | potential L1 queries resolved without human  |
+|                       | intervention); **Diagnostic Accuracy**.      |
++-----------------------+----------------------------------------------+
+| **Benefits &          | **Customer:** End Users (Clients) & Internal |
+| Customers**           | Support Desk.                                |
+|                       |                                              |
+|                       | **Benefit:** Immediate query resolution for  |
+|                       | clients; reduced ticket volume for the       |
+|                       | support team.                                |
++-----------------------+----------------------------------------------+
+| **Risks &             | **Risk:** **Response Accuracy.** Potential   |
+| Assumptions**         | for AI to provide incorrect technical        |
+|                       | guidance (\"Hallucinations\").               |
+|                       |                                              |
+|                       | **Constraint:** Security approvals required  |
+|                       | for accessing client-specific data.          |
+|                       |                                              |
+|                       | **Dependency:** Stability and rate limits of |
+|                       | the Navigator API.                           |
++-----------------------+----------------------------------------------+
+
+## PROJECT 6: CURSOR FOR PIPELINE (SALES TOOL)
+
++-----------------------+----------------------------------------------+
+| **Field**             | **Details**                                  |
++=======================+==============================================+
+| **Project Lead**      | Ben Brooks / Martin Davies / Pre-Sales       |
+|                       | Engineering                                  |
++-----------------------+----------------------------------------------+
+| **Strategic Context** | This project reframes Cursor from an         |
+|                       | internal efficiency tool to a revenue        |
+|                       | generation engine. By constructing live      |
+|                       | prototypes during client engagements, we     |
+|                       | demonstrate the openness and flexibility of  |
+|                       | our platform, countering \"black box\"       |
+|                       | competitor narratives.                       |
++-----------------------+----------------------------------------------+
+| **Scope**             | \- **Pre-Sales Demos:** Enablement of        |
+|                       | Solutions Engineers (SEs) to execute live    |
+|                       | prototyping sessions (\"Build in 5           |
+|                       | minutes\"), demonstrating rapid value        |
+|                       | creation.                                    |
+|                       |                                              |
+|                       | \- **Rapid Prototyping:** Utilization of     |
+|                       | Cursor to mock up complex integrations       |
+|                       | during sales cycles to prove technical       |
+|                       | feasibility.                                 |
++-----------------------+----------------------------------------------+
+| **Target Metrics**    | **Pipeline Conversion Lift** (Win rate for   |
+|                       | deals utilizing Cursor demos vs. standard    |
+|                       | demos); **Demo Velocity** (Time required to  |
+|                       | prep a custom demo).                         |
++-----------------------+----------------------------------------------+
+| **Benefits &          | **Customer:** Sales Team & Prospective       |
+| Customers**           | Clients.                                     |
+|                       |                                              |
+|                       | **Benefit:** Increased win rates; shortened  |
+|                       | sales cycles; market differentiation via     |
+|                       | \"Open Platform\" demonstration.             |
++-----------------------+----------------------------------------------+
+| **Risks &             | **Risk:** **Technical Proficiency.** Sales   |
+| Assumptions**         | teams may lack confidence in live coding     |
+|                       | environments.                                |
+|                       |                                              |
+|                       | **Mitigation:** Initial deployment of        |
+|                       | dedicated \"Demo Engineering\" support to    |
+|                       | shadow calls, transitioning to SE autonomy.  |
+|                       |                                              |
+|                       | **Dependency:** Availability of Cursor       |
+|                       | licenses and curated \"sandbox\" datasets.   |
++-----------------------+----------------------------------------------+
+
+## TENTATIVE PROGRAM SCHEDULE
+
+  -----------------------------------------------------------------------
+  **KEY MILESTONE**               **START**              **FINISH**
+  ------------------------------- ---------------------- ----------------
+  **Program Setup / Governance /  Jan 2026               Jan 2026
+  RACI Definition**                                      
+
+  **Project 2: Process Management Jan 2026               Feb 2026
+  System Deploy (Interim)**                              
+
+  **Sales Recon Alignment         Jan 2026               Jan 26, 2026
+  (Leadership Pitch)**                                   
+
+  **Project 6: Sales Demo Library Jan 2026               Mar 2026
+  V1 & Training**                                        
+
+  **Project 3: CS Agent (Interim  Feb 2026               Mar 2026
+  DB) Live Pilot**                                       
+
+  **Project 5: L1 Navigator API   Q1 2026                Q2 2026
+  Tests & Validation**                                   
+
+  **Project 3: Enterprise API     Q3 2026                Q4 2026
+  Integration (Gainsight)**                              
+
+  **Program Review, ROI Analysis  Dec 2026               Dec 2026
+  & Closeout**                                           
+  -----------------------------------------------------------------------
+
+## RESOURCES
+
++-----------------------------------+-----------------------------------+
+| **Resource Type**                 | **Description**                   |
++===================================+===================================+
+| **PROGRAM TEAM**                  | **Azmain Hossain (Program         |
+|                                   | Lead)** - Overall delivery,       |
+|                                   | governance, and stakeholder       |
+|                                   | management.                       |
+|                                   |                                   |
+|                                   | **Ben Brooks (Exec Sponsor)** -   |
+|                                   | Strategic direction and executive |
+|                                   | alignment.                        |
+|                                   |                                   |
+|                                   | **Richard Dosoo (Exec             |
+|                                   | Sponsor)** - Operational          |
+|                                   | oversight and resource            |
+|                                   | allocation.                       |
++-----------------------------------+-----------------------------------+
+| **PROJECT LEADS**                 | **Kevin Purn** (CS Agent Lead),   |
+|                                   | **Liz Couchman** (Adoption Lead), |
+|                                   | **Matt Allen** (Navigator Product |
+|                                   | Lead), **Martin Davies** (Tech    |
+|                                   | Sales Lead).                      |
++-----------------------------------+-----------------------------------+
+| **SUPPORT RESOURCES**             | **IT/Infrastructure:** Dedicated  |
+|                                   | Azure support for Private         |
+|                                   | Endpoints.                        |
+|                                   |                                   |
+|                                   | **Copilot Studio Team:**          |
+|                                   | Technical support for agent       |
+|                                   | building.                         |
+|                                   |                                   |
+|                                   | **Pre-Sales Engineering:** Field  |
+|                                   | testing of sales tools.           |
++-----------------------------------+-----------------------------------+
+
+## PREPARED BY
+
+  -----------------------------------------------------------------------
+  **Name**                **Title**               **Date**
+  ----------------------- ----------------------- -----------------------
+  Azmain Hossain          Program Manager         January 7, 2026
+
+  -----------------------------------------------------------------------

@@ -1,0 +1,474 @@
+Unknown Speaker  0:00  
+In the end. So I've been rich, and now here we all are cool,
+
+Unknown Speaker  0:07  
+Irish house. Man, Hey, George. I
+
+Richard Dosoo  0:09  
+am George. I was, obviously, we're working with a team on Ben's IRP adoption app, and they were all very interested as well in seeing,
+
+Unknown Speaker  0:19  
+yeah, thanks for following
+
+Richard Dosoo  0:22  
+along, George. I thought what we'll do today is get you up and running and just walk you through the process, if you haven't been familiar with it before, of being able to create static web pages using terza and then you could use that like essentially, once we've walked you through the process, you can iterate on that and add more requirements. And then once we've cleared that step, we could then talk about Blackburn, if we want to add George's app as an app to the infrastructure that we've already got, and then talk about we'll see George updating it and deploying it and so on. So a few things to go through, but the first step George is to get you up and running with cursor. If you haven't got it up and running already, we can go through the prompts that I sent you last week. We'll go through the prompt structure and what it's doing and how it is essentially going to create what we call like a PRD requirement document, and then it goes builds off the top of that. So we'll review that process together. And then once we've done all that, we can look at the output and talk about what that means. If we start with, are you able to bring cursor up on your machine now? With it, were
+
+George Dyke  1:27  
+they I'm on my laptop. Hang on a minute. I'm not in the meeting, not my laptop. Let me just join the teams. And then I will, I will share what's on my screen. Does that make most sense?
+
+Unknown Speaker  1:35  
+Yep, perfect. Do
+
+Speaker 1  1:55  
+Yeah, your control of the main branch. I mean, did that review code? Did it yield any results? Azmain,
+
+Ben Brooks  2:18  
+yeah, do it. It's, I love the I love the collective discomfort that all this stuff is causing, like the this shit gets iterated over a 12 hour period, and we throw stuff in the bin and just read through it. It's fantastic. And the Yeah, no one is comfortable with that. I've just spent an hour and a half on the phone with Charlotte talking about, you know, just do it, press the button, see what it produces. And if it's shit, put it in the bin and do it again. Like you've got infinite iteration here. Let's go. And it was like, Oh, what do I do? Am I allowed to allow this? I was just fucking do it. Like policy will stop you if you can't,
+
+Speaker 1  3:01  
+it's hilarious, we'll run out of tokens first. But if 100
+
+Ben Brooks  3:09  
+people spend 10 grand, I would call that success,
+
+Unknown Speaker  3:12  
+we'll soon find out. Don't
+
+Ben Brooks  3:14  
+worry, yeah, we'll be in trouble. So
+
+Richard Dosoo  3:17  
+George, what's happening here, right? Is, once you're on this landing page, you essentially can you create a project which is a folder for where your code and where your samples and everything is gonna lie. And you got to put options. One option is you can have a project locally on your machine, so we can create a folder and store all your code there. Eventually we want to actually have you connecting to a project in GitHub, because that's where all of moody stores, all of our code and code management. But I don't think we've got you a GitHub account yet, so that's probably something we'll need to take care of after this call.
+
+Unknown Speaker  3:54  
+Yeah, from any other reason either. So yeah.
+
+Richard Dosoo  4:00  
+So maybe, if we start right, if you go open project that's going to open like a browser, and basically, what we want to do is just go to somewhere, like where your OneDrive is, create a folder called projects, and then, and then, essentially, yeah, so if you Create a new folder and call it projects, for example. And then within that folder you then you can create a project called, you know, pipeline tracker, for example.
+
+Speaker 2  4:36  
+Yeah, this is this more account plans, but yeah,
+
+Richard Dosoo  4:41  
+yeah, account plans, yeah, and then, and then he obviously select that folder.
+
+Ben Brooks  4:46  
+Oh, version number on it, you're gonna have version 3456, by the end of the day. Out planner. Oh, one, if you're feeling if you're feeling optimistic, give it three digits, because you might get up to 100 by the end of the week. All right.
+
+Richard Dosoo  5:02  
+Yeah, that's exactly that's a good segue, man like George, when we've got you in GitHub, GitHub manages the version control right? You won't have to do it locally on your machine. So now you've got this folder up and running. You see here where it says new chat on the right. This is where you start entering your prompts, telling cursor what you want to do, and it's going to write its actions to that folder that we just created. So you can see here on the left is saying account planner. Oh, one. So for example, right, if we start right, you can if you take the prompt that I sent you on Friday, which,
+
+Unknown Speaker  5:37  
+yeah, I'm just copying it now. Yeah, I
+
+Unknown Speaker  5:43  
+right? I copy the whole thing, yep. So
+
+Richard Dosoo  5:46  
+for, I guess, for everyone else's benefit, I basically just used, I used chat GPT to come up with a prompt for George that is going to create an account, planning a set of pages for him as HTML that he can run on his local machine. So I'll put this prompt in the other chat to share with you guys, but George, so if you press enter, what's going to happen is the cursor is now going to interact with some models that we've got that it knows how to communicate with, and it's going to come up with a plan for what it's going to do to create this set of web pages for you based off some assumptions that it's going to make. So you can see, if you expand the bottom here, it's going to tell you, sorry, where the text is writing to now it is going to start writing out things like, what are your requirements for an account planning application? What data objects do you want to see? It's got some instructions about all from problem that we've given it, what type of UI, what type of user experience do we want? All those things are going to get written out here. And it's going to give you what we call a markdown file that you can review. And a markdown file is just like a document that cursor uses to store its input and output, but for your for all intents and purposes, this is you're going to be your specification that you can read or share with other people and and it's going to give you the specification so you can review it before it does anything. Okay, if you wanted to, you could have just said, Just do it. I don't care. But for the purpose of us learning, I asked the prompt to give you an instruction first. Oh, actually, no, sorry, you pay you put both steps in. So now it's to the second step. Sorry, apologies, George, and it's just yeah, no, that's my fault. I sent you in one block, but I should have sent you in two separate blocks. The first block of that prompt was create the spec. The second block was go and implement it. So now it's gone away and done both.
+
+Speaker 2  7:50  
+Should we let it do its thing, or should I stop it? Or no, no,
+
+Richard Dosoo  7:53  
+it's cool. Let it do its thing. It won't take very long. What it's doing now is based off that specification. It's going and creating those pages, in that folder that you've specified, yeah, and when it's finished, you're going to get a link, or you can just jump into that folder yourself and say, Okay, open up this webpage, the static edit HTML page, and I'll open it up on your local machine, and we'll be able to see the results. Okay, now what happens? What? So what now, right, so you've got some pages, you've got, you've got a spec. What do you do? This is where the value comes in, right? Because you can actually iterate on it and start changing the prompt and updating your requirements document and then updating the build just by interacting with this text panel on the left. You don't have to do any deployment. Don't do any software. Engineering.
+
+Unknown Speaker  8:41  
+This is like the plan Markdown file, yeah,
+
+Unknown Speaker  8:46  
+yeah. If it's finished, open it.
+
+George Dyke  8:48  
+It's in the folder, I guess it, yeah, it looks like it finished two minutes ago.
+
+Richard Dosoo  8:52  
+Yeah. You can open it from the folder, or double click it from here, either one.
+
+Unknown Speaker  8:56  
+Oh, right, yeah, I see that. Okay, cool. Let's see. I
+
+Unknown Speaker  9:07  
+It should open a notepad. Oh, here you go. Yep.
+
+Richard Dosoo  9:11  
+So as you can see, it's giving you a summary who the primary users are, what success looks like.
+
+George Dyke  9:17  
+What right? So this is so in theory, what I should do is I should now go and review this, tweak it, edit it as whatever, right before it does what it's doing now in stage two. So fine. So if I were to do that, it would just be redoing the work it's doing now, I guess,
+
+Richard Dosoo  9:34  
+yeah, but it can do right? That's not a problem. And you only have to, you can just edit your requirements. You don't have to go and edit the data model and the JSON, because it will go and regenerate those things from the requirements that you've presented.
+
+George Dyke  9:48  
+Yeah. Okay, so this is okay, cool. So it's got some business context, what success looks like. And then it's got sort of some Okay, so cool. So this is where you can start getting into as much. As little detail, I guess, as you want, right about features, yeah, yeah.
+
+Richard Dosoo  10:05  
+And as I said, like, this was just a very crude, like, example we can give. We can, like, start giving you better specification template formats that you know, have more placeholders in them, so you get,
+
+George Dyke  10:19  
+I think this is the complexity of this is going to be much less than what you know you'd be working on for the IRP offer their what are we calling it? The the whole option tracker, or adoption tracker, or whatever it's called. I think that. I think that's going to be more involved than what this account planner might do, a bit more sort of customer context research alongside it or something. But actually, like the stuff that goes in, it is relatively simple, right? And it's stuff that there's so many standards for, right? I mean, I think where you're going to have a
+
+Ben Brooks  10:53  
+fun challenge with it is like organisational getting, getting everyone aligned around the idea and the need and all the rest of it, but also the potential grey areas and where it can bleed into as other iterations, phase two, phase three, which are phenomenal. But you know, when you imagine how much stuff is actually in Salesforce that should be coming into this and various other places that will get pretty interesting pretty quick, that's right.
+
+George Dyke  11:18  
+So some stuff coming in, but then definitely kind of v1 or whatever it is output is probably one, or maybe it's one out of a couple of templated options of a file that doesn't yet exist anywhere else, right? So at a minimum, right? There's not a lot of readout that needs to go back into systems, which I think simplifies things quite a lot. Tell me, if I'm understanding this wrong, you're right, you know. And that's the that's the primary initial need, right? We're not doing any of this planning. How can we do really effective planning? So this, this is about actual, like genuine, not happening today, core activities of the team that feed into all these related things, right? That we're doing across the team, such as the portfolio, the IRP migrations, etc, etc, also other stuff, right? And that is what our team is not doing today. So number one benefit is our team should just be more effective in that its core purpose. But as we build it out, all the things that talk and send to and from and read and write and so on, I think, yeah, that that's probably where it gets really interesting. Yeah, it's just like, doing stuff that we should we should be there should be somebody should be saying, Oh, this is really annoying, because here's where we store all of our account plans, right? And what does that mean for the ones we've already got in use? Like, is it gonna suddenly, like, nobody's gonna be worried about that? We don't have any
+
+Richard Dosoo  12:42  
+point George and Ben's like, what we should be doing is what we're talking about now is very good for, like, short term tactical, you know, as you said, get the team working with a process that doesn't exist today. But long term, what we should be doing George is like, feeding our requirements over to Ari, the Harvey's team, to the sales rep and team, so we've got a call with them next week, like Ari's actually coming to London to have a meeting to talk about sales recon, to talk about some of our requirements. So I've sent you a demo video of what sales recon does right now. It has some customer planning capabilities and recommendations, but it probably doesn't have the specificity that you need, but we definitely should like be socialising that and then feeding our needs back to them. So in six months or a year's time, when sales recon gets updated, it has more of the value items in it that we need for customer success.
+
+George Dyke  13:37  
+Yeah, and I saw some of that going back several months when they were first looking beyond the sales opportunity kind of discovery use cases, and they were looking at a couple of quite specific customer success use cases. But it wasn't targeting sort of broader account planning at that stage, for sure, obviously a bunch of what that was already optimised for was the online public space research of what customers are doing or targeting or what goals are or etc, right? So there's a big overlap between why a salesperson would want that and why a CSM would need to know that in the context of what sort of interactions we might be thinking beyond what are we reacting to based on users. But, yeah, totally, all right, cool, right. So what
+
+Richard Dosoo  14:26  
+is it's now building out the pages. It's it won't take too much longer, and then when it's finished, then we can go to the same directory, or from here, and open up the HTML file, which is going to be its first version of the pages that can develop. Okay? So what I'll do, George, while this is going on, as I said, the our plan, but more broadly within advisory, is we obviously want to enable the team, right, whole team, to be doing. This, and what you'll notice very quickly with curso, it's really good at developing something and deploying it to your local machine, yeah. But if you want to share that app with someone and you want to host it somewhere, that's a separate body of like activities, right? They need to Yeah. Now the good news is, we've got some guys in advisory that are really good at managing infrastructure and deployment and managing code. So we've set Ben and a different Ben and some of the other team on the task of creating some infrastructure that is can be used across the group. And our goal long term, is to host all of our applications in that infrastructure. So definitely longer term, what we want to do with this app is included into that pipeline. And essentially, then you could not only build this up in a development environment, but or build it on your local machine. You could deploy it to a dev environment, just like what Azmain has done just now, that dev environment could be used internally, and then you could also then have a test environment and a production environment, like a full pipeline of environments that support the software development life cycle and obviously support production usage and upgrades and stuff. So that's where we're we're going. And I definitely think in the future, like at the right point in time, you should include this in that pipeline, once you've evaluated on it enough and got enough critical mass or features that you think it's related
+
+Unknown Speaker  16:21  
+and then. And then, would it? Who would that be owned by then?
+
+Richard Dosoo  16:25  
+Yeah, so right now, in the short term, we're putting it on a consulting environment, but we know that's not the long term place where it should be, right? So the next place where we actually want to put it is on the map environment, because that then means we're leveraging all of the infrastructure, all of the management, security compliance that, all IRP users, right, IRPs and back, for example. But we need to work with the map team to enable that, and that's going to take a few weeks to get that up and running, but in the meanwhile, we've just got some some intermediary like infrastructure, that's going to help us get up and deploy. So, so this is cool, right? So now this is finished created. You the plan. You've got this file here called account planner, dot HTML, and then it's giving you another Markdown file, which is the implementation, and it's giving you a list of things that are sort of done, implementation confirmation. So this is a list of all the things that it's done, which is great. Yeah. So if you click on the account, plan, HTML file, no, if you, if you go to your projects folder, and then when you open it from there or open up in a web browser, it won't open up Within cursor. Oh,
+
+Unknown Speaker  17:42  
+it's to get a new shadow. You.
+
+Richard Dosoo  18:10  
+BC, yeah, so that's cool. So if you go back to that web page that you had up, sorry, I
+
+Richard Dosoo  18:27  
+Yeah, right, yeah. So what this has given you, George is this is running off your load that folder, and it's created the HTML file, which has brought out based off the requirements that we gave it. So you've got, like, an account, profile, stakeholders and power map all of the things that were that you put in your specification and then the high level metrics. The application is a static HTML page, which means it doesn't have, like a database. It doesn't have, this is just like a prototype. Basically. It's not really a fully fledged application with with all of the things that would normally come with it. But we can do that right? We can, once you've landed on what you think your baseline needs to be, your next step would be, create me a back end, create me a database, create me a front end. Deploy that locally. And once you've deployed that locally and you're happy with it, then the next question would be, how do you deploy that to some infrastructure where you could share it with the broader team? Okay, one
+
+George Dyke  19:29  
+thing we have, I'm just repeating back what you're saying, sorry. So basically, I get this to a place where I'm like, happy enough with it, locally, static, and then we look at how it's deployed, essentially, in order to be fully accessible, but also have the right stuff behind it, so that when, when we're using this more in anger to edit, create, etc, like, what the version we've got here is basically just to test and tweak and initialise to edit on, right? Yeah. So we need it. We need it set up properly. That's right, right? Yeah, and 100% and
+
+Richard Dosoo  20:01  
+just for FY, which did, like, essentially, right now, yeah, this is just like a web, static web page, but you can change it to a fully functional app with a single prompt, right? You can say, Take this, that word page and these requirements convert to a application that uses this UI framework react whatever one you want. You could say, This is what I want to use for the APIs. Use this framework, fast API, Python, whatever you want. Then you could say, This is what I want to use for the back end. You define your technical specification for that, and then you define what database you want to use, maybe your SQL Server, maybe it's Postgres, all of those things you can define in the prompt. And then give cursor set of instructions, and it will go and create another version of that application for you, which has that tech stack that you want. You'll deploy it locally, and then we'll then push it to some shared infrastructure. So, yeah, I think so this is we've gone through, like that high level process where George, I'd say the next step is that you want to review those requirements and review these screens and see doesn't meet the mark, right? It probably needs some tweaking, right?
+
+George Dyke  21:10  
+But the process I would use is like, I could now go back and chat to please correct me, but I can go back and chat to cursor in a way that I might using copilot or whatever, and say, I need you to do this instead. Take this out. It can. I can interact with cursor in that direction.
+
+Unknown Speaker  21:35  
+Yeah, 100% can you
+
+Unknown Speaker  22:01  
+Yeah, cool, yeah.
+
+Richard Dosoo  22:03  
+So no 100% cursor and Opus models is good. There's also George one other like, it depends who you ask, right? I think there's one school of thought, which is cursor, Opus broad code, are really good at developing stuff once you give it a specification, and then you're thinking kind of you do elsewhere, right? So that's one school of thought. So you'd use, like chat, GPT, copilot, whatever tool you want it to do to your quick general purpose thinking. And then you come out of a specification, then you dump that in curso, you don't not include code. But to Azmain point, it's they're also really powerful models, and they do really well with deep reasoning tasks. So you got, yeah, I would say start with first we want to do is just get up and running, and then when you want to, when you when you're doing this more often, then you kind of think about optimising it by bringing in some additional tools to help you get better.
+
+George Dyke  23:02  
+So I guess, I guess, rephrasing My question is I am going to be a as non technical a user, probably as cursor interacts with, right? So, but that's fine, right? That's, that's partly what I'm clarifying, right? I'm not going to, I'm I'm going to be talking the language of just a normal person who wants to try and be using this rather than somebody who's trying to design it, right? So that's all good. And I take your point about the separate model for doing the sort of the broader thinking. That's fine. When it comes to some of these next up, it feels like I'm set up well enough now to go and do a lot of the editing for future iterations of a static HTML file, basically, right? That's, that's how far you've got me. I am 100% going to need to continue to request some help guide me on who I should work mostly with on this, right, as we sort of start to build this out more robustly. But I guess I've probably got, I mean, I'm all ears for What other advice or pointers you want to give me. This feels like the next step is, is, how do we tap like this? Is this? Is it version one, right? So at what version number can I create? I'm saying like this is maybe like 80% of what we want it to be, right? So that we can start getting some other input, or start looking at how we kind of roll this out.
+
+Richard Dosoo  24:24  
+Yeah, no, we've been doing that, sort of like, formally, slash informally amongst this group, right? Everyone you see here on the call we've been, that's what we've been doing for Ben's IRP app. So we'll just do, we'll do another, we'll create another track group, and that will be focused on this account planning app. And what we'll do, George is, as I said, you can be sharing your content in their questions. We can also serve best practice. We can share prompts. We can whatever helps get you further along in the process. And then when you reach that inflection point or that critical mass where you're like guys, I'm really good with this now I want to convert. Add this into a fully fledged app, we can then reconnect that up another call, go through it, or if you're at the point where you're like, actually, guys, I've even done all that, and I want to just deploy this to some shared infrastructure. Then we can bring in Ben Van Houten, who also works in the team, to help spin up that infrastructure for you and deploy this. And then that one then, you know, once we've done that, let me think about things like authentication and all sorts of things to, like, productionize it, and then we'll get it up and running. And just to give you a data point in terms of how long that takes. Now, like we've done a lot of the investments to get the infrastructure up and running, there are some tweaks and stuff that are needed, but you're talking order of magnitude days, right? Not weeks to get this stuff up. Okay? So, yeah, so I guess, George, there's that. I know we covered a lot there. We covered the prompts, we covered the process. But does that give you maybe, actually, let's go for an example. Now what? Let's go through the pages, and let's go for maybe a change that you want to implement, and we can go through it together, just to give you the comfort that, you know, and spit,
+
+George Dyke  26:03  
+yeah, so, so right now, what might so the first thought is, there's, there's a lot of stuff in here, which is clear this out the way, the priority for this right away is not necessarily to be pulling loads of information, but some basic stuff through is good, bringing maybe through some basic commercials might be good. I don't want any sort of integration with Salesforce, with anything else to be in the way of what sort of the primary goal here is, which is actually getting CSMs to start with a template of stuff and start thinking about, what are the things that go into an engagement plan that are going to drive actual intentional activity and key engagement moments throughout the year, right? Based on and there are lessons, pretty standard things that should be happening. So bigger background there, Rich is just simplify, right? The team is being way too reactive to motions that we are not kind of leading on, right? So whether that's support, whether that's commercial negotiation, whether that's the customer is leading an IRP sort of project, and we're following along with it, whatever it is, right? We are not sitting down and going, what are like? Where do we want to be at the end of this year, at the end of this contract, whatever it is, right? And what are the, what are the activities that we need to start planning for across the year? What does our customer engagement map look like, and so on, right? So, so stuff like, stuff like this, which is never going to exist anywhere else, right, but should exist in a customer plan. Super helpful, right? And then stuff, you know, we want to be able to populate the stuff in a in a way that, I guess, builds this. This isn't going to get read from anywhere else, right? This is going to need to be entered somehow, in a form.
+
+Richard Dosoo  27:58  
+Scroll down, George, I think the bottom of the page there, they've got, like, a discreet and ad stakeholder, yeah.
+
+George Dyke  28:05  
+So, yeah, exactly. So like this, this is the sort of thing now, in an ideal world, right? This all syncs up with all of our records in Salesforce or whatever else, right? But I don't want to go down, and I know how the team thinks as well. I don't want to go down the rabbit hole of this needs a total Salesforce cleanup in order to work, right? But we should have, like, who are our two to five key stakeholders at each client, and we that is not a big task, just to capture and start capturing some of these things around them, yeah, build out on a map, and then additionally, like, start flagging where there are gaps, right? So this is probably building in the things that are flagging gaps. Yeah, there's stuff on stakeholders. There's stuff on these objectives and success measures. This is where I think a lot of what's going to go in, just a glance is this is where a lot of this is going to be focused. So whether these are customer objectives, first of all, that's where we need to start. Right? What are nothing to do with movies? You know, what are, what are stated customer objectives? Or where are the gaps where we don't know or can't find it, or we can't get cursor to find it through online research, or whatever model we activate to go and do that? I don't know. Yeah, opportunities and pipeline, maybe that's useful reference. This is really important, risks and mitigations, right? Where you know what's a what a mitigation plan for any risk that we identify, and they might be really simple, yeah, maybe that's combined with mutual action plans. I haven't really thought that through.
+
+Unknown Speaker  29:39  
+And then
+
+George Dyke  29:42  
+I think there's an end, yeah, okay, and it'll be in this export thing, right? About telling it the template we want, what the export to actually look like, right? So if we've got and then there's a couple of tiers of this, there's my probably final quick thought is, I think there's probably a strategic account template that we want that's more robust. There's probably, like a standard one, and then there's maybe even, although maybe this is a complication for them. Maybe there's like a light version that we have for, like our tiny accounts, but maybe not. Maybe that's the same as the standard one. Maybe that's just standard and strategic, and it needs the space for the things that pull in to say, like we tell we provide the space that say, if you're a strategic account, you know, you must have a plan for at least a quarterly business review, whatever that thing is, right? And then it needs to be obvious in how you use it, as to how your people, timelines, topics, goals, whatever kind of come together to feed into those things. And then there's a flagging or a tracking mechanism, right, for when things are progressing without those having happened. So any and all of that really is, what is, what's jumping out? Probably, maybe this could be simplified a little, and maybe there's, you know, maybe there's a button right away that it's like, build a new plan, right? And we start with that. And I don't know if you start by typing an account name in, or if it looks it up right from the Salesforce lookup, or how we want to start. And maybe, I don't know, maybe we start by doing it a bit more manual, and think about the integration steps as we go. I don't know. I don't know what you think is the sensible way of building that sort
+
+Richard Dosoo  31:17  
+of stuff out. Yeah, no, we've, we have a similar challenge on on the adoption Tracker app, with the integration of Salesforce, and what we can do on that, what we've decided to do on that is start, obviously without any integration to Salesforce, but we're working with, we're going to be working with Natalia plant to she's Obviously the managing the game site rollout with Catherine shifting our point of contact to work through what, what we need to do to either get our requirements into the game site roadmap, or we need to have a tactical conversation about Salesforce in the interim. But in the absence of all of that, we're going to just work with data that we have, that we have right now. Azmain, for example, has got an extract of the Golden source data for source data from sales. We could share that with you and do the same thing here. But longer term, I want to say longer term. I mean, just over the next week or so, we want to come up with an integration approach to me, like, what essentially, how do we get the API's from Salesforce or Gainsight, and how do we integrate into that, using those tooling that's that's basically the next step. The reason we haven't taken that step yet is everyone's been a bit cautious because of the Gainsight rollout to be able to provide us with those APIs already, and people are very cautious about us implementing in Salesforce, so but it's fine. That shouldn't stop us, right? We can continue to ideate, we continue to build out. And in parallel, we can start thinking about what the integration strategy is between what we're building here and those application so what I think, George, maybe then actually, what the next step is, is, if you just brainstorm and go through this and just write up, oh, I think this will be cool. I want this. I want this. Then what we can do is we can share some prompts collectively of how we'd update this application, like, what prompt would you need to give cursor to make those changes that you need. And then we can share that with you. And then what we can work on that collectively. And then then you can start monitoring and creating versions.
+
+George Dyke  33:19  
+I was thinking I might just go and start testing that out directly. What's the things to guard against doing that? For No, it's fine.
+
+Richard Dosoo  33:27  
+The so obviously, to Ben's point, right? You're going to be version controlling this, because you're not using GitHub. Every time you create a new version of the application, you're going to want to create a new folder say so you can go, but if you want to go back, you have it
+
+Unknown Speaker  33:46  
+other than that. And how
+
+George Dyke  33:48  
+do I just practically make sure I do that accurately? Because, if so, if I, if I asked it to edit something now, that would edit what I call 01, right? That's what you're saying.
+
+Richard Dosoo  33:58  
+And you would have, obviously, all of the changes in the chat window, but obviously, once you close the application, then that context window is lost, right? Then it's gone. So whenever you're asking it to make a change, you can, I would say it suggests that you version control it, so either create a new folder, or implicitly ask that it to create another version of that HTML file for you with the new version of the requirements
+
+George Dyke  34:23  
+that you've got. I was so I just, I just tell it, mate, do do the following edits as a new version, and then it will just do that. Or, yeah, sorry to be clear, do I need to manually continue to create distinct folders that I point to, or will it do that for me?
+
+Richard Dosoo  34:44  
+No, so it won't create folders for you that you're gonna have to do yourself and then, and then you'd say to cursor, work within this folder, but you should be able to create different HTML files within the same folder that you've
+
+Speaker 3  34:55  
+that you've created, to create a folder. Can.
+
+Richard Dosoo  35:08  
+Okay, sorry, Martin, I cut you off. There should go ahead.
+
+Martin Davies  35:13  
+Yes, I was saying you can actually ask it to create a folder for you. It will do it if you ask,
+
+Unknown Speaker  35:20  
+okay, cool. Awesome.
+
+Richard Dosoo  35:23  
+All right, well, um, I guess George does that kind of give? Does that answer the questions that you had about how to get up and running? Exactly perfect. So I think the next step then, then I'll create a separate chat thread, or I'll turn this into a permanent chat thread, and then we can all be helping George out of any questions that he's got in the meanwhile. And then George will probably connect tail end of this week, or definitely early part of next week, to talk about how we bring this up into the infrastructure that we've already got. So cool.
+
+Ben Brooks  35:56  
+Ben, where's Ben VH at with the app factory stuff.
+
+Richard Dosoo  36:05  
+So he made some progress on it, because I was out on Friday. I haven't followed up with him, but he's in, he's in our time zone now. He's in Amsterdam. So that was definitely the goal of this week, to catch up with him on it, because
+
+Ben Brooks  36:18  
+he's working there, or is he out,
+
+Richard Dosoo  36:21  
+he's working there, and he's running a race, I think, this weekend, so he's working now. He's just obviously dealing with jet lag because he flew a red eye on Friday. But essentially, Ben, yeah, that's the plan. Is he's created that. He's created the infrastructure in such a way that we can deploy multiple apps to it. The place where he's stuck is if we've got multiple databases, different databases, that's where he needs to just do one more cycle on it to unlock our space. But okay, you know, we're talking like dates. We're not talking weeks to get that sort then once that's done and George's up, can go there as another database, right? Just by filling out that form, and then we'll figure out, like, you know, does George need a dev test, pride environment? All of that stuff will get automated. Spanner. We'll then have to get George in to GitHub, because obviously, if he wants to deploy there, we need to have a folder on GitHub from his app, and then that's where the CICD process will kick off from. So those are the things that I'll action item today, George, I'll probably create, raise a ticket for you to get a GitHub account, and then when we next connect, we'll talk you through what that process looks like, managing, like checking in your code into into Git.
+
+Unknown Speaker  37:26  
+Basically, sounds good. Sounds good. I really appreciate our support here. Thank you.
+
+Richard Dosoo  37:33  
+I guess Azmain Martin, any I know you guys, have been working tangentially on stuff kind of related to this. But did you have anything about for George based off what we already talked about.
+
+Martin Davies  37:44  
+The only thing I'd say is, if you're unsure about anything, just ask her, sir. I mean, anything you would feel like you need to reach out to Richard or someone to just, I mean, normally it'll answer the question for you. So Right?
+
+Ben Brooks  37:55  
+And better than rich, right? Yeah, maybe less enthusiastically. But what did you, what did you build that mock up with? Was it on auto, or was it on a particular model when you hit that prompt? Yeah, it looked like an auto kind of output. If you, if you grab sonnet or Opus, I think you get much better mock ups when you do that kind of stuff. Try, try running it again. If you you know where it's got the little agent selection, George, have you seen that bit? Maybe not
+
+Richard Dosoo  38:36  
+skipped over that bit. George, if you wouldn't mind bringing back your cursor, yeah, we can show you, basically we have access to a whole bunch of different models, and anthropic models are much better because, well, they're just better, right? They're much better than some of the general purpose models that we're using. So you see here in your chat window, can you see at the bottom, there's something called Auto and there's another button with an infinite right now, if you take that off, if you take off that, then it says your what models do you want to use? You can tell it, I want to use this specific model. So to Ben's point, Claude Opus, or Claude high, those are more those models, I think are more, better performing models. Obviously, we have
+
+Unknown Speaker  39:22  
+a budget, sorry.
+
+Richard Dosoo  39:25  
+So the kind of marketing answer is that those models are better for deep reasoning and implementation tasks where you need, like a much bigger context window. So what that means, in regular terms, is they're much better at planning and executing tasks that are where you need to think more critically and specifically about what you're doing. So very well suited to development activities, very well suited to things like that now, but they cost more, right? So when I say cost more, we have a budget that we're all tapping into, those models are more expensive than some of the other general purpose models. So you can run out of token. The tokens much faster by using using those. But to Ben's point, it's worth it, because they're much better. So if you, if you change, if you click, let's say Opus, right, for example, or Sonic, let's say, let's say Sonic, actually, it
+
+Ben Brooks  40:15  
+blows the fucking doors off on on the first couple of runs, and then you can tweak it with a cheaper model afterwards. I would I pick Opus when I do these mock ups first pass and then, and then tell it, you know, act as a expert software UI engineer or whatever, however you want to describe that at the same time as whatever, an expert CSM or something, and it will end up doing 95% of the legwork, I think, in ways that are better than any of us would do to get started, and then you can tweak from there, and so that that's the huge lift. I think it's worth running again and just comparing side by side, what the what the model could use Cool. All right, I kind of want you to do it now, because I want to see it. To be honest,
+
+Unknown Speaker  41:04  
+I can just do a direct reprompt and see
+
+Ben Brooks  41:07  
+what it does. Yeah, yeah.
+
+George Dyke  41:14  
+Because really, what I want to do is go back, review the review, what I mean, Rich, I guess you just, you just chucked something in. God, why come in? What you said? Chat. GBT to give you something back, right? So this is, this is coming out of that somehow.
+
+Unknown Speaker  41:30  
+But even, like you
+
+Richard Dosoo  41:32  
+know, you could really, you could even take this one step further, give the same instruction to Opus, ask it to generate you a specification file and another HTML file a different version, and then compare the output, or even ask another model to compare the output and tell you what to create the response. That's what me and Ben were doing on Friday with that prompt right for a certain example, to prove out how much better opusuke
+
+Speaker 4  41:59  
+The yeah, there's a lot of
+
+Richard Dosoo  42:04  
+tools available to make all this process so much easier, so much more straightforward. It's literally like the limiting factor is what you can think of.
+
+Unknown Speaker  42:11  
+So I need to go for a new folder, right? Yeah.
+
+Richard Dosoo  42:17  
+So even what, what suggest is you could even to Martin's point was Azmain point. You could just version control the HTML file in here. So you could say, All right, I want to create a new version of the file. Rerun the prompt, rerun this with this model, produce the plan and the HTML file, and then it will go away and think about it for a few minutes, and it will execute and come it will execute and come back. Then you can take the output and stuff that back into here and compare the two files and say, right, which one's better? Yeah,
+
+Unknown Speaker  42:58  
+yeah. I'll just copy the same prompt in and see what it does. All right, yep.
+
+Speaker 3  43:17  
+All right, so it's getting me, it's getting me to do something this time.
+
+Unknown Speaker  43:24  
+Yep, so it's telling you it's going to make changes.
+
+Richard Dosoo  43:29  
+And so you can just say, Run anytime it's going to change files. It asks for your permission, basically.
+
+Unknown Speaker  43:37  
+So yeah, if you hit that, yep.
+
+Richard Dosoo  43:48  
+Yeah, this was only annoying, but it keeps doing it every time it's going to change files, it's going to ask your permission,
+
+Unknown Speaker  43:56  
+so hit Run again
+
+George Dyke  44:01  
+folder or something. Is it? You could just do it in a clean place? Yeah, it's
+
+Richard Dosoo  44:06  
+gonna, you see, it's creating a v1 so what I'll do? George, I don't know, Azmain, you asked me this before. We need to figure out a way that you can just tell it once that I give you permission. So you gotta have to keep asking it every single time I
+
+Unknown Speaker  45:13  
+Whose tokens are they? Ben, are they Moody's tokens.
+
+Ben Brooks  45:18  
+These are your personal tokens. George, I mean, it's, it's AI is your credit card, and it's spaffing cash loan. Now they're meeting second
+
+Unknown Speaker  45:25  
+the Moody's. Moody's, rather, if you're
+
+Ben Brooks  45:28  
+in rich or my shoes, you will, you've also got a credit card problem because you've been playing around off the Moody's data estate. But you know, there we are. So, yeah,
+
+Richard Dosoo  45:39  
+do you know Divya Harry, so her team manages our cursor account. Obviously we it's not only us and advisory that are using it. You've got people in banking that are using it. You've got KYC that are using it. There's one shared budget across all of us. So that's good thing, there's shared budget, also a bad thing. There's a shared budget right now, so you'll see who gets there first to the budget. So it's a budget,
+
+Unknown Speaker  46:09  
+yeah, okay, all right,
+
+Richard Dosoo  46:13  
+we've raised effectively separately that our plan is to roll this out and our budget needs are going to increase. And she's taken that on board. She's just working with finance to try and figure out, you know what it's like, right? With the finance team there, they tell you no. So that's what she's working through that right now.
+
+Richard Dosoo  46:37  
+Yeah. So you can see, right, the plan that is creating is so important. Now let's jump to the implementation. Cool. So I
+
+Ben Brooks  46:50  
+think it may have, did it scribble all over the plan, or did it write a new version? Maybe write a new version?
+
+Unknown Speaker  46:56  
+Yeah. So plan is now v2 Yeah. Okay,
+
+Richard Dosoo  47:04  
+yeah, let's see what else. It doesn't look like. It made that many changes to action, to be honest. But let's scroll down in here, um George, and see what? Oh, no, I'm I stand corrected.
+
+Richard Dosoo  47:25  
+Yeah, it's giving you, if you keep going, it's put some of the navigational structure in there. It's much it's much more thorough and much more detail. I mean, that's the I think, yeah, depends on the money, and that's what my notice is, I've noticed since I've started using these anthropic models that they're just much more detail orientated, like the other models are good for, like, high level, maybe, like a product discussion. But when you want to talk about what an implementation actually looks like, this just gives you much, much more
+
+Ben Brooks  47:59  
+I think, I think every time you use auto and you do a mock up, it looks like a kind of Noddy application. Every time you use Opus, it looks like a seriously polished piece of kit, or at least it has done when I've tried it. And I think that just changes people's instantaneous reaction and buy in in so many ways, to be honest, Azmain, I wrote that whole of that IRP tracker in auto. I mean, it wouldn't do us a disservice to rebuild the front end fairly soon, I don't think.
+
+Unknown Speaker  48:42  
+Yeah, really, okay, yeah,
+
+Ben Brooks  48:56  
+maybe, okay, that was interesting. I
+
+Richard Dosoo  49:15  
+so hopefully this won't take too much longer, Georgia, then we can see, yeah, what the new version looks like
+
+Speaker 4  49:32  
+Ben on a slightly different look. I'm going to send the I'll send you that business case study for the licences for,
+
+Ben Brooks  49:47  
+yeah, we, like, sort of cleared to use it from a security and all that bullshit standpoint, because that's the problem. Yeah?
+
+Richard Dosoo  49:57  
+So the My understanding is we are the issue. That's the hold up at the moment. Is more around the enterprise licence, because basically they're negotiating the commercials on it. So our business is the deal is not that all should we use it? It's that, can we bring forward some spend, because it unlocks this value? Yeah.
+
+Ben Brooks  50:16  
+Okay, cool. And so is there a huge, big picture conversation going on with anthropic then about,
+
+Richard Dosoo  50:23  
+yeah, yeah. That's how, that's how Divya reached out to me and asked me, Do I want some licences? I reached back out to me. I was like, Yes, please.
+
+Ben Brooks  50:34  
+It's the pope a Catholic, yeah, yeah.
+
+Richard Dosoo  50:37  
+So that's basically where she was like, Oh, I can get you licences, but we're still negotiating, so the conversation is going to
+
+Unknown Speaker  50:44  
+be okay. What a tease, see, that's
+
+Unknown Speaker  50:48  
+it. Don't get me started.
+
+Ben Brooks  50:51  
+I want to try co work. That thing looks like it blows the doors off. Yeah.
+
+Speaker 4  50:56  
+So it's available now, but it's only on Mac if you're a Windows machine, if they haven't released a version for Windows yet, but the version for Mac is out there right now. I've got
+
+Ben Brooks  51:06  
+it on my laptop, personal laptop. I just don't know where to start with it, really, because I'm not doing any work on there, so I might have a play with it later. But I was reading the blogs on it. They built that thing in a week with Claude code. Yeah. And yeah, three people. It's mad, isn't it?
+
+Richard Dosoo  51:26  
+The but this is it, right? That's, this is the then. That's the corner that I feel like we want to take internally, right? Whereas we are like, we need to not only have this, the enthusiasm around the kind of non technical teams about this, but the tech team as well. Needs to be thinking, Ah, like, you know, how do I use this on AXA, how am I using this on this project, rather than sitting down and working on like a Beasley ticket for ages like Martin, there's, there's
+
+Speaker 4  51:53  
+extensions in Kersey that you can basically say, go and find all my bugs in the repo. Give me a report on all these bugs and tell me how you're going to fix it, and it doesn't. So you're proactively looking at managing the volume of bugs that you've got, rather than reactive, which is what we do right now, right?
+
+Speaker 1  52:15  
+So you can do that with cursor right now, but no one we're not doing that on any project. I don't even think the tech team are using, do you know? I mean,
+
+Unknown Speaker  52:22  
+that's the, that's the
+
+Richard Dosoo  52:25  
+change in maturity, like, of the organisation that we need to think of our life. We're really going to get the value back from,
+
+Speaker 4  52:34  
+like, well, next time we get a ticket from Beasley, we should run the ticket through this
+
+Richard Dosoo  52:41  
+to see what I mean, like that would be like, rather than Rahul spending painstaking ages trying to figure out himself, that's what we should be doing. I
+
+Richard Dosoo  52:55  
+wasn't expecting it to take this long. George, sorry. I thought it would. It would kick out quite quickly, but hopefully it's building.
+
+Ben Brooks  53:01  
+The whole thing is telling us how to manage marsh and like, give it a give it a chance.
+
+Speaker 2  53:20  
+It's Hurry up a value prompt. I've now never actually tried that.
+
+Ben Brooks  53:31  
+There is some stuff we need to do, rich on expense management, context bloat and all of that. It gets totally out of hand quite quickly, but I don't really know how to tackle that stuff.
+
+Unknown Speaker  53:43  
+Yeah, I think when we learn there's
+
+Richard Dosoo  53:48  
+some best practices, right, like the what I was sending yesterday and not using, using Ralph loops
+
+Ben Brooks  53:55  
+in here as well. Is that how you think about these?
+
+Richard Dosoo  53:59  
+Okay? So what we can do is basically, well, yeah, sorry, I'll set up some time like there's some best practices, some cleanup and stuff that we need to do, because basically, the bigger your context window gets, the more expensive, right? So we want to, rather than store and order the stuff in there, you want to store it in Markdown files on your local store and then just push them in when you need it, and then take them out and them out, and you can store all the history, the metadata. You can chain all of them together using those tools. But no words, George, what we'll do is maybe just send us some screenshots when it's Oh, it's
+
+Unknown Speaker  54:33  
+running, okay, cool.
+
+Unknown Speaker  54:36  
+It's faster, more pipeline. So that's a start. Is
+
+Ben Brooks  54:39  
+that the second version, yeah, okay, something very different, very similar. Yeah, I think it's used the context of the first one, hasn't
+
+Unknown Speaker  54:53  
+it? Well, it should run the
+
+Ben Brooks  54:55  
+same sense. Send me the same prompt where they don't want to run it, yeah. Buck around some other stuff.
+
+Unknown Speaker  55:08  
+Say again, Azmain, if you get a okay,
+
+George Dyke  55:21  
+I I think around like that, I'm going to sort of start from fresh. I'm going to edit the I'm going to create my own prompt as well, and I'll, I'll see how it looks from there. Yeah, I think that's what I'm going to do next. All right. Super, super.
+
+Unknown Speaker  55:38  
+I did. Yeah, go on.
+
+Unknown Speaker  56:00  
+Up Cool. All right, awesome.
+
+Richard Dosoo  56:04  
+Well, George, I'll set up a chat thread. We can all start contributing and talking in there, and then I'll put some time aside to reconnect and like, tail into this week, or definitely early part of
+
+Speaker 2  56:13  
+next week. Yeah, that's brilliant. Really, really appreciate it. Cheers, guys. All right. All right.
+
+Unknown Speaker  56:19  
+Cheers, thanks everyone. Thank you.
+

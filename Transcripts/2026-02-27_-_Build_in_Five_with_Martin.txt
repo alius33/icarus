@@ -1,0 +1,186 @@
+Martin Davies  0:00  
+Eid, it's been a short week for me, though, so I can't really complain. Oh, I arrived back on Tuesday, lunch, back in to work on Wednesday. So very short week. Nice and easy. Should I
+
+Azmain Hossain  0:19  
+just put some money on Poly market for Iran getting attacked this weekend. People have been making money every week. This is the week, man, this is the week I've been hearing the report. I'm like, I don't
+
+Martin Davies  0:29  
+know, interesting the debound man, and
+
+Azmain Hossain  0:33  
+no, no, obviously, because I was just, I was just looking at the odds. And I'm just like, Nah, I shouldn't do it. It's gambling. I can't do it.
+
+Martin Davies  0:45  
+Yeah, I don't gamble at all. Actually,
+
+Azmain Hossain  0:47  
+I tried gambling. I don't I have too much anxiety, man, like, I'm on medication for anxiety. I can't gamble.
+
+Martin Davies  0:55  
+A couple of times when I went to football, like, my brother's really into, like, betting for football, and a couple of times I've done it, and I find it really bizarre, because I'll have like, first goal scorer and result or something, and then we'll score, but it's not my player. So then I have like, these mixed feelings of, like, yeah, we'll score, but I've just lost money so as I can't do it. So it's so, like, annoying. I just, every time I try it, I'm Nope, it's not for me.
+
+Azmain Hossain  1:21  
+Yeah, the only thing I've ever bet on is the Grand National, like, when I was uni, and that was like, you know, yeah, you pick on me. You pick a horse with a funny name, and you just put your bet.
+
+Martin Davies  1:32  
+Yeah, enjoy the game, because I'm gonna make my money. Yeah, same,
+
+Azmain Hossain  1:44  
+sorry, Rich. We're talking about whether or not it's worth betting on even No, no,
+
+Richard Dosoo  1:52  
+no, it's all good. My laptop is deciding to not play ball and run updates, so I can't even share the flipping slides I wanted to now anyway, which I apologise guys, that's my fault, but Martin, I can talk you through, give you an initial primer. I know we went over what changed since you're out, but I wanted to spend a bit more time in it. Azmain is managing the programme as the pm and stuff, so he's going to work with you on the scope and plan and timeline. We obviously got budget approval for 75% of your time over the next 12 weeks. So that's good. So that at least has happened, right? But I've managed to push that through
+
+Martin Davies  2:32  
+timeline. 21st of March, isn't it?
+
+Speaker 1  2:34  
+Well, so now this is my thing. I told deer too. I was like, listen, Martin is cooking up something that we might need to go to Dubai. Ed was like this, Richard always bringing up rich Dubai from deal. Was like, Listen, if you guys can make it happen, we'll go. So I was like, when she said that you should have seen me double like, let's go.
+
+Richard Dosoo  2:57  
+No joking aside, actually, Martin, so Ben has actually got a slot on innovation panel at exceedance. And he I was asking me yesterday, can we demo building five and some of the other stuff to show what we're doing? And I was like, fucking Yeah, of course, but obviously I need to talk to Martin about the timelines, because for exceedance, it's not that, oh, you have to have your stuff ready by me. It's got to go through some approval machine and if you're going to have it done in time. But what I wanted to go through with you, as soon as my computer's finished booting up, is Ben basically added a bit more like, you know, you had some demo scenarios right in your scope. Ben basically made them way more advanced. No, when I say advanced, he just made them more like, add more scope to it, to make it more like that sizzle, right? So that's what I wanted to go through with you. Those updated use cases. There's still three of them. They're just like, much more bigger, like, one's an interactive dashboard that shows blah, blah, blah. But now scope is not really the issue. The thing that you're going to be focusing on in building five is the framework, right? So what are the set of diagnostic questions that you need to ask to get enough answers that you can build a robust spec that you can just pass to Claude or cursor and it can build an app, right? That's the process. Now we had about in your original document. I think Martin, you had about five or six questions. Azmain expanded that to about nine. Azmain, I don't know if it's worth you bringing that up now, because my computer is still fanning around. Unfortunately, looks like it's rebooting again.
+
+Azmain Hossain  4:31  
+What this is? I know I've done it, but I'm like,
+
+Richard Dosoo  4:37  
+yeah, Azmain, do you remember? You remember the consultant AI platform, and then in that you had some you took what I did, which was the GSD framework, which is another way that you can curate people to ask questions, so the work can be built out in such a way that it can be defined by multiple agent teams. But you took that one step further. And. And said, If you want people to define requirements in a documented way, these are the kind of questions that you should ask, yes, and you document that in your constituent, yeah, that that's basically the
+
+Azmain Hossain  5:10  
+page up. Let me just share my screen. Yeah, it's in this part two, like the planning and guidance. And this
+
+Unknown Speaker  5:20  
+is where, yeah, exactly. I'll just
+
+Azmain Hossain  5:23  
+make this a bit bigger, just as much natural language processing as possible. Where, yeah, people can, people are going to speak to it in a very natural way. But what we want to do is like, take that GSD framework and then turn it into the Moody's platform, literally just copy it over. But given that that's more Developer Focus, but our use case and user base is non technical users. So it goes from tell me what to build to what is the problem you're trying to solve. And it also gets people, you know, thinking in that framework of like, we're solving problems. We're not just building stuff. Because, you know, one worry that I had was when you when you get when you give people a really simple way to type in what they want and deploy it, it's just going to build a bunch of crap. Whereas you start with the end goal in mind. What is the problem you're trying to solve? Like, don't tell me how you think it should be solved. Tell me what you want to have at the end of it. Sorry, just give me a second.
+
+Azmain Hossain  6:42  
+I then, yeah, it kind of follows this thingy where there's like four steps. And obviously these can, this can be a loop of going back and forth before the build even starts. And it's really like hand holding the known technical user to really discuss with them. You know, you start with, what are you? What's the problem you're trying to solve? And then once it understands it, can be like, Okay, well, how do you think we could solve it? And the user gives like, a big block, like, wall of text of how they think they should solve it. And then it goes to like, Okay, thank you for that. Based on your thinking, here's what I recommend building. And obviously that's then a process, and the user will go back and forth, and then you get the details like it literally is depending on the user speed. Obviously it can take from two hours to, like, two days to think about all this stuff, but yes, it's not built in five minutes, but it means that we we make our users be deliberate in what they're thinking about and what they're building, and it's purposefully done like that. I purposely designed the system like that because I want people who have just got a little problem and they're like, oh, just fix it using cursor. It pushes them out when they're like, Oh, I've got to answer all these questions and do all this stuff. You know what? It's not worth it. Yeah, it's not worth it. If it's if the, if the thing you're trying to build is not worth being diligent and planning it out, then it's not worth building
+
+Speaker 1  8:20  
+Azmain, though, for the for, like, what Martin's trying to do, though, yeah, his is, like, his primary drivers was, like, I'm sitting in a customer scenario,
+
+Richard Dosoo  8:32  
+and I want to show them that I want to go from their idea to prototype in Five, right? That was the adult premise. But, yeah, but I hear you, for everyone else, much more structured process, a much more process. So, but maybe the answer isn't not doing it. Maybe the answer is Martin has, like, more pre built answers in that scenario, that answer the questions that he needs, right? So, but he can use that template to get started.
+
+Martin Davies  9:05  
+Yeah, I guess for my side, the one thing I'm not fully clear on is the end goal here. Is it that we will provide, like the sales teams, with his 10 prompts, and if you follow them, you're going to get a great day. You can, you've got a great demo. Or are we building like the groundwork, where they can just run a command to begin with, and then they can sit with the clients and they say, Okay, what do you want to show? Al by location? They say, add in Al by location, and then it's all wired up already, so that it's then going to pull that in onto the dashboard. So is it like, is it like a live building dashboard, or is it almost following step by step to do a predefined dashboard?
+
+Azmain Hossain  9:49  
+It's what I was thinking. Literally we they don't have to start from scratch. They literally have the foundation. But. When they sit down at a pre sales meeting or in discussion with the customer, it's literally what you said mine. They're like, do you want location level analytics? Do you want this and that you know different data that you can pull in from the IRP platform, and as the person is talking, he can just on his laptop, be like, okay, add in this and add in that.
+
+Martin Davies  10:18  
+So in a sense, we already have, like the the API is configured in the background. It's just that we're we're allowing the sales team to add them in easily.
+
+Richard Dosoo  10:31  
+So Martin also the the like, you hit the nail on the head right. The disc curates the spec. But there's a second part of it that Ben is working on, which is, how does that spec like? Well, how do you update the app quickly and how do you deploy it? Now you're right. You could update the app on your local host and show it in a demo environment. I think that's really cool. Obviously, the next step is showing it deployed, right? But that we can, we can split them out into two separate us. Sorry if I made that more confusing.
+
+Martin Davies  11:03  
+No, no, it makes sense. Yeah. But I guess from a sales point of view, we're not really too worried about the deployment side, really, because everything's going to be, I imagine the sales team running at local host,
+
+Richard Dosoo  11:15  
+like I'm going to meet with that next week, because I want to, like, ask him what, like, what's more relevant for him, right? So he might say, I want to show this like, like, having it on local host may raise more questions, right? And if Ben can sort out the automation, right, that you can press a button, and five minutes later, the CICD pipelines, thunder, automation, then cool, right? That's a separate workstream he's working on. Anyway.
+
+Richard Dosoo  11:53  
+Okay, so that was like, I'm gonna mind. I'm just bringing up the, well, sorry, first, let me stop there. Does that without me bringing up the big, like slides and all the other like cursor, basically, presentations that we created. Does that make sense?
+
+Martin Davies  12:17  
+Yeah, it definitely makes sense. Yeah. Okay, I'm just trying to understand Yeah. So, so we're almost like building that foundation level where the idea being that any salesperson or anyone can go into a meeting open up a blank cursor or Claude, and then we essentially have like, one, like pre prepared script that tells you how to configure the APIs, etc. And then from there, it then almost gives them, like the base framework that then they can build on themselves with the client. Yeah.
+
+Richard Dosoo  13:00  
+And also, I'm bringing up the old version of this stock versus clause, generating me a new one now. So if you give me a second, I'll just jump on and show sorry. Give me one more question. Sorry. Give me one minute. I'm just this laptop is still coming back to life on them. I One sec. Hopefully this works.
+
+Richard Dosoo  13:31  
+Can you assume? Yep, cool. So Martin, this was, I'm going to bring up the doc that was, I took your doc, basically shared it with Ben, and then he added some other like, he basically buffed out the requirements, right? What's what's invalid in this document is that we're still, you know, using get stuff done, but to Azmain point, right? That is more developer focused, so we want to just change the series of prompts to be more business focused, yeah. And then, obviously, this is the integration to app factory, which we already spoken about, right? So we've got a strategic context here, which we've already spoken about. This is the framework design, right? Let me.
+
+Unknown Speaker  14:31  
+Let me find the Here
+
+Richard Dosoo  14:37  
+you go, demo scenarios. So this was Ben had basically pumped out more like added more scope to this. This is what's changed right from from what you had initially put in it. So if we take this first one, your demo, your platform can't handle our data formats. So the first thing you would say is, oh, build a data integration service that reads sample customer CSV files, transforms the MRI and then. Writes to the sandbox environment. So the GSD template creates a API, File, Upload endpoint, schema, validation, logic, the app factory deploys it. So that's like one example. Now maybe this was just some like thing that Claude came up with. We're going to pad this out, like you're going to pad this out. And maybe there's like, a more context we can apply to it, which is, oh, okay, you're an MGA. You got a bunch of border room, right? You know, that's always the use case. We hear a lot in the London market, and then we say to them, yeah, you could, just now, we could nail that border of management, buying a management workflow by asking the underwriter, well, what's the border like? How often do you get it in? What happens once you've imported that border up any limit supply? Do you want any rules? If they're your underwriting guidelines have been breached? To see what I mean, right? And then you that so that could all be defined as part of this process. You've also, obviously, this process understands the risk model APIs as well. So you can go from importing the data, running it, querying it, bringing back anything in the dashboard. So that's this is like a bit more broader, like requirement, but I guess the framework that supports it, or the toolkit that will supports it, is what we're going to be enabling. And then this, these are the litmus test scenarios to say, could we it? Could building five support this deal with this complexity? Basically, does that make sense?
+
+Martin Davies  16:24  
+Man, yep. And you say there's nine scenarios now, or was that
+
+Richard Dosoo  16:29  
+no three, still three, but Ben just made them much bigger.
+
+Martin Davies  16:32  
+Okay, so before the
+
+Richard Dosoo  16:36  
+second one is we need custom analytics views that are out of that your out of the box products doesn't support. So this one build a React front end that queries exposure IQ data and less custom aggregation. So this one's actually not bad. It's pretty straightforward, right? But you get the point right? And then this one is a cool one that came up from some issues that we had. So have you we? Did you speak to guidewire or Golden Bear as part of any of the engagements that we've been talking about. So where this comes from is, sorry, I know we're going over. Guys, do you have a few
+
+Martin Davies  17:12  
+minutes now? Or do you want? Yeah, I didn't even look how long you put the meeting in. I'm free
+
+Richard Dosoo  17:17  
+Azmain. Have you still got to Yeah, it's
+
+Azmain Hossain  17:19  
+just at two o'clock. I'm meeting
+
+Speaker 1  17:22  
+with one of the grads. Yeah, no, cool. I'll be quick. I'll be quick. So, so anyway, TLDR, Golden Bear wants to move to guidewire,
+
+Richard Dosoo  17:36  
+and part of guidewise, and guidewire has got a system called policy policy centre that they use to manage their policy and claims it can integrate with our systems, but it needs a web hook, or it needs a notification API, because they don't have the ability to pull API's in their platform, right? So they need part of the integration standard is the modern application needs to call back to them when the jobs finished, rather than them continuing to check so here you can sell an integration mock. So this one is, how do you integrate? Well, that was the problem for Golden bit. It's an existing problem right now. It's a problematic because we don't have that notification API. We obviously estimated it, and we said it was going to take six months or time to do it. Customer didn't want to pay for that. So this is, this is actually an interesting use case, because it's an actual problem that we have right now, right, that we could have sold for. So here you can see, right, this use case was build a mock web listener that receives notification of an underwriting decision event, or modelling finishing from underwriting IQ and triggers a downstream notification and or data right? Similar, gate, similarly, similarly in integration workflow. So this could basically be that notification layer that looks, whenever something is finished in the RM goes and calls back to your web port called notification service. And this proves out that you can integrate, like the integration challenge, right? That we told Goldenberg, six months, it's like no means five minutes. Do you see, do you see what I mean, like, you see how this could be an incredibly powerful proof point, right to say, if we could demo how this kind of problem is not a six month problem anymore, it's a five minute problem. That's the that's the value driver.
+
+Martin Davies  19:14  
+So my only challenge here is, I mean two of these three scenarios are under IQ, where isn't it. Why would we not use responder for these?
+
+Richard Dosoo  19:24  
+No, good, valid point, right? This was just what the Claude came back with, right? Because then, but and these are not. This is just what I use to build up this document. Okay, you should validate these use cases and see if they resonate, if they make sense. You should absolutely speak to Rahul and see which one makes sense. We should follow up with them and say, hey, if we're going to go exceedance, go to innovation lab, what would hit the mark? All those things, right? But again, this was just the prime at the start of two. Okay, so let me. So that's the scenarios, Martin. But what we also did while you were out, I just want to start this Docker container and show you
+
+Speaker 1  20:12  
+see I might have it in a separate teams window. Give me a sec. I ah,
+
+Speaker 1  20:37  
+I don't know where I saved it. Now, let me see if I can find it. I don't
+
+Speaker 1  20:54  
+give me a second. I just need to find it. I
+
+Unknown Speaker  21:14  
+Yeah, sorry, guys. I'm just starting Docker.
+
+Richard Dosoo  21:25  
+Yes, the container is not starting. This is really annoying, so I'm gonna have to Martin check this in so you can see it somewhere. Okay, wait, it's starting now. Good, hold on. No, it keeps failing. I cannot start.
+
+Richard Dosoo  21:48  
+Sorry, this is so annoying. Okay, so it looks like it's up now. So why is the yes, it's up now. So let me just get the get this up and running. I'm
+
+Unknown Speaker  22:32  
+right? This is coming up now, hold on.
+
+Unknown Speaker  22:42  
+Sorry, it's just loading. It's taking a while now.
+
+Richard Dosoo  22:57  
+So my I'll share this code, if you might, and I just deployed it locally. I hadn't deployed it anywhere, but you can see here, this was the, the kind of interface that we've said, Okay, this is a, basically a web front end to ask, not for non technical users to use right to to write these questions that and then this would generate some specification here on the right. So if I show you this, it's a bit buggy at the moment, I didn't get to finish it, but okay, yeah, so this one, I asked the set of questions. It guided me through the workflow and asked me a whole bunch of questions, and after that, it came back with this brief. Now this brief basically is enough detail that you can fire this brief at cursor, and it will go and build the app, and it will also build the app within the confines of what our architecture supports. So it will use the right API or use the right database, it will make sure it can fit inside the ECT container. But that was the whole point of like. This is basically the non technical users mechanism to enter like, the process, right? And this is what you could demo, if that makes sense. I guess there's okay.
+
+Martin Davies  24:04  
+So this, so this is what we're looking to build, something like this that you then copy the brief.
+
+Richard Dosoo  24:09  
+Well, so there's, there's four delivery mechanisms, right that we're looking at. One is this. One is a set of prompts that you can use in cursor or Claude CO and then there was one more, but I've forgotten what it was, and let me have a look. I think I wrote those down in the Doc.
+
+Richard Dosoo  24:34  
+I'm gonna have to find it Martin and show you. But the idea was that, oh yeah, the other one, which I haven't shown you, it's in a separate chat window, was, you can imagine where we take this next right? Imagine all these briefs. Teams built a whole bunch of briefs, right? What? What? Wouldn't it be cool if you didn't have to start from scratch every time you wanted to build an app? What if you could go and pick from a shopping market a list of features? It that have already been developed, bring them together, hit checkout, and then it builds the spec for you, and then you put that into into into personal clause. So that's the other delivery mechanism, and that's our internal value proposition, right? So you don't have to necessarily go through this process from the beginning every time, because you can go and shop for Melissa features that you are already out there, that are already been built, and then those can form your part of your requirements document, and then you go and build it from there, I mocked up some UIs for what that could look like, but I need to dig them out to be honest. I can't, I don't know where they are right now, and I wasn't prepped enough for this meeting to show you. Let me see if I can quickly search them. Sorry.
+
+Unknown Speaker  25:51  
+Let me see if I've got them here. I
+
+Richard Dosoo  26:03  
+No, I don't have it. I need to look for it. I'm not going to waste your time now, while I can't find it, I'm going
+
+Richard Dosoo  26:14  
+to, yeah, I'm going to need to spend more time looking at it, but I will do it and send it to you today. I think my the immediate ask is like, I need to, well, first and foremost, like, the work you did before the scoping document was really good. We got input from Ben. He asked us to expand the scope, which is great. And then I need to, like, not like, formally hand this back to you, but I need to send you the documents that did went around the houses while you are out. We need to do the proper like, project, folder structure thing, peer, plan, documents, all that stuff. Set up the stand up for Martin and yourself, and maybe me, and maybe Ben, or whatever frequency you guys think is good. And then Martin, obviously, you need to put your hands around a new scope and be like, what's what's do? I understand it? Am I comfortable with it? Before we even think about timelines, right? There's a coming up to speed thing, so I'm going to ping you all the documents today so you can start that onboarding process separately from that mine. Yeah, yeah. 100% I'll send them to both of you. But we should. We should. I don't want to store them on my local machine anymore. We should put them all in SharePoint, basically. So Azmain, if you've got like in the project folders, like a but I know we got the genie programme in one, but obviously we want to split this out from Clara, right? It's separate. So let's, let's see, and then I can just start pumping all the docs in there. And then Martin, what we should like is Friday afternoon, right? So not so much what's gonna happen today, but we should put some time aside next week to just go through more of like all these other things that we've built, so you have a better understanding of the scope and what the what's what needs to be done by when and if it's feasible, right? The second thing why what we need to do is we need to get you access to Claude co so I'm also going to send you some service now tickets, because to get that, you need to have admin rights on your Have you got admin rights on your machine? I do. Yeah. Oh, nice one. Yes. You mean elevated? Yeah, they took mine away because they said I was misbehaving. So they took away my elevated permissions, but
+
+Martin Davies  28:27  
+I still have them. So
+
+Richard Dosoo  28:29  
+no, no, that's good. That means that I'm calling you to you yet. So let me send you this, right? These two links. Let me send them to you now, because this is what you need to do. Uh, you. This is what you need to do. Have a look. Maybe this is a good thing, Martin for this afternoon too, because this will pay dividends once you have access to Claude, right? You're, you're, you're not bound by the fucking 500 Buck limit, for starters. And secondly, we can start giving you skills. We can start giving you all sorts of stuff, right? So if you go through this onboarding document, the first wiki link that I've sent you that is the instructions that you need to deploy AWS CLI, I don't know if you've got that on your machine already. And then once you've done that, it's got some other instalment instructions for Claude code now, because you've got admin rights, you should be able to whip through that very quickly. Okay. Cheers. Do.
+

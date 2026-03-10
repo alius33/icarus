@@ -1,0 +1,186 @@
+Richard Dosoo  0:00  
+Those tables and they're in the schema,
+
+Azmain Hossain  0:24  
+talking about these ones,
+
+Richard Dosoo  0:27  
+because what it's done is it's testing all the APIs right to make sure that they work. But what's happening is that the tests are failing. What I would do is copy those failures and put them into cursor and say that when you try to deploy the build, these tests fail. Can they run them locally to see what the what the issue is? The Good News, 180 of them passed, right? So that's good, at least six field
+
+Azmain Hossain  1:05  
+I'm getting the following errors when I try to
+
+Richard Dosoo  1:09  
+when I run a GitHub action to check these changes in
+
+Azmain Hossain  2:47  
+Can I just ask? Is there any way to automate the fact that it constantly asks for permission whenever changing files? I hate that
+
+Richard Dosoo  2:57  
+next topic. Next time it comes up, you can say you can. It has options. One is ask, one is deny, one is always grant permission. So you click the box that says always, and then and then. It won't scare you. I already have it to run everything. It's annoying, but it's low key, a good thing, because You don't want it changing stuff without telling you you
+
+Richard Dosoo  3:53  
+you should ask it why I didn't pick this stuff up locally before you.
+
+Richard Dosoo  5:00  
+I don't even get the option. Oh, okay, let me, let me look into because I thought you could give it, you could give it an option, and it says, include that I have that option. And I can just say, don't ask me again. But for now, just hit edge steps and then I
+
+Azmain Hossain  5:40  
+that when this context window gets close to filling up, just stitch them together, stitch every context window together and let
+
+Richard Dosoo  5:55  
+me work in one chat once. Once you've got this build up and running 100% then you'll close this down and run a new one, but it's helpful, because it knows what you've done today, so it exactly but this is where the actually like Claude has got the reason why Claude is a better model for things like development and deep research trials is because it has a bigger context window than like chat, GPT and others, so you don't get context wrong like you would with others. That's why this model is so much better at deep thinking tasks than all the rest of them.
+
+Richard Dosoo  6:46  
+But this is a good we're doing a build. We're debugging locally, and now Azmain is starting to like the first time is the hardest, right? But once we've done it, once it then it gets progressively easier. The number of errors get started to get rid of, wise you'd know, like, right? We shouldn't have any more issues with like the CICD bit, because, you know that's going to be in the build right forever now, right? There's not going to be any conflicts going forward. So it's definitely going to get progressively easier the more times We do this.
+
+Azmain Hossain  8:39  
+That's getting so slow after Yeah,
+
+Richard Dosoo  8:54  
+but we definitely in the meanwhile, the I'm gonna dig out like I'm gonna chase those laptop approvals today. I'm gonna get onto Ben because, yeah, we definitely need to get you that developer laptop as soon as possible.
+
+Speaker 1  9:13  
+We also, yeah, we oh, it's the
+
+Unknown Speaker  9:28  
+freaking partner performance metric schema we can show future functionality.
+
+Richard Dosoo  9:38  
+Yeah, always right. That's it. And that you find the table, and the table that is not even being used is what's causing the.
+
+Richard Dosoo  10:49  
+The let's show me the article. Let me see. Sorry. Did you say that he was putting fans on jet engines again, General Electric
+
+Azmain Hossain  11:01  
+aerospace engineers, Hang on, I'll show you. I was just reading it on
+
+Richard Dosoo  11:13  
+my No, we definitely, I'm going to chase it today. Send me the service now ticket and I'll just, like, got like three different
+
+Richard Dosoo  12:40  
+I think my internet is broken. Yeah, no. So what happens often is, yeah, I had this happening to me a lot yesterday, after I was I don't know why, but it happened to me when I was using Claude code, like your VPN or internet connection just pings out, and then you've got to keep retrying. Worst case, you've got to restart your machine. I don't know if it's like because obviously we were not checking changes into GitHub. Often we were not but we weren't doing this right. We were updating project plans and updating presentations. But now we are right. So as I said, I'm going to dig into the laptop issue and get that all sorted as soon as possible. Yeah, thank you. This finishes,
+
+Azmain Hossain  13:33  
+and then I can do a push, and then I'm happy to restart the laptop or anything. Yeah,
+
+Azmain Hossain  14:10  
+here, very rich, the jet engine plans, oh, man,
+
+Unknown Speaker  14:21  
+love you. I because
+
+Azmain Hossain  14:29  
+my dad, like all the shipbuilders and everybody talking about putting sails on these giant oil tankers and cargo ships now, because it burns way less fuel if you can use the wind, yep.
+
+Richard Dosoo  15:00  
+Yeah. Sometimes, though, this thing will hallucinate about the problems. I wonder if they're all relevant, though, because you don't have them showing you don't have any other partner stuff on a screen. Did you No?
+
+Unknown Speaker  15:14  
+Did you create? Yeah. So I wonder why touch any of it.
+
+Azmain Hossain  15:17  
+But here's the thing, what if it made change? Changes because, you know, I gave it like generic stuff, like, make all the buttons uniform, universally across the whole thing, it would have made changes and stuff like this thing seems to be, it's expecting a float, but it's a decimal. I'm like, what? Yes, you there's
+
+Azmain Hossain  16:30  
+automatically knows that needs to commit and push the fixes. Yeah, do.
+
+Azmain Hossain  17:40  
+A Okay, saying it's done
+
+Unknown Speaker  17:55  
+everything, so now what will happen is,
+
+Richard Dosoo  18:00  
+if you go to Actions, that's where the deployment stuff comes up.
+
+Unknown Speaker  18:10  
+Yes, if you click on it, then it will it's working at the speed
+
+Unknown Speaker  18:19  
+of Intel Celeron. So, yeah, okay. It's doing
+
+Speaker 1  18:33  
+something, yeah, but it's still failed on synchronised by deploy to ECR. Do you mind clicking on that one,
+
+Richard Dosoo  18:46  
+the top one? Yeah, that said deploy to ECR,
+
+Unknown Speaker  18:50  
+so that is failed on the
+
+Richard Dosoo  18:58  
+oh, okay, all right, now that this might be okay, this might be okay. This actually might be okay. But what we want to check is the when this finishes, can I click into
+
+Azmain Hossain  19:18  
+it at like?
+
+Azmain Hossain  19:41  
+Okay, that's a nice tick.
+
+Richard Dosoo  19:44  
+Yeah, so that's cool. So when you click on that, that means all the tests probably ran back in, yep, so that ran, so that's front end test. Those are warnings. We don't really care about those.
+
+Richard Dosoo  20:02  
+Okay, now go back and see if we can check it into main, and then when we check it into main, that previous error we had won't come up because main, the main branch right is a
+
+Azmain Hossain  20:20  
+Wait, where's the button to
+
+Richard Dosoo  20:28  
+push it? Yeah, click on that. This branch has four commits ahead of me.
+
+Unknown Speaker  20:34  
+View pull requests.
+
+Speaker 1  20:48  
+I don't know why it's being so slow. No, no, don't worry. It's so good.
+
+Richard Dosoo  21:02  
+Yes, scroll down to the bottom, because basically you want to merge. So what will happen is it, yeah, there you go, merge, pull requests.
+
+Unknown Speaker  21:13  
+Confirm, merge. There you go.
+
+Azmain Hossain  21:22  
+Uh, should I go into actions and see if that's working? Yep,
+
+Richard Dosoo  21:44  
+now what happens is here, this is where Chris's automation kicks in, because it basically says, Oh, you've checked some code into main right now I need to go and take that code and deploy it to an AWS environment and update the URL you
+
+Azmain Hossain  22:03  
+Why would it update the URL?
+
+Richard Dosoo  22:06  
+Sorry, not the URL. Update the deployment. So essentially, it takes the code and deploys it on a virtual machine in the cloud and then and then restarts the website. I No, thank
+
+Azmain Hossain  22:27  
+you so much for just taking the time and running me through this.
+
+Richard Dosoo  22:31  
+Because, yeah, it's good, it's all good. And it's like, because this is going to pay dividends when you know, once, the once, like we get more up and running on this, right then we can you'll be showing your next person to do all this. Yeah.
+
+Speaker 1  23:04  
+Okay, those are green. Oh, so that, wow. I wasn't expecting it to pass with but this is cool for it. So let me have a look.
+
+Richard Dosoo  23:19  
+I was fully, fully, fully expected to see, like, a full bit of red, but no this, it will work. So when you click on it, click on the top, yeah, did set changes. So that worked this time, because it was like, All right, I've got main changes to do, and then it's gonna say, Okay, now I've done main changes. I'll deploy the back end and the front end. So now, right now, this is the real moment of truth. I'm gonna go check and see your changes myself. The URL, I'll put it in the thing here. It's gonna get worse in a second. Oh shit, you got 503 No, okay, let's give it. Let's give it a few minutes, because, in case there's some timing issue or something, but the fact that the build works in GitHub, listen the Ben said, give it a few minutes. So let's give it five minutes. Okay, and then and then, hopefully, if not, it's cool, we'll go into I need to get you Azmain Actually access to our AWS environment, because when you like the pipeline that we've built, right, you shouldn't need to go in the AWS environment, because Ben has basically built everything. So he's the only one that should be administered in the infrastructure. But what I want to do is get you access to the AWS environment. So for example, you could come in here. Let me just bring this up.
+
+Azmain Hossain  25:00  
+So I'm not getting a 503 I'm just getting blank
+
+Richard Dosoo  25:13  
+now, and you will basically be able to come into the ECS service for what we've deployed, which is essentially like the V the cluster, the VCF, the machine, right? And you would be able to come in here and see what the logs are selling you for the for,
+
+Richard Dosoo  25:36  
+yeah, at Factory dev cluster, that's it. So here you are, adoption tracker back end, adoption tracker front end. So you see it's in progress. Can you see? So we just got waiting for this defence, yeah, but it's good, right? See, this is now we got the internet process. But normally this part of the bit Ben would be doing for you, you wouldn't need to come in here, but I'm still going to get you access anyway, the Azmain is actually what I have to do though. I have to talk to Earth because I just got some plan stuff I need to talk to him about should take me about 15 minutes.
+
+Azmain Hossain  26:12  
+Let's just let it do it, and then I'll check in five minutes or and then again, in 10 minutes if it doesn't work. And I'll just like, I'll just give you an update if it's really not working, and
+
+Richard Dosoo  26:22  
+then we can jump back on Awesome. Thanks, Azmain, I'll speak to you in a bit. Thank you so much. Thank you.
+
+Unknown Speaker  26:27  
+No worries. It speaks. Wait. You.
+

@@ -1,0 +1,336 @@
+Richard Dosoo  0:03  
+Problem. So obviously, we have a challenge. Sean has a challenge. The KYC team have the same challenge, and we're all solving it. Yeah? So yeah, the purpose of today's session is just to talk through that. Azmain is going to walk through what he's done.
+
+Azmain Hossain  0:25  
+Megan, nope.
+
+Richard Dosoo  0:29  
+And I'm old, so I have to write all this stuff down. Amanda Fleming, who works on the KYC team with Edward Grogan, they're going to come in. They do essentially all of their customer management, all everything we do manual today. They've already all already automated. Oh, and they have a customer management they basically have a web UI on top of super database that pulls data from all these other tools, and it does exactly so they're gonna, they're gonna come around. As I said before we originally this was more focused. On the tech, like, how do we share coding standards? How do we show prompts to do all that stuff? But
+
+Azmain Hossain  1:12  
+I just thought that Ben joined my laptop.
+
+Speaker 1  1:18  
+I did ask me for a room of a screen.
+
+Azmain Hossain  1:21  
+It is a room with a screen. You
+
+Speaker 1  1:46  
+Eric, hey, Martin, hey, Bernie, just getting situated here with the screen. Hopefully you want to take us that
+
+Azmain Hossain  1:59  
+Long school where you have a TV you of the
+
+Azmain Hossain  2:20  
+light. Tom Amanda, what do you say? Ed, hi. Bernard Azmain,
+
+Speaker 2  2:42  
+don't forget all the names. Yeah, sorry, I'm not very good.
+
+Richard Dosoo  2:46  
+We've got a few members of the insurance so you as well on the tech consultant. So I know we only have 30 minutes, so I'll be quick with our introductions. We've been having several conversations between us about how we manage our customer success processes, and it's become evident that we're trying to solve the same problem just in different parts of the organisation. So on the property side, Azmain and myself have been looking at how we manage our customers transition to intelligent risk platform. Amanda, from the conversation we've been coming in the morning of doing or you're further ahead in that process. On the KYC side, there's a lot that we can share in terms of technology and process and how we've used cursor and how we optimise and what infrastructure we've got to do that. But I think there's a process conversation that needs to happen as well, which is why George and Sean wanted to bring you guys into the conversation, because I know that's probably something that you're thinking about already. So a lot to summarise, what does that resonate? Yes, we do cool. So I guess in terms of what we were going to do next, as I said, Azmain is already looking at this on a property side, but he's we're very early in our process, so there's going to be a lot of things in here that we don't have, that you guys already have, but we wanted to share with you what we've done, talk about how we've done it, which is why we've got Ben and Martin on the phone about the infrastructure side. And then we can flip over to yourself to talk about Azmain. Are you able to get your Are you sharing so Ben and Martin can see?
+
+Azmain Hossain  4:16  
+Are you on the team? No, I'm not. Let me, yeah. Let me join. And then
+
+Unknown Speaker  4:22  
+can you hear us? Yeah, okay.
+
+Azmain Hossain  4:34  
+And then yeah, everyone should be able to see so this is kind of what we've built so far. This is very much v1 we launched it on Monday, and the thinking behind this was all of the IRP migrations are currently being tracked using just disparate excels and PowerPoints and information in people's heads. Salesforce, if you ask the question of what's happening with this key client, getting the answer means talking to seven people and looking at a bunch of stuff, and then somebody manually writing an email of exactly what's happening. The purpose of the tracker is literally just to stop all that. So we have one place that we can view everything. The way that we've started using it is we have a weekly portfolio review. And what we started doing is customers that are high priority, customers that are high risk, or have any other thing flag on them, we start going through them first. So this kind of gives you like, if you want to go into Tokyo Marine, you can see all the different use cases that they're currently on, and from literally just one view, you can see, okay, model adoption is overdue. You can click into that. You can be like, okay, riti, you're the owner. What's happening with it? You can get an answer. You can have the conversation without all of the FAF beforehand. It consolidates everything into one that's kind of a nice general introduction. And why is the data coming from? Is this? So the data came from RMS Salesforce. So obviously everything sales related commercial has been moved over to moody Salesforce. The RMS one was only being used for by CSMs, for weekly updates, for, you know, blockers, action plans, stuff like that. That's going to be shut off at the end of March, and the plan is to go into Gainsight, but from now to march, or whenever Gainsight comes, we don't have anything,
+
+Speaker 3  6:33  
+so we're not going to have the same level of granularity in Gainsight anyway. Get
+
+Azmain Hossain  6:41  
+what they show you. Yeah, yeah. This is kind of, we can. We can just build it ourselves, whatever. You know, a senior person needs a dashboard to see stuff in this particular way. They want to slice and dice the data that way. We can build them a dashboard for that. But CSMs want a different workflow. They want to be able to, you know, go in, they sign in and they see their customers. You know, if I'm Miles, I go in, I'm like, Okay, I got three customers. Aspen's in red. Okay, Aspen's in red. Here are the blockers. Who's the owner? Okay? You know, if there's different owners for the blockers, you can just go and talk to them, and once you have you can just go in here, put in an update, and that way, when you create a report, or when it's a portfolio review or anybody, they can just see everything. They can see the updates. They can see the individual objects, like blockers and stuff and what's happening with it. It's a one stop shop for all the data to then facilitate the conversations that happen.
+
+Unknown Speaker  7:37  
+And quick summary about tech stack and how it's
+
+Unknown Speaker  7:42  
+posted up with Salesforce integration.
+
+Azmain Hossain  7:45  
+No Salesforce integration. So we took the last extract from Salesforce, because the thing is, that's, that's the thing, because obviously RMS Salesforce, we shut down. But having an integration with moody Salesforce would be excellent, because one of the things this platform can give is clean data, and whether that be to Gainsight, to Salesforce, to sales, recon, whatever it is, the problem that we've faced and now fixed all the dirty data is the same thing they would have had to do. It's just now we've already cleansed the data, and we can offer a pipeline for clean data into whatever platform you want.
+
+Richard Dosoo  8:22  
+We we really wanted to use the APIs to drive this, but we were shut down. So we asked for an API key. We asked for, can we have some programme, Mac, access to game site. Just got to a flat out. We'd love to do that, because that's what we do customers all day long. So for us to do that for an internal project, very straightforward. It's just getting the permission to get the access to get those keys. Then this could be a very elegant solution that sources the data from any of these other systems. And this is just a presentation, maybe we augment it with some data, but that could be very minimal. Right now, this is running on, I don't want to gloss over it. Azmain and my manager Ben, basically barcoded this from the bottom and deployed it on their look, on their local machines. Then we had to figure out how we want to host this. Yeah, so then Ben and Martin on the call. Right now, we first would have the painful process of trying to deploy this on TSG Azure infrastructure got nowhere to very long time, and then we default back to an AWS account that we manage. And essentially we've got all happening from Moody's what you authenticate through Okta, so it checks who you are, and then we have access control applied in the AWS environment. Make sure the only people who can log into this are people that we know. And then we decide what you receive,
+
+Unknown Speaker  9:50  
+and you're updating data into it.
+
+Azmain Hossain  9:52  
+You've got some sort of database, yeah. So this becomes the the input source. Rather than putting data in Salesforce and this pulling it, you put the data, um, and literally, we did everything, like, pulled in as many reasonable amount of employees with, like, a full org chart. That way, when you authorise through Okta, it knows who you are, and we can assign user permissions ourselves, while still adhering to the moody security stuff
+
+Richard Dosoo  10:20  
+over and above. Like, what the guys are driving was more like, how we making sure, not making sure, but just sharing the best practices, whether that's personalities, whether that's memory, manage, managing the context, one of those things that painfully learn across this journey. We were like, right? We're going to share that. I think Moody's is hard working with BCG and others to talk about how what our best practices are and how to minimise our spend, but in the absence of weight of that, we still can share collaboratively about the way the paper how to avoid that pain point us anything else so
+
+Speaker 3  11:02  
+you're meeting weekly is that more for reviewing, getting the data in or reviewing the data,
+
+Azmain Hossain  11:09  
+it's it's reviewing the data. So throughout the week, we tell CSMs please go and update anything that happens on a weekly basis. Yeah, and then weekly meeting to go over what's happened.
+
+Speaker 4  11:23  
+So is it more quantitative data rather than
+
+Azmain Hossain  11:26  
+so right now, it is quantitative. Everything is driven by the data fields. We can't go we want to go qualitative. We want to get to a point where you know you have a customer, and you know the CSM has been putting in months and months and months of updates on a weekly basis. If we can pull in like a copilot API, we can get that to read all those updates. And when a senior person asks, What's going on with ace insurance, it can summarise that. It can look at all the updates, both data field and, you know, qualitative, where people write a paragraph and create a whole summary for somebody.
+
+Richard Dosoo  12:06  
+So I guess, in terms of like, what happens next with this, I was keen to not only share but I'm going to start that team channel. We're going to be collaborating, prompting the infrastructure piece, as I mentioned, Ben and Martin have also been looking at the infrastructure side and creating a bit more of a generic framework where you can just request an app, and then he will go and deploy the Git repo, the cluster, the CICD pipeline. So we can have this approach be delivered for this one app, for any other internal that's, I think, where the economies just go. Economy is just go really start together, because then, whether it's Azure environment or an AWS environment, the
+
+Speaker 3  12:53  
+deployment is so we're hosting. We've done a very similar journey, I guess, where people built out locally and we've hosted our own infrastructure, so ours is Usher after the name of us, and it's all we tried to design it to be as self service as possible. There's quite a lot of changes that need to be made, but it's when you come into cursor and you write some pre canned problems that we've worked on, and it makes all the changes that you need, not quite a complicated apps, like with a database and things like
+
+Azmain Hossain  13:29  
+that, maybe creating a gate where, like you can, you can create apps of a certain complexity by yourself. But when you start needing a database in the back end, and you start needing API calls. That's when you start coordinating, maybe with the DevOps person, yeah.
+
+Speaker 3  13:45  
+I mean, we have apps. You can just self help deploy an app from xAPI calls. I think the data, I think we can get there with the database. It's just like we haven't had you have to have the reps, right? You do it a few times on air, and you refine things. If we don't really deploy one app in the database so far, right, exactly. And I think once we get through that, it's all
+
+Speaker 2  14:07  
+template. How does your app interface with Gainsight? Or it doesn't? It doesn't
+
+Unknown Speaker  14:12  
+do that because we don't use the insight. No.
+
+Speaker 5  14:15  
+I think the biggest problem that we've all had with Gainsight that have used it is it's very much like Salesforce. You have a lot of data that doesn't really matter to you. There's a committee that drives how things look and feel, so like the client at risk profile, for example, with leads like was so simple that it wasn't helpful, it didn't provide any value at all. So that's why I started to build my own as soon as I found out that I could do it where I don't want to link in being said at all, what I do want is the tickets we get from our support team that go through Salesforce to pull it through here. So Adam and I get a lot of direct client reach that we want to track alongside with our support team too, which will help with training. Obviously, if clients are reaching us with the same thing, we can start from like what we've talked about. Like what we've talked about, that's like six times we should train with this team. The other thing I want to link into is outlook, so that way, if you have an email correspondence with the client, you can automatically send that to the tool and it will aggregate it for you. And if there's tasks, it'll auto generate those tests, and then it'll send reminders. Those are the two pieces that I want to agree with.
+
+Richard Dosoo  15:21  
+So on the ticket side of things, this is where sales refunds team are already building a data pipeline from Salesforce into sales recon, and they're going to expose that for people to consume via applications or Microsoft co pilot studio, so you can do sentiment analysis like what you just described with the garage training. Yeah, we don't have to do data pipeline for that. We just figure out the props. So Ariel, Harvey, Jamie, stop moving and running with that. The that feature is going to be available via the q1 we will add you to the like consistent communication. Get access to that.
+
+Speaker 5  16:01  
+Yeah, because I, right now have an akip where I have aI already looking at the data in my school, and then it will create summaries or next steps, or it'll start to look at trends. And I have reports that I've built to that AI will summarise the reports on each client and will do like a renewable SEC for us. It'll do like if I want to present quarterly to our internal team about to present quarterly
+
+Speaker 1  16:25  
+to our internal team about the health of our clients, it will also do that for me too. Is there any way you could show that?
+
+Unknown Speaker  16:32  
+Yeah, yeah. So how looking at that is
+
+Speaker 6  16:39  
+you basically no, no. Same.
+
+Unknown Speaker  16:48  
+Oh, maybe I need to go on
+
+Speaker 5  16:55  
+mute or build the apprenticeship.
+
+Richard Dosoo  17:02  
+Just a check for guys on the phone. Can you still hear us?
+
+Azmain Hossain  17:10  
+They need to unmute their mics. Yep. Cool. Do
+
+Speaker 5  17:20  
+back up. So I started developing this, just as like a renewals tool to help keep track, because we had a lot of renewals last year. We have a lot this year, and it was quite complicated dealing with not just the clients, but our sales people in the RMS, and just make sure we were aware of what was going on. After I learned the actual power of cursor. I turned it into a full management platform tool. So the dashboard, I'm still work in progress. I would say I'm probably like 75% of the way there. But this gives an overall health of the client. It tells you, like, if anything's outstanding that you need to look at right away. I built in an engagement tracker, so like each client, depending on what they pay our expectations are. We see on the X amount of times in person virtually, it'll start telling you if you're on track to hit that or not. Under each of the clients. I'll go into this one, for example. So there's a general overview where I have AI that fetches data for us. So if there's a change in any of the C suite, it will automatically pull in. I can pull in what my key contacts are. We use the mean system. So whether the money advocates tech user or end users, we have a relationship team. So who's our senior person that we want involved, who is our product lead, and then who's on your relationship?
+
+Speaker 1  18:35  
+No, because they basically, they're delivering something for the sales team that does this basically,
+
+Richard Dosoo  18:43  
+when as customer success, we're second up on the list, right? And that's why we started speaking to the represent NMR requirement, yeah, so let me make sure I take that as an action item to get you and Ari and Jamie to especially about the summaries that you're generating. Yeah? What model using?
+
+Speaker 3  19:02  
+Probably, one model using probably GPT four. I don't know how I've gotten this part,
+
+Speaker 5  19:11  
+and quite honestly, because I don't know, I just asked her to do stuff and yell at it. The meeting notes I like quite a bit. So I'm the API key might work now, because now that we have it linked, so essentially, I can write who's attended on either side, I can put in the meeting notes, and then I click this AI process and create tasks, and it'll look through the meeting notes, and it'll automatically pull off tests that need to be done with follow ups and assign it to that person, which is why I want Outlook to be integrated. So that way, it automatically sends
+
+Speaker 2  19:39  
+the email out. Do you push that into a sales force or not? No, not
+
+Speaker 5  19:43  
+LinkedIn to Salesforce. If I could be linked into Salesforce, that'd be great. But I don't know if
+
+Azmain Hossain  19:48  
+we can, because then you wouldn't need the meeting notes. Actually, you could just pull in meetings
+
+Speaker 2  19:52  
+useful for other people to see what you have discussed, right? So if I can, I can see what the sales people have discussed in Salesforce. I think that's that's useful right? Now, I'm just going
+
+Speaker 5  20:01  
+to be pulling notes that have already been taken. Already been taken, and we just stored them in teams, and then just plugging them in there and starting to backfill data. I have the task generator, which cursor is having a hard time fixing. For some reason, it's creating one every month until the due date, which is driving me absolutely insane. But this I actually created a project report off of as well. So that way, if we are doing development work where there's other product members that are responsible for it, I can start keeping track of it, and also send a client ready, client ready document where they can also see what we're at within progress. My client at risk profile is quite different than what you see in what's a gain size. So I wanted something a lot more robust than what they offered, and being able to see in multiple different levels of where our clients health is, and then track this on a quarterly basis. So then I can start to see if there's any change in trends. Eventually, I'll get our client usage data, actual statistics. Yeah, and I think that right now, this is all very much based on my attributes,
+
+Unknown Speaker  21:08  
+into these scores, effectively yourself.
+
+Speaker 5  21:11  
+I'm doing these, yeah, but eventually the client usage, I'm going to want that to feed into something that one of our other colleagues built, and then it'll start pulling in, like, real data, like, how many clients, with clients are in the system, how many users? How active were they that month? And then I can start to be able to see, like, Is it normal for them to dip in January and usage by 50% Oh, yeah, last year they did too. That's a normal thing. Or summer vacations. But starting to get real indicators if they're not using, like, a big section of our platform anymore, that is a key to us, like something might be going on here, and then we could be able to tackle it earlier than later.
+
+Richard Dosoo  21:44  
+And this is but you can see George the parallels for us on the property side, right. So like, if we can, I think the sales replant equal source usage data from mixed matter, which is where all of our platform data stored. Yeah, maybe some of your cloud applications there is coming from there as well. So there's a really
+
+Speaker 5  22:03  
+easy, quick win. Yeah, absolutely. Here's the project management where I can generate the client party report, where we can start to see who's working at what where's our progress coming we can add notes, and then mark off each of the notes is completed. So if we're waiting for a client to send us information, and they say they'll send it next week. We don't get it, this will automatically tell me you need to make sure that you reach out to client. They didn't send it. They said they would, just to make sure that we can stay on track. I have this where I pull in our contracts already, and the AI will all automatically parse out the relevant data at the start the end, the change in the fees per year, the usage they're allowed to have, and then other things, like other products they're licenced with. And it'll keep track of it for me, so I no longer have to do that. But then now I have this renewals timeline of when we're supposed to be reaching out to them. When should we start the discussions? This will automatically build a report as well where we can send proposals. I have that built in down here. So do we want it to be like a flat 3% do we want to be 5% it will build it, and then it will automatically send a client ready, either email or PDF,
+
+Speaker 4  23:09  
+and where they're using other products that might be outside your remit. Does that then require someone else to be filling in?
+
+Speaker 5  23:16  
+It will Yeah. So you would have, well, if we can link into Salesforce, it could do a lot of it for you. If you're not, then, yes, it'd be very manual. Now I will admit I built this before, not as good as what I built this time, and AI decided to delete itself and apologise profusely for this drill that was not good, but I did rebuild this better and faster. This only took me, like, a week and a half, with all the data already in it. So it's not that painful, and each person does their own client list. I also built in an engagement tracker, which we didn't have before. So how often are we meeting clients? What are the expectations? Are we meeting it? Why are we going to see certain clients more than others? Is it a renewal year? Or maybe we don't have to travel as much because we've seen them four times in a year, and then also tracking when our senior leaders go out as well. I think that's something I didn't have before. The other thing that I did was the prospecting. So we talked to a lot of prospects. We have very sporadic data, and then it's in multiple different places. It's not aggregated at all. Now we've built it where there's a step by step process. So the pre demo section, if they convert to an actual demo, you convert it, it'll move down to the demo section. Fill out information there. Does it go to trial? It comes down to this section, you fill up, and then it will actually this one. I thought was pretty cool. So in the trial section, you can see there's an AI summary of everything that happened in the pre demo, in the demo section, so that we don't have to go back and look. It'll give you an overview. So like, Okay, this is a four week trial. What are the expectations week by week? Who should be involved? And it'll start build that out for you, so you don't have to wonder, what are we gonna do in week one, week two? And it will create a summary that you can send to your prospect too.
+
+Speaker 6  24:57  
+Yeah, I think that's key bit as well, by sending it to them, you know, and setting those expectations, but making sure that's then
+
+Speaker 5  25:03  
+something we're going to be tracking during the trials as well. So this is made up, that's why this looks this way. But like, are the users actually logging in? How much time are they spending inside of are they engaged? And we can start keeping those scores and tracking the trends throughout the trials,
+
+Speaker 1  25:20  
+but that's coming from the usage. It is, yeah,
+
+Speaker 5  25:24  
+we would have to email our support team and say, Can you check the usage for this trial? And they'll send us information. We'll plug it in on a weekly basis. And then you have a place to say, okay, who's involved in the trial? What are their roles? And you can start making notes in each of them. Do we have a walker? Do we not have a walker? Why are they a walker? And then it will do, you can do feedback. And then next steps of, what do we do to get them to convert to a client? So the Generate AI recommendations will look at everything in every tab and say, you have a good health score, you should just negotiate and right there, or you have a really big blocker, they're an internal person. Maybe you can try this
+
+Richard Dosoo  26:02  
+well, and this is, yeah, this is where we need to definitely get you introduced. I'll send you the sales recon demo video, but essentially they're doing this, but from a sales point of view, which is, look at what's happened public and media account, look at the internal traffic with the other products they licence. Come up with a sales strategy for me to pitch new products or existing products, and they're using an LLM to help drive that, but they've trained that LLM specifically on these products data, etc, so they'll be giving us a very more tailored, specific analysis, not to take anything away. This is amazing. Yeah, we
+
+Speaker 5  26:36  
+definitely should. Yeah, teaching these to get what you want is quite challenging. Actually, I found that was where I spent a lot of my time with when I started building these recommendations, and everything was always the same for every client. No, I want you to look at the actual notes, the timestamps, who talked to who like, start looking for flags like, and then I would give an example with this one I saw that you should have recognised that this was an issue. So it takes a long time to get that so they've got it already nailed down. Yeah, that'd be great.
+
+Richard Dosoo  27:06  
+So there's a I'll add you to the list of people, probably full of sales recon. UAT, I think that it will be helpful and relevant to be involved in that. But definitely, even if it's just for you to say, right, for your organisation, that eventually will be using the tool, this is what you already have. And they can tell you, we're going to do this much of it, or we're going to do this, or we're not going to do it, yeah, there should be an alignment that takes place and decision that's made about some of this. This is very feature rich, so, and they're building for the core, core, right? So they're probably not going to go this deep, yeah, but
+
+Speaker 3  27:47  
+I guess they can extract out some of like this, generate our recommendations, right? If that could be kind of like modular, that might not be what they built, evaluating performance stuff,
+
+Azmain Hossain  28:01  
+yeah, like one of the things I really want to bring in is ARR or, like, just what's the spend? But that means getting a whole thing with Salesforce and doing extracts. I'm just waiting until sales recon is fully built, and then hopefully they'll give us a pipeline to just pull that data in. I don't have to do any of the work they've done it.
+
+Speaker 2  28:20  
+I think that's the key thing why we should get involved in testing it so you can give that feedback now, rather than wait till it's built. I mean, I mean, when I see this that I wonder what the purpose of Gainsight is, actually, because, you know, this is much richer, right? And it has the same it has the stuff that I if I look at Gainsight usage information, get two charts that are completely useless, right? You probably think the same, right?
+
+Speaker 5  28:45  
+I really tried to get them to tailor a little bit some more to what I would personally need from it, and they just weren't. Well, some
+
+Speaker 2  28:53  
+of it may be really difficult, because some of it will need to be product specific, right? So the way you use a product isn't going to be the same on something like risk modular versus some reporting tool, right? It there's different things. So maybe it's really too hard to get this on one screen, but, but this is obviously, there's a lot more stuff. There's how I would do it right, to get them a lot more specific stuff right?
+
+Speaker 5  29:15  
+And like with the renewal section, for example, it would be really great if we could get convert to put in our expenses. Per client, like, how much are we spending on entertainment with them? How much are they paying is are we getting value for doing these entertainments with our clients? Or are we not? That would be key too, so that I don't have built in yet, but for the renewals, I have my forecast for the next five years of what's coming up, and we're starting to already have strategic conversations for what's going to happen in 2027 going to happen in 2027 not just 26 even though 27 doesn't have much revenue at risk, it's still like starting those conversations.
+
+Speaker 2  29:50  
+That's exactly this kind of you know, think about renewal two months before is not Yeah, and do you get? Do you take any NPS data in there? Because that's another good source of information.
+
+Speaker 5  30:01  
+NPS, so I am a true CSM. So I do know this. Some CSMs have different roles in this organisation, and some are not. Some are more like SMEs than or support. But I don't like MPs. I don't think it's a
+
+Azmain Hossain  30:17  
+helpful Steven used to like
+
+Speaker 6  30:20  
+helpful measure for us, because our response rate is so low, right? So it just doesn't like there's an example 69 across all of Moody's, and then the next quarter is fine, right? So that sort of variation is just
+
+Speaker 2  30:40  
+like every six months continuous now, from it's continuous from now on. Oh, okay, that's we just had an announcement yesterday. No, yeah, it's moved to continue. But this might not help you, because you might still not get a lot of responses right. And I kind of, I think I do find that the comments can be useful. And again, you can analyse the sentiment based on those did the score? Yeah. I mean, it's not a client basis, maybe a product level, right?
+
+Speaker 5  31:07  
+So if you give something that, I'll give it a seven, they don't recognise for us, that's actually a bad number. If it's not an eight, nine or 10, you're kind of being flagged. So it's a bit tricky, which is why I did this, the client, whatever. I called it the client, health at risk profile. So I want to go into more details. We talk to our clients all the time too, so, and I'm super sensitive to when they say something that's negative, and I'll flag it immediately, and then I will reduce their score based on that, and I'll put a comment, why? But I don't know.
+
+Speaker 2  31:45  
+Maybe you need enough volume, I mean, per client, right? Otherwise it's pointless. But maybe for the product it can still work, right, if you be aggregated product level or something. But at the client level, it's the same thing, because especially our product used to be new, so there was a lot of feedbacks, and now it's kind of no one responds anymore. Yeah, okay, but the comments, I think, can be useful, because people sometimes don't tell you those comments only, only in the NBA. I mean, that's what I found some people sometimes, you know, okay, but, but, yeah, I think that same kind of things we were thinking of, you know, tickets, usage, you're
+
+Speaker 6  32:26  
+going to be, like, consistent across everybody, yeah, yeah. There are going to be some things where, like, usage, where it's going to be some products are going to be shared because they use one thing some other. And there you have some things where you're going to want to get really specific on it. And I kind of go, that's why gain side is going to be so by so hard, yeah. And then you kind of, like, have somebody come along and goes, this is exactly what I want. There's probably something in the middle,
+
+Speaker 3  32:48  
+yeah, I guess there's, like, commonalities everyone scientists like Salesforce data, and we can solve that one. So then, should we be building two separate apps here? I mean, maybe we should, but, like, they're quite similar, I guess. And this is it,
+
+Richard Dosoo  33:02  
+I'm gonna ask the question, and it's not, it's not for me to say, right? I'm gonna ask my manager and say, we had a really fruitful conversation, and there's a lot of analogies in what we do, but I don't have the response. It's not my place to say we should combine their first because your managers might say,
+
+Speaker 1  33:21  
+so I don't want to like, pretend like, but even, even if we don't, even if we still are on different tracks of development, yeah, just sharing,
+
+Speaker 2  33:31  
+we need to have a way of getting data out of sales, Yeah, so I guess whatever, he's just like sequel.
+
+Speaker 6  33:41  
+It's SQL, extracting stuff out, sticking in reports. So effectively, what we need is an API endpoint that you can just call to create the usage that we need, because that's where it's currently stored.
+
+Richard Dosoo  33:53  
+This is where we're going to get from the sales recon development with this feature called intelligence, anywhere where they essentially building a data pipeline to collect all these data for these sources, because they want to surface in a sales rep. So sales people can be having conversations and saying, Oh, you're not using this model that much anymore. Let me upsell you, or you're using too much. Let me give you a bigger environment. So we're downstream of that. We can be beneficial, and that's going to be available at the end of q1 so that's the conversation I want to like. I want to bring you guys into that cadence that we have with them. First meeting a fortnight. I need to organise the next one, and I want you guys to be part. But to your point that I would love if we could have one app, because that would then that's this, right?
+
+Speaker 3  34:38  
+But then you start to get into the game side problem. Then it's the complexity.
+
+Unknown Speaker  34:49  
+Amanda wants something, I guess,
+
+Azmain Hossain  34:51  
+like the purpose, the purpose of such rapid iteration is, I don't know. This is just me talking compartmentalization makes more sense if we, if we structurally fix the problems of, like, having an endpoint, having the data pipeline, you guys have your needs. IR, like for IRP, we got totally different metrics we want to track, and it changes one month. Somebody might be like, oh, we need, we should track that. Can you add something in? If it's this huge, combined, giant beast that does everything, and we vibe, coded all of it. It's a nightmare to try and change stuff.
+
+Speaker 5  35:24  
+So let's say perfect world. You're like, I want exactly what you build, but to tailor it to my insurance products or whatever. Couldn't you just take my code and then just create, like how we do with barrel, like a separate URL, and then they could create branches. If you had
+
+Speaker 3  35:40  
+to start building around you could take use it as a starting point. Yeah, changes. You wanted an absolute version, but since you already started building your own app,
+
+Richard Dosoo  35:50  
+just like we could say, go to cursor and ask it to write a functional specification of the ID for your app, give that to us, and then we can compare that to the features that we've got and do a delta. We can do that overnight, yeah, and then that could be the next step. Then we could say, Where's the quick wins like Natalia, who wasn't able to drive, but she's got a call. She's gonna take this project manager piece that you've written, like she's gonna ask me and Azmain to build that drives change for straight away.
+
+Azmain Hossain  36:20  
+Yeah, oh, I want to build that. I'm a project manager. I'm I, my past life was a developer. That's why I can do this stuff. But I'm a project manager. And obviously everything we built is very CSM focused. That's, that's the core and for people to get updates. But you know, a lot of these, you know, you solve these use cases. It's a project manager that's actually managing that migration. So the client might be green because they're happy with everything else, but this thing is flashing red. So when you go and click into and you ask the CSM, they're like, I don't know, last time I caught up with them was two weeks ago. You ask the PM, they can tell you day by day what's happening the immediate engagement. We don't have that I want to build
+
+Speaker 5  36:56  
+that in. Yes, you could actually, you would probably need to enhance what I've already built them for project management, because mine is much more higher level, where I'm asking the developers and the product owners to give me feedback, where then I'm strategically taking that feedback so the client won't see, like, oh
+
+Speaker 6  37:13  
+shit, yeah, you should be able to plug into that. Everything's just a list. Yeah, yeah. Everybody's just got a list. Yeah? Because I usually be able to plug into their list. Get it from ADO or ever. Yeah. And they've got a list in there where they're tracking this stuff, and you just got to pull it from there, rather than you going to them and going like, so what's the update? Just flashes up, because that's what their list is. Now their list is shit. Then you kind of go, like, your list.
+
+Azmain Hossain  37:36  
+We're talking about pulling data from Salesforce, from Gainsight. We could just pull data from each other. Yeah, that's we're building this stuff. If you need something from my app, you can just pull stuff from it. If I need something from yours, we can pull stuff.
+
+Richard Dosoo  37:51  
+Yeah, well, I think the value definitely comes when we go to the when we bring our collective requirements together. Because if I ask for something, it's very easy to say, if you ask for something individually, same story, if you ask for something together, and you have two manager directors saying that we both need this. We stand more charges.
+
+Azmain Hossain  38:07  
+And sales recon seems like really high priority, and they're doing so much at this point, I'm I'm hesitant to build out, like, a lot of the functionality that you've built out sales recon's gonna do. I'm really trying to avoid that effort, like I'm trying to find out exactly what are you guys going to build. I want to take part in the UAT so I know what their system is, what my thing needs, where the gap is, and what I can just take from them.
+
+Richard Dosoo  38:33  
+So let's do this. Then this has been really helpful, by the way. Thank you guys, and thanks Martin for joining on the phone. I'm gonna The first thing I'm going to do is add you to a thread about the sales recon UAT. They're trying to limit it to eight Customer Success people across the whole organisation, but I'll ask if you can be added to that. The next thing I'm going to do is I'm going to start a thread with the sales recon team, and I'm going to include you and all of you guys in that thread and say, we met internally. We're in customer success, and I want to arrange the follow up meeting where we can go through our requirements, because there's a lot of convergence. So I'll set that meeting up probably next week or latest, the week after. I think while that's happening, probably hasn't made this clear meaning to work out the plan. Yeah, there's probably some session that we need to. Have to just go into a little bit more detail about the code, the app, the infrastructure, and see like, once you've run that product definition script over your app, we can compare it to ours and review the output. So in the meanwhile, I'll be I'm going to just ask Claude what's the right prompt to do that. I'll send it to you, run it, give us the mRNA file, and you can do comparison.
+
+Unknown Speaker  39:51  
+That can drive what we discussed? Very
+
+Unknown Speaker  39:52  
+interesting. Yeah,
+
+Azmain Hossain  39:55  
+no, I was gonna say this. I what I'm hoping you get out of this is, obviously you're trying to figure out, how do we track insurance customers buying stuff from other OUs, yeah, hopefully it gives you an idea of the stuff we can do, like stuff that we can pull in. It looks great.
+
+Speaker 4  40:12  
+My biggest concern is, if it relies on other CSMs sort of updating stuff, then you might not get a true reflection of actually, what is the case. The thing I like there is stuff like support tickets and stuff like that, stuff like that that can automatically pulled in, you know, that's tangible output from, you know, that gives you a proper insight, whereas, if it's purely reliant on a CSM, not that focused on, you know, said client, then, you know, that's where the issue stands, I guess, yeah.
+
+Speaker 3  40:47  
+But I think with some of the stuff you showed, where you're you've got your side, isn't your mind, what would be nice is to have, like, all of that also be data driven, then you've got some kind of data driven score, yeah. And the CSN could come in and say, Oh, well, that says it's a three out of five. I think it's a four hour, but at least you can see that, yeah, they have disagreed quite a lot with what the data saying. And you can ask them, like, why? For sure, rather than it's like they said that's the score.
+
+Speaker 4  41:12  
+No, absolutely. I mean, it looks great. It looks really useful, and it make my life a hell of a lot easier if I was the case.
+
+Speaker 5  41:20  
+One thing you said is, like, I have no idea what, and we have big asset manager names, I have no idea what else they licence with Moody's, and it's so hard to look at salesperson figure that out. Yeah, I would love to know, for my sins, I'm involved in this
+
+Speaker 6  41:38  
+credit view to Moody's one view project. And part of that they've got, like a BI tool, where they've pulled out someone in New York has pulled out a load of information, which is basically, these are the credit view packages that you currently licence. But then these are the other products. We'll need to look at what the actual definition of those are. This is the other products that are linked to this account? Yeah. So I can try and find out where they're getting that information from, because those accounts across are outside of the asset management segment, then they must have access to this data somewhere.
+
+Azmain Hossain  42:14  
+You can go into B of A, and it'll just tell you that this is what they're buying from KYC, from banking, from insurance, from this as
+
+Richard Dosoo  42:22  
+well, like, once we have that interface from them, then you can take that data.
+
+Azmain Hossain  42:27  
+Yeah. So that's one problem solved. Sales recon will have everything other product they're buying. Yeah?
+
+Unknown Speaker  42:47  
+It as well.
+
+Unknown Speaker  42:54  
+Okay, thanks guys, thanks, Martin, thank you so much. If we.
+

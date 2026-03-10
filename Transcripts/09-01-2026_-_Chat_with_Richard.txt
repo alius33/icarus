@@ -1,0 +1,345 @@
+Richard Dosoo  0:03  
+Whenever I was gonna run a command, it kept telling me that I've hit a premium limit. And then I went to my usage, and it doesn't have any premium limit in there. So I checked for chat GPT, and it was like, basically, we've used too many premium models. So it
+
+Azmain Hossain  0:19  
+was like, what if you, what if you, like, reduced it down to, I don't know, like GPT Mini or something, it would still work. Yeah.
+
+Richard Dosoo  0:28  
+So I started to pick other models, and it was working, and then I ran out of more, and then I hit the same array again. So I went to, like, a long version of GPT, then I went to a different model, and it would run once or twice, then it would hit the same thing. So what they were suggesting was, you need to ask for a premium account. Yeah, yeah.
+
+Speaker 1  0:52  
+So that's the that was the that was the feedback. What I was trying to do before it broke was I started to look at I sent you this required field to this, because what we found out was the rag status wasn't working because there was, there's customer use cases in there that had null in The status, or rags of zero. So it basically, it looked at a data model, found out data fields that could be null, but then I use them. So then it said, right, I'll update these survey. And then I said, Can you look in the rest of the schema and see where these similar endpoints have the issue? So customers was one status created by modified by customer use case there was, obviously, there's missing data in there. Use case, there was no use cases in there at all, but we can fabricate those right from the data parent. So essentially, you can see, right, we basically did an analysis and then it's been created some scripts, or at least it had,
+
+Richard Dosoo  2:02  
+what Well anyway, I can give you this Markdown file, and then it can either on your local version, it can create, start to create data in those tables.
+
+Azmain Hossain  2:11  
+If you this Markdown file, it's basically the whole plan. And then whichever Excel file you were using.
+
+Speaker 1  2:23  
+So let me show you hold on, because I think the I didn't have edit right instead of your file because it was on your drive, so I saved and created a copy, okay, but let me see if I can open up a version of mine and send it to you, and then you can like to be honest, right? Whether you're whether you're using it on yours or mine doesn't, it's not as relevant. The main thing is that if we have some data in Excel, that's the portable mechanism between whether it's AWS or Azure or whatever, we can then just say to whatever environment. Okay, guys, I want you to essentially update this, so let me bring this up.
+
+Unknown Speaker  3:18  
+So let me save a copy of This and send it to you to
+
+Azmain Hossain  3:43  
+so give me a second. No, no, that's no worries. I'm just looking over the network architecture diagrams you sent over earlier. Yeah, I used,
+
+Speaker 1  3:55  
+I used, because my cursor had run out, I just used Claude. So I basically got a version. I got access to that. I'm trying to get us corporate access, but I'm waiting for the person who needs to give us accession leave me all red. So I'm trying
+
+Azmain Hossain  4:13  
+to get that's why, where it says, like monthly cost, I'm guessing that's Claude cod. Claude code cost,
+
+Richard Dosoo  4:21  
+no, no, the cost is AWS bus.
+
+Azmain Hossain  4:24  
+Oh, okay, that's really helpful,
+
+Speaker 1  4:28  
+but to be honest, like it's so it's less than 100 bucks a month, like, no one's gonna care.
+
+Azmain Hossain  4:32  
+So, yeah, I mean, I don't know why. I think production, uh,
+
+Unknown Speaker  4:56  
+okay, so let me.
+
+Unknown Speaker  5:02  
+And then let me send this mark that far. Is it doing this? What's it doing that?
+
+Speaker 1  5:32  
+So let me see if I can get the other one as well.
+
+Speaker 1  5:45  
+I had another one, but don't know why I can't find it. Um,
+
+Speaker 1  6:09  
+yeah, here we go. So this is the the other one is the action item. So let me bring this up. I'm
+
+Speaker 1  6:27  
+Yeah, required list and rags data so that, let me show you the response to the prompt.
+
+Azmain Hossain  6:37  
+Yeah, this is really helpful.
+
+Speaker 1  6:41  
+Let's just put this in here. So then it obviously updates these fields, and then I asked it to double check. And you can see here, this is where it starts running the Python code that updated my local version of the database. It created a readme for it created a simple verification script, which I can share as well. So wait for me to just share this. I'll figure out a way to share this. And then this is the script just saying,
+
+Azmain Hossain  7:20  
+No, that's not the one you sent. Me. That's required fields and rack status,
+
+Unknown Speaker  7:25  
+yeah, so let me put this one in here now, and this just pull these
+
+Azmain Hossain  7:36  
+so sorry, the python script that's to update the rack statuses in the database, not in the Excel, right? Yeah.
+
+Richard Dosoo  7:46  
+But you could, you could, it's the very like, essentially, what's really important here is telling us what tables and what columns are needed for dashboard to run, yeah. So what you could do is say, Here's my date model. Can you please update this spreadsheet with this logic so the rank statuses are correct, so the customer use cases are populated to see what I mean, and all you really care about is the spreadsheet populated with the correct data. Once we have that,
+
+Azmain Hossain  8:16  
+that's what I was thinking. I was like, Okay, I'm gonna give it the first Markdown file, because that one's really detailed. Later than that, I'm just going to be like, figure it out, yeah, and fill it up with dummy data,
+
+Richard Dosoo  8:31  
+yeah, so then, but I wanted to give you the this, just so you understood what he was doing and the context. Once that was done, the piece that was missing, though, was there's still one,
+
+Speaker 1  8:46  
+one tab on the first screen that is not as it's not great, because my unfortunately, I'm sure my local host is not running again. Let's see if I can bring this up. Yeah, we start browser.
+
+Azmain Hossain  9:04  
+I mean, for mine, my blockers page is broken, and I was trying to fix it. I don't know what's going on.
+
+Richard Dosoo  9:13  
+Yeah, so this is the problem, but, and it probably needs me to do the deployment again. But unfortunately, because my cursor is down, well, I don't have any tokens left, yeah, yeah.
+
+Azmain Hossain  9:27  
+I want the you using Claude. That's from your personal thingy, right? Yeah, yeah, okay, just though, yeah. Don't tell anybody. If I get a bit lost, I'll just use, like personal Gemini, because their pro model is pretty good.
+
+Unknown Speaker  9:47  
+Yeah, no, I'm still
+
+Azmain Hossain  9:49  
+how much is Claude, by the way, I've been thinking about getting it, but
+
+Richard Dosoo  9:53  
+so I paid 18 pounds for one month. Okay, so I just, well, I'm just. Going to use it pay one month, but I'll show you the woman who her name is Divya. She is based in the US, and she I was supposed, she was supposed to get back to me, she hasn't. So let me see she's in a meeting. So she's working now. She's free in 15 minutes. Let me see if I can actually just get a meeting on her calendar, because there because the corporate accounts the court are, like, 40 pounds, $40 and we've already got an enterprise licence there. Oh, okay, okay, so it's and she actually reached out to me before the holidays, but I was too busy. I didn't get back to her in time. Yeah. So that's, that's the reason why Oh,
+
+Speaker 1  10:57  
+don't let me just I'll add you to this. Well, actually, bro, so it's like five o'clock, so don't worry about it. I'm working anyway, because I've got a lot of things I need to catch up on.
+
+Richard Dosoo  11:04  
+But you can join if you want to. But all it will be is I hope, I'm hoping she just hits the button and gets us access.
+
+Azmain Hossain  11:12  
+Yeah, it's, it's good to know, because, given that I'm going to be PM, ing everything, by the way, that's doing a lot of it, I'm gonna send you some documents next week, because you said, and obviously you haven't got the headspace this week, but to kind of, I've been creating, like, the structured documents and governance for, like, setting up this whole programme and stuff. But, yeah, we'll, we'll set up some time next week to
+
+Richard Dosoo  11:37  
+do it the and, yeah, the thing's not gonna, unfortunately, Alex is not going to be here next week, so what I might do is just set up some time with him virtually while I've got, yeah, and that was actually one reason. I was mean, it was good for us to catch up. Did I have you on the meeting to review the sales, recon, the agenda, shit? I don't think I did. I'm sorry, bro, let me adjust to you now.
+
+Azmain Hossain  12:02  
+No, no, that's no problem. Just yeah, it's just good that you remembered.
+
+Richard Dosoo  12:06  
+Did I send you a copy of the agenda for the meeting? Yes, yeah, you did. Let me add you to the Fred With Jamie as well. Because Jamie
+
+Unknown Speaker  13:21  
+say it let me do this as well.
+
+Azmain Hossain  13:33  
+Okay, these are new people for me. All right,
+
+Richard Dosoo  13:39  
+um, um, let me have you not met Jamie Stark before?
+
+Azmain Hossain  13:46  
+No, I've not met I've met Conrad, so I know him.
+
+Richard Dosoo  13:51  
+Yeah, so Jamie works within Ari's team. Okay, okay, yeah. And basically, What?
+
+Unknown Speaker  13:59  
+What? Essentially,
+
+Richard Dosoo  14:04  
+I'll tell you how this all came about. Dia was like, Have you spoken to Ari la Harvey about what he's doing with sales recon? Have you spoken to Idris about what he's doing to get customer success requirements in sales recon? Reached out to them. They were like, Yep, we're doing this sales recon thing. We sell our target customers, but we're very interested in what you guys want in customer success, because there's a lot of crossover. Then I found out that Ari was going to be in London that week, so then I put it to Michael and Colin. I was like, why don't we present what we want to Abby, when he's here in London, you can tell him how good you've found sales recon from a sales perspective already, and then we can also get what we want from customer success on their roadmap. So what we do in the short term is really tactical, but we've got rid on the site to actually like a long term solution in the second half of 26 or 27 that actually is, is is aligned to the strategic and. Shapes, right? Yeah. And Ari was like, Yeah, I'm in London. Let's go. And Jane Jamie and Conrad are obviously in his team, helping him roll out sales recon and build it out. So they, they basically want us to, they are going to be part of the meeting. And then, as you can see here, let me bring the agenda up so we can look at it. Yeah.
+
+Richard Dosoo  15:24  
+And azma, we need to spend more time not like this today. I didn't want to get into this because I wanted to try
+
+Azmain Hossain  15:30  
+and get the app up. Yeah, all the focus is on the app. Like I need to. I need to get the data the Excel sheet filled in with the dummy data as per the data.
+
+Richard Dosoo  15:39  
+We'll definitely get some time next week. I'll try. And if you're going to be in any days in a week, I'll come in when you're in. But essentially, for this meeting on the 26th This is the agenda
+
+Azmain Hossain  15:50  
+that Diaz agreed I went through,
+
+Richard Dosoo  15:54  
+yeah, and you can see, like, what sales week one does. This is where we're going to present
+
+Azmain Hossain  15:59  
+here that I was going to ask, who are the CS leads?
+
+Richard Dosoo  16:03  
+Great question, right? That we need to do a stakeholder map. But off the top of our head is Catherine Kevin, but it's also Alexandra from the Life team, yeah, and it will be Idris from the banking as well. Idris from banking, but he's got a separate part here, right? And he sent me a lot of his requirements that I'll send over to you as well. But the the this is why we need to define a stakeholder map, right? Yeah, because, you know, for example, Josh, is he a CS lead, or is he informed, right? And Kevin is reporting live. So that's all the things that we need to come up with. We need to have the stakeholder map. We need to have the racy and then for each of those work streams that we that we've outlined each of those project, things we need like, right? Who's the who's the peer rights, Azmain, who's the functional lead, who's who says what the scope and the requirements are, right? Who's the technical lead, who's the engineer, who's the quality assurance person. All the roles that we need to define for those projects, we need to put them there, name them, then we need to say, right for the programme itself, who's a project sponsor? Right? Is deer. Who's the escalation path, right? If we need, if someone comes along and says, yeah, that's bullshit. What we need to do exactly these are all the things that we need to do that as a run it like a proper project. Yeah. Yeah. So. And then obviously, where these guys come into it is dia basically, when I said to DEA, I was like, Look, this is a good thing, right? We've managed to retrain the R and these guys are going to help us. Deal. Was like, Listen, if you don't nail them to the wall with a scope, they're not going to do what you want. They're just going to listen to listen to you and be like, yeah, yeah, cool. We'll do it, but they're never going to deliver on anything. And she was like, we had a meeting with them six months ago where they did the same thing we were is just came, gave them loads of ideas. She was like, we got enough nothing out of it. She was like, We got nothing at all. So she was like, basically, this can't be a another meeting where we just chat. She was like, it needs to be outcome focused. It needs to be goal focus. We need commitment from these guys, so that's why they are supplying to London in for this meeting. Okay, okay, that's the broader context I wanted to give you. But we need to spend like, an hour at least, like, on Monday and Tuesday and go through the projects scope, because it's a lot, right? It's five projects we've only been touching one of them. Yeah, yeah,
+
+Azmain Hossain  18:29  
+that's the thing. Like, I need to understand what these projects are. Like this one I understand in depth. The other ones I need to understand as well. So it's like spending a lot of time with Martin understanding what's, what's the overall vision, what's the nitty gritty, individual things and dependencies that he's working on day to day?
+
+Richard Dosoo  18:49  
+Yeah, no. 100% like, I'll be honest right now, we have a high level scope. You don't have we got high level timeline. We don't have resources. We don't have a project plan. We don't have any of that stuff yet. Our dear wants me to send all that stuff to her. Once we come up with the what we think is the right project plan, then we can go to Ben and say, who from the team could support this? He's given me some people already that are going to shake loose, but I know what's going to happen. We're going to ask for these people, and then people are going to start getting, you know, what a resource game is like on our side, you know, right? Yeah, so then we're going to go away and put that dance in, and then hopefully, though, we get the executive support from dia that she's like, No, this is more important than some bullshit safeguarding opportunity that we're doing for a customer that's not going to silence or h2 so that prioritises the resources. If that doesn't happen, then I'll be honest. Between me and the gate post, we should ask for external resources to help us do this, because we'll probably get more like we'll get external resources that are maybe more have more expertise in this area and can help us get up and running fast on it, but we could get one or two devs.
+
+Azmain Hossain  19:59  
+But. If need be like, obviously, it's your call, but from personal experience, it's the cost of the external resources. The fact that that's an additional cost to the work we're doing just puts additional pressure, increases expectations. It's a whole thing.
+
+Richard Dosoo  20:19  
+I hear you, and I'd love to, but I would love to be able to say, Martin Ben, you're going to help us 50% of your time on this, right? Yeah, I'm already getting that. When I asked Martin to help. I'll get Liz telling me no, he needs to be Canopus. I'm getting Stacy telling me no, he needs to be gap analysis for this buff product that's not even due until fucking ht, everyone is very, getting very defensive about their resources because they don't want to. No one wants to collaborate anymore. So because of that right, that's why I'll be honest. I don't want to, I don't have the energy right, or the capacity to be arguing with Stacey and Liz about resources anymore. So if they want to do that, let them do that. We'll just get resources externally, and then we have our accountable and resources that we're responsible for, and then we don't, and then we work the way people want to work. They don't want to collaborate, cool. Then you stay over there in your corners, don't collaborate like, that's it. There's otherwise, it's too like, it's too much. It's too much
+
+Azmain Hossain  21:15  
+if it's honestly becoming that much of a like wrenching their arm just to get basic help, then, yeah, that that's
+
+Richard Dosoo  21:24  
+it's a little, even a bit more thing than that, because people aren't interested in helping you when it helps them. That's the place, unfortunately, where we're at. And I'm like, Cool, if that's the way that people want to operate, let them do that on the insurance side, what we're doing here on the customer success side, we're just going to work with people that want to work with us, that want to help, that they want to do. You know, I mean, if you, if you're not interested in collaborating with us in that way, we're not going to work. That's it. That's That's it. That's it. So that's why I would love to have Martin on this. I'd love to have Ben on this. Ben has even and Ben, our Ben manager, Ben has said even Mariam could come and support, but trust me, watch when we go next week and we ask for those people. Watch the dissenting voices and bullshit excuses we're going to get back about, oh, wait, I have my OP is important. I want them to do this. Oh, I've got that. Just trust me, wait and see what's going to happen. And when, when we ask for people who want to help us as well, right? And have bandwidth, but everyone's going to start getting a bit shifty about,
+
+Azmain Hossain  22:26  
+damn No. That's really good to know, because, like every everywhere around all I'm hearing is, you know, I haven't got that much work to do because there's a slowdown. There isn't that many projects starting. So at this time, if they're like, Oh no, we can't, we can't spare people, it's like, even during a slowdown, you can't spare people. When you're saying that people haven't got much to do,
+
+Richard Dosoo  22:47  
+bro, this is what I'm this is what I'm saying. That it's not the people are behaving, and this behaviour is also getting incentivized, right? Because people want to, no one wants to collaborate. Okay, cool man, don't worry, that's it, yeah. So, all right, well, Azmain, let's do this. Then let me I've sent you the meeting invite for the where we're going to review the agenda on Monday with these guys. I've also prepared some slides, but I haven't I've just created a straw man like to let
+
+Unknown Speaker  23:25  
+me bring this up. It needs, like, filling out of a little bit more.
+
+Azmain Hossain  23:30  
+Send it to me, like, I've got the weekend I can, I can pad it out and then create, like, multiple versions that you can just see and decide which one you like, yeah.
+
+Richard Dosoo  23:40  
+And it's basically like, I'll show you, I'll show you the prompt I used to come up with all this, but essentially,
+
+Azmain Hossain  23:47  
+wait, how are you? Oh, this is the bit that I'm struggling with. I keep giving it the, you know, the Moody's, I don't know, the marketing thing that it gave us, the brand layout, yeah, like 100 different slides of different styles. I keep giving it that and being like, use these styles.
+
+Richard Dosoo  24:06  
+Style don't do that. All you do is create a copilot. And then you see here, change design. Then you just go Moody's, and you just pick the one you want. Oh, okay, okay. And then once you said this, that this is better integrated, when you start giving it, it just can't cope, or it starts assuming, and comes all some bullshit. Then what you do is, right here, you get 2000 characters right to create a presentation about right? So you could put a prompt in here, and it will create the context. But what it doesn't do very well is, when you've got a lot of things you. What I've do is you basically put that prompt in a Word document and reference the file, and that way your prompts can be more than 2000 characters. So, okay, exactly. So what I do is I actually go to like my whatever AI model I'm using that has the information. Has the memory that has the context. And I'm like, create me a presentation straw man that has this, this, this and this and this and addresses these points. Give it to me. It goes away and creates that text. I then put that text in a Word document, and then put it in here as the reference files, and then give all of that to Microsoft copilot, and it goes away and creates the presentation. Now, when it creates the presentation, right? It is. It's okay. It's not perfect. It does a lot of this shit, right?
+
+Azmain Hossain  25:29  
+It's not the images thing. My question was, is there, does it have a character limit of how much text they can put into a slide? Because I keep having to tell it like, put in more detail. Put in more detail. Why are you putting in two lines when the summary that I've given you, and that's literally what I'm doing, I'm giving you, like a paragraph of background and stuff, and it's putting in like two lines. I'm like, why you can put in more text
+
+Richard Dosoo  25:52  
+is that when you're using the reference files, right? Yeah, okay, so maybe it's the because what I know what it's like. I've found that it summarises your stuff. Coke pilot does this quite a lot. It will lose detail or lose specificity that you spent quite a long time trying to generate. This is what I'm saying. It's not perfect. It's good for structure, but you often have to augment it with your details. But what you can do is, once you've got the straw man in there, you can always come in and update the slides of copilot yourself. Right the content.
+
+Azmain Hossain  26:30  
+I'm just editing the text boxes manually, just copy and pasting from the presentation structure that I gave it originally.
+
+Richard Dosoo  26:38  
+But even here, you can add, you can put your content in here until it's up date the slide.
+
+Azmain Hossain  26:45  
+Oh, okay, yeah, I don't do that. I'm like, if I'm just gonna do it, I'm just gonna do it
+
+Richard Dosoo  26:50  
+manually, yeah? But it's really good for giving you a structure. It's less good at, like, some of the details it might miss, but this is where, like, it's gonna improve over time, right?
+
+Azmain Hossain  27:00  
+Get better. Yeah, exactly like I was. I was honestly amazed at the documentation that cursor was able to generate for Ben's, like, the last, the latest version that Ben had on his GitHub. I was like, This is amazing documentation.
+
+Unknown Speaker  27:17  
+Yeah, no. Curse is really, really, really cool.
+
+Azmain Hossain  27:20  
+That's a whole person's job, man. Like, when I was a junior, that's I used to do that job that helped me learn stuff. So, yeah, it's, it's just like, What? What are junior developers going to do now?
+
+Richard Dosoo  27:34  
+May that's the debate, right? That a lot of people are like, you don't need junior developers anymore, okay? But then everyone knows, like, how do you get senior developers if you don't get Junior ones? And the answer is, then you get shit senior developers. If you don't have, do you don't have that pipeline. But, bro, the thing is, man, it's like, this is the debate, right? That this is actually where the conversation gets interesting. Is that, like, we've got a new guy joining our team. I really want for you to meet him. He's based in the US. His name is Nicole, and he's he is a perfect example of senior engineer who uses a technology to increase his output and increase his velocity and write better code, quick, faster, whereas the attitude we have at the moment, if you speak to Emily, or you speak to me, or you speak to Miriam, they feel threatened by the technology, so they're like, nice shit. It doesn't do this. Oh, look at the crap. It does. Instead of actually being like, how can this technology help me do things five times faster, which is when you speak to nickel, right? He, he came in and interviewed us, and we have a coding test, right? And a lot of people put the coding test the questions for an AI and gives them an answer. But because he's a senior engineer,
+
+Richard Dosoo  28:54  
+he's because he's a senior engineer, he actually understood better than rather than just getting the answers, I'm going to tell cursor, this is what I want you to do. Because as a senior engineer, these are the things that I know are required from a solution, dude. So he gave cursor better instructions than just answer the questions from the test. Yeah, yeah. And then he even went as far as building an application that he could demo to us in the interview about how the user interface to the code that answered all the questions. This is the kind of thought leadership that this is why we wanted us to hire him, right? This is why I pushed so hard, because that's the way, that's the way the software engineering is going. It's not that, oh, okay, we don't need engineers anymore. It's that you're going to have engineers that can do things five times faster, work on five as many more projects.
+
+Azmain Hossain  29:44  
+Yeah, I still have time to go home. Yeah. This is what I was honestly having a chat with Amit yesterday, and we were just talking about this, and he was kind of trying to reassure me. He was like, Oh, the job that you do, project management, and AI couldn't do that. I'm like, mate, what you're talking about, it can 100% do that? Might. Job is so useless, like an AI, a smart enough AI, not even AGI, like super intelligence could do it. But the thing that I keep telling everyone in my team, and like Natalia, is really encouraging of this, is AI is not going to take your job. Somebody who uses AI better than you is going to take your job. Yeah, I had those calls with you, like on Monday, where you just kind of gave me a rough outline of what you want this programme to be. I took a bunch of notes, and literally using that, I've created Project charters. I've created, like, strategic documents. Everything's ready to go for, like, your review, while also working on the actual dashboard stuff.
+
+Richard Dosoo  30:47  
+This is this, is it this is exactly it that, and that's the thing that, like people don't get you. You're then going to be able to deliver a programme for me, a programme for Ben, a programme for someone else, right? But you're not going to have to do a 16 hour day to do it, because you're using the tools to
+
+Azmain Hossain  31:06  
+and it just, it just means that I can, I can work on multiple things. Like this is one thing that I'm working on. If I had something else on a normal basis, I'd be like, I'm swamped. This one thing is killing me. I can't I don't have bandwidth for anything else now I can legitimately take on something else.
+
+Richard Dosoo  31:25  
+Yeah, no. And that's this, is it, right?
+
+Azmain Hossain  31:30  
+And people like, you know, like, I was talking to Prashant and other people in our team, and they're, they're kind of, I don't know if it's a justification on them, they're like, oh, but me, you, were a programmer, like in your career, that's what you started as. That's why you know how to do all this stuff. I'm like, No, I don't I don't know anything anymore. That was like, 10 years ago. I am literally doing this because I sit there and I am lazy. That's literally how this whole dashboard came about, because I was lazy, because Stacy was, like, filling this presentation manually. I was like, I don't want to do that. That's a huge waste of time. I'm just going to make a dashboard that shows everything from the Excel. So I'm like, Guys, your problem is lack of imagination. And that happens like when the.com boom first started, people couldn't imagine what web 2.0 would be, or what how online shopping would work. That's fine for you to not have ideas. Just watch a bunch of YouTube videos, read stuff, see what other people are doing, and be like, I want to do that too well.
+
+Richard Dosoo  32:30  
+What I'm going to do as well is what came out of the last AI steer
+
+Unknown Speaker  32:34  
+code that we had. Sorry, was we?
+
+Richard Dosoo  32:43  
+I find a meeting invite, but basically we gave a feedback on the training that we did, and
+
+Speaker 2  32:57  
+the training that we did was essentially to help educate the workforce on how the technology can help you. Yeah, the feedback we got from the general forum was the steer code was
+
+Richard Dosoo  33:14  
+this training, we need to actually elevate it and have it as a dedicated workstream or programme, because the training can't be a one off.
+
+Azmain Hossain  33:24  
+Yeah, that's literally how I've man, this is so far back because I haven't touched it in a few days. I'm gonna, I'm gonna send you like the programme charter that I generated, but that's literally project number one. Is the is the training and enablement, because without without that, none of it works. And literally, I don't know if this is because it was Gemini and their model is good, but I gave it the December thingy, steer co deck, and I was like, the customer success stuff, we're turning that into a programme. Instantly, it was like, Hey, did you realise that they all fit together into a cohesive whole? And if you get them all built, you can actually use them all throughout the customer journey? I was like, I did, but didn't expect you to figure it out.
+
+Speaker 2  34:15  
+Well, this is it, right, and that's on that what, this is, what I wanted to walk walk over with Ben, right? Because the,
+
+Richard Dosoo  34:27  
+it's like, we Ben is looking at it right now, which is great, right? Which is, obviously he's looking at the three different apps, but it's really about the customer journey, how they interact with Moody's. That's really what you're talking about, right? That's where the actual value starts to come in, where you have the system and as a software organisation, we've been talking about this year since, for over 10 years I've been ups, which is, how do you manage all the touch points between the different teams from when a prospect? Comes in to actually talking to a prospect, to npns, talking to them about product, to sales, engaging with them, to us, helping them on the value proposition, adoption, charter, to implementation, to support, to actually, all the way around to once they're using their finger, they're in production. What happens when a renewal conversation comes up? Because customer may not have realised the KPIs that they that they spoke about right at the beginning, right at the project. And if they're not realising the KPIs, that's why you get cancellation. So the idea was, how do you have this consistent management right all the way through? So essentially, actually, the customers get more value throughout the process, not that we only start talking to them about what value they want
+
+Unknown Speaker  35:44  
+two months before renewal. By that time
+
+Richard Dosoo  35:46  
+is too fucking late. So this is why, like, the idea is, if you had, from the beginning of the process, right, Ben's got an adoption Charter, which talks about the KPIs that a customer wants to get out of the solution, you have that all managed through the project, then you have a realisation phase, right, which is okay, the how this tied back to the business case that actually came to us and said that, this is why I'm buying a software how was that stuff realised? Well, what's the opportunity for them to get even more value out of the system? Right? Is it a different product? Is it a different infrastructure size? Is it a services solution that we give them information from a partner? That's all the that's, that's where you start meeting the customers, where they are, right, to drive real value. That's, that's the North Star, right? That's what everyone wants ahead. But right now, we're stuck in this initial phase, which is just, how do you manage the onboard, the customer, fulfilment and an onboarding process when it's actually when you think about where this whole thing needs to be. And this is where we need to talk to the sales recon guys. How do you have a better customer conversation with better intelligence, with better insight, when all those things are in Salesforce? This exactly what we want to be talking about with Jamie and his team on Monday, like that's the North Star. That's where we want to get. But right now we're right at the beginning phase space.
+
+Speaker 2  37:03  
+Yeah. What I'll do Azmain Is that's definitely maybe Monday morning. So before we meet with Jamie, we've had the headspace to talk through some of this stuff. Have you got one drive folder already? Because then I can start dumping all my dots in there as well.
+
+Azmain Hossain  37:21  
+Nope, but I will literally just create one. Let me just see what times the so that's a two o'clock hour time. Oh, we've got, like, well, I don't know how your morning's looking. Yeah, yeah, my Monday morning's completely open. Let me just create a folder and then send you the link, but on the teams I've sent you, just like the project charter, literally v1 but just gonna keep iterating on it.
+
+Azmain Hossain  37:57  
+You know, you pay 100 pounds for a freaking mouse and then your daughter drops it once on the floor, and now it doesn't work, right?
+
+Speaker 2  38:05  
+This, this, this is it, right? Trust me. Then, meanwhile, they'll just be looking at you, being like, why
+
+Richard Dosoo  38:10  
+are you, why are you spending so much time worrying about the mouse?
+
+Azmain Hossain  38:14  
+Yep, it's like, I had to explain to him, like, you don't realise there's only one mouse in the market that I can, I can at the switch of a button switch between multiple machines, and I need that. That's a very unique selling point for Me. Yep. One sec, let's
+
+Unknown Speaker  38:44  
+let's see.
+
+Unknown Speaker  39:08  
+Actually wait one second. It was My another.
+
+Azmain Hossain  39:10  
+No, no problem.
+
+Speaker 1  39:39  
+I it the girl about the cursor licence has come back to me, so I. Let's see.
+
+Azmain Hossain  40:09  
+This is, oh, yeah, this not the is this Divya?
+
+Richard Dosoo  40:13  
+Yeah, Divya is, well, Megan works for Divya. She's the person who I've been told to reach out to about our cursor limit. Okay,
+
+Speaker 2  40:29  
+so I'll, I'll start putting in all the documents and stuff that we want in here. Yeah. And then these have our place where we can start tracking all the information and stuff, and I'll put some time Monday morning, maybe like 11 o'clock, aside for us to catch up and connect on, on, more generally, the programme, right? And what we
+
+Azmain Hossain  40:55  
+want to do, yeah, yeah, yeah. Just, just give me kind of like a brain drum, brain dump. What? Nine Ben is working on deploying it to AWS. I'll fill up Ben Excel with dummy data that we can shove into it, but Ben's gonna give us an update when it's up and live.
+
+Unknown Speaker  41:21  
+Yeah, he's looking into it right now. I'm just messing up about something else.
+
+Speaker 2  41:34  
+It depends how long it's going to take him to deploy, but I'm hoping it won't take him more than a couple hours or so, yeah, yeah. So hopefully by the end of his day today, we have something up and running, but in the meanwhile, if you pad out the Excel spreadsheet with synthetic data, then hopefully once that's done, we can just give him that spreadsheet and say, can you use these Python code to upload update the postgres database with this data? And then we have our new best prime right for next week? Yeah? Awesome, yeah. All right, that's my timeline.
+
+Azmain Hossain  42:09  
+By the time he gets it up and running, uh, aim is for me to have that Excel file ready. Cool.
+
+Speaker 2  42:15  
+Well, we've got a call with these guys in in a few minutes. Hopefully Megan can join that call as well, and then, yeah, hopefully then we get to the bottom,
+
+Azmain Hossain  42:25  
+yeah, we can get those licences. Fingers crossed. Speak in a little bit.
+
+Unknown Speaker  42:32  
+Speak soon. Thanks. Yeah, bye. You.
+

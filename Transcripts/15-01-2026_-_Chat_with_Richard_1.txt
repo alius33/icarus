@@ -1,0 +1,378 @@
+Speaker 1  0:01  
+Sorry Alice is not trying to trouble me about amnesty. Yeah,
+
+Speaker 2  0:48  
+even meeting with another client, and one of the guys,
+
+Speaker 1  0:55  
+one of the guys at a client, used to work for Azmain, and then, yeah, he started talking about a meeting, and we all started coughing and, like, coming up in house, because we were just like, no one wants to revisit that scenario. No one wants another amino style project.
+
+Richard Dosoo  1:14  
+We were like, and he was like, Yes, I'm knowing. He was like, that's not the environment I want here. I want it to be completely separate. So, so, yeah, I guess. I mean, everyone is like as they've been working with amalin,
+
+Richard Dosoo  1:37  
+why they're so difficult. I mean, it's got to be, it's either I mean, it's gotta be nice, the incentive they haven't. It's in like Amnon as a company, always has been like this toxic chaos factory, not just on the software side right, but on the business side as well. Because we thought, like, you basically have, there's no like, strategic alignment, right? So the execution teams want to do stuff. The management team wanted to take the company a different direction. They want a more scalable, repeatable process, but the teams are amain, and the individual contributors have vested interest in not doing that, because they're like, as long as this process is complicated and entrenched, it's like Job preservation. So you've got that as a problem, then you've got because of that. Amalin also has a lot of contractors, and IT staff, right? They have their sort of interest about projects overrunning and contracts getting extended. So it's not like just one issue. You've got a whole bunch of things and then they have not had really, like successful business leadership. And then the IT leadership is, then is basically saying, well, the business can't decide on anything, which is right. And then the IT guys don't deliver anything because the business don't decide on anything. So all these things is just a massive, like, cluster plot. So am then have to like, re, re, like has to has like, strategic change, leadership change. And then, unfortunately, it's got to come down, top down. And then they've got to clear out a lot of, like, the legacy people, a lot of the people there that are not helping a company move in the right direction and have a reset, and then they've got to re engage and do the project again, because they've got like, systemic issues, like from Diana would have told you, right their testing team over there not incentivized to do anything. They just do shit that they know is not working out of scope, and then they know they're going to do that because their contracts are going to get extended, their business don't, are not incentivized to stick to a scope and write anything down, because they're just like, Well, why do I have to follow any rules? No one else is following any rules. Trust me, it's all absolute mess. Absolutely yeah, trust me. Like the amount of times Diana, we were on a call with them, Diana would be like, Okay, guys, just tell us what you're going to do. It's simple, simple for that. I'll be like, Guys, tell us what your plan is. Tell us what your test plan is, because we want to be able to support you. And they'll be like, not. And Donna would be like, What do you mean? No, she was like, I'm trying to help you. You need to tell me. What you'll do is, I can help you. And Azmain will be like, we don't want to tell you the answers, because we you know, that's not a proper way to work. Dan is like, Are you fucking sure? What does wrong with you? Like, exactly, bro, trust me, this, this will be some mad like therapy session thing that you have speak to them and have a coffee with her, allow her to vent, yeah, and tell you all the bullshit that obviously us as movies, we didn't fucking help, right? We did a disaster project, disastrous implementation, disastrous text that disastrous everything else that could have been wrong with it. We didn't have scope. We didn't have everything that was wrong, just wrong fucking everywhere. And all that happened is people were just like, I'm done. And Tom was like, I'm done. Can you just work no more is this is so bad. It's not even blind. In the blindness people would like, like, literally, were the the best thing I remember the morning when they said they were not gonna go into UAT, and everyone was like, oh, man, we've been working so hard to get there. And I was like, guys. I was like, This is not a bad thing. I was like, this is a good thing because the amount of chaos that we've gone through and we haven't even got into our system testing yet. I'm like, they haven't trained their users. They haven't got acceptance criteria. I'm like, this thing would have gone into UAT, and it would have broke everything. Everything would have broke. It was just, it would have, like, it would have just broke everything, and it broke everyone. So I was like, this is, you know, so quote, like, swing and even Musa change direction only. This is not the right way to go, bro. So the same here, bro, that this, it was the worst. But like, you know, and actually now we just cut it off. Then let me just move forward, because it would have been a disaster, absolute disaster. You
+
+Richard Dosoo  6:26  
+way for the amount of difficulty there, no, no, no at all. Don't even get started on the PnL of the project, right? Like, what are you talking about? Yeah. But anyway, man, that's hopefully, bro. This is, like the once you see now, like, we can look at Alan in the tracker, right, like this, that would be the red, every kind of red that we could imagine, right? We just make sure that that's, I feel so bad for
+
+Azmain Hossain  6:50  
+Prashanth, because he's like, the most junior member of the
+
+Speaker 2  6:57  
+team, and he's got the most nightmare project. Yep, oh yeah, yep. No, exactly, honest. Diana, but she was like, why hasn't this been moved to someone more
+
+Speaker 1  7:18  
+senior? Yeah? I mean, the thing was, right, this is the problem, like, not from, like,
+
+Azmain Hossain  7:24  
+a project manager perspective and
+
+Richard Dosoo  7:29  
+Dan are talking about now, the thing is, right, this is where we do ourselves over, right? We basically are like, Oh, we want to keep Amin happy. We want to deliver with them. So we go inside as a project team that is the skinniest and smallest, because Amnon are like, Oh, yeah. And then are our friends, if we do this thing, it worked for them. So Amnon don't even have to define proper requirements. And then Liz will be like, yeah, just put so on. It's cool. It'll work. That'll work. And then, then, then they, then they unleash the horde of bullshit, right? And then Prashant is fucking and the project team are fucking dying right in, in at being completely overwhelmed, right by by the client, by the classified everything, right? And no one's standing up to the client internally, because we've created this precedent, right, that the customer can just kind of steamroll us. I'm surprised Prashad didn't quit. Do you know that's, that's how bad? Like, so we have a client, yeah, that is terrible. No good process. Then we had an internal Moody's process, which is, like, we, unfortunately, were just doing everything the customer asked for. We weren't, we weren't pushing back. We weren't doing any of that stuff. The team were not, were beaten into submission. They weren't able to push back, because they're not getting supported either, right? So only then Ben had to come in and be like, Guys, this is not working. We need to change the way that we're working with this client. Diana had to come in and be like, Guys, you can't. We can't. You know you're this? Is this? This is just not going to work. It's not that. It's like the customer constantly coming back to us, repeating pattern of behaviour, asking for things that are not possible, and we're just like, we're not standing up to them, and we think we're doing it a favour to them. We're actually doing bad job for them, because we're not helping them get out of the situation that they're in. That was the problem. That was the 100% problem, trust me, that was it, and that's, that's the that's, that's the learning lesson, right about a lot of these customer projects. That's why Ben doesn't want us in my name again, right? That we don't want to, like, you know, we know what the team can do and we know what the team can't do, and we just stay away from the stuff that intrinsically causes problems. I
+
+Speaker 1  9:43  
+I definitely like, yeah, take Prashant out for coffee. Trust me. Trust me. Prashant, I feel bad because he had DVK, fucking horrible customer. We're. DVK. I mean, at DVK at the same time, all right, that's like two, like, perpetually on Amber.
+
+Richard Dosoo  10:13  
+It's like, yeah, it's tough, man, you'd think about a year 2025, no, like, do you know, I mean, you never had, you never had, exactly never had a quarter that was just like, I'm coming at nine. Go home at five, you know, go for some team drinks, go for GMA stuff. Every, every, every quarter was a death march. Oh, that's, that's not that Then anyway, but that works cool, as I said, like the
+
+Unknown Speaker  10:46  
+100% the
+
+Richard Dosoo  10:49  
+Azmain let me bring up, though I read your your plan, it was really good. I think it covers everything, but maybe should we have a look at it first, and then I can it's literally just
+
+Unknown Speaker  11:10  
+from my November and December. Yeah, no, but let's
+
+Richard Dosoo  11:15  
+now, let's look at a bill first and then, because what I'll do is also me and Ben last night, we put in that when you check into main, so you can create a branch, and it won't update the CICD pipe, but when you check into main, it will, yeah, so the deployment will be automated, so literally, you can get your changes up and running on the actual website, up and running just by checking it into main once we reviewed them. Okay, all
+
+Unknown Speaker  11:53  
+right, apologies if you can hear my daughter
+
+Richard Dosoo  11:56  
+like so good, but this is that's that's more important, so don't worry. No, no,
+
+Azmain Hossain  12:00  
+she's being fed. And she's currently in the velcro stage, where the moment you move more than 1.5 metres away from her, she
+
+Unknown Speaker  12:09  
+loses her mind. Yeah, yeah.
+
+Unknown Speaker  12:12  
+But this is cool, right? So this is like, after doing
+
+Azmain Hossain  12:18  
+the show that that's working. This is based on speaking to Ben yesterday, and he was like a tonne of white space, and he was like, I haven't really thought about how to do it. So this is just based on a very simple, sorry, my so managers can see their teams, yeah, and then yeah, obviously, the my customers view, just for
+
+Unknown Speaker  12:56  
+individuals, and then all accounts, yeah.
+
+Speaker 1  12:59  
+What's happening here. How's this walking through? Literally, I just took it
+
+Azmain Hossain  13:02  
+from the dummy data
+
+Richard Dosoo  13:06  
+Excel file. No, no, no, no. I mean, go back like this when you change the model, right? Ah, okay, got it so you're you've basically created a the all customers list, and now you've got this small little tab for each customer, which is right? So what you need to put on this page is pagination, because it can't like as that customer list grows, right? So you need to, basically, you know, like when you're on a website and it says, show the first 10, and then you click on another thing and it shows the next 10. That's basically what you need to put some pagination by the customers there at the top. So
+
+Azmain Hossain  14:00  
+that everything opens in a separate page, because my general design thing is, I like pop up models to do stuff. That way, you get to create something, but then still stay on the same screen that you're
+
+Richard Dosoo  14:18  
+in, yeah, but that generally works with list views, right? So when you have a list and you have a pop up model that lets you create a record card operation on the table, then it refreshes the list view when it's finished. That would be like the ideal workflow, but you wouldn't. You wouldn't normally do that from a view where you're looking at one thing, if that makes sense, you'll have an edit view there in that instance, not like a career, but, but that's fine, right? All those changes you can make that happen. You know,
+
+Azmain Hossain  14:47  
+he mentioned like he wanted, he was hoping for, like, AB testing of different dashboards I can show him, like, different versions.
+
+Richard Dosoo  14:57  
+Yeah, no, I think you know what you're hitting on here is really. Be good if you change the all customers bit to a table. And then you could have a tool tip, right, that when you highlight a customer, it then brings out the list of use cases, maybe, and blockers, and like a another grid, right? That for an individual customer, it gives you that detail when you hover over it, and that way you you still can interrogate some of that data without jumping into the individual customer record. But the problem is, the way that you've laid it out here with the tabs is being informative, but a table would probably be easier and more efficient from a space perspective, doing what it thinks
+
+Azmain Hossain  15:37  
+is the most efficient. I literally didn't design this page. I was like, make it more efficient. I was really focusing on just the little, nitty, gritty, little changes we
+
+Azmain Hossain  16:00  
+making sure that, like blockers, you can click into them instead of, like a lot of people have really long screens, and if you have the View button right here, you have to scroll all the way here just to open it. So yeah, just these kind of quality of life things, like use cases, you can click into them. In anything, when you create something, it happens in a pop up.
+
+Unknown Speaker  16:23  
+That way you get action plans.
+
+Azmain Hossain  16:28  
+You can add a click, see all the action items within the action plan. Then you can click on it as well. Sorry, this is the thing that I was having. I was like, I want to show it where you click it and it expands, but then I need a way for them to actually go into the action plan. Hence the purple button. Not very, I don't know, not very design centric, but it was just something to add in. Yeah, we can,
+
+Richard Dosoo  17:00  
+for the first iteration, right? Just for us to populate the data, this is cool, then we can think about the user experience if we want to tighten it up before we roll it out to more users. Will get so much
+
+Azmain Hossain  17:15  
+feedback. Yep, um, making sure that everything here is,
+
+Unknown Speaker  17:24  
+yeah, as a screen has a screen that
+
+Azmain Hossain  17:32  
+you can add, the charters, blueprints, all of this stuff, solution,
+
+Richard Dosoo  17:38  
+stuff I haven't populated, worth creating a prompt just to have the create and edit pages for them anyway, and then I can get Liz and those guys to start filling in that information manually.
+
+Azmain Hossain  17:49  
+Yeah, because, like, the way that Ben's designed it, the adoption Charter is a it's a multi step process with lots of information going in. Make sure that the the Design Action
+
+Azmain Hossain  18:07  
+Plan added in lots of dummy action plans with individual action because we're we're trying to give people a better experience than Salesforce.
+
+Azmain Hossain  18:40  
+It, and then obviously, you can still edit the thing and add in description. The one thing that I wanted to ask you, because I don't know how this would work structurally, I want to add in an updates function to a lot of things, to blockers, to action plans, to individual action items need be so that it captures like the date, the person and what the update is, that way you can audit things, and you can maybe export the updates based on date. But how would we store that like, currently, the the dummy data file and everything, there's nothing for it. So do we need an extra sheet in file to put in,
+
+Richard Dosoo  19:26  
+no, no, no. So what are you saying that you want to know when changes were made? Right?
+
+Azmain Hossain  19:30  
+Basically, that can be done, like, here, where it has a modified date, and we can, yeah, I want there to be like, I want to add an update to this action plan, like I'm a CSM and something's just happened, and I want to add an update for what's happened today, so a button, then a table in the back end, so that all the updates for every action plan. Blueprint, blocker, use case, charter, whatever it is, is stored linked to it. And. And auditable and searchable and exportable?
+
+Richard Dosoo  20:04  
+Yeah, no, it's, I see what you mean. So, but essentially you want to, so the action plans right now, they hang off the customer. Is it a customer or the customer? Use Cases? Do you know what open one? So it hangs off the customer. I Yeah. So this is it, right? So right now you've got customer and action plan. Essentially, what you really want is, like a the action plan has got have a date on it, and then obviously the date that it's been updated, right? So then, essentially, that would then give you the version control that you need. But right now, our action plan table doesn't have that, right? It assumes that you the action plan that is there is like, the latest version you want to track changes to that action plan, right? So the one easy way to do it would have been to be like, okay, you'll have customer Action Plan date, and then customer action plan details, right? Or something like that, right? Though, I don't know, like you can imagine the hiring right customer, the update date is the customer, then the action plan date is the table underneath with right, today is, you know, 31st of, 15th of January, updating per weekly report. Then underneath that, you have another child table that has the action plan and the items right. It's a separate tables. And then every time you're updating the action plan, every time you're doing a report, every week, you create a version in there the action plan, and then you update the information that could be, it right, or that that could be a very simple structure that gives you the versioning, and then that allows you to populate the details. But that structures is, is okay, but it's going to cause, like, it's quite an overhead to administer every week someone coming and creating a new version. But what I was thinking, I'm
+
+Azmain Hossain  21:53  
+thinking literally, like a CSM puts in an update. Like, there would be a section just like there's a basic information card, there would be an updates card, and a button here that says, Add an update. Pop up, comes up. You type in free text, and then it just stores it linked to this action plan and this ensemble, the customer.
+
+Richard Dosoo  22:14  
+Oh, okay, yeah. Then we just have a separate table with the and then that that UI just writes to that table. It basically has a date, it has the action plan, a link to an action plan, right as a foreign keys. Then it would
+
+Azmain Hossain  22:31  
+have like, three levels of information. It would have the customer, the action plan and the action item, parent, three generations of data up a operations of data up.
+
+Unknown Speaker  22:44  
+Yeah, there's two that's something
+
+Azmain Hossain  22:47  
+doesn't want to do, but what you described is exactly what Ben wants. He wants a full like version control and change, like changes by date that's auditable and report out of it. Because he was like, that's really important that we know when things are changed, who changed them, what the changes are. So that's also something that one that I need to add in. It's just I didn't want to make all those changes.
+
+Speaker 2  23:14  
+Yeah, like, Let's do stuff,
+
+Azmain Hossain  23:18  
+change some buttons and stuff around, and make it look nicer. And then let's push
+
+Richard Dosoo  23:23  
+that, yeah, 100% and then what we can do is we can. We can, basically, the way we're describing it, right? Is, do you want a hierarchical structure to capture the audits, or do we want a heteronormative structure, like a separate table with foreign keys to handle the history and the version control? But we can that's, this is a cool thing, right? This is like, this is, this is where it's fun, right? So we can, we can we can discuss that. We can whiteboard that we can get some reference. I was the product owner
+
+Azmain Hossain  23:51  
+for the entire company, Salesforce, like, when I was at my last job at the start, and it grew from like 25 people to like 200 people. And I hate Salesforce with a passion. That's why, like all the kind of problems and gripes that I had with Salesforce, with something that CSMs or account managers use, I'm just putting into this,
+
+Richard Dosoo  24:14  
+but this is the you raise a really good point, right? Azmain, that this conversation that we're having right now, we have to, at some point, bring the threads together, right before, I think we even make those version control changes, we should have the meeting with Natalia plant, with Catherine, with Kevin, and we should show them what we've got. And we should say, Guys, our goal right is to align this to gain slide so we can have the integration between the two system, and we're just about to go through some really substantial schema changes. So now's the time where we want to start aligning right on the data model, on the mapping and stuff, right? So if we have to make new changes to support the integration. And we're doing it now, not that we go and make a whole bunch of changes and we find out that diametrically right, our stuff is not captured in the right structure to even be integrated into. I mean, we could always integrate it right? You can create all sorts of integration layers.
+
+Azmain Hossain  25:20  
+That's literally having a conversation now is the best time, because we're ideation stage of these. Yeah, okay, let me.
+
+Unknown Speaker  25:25  
+Let me reach out. Mainly, give us the most
+
+Azmain Hossain  25:35  
+information about gate site and like, what's happening with it, but the others as
+
+Richard Dosoo  25:42  
+well, well, because that was one of the things on my list of stuff I want to go over Ben's to do list I want to go over our programme stuff. And naturally, right? There's things like we're talking Ben's projects is just one thing within the programme. We've got, like four others that we need to talk about. And you can see how all of this starts to come together. But definitely, this is really good so far, I'd say, the only thing I'd say is maybe make that the on the dashboard create a table instead of the way that the person has done it right now, with the tabs, and that once you've got that done, because that will then an arsenal. If you do a table, you can say, display it like 200 rows and a table is fine, right? It can probably that's, I mean, this is, this is essentially rendering the information as an array, right? It's not a problem, right? It's all good. This is just how it's presenting it. So I think even if you just said, rather than displaying each row as a, as a, as you know, a pop up, or grid, or I just say, look, I want this represented as a table, as a grid, and have the columns that you want in the grid is customer name, number of use cases, etc. And then once you've done that, then I reckon you we could, let's go through what it looks like to check this event into May, into main. Forgiveness.
+
+Azmain Hossain  27:42  
+Love I understand why Ben is just been going on and on about Opus, because yesterday, when I was working, it saved me so much time not having to make a separate plan than a separate build. I just put it on agent mode. Just spoke to it like I was the dumbest person ever understood what I was on about.
+
+Richard Dosoo  28:05  
+It's, it's so, it's some so much like a superior, superior, like model and the other ones that I was using, I just, it's just so, like, even the presentations that it was kicking out for me. They're just like the compared to the slot that I was getting from chat GPT or Moody's copilot. It's like, you know, so you
+
+Azmain Hossain  28:40  
+Google. How is this model this good? And they're not using, I
+
+Richard Dosoo  28:48  
+don't know, Chinese fuckery, like deep sea. The thing is, I'm trying to get us access to hopefully Divya can sort this out pretty soon, right? And I've just, I've
+
+Richard Dosoo  29:00  
+just given up. I've just bought pro because I'm, like, it's, it's there's the same thing I did, right? I said to Ben. I was like, We need to get like, this thing sorted out quickly, because it it's like, otherwise everyone's gonna just end up doing that, spending like, you know, 100 quid a month on flipping Claude licence when we should have an enterprise walk. I might actually push on that, maybe a bit more, and say, maybe so let's say we've all bought licences now for a month. Let's go and just get via to greenlight some like if she says, okay, the five of us right, 500 pound a month, 12 months, and then we just get a PO raise. And then that's it. Then we don't have to worry about it. We get Azmain. Once, and then when they sort out their enterprise, b5 then they can be reimbursed, or that contract can be deducted, rather than us having to wait bumps for that fucking negotiation to happen when it's not gonna not a big amount. You. Yeah, this is it. This is what Ben said it. He said it's less than a business class flight. It's literally, yeah, I'm gonna Azmain. I'm gonna do that. I'm out tomorrow, but I will. I'll add one list of stuff that I want to really push forward for next week, and then we'll get that going, because it definitely will like, what? And I think once you've used that model, bro, all the other ones, you're just like, This is shit. I'm not going
+
+Richard Dosoo  30:37  
+I'm like, right now all my debts are creating that and then just putting in Moody's format. I'm not using Moody's copilot against rubbish. I literally bought Claude
+
+Azmain Hossain  30:47  
+because I don't know what the hell is going on with Gemini, but it was my one shop, everything tool, because a I didn't pay for it once, and my whole family gets access to pro and it was doing it. It could make presentations. It could write code. It could make me like children's story books that I can print off for my baby. I don't know the context window has massively dropped. I don't know what they're doing, but it's just yeah, it's just
+
+Richard Dosoo  31:23  
+become kind of stupid. Now, what I'm a Dios man as well, is that, like, I think everyone now is finding out that a lot of these models, like you it have you having a multi model approach, where you use one model for the reasoning, another model for the deep thinking, another model for like, the coding is where you get the most out of it. Like trying to use like GP chat. GPT for coding is like inferior to using Claude, right? But Claude or Gemini or Claude, but using Claude for you know, responses where you want stuff done quickly is not optimal, right? Because it takes ages sometimes to think about the it's not as fast as a general purpose model. So basically, a lot of what people are doing now is they're like, right? We don't have to box ourselves in with one LLM. Actually, we'll have, we'll build our own, like workflow orchestrator that basically sits on top of like, four different llms. And we will decide, and then we'll put the business subject in there based on the question that we're asking. Which LLM you route it to? Sometimes they're like, you'll send a question to multiple llms, and then you can have the another LLM grade the responses and tell you which one is the best one to use. This guy published this rebuff. I've got it on my thing. I just haven't put it on any of our stuff yet, it calls it like it basically, it's like a word for orchestration tool that sits on top of like some public llms. And it not only obviously does the rooting of your questions based off which LLM is most appropriate, but it can also send your question to multiple llms and then get you the feedback from each of them, and then help you decide which is the right one to use. I can grade the responses, right? So, and I was like, that's actually really smart. Like, we should have that and have the green cell, and then through that should
+
+Azmain Hossain  33:10  
+be, like, level one of agentic AI is, get me an agent to figure out which
+
+Richard Dosoo  33:16  
+AI, yeah, exactly, exactly, exactly. And then, once we have that,
+
+Azmain Hossain  33:23  
+I don't know how the hell writing 10,000 lines of code in like, six hours and not actually writing anything
+
+Richard Dosoo  33:32  
+is insane, like, was this, is it, right? So even, like, with the depth changes, like, once you've got the plan and the markdown, and then you could say, okay, based off the work, I want to dish this like the database changes. That's this. I want the UI changes to go here. I want the testing to be done by this, you can start to get really creative, right, with what your how you use these models, right, to help you optimise. So it's but again, this is it. Right. We're right now. We had nascent stages, right? We're just at the beginning of doing all of this stuff. What I'm hoping is when we start working more with Jamie and Ari, like, they've already cracked this stuff, right? They're already figured out all this stuff. If there's anyone in Moody's that knows how to do all this thing, just apply the it, right? So it'd be great if we can get Jamie and others to like, you know, obviously we're going to work with them ourselves, recon, but it'd be great if we had great if we have, like, more, broader visioning strategy conversations with them going forward about how we can, like, you know, roll this out within the group. That's That's okay, so I've made the table stuff.
+
+Azmain Hossain  34:40  
+Yep. Shall we push it?
+
+Richard Dosoo  34:46  
+Yeah? Well, no, is it? Is this your local host, right? So it's read the table. Yep, perfect. All customers did it. Put the pagination in as well. I guess for 200 customers, it doesn't need it, right?
+
+Azmain Hossain  34:56  
+So, yeah, I can. I can I.
+
+Richard Dosoo  35:00  
+You could basically say show like, add pagination to the table. So you can it shows it in a default. It shows the default under 20 rows. But you can configure the size of the pages and the number of pages you
+
+Azmain Hossain  35:41  
+you, I like that. I
+
+Azmain Hossain  35:48  
+you, I don't think, because I forgot about like, I would have to tell it later. I'm like, Oh, thank you. I'm telling you, man, we are screwed. This is way too good. There were, yeah, I was reading it. There were so many people on Reddit. Reddit very unhappy that open AI has made the strategic choice to go into healthcare,
+
+Richard Dosoo  36:09  
+yeah, but that everyone was doing it anyway. I was talking to Christine waters about this, because I put all my blood test results, I put my data from group, all of that stuff in there, right? I put all my stuff in there, and sometimes it can hallucinate and give you, like advice. That's what I'm really cautious. But sometimes it can give you objective feedback about your data. But now a lot of people are like, Nah, I don't trust these guys for my health data, but it's just, it's another point of view, right? Which is helpful. That's the people
+
+Azmain Hossain  36:38  
+were complaining about, the complete other case where they're like, using it for health means it's going to be an extremely constrained model. And they were complaining already about 5.2 they were like, it's lost all of its personality. Anything you deviate from the truth or from facts, it like shuts you down. And we hate that. They were like, I missed the days of 4.0 when you can use chat GPT as a therapist, and then, yeah, being like, look, the money is in to be and be to government. That's the big move
+
+Unknown Speaker  37:11  
+to become profitable. And
+
+Azmain Hossain  37:14  
+healthcare in the US is a huge industry,
+
+Richard Dosoo  37:18  
+yeah, yeah. Well, the thing is, in the healthcare, like one of my buddies from New York is a doctor, and I remember having this conversation with them about a year and a half ago that they their bar has always been a lot higher, because they have to prove zero evolutions right. So they were using it. The guys over there were using it in diagnostics to basically say, right, a triage nurse, right? How could, how could the AI act as a triage nurse? So there's, like, the healthcare industry, there's not been sitting idly just watching this stuff go past, but, and they've already, like, made loads of advances. Have basically proved out that they can have zero hallucinations when they're diagnosed in a patient, and they're in American hospitals. They're already doing some of this stuff. Obviously, chat GPT is trying to enter that market right now, but let's you know, but again, there it's like, that's, that's the healthcare professional market. What they're trying to tap into is the personal healthcare market. They're trying to tap into the people, like doing more prevention rather than cure. So even before you even get to the doctor, you've got more informed patients. You've got people using foot wearables. You've got people using all this stuff. That's what they're trying to try to do. Yeah, this is perfect. You can see here the pages and for now, this is cool, because then this it just makes the thing a bit more tidier, right? And then it makes the screen easier to navigate. And then, yeah, Rose web page just put that in as well. That's perfect. So you can change it to, like, 10 is the default, like ven and stuff. And then we could have more, yeah, but
+
+Azmain Hossain  38:53  
+sorry, I'm just, uh,
+
+Azmain Hossain  39:00  
+is, I don't want a person to have to scroll through all these tables to find, oh, there's my action items and milestones.
+
+Richard Dosoo  39:06  
+Yeah. No, that's, that's what, what probably, actually, you'll do is that, yeah, I have that as the those things all on the front, on the top, and keep look what other tabs do you have there? So maybe you could have, like a, when people were building a WinForm applications, you'd have like a all of these different panes on tabs. So you could basically, you'd have one tab, which is, like the header, and then underneath that you'd have the other tabs that you could click through, maybe even ask, like, is that? What's the appropriate UX design for displaying these multiple tabs and have the best number of real estate. Should you have multiple tabs on the on the screen, or, or what, like, what, and then, and then ask it. But if not, I can ask Lord, and it can tell us as well. No, no,
+
+Azmain Hossain  39:53  
+I'm going to do it. But I just, I just realised that I.
+
+Speaker 2  40:00  
+Call was to talk about projects, yeah, so let's like,
+
+Richard Dosoo  40:07  
+let's check, let's get your changes checked in first. So make them you've got your changes locally now check your changes into like, yeah. Yeah, exactly. Yeah. So make, make your changes to readjust that, and then all we want to do next is we'll check your changes into the branch that you made. And then once we've done then we're going to make a pull request for those changes to go into main. And then once that pull request, I don't know who it's going to go to. Maybe it's going to come to me, gonna find out. And then once that's done, once those once that pull request has been approved, then Chris Ben's automation will kick in, and then it will start moving to me.
+
+Unknown Speaker  41:04  
+I really need. So what happens
+
+Richard Dosoo  41:08  
+with the because I had this the other day, it's just for seven days, it's been work
+
+Azmain Hossain  41:16  
+in progress, fulfilment, no.
+
+Richard Dosoo  41:20  
+So that means, that means it's stuck with DM. So let me slack Ben, and because basically it takes MD approval for developer laptops. Like before, it used to go to Mitch, but Mitch obviously is not here anymore. So let me drop deer a note. Let me drop Ben a note. And then he's like, and then we can get him to reach out to dia because I've raised one. It's in the same thing you've raised one. I've got one for one of we got a new guy called Sean in the team as well. He's also raised one so the deer can just basically approve all of them in one go, if she has but Cameron is going to get us. He can provision us next week, basically.
+
+Azmain Hossain  42:20  
+All right, okay, yeah, let me know when you're ready.
+
+Speaker 1  42:25  
+Yes, so that did it. It's done the milestones, right, yeah, it's moved the
+
+Unknown Speaker  42:37  
+milestones and stuff up. Oh, so
+
+Azmain Hossain  42:40  
+was gonna say, how would I tell
+
+Richard Dosoo  42:44  
+it to Oh, so what happens now, right? Is not the code like now your changes are in locally. What you do is you do, like, get push, right? So this is your feature branch, right that you did 16 hours ago, right? So you would normally do get push, and you would say, check my changes in but in cursor, you can actually do that. In cursor, you can just say, guys, I want to check my local changes in back into the GitHub repo, in my feature branch, and it will then interpret that as, oh, I need to run git push on this folder that's local. I
+
+Azmain Hossain  43:21  
+should I name? Should I give it the name of the brand? Yes.
+
+Richard Dosoo  43:33  
+If you change the name on a branch, it treat it as so just for now, just it's fine, just leave it as feature new branch, and Then next time around, we can, we can update them.
+
+Unknown Speaker  44:59  
+The call didn't push the. You
+
+Azmain Hossain  45:23  
+her, my daughter, they're gonna grow up literally having a servant do everything for them with all these llms that are gonna just become so available, and then they're gonna become interns, and people are gonna talk to them, and they're like, You can't talk To me like that. I'm not a stupid robot.
+
+Richard Dosoo  45:42  
+So stupid robot. So this is the conversation, right? That everyone is having. They're like,
+
+Unknown Speaker  45:49  
+like, you're not going to have
+
+Richard Dosoo  45:52  
+like, managers are going to start saying, Why do I need to hire a junior engineer? Because I bought all these tooling that does it for me. What do I need a junior engineer for? Then the junior engineers will become senior engineers, right? But then they've known they've not had experience that makes them qualified senior engineers. So then you're going to have this like generation of senior engineers that they don't know how to actually code. All they know how to do is talk to LLM. So they're going to be able to divide, decide to design systems that are scalable, performant, efficient. Because the way you learn all that stuff is, when you're a junior engineer, you get put on projects, and you get this, have a senior person, teacher, all that stuff. But now that's going to disappear. Basically, that's, that's the these are the these are the things that people are talking about right now, but that that comes back to the training right that I'll talk you through, how we in a structure at all.
+
+Azmain Hossain  47:01  
+I guess the simple I'm not smart enough to come up with the answer, but the simple solution is, okay, then hiring juniors, just put them in mid engineering roles. Imagine that they have their own little junior engineer that would also help the massive wage stagnation crisis in this country, unless they just start paying mid level engineers, 25k like,
+
+Richard Dosoo  47:29  
+freaking intern is basically like, you can't replace the there needs to be like, the training ground, right for for everyone, right to learn and develop. But the question is, how does that happen now, with the advent of all these new tools, right? You actually, what happens is it changes the training requirement that rather than people just learning how to do things procedurally, they need to learn more fundamentals of why they need to do stuff. And the reason they need to know that is because there's a more onus on them, on the human in the loop, in the process of understanding what's happening, rather than just relying on whatever the AI is output for you, basically, these are The things that that come up as a result of
+
+Azmain Hossain  48:20  
+got some big philosophical stuff to deal
+
+Richard Dosoo  48:25  
+with as a society, no, but it's these are even, like, bringing it back more tactically, right? Women do the training, right? For example, we're gonna do a data scientist training, because we got loads of data scientists and risk advisory and, you know, as soon as we unleash this thing on people, right? They're going to be like, great. How do I do this? They're going to start losing the tool, rolling it out. They're going to start getting new insights, right? All this stuff, what's, what's the guardrails that we put in place, right, to make sure someone doesn't go and do something wildly disproportionate, and it's not checked, right? We got, we got different levels of people in the team. We got analysts, we got we got consultants, like all of that stuff, all of the guardrails, right? We as as us doing enablement. We need to make sure the training also covers responsible usage. We need to make sure the training covers security principles that Do you see what I mean? We can't just give the people this tooling and they go out and start using it without the necessary bar rails to make sure it can't be abused or used irresponsibly, like all of this, all of that needs to come in. That's why the enablement is actually quite one important pillar, because we can't just be rolling out this technology without it's a dangerous tool to go and give to people without them knowing what the implications are of what they've used. But this is cool, right? So it's done it. It's put release notes in. So now we want to, if you go to GitHub, you want to check this into main. So if you go to right, so the first thing that you want to do right is I want to just check something quickly. If you go to Actions, I just want to make sure that the change I put in so it failed four minutes ago. Do you mind clicking on it? Because they shouldn't even have triggered this? Is what I was worried about. It shouldn't even have triggered this.
+
+Richard Dosoo  50:42  
+Don't understand why. Okay, no, so go back. So it's this deployment yaml, if you go back to the IRP adoption probe and go to your folder that deployment, yaml, if you go to GitHub folder and workflows, yes, yeah, me And Chris made changes to this folder and yours and shit. No, it doesn't, but I thought that it would have learned yours.
+
+Unknown Speaker  51:36  
+Oh, shit,
+
+Richard Dosoo  51:40  
+and this is what helps define the deployment, right? So let me show you if you go to like main, right? So let's say you go to the main branch, not the feature branch. So go to that drop down that says feature branch, and then go to main now when you go to GitHub and workflow, can you see it's different, right? Yeah, but I thought when your changes would have pulled down what we took, what we checked in last night, but it's okay. I'm sure there's a way to merge this right? If you go to your branch and go to compare and compare and pull request, let's see what happens.
+
+Azmain Hossain  52:40  
+Do I use? Click
+
+Richard Dosoo  52:49  
+that. Okay, don't worry. Let's, let's, let's, let's, let's, let's go back to cursor right and let's say, look, go back to cursor and say, just basically state that the deployment file you have an incorrect version of the deployment folder, and can it do an analysis to tell you what
+
+Richard Dosoo  53:18  
+deployment folder the main branch of that repo has the correct version. Can you merge the changes in locally? Right? That's the i
+
+Speaker 1  53:54  
+Sorry, man, I'm just doing some papering here at the same time. Sorry. I'm Hossain.
+
+Richard Dosoo  54:26  
+Yeah, sorry. Azmain, just I had someone helping me here doing some cleaning, but it's pretty difficult for them to do and like for them to get a different time. They just have to do
+
+Azmain Hossain  54:36  
+it now. No, no, no.
+
+Richard Dosoo  54:55  
+So yeah, let's see what it comes back with, maybe even that. Me. Let me do this. I
+
+Richard Dosoo  55:33  
+and as we don't this, the build that we have to do right is the most important. I'll look for more time later on for us to go over the programme stuff, but this get in the field and stuff. If you've
+
+Unknown Speaker  55:46  
+got a hard stop, feel free.
+
+Richard Dosoo  55:50  
+No, no, no, I'm good. I've got time. It's a problem at all. I'm while. I'm while you're doing that. I'm also going to just come up with a prompt to compare the differences and figure out what we need to change.
+
+Richard Dosoo  58:23  
+Yeah, here you go. Azmain, let me send you this prompt now. So after you've run this one, then run this, wait, I thought this had fixed everything.
+
+Azmain Hossain  58:35  
+That's why I'm pushing it back
+
+Richard Dosoo  58:41  
+into game, even after you've pushed it, run run this on your local version.
+
+Richard Dosoo  1:00:14  
+Oh, shit, let me I just gonna jump on a call with Martin, then I'll jump back on with this.
+

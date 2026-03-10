@@ -1,0 +1,186 @@
+Ben Brooks  0:00  
+Yeah. So Azmain, we were chewing the fat a bit in that sort of last week before Christmas, and as everything got a bit quieter, I had some time to fuck about the cursor. Yeah. Fundamentally, the problem that I think the light bulb went off for me is that we've solved lots of pieces of the puzzle in terms of, how do we do blueprints, how do we do charters, how do we do what is it that we offer every customer when they're onboarding? You know, what's the rag status? Blah, blah, blah, blah, blah. And everyone's looking at us now and saying, so what? I don't know. I don't know what to do with this, right? I don't know how to go end to end, through a process, yeah, yeah. And then also the we continue to have these conversations before Jen, before Christmas, and indeed, the last two days, where we get five people on the phone, and we start digging into data, and we start finding the problems with the data, and it's driving me insane. So we then had this one, you know, somewhat embarrassing conversation in the half an hour before an iflt call where we were supposed to be giving an update on latest status on islt, and we're still thrashing about not knowing the answer to, you know, what's going on with Gallagher. They can't look it up anywhere. You have to have, like, a five minute debate with somebody about which about which spreadsheets, all this kind of shit. And so I got really grumpy on the stand up that day and kind of said, like, why aren't we doing a proper programme, pipeline management process here, where we sit down once a week as a team with all the CSMs and we say, what's the latest on your account, what's happening on this milestone, what's going on there? And as I was asking for us to do that, all I'm hearing back is all the reasons why we can't do it right, which is, you know, basically we've got to spend all our time with customers bullshit. I'm asking for half an hour a week. We've got to get all this data from Salesforce bullshit. Most of it's not in Salesforce now. Oh, we got to use user voice. I don't care, like, it's not that's not the solution. It's just another system to integrate with. So I went away and spent that evening thrashing out a bunch of mock ups of what a system could look like that we could all log into. Then the next evening was, let's build one out locally. And then the third evening turned into three weeks. We're trying to get it onto Azure. But what I what I was trying to put together, was enough to show some of the CSN team that you could build a system that routinizes Some of this stuff, if that's word like it makes it a well managed process, a well managed structure by which we collate information that the team can revolve around, right? And so dashboarding, showing the current status, has been a really important part of telling a story, but we're not collecting that data in a way that makes any sense to anybody. It's five people running around with their hair on fire trying to scrape it together. It's Josh and the team not doing it for two weeks and then saying they've done it and it's not up to date, and so on and so on, right? So what I wanted was the system that does both. So I gave cursor, your dashboard, the golden source, and a whole bunch of mock ups that I made of. Could we build a process management system? And so this is what it's looked like after a few turns on it, I just do a pop up at the start of it that says, Why are we doing this? Like, what is an adoption charter? What is a use case? What is a rag status? Like, really basic shit. And then I make everybody click a button that says, Let's go because I was feeling snarky about theme, culture stuff, and so straight up his dashboard, dead simple stuff. But what's the rag status on my accounts? Right? And what I want this to be able to do is give the context for the person that's looking at this screen, so that could be my customers, or it could be all customers. My customers means any customer that I am on the team for, right? So in here will be things like, where am I looking team members, right? So ace insurance brokers currently has shuttle as the as the main team member. But as we build this up, will say that on ace, Liz Couchman is the solution architect, Rachel Gillespie is the implementation lead. You're the programme manager, you know, whatever, right? So that when you come back to your dashboard, you will see the stuff that is relevant to you, right? And thereby, you can look at all of my rag statuses, my migration status from my universe of accounts. And as I was building this, other things were coming to life for me that that really shone a light on the fact that we are collecting data that should be the answer to a query right where we will, we will have, we will introduce a new column to that golden source, because we're not able to. Run a good query to develop an answer to a question, right? So there's a column in there that says something like, is this a complex implementation? Like, that's not a fucking data entry. That's a query. Does it have more than 10 workflows, 10 use cases? Yes or no. That's whether it's complex or not, right? So we've created all manner of complexity in that golden source because we've been trying to answer questions as we go, rather than structure it and, yes, interrogate it, right? And so migration status is a really good example of that. We've not been talking about migration versus adoption very clearly. We've been saying adoption when we mean migration, vice versa, implementation, like all sorts of words for this stuff, migration should mean when you turn off risk link and risk browser, that's a migration. An adoption is when you're using the platform more and more and more. So we have customers who are in flight. They are in flight to a migration, and they are also in flight to an adoption, right? And so we can start to do things like tag use cases with migration critical, yes or no, so treaty modelling is not migration critical, because you're probably not doing your treaty modelling in risk link today, right? You would be using treaty IQ, but you probably not anyway, but it doesn't matter. It's not migration critical, but it is in scope for an adoption ace wants to do treaty modelling with IRP. Great. Let's help them out. So in that way, you can build up a picture of what what does it take to migrate this customer? Well, you have to tackle their migration critical workflows, event response for acrosure, portfolio management for Allianz, but you don't have to tackle risk selection for American integrity in order that American integrity migrates. So your migration stat is just a collection of queries that say how many of the migration critical things have I completed, that gives me a sense of how far along I am in the process. Yeah, yeah. This is like one example of 20 where forcing the the kind of argument about how do you present this data gives you clues as to the underlying structure that we haven't gotten right yet, but I want to be presenting back to the CSN team to the implementation leads. You know, these are my upcoming milestones in my book of adoption business. These are my upcoming action items in my adoption list, and then use that as basically this big kind of portfolio pipeline management process where we can look at this screen for every CSM once a week for half an hour and say, Great, you've got three milestones this week. Kevin, how are they going? Are they on track? Are you good? Do you need some help? No, okay, brilliant. Move on. Or, oh shit, these ones are red. We've got a big problem. Let's do something about it together as a team, right? And use that process to drive really good data. So I haven't even moved past the dashboard yet, but you get into listings of all the customers, pretty basic stuff, the use cases you know and love. These probably look very familiar, because I borrowed a lot of the way you were presenting stuff before. Blockers is not current. Oh, it is kind of working, although it doesn't seem to be loading any that's probably because I don't have any. I shoved a little demo mode in this, and I broke it again. So so blockers I could show you in a different way. I
+
+Ben Brooks  8:45  
+um, the idea is that every customer has a bunch of use cases. So let's pick one out. Here we are treaty pricing for ace that use case has a status, red, amber, green. How's it going? It has a migration critical. If it's not green, it must have a blocker. There is a reason that it's not green. So we track that thing. And at the moment, I think these are all just free text entry, but we could get more specific about it when we have collection of good reasons. And the blocker, you could go look at more details. You can see who created it when you know, audit shit out of it, if you want to. And if it's also, if it's got a blocker, it must also have an action plan. So it has to have a bunch of things that you are going to do as a team. This is not CSN, what you can do about it, but it's adoption team. How do we tackle this problem, to work through the steps that will get this back on track? And so that comes to life down here in a collaboration section. These are all the action plans. Well, there's an action plan for Ace. Because they've got issues with their particular thing around treaty modelling. There's one for Akasha or for some other reason, right? And that's the basis by which we can share back up. These are my milestones. These are my action items. This is the shit I have to get done this week and shine a proper light on it, right? Yeah. So we can start to do things like have a data issue screen, where we could use this in a in a pipeline process to say, these are the use cases that don't have a current status. Well, that's not an acceptable circumstance. What's the status for these use cases? Please fill it in. Update the status. Blah blah, blah, blah, blah, blah, blah, right. Dead easy, quite a lot of things without use cases. But there, I think there might have been other examples.
+
+Richard Dosoo  10:51  
+And Azmain, this is what I was saying earlier, right? That essentially, you're taking O and M, O, M, M, and you're basically breaking out into a data model. Yeah, for sure, that's it. Yeah.
+
+Ben Brooks  11:01  
+So, yeah. So, so here's one use cases that are not green but don't have an action plan. Well, I better create some fucking action plans. Then that's that shouldn't be too hard to do. And it's, again, it's just forcing that structure really hard onto this problem where there's flexibility around what you report into it, but you don't have an option as to whether you have an action plan, a blocker, all the rest of it, if you've got a use case that isn't great, yeah.
+
+Azmain Hossain  11:28  
+The key thing here is you've added that update button, because the biggest problem that I was seeing is that we could find these data issues, but then if you ask them to fix it, it becomes a whole thing of going to a separate platform and fix it.
+
+Ben Brooks  11:43  
+That's it. That's it. And so I so I think my grumpiness in that stand up was basically my my moment of realising that there is no system that's going to do this for us, and that we need to build one. And so once you've got the structured data, it's very easy to update it, have an audit log and all the rest of it, and so people can calm down about our ability to update that data and do it. Well, we need to find a way to push this back into Salesforce, into the right fields, so that the system of record is up to date. But that becomes a back end function that I don't want CSMs to have to care about if they need to go and do something else in Salesforce. Well, that's their problem. Like, we're not solving all CSM workflow issues. We're solving adoption challenges right now. But hopefully it also demonstrates it's not that hard to do. You could add a couple of pages on here for account plans and make this a richer experience, like, why not? But maybe that's version two version three. But you can do all sorts of stuff, like account records with missing data. Well, Holy shit, that shouldn't be that hard to sort out, like, what's going on with all the odds commercial, where's the Legacy product status? You could start calling this stuff out in the front end. Very, very easily to say, this is the required field. No, you can't save that without that field being filled in, that kind of stuff, right? So, so this was all about kind of creating that structure, doing it through action plans, blockers, use cases, the really sort of simple representation of what we've all been working on. I did go so far as to include things like charters in here. So the charters show charters that, Oh, I haven't. I haven't ingested all the charters, but I have pulled in a couple of samples and said, Build me a data model that captures the interesting points in here. So again, we're going to we're going to get some friction, because we're basically saying, redo some of this shit in some instances. But it's simple enough that hopefully that's not a huge ask, and the charters have really simple milestones in them, right? Have we finished the discovery phase with them? Have we done solution design? Have we done technical architecture? Sign off, yadda, yadda, yadda. I also kind of took a look at some of the charters, and I think we probably do need documents that are that thick for writing and agreeing with customers, but we don't need that as the system of reference for our day to day interaction. We just need to know that we need to get to go live in, you know, 23rd of December, 2025 and get on with it. So I want to kind of represent that simple view of a charter. But you could, of course, turn this into a PDF that goes to a customer, or the skeleton of a Word doc that we put more meat on the bones, and that becomes the actual charter document. I haven't won that battle yet, and I don't anticipate winning it very quickly, because there's a lot of work gone into the current charter templates. But again, we can just switch this kind of stuff off for v1 if we want to. I put blueprints in here just to kind of demonstrate that. You know, hopefully we're getting to a point where you pull blueprints into a charter. You have a charter that represents a bunch of workflows and a bunch of recommendations for blueprints in order to help the customer understand what they want to get done. You have, you know, a bunch of milestones that you. Are across all of the different accounts, and you can start to report out weekly, monthly milestones. Are we on track for the things that we said we were going to do across different accounts and weekly milestones was exactly that report. I don't know if it belongs there or not, but all that sort of stuff should be, should be, does easy so you know, oh, we said we were going to complete security compliance review for Alliant this week, I should probably phone Jessica and make sure that's on track. You know, just like proper visibility of what needs to happen bunch of stuff below the line here on partners. So I stuffed some of the partner bits and bobs in here for these mostly made up names and what status are they in? Like, this is kind of some of the stuff that Alex Alexandra would want to be tracking.
+
+Richard Dosoo  15:47  
+Are you? Are you in the office next week? But I think Alexandra is coming to London next week because he wants to, well, he wanted to have some face time to go over, like, the CSM workflow, but he was more talking about just one specific thing, which was customer sentiment analysis. But he's like, actually, he wants to start thinking about it a little bit more broadly. So he was like, I'm coming to London, if we're around. So let me start add you to a friend.
+
+Ben Brooks  16:20  
+I want to get the hub of this right and then think about the extensions of it. But I also wanted to get people to be a little bit evangelical about what's possible. So I chucked a lot in here. But, you know, exec dashboard like, let's replace this with with something that's much better based on what you were doing already, Azmain, but you know, here's the here's the account activity this week that should be on a dashboard. Here's the, and this is a CSM dashboard they can show off with it. Or we could have a leaderboard in here. All that sort of stuff becomes very easy. And then a report suite, it should be dead easy, just to pull out reports on particular things that the wants to see every week, and we don't just have to have a mad scramble every time we want to produce it. So that's I started to put some more contextual help in here, but I don't, I don't think I really got far enough with it to sort of truly explain some of the underlying intent. But yeah, and I need to fix the blockers, but hopefully that kind of makes sense, like the dashboard is the presentation back out of the information that lives in the system. If we can stand this thing up, if we can get it running, I don't think it's that hard to iterate hard on it, to build out some of these things with a little bit of feedback. And we, I ran it past Josh and George in December, spoke with Phil. I think I feel like there was another CSM as well, but maybe not, and just kind of got, like you happy to lean into working with something like this. Yeah, that looks like it's kind of helpful. So not quite sure how to make it super robust and bulletproof and
+
+Azmain Hossain  18:08  
+all that. Honestly, I think you've solved you've solved them. The biggest thing that was a headache for me, which was cleaning up the data, because every time I kept on coming back to it, it was going through seven different people with different sources, if we can have and the CSMs agree to it.
+
+Ben Brooks  18:26  
+We spent ages last year navel gazing, saying we need a structured data set for this stuff, and then not doing it. So I did it,
+
+Azmain Hossain  18:39  
+yeah, if the CSMs agreed to use this platform to input the data, we can, like you said, we can figure out how to push it back out into Salesforce data through the back end, if they're happy to use this, for this to be the ingestion source of whatever their updates, their stuff, like that, and also for them to use it to inform themselves. What work do I have to do? What work still remains? Then we can just move forward with this. We don't have to worry about all the things of like Stacy has to do this and Catherine has to do that. We can just do it. We can just rely on the CSMs be like, you guys can now update it instead of getting all these people,
+
+Speaker 1  19:14  
+yeah, and Ben, what did you have in the data Issues tab?
+
+Ben Brooks  19:19  
+That was stuff like, your account has a use case that's not green, but it doesn't have a blocker. It doesn't have a path back to green and an action plan or status or and there's because there's so much of this. If I turn off demo mode, actually, that'd be a bit easier, because there's so much of it. It doesn't show up very well, but use this. This should be the golden source, as it was when I picked it up. So what was that like, 20th of December or something. These are all the use cases that are green but have no blockers. Quite a lot of them. That's a bit of shit. And these are all the use cases. That agreeing, but have no action plan, which is all of them, because nobody's defined an action plan yet. Account records with missing data is pretty interesting. You know, then they're missing things that we consider fundamental. And I don't, I don't know why. The only reason that's acceptable is everybody can get away with saying, Well, it's the system's fault, right?
+
+Azmain Hossain  20:20  
+Yeah, because it's not a required field in Salesforce, no one's filled in, right?
+
+Ben Brooks  20:26  
+And so there's, there's all sorts of stuff like that. But, you know, rich this, this could be anything that we think it should be. How do we get better data? We We force the issue, and then we start putting up some, you know, really clear kind of leaderboard and dashboard type stuff that shows the progress. And yeah, you know, I You guys may not have seen it yet, but we've updated the like current status of adoptions over the past couple of days with the baseline data that CSMs have been collecting. We went from 28 to 41 completed migrations just by updating the fucking data. And it makes me want to cry. It's like where there were 12 people we didn't even know had finished, and we just filled in the data, and magically,
+
+Richard Dosoo  21:12  
+they're finished. It's this, but this is it, right. We're sitting down there. You're going to be breaking your back on some implementations, but just us tidying up the data, the dashboard looks better. Everyone's progress. What would have been better?
+
+Ben Brooks  21:25  
+Yeah, yeah, yeah. So this is one swing at it. There will be a million opinions as to how to improve it or change it, and that's totally welcome within reason. And I think, you know, the other thing Rich is, I think, I think we should figure out some proper kind of DEV management on things like this, because I haven't set anything up. I don't even know what you mean when you say, check code in and out. I don't know how we collaborate on this shit and do it well, but I know it's totally possible. I just need to be shown a few bits and bobs and then, you know, Azmain can have at this most of the time, and I can show up and be helpful or not, and other people can too well.
+
+Richard Dosoo  22:08  
+This is, this is the reason we want Martin and Ben as well on the call, right? Because, essentially, we've got a data model here. Ben with cup of tape, 10 tables in there. All starts with a client, the project, and then you've got loads of information that hangs off the back of that. You know, use cases is scope, and then obviously the charters and the blueprints feed into the scope. It's the combination of those things that give you what the use cases are. Once you've got the use cases for each use case, you've got a high level timeline, and then for each use case, you're going to have some detailed breakout, like a detailed project plan for that. That's basically the data model, and we got issues, and we're off the back of it. That's it, right? Once we've done that, that's a data model we can create very quickly. Once we've locked in on the data model, then we build the API's on top, and then this web app just calls those API's going forward to help update all of those data sets. That's, that's, that's all we're going to be doing. We in terms of, like, you're right, right now, it's really easy when it's just the four or five of us making changes, but when we want to roll this out to other people to come in and change it, we need a the process needs to be different, right? But I say, Okay, we take, like, what the guys have done already in terms of our build and code management, Ben is going to help us on the automation of the cicp pipeline, and then we'll have, like, as we said, we'll have a gold version of this, like a production build. We'll have some dev test versions of it as well that can be updated and more, you know, before we check anything into main and it goes into the proper version. We'll have release management, source code management, all the things that we've learned from doing customer projects will just apply. We'll re engineer to this. But right now we're still in the ideation stage, right? We're just coming up with ideas, so we're not going to let any of that stuff slow us down. We just know that it needs to happen in parallel. So before this thing goes out into the wild, all those things need to get fuller. I still think Ben is really good for us to try and get something next week, because obviously people are here, and then you can shop this around and get more feedback on it, right if we can get something up next week. And that's why I was considering saying if we had to do something in AWS just so we could meet that goal, that way we can still get people's feedback next week, and then we can come back and start hardening it and putting in Azure afterwards, right? But we're going to the first goal will be right now, is create a database with the handful of tables that are needed to support this. I'll use the golden, I mean rich.
+
+Ben Brooks  24:34  
+And in principle, this can go on a virtual machine inside the Moody's network and be hosted on local host and hit via an IP as long as that machine is always on, right?
+
+Speaker 1  24:44  
+Yeah, yeah. That's the other thing. We can. We can. That's that won't
+
+Ben Brooks  24:49  
+let us do any of the like, what's my role stuff, which was the, which is, which is fairly key. And I'm, I think it's this. This could be a little bit like when i. RP navigator rolled out, and I asked the question, of all the CSMs, how many people have shown this to their customers? And the answer was none. And I got a bit of feedback after that call. That was everybody didn't believe it was correct, so they didn't use it. That's a very strange cultural phenomenon going on there, like products have been released, and we don't believe they're correct, so we don't use them interesting. And I don't want the same to be the case here around things like security. I think if people sign into this thing via SSO, they're going to think of it totally differently to stumbling on what's essentially a posh spreadsheet on a network server. So I'd like to get things like that done, or at least working, even if the user base roles aren't assigned like that will get people feeling secure, in a sense.
+
+Richard Dosoo  25:56  
+Yeah, interesting. We get the credibility going. I think that's fine. So much. I was
+
+Martin Davies  26:03  
+gonna say, while you guys have been talking, I've been playing around, and I think, can I share my screen only if you're
+
+Ben Brooks  26:10  
+going to show us a fully working prototype?
+
+Martin Davies  26:13  
+No, no. Well, I think I've spotted some. Well, a key thing that we all overlooked earlier this message right at the very top says the web app and database creation. Create experience will be removed. It'll all be now done through the web app create. So when I go to there, you actually have this whole separate section for like database, where you can create a new network with a public so I was playing around with that, and you can get it through to the Create, where it allows you to create but that's without the database. But I think that's only because when you try and set up a new server by the default is set to like public. So if we go here now we get the error, but there's nothing stopping you creating the SQL Server separately, setting it, setting your network to private. So here, disable public, yeah, and just linking it later. So I think you can do it. I think you just need to do it through this option. So I think, I think that's the way. Okay, okay,
+
+Richard Dosoo  27:26  
+sorry, I was on mute, ranting away. No, this is great, if we can just skip all the other steps, and even if you, as I said, we deploy the database afterwards.
+
+Martin Davies  27:35  
+Yeah, I think this is just a way to automatically, automatically create it.
+
+Richard Dosoo  27:39  
+But there is a so there is a networking in the Networking tab. When you if you click create database, go to the Networking tab. What is it? Yeah, so the networking enable public access off virtual network integration is what we want on the
+
+Speaker 2  28:00  
+enable private inputs, put that was on.
+
+Ben Brooks  28:07  
+Oh, so, so, yeah, I created all sorts of virtual networks in in, mucking about
+
+Martin Davies  28:16  
+somewhere, yeah. So I did see there was a couple set up, which is why in here, I just use this one, because I noticed it already had the network setup. But yeah, I think we can do it. I think it's just, instead of playing around,
+
+Speaker 1  28:32  
+go back to that networking bit mine, if you wouldn't mind
+
+Martin Davies  28:36  
+sure one second wasn't on me.
+
+Richard Dosoo  28:42  
+Yeah, so if you bought enable private endpoints is on,
+
+Speaker 2  28:50  
+yep.
+
+Speaker 1  29:03  
+Okay, this should work now, right? See if we test this and
+
+Speaker 2  29:09  
+yeah, with the database on
+
+Ben Brooks  29:16  
+40 bucks a month, that's that's not approved.
+
+Martin Davies  29:19  
+Yeah, so this is okay, yeah, so that's so given that's on the server, which is why I think if you leave this turned off and then set up your server separately, yep, and disable it, then you can just link it later, yep, that would be my guess, But without playing around. But I think this is definitely
+
+Ben Brooks  29:52  
+so up on GitHub in that like backup branch, there is. A bunch of code that, in principle, will work across a front end and a back end. It probably needs a bit of refactoring to use whatever database format is up there now, because it was all built on SQL Lite, I think, not sure, actually, as database storage, I
+
+Richard Dosoo  30:27  
+Yeah, so that will be the thing, right, that we'll have to deploy the database separately.
+
+Richard Dosoo  30:36  
+But to Martin's point, we could do that like that's, I think if we can't let out and do it first and then then come in and deploy the app and the API and the URL and the web app, then we can link all of the pieces together after,
+
+Martin Davies  30:50  
+yeah, it's like here, you can't set git during the app creation, but you can do it later. So I think we maybe just have to do it in a specific way. All right, yeah, so please create your app first and then so get
+
+Ben Brooks  31:14  
+do we need to do that using the existing app, because that's been approved. Yeah?
+
+Martin Davies  31:21  
+Is that the adoption? Track one? Yeah, yeah, yeah, could that looks like a had a look. It's all private. Endpoints are all set up. Everything looks good.
+
+Ben Brooks  31:37  
+Yeah. I mean, this thing has made a right old pickle in setting everything up. So I'd be amazed if it's sensible.
+
+Richard Dosoo  31:57  
+So mine right now, this doesn't have a database associated to it. But if you try and create this without the database,
+
+Martin Davies  32:06  
+did you hit another error, or did it work? No. Well, it gives me the option to create which it wasn't doing before. So I think that,
+
+Ben Brooks  32:13  
+yes, just stick it in Northern Europe before you try it. I
+
+Martin Davies  32:24  
+building your
+
+Ben Brooks  32:32  
+I think I built that one on 3.11. As well. I don't know whether that matters. I
+
+Speaker 2  32:44  
+didn't have that earlier. That's fine.
+
+Martin Davies  32:53  
+Yeah, so let's make greater
+
+Speaker 2  33:04  
+are we today? Yeah, yeah, okay, do
+
+Martin Davies  33:29  
+question. Let me switch back to the US one, because before I
+
+Azmain Hossain  33:37  
+think public access should be disabled, and you disabled it so like,
+
+Martin Davies  33:42  
+Yeah, but I think yeah, so I don't get an error here. So it's almost like something, but I didn't spot earlier, when I did us two, I didn't get any errors.
+
+Ben Brooks  33:57  
+You know? I think I remember seeing that when I started set up for Christmas.
+
+Martin Davies  34:09  
+Okay, I keep playing.
+
+Ben Brooks  34:14  
+It's the never ending hearing like promising leads and
+
+Richard Dosoo  34:19  
+brick walls. It's just frustrating because, like this, what? We're not trying to do anything unreasonable, deploying a web app of a database. We're not this should be like, you know, it should just work for us. The infrastructure should support us, but it's not so. I need to get I do need to get on the phone with those guys tomorrow. The only thing Ben, I need to have a chat with Arthur, because we've we've made a lot of progress with the offer for Nicole, but I need to speak to him about I might need to call you on about a bit later, so I have to drop to catch him before he logs. On, but I'm going to take the data model Ben that you already created it, just make a few small changes to it, because I think we're almost there. I think we're really, really close. We just need to collapse the issues and the plan into one table, and then with how what level of granularity you view, it determines whether it's an issue you're looking at the next week, or whether you're looking at it across the whole like delivery. So I'm just going to make some changes to that, and then after that, we should be getting a good shape to deploy date based on All right, see what you can do. All right, guys, I'm going to leave it on in case you guys keep going and
+
+Ben Brooks  35:43  
+we should drop but yeah, let's pick it up in the morning. Cool, awesome. Thanks. You.
+

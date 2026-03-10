@@ -1,0 +1,135 @@
+Richard Dosoo  0:00  
+Like, if you get me this that solves my problem, and we like,
+
+Azmain Hossain  0:16  
+because you might have Yeah, no and knowledge, like, what is, what is her like, her north star when it comes
+
+Richard Dosoo  0:23  
+to, well, so, 100% and actually what? So I wanted the meeting I'm going to set up for us tomorrow afternoon is I want to go through with dia the her slides and go through the programme with her. But that meant that we had to have met and gone over the programme and do the stakeholder mapping and all that stuff, because I didn't want to do that. I didn't want to meet dear and not have done that, because then she's going to be like, Oh, bro, what the fuck. So I wanted us to basically be proper, prepared. But that was the idea, right? That we, we, we go through, we and, you know, dia, right? She's very like, she's not that. She's not detail orientated. She is. But she's like, I'm busy, bro, just give me the elevator. Like, just tell me. At a high level, she's not going to be have time to sit with you and and go over the detail on a new one. She's going to be like, tell me in two minutes. So very like, executive like, just tell me, right? So the this whole process started, and I was talking to the in exceedance of last year. She was like, my team, my CSMs are having a real problem getting data out Salesforce. And she was like, all I'm seeing about the technology and the tooling is a better way for me to get Salesforce data out of Salesforce. So she was like, rich, how can I do this? And I was like, It's easy, right? Just pull the data out of Salesforce and put it in any LLM you want and you can get insights on it. That was how this process started. Basically figure out how to get better data out Salesforce. Then we were like, oh, copilot has got some has got a chat into LLM in there that we can feed data from Salesforce. Then we got the Stephanie to train us. Then we expanded the programme to incorporate more use cases. Then we went around and started talking to people, and they were like, well, you know, sales recon does this. Then we went out, reached out to Idris. He was like, Yeah, I'm doing this. Then dia was like, oh, have you spoken to Ari lahavi? And I was like, yep, already spoken to him. And Idris, they're already telling us what they want. We're coming together. It all started from that initial use case of, how do I get data out Salesforce? How do I get how do I have a better way to interact with my data from Salesforce? And what we were able to do was say, not only can you pull the data from Salesforce, but you can generate insights from it, from using these llms, right? So dia, right now I've been updating her on on what we've been doing on the first phase of the project, which was about training. And then I then sold her, right? We've done all this training. These are the high, top value use cases that have come out of that discussion, and this is what our areas of priority are going to be next. And she was, okay, cool, but she's waiting for me to give her a high level overview of the scope and the resourcing requirements, and I haven't done that yet, and that's why I wanted to connect with you on the programme, and we solidify this stuff, and then we put it, put it to her. Now, today's Tuesday, right? So tomorrow's Wednesday, I think realistically, I should get on her calendar for Thursday. We'll see what time she's free, and that gives us tomorrow to tie and tighten everything up, like in a presentation format, because she ain't gonna have time to read through no document. Not that it's not important that we have the doc, but it's just, I know, like, whenever I try and get details with her, she's looking at me like, I'm bored, bro. Carry on without I'm not always like, yeah, I've got this, and this is how it's working, but always without fail, she's like, starts looking at her phone. She's not tired, bro, so trust me, ask Ben, ask Natalia. They can tell you the same thing. You go to deal with some big prepared thing, and you're like, yeah, and then she's just looking at you, like, next. She's lost your attention. She's scrolling on her phone. So when we present to her, we just need to be like this. What we're talking to you about this is what it is, right? What do we want from you next? That's the way to get because
+
+Azmain Hossain  4:11  
+as as a person with ADHD like I'm honestly this is one of my resolutions for this year, is I need to go to GP, and I need to get the shit diagnosed
+
+Richard Dosoo  4:20  
+so I can get bro, I'm gonna send you.
+
+Azmain Hossain  4:23  
+I'm literally that meme where it's like, somebody starts talking to you, and you figured out the end of their sentence within like, four seconds. And because you have ADHD, you're just so bored now, because you're like, oh my god, get to the end of your sentence. So we can discuss
+
+Richard Dosoo  4:38  
+this, bro, this is the challenge, right that you need is probably an AU HD thing as well, because that that's also part of, like, the thing is, like, being a couple steps ahead and not feeling understood and waiting for everyone to catch up. It's always, for me, it's the problem I've always had for years, like, with my autism, I just, like, couldn't, like, I was really. Be confused like this. People felt like
+
+Azmain Hossain  5:08  
+this. I thought. I was like, oh, polite. I need to just shut my mouth and wait for the other person to finish. And then I was like, there's other people like that, bro.
+
+Richard Dosoo  5:16  
+But this is the thing, right? The biggest thing with all this thing, I'll just send you a screenshot of one of my friends. She's gets this medication prescribed to her for it. She's a good sister, Javi as well. Like, she, she's, she's cool. Like, if you ever met her, speak to her like she can, like, she's amazing, but she, like, she's the kind of person that that thinks, like, 10 Steps,
+
+Azmain Hossain  5:38  
+yeah, literally, that, that medication, Ritalin, it's, it's so common in American high schools, because, yeah, it really helps people with the condition, like kids with the condition just focus, because otherwise they're just bouncing off the walls.
+
+Richard Dosoo  5:51  
+And, yeah, you know, this is it. And it will give you like, like, even takes the edge off, so you're like, and it's, it's not haram, right? It's not like, it's medication, and it's not intoxicant, like, you know, I mean, so it's not, it's all good from that like, and this
+
+Azmain Hossain  6:08  
+is why I'm glad that my wife's a doctor, because in this we're, we're both very aligned, because she from a science background. But I'm, I'm very much of like, that thing of make it permissible unless it's explicitly called out in the Quran or the Hadith as being because this is why I like that I'm from the Hanafi Madhab, because it's the most all encompassing one. I just, I just think acceptance and like inclusion is better. So if something comes out that can help it's not you're not being in any way purer or better by saying no to it like your theme is not increasing, exactly like my dad. My dad believes that not going on medication, I guess for anxiety and depression is, is me, he's getting more reward because he, he's like, God gave me this illness and I'm suffering through it. I'm like, That's not, I don't think that works. So this works the way you think it works.
+
+Richard Dosoo  7:19  
+He's, he's right, but he's not like, that's what they say, right? That any of the struggles that you have, you're going to be rewarded for it. So let's say you go to make salah, and your knees are hurting you, but you go and pray and you sit in a chair, you're going to get rewarded right in Jannah for that struggle that you did, right? But it doesn't mean, yeah, that you don't go and take medication that's available to you because there's some piety and suffering there isn't right. So it's completely like, you know, there's, there's, I've got a book at home on the medicine of the Prophet and how the so there's, you know, that. And you know, we got given doctors for a reason. They got given the knowledge for a reason to to help us, bro, this always like, I, trust me, I'm with you on on this thing, right? And this is not, this is this one is, is there's no, there's no ruling or anything to be like, No, this kind of medicine is not permissible. It's permissible, bro. So I would 100% and I'll ask Saba tonight, when I get home, and she knows much more about this stuff than me, because she's, like, born Muslim, so she knows 10 times more than me. Used to go to madrasa, like, everything. So I'll ask her for the Yeah. I'll ask her she's,
+
+Azmain Hossain  8:30  
+I'm literally like, yeah, I went from place of very much walking away from it to slowly coming back to it, mostly because of my wife.
+
+Richard Dosoo  8:40  
+Yeah. Yeah. Alhamdulillah, bro. That's good, because then she leads you to Jannah. That's how it should be, bro. You have someone in your life that
+
+Azmain Hossain  8:47  
+rediscovery, because you know originally, when you're born into it, it comes with a lot of cultural backage baggage, especially when you're from the Indian subcontinent. There's a lot of Hindu practices, a lot of Buddhist practices.
+
+Speaker 1  9:01  
+There's a lot of there's a lot of Bidda. Yeah, this is whatever they're stupid to some boys about every weekend, they said, number one source of Bidda that comes here. It comes from Pakistan. Like all these guys,
+
+Azmain Hossain  9:14  
+they have those tribal, Afghan, Central Asian like, almost like Turkic Mongolic traditions, which are outside of Islam, that have kind of been co opted, whereas my neck of the woods in on the other side of India, it's more the Hindu influence, the Buddhist influence, where, like, my parents can't even tell the difference. Like when my baby was born, they came and they fed her honey, and we were so sleep deprived, none of us was like, stop doing that, even though honey can it says, Don't give to a baby under 12 months. Yep, that's a Hindu practice that they learn from their parents.
+
+Richard Dosoo  9:53  
+This, this is it, man. It's unwinding. The the the cultural stuff this, this separating that. Distilling that from, okay, this is Hadith, this is Quran, this is sunnah. This is what's been told to us that we should be following. And I'm the last, like, I'm new. This is new class, you know, I mean, but even that man,
+
+Azmain Hossain  10:12  
+because, like, given your name and kind of your thing, I would not assume. And then I saw you on that Muslim channel, and I was like, Oh, wow, okay,
+
+Speaker 1  10:22  
+yeah, no, when, when you're next in I
+
+Azmain Hossain  10:25  
+literally feel that, because even though, yes, I was born Muslim, I lived for between the ages of, I don't know, 12 to 30 as a Catholic, yeah, so it's kind of like being a revert as well.
+
+Richard Dosoo  10:42  
+Where are the thing is, like this, it's not about perfection, right? It's who comes back, and if you keep coming back, that's like, you know, the and that, and for like this, I don't know, for me, yeah, bro, like, I've, it's all of this is new to me. So I'm just, I'm in that phase where everything is like, wow, but I completely get why people who are born Muslim, they're not going to have the same feeling about it as me, because they're like, rich for you, you've been doing this for 12 months. I've been doing this for 30 years. So my healing is different because,
+
+Azmain Hossain  11:16  
+yeah, because I'm rediscovering it. I i still have that wonder about it, where I still find stuff. And I'm like, Oh, shit, you can look at it that way. Like, you know, you know, I found very well, yeah, yeah. He is on like, another level, like, I've gone and prayed in masjids with him, and like, his uncle is the Imam,
+
+Richard Dosoo  11:38  
+yeah, yeah, exactly. And they're like, but even, but that's what I mean, bro. It's all about No, there's no like. It's like, you know, you know, you go to Masjid, you pray for your praise, uncle. All of them are going to just be happy to see you there. There's no like, right? This level of party means that we can run and we can hang out. No, bro, it's all good, and it's good to have friends that are also good in a dean, because they can help you and they will not help you, direct you, you know, I mean, like, the weather is even something as little as, like, I had a chat with Irfan, and I was like, let's come together and do some charity thing this year for Reed Foundation, because they do lots of stuff for orphans, Palestinian orphans. And how do we get Moody's to match our contributions on it? And her fans. Like, yeah, my dad used to be on the Board of Trustees. Bro, let's do it. That's the that's, that's cool, right? Because you've got, like, good brothers that, do you know? I mean, like, that's bro. Like, it's, you want people around you who gonna increase your deen, bro, that's, like, it's humble for good brothers that, can, you know, whether it's like Idris, muaz, whoever, right, but it's good for it to have people that keep you, know, I mean, and help you. One day you might be feeling a little bit disheartened. Have chat for like, that's Bro, that's it.
+
+Azmain Hossain  12:53  
+Yeah, it's literally that thing of like, you are a summary of the five Muslims that you hang out with the most. Yeah, I'm just, I'm like, consciously now, making sure that those are better people than me, people like Irfan, who are man that guy like, firstly, he prays like five times a day. He goes down in the Minster building to the prayer room downstairs, to the prayer room downstairs. I didn't even know where he was. He was like, oh, you should go there. I'm like, there. I'm like, I don't think so. Man, we
+
+Richard Dosoo  13:24  
+even got this cupboard here as well that the guys, we've co opted that space. Bro, it's cool. Man, like, and even just little things, bro, like, the I remember, like, you know how it goes. And we have Friday, you get some mad status meetings. Everyone coming, putting meetings in your calendar. And you're like, Man, I can't go Jamal. I've got this thing. You guys. Was like, telling me. He was like, bro, everyone prioritises. If you had Ben asking you for a meeting, and you had me asking you for a meeting, you prioritise the meeting with Ben as you should, because he runs our team. So how are we gonna sit there and be like, we're not going to jam on a Friday because someone at work is, you know? And I was like, Yeah, I was talking to I was like, yeah. And then I was like, actually, you know what? If I don't set this boundary, right? If I don't set this hard boundary and put a block on my calendar and be like, Friday this time, I'm not available. Bro. Don't even talk. Don't even don't it's not even a debate. I'm just not available. I'll work later in the evening. I'll do whatever, but this one on a Friday, like this, I don't think there's anything that is that important that you couldn't tell me on Thursday, or you couldn't tell me after four o'clock. Do you know what I mean? So that's it. And then we'll put that thing in or I'll forward you the one I got in my calendar, and that way people, once they start seeing it there that that time is blocked, they're gonna know they can't. That's your time. I've never thought of it like that. It's like it's not, I don't mean
+
+Azmain Hossain  14:51  
+it is partially laziness. But what last year, for example, like whenever it was a quiet period, and I literally. Just had the Friday, like afternoon free I would go, because from where I live, like East London, Masjid is three stops away. And one of the things that I miss, like, you know, I remember when I was like, 1011 and I lived in a Muslim country, and what Eid was like, and what Friday prayers was like, and stuff like that. One of the things I miss is really praying in a big masjid, where you can see hundreds and hundreds of people just praying together and living in all these small northern towns in England. I never got that, and now I can. It's just I need that time. I need that, like, two hour block of time to go, say, Pray, come back and like, be ready to
+
+Richard Dosoo  15:37  
+work again for 100% and it's like, I've never been to German. They've had the hook button. I was like, Oh man, I should have just stayed at home. Never, never felt like that. Whether it's in this country, whether it's in a different country, always come away feeling something. They're gonna Imam and shake is gonna tell you something. And you're like, yeah, so bro, like, that's it. And even, like, just, trust me, bro, like that's and the main thing, bro is that, listen, if you don't set that boundary, then no one's gonna No one's gonna tell like, Benny or Natalia are not going to be like, Bro for your dean, bro, take, make sure they're not gonna do it like, you know what I mean. And it's not because they're not nice people, or they're carving or whatever. It's not that. It's just that's not their math. They're not thinking about that, bro, they're not thinking about so that's why, and that's where, like Earth and others, it's good to have brothers at work that muscles that show, you know, this cool for me to take Fridays off and still do this, this, there's no, do you get what I mean, like, you just, you don't need to feel like you're making a thing or taking a piss or Whatever. No, you're laughed, you know? I mean, people take breaks. They can't smoke cigarette. How come you can't take break to go too much like that. So that's for me, bro. Like, don't feel don't feel bad about it at all. Like, at all. That's it. Just block it out. Natalia is cool. Everyone gets it. And then, even if that means, bro, you're like, right? I know that this time, so I didn't got to work around it, but then that you're organising your day around the things that you know, that's it so. But sorry, bro, I didn't mean to get into, like, preach and stuff. That's not, it's not my place in it.
+
+Azmain Hossain  17:13  
+No, no, that, that's, that's what I'm saying. Like, I'm not jaded to find kind of someone talking like that, a bit like, I know people like my cousins, you know, they've been in Islam all their life, and it's kind of just become like this thing you deal with every day. They don't, they're like, Oh, you don't have to be all high and mighty about it, yeah. Whereas I think you should like, that's especially now that, you know, I've got a I've got a little one that I need to teach, yeah, actually, that's one thing that I never asked about you, man, like, family life wise,
+
+Richard Dosoo  17:56  
+yeah, yeah. How do you work? So much, so now it's me, I'd say lucky or unlucky. So I'm not married and I don't have children, but I have a nephew and nieces that are close to me, but they old, and they don't live with me, so I spend most of my time on weekends with them, and then during the week, I'm just like working, and then weekends I spend with them. And then my nephew goes to school, private school outside London. So the other thing is, like, he used to go to school in London, and they would stay with me and still be broadening and stuff. But, yeah, so that's unfortunately, unfortunately. That's, that's my circumstance right now, but Inshallah, Alhamdulillah, maybe in time, get some family and stuff so that hopefully that scenario will not be there all the time. And it's so we'll see. Well, hopefully, by some I missed those times,
+
+Azmain Hossain  18:47  
+ungrateful kind of way, very grateful. Like, yeah, it was nice before there was a tiny person running around
+
+Richard Dosoo  18:58  
+where the rewards will come in this life, we're around the next one. So, so good man, when they get the little personality, start everything like the it's that's, yeah, obviously the staging between someone completely dependent on you and like they're just eating and shitting, and it's a bit hard to see at that point. But when they get their personality this place. There's nothing better than that. There's nothing better than that. You can you can work. You can get whatever products you want. You fucking cares bro at the end. Like, do you think any of these people in office gonna give a shit when you when you're gone? Do you think any of them are gonna come to your gen hours or fun? Like, no, no, it gives a shit. But that kid is going 100% they're going to make dua for you. That is going to be that around long after you've got they're going to make sadaqah, things like donation all that's that's what counts for it. That's where the real wealth and thing comes in. But, um, don't. Worry, bro. Let's, when are you next in the office, bro? And then definitely, I'll, I'm going to, yeah, I'll be around tomorrow. Oh, okay, okay, yeah, I'm 100% I'll be here tomorrow because I got to Martin's in the year and stuff. And I'll, I'll also do the, I'll set this meeting up with Alexandre, going to get that right? Yes, and hold on, yeah, let me I'll send that meeting up now, and I'll also, I'm going to have a bit of time tonight, so I'm going to do the cool I'm so happy. Did it? Did it deploy? Is it everything, what?
+
+Azmain Hossain  20:43  
+Yeah, I was having just thinking problems. So I kept just going back to cursor and just giving it like, here's the new error, here's the new error. And finally, so I think you should be able to see my screen. Yeah? So now I basically just wanted something that a takes advantage of the screen real estate, when, yeah, I've got a 24 inch and other people have even bigger monitors, so that things are Don't tell me.
+
+Richard Dosoo  21:20  
+Okay, Control Shift and all right, it will,
+
+Azmain Hossain  21:24  
+oh, yeah, that's good point. Ctrl, Shift, R. But also that thing he was mentioning, Ben mentioned, he was like, we want people to be able to do this on their phone, like, open it on their phone. Whatever, whatever you say, goes,
+
+Richard Dosoo  21:50  
+it goes, but this is the thing always, like, we like, think, okay, the bar is our website, and then Ben's No, and then that's the innovation, right? That's the but that's gonna force us then to be like, Okay, how do we have a version of this app that works on iOS? How do we have a version that, you know, and it's cool, like just thinking.
+
+Azmain Hossain  22:07  
+So I basically made it reactive, so that when you're using on a on a small screen, it still adjusts. That's one of the changes that I put in.
+
+Richard Dosoo  22:15  
+Now, don't ask me how the SSO is going to work on a phone. Pilots, whether it's just still like, but that's fine, right? These are all the things that we're going to figure out along the way.
+
+Azmain Hossain  22:31  
+Let me just, you know, I wanted to make a visual org chart, but this is fine.
+
+Richard Dosoo  22:37  
+No, the way, the way you'll do it is this. This this is using a tree structure, but you want to use a graph. Yeah, right. That's, that's so if you tell it, I don't think we've got in our UI graphs anywhere, but you can ask, you can ask her so locally that
+
+Azmain Hossain  22:53  
+want to honestly mate, if this is, if this is not working, let me click an action plan. No, okay. I'll fix action plans and blockers. But after that, I don't, I don't want to do anything. I want to get it out there, get people a to fill in data on the Excel sheet. I'm chasing them down, and we give it to CSMs, and they just start doing it themselves.
+
+Richard Dosoo  23:17  
+Yeah, and 100% and once, once we've both
+
+Azmain Hossain  23:20  
+sides, and we look, if we've got overlapping data, that would be excellent. If we've got two versions of data, let's just hope we get one version.
+
+Richard Dosoo  23:31  
+Yeah, no, this is it. But once we once we hand the keys off to them, then we don't do any more builds to that environment until Chris has built out prod, sorry, until Ben has built out prod, because we don't want to be once the environment is being used in earnest. We need that deployment life cycle, and we need the gates right, and we need tests, and we need all sorts of stuff. Because if we're deploying to an environment without that and anything goes wrong, it's really hard to roll back. So we so what we can do is like, it's fine if we want to give the access to them tomorrow, we just have to wait for Ben to come back online on Thursday, or whenever he's come back online, and build out a test environment and another Dev, which will be like Dev, and then dev will turn into prod. And we want to basically, then have our builds going to Dev. That's whenever you check in, a build will go to Dev. But the release from dev to test will have to be done by Ben at a scheduled interval. That's the way we'll do it. So, yeah, and that won't be partly because that will he will then be looking at what pull request do I want to construct into a release and push right, or what version like he's someone has got to control that, like someone, a human, has to control that step. And then once it's done, someone presses a button, and then all those deployments go and we have, like, data fixes and all that. So that's what we'll get. But Ben is on top of it. He's ready for that. We just needed the time internally to to to walk through that and put it all to. Together. Yeah, cool. So let's do this Azmain, then I'm gonna, I'll set the meeting up with Bernard. I'm gonna set up. I'll probably just send you over my first iteration of the stakeholder map, the scopes and all those pieces based off the PRD that you put together and and I'll find some time tomorrow afternoon for us to connect on that in the meanwhile, I'll look for time on Diaz calendar on Thursday to go through the material, because I know if we don't do that, she's going to start getting antsy and start wanting to check in with us. So, but we'll have tomorrow to go for it, and then we should be going on. Yeah, I'll see you tomorrow. Definitely looking forward to catching up more in the office tomorrow. Bye, cause. Well, Salam bro, I'll speak to you tomorrow.
+

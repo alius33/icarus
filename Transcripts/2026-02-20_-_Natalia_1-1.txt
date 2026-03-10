@@ -1,0 +1,222 @@
+Azmain Hossain  0:00  
+Managing my workload, kind of explain to you the situation, and kind of get your advice, go for it. Me and Richard, we feel like we've been pushing the work on Clara, like it's taken priority. It's been Ben's priority, and he's been kind of pushing us to get it to the point where users feel comfortable, and he and you and anybody who's looking at it from the reporting side also feel comfortable. But what it's led to is all of the other projects that we were supposed to be also ongoing at the same time, they've had to take like a pulse all this time we've been trying to make a little progress, talking to a few people, but there hasn't been any meaningful progress. And Richard was saying it's going to get to a point where the questions are going to be asked of what's happening with the other stuff. We need to see some progress. We need to see some ROI on, on the effort and cost that's going
+
+Natalia  1:04  
+Yes, and other projects are, for example, the sales reckon, or the the extension of sales recon for us, or we're talking
+
+Azmain Hossain  1:15  
+purely for customer success. Actually, let me, let me bring up the little project charter thing. So the first project overall has to be the the education and enablement of of employees.
+
+Natalia  1:37  
+Hold on, I don't see it. Yeah, I say it now, yes.
+
+Azmain Hossain  1:45  
+So yeah, this is kind of what we think is the quickest win, but also the biggest win, which is enabling as many people as possible with the technologies that are approved.
+
+Azmain Hossain  2:02  
+Sorry, I'll right? I'll let you have a reader if you want me to
+
+Natalia  2:06  
+No, no, go ahead. You can scroll you can scroll down.
+
+Azmain Hossain  2:08  
+Okay, so, yeah, Project One is enablement. Two is the track. Project two is Clara, the one. Project three is an idea. Well, it's not an idea anymore. It's a pilot that Kevin Pern has created. Customer Success agent. He's been, he's been kind of working on it by himself. We haven't really dipped our noses in or operationalize it, so we need to go in, have the conversation with him. Understand, what does he need? What does his app do? Like, how much resources does it need? How much moody Security does it need to make sure that it's that it's all fitting the corporate guidelines? The third one. So this one was supposed to be separate, but after speaking to Liz and speaking to Ben, it makes sense. This is why there's an adoption charter section on the on Clara as well. It's to integrate the adoption charter into into Clara as well, so that you can the decision hasn't been made, how it's going to be whether you take that 20 page adoption charter that's been agreed with the customer, and figure out some way to import it into Clara, like you can read the Word document, or we make it a system where you complete the adoption charter in the app, click Export, and it generates a Word document. So there's still discussions to have. I don't fully understand all of the nuances, but I just keep hearing that things need to be finalised in a discussion before we actually start building stuff up. So we need to spend some time on that, with the with the relevant stakeholders, and kind of mapping out what do you guys need? Okay, this is the IRP navigator. It's Aha, okay, yeah, I don't understand what the navigator is, but what's been explained to me is the l1 support ticket agent, where, when a customer raises an issue through user voice or through a Salesforce case, an agent will go and analyse the case and see if a solution, if it can, then it suggests that if it can, then it says, I can't, and then it moves either way. It moves it up to a human so that they can either review a suggestion or just work on it.
+
+Natalia  4:38  
+So we are on Project five within the programme that we have for customer engagement, and all these projects have been somehow reviewed for for the actual realisation, or do we still have to go through some kind of gate process of validating if we still want to do it? Because I. And it's already a lot five projects. It's, we need to validate.
+
+Azmain Hossain  5:04  
+We need to validate. This is where, like when we did the validation with the adoption charter, we realised there's no point of having it separate and doing all that work. It's, it's a small piece of work that we can just fold into Clara, whereas this one, we haven't sat down with Matt Allen or the navigator product team, and been like, what are you guys really trying to build, and how can we do it without, like, everybody working at weekends?
+
+Natalia  5:30  
+Is there more there projects? Yeah, so
+
+Azmain Hossain  5:33  
+there's one more. This is from Martin Davies. He's going to look after it from Richard's team. And this is the idea of having obviously, we have API's to all the all the IRP mock products and stuff, but it's to create a system where, like the ideal scenario, is basically this, during a pre sales process, we are able to, literally, in a room, within 45 minutes, sit down and show them that using IRP API's and our process, you can build a solution in under an hour that will give you insights on your portfolio. We're not offering to build this for them, but we're saying, if you guys, like obviously, you guys must have a tech team. If you guys give them this capability, and once you integrate with IRP. This is how quickly you can spin things up. So I think, I think that was demo, but main thing is pipeline conversion.
+
+Natalia  6:30  
+Okay, so we have this, let's say, like a one, one pager for each of the projects that are, let's say, somehow collected into what we want to have as part of the programme. But the next step would still have to be validating. Do we really want to pursue and how much resources would it take?
+
+Azmain Hossain  6:53  
+How much resources? How important is it? Do we need to do it right now? Or is it something maybe in h2 we can, we can focus on kind of understanding priorities from from each of the people that suggested these ideas, and they've been doing it and building it in their own their own laptops, we can actually have a better conversation now than we could have had four weeks ago, because they've been working on it. They've got a clearer idea of what they want and like, what the constraints are,
+
+Natalia  7:22  
+and who would be the decision maker here on deciding, is this going forward, or is this staying on someone's personal laptop only? And we're not, let's say industrialise it.
+
+Azmain Hossain  7:36  
+I don't know. This is what I was okay. How do I go about figuring out who's the like the executive sponsor and the sign off person? Okay?
+
+Natalia  7:50  
+So, so let me put it this way. The way I see it is that it goes beyond advisory only because obviously we have here advisory, we have CSMs, we have also the model success or software success team. So it's all customer engagement. It all falls into dia the way I see it is that, because Richard has been given this ownership of AI in CE, it's really for Richard to present that those are the projects, but I think it has to go before we present to dia for any potential decision making. We need to also be able to say this is the expected resource that we need, and this is the expected timeline than we need, and maybe already have recommended prioritisation and have her discuss it with her leads, maybe. And by leads, I mean the CS leads Ben and Courtney saying, Okay, those are the priorities from ce point of view. Because the decision maker here, it's really DIA is the sponsor as the CE person, right? The let's say the programme owner, in this case, is actually recharged because he was asked to consolidate all of this. Now, I think we're here talking about two topics, because on one hand is the fact that there needs to be next steps taken on the programme level, and what is the path. This is what I just mentioned. But then the other topic is that it seems like neither you nor Richard have time for it, because there was so much focus on project two, big Clara, yeah.
+
+Azmain Hossain  9:39  
+And our plan is that Wendy is here next week. I think, I think we're yeah for the 25th is basically yeah, get 15 minutes of her time and just give her not Yeah, just like 15.
+
+Natalia  9:55  
+Yeah. Okay, 15. Fine. Fair enough, she's probably losing attention. Already after 15 but
+
+Azmain Hossain  10:03  
+very short time. Just bullet points of everything you said we have to get ironed out before then. What are priorities? What are the resources? What's the ROI of like? How do, how do we justify to deal like we're going to pull people off IRP work to do this stuff if there's not a material benefit at the end of it, it's kind of just to give her a quick fire session on that and get her okay to actually do okay.
+
+Natalia  10:30  
+So for 25th It's Wednesday, is it, I think. So it's Wednesday, and you and Richard will be or plan to work on it, right?
+
+Azmain Hossain  10:41  
+Yeah, we've been having lots of calls with with, like, we had a call with chihan yesterday about how to do this cursor for pipeline things, because we obviously need access to IRP API's and understanding all that stuff. So we, like the the adoption charter we've already spoken about with Liz, the CSM agent, the customer success agent that Kevin Pern has been working about with. That one and the l1 automation, IRP navigator. These are the two that we need to have a discussion
+
+Natalia  11:20  
+so addressing maybe a short term need for more time for that. What do you need to skip to be able to have that conversation on Wednesday with DIA
+
+Azmain Hossain  11:33  
+and and understanding and expectation from the CSM that any any other users of Clara that there will be like, the next build will go in on Wednesday, on the 25th before that, we're not going to put anything in, okay?
+
+Natalia  11:50  
+We have the call today on Clara, which obviously I still need you to lead it, to basically show what's what's new, what's the concept behind it, how we're using the buttons. Really risk is risking on, risk, browser off, etc. Also, the message will be that the there will be no new additions to that tool before second half of next week. So we ask them to maintain the data. We show them, what the what the new features are, or what is the expected workflow, what do we want them to follow? But no, no new changes for the next week or so week, let's say, yeah, next week. Is that the message we're going to give that's, that's
+
+Azmain Hossain  12:37  
+the message that that I want to communicate, just anything obviously critical, we will fix anything that's that's actually breaking stuff and stopping people from doing the work, but genuine improved features, we want to take a break for
+
+Natalia  12:52  
+a week. And do we have anything that is pending that people were waiting to have on top of what we just put in production?
+
+Azmain Hossain  13:02  
+There's a lot of suggestions from Liz Couchman on various little bits. And it's literally like, if I click this button, does this happen? Can we make it so that when I click here, this happens? It's quality of life improvements, it's not active improvements.
+
+Natalia  13:17  
+Yeah, okay. Was there a conversation with Ben about it.
+
+Azmain Hossain  13:23  
+Yeah, yesterday, we kind of, we kind of said it like me and Richard. We were like, We need to take a break from the breakneck pace, okay? And he was fine with that, yeah, because now, now that the management dashboard is done and he's kind of shown it to everybody, yes, yes, he's more confident now that it's in a place that we can at least show people, yeah.
+
+Natalia  13:44  
+So I think we are in a good spot to be able to say, okay, and I think, you know, to CSMs, we probably don't even have to give the message saying, Oh, we're not making any more changes. The message will be more like so those are the enhancement that we did basing on the earlier conversations. It should be more intuitive. We still want to collect your feedbacks, but we will give also more time for you to use the tool without any anything new coming, and probably something like that. So we're not saying freeze, or we're not saying don't use the tool, or because of whatever. We just say, Okay, this is how it looks now. Keep keep giving your keep giving your feedbacks. But the priority will be to focus on features that are somehow blocking for you to use it. Cosmetics may come later. We want to make sure that it's something that is that is actually useful intuitive, and again, provides the information to to all of us. And by all of us, I mean management. What Ben also wanted to highlight is the blockers that that the better use we have on blockers that the. Easier will be to to have the conversations on blockers with with product, because we will use the all the summary, etc. So yeah, are you? Are you clear what to show to CSMs later today?
+
+Azmain Hossain  15:14  
+Yeah, yeah. Okay, let me so just gonna, I realised it's a short meeting, but I'm just gonna take them through short deck of like, this is all the stuff that's been added in Golden source data. The, yeah, this is the management dashboard formula, transparency, which I feel like it would genuinely help people to understand what am I looking at. How is this
+
+Natalia  15:47  
+filter work? This formula in the reports. It's brilliant. I love it. Yeah.
+
+Azmain Hossain  15:52  
+It's it just, it's at a glance explanation of what am I looking at, the partner pipeline thing. I know it's not a lot of it's not feature rich, but, but it's it's an improvement. And the global search, where now you can just search for anything and everything, all from from one section, just like you can literally start for like Steven, and you can find like blockers that's owned by Steven success criteria. So it searches across everything. You don't need specific search stuff.
+
+Natalia  16:29  
+I'm thinking Azmain for it. Can it? Can? Can you go back to the deck? Yeah, because we only have half an hour, I think it's better to just look at this slide and say, those are the highlights. And glance, I know that you have description in the in the next slide, but I would not present the slides from three to whatever six, but more like show this one and then go to the tool, and then the deck can be shared in the meeting, and I will obviously record the meeting.
+
+Azmain Hossain  17:04  
+Okay, yeah, that makes sense, yeah, yeah, this, yeah, that's what I was worried about. I made the deck, but I don't want to take up too much time.
+
+Natalia  17:12  
+So no, no, no, we so only this one, because those are highlights. Are at glance. And then you go to, you go to the tool, and we are sharing this deck in the in the channel for the weekly review. Yeah, the full deck
+
+Azmain Hossain  17:30  
+can be shared. Okay, yes, yes, yeah, yeah, yeah, that makes sense.
+
+Natalia  17:35  
+Okay, okay. And actually, I do have a question related to to Clara and further maintenance, because I think we should find for you to be able to to spend more time on programme. It's really weird to see myself like this on the screen again. Sorry, yes, you're still sharing. And I see myself already, like, you know, two times. But anyway, I would like to have more people engaged in in the maintenance of the tool at some point. Or the way I see it is that we are officially transferring the tool to to Stacy and and then question is, who do we need to make those type of changes, like you or or recharge, or the other band are doing like have that transfer is not only Oh, here you are, Stacey, this is the tool you Go through the portfolio review, but also what kind of training or a person we need to to be able to execute what you're executing. Because, as you and me, we discussed earlier, we don't want you to be only the, you know, the tool person, so we have to think how to do it.
+
+Azmain Hossain  18:58  
+Yeah, I haven't raised it yet. I mentioned it to the other Ben, just without Richard. I was like, Do you guys have anybody that can help me? Because I'm like, this was at a point where I was losing my mind. I was getting so many messages from Catherine about this is wrong, this is wrong, this is wrong, this is wrong. And I have to constantly remind her, Catherine, I'm one person. Can you give me a little grace and just understand that I'm doing everything myself, a team behind me. But the answer from the other band was no. He was like, I don't even know how you're able to do this. We don't have any developer resources, so I don't know who we need to go through, but we need to get someone, and it is one person, like, once this is built, and it becomes a maintenance thing, it's maybe one day a week for for a technical resource, but it's okay,
+
+Natalia  19:52  
+all right, so this is something that, this is something that I don't have to talk to. Been about, yeah, please, because it cannot be your this tool will will go on, right? We will need, we will be using this tool, probably even when we have gain side in place and and it cannot be only, only you working on it. I mean, obviously, you know, the more established the tool is, the less changes are. But knowing also how bank operates, he would like to add more, you know, more product, more this. And, yeah, it's, it's becoming something to maintain. So also it means it's costly with resources. Yeah, okay, all right. So what this person would have to know, like, what kind of profile do we need?
+
+Azmain Hossain  20:43  
+Someone, ideally, someone who's a developer, someone who
+
+Natalia  20:48  
+So Ben, Ben, the other Ben, no other
+
+Azmain Hossain  20:52  
+Ben is a back end engineer. So he understands AWS, Azor, you know, all the movies, sign in stuff, but he doesn't know the coding and the software building part. So we need someone like that. I don't, I don't know how much training on on the AI stuff they'll need, but that can be given at any point. What What's needed is that foundation level knowledge on just how does an app work and what needs to be done? What need? What do you need to think about before you add a new card or add a new function, this kind of stuff that I'm sure there's a lot of resources in Moody's within, within insurance that can do that. It's just finding the right one who has time and agreeing with their manager and everything.
+
+Natalia  21:40  
+Okay, all right, good. So I'll, I'll keep that for next week conversation with Ben, because also, you know, I don't want to to hand over the weekly review and the tool to Stacy and then leave her with it, right, without any support, yeah.
+
+Azmain Hossain  22:01  
+And you need to move on. Yeah, I need to go back to doing my job. Job. One thing, if you're going to talk to Ben just mentioned, this is not just for Clara, it's for the other tools. Yeah, well, Kevin porn is going to build that customer success agent, great, but then he's going to go back to his day job. He's not going to maintain that tool with the l1 automation stuff that Martin Davis is going to work on. I don't know, it might get handed off to sales or something, but again, needs someone to maintain it. Yeah.
+
+Natalia  22:34  
+Okay, all right, I hear that. So at point number two, Natalia to discuss
+
+Natalia  22:52  
+resources to maintain the tool and over from the church, yeah, because so far the way it looks is like, really, you know, you and Richard and Ben and the other band are this kind of four people team who do it's, it's almost like a startup, right? You you're just starting something. Everyone does everything, and it's very agile, because, you know, but it's like, you don't do anything else. And now and then, okay, now we have the the growing pains. Now we're getting bigger, and it takes more time, and there are more users to it, so it has to be somehow more stable. We have to be
+
+Azmain Hossain  23:33  
+very careful. We can't just, you know, move fast and break things, because now we have actual users.
+
+Natalia  23:39  
+Yeah, exactly. Okay, all right,
+
+Azmain Hossain  23:43  
+in the last just going away from, actually, I didn't set this up to actually show you, but I'll yay. It works. Okay, let me share my so what I've been doing is because I got the idea from from the portfolio review. No, that's not it. This is the one. What if? So? Yeah, I want to help Deanna run her project call every Wednesday using the tool as well just the portfolio review. So, so basically, I've, I've taken the the Excel that she uses, and everyone just talks, and just recreated that within Clara, just like recreated the management dashboard. So you can, you can go in and there's, it's basically a project management tool within, within Clara, you have, okay, you have your milestones, your tasks, you've got your rack statuses. You can see week to week what's been happening, and you can report on IT risk and issue for the team and. Um, because, again, coming from managing IRP projects, I realised the disconnect between what a CSM sees and talks about and what a project manager that's working on the project sees and talks about, and they have to not be separate things. They need to be combined.
+
+Natalia  25:19  
+So we're moving from Excel into Clara. But is that, is that anyhow, link to to the clients and the CSM updates, or it's like a completely separate, standalone part of the database, it
+
+Azmain Hossain  25:36  
+will be linked. So this currently it's it's completely standalone, but it the plan is to have this link, build this out standalone, so that, you know, Sneha and Kristen, they can go and fill this in, like right now. They go into the PowerPoint and they fill in health summary, key accomplishment, what's the key plant, activities, risks and issues, instead they just fill it in here. And the advantage is, instead of having 52 PowerPoint decks for a year, you can just go back week by week and see what's been happening, and then you can generate a report of, okay, this project is now finished. What happened over the course of the project? How did we manage it? What can we learn? So all of that within the tool. Okay? It's very, very early stage me and Deanna, we thought about it, and I still need to show it to her, but it's just letting you know that I haven't forgot about the project side of it.
+
+Natalia  26:35  
+Okay, no worries.
+
+Azmain Hossain  26:37  
+I'm constantly pushing Ben to to include it. It's not one of his priorities. So that's why this is just on my laptop that I've been building. I haven't done this on dev yet, but, yeah, I want to flesh this out, have more meetings with with Diana, and then push it out so that by the time Ben and Richard sees it, it's completed.
+
+Natalia  26:57  
+I mean, I will not say no to that, because obviously it's the it's beneficial for my specific team, and I like it. I mean, to certain extent, we are, we're building something that we could also do in Asana or somewhere else. But seems like this is faster.
+
+Azmain Hossain  27:15  
+It's faster. We don't have to deal with third party licences costs, yeah, oh, how do I do this? Let me go read the documentation and watch a YouTube video. None of that. And also, everything is centralised. Everything Yes, for IR,
+
+Natalia  27:31  
+yes, yes. And we, we refrain from from using yet another Excel to run. Okay, all right,
+
+Azmain Hossain  27:40  
+another Excel or another tool, and everything is just go in here and do it. Partners put their stuff on here, so please don't break but I think the partnership stuff is now on live. So yeah, obviously this has to be thinking. But it's just cool to be able to go into Ey and be like, Oh, this is all the customers that they have. Yeah, yeah, the status is, but you know, at least they have 19 customers, yeah.
+
+Natalia  28:11  
+And now someone, I mean, we, we made it available, but now someone from the partner management team needs to fill it in and make it, make the updates, but this is something they have to figure out internally. Okay, I mean the product part, obviously, I love it,
+
+Azmain Hossain  28:29  
+yeah, so, yeah, I'll just keep working on it
+
+Natalia  28:31  
+in, I like it under construction. Features may break. I'd have to add
+
+Azmain Hossain  28:35  
+that in, because people were just like, why does this page work? Okay, I need to, I need to add this in. Yeah.
+
+Natalia  28:43  
+This is already production that you're showing. Yeah, yeah. This is a production
+
+Azmain Hossain  28:46  
+partnership stuff. It's in prod, so alexand, Liz, McLagan, they can all go in, start messing around with it, because this doesn't, this doesn't affect any of the actual CSM data at all. This is like its own standalone thing,
+
+Natalia  28:59  
+yeah, yeah, yeah, which was somehow supposed to be right,
+
+Azmain Hossain  29:08  
+because there's not time, there's a whole thing going on over there, on the partnerships, okay,
+
+Natalia  29:17  
+I'm just adding the Project Management in Clara. New Feature still in discovery. Well, that looks awesome. Okay, good, so just again to ask for afternoon, only the slide, the first slide, and then the pretty much the walkthrough on what the new features are, and that's it, yeah, yeah, okay, great.
+
+Azmain Hossain  29:52  
+All right, cool. Thank you so much for your time.
+
+Natalia  29:54  
+Thank you. I'll see you next week. Oh, well, and this afternoon, obviously, bye. In person. You know how many days you will be in the office
+
+Azmain Hossain  30:04  
+next week, I'm just going to come in on Wednesday.
+
+Natalia  30:07  
+Only Wednesday. Okay, yeah, all right, all right, good,
+
+Azmain Hossain  30:11  
+sorry, you're later. My laptop's crashing again. Let's join the
+
+Speaker 1  30:22  
+Oh. Other call.
+

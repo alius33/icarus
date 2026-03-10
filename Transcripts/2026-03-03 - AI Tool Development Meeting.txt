@@ -1,0 +1,327 @@
+Azmain Hossain  0:05  
+So I don't even know where to start, so you kick me off.
+
+Martin Davies  0:11  
+Well, I mean, the couple of questions I have, maybe you can help with.
+
+Unknown Speaker  0:14  
+Would it be okay just sticking up on there? Yeah,
+
+Martin Davies  0:16  
+I never use these screens. I ever on this one? Do I
+
+Martin Davies  0:30  
+so on? Are you quick Claude? What are you using? Using you have you downloaded their ID?
+
+Azmain Hossain  0:39  
+I'm just using cursor because it's, it's just a VS code shell.
+
+Martin Davies  0:44  
+Oh, using Claude ring cursor.
+
+Azmain Hossain  0:47  
+No, no. I'm using, like the cursor models within, sorry, the Claude models within cursor because I've still got, I've still got budget left.
+
+Martin Davies  0:56  
+Okay, but I thought when the budget ran, you moved to curse
+
+Azmain Hossain  1:00  
+the budget reset first of March. But in general, when that happens, when that happens, I move to Claude code,
+
+Martin Davies  1:06  
+and you're using what their ID, or
+
+Azmain Hossain  1:09  
+just Claude for desktop,
+
+Martin Davies  1:11  
+okay, and for the licence on that. How did you get that?
+
+Azmain Hossain  1:16  
+Literally, me and Richard just paying for the 200 quid a month through our personal cards, because we can't expense it. Oh, okay, so we're just eating that cost. Okay, I'll leave that with you guys.
+
+Martin Davies  1:30  
+I don't have a licence, okay, all right, I'm happy with no licence for them. But yeah,
+
+Azmain Hossain  1:37  
+you've got, we've got 1000 pounds, $1,000 on cursor,
+
+Martin Davies  1:41  
+yeah, anyway, have you, Richard mentioned that for the was it the anthropic API key? Do you have one? Are you using
+
+Azmain Hossain  1:59  
+mine's not working. No, no, no, I can't use it. Keep saying not authorised. And I feel like that's like to do with my AWS role or something. Okay, yeah,
+
+Martin Davies  2:15  
+this is like a POC,
+
+Azmain Hossain  2:19  
+yeah, for this kind of stuff, when I'm when I'm when I pulled the code base into into cursor, I just tell it like, you be the AI agent that I don't have integrated. And then Claude code just acts like normal Claude AI and just does the analysis. So everything that an API endpoint would do you just ask plot to do it and then put it in
+
+Martin Davies  2:46  
+the code. Okay, interesting. Okay, in that case, then, I mean, my questions are pretty basic after that, really, it's more I know Rick started with this, but I know on
+
+Azmain Hossain  2:59  
+I want so this is literally just like a template, but I want your brain space to be on just like, what if we started from scratch? No, not as like an iteration of this, and it has to stick to the same structure and stuff like that. How would we do this if we did it from scratch?
+
+Martin Davies  3:17  
+Okay, so I guess my biggest question on this building five is
+
+Azmain Hossain  3:29  
+I was gonna say, no, no, go on desktop. Oh, wait, you've got a Mac, yeah. How do you how do you arrange
+
+Martin Davies  3:36  
+stories in here? That's why I just never know.
+
+Azmain Hossain  3:42  
+And it's display displays. So yeah, how can you identify which one is, what which we can
+
+Azmain Hossain  4:08  
+Oh, because your laptop is now on the bottom left, bottom right. Yep,
+
+Unknown Speaker  4:20  
+and find
+
+Unknown Speaker  4:36  
+the documents. This
+
+Unknown Speaker  4:42  
+is yours. You try it again, right?
+
+Martin Davies  4:52  
+So on one of these, don't you this one? Okay?
+
+Martin Davies  5:05  
+Okay, I think, I guess it was on this build on top, where you're taking the individual components.
+
+Azmain Hossain  5:12  
+Well, this is the thing. First thing we've got to think of is this. This
+
+Azmain Hossain  5:21  
+is a very simplified diagram, but what? So you're focusing on the pre sales, customer facing part of it, right? Not the internal build in five. That's it.
+
+Unknown Speaker  5:35  
+Technically not both.
+
+Azmain Hossain  5:37  
+It is both, but obviously it's completely different functionality. The building five internal one is the stuff that, like Ben van Houghton is going to work on to spin up apps in the app factory based on prototypes people have on their laptop. Whereas this one is more, how can we use it as a pre sales tool? So yeah, that, yeah, because the other one, Niko and Ben, they're gonna work on, like we discussed in stand up yesterday, but the customer facing pre sales one, that's, that's what your that's what I'd like your brain space on.
+
+Martin Davies  6:13  
+So for those, that component thing still stands up, like, if you want, like a location, you want someone, okay, we've already done that. We want to be able to drive dropping in. Yeah.
+
+Azmain Hossain  6:25  
+So how do we build these little modules, like an AR module, a hurricane module or a windstorm module? And I think if, like, we should identify, like, three or five or something like as a first thing, and that should be like, if we just start with that. So we want three modules. We want a foundation layer where you can build on top of it. So this is the foundation layer that will sit behind the UI, where you drag and drop location API and get that data. How do we build the foundation layer? And then how do we build the front end and the module? Now my thinking is the modules and the foundation have to be thought of together, because they're gonna, they're gonna be constantly working together the UI, we can sort out later. Yeah. So you
+
+Martin Davies  7:26  
+almost want, like, it's in three parts in there. So you almost want your foundation is just your initial connection to the API to make sure it's pulling the data and working.
+
+Azmain Hossain  7:35  
+Well, it's the fact that, how, for example, like, I don't, I don't know how these models work. So if I, if I'm sitting with a customer, and they're like, We would like to buy li API, and you're like, Okay, you want to show if you buy li API, here's the data that you can see. Is that the thinking, or is it more advanced than that, where they'll want to be like, we want to buy li API, and we want to do this stuff with it, and we want to prototype that. Which API Did you say? The location API?
+
+Martin Davies  8:08  
+Oh, okay, so I don't know how the licencing works, but I think they just licenced the models, right? Yeah, but
+
+Azmain Hossain  8:17  
+the thing that we're trying to sell them is look at all the cool stuff you can do with the API.
+
+Martin Davies  8:21  
+So just, yeah, I feel like it's almost in, like, this is the one. Is just the initial connection. So, okay, I want to put in location they can type in. And it's, it has all the framework and all the configuration in place to know which API to pull. And then on top of that, you've then got two options, right? It's like, well, three. First one is, visualise it. Okay, so for this data, which chart do we recommend? What type of chart Do you want to just output the data,
+
+Unknown Speaker  8:57  
+like raw, raw format?
+
+Martin Davies  8:59  
+Or the third option is, you want to customise your your visualisation yourself, okay? So that way they can say, Okay, I want to show Al, and then click, okay, show me it with a chart. It's almost a two click process, because then that, I think, gives you that modular ability, but still keeps the flexibility to say, Oh, that's good, but what if I want to do this instead? Yeah, so you kind of allowing both scenarios,
+
+Azmain Hossain  9:34  
+and it lets us start from something that's easy enough to do, like building a system where you can you've got modules, and you can pull in, like windstorm America. And you pull in windstorm America, obviously, it pulls through the raw data. And just as an MVP, what we can do is, like, you've got these three modules. When you drag it, when you drag it in, you've got two tabs. On one tab you can see the raw data, you can export it as a CSV, whatever. And on the other tab, it makes you a dashboard intelligently knows how to structure the data. What graphs and charts are the right ones for each kind of data? And it builds you, yeah, and it builds your little dashboard. And it's like, and then you can drag and drop the thingy, like, if you're using the windstorm on the bus, you can drag and drop the hurricane one, and then it shows you the hurricane data, like a dashboard for the hurricane one. And now you have two dashboards, and that's where I want the MVP to stop. Obviously, the next thing is going to be all, can I combine the dashboard and make one combined one, phase two, okay, for phase one, if we can just get that three modules with the foundation builds with a UI that you can you can show to someone,
+
+Martin Davies  10:55  
+yeah, so did I show you the dashboard I developed, I made with one I did Apollo, Have
+
+Unknown Speaker  11:09  
+you seen this before?
+
+Azmain Hossain  11:10  
+No, this looks cool. I
+
+Martin Davies  11:33  
+on because I think essentially it's almost generating this but a foundational level so it so by using prompts, you can then generate this.
+
+Azmain Hossain  11:45  
+I mean, even if we like, we can completely stay away from prompts within
+
+Martin Davies  11:50  
+the app. The app can be like, click, like, click, click, click.
+
+Azmain Hossain  11:55  
+I don't want to put in AI stuff, because the moment you start putting that in, the costs just spiral. I want it to be little literally just like an app that runs it'll, it'll set it up on local host. Yeah, 3000 is in use, so it'll probably put it in 3001 no tell it, there's already something running on 3000 use 3001 issue,
+
+Unknown Speaker  12:54  
+The terminal.
+
+Unknown Speaker  13:00  
+It's it's such a it's such a
+
+Unknown Speaker  13:10  
+pain sometimes get it to do for you. So this,
+
+Azmain Hossain  13:12  
+so this is where I would say the difference is between keeping it on auto and putting it on Opus. If you had run that on open it would have instantly known 3000 being used. I need to use 3001
+
+Martin Davies  13:25  
+and it just so that's why are you getting through your credit?
+
+Azmain Hossain  13:28  
+One of the asset management guys was like, No, you can downgrade the sonnet. And users listen like, what am I peasant? If I run off here, I'm paying 200 put a month in my own pocket. I'll just go.
+
+Unknown Speaker  13:42  
+So, yeah, this is
+
+Unknown Speaker  13:45  
+all the wait. Can you explain?
+
+Martin Davies  13:48  
+So what I built at Apollo, which is how I ended up getting the job, right? So I was building their dashboards that utilise API's, so you have all the dashboards. Tells you which countries the accountants in, like which perils they have the account, where other locations are. So this is by portfolio. This part, yeah, then you have like, EDM, by country.
+
+Unknown Speaker  14:14  
+By EDM. Mean, I'm gonna be stupid here.
+
+Martin Davies  14:19  
+That's your exposure data. So it's EDM, your exposure data, RDM, show results, data. Oh, okay, so it tells you, like, by country, by peril, yeah. And then, I mean, it's not finished, but what we had here is the different layers, your location, level, Al, and your curves, and your RDS, and then there'll be more with your pricing and all this. So it was, it was built out a lot more. This is how far we got with it. Oh man. But essentially, this is what we're looking to do, right? But it's rather than, this is pre built. We're almost modulizing This. Can say, Okay, I want to show my locations. I want to show the different perils, how many accounts have got, and then that's it. So the way it gives this thing goes further. So I have let me pull this out a second. Hopefully this works first time. It's been a while since I tried it. So if I put what we in fourth March. So the idea is, if clients got like a Back file, pull it into this watch folder, do
+
+Martin Davies  15:44  
+know. So I think this is like, almost what we're aiming to do. We're just taking it back to the beginning and making it user friendly.
+
+Azmain Hossain  15:56  
+What I'm just like, we could literally have tests on dummy portfolios of million, not millions, hundreds of 1000s of lines. And we could literally demo it be like, say, you have a portfolio and you want to look at various different things, so you load up the portfolio and drag and drop that, and then you have all modules, yeah. And you can, like, almost multi select. You can multi select between the different models or the different data that you're that you're licencing from Moody's. And it just builds you a dashboard instantly for for your specific portfolio. And then you can save that and share it around and stuff like that. Oh, that would be so cool. I don't know why this is
+
+Martin Davies  16:45  
+exciting to build things, or it should. It was working. Let's see what it does.
+
+Azmain Hossain  16:49  
+You need to take it off, or at least put it on sonnet, man, at least put it on Sonic. Right?
+
+Unknown Speaker  17:10  
+Okay, so stop the current process and run, okay, okay,
+
+Unknown Speaker  17:18  
+let's try that. Pull in the back part again.
+
+Azmain Hossain  17:25  
+Don't you need to restart the server again. So run control C on the terminal and then paste all that in. So run command C on the terminal to terminate it on Yeah, and then,
+
+Azmain Hossain  17:51  
+yeah, just copy the whole thing.
+
+Unknown Speaker  18:01  
+This was working.
+
+Unknown Speaker  18:17  
+Normally, figures out
+
+Azmain Hossain  18:19  
+how to get it work, yeah, but the thinking is you drag and drop the portfolio into the folder, and it auto picks it up and builds the dashboard.
+
+Martin Davies  18:29  
+No, no. So this is actually the step of it. So, oh, this is the step before. This is the client has the rural data, so this is purely your EDM data. And what it does is it picks up the database file, loads it into this model, identifies which countries and which perils are contained within that, and then, based on that metrics, it says, Okay, we've got us quake so I'm going to go and bring the US quake model, and then generates the output and displays your results. So it's the whole workflow finish. So, yeah, it's basically taking your database and then generating everything you see here, including your results from I mean this, yeah, but, yeah, that's but you can see,
+
+Martin Davies  19:30  
+let's see, restart the set. Let's control C. Why am I doing Ctrl?
+
+Azmain Hossain  19:38  
+C, you're doing it in the terminal here. Yeah. But I think it thinks you're on a Windows machine. That's why it's saying Ctrl C. Could you? Could you click on that message from Natalia? Every time somebody sends a message, I have a mild panic attack like, oh, what's broken now? Oh, okay, don't worry about that thing is being so stupid. Do two
+
+Martin Davies  20:35  
+removed, just down tonight, I can't show you, but no, no, while it's running, it gives you like a little progress part and just holds the whole
+
+Unknown Speaker  21:00  
+now, don't, don't worry about that. But, I
+
+Martin Davies  21:02  
+mean, that's the sense should be, yeah, that's essentially what we're looking as the end state, right? It's a building the steps to allow someone to build that independently and pick up,
+
+Azmain Hossain  21:13  
+yeah, yeah. It doesn't have to be, it doesn't have to be persistent, like it doesn't need to be saved or something like that.
+
+Martin Davies  21:20  
+Well, that's the thing, right? So you don't need it safe, then it's just API's, yeah, yeah. There's no, there's no data to save. Everything is in risk model that you just given the
+
+Azmain Hossain  21:28  
+API Exactly. So now the thing is, how do we build that in, like, literally, exactly the process that we talked about, make it for something that pre sales people can use. Oh, wait.
+
+Martin Davies  21:51  
+I mean, there should be more. There should be, since I lost some steps there. But if I go to like risk modeller now I
+
+Unknown Speaker  22:06  
+maybe I opened the back,
+
+Azmain Hossain  22:14  
+but Yeah, normally it should kick off an API call to risk model or get The data itself and then build this dashboard. Yes, okay, okay,
+
+Martin Davies  22:31  
+so I was open that approach taking this, but then taking this of how would we make this so, so that someone could just pick and choose different,
+
+Azmain Hossain  22:45  
+yeah, exactly, yeah. That's, I mean, let's Yeah, I would say, build it out, and then we can show rich and manager Ben, stop and see, see what the thinking is. But from my perspective, that would just be a massive win, if we can just show that.
+
+Martin Davies  23:09  
+Yeah, so on this though. So the rules that we have, like the cursor rules, though, we need to also follow those rules for this part. Oh no, that's no no no, because this one more flexible here is because
+
+Azmain Hossain  23:24  
+this is a like the tool itself is a prototyping tool. It doesn't need to follow all these security guidelines with Azure login and all this stuff. It's literally meant to be something that's in five minutes. You can load it up, you can drag and drop and show someone. So I would say, don't worry about, yeah, don't worry about the cursor rules and stuff like that. I would literally start from just a brand new folder, no cursor rules or anything. We can apply those later. But it just confuses it. If you add so much context and you're going to just run through your context window, it's better to start lean and just start building. One thing I wanted to say, though, is obviously keep an eye on on your cursor. Budget
+
+Unknown Speaker  24:17  
+thing I have to go to the actual site.
+
+Azmain Hossain  24:19  
+Oh, yeah, I literally just always have it open, just so I know
+
+Azmain Hossain  24:30  
+it takes usage. There we go. Yeah, mate, you're using like, one one request that that's insane.
+
+Unknown Speaker  24:41  
+It's also right, yeah,
+
+Azmain Hossain  24:45  
+but literally, when you do the build, absolutely do it with Opus, I would so what I would recommend is, yeah, yeah. This thinking one, yes, yeah.
+
+Martin Davies  24:59  
+If I think, if you was it, you will Ben said that you should do the thinking with
+
+Azmain Hossain  25:06  
+Opus and then do the build with Sonic, yeah, yeah. That's one of the best ways for like stuff like this, yeah. But the big, the first big bang build that you do, which is, literally, this is what I would do. I would drag and drop the word file, which is the full project context of what we're building, and be like, I want to build the customer facing part of it, not the internal part. Here's the dashboard that I have, and then just a big brain dump of here's what I want. And Claude will just I always say, like, I always end every prompt with, ask me lots of questions, yeah, and then it builds a plan. It'll probably be a huge plan, but, and then you just build it, yeah,
+
+Martin Davies  25:53  
+okay, interesting, rather than one big plan to maybe I'll see
+
+Azmain Hossain  26:01  
+this is one of the things that I was doing with the with the doctrine tracker thing, and it just took too long. And yeah, I was just like, it's it's easier to it's easier for AI to fix something that's written than to write something from scratch. So yeah, I was like, just build the skeleton and the basic MVP all in one
+
+Unknown Speaker  26:22  
+go, and
+
+Azmain Hossain  26:25  
+then we fine tune it afterwards. Yeah? But honestly, we're all learning here, so feel free to use whatever method, yeah,
+
+Unknown Speaker  26:33  
+oh yeah, it's Richard.
+
+Martin Davies  26:41  
+Okay, all right, that's good. The only other thing then was you have in the project like assets, like logos, colours, is that you have a folder for those, say, me bringing myself or I don't, but I can make one. Where are they now, though, could they must.
+
+Azmain Hossain  27:02  
+There's somewhere in the code base, but all I gave it is just the Moody's two official colours, the light blue and the dark blue. Okay? And it went and found the Moody's logo itself. Oh, really, yeah.
+
+Martin Davies  27:12  
+Okay, all right, that's fine if you haven't gone out
+
+Azmain Hossain  27:14  
+well, but yeah, I can, I can easily make Yeah, because I like the look at your dashboard. But keep that, yeah,
+
+Martin Davies  27:21  
+I'll probably I'd like a thing about, like, a choice like light and dark, yeah,
+
+Unknown Speaker  27:27  
+yeah, all right, speak soon.
+

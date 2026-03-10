@@ -1,0 +1,282 @@
+Richard Dosoo  0:04  
+And this is the thing, what I'm saying, right that, like, right now This, gosh, it's sorry, but I Should have
+
+Unknown Speaker  0:27  
+Yeah, I
+
+Unknown Speaker  0:45  
+Yeah, Yeah, yeah,
+
+Speaker 1  1:10  
+yeah, Yeah, yeah. Yeah,
+
+Speaker 1  1:53  
+yeah, yeah.
+
+Unknown Speaker  2:05  
+Yeah, right. So it's,
+
+Richard Dosoo  2:13  
+it's pushed it, let's see. So it's one commit. If diagnose the root causes, it's sadly the fix is it's made changes to the back end, to the front end, to the mock data. So now it's saying we start the back end, server, restart, refresh the front end. The changes have been committed and pushed to branch. Okay? So I
+
+Richard Dosoo  3:30  
+Yeah, which is a bit naughty. It should have built it locally first before pushing out the change. I
+
+Richard Dosoo  3:46  
+and let me test it locally first and then.
+
+Richard Dosoo  4:06  
+No, no, I haven't yet. I didn't, because I went to quickly. Ian came back. I saw the changes in the in the commit, but I was like,
+
+Unknown Speaker  4:14  
+Oh, that is but I haven't had a look at it yet. I
+
+Richard Dosoo  4:30  
+yeah, yes. So that's this, is it, right? So when we have the deployment, you should have, like, there's a API health checks, and then, really, once we've done the deployment, if everything's healthy, we shouldn't really get errors after that, right in case, like a service went down, or anything else like that. But.
+
+Unknown Speaker  5:07  
+Yeah,
+
+Richard Dosoo  5:15  
+but the this is the thing, right? That this the reason why this is happening is because you can't access the AWS logs for this app, but you should be able to access the AWS logs for this app, right? So we should, that's something we should get Ben to sort out for us. Oh, man, why is the local HOST not resolved? So
+
+Unknown Speaker  5:58  
+hold on.
+
+Unknown Speaker  6:06  
+No, I can't reach the site, so let me see
+
+Unknown Speaker  6:11  
+This. I
+
+Unknown Speaker  7:08  
+Sorry. Azmain is just checking what's going on.
+
+Unknown Speaker  7:58  
+Sorry, I just want to run something on tab on one second?
+
+Richard Dosoo  8:18  
+Yeah, I know what you mean. It's so annoying. I think, I don't think, because the cursor is using Visual Studio so that. But let's, let's check with you. I know I don't like it. I probably trust me, this Claude coat setup is much better for me.
+
+Unknown Speaker  8:42  
+Yep,
+
+Richard Dosoo  8:59  
+wait what this is that problem, though, where it starts getting confused? So,
+
+Richard Dosoo  9:20  
+yeah, so now it's now it's okay. So actually, Azmain this Holy shit. So I couldn't run it on localhost. It it correctly. It couldn't get it to run on localhost because of some networking reason. So I called the API, tested the endpoint, found out that it wasn't working, figured out the database changes that were needed to get it working, and now it's pushing those database changes. Look at this. So basically, I was like, Oh, you're running curl from Windows PowerShell on your machine, but the servers are running in a remote environment. The application. Is running correctly in this environment, but your browser terminal can't reach it because they're on different machines. Once I know the environment, then it said, check for common cloud ID environment detection in it. Then said, right, this is running inside a Docker container, which is why you can't access it from your local browser. So it said, to test the application, you have two options, run locally on your machine, clone and run on the project locally, then open this in your local browser so I can test the demo toggle and other endpoints from a business environment to verify the fix works. Then it went ahead and tested it not getting 500 hours the errors. Then it started to see, okay. Why am I getting this other error? So then it's going to create the tables that don't exist this time. Knows those are fixing. Now it's going to verify the diagnostics so the 500 errors have been fixed.
+
+Richard Dosoo  10:57  
+Okay, so, so let me do this. So get fetch, right? Let's What am I going to run this?
+
+Richard Dosoo  11:12  
+No, it's fine. I'm just going to run this from command prompts.
+
+Unknown Speaker  11:27  
+Like, what?
+
+Richard Dosoo  11:48  
+Oh, I see why I've done this. Because I've selected GitHub as my repo so it's not even going to my local machine. It's just deploying it directly to Git. I should have that's my fault, But it's going to work out.
+
+Richard Dosoo  12:29  
+Right? So I just need to create a PR through GitHub. Let me do that.
+
+Richard Dosoo  12:44  
+I told it to take the changes from Main, let me have a look and get and see what it's doing.
+
+Richard Dosoo  12:54  
+Okay, yeah, no, it didn't made its own branch. That was a bit naughty, because I just told it to make the changes to main. But I
+
+Unknown Speaker  13:38  
+all right, it's just, let me show you. It's just
+
+Richard Dosoo  14:00  
+Yeah. So that wasn't successful, but these two are so Hopefully.
+
+Unknown Speaker  14:19  
+Yeah. So that's the changes.
+
+Unknown Speaker  14:35  
+So that was all
+
+Richard Dosoo  14:55  
+All right, so I think it should be in now, right?
+
+Unknown Speaker  15:13  
+Why is this Pull Request not committed on
+
+Richard Dosoo  15:41  
+Okay, cool. So now, yep, no more pull requests, so let's have A look. Yep. Now it's going through the i
+
+Speaker 2  16:18  
+It's Did you know that there's only one the car story in the entire Quran? Just one, and it's not a fairy tale. It's the story of Prophet Musa, tired, broke and running for his life. He arrives in a new land, helps two women to walk.
+
+Richard Dosoo  17:55  
+Sorry, Azmain, I was just on mute. Let's have a look. Yeah, so detect changes worked. Back end was deployed. Front end was deployed. Cool. So let's go back to this. Let's do a hard refresh, auto. Now it's still failing, I can tell because there's no data. Let me try and do this in another browser.
+
+Richard Dosoo  18:36  
+Your diagnostic is this, so that's connected.
+
+Unknown Speaker  18:49  
+So let's see why is this.
+
+Unknown Speaker  19:15  
+Let me put this in there. I'm
+
+Richard Dosoo  19:36  
+the Hold on. Let's see this other one, demo mode, whoops, console.
+
+Richard Dosoo  20:00  
+O might be permissions. They require an admin role. Your user doesn't have this role. Let's check how the roles are assigned.
+
+Richard Dosoo  20:21  
+Right? So apparently, because in Azure AD, we I'm not in the admin group, like this is basically going out to the admin group, and it's saying only people within these groups can access demo mode, which I'm really surprised about, because I don't think you would have put that in a prompt to do that, but it's a so let me show you what It's doing here. Hopefully this isn't hallucinating, but let's see.
+
+Richard Dosoo  21:19  
+Yep, is that updated the code? Next steps, deploy to fix the AWS. Okay, so deploy these changes locally so I can test
+
+Richard Dosoo  22:46  
+hopefully this won't take too long. I'll test it locally, and then I'll push it to main, and then that should do the build again. The good news is I was I thought the database changes will fall over, but that database button deployment worked. So hopefully, hopefully we're over the hardest piece.
+
+Richard Dosoo  23:35  
+Yeah, I'm not sure what's going on in my local machine. Why it won't deploy locally, because they never had any of these problems before. It would just build no problem. No
+
+Unknown Speaker  23:51  
+problem.
+
+Unknown Speaker  23:58  
+Yeah.
+
+Richard Dosoo  25:26  
+Yeah, Ben van Howard, me and him have a call in 15 minutes so he can definitely, hopefully he'll jump on and help us with this as well. I
+
+Richard Dosoo  25:50  
+Yeah, no, this is it. We want everything working, so this isn't the pain point.
+
+Unknown Speaker  26:29  
+What's this taking so long?
+
+Richard Dosoo  26:41  
+I there's probably a bit of that as well, but I need, I'm sure Ben, he should have approved the tickets by now. That's another thing to run past here tomorrow, in case she's the person that has to approve the developer laptops. But normally she doesn't. We'll Get this go ahead. Yeah, I
+
+Unknown Speaker  28:03  
+let me see if anything else I'm running Lou could it was slow this down. I shouldn't have.
+
+Unknown Speaker  29:40  
+So. Wait, what? Um? I
+
+Richard Dosoo  30:30  
+don't know why it thinks. I'm not running it locally. I'm on the VPN, so I don't know what the problem is. I
+
+Richard Dosoo  30:51  
+so I'm going to just be lazy and just push this if
+
+Richard Dosoo  31:08  
+Yeah, nice. We need to get our machines also sorted as well. I'll get on to Ben about that as well. Wait, what?
+
+Richard Dosoo  31:31  
+Yeah, this was happening to me a lot with cursor last week, that just for some reason the next tip network connectivity will just drop, and you'll be like, Wait, what are you doing? I this.
+
+Richard Dosoo  32:00  
+So I just using, I've got this max plan, and that included Claude code,
+
+Unknown Speaker  32:06  
+and I think
+
+Richard Dosoo  32:09  
+it was only because I burned through all my credits, like within a day, right when I was first pulling down the Reaper and trying to test. Obviously, now I'm not using as much. I'll probably go down to The Pro Plan next month. I
+
+Richard Dosoo  32:54  
+what am I to do as me and if it doesn't work, I might just restart my machine and try again, because I'm not. I don't know why this is better, legal this way. Yeah, give me two minutes. Let me. Let me do because actually, rather than you just watching this, seeing if it builds, I'm going to give it five more minutes. If it doesn't work. I want to restart my machine and try again, and I'll drop your team's message, and then we'll log back on, good bye. By that time, Ben should be up as well. Oh, Ben should be online. So I'll let me forward you that meeting invited him now so we can go through it.
+
+Richard Dosoo  33:44  
+Cool. All right, I should be it shouldn't take me long and to just reboot submission. Cheers. Azmain, speaking of.
+
+Richard Dosoo  51:22  
+No Hey, Azmain. Hey, Azmain, Can you hear me? Yeah, no, I managed to restart my machine. I still can't get local host to work, but I can get the build to work on, on, on AWS, so now I've hit the number.
+
+Unknown Speaker  51:59  
+But what? I mean, this is the
+
+Richard Dosoo  52:10  
+so let's have a look and see what a browser. Yeah, there we go. Actually, let's have a look in the diagnostics here.
+
+Unknown Speaker  52:42  
+Okay, let us have a look here. Sorry.
+
+Unknown Speaker  53:00  
+So so
+
+Richard Dosoo  53:07  
+no such table customers, internal server error, so it's the database side. So what's let's have a Look.
+
+Unknown Speaker  53:21  
+Let me tell you this.
+
+Unknown Speaker  53:46  
+Let me but
+
+Richard Dosoo  53:58  
+we need to have some tests for these endpoints because We can't keep doing this doom loop of
+
+Unknown Speaker  54:12  
+a second.
+
+Richard Dosoo  54:23  
+Yeah, Jasmine, give me one second. I just need to grossly out the microphone. I.
+
+Richard Dosoo  55:54  
+Thank You. So yeah, it's saying it looks like this. This is database issues again, which is
+
+Richard Dosoo  56:43  
+let me see if I can get into AWS in the meanwhile and see what has been supposed to be on this call. But he hasn't joined, so I can't I need to check if it's racist today. Actually, I
+
+Richard Dosoo  57:05  
+nice two days from now. So 24 for Jan, so 21st Hi, ox, Amsterdam, 21st so I'll drop my text in a minute. I would have thought you would have joined, but let me
+
+Unknown Speaker  58:07  
+let's see dotnet GB,
+
+Richard Dosoo  58:42  
+and just trying to find the set of tables for this. Oh, no, it's not done in my dB. He didn't do it in DynamoDB. He did it in rds. Um,
+
+Unknown Speaker  59:04  
+it should be so, Hmm,
+
+Richard Dosoo  59:52  
+oh, man, I haven't done this one here before. I wouldn't.
+
+Unknown Speaker  1:00:21  
+Okay. Albin,
+
+Richard Dosoo  1:00:45  
+so this is where the front end and the back end are stored, right? So if we come down here, you see this app factory dev cluster.
+
+Unknown Speaker  1:00:57  
+So we've got a
+
+Unknown Speaker  1:01:05  
+two or two tasks running on the back end.
+
+Unknown Speaker  1:01:23  
+Um,
+
+Richard Dosoo  1:01:58  
+why is it not finding The APIs? That's what I don't understand.
+
+Unknown Speaker  1:02:31  
+Yeah, here you go.
+
+Richard Dosoo  1:02:41  
+So these are the SELECT statements from the system table that it's executing, but it looks like it's coming back with an error message like, why is so? Let me do this.
+
+Unknown Speaker  1:03:10  
+Can export this in
+
+Richard Dosoo  1:04:05  
+that's me. What I'm going to do is, I guess the good news is the UI is working. The bad news is the bathroom in the database is not working. So I'm going to drop down a note on but in the meanwhile, I'm going to keep looking here to try and figure out why.
+
+Richard Dosoo  1:04:32  
+The what we would want to try and do, though, is get figure out why we can't deploy locally. That's maybe the good thing. To see if you can deploy it locally and just get us off at one end. But yeah, give me 15 minutes and I'll give it a call. But. It, thanks, Azmain, I won't beat up.
+

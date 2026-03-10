@@ -1,0 +1,324 @@
+Richard Dosoo  0:00  
+Um, but I just realised that by having committed my changes, so I'm just committing them now, which is going to change the structure of the repo. And then once we've done, once that change is in, then I just, we need to just make a few changes in AWS, and then then the should be working.
+
+Unknown Speaker  0:18  
+It should already be done.
+
+Richard Dosoo  0:21  
+Okay, cool, cool, perfect. I'm just because I didn't realise I've made my changes locally yet, but they haven't been pushed to get so, yeah, it's just doing it now and then, hopefully it won't take too much longer, and then it will update the that rod repo with everything that we need. Sounds good, but yeah, I guess for tomorrow we've got so we've got a call with Liz, Stacy, Christine, Steve Gentilly, essentially, we had the solution architecture call on Monday, and those guys weren't really they. We hadn't given them an update in terms of what we were doing with the with the but they had a specific requirement about being obviously automating the adoption tracker process. And I'll say to them, Look, Ben is actually brought that into the scope of the whole like adoption app that he's doing. So we just want to give you a demo of it. So what I was hoping that we could do tomorrow is just demo what we've already deployed up there already. So let me bring up the app.
+
+Richard Dosoo  1:36  
+So give me a second. I'm just grabbing the URL, unless burn organisation and you have, do you guys have it to hand? Sorry, what the URL for the app and
+
+Speaker 1  1:53  
+AWS, yeah, it's this right here. It's been blocked, like teams has been blocking me from setting this, which is hilarious, but I think that works now.
+
+Speaker 1  2:07  
+Yeah, I guess because it's, it's, it's brand new and, like, they literally just approved this. So okay, I'm gonna piecemeal it and see it's advisory@factory.com and then it's IRP adoption tracker.
+
+Richard Dosoo  2:28  
+Managed to pick it up by in there before it blocked it. Okay, Speedy.
+
+Speaker 1  2:34  
+So, um, so that's gonna be a thing, I guess, for near term.
+
+Azmain Hossain  2:38  
+Obviously, obviously, what if we just use a link shortener? Or is that like a security issue or something?
+
+Speaker 1  2:45  
+I mean, I'm sure I'm, I don't know i I'm sure they, I'm sure you're secure me. I am. I am 90% certain I am on a security blacklist at this point
+
+Richard Dosoo  3:01  
+that I do. The whole reason we're in this figure is because we used to share all these memes on Instagram, on the chat, in Slack, and that was fine, and they moved us over to teams, and then all the meme traffic stopped because everything was getting blocked. So I'm sure that's what, to be honest guys on the list, but yeah, now the thing has come through harmful content, but it's fine. I've saved it now. So the good news is we have this version of the app running. This has the dashboard with some meaningful rack status is wonder if Ben's done, click through. So I missed, No, it hasn't. We've got migration status is not there yet, but that's fine. Upcoming milestones and action items. We've got the use cases by customer on the dashboard. Then if you go down to use cases, we've got more detail of the customers and the use cases that we could pull out here. We've got some blockers, which is good. And then we've got some data issues. So use cases green, but no blockers, use cases without current statuses. So when Ben jumps on in a minute, oh, period, oh now we had to leave. Sorry, I'm late. We're just going through bed. So this is the AWS deployment that's up and running the base version, and we're going to demo this tomorrow. Well, potentially we'll demo with some upgrades that has made, or we can potentially work on in the morning and deploy before the corpus. So that plan A is we'll go through the build as it stands. Plan B is, if we get everything all done running with the deployment the automated pipeline, then we can deploy some changes to their tomorrow. But I guess Ben, what we've got you, it's great to that, dear, and we've got engagement from. Support more broadly from like, even as far as I've heard as Andy Fripp, what do you need in terms of collateral from us to prep for that kind of meeting, or drive that meeting, or when is it going to happen? And we can work backwards and make sure that we have, you know, really good demo,
+
+Ben Brooks  5:18  
+yeah, no, no. Firm date. Probably. Wednesday or Thursday next week, earliest Tuesday next week. I think, I think, like the exam question for that meeting is, what can you show us to give us confidence that we're going to achieve the 35 migrations we need this year, which is our bunch of stuff. So there's a presentation that various people are going to are going to pull together, but we may want to show the system and the way of working and the programme review and all that good stuff to sort of make the point that, no, we maybe can't give you the confidence in that answer in terms of the underlying data right now, but we can give you confidence that we're doing a better job of servicing the visibility that's required and the plans that are required through this kind
+
+Richard Dosoo  6:12  
+of thing, the exact dashboard for that meeting, right?
+
+Ben Brooks  6:16  
+No, probably not, to be honest, more the process of how we're going to manage the whole thing. So the contextualised dashboard, the showing the use cases, showing the blockers, showing the action plans, so that everybody can understand how we're going about this now in a better way, yeah,
+
+Richard Dosoo  6:41  
+yeah, so there's more slides to talk about the process, rather than the individual tooling and stuff That is, yeah, my we might have something already,
+
+Richard Dosoo  7:02  
+once second deck from
+
+Richard Dosoo  7:13  
+Git. No, there was a previous version that was more process orientated, and it had, it's just had a couple of slides in there. I'm just going to bring it up now, or maybe Ben, if the structure of these slides is good, then maybe that's what we focus on. In parallel, we'll build out those that messaging, and then in parallel, we're working on the build and the features, while I'm bringing that up, just, I guess the game plan for tomorrow, more broadly, was to go and solicit some feedback from Liz Christine Steve, because the Ben they had already discussed, or they have already been discussing potential enhancements that they wanted the adoption charter process. So I was thinking that once we go through the app with them tomorrow, that we can get their feedback, and then that can also then feed into what set of priorities Azmain and myself are going to start.
+
+Ben Brooks  8:12  
+I think, I think let's stage it so. So first, let's do general clean up, context aware data entry get the thing working, sort of across the down to the solution, part of the menu, right? Yes, the first five, whatever that is, seven things, and then charters, blueprints, milestones, next, with whatever refinement is needed to those sections. But I want to get use cases, blockers, data issues, action plans, team members nailed in an impressive way, because that's the core of the visibility the data visibility problem, right? Yeah, but at that point we can, we can get people to go in there and start entering shit, and we start to create data that we can have faith in and report and turn down the number of fire drills we have and all that kind of thing. And then after that, we can say, okay, great. How do we capture the right material from the charters, the right material from the blueprints? Because that's going to be an exercise of uploading existing material in the right formats anyway, right? So I think, I think I'd phase it that way.
+
+Richard Dosoo  9:28  
+Yeah, okay. No, that makes sense. Well, the CRUD operations for those seven entities will make sure that they, you know, you can edit view all of your data. The UI workflow makes sense. Azmain, that's probably just a handful of prompts to be honest. Exactly, yeah, literally, whenever you've uploaded that golden
+
+Azmain Hossain  9:51  
+repo version and that's deployed, I'm going to just branch off from that. So I'm just, yeah, you give me. The steps that I need to so, yeah, I'll just create a branch, start testing it and start showing you when I
+
+Ben Brooks  10:07  
+can, yep, so can I, can I just, can I just check rich that URL advisory, app factory.com/irp, adoption tracker. That's just the pretty URL on top of the link that we were using earlier. Is it?
+
+Richard Dosoo  10:21  
+Yeah, that's the unblocked URL that then,
+
+Ben Brooks  10:25  
+yeah, but pointing to the side that it's not a different version of it or anything like that. We're still, yeah, it's AWS, all of the intra ID stuff, yeah. Okay, cool. So then that's great,
+
+Speaker 1  10:41  
+multiple versions, and sorry, we'll have multiple staging environments and stuff like that configured once everything's in motion.
+
+Ben Brooks  10:49  
+Yep, great. But if, but if, Azmain could pull down a version tonight and start iterating on improving each of those pages tomorrow. I think I don't know, but I suspect the trickier bit is the well, we need to get the team members loaded in there in order that we can do the context aware part of the team, of the user, seeing what is relevant to them only. So we need to get that right and after that, and also the Edit ability only edit stuff that you're on the team for, and then potentially it can go relatively live or to a small subset of people that we trust first to start entering stuff, yeah.
+
+Richard Dosoo  11:29  
+And then that, I guess Ben, ties into, once you've got that, then Stacey's good, right? Because then she wants to give it to the CSMs and whoever, to start populating Exactly. So Azmain, I think that will just be couple prompts, because you want you will basically have some new screens in the front end that will support CRUD operations on those seven entities if they're not already there. And then once you finish testing out in local host, then we'll do a build to you will check that in, and then the automation or deploy it to the to the environment. So that should be, well, so that's what we need to set up. What's going to happen is you're going to check in a bit right now. You can just push to get me and Ben are going to finish the deployment piece after this call, but yeah, hopefully by tomorrow, we should be in a place where you just push to you will create a pull request, and, you know, one of us will, you know, in theory, hit, yeah, that's mean, your code changes are great. We reviewed them. I'm just going to press the button, then that's it. But that's where I think we'll be in shape for that tomorrow.
+
+Speaker 1  12:43  
+Yeah, okay, for the time being, just let us know when you've made an update. If you do a code build or anything like that, it'll push, and you do a PR and merge, it'll create a new image, and then all we have to do is roll that out. Like Richard said, we're going to have that later, the last half of that pipeline, so it automatically deploys. Probably done here, this this evening, but yeah, just let us know, and I'll make sure that all your changes are deployed. Yeah.
+
+Richard Dosoo  13:15  
+So that's me. I've just my my push to get is now finished. So let me bring up here. IRP, adoption, prod, we should see my changes in there now, yep, three minutes ago. So my changes are now in.
+
+Unknown Speaker  13:38  
+Did a build? Kick off, Richard,
+
+Richard Dosoo  13:42  
+don't think so. Let me check workflow, yeah, actions.
+
+Unknown Speaker  13:50  
+It looks like he's doing it
+
+Unknown Speaker  13:53  
+all right. Can you click on that? Yeah, let's take a look.
+
+Unknown Speaker  13:56  
+As I failed. Yeah, yeah.
+
+Speaker 1  13:59  
+Let's see all those annotations. That's always fun. Let me, oh, well, actually, can you go back for me? What's, what was the name of this workflow? Oh, this is the CI workflow. So not quite the deployment one. Can you go back one page on the Actions page, yeah, let's see, yeah, create deployment. Let's take a look at that.
+
+Speaker 1  14:34  
+See, okay, all of these are just lending issues from like the tests and stuff. So those aren't all that. Can you scroll up and you can click into the front end test? I'm assuming you made a front end change. Yeah.
+
+Richard Dosoo  14:55  
+I mean, this is me restructuring the replay, right? That based off the markdown. Filed out, sent me how we're restructuring it so if we there shouldn't have been any code changes to the actual front end itself. It's just the way that the code was structured.
+
+Speaker 1  15:09  
+Okay, okay, yeah, oh, this was just linting. Okay, yeah, we can go through this a little bit more, and just I want to make sure that it deploys effectively, the ECR image anyways, but yeah, we can go through that.
+
+Richard Dosoo  15:28  
+But what? In the meanwhile, Azmain, you can branch off this. Well, first you can check the code out locally, pull it down, and you can start making your changes locally. And then we can talk more about when you want to do a pull request tomorrow morning. Okay, tomorrow morning, but yeah, the immediate actions will be CRUD operations for these first seven tables. And then once you've tested that locally and you have data locally, then by the time we connect tomorrow morning as well, we'll be ready to do the pull request. Cool. All right. Well, Ben, I think that's that's us in good shape then, yeah, but that'll be the plan. Yeah, I'm going to work with Azmain on it tomorrow. I'm sure we're going to speak tomorrow, and I'll update you where we are, and then when that meeting is in the calendar for Tuesday, we would have had more than ample time to have gone through the demo, have got all the data in and got some sample data there to show the CSMs and show Stacy and stuff how it's worked. So it should be good.
+
+Ben Brooks  16:31  
+Yeah, great. So the Polish layer, the edits, the context, and then there are a few data bits that Azmain was hopefully might be able to get pushed in there in terms of migration workflows. There was something else in there. I think I pinged you on it, Azmain, that'd be brilliant, if we can do all of that. And if it's helpful in the short term, we can switch off the menu items for the bottom half of that current menu, just to sharpen the focus a bit, but I mean everything, but everything below, like solution, basically for the time being,
+
+Richard Dosoo  17:08  
+yeah, the partner and partner bench, but Azmain gets through right, because he's quite good at the stuff where I see,
+
+Ben Brooks  17:14  
+no, totally, totally, I'm I'm v2 can happen next week. This is awesome.
+
+Unknown Speaker  17:21  
+Let me. Let me know, anticipating
+
+Ben Brooks  17:24  
+next time I log in, it's going to be like, do you like this version? Or do you like
+
+Speaker 1  17:30  
+that? Let me know. Azmain, if you have any like data that you need to import or anything like that that can't be added through the UI and we need to add to the database in itself. We can go from there, yeah, I will. I'm gonna try and
+
+Speaker 1  17:51  
+just make it so that I can just edit it within the UI, yeah, yeah, yeah. Some have some CRUD operations in there.
+
+Richard Dosoo  18:00  
+And then, and Ben, one thing that I did want to sync up with you on was the I need to set up a separate call with Idris just anyway to more like we got a load of prep we need to do for this meeting on the 26 with Mike Steele and stuff. But what I wanted to do was, I think it would be good idea to walk Ari la Harvey and Jamie Stark through this. And more importantly, some of the other things that we want to do to track, manage our adoption is because ideally you want them in sales recon, long term, right? So in that meeting on the 26th that I'm sure I know I've got you an invite in there Ben, is we're going over all of the things that we need to do today and all of the scope of what we're doing today to manage our customer adoption. And we, we want to show that to the sales recon team so they can add it to their roadmap and give dear commitments of what they're going to deliver at some point during this year. So I think this will be, if we get this, this would be a great way to kind of draw everyone around the discussion, to say, Okay, guys, while we're doing this in the short term now, to meet our needs, how are all of these requirements going to get put into sales recon going forward? So we don't even have to have this tool in outside in the longer term, like in 27 or the latter part of 26 and the and that opportunity dashboard that you spoke about is a really key like is a good use case, because that's the kind of insight that they want from sales recon right to look at opportunities and qualify them, and look at whiteboard, look at white space, or look at other stuff. So even if we just had, like, a wireframe or prototype in there that did it. It'd be very helpful, like driving that discussion, especially because Idris is trying to do exactly the same thing on the banking segment as well.
+
+Ben Brooks  19:51  
+Yeah, cool. I guess I, I don't want to do anything that kind of slows us down waiting for a solution that's that's on the. Way, but I don't know. I don't know that's what you're saying.
+
+Richard Dosoo  20:05  
+Yeah, this is more about we're basically going to tell them, This is what we're doing right now, and we're going to continue on that path. But we'd very much like you to make sure you address this in your longer term roadmap, so we have a migration path and other stuff onto sales recon in the future or or not, right? But we want to, we want to be transparent about what we're doing. So Jamie and those guys get, they have visibility on it, and then they can tell, dear, oh, we're not going to support customer session this way. We're only going to do it in that way. That's basically the the approach that we wanted. Cool alright, so let's do, let's do this then Azmain, if you pull down a version locally, start making if you could
+
+Azmain Hossain  20:51  
+just show me, I don't want to waste time like figuring it out. So, yeah, you know how I can do it, straight into cursor, and then just start working
+
+Richard Dosoo  21:00  
+on it now. Yeah, no problem. We can do that right now, unless button you want to see as well how Azmain is going to do it. My envelope.
+
+Unknown Speaker  21:10  
+Carry on. Okay, yeah, so how, how do I pull from
+
+Richard Dosoo  21:20  
+this, right? So, first things, first, what you want to do is you first actually want to load up cursor. And then if you go to, like the settings bit, have you, the first one you want to do is make sure they get this talks to your GitHub repo. So if you go to the that kind of steel icon type thing, cock on the right hand side. If you go to No, it's what is it in general. Hold on. Let me bring up my cursor and tell you.
+
+Richard Dosoo  22:08  
+Yeah, there used to be a button called integrations, and it was in there. So
+
+Richard Dosoo  22:26  
+yeah, so in the general bit,
+
+Richard Dosoo  22:39  
+general bit, hold on a sec.
+
+Richard Dosoo  22:59  
+Sorry as my dad in a second. I'm just going to bring out it.
+
+Richard Dosoo  23:09  
+Yeah, so if you go to Manage Account in general, and then that opens up a web browser, and then in there you've got, on the left hand side, you'll see overview settings, members and then integrations.
+
+Richard Dosoo  23:30  
+Yeah, integration is the fourth wonder. Manage, yep, so manage GitHub account. It's already connected. Okay, cool, because then now you should be able to, I mean, maybe I
+
+Azmain Hossain  23:51  
+should sign in as Moody's
+
+Richard Dosoo  23:58  
+Analytics, yeah, that's the one, because that's where the repo is stored, right the and then all you're going to basically Do, yep, is pick the Reaper. IRP, yep, update access.
+
+Richard Dosoo  24:36  
+Yeah, yeah. So now when you're in cursor, you should be able to connect to that repo. How would I do that the way that I had done it before?
+
+Richard Dosoo  24:59  
+Oh. It's got an open not workspace.
+
+Ben Brooks  25:10  
+Is that universal, then rich? Or is it just to the window you're currently working on locally? Because it looks like a universal setting.
+
+Richard Dosoo  25:19  
+It is a universal setting. But what happens is, you know, normally you would say, open a folder or a project from your local machine, whereas now what you're doing is like what you do is what you're supposed to do is basically do it, get pull request, which means you pull the folder down to your local machine. You, then you, then you let cursor target that folder, you make your changes, and then when you're finished, then you do a git push to push those changes back into GitHub, into the repo. That's basically the work that you'll do. So, but you can do all of that in cursor. I just need to find the right command for you to do. So if you give me a second, no, that's, that's exactly it. That's, that's, that's another way to do it as well.
+
+Speaker 1  26:02  
+I'm actually curious to the response, yeah. Can you please see
+
+Unknown Speaker  26:18  
+Yeah? That works, yep,
+
+Richard Dosoo  26:25  
+and then it should do open a bash script or a command prompt and
+
+Azmain Hossain  26:40  
+Okay, so it's cloning
+
+Richard Dosoo  26:44  
+it, yeah, exactly. So it's cloning it now down to your projects folder. That's the git clone, right? And then now,
+
+Richard Dosoo  27:18  
+yep, now it's obviously built. Now you have a local version of it. Now you can build, you can make your changes locally. You can test them on local host, and then once you've done that, then Azmain could break the pull request. But what? Yeah, you're good. You're using clothes on it. Use Opus, but it's like, I'm, I don't know if a copy my account, because I'm on the same
+
+Azmain Hossain  27:44  
+plan as you guys, but half the time I try and use Opus. It's like, it's currently overused. Try something
+
+Richard Dosoo  27:52  
+else. No, but that's send a screenshot to that thread that I added you on is the cursor, guys, and we can ask the question, because they we shouldn't be running out or or that's we want to push on there to get more budget. Trust me, Opus is like superior in line. It's just Yeah, it's better for, for, for these kind of talks. I
+
+Ben Brooks  28:23  
+So where are you using Opus now rich on this kind of stuff that Azmain is doing here, or on, like broader refactoring kind of stuff,
+
+Richard Dosoo  28:32  
+nice. I've got Azmain. You mind if I should.
+
+Ben Brooks  28:35  
+I know you've got your I know you're on plot code and stuff like that. Yeah.
+
+Richard Dosoo  28:39  
+So I basically I've first I was using Claude chat, then I've now using Claude code. I collected Claude code to the GitHub repo, and I've basically pushed my changes into get from here. I can also use it to make updates to the app and deploy locally as well. Well, I was doing this because my cursor is busted around. I'm still waiting for them to come back to me and tell me how to fix it.
+
+Ben Brooks  29:01  
+Yeah. But you're using Opus for everything, or you're just,
+
+Richard Dosoo  29:06  
+no, I'm using it for everything. I mean, I don't have to. I could use it. I could use sonnet. I could use but I was just like, you know, this is the model that I want to use, because it's the the faster.
+
+Ben Brooks  29:19  
+Yeah, must be running up a bill
+
+Richard Dosoo  29:23  
+Max plan here, right? So that's it. It's but it's fine. This is just this month, just to get me through, and then next month I'm going to scale it back down to regular usage. But with the main thing is we've got the build up and running now. We've got the GitHub repo done. We've got some talking points about how everyone else can contribute to the project. So now we've, now, we're now, we're running right now we can start delivering, which is good. So after that, I can scale it back, and we won't need to. I won't need a Max Planck next month. Cool. All right, so Azmain. And you should be good, right to start making changes locally. Yeah, I was
+
+Azmain Hossain  30:05  
+just gonna ask you, like, Where can I make sure that it is cold? And, like, Where can I find it? And can I just
+
+Richard Dosoo  30:13  
+start working on it now? So if you Why don't you ask cursor to do a build locally, and then it will deploy it. So ask it to deploy to local host, and then you should have everything up and running there, yep. And then once you've got it up and running, that's at least, you know, the build you've got is working and pulled everything down, then you can then start making changes locally. And then when you're ready, we can push them back, okay, all
+
+Azmain Hossain  30:39  
+right, and I'll reach out if I ask, if I've got any
+
+Richard Dosoo  30:42  
+questions or stuff cool, and then Ben. Now, I guess Ben, all that leaves us with now is figuring out, like I've got an email that the deployment fed, but yeah, so let me give you a call and we can talk through it
+
+Ben Brooks  30:55  
+sounds good. Cool, that one. Does anybody know what the bloody hell is going on with teams and links and unsafe this?
+
+Unknown Speaker  31:07  
+It's probably me.
+
+Ben Brooks  31:08  
+No, it's not. It's not. It's I've just tried to share that link with the guys that I showed it to on the stand up, and it's doing the same thing to me. There is somebody that is insistent we mustn't succeed here. Win at some point.
+
+Speaker 1  31:25  
+Let me I'm going to, since I'm going to share this with I'm taking a screenshot, I'm going to share this with the domain team.
+
+Ben Brooks  31:36  
+Oh yeah, yeah. Like this for the time being, I'm going to send everybody an image of that link, and they can type it in. It's just like, Could you really stop getting in the way? Mr. Security Policy, whoever it is,
+
+Speaker 1  31:50  
+yeah, I mean, I'm pretty certain I'm that they like so the security team is paying extra special attention to me right now.
+
+Ben Brooks  32:01  
+Well, and me, it seems
+
+Unknown Speaker  32:03  
+Yeah, well, it's just the Ben thing.
+
+Ben Brooks  32:09  
+All right, good stuff. We're getting there guys. Thank you. Really appreciate it. And then Azmain is on superpower dashboard duty tomorrow. That's awesome. We're excited.
+
+Azmain Hossain  32:20  
+I I
+
+Ben Brooks  32:23  
+know you will, and it's more than any of us have ever seen before. Progress wise, that's why it's so fun. So much fun. Awesome.
+
+Speaker 1  32:31  
+Let me know, Azmain, if you run into any issues or anything like that, I can, I can hop on. In essence, I'll reach out to you, because you're the person that is technically still working true. I mean, granted, I don't know the hours that Richard works, but it seems to compete with mine.
+
+Ben Brooks  32:50  
+It's easier to count the ones he doesn't. Yeah,
+
+Richard Dosoo  32:55  
+I'm all joking aside, I'm out on Friday, guys. So tomorrow is going to be the final push for me, because Friday, unfortunately, I've got this family observation. I can't shift, but we want to basically get everything going tomorrow. Azmain, you're good. We get this city pipeline good tomorrow. So on Friday, you guys can still be kicking out changes and stuff, even though I'm going to be unavailable.
+
+Speaker 1  33:16  
+Actually, to that note, I'm heading to Amsterdam Friday evening as well.
+
+Richard Dosoo  33:22  
+Oh, nice. Cool. Cool, cool, cool. Yeah, that's it. Bernie ready. Got all the peptides. Got the stack
+
+Speaker 1  33:28  
+I have. I have a tonne of peptides. I The one, one of my biggest concern in, I don't know if it's the same in the UK, but last time I went to Amsterdam, there's just not enough water. Like I drink, I drink an absurd amount of water, and I was, like, dehydrated, so I have
+
+Richard Dosoo  33:53  
+European and stuff. Oh, they do. Oh, he's right. You're, you know, over here, we're all just recycling shit like that. In America, they hardly recycle, right? But in the Europe, they bang on it so you're going to have water, you fill it like you're just take your call it. Yeah, jug, and you should be good.
+
+Speaker 1  34:21  
+Yeah. Just happen that's, oh, that's so much better. Okay, I that's awesome, yeah, okay, well, then my biggest concern is gone. I was, I was like, I'm going to be dehydrated when I'm running around for four hours.
+
+Richard Dosoo  34:38  
+100% like this. You'll be fine. So no, but I'm sure we'll speak to you before Ben, but if not, best of luck. Remember, pace yourself. Got your time that you're going to get that you're going to finish in. So it should be good. We'll be rooting for you, but like obviously over the internet won't be there in personal glances you.
+
+Speaker 1  35:00  
+You, yeah, pardon me. Just thinks Richard might show up. I don't know
+
+Richard Dosoo  35:07  
+I was good only because, like, unfortunately, my sister still absolutely murdered me. If I'm out of town this weekend, unfortunately, so, but next time I want to hear how it goes, then you're going to come back on purpose so we can have team High Rocks in May. That would be, we'll add that to the list. We'll put out the list of stuff. And stuff we want Ben to pay for, for
+
+Unknown Speaker  35:27  
+us. He didn't say no.
+
+Richard Dosoo  35:32  
+So awesome. All right. Well, Ben, give me just a few minutes to get a coffee, and I'll call you about the crcd pipeline. Fit. Sounds good. Guys. See you soon. Bye, bye.
+

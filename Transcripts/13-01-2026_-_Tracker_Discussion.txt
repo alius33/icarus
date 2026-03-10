@@ -1,0 +1,579 @@
+Speaker 1  0:00  
+Hey, Azmain, can you hear me? Yeah, yeah. Sorry. My headset
+
+Richard Dosoo  0:05  
+is just on the fritz. The No, I was having a good conversation with Ben this morning because he's planning out, obviously, the first planning meeting when we're going to show the app. And the question that came up that's been top of mind for burn for a while, this data, what data we use. And I explained to him, I said, Look, Azmain created some synthetic data, and the reason he did that was because the golden source data that he had, that he'd extracted from Salesforce is was very was incomplete compared to our data model, so there's a lot of
+
+Unknown Speaker  0:41  
+gaps, right? So, like,
+
+Richard Dosoo  0:45  
+Yeah, this is it. But the question that came out from Ben was that he's worried that if we go and show a bunch of synthetic in the first meeting, the first time, like, you know, the CSM, see it, yeah, see it, they're just be like, well, that's wrong. That's not right. We're going to lose them, right? Because we've, we've today, it doesn't resonate.
+
+Azmain Hossain  1:04  
+It's not accurate. So absolutely, there people love being like, actually, we don't have, I don't know, random company number x, as a customer wise, does it say it? And we'd have to say, this is dummy data, like six times.
+
+Unknown Speaker  1:20  
+Yeah. Do you? So
+
+Azmain Hossain  1:22  
+it's better to show it with just the data that we have and show the massive gaps and the glaring errors?
+
+Richard Dosoo  1:31  
+Um, yeah, I guess I was thinking about it in one or two words. One way is we pick a subset of customers that we have we know very well, and we we plug the data gaps with the knowledge that we actually know Right. And we see, that's one option. The other option is we do that, but we do it for as many customers who can not just the subset, but it all depends on what I said to Ben was, I was like, Look, if I bring up the Excel as main as we've got scripts that can populate our data model from this Excel spreadsheet. So we can focus our effort on we can focus our effort on actually just populating the spreadsheet with data that we think is valid. And we could do that from Golden source. We can do that from other sources. We can do that from Salesforce. That's just ETL, right? That will do use it in any other tool. So we'll use this as our intermediary format. And I was like, Azmain and myself can be working on that now, right? We don't need the build to be finished. We don't need any of that. So that was the idea.
+
+Azmain Hossain  2:39  
+So the one that you've got open is with dummy data. I sent one like days ago. That one is purely just with the golden source data,
+
+Richard Dosoo  2:52  
+yeah, then you bring that one up.
+
+Azmain Hossain  2:55  
+So I think we should use that one, because it's literally all the data we have right now is on there, and everything that's empty, we can be like, This is the stuff that needs to be filled in. Did I send it
+
+Richard Dosoo  3:12  
+one second? Sorry. No, you did. You did send it to me? I made some changes to the data model, right? That's why. Oh, okay. Um.
+
+Richard Dosoo  3:30  
+So this was the one golden source I created an update just to fill out some of the reference data. But you can see here we've got the parent accounts, the archetypes, the customers, the customer adoptions that were filled out, I think as best as you could from a golden source, these are the customer use cases, but I don't think they mapped back to our use cases. But actually, no, I mapped it back. I did this VLOOKUP to map it back. Okay, okay, to try and get it to work. Then the implementation partners, customer adoption partners. And then let's see what else we've had in here. Adoption charts was empty because obviously we haven't done that yet. Exactly these are the use cases. Partner, bench resources is not as relevant. Projects. Project import runs, project resources. These are the new tables that my suggested that we make.
+
+Azmain Hossain  4:27  
+These are like, once these are filled in, they'll be so useful. So I sorry for my ADHD brain, but I think I figured out, like, what the end thing we have to do is, so I'm just going to head there and ask the question of, when in Ben's mind, do we show this like, when does it have to be done?
+
+Richard Dosoo  4:50  
+Yeah, no, it's a good question. So I'm hoping Ben, because I've asked him another thing, he needs to get back to me on I think the first actually, this is good timing, because. He's actually just now reaching out to me. I think it's
+
+Richard Dosoo  5:10  
+going to be next week. I don't think it's it's obviously not this week. There's no way, but he wanted to do it for the next kind of IRP planning meeting.
+
+Azmain Hossain  5:19  
+Uh, okay,
+
+Unknown Speaker  5:26  
+let me just bring him into,
+
+Azmain Hossain  5:35  
+Oh, are you adding him to the call?
+
+Richard Dosoo  5:37  
+I'm gonna Yeah decent missions for me anyway. So might
+
+Azmain Hossain  5:41  
+as well yeah, if he's available. Because literally, what I'm thinking is just making a quick front end with the Excel as the back end, and just getting people to fill it in, just sending it to the PM, sending it to the CSM, and being like, for these accounts, can you please fill in as much data as you have?
+
+Richard Dosoo  6:04  
+Yeah, even do you have like? So would I be correct, right? And assuming that today, the one the omm, the PowerPoint that Stacey fills out for Friday meetings or Tuesday meetings, whenever it is, is the biggest source of truth for like, or where would you say is that is the golden source of truth for this stuff.
+
+Azmain Hossain  6:24  
+It depends on how deep you want to go. That's the thing, like, if you want a pm perspective, which is, you know, how the customer is feeling, what the resources are, technical problems, all that deep stuff. Yeah, the Tuesday or Wednesday meeting slides, they've got the most information. But when it comes to like client sentiment or other overarching things that a CSM would know, that's where the slides aren't useful. That's where the extract from Salesforce is the best source, because they're asked to update that every week.
+
+Richard Dosoo  7:04  
+Yeah, no, that makes sense. So
+
+Azmain Hossain  7:06  
+my thinking was just send it to both, like, send it to each CSM and the PMs and be like, can you fill in any and all of these fields that is helpful to you? But like, not give them the huge Excel, just give them, like a nice front end, I don't know, like Microsoft forms or something, just like, fill this in and it fills it in on the in the Excel.
+
+Richard Dosoo  7:32  
+Now here you say, it removes the complexity, but I'm thinking even one step further than that, which is, would you mind bringing up Azmain, the build of the app that you have locally, because I'm thinking, maybe we we prioritise certain data elements for them to populate, rather than getting them to populate the whole lot, because that's going to daunt everyone.
+
+Azmain Hossain  7:51  
+Yeah, whoa. What just happened?
+
+Richard Dosoo  7:57  
+Oh, I don't know why this is recording.
+
+Azmain Hossain  8:01  
+No, no, that was something I was testing out. Like I saw that in the settings, you could set up recording automatically. No, my my display disconnected. That's why, I don't know what happened. So this is the version that I've got running locally. It's the like, it's the one that you haven't touched or anything is just the backup one from Ben's get.
+
+Richard Dosoo  8:24  
+So what we could do then is customers we've got from your list, that's fine, use cases we've got, well, this would be the thing that we'd want the guys to Ah, shit. Hold on. Ben is calling me now. Give me one second. I'm just going to answer.
+
+Azmain Hossain  8:39  
+Yeah. No problem. I
+
+Richard Dosoo  9:31  
+Azmain, we're gonna just deviate just for a second. Yeah. Well, get the two burns on, yeah.
+
+Unknown Speaker  9:38  
+And we need nicknames for these guys. Hey, Ben, can you hear
+
+Richard Dosoo  9:49  
+it before you guys were gonna answer in stereo. Didn't do it. But no, but sorry. I. Know you're busy, so we'll be quick. We need your owner access temporarily to help us change something. So would you mind logging into the portal and going to the enterprise app, the adoption tracker?
+
+Ben Brooks  10:15  
+I feel like, I feel like I should maybe press a big fishing button right now. I've watched a good teams call three guys with their cameras off it's being recorded, and log into Azure and start owning
+
+Richard Dosoo  10:39  
+fishing attack. They come in all shapes.
+
+Ben Brooks  10:43  
+You guys are getting really sophisticated these days.
+
+Speaker 2  10:47  
+We're all AI, we're actually our cursor. At this point,
+
+Ben Brooks  10:53  
+this app would be working. If you all AI, let's be honest, this app would be working right now. All right, so where we go is your portal, right? Yeah.
+
+Richard Dosoo  11:01  
+So in the portal, and then enterprise applications go to the IRP adoption tracker. And then when that opens up, you'll see the Overview tab, deployment plan, diagnose and solve problems, manage. And then there's a security button. So when you open that up, oh, sorry, when you open up, I can go
+
+Ben Brooks  11:24  
+like, 100 miles an hour slower on the IRP adoption tracker. Yeah. Got that, yeah.
+
+Richard Dosoo  11:29  
+So you should see on the left hand side something called Manage Yeah, and then Yep. Sign on
+
+Ben Brooks  11:39  
+single, sign on, yep,
+
+Speaker 1  11:41  
+and then you want to hit this, go to Application.
+
+Richard Dosoo  11:48  
+Wait, but did I do it right? Was that it?
+
+Ben Brooks  11:49  
+Yeah, let me, let me share my screen, and you can, and you can effectively do it one sec.
+
+Ben Brooks  12:07  
+Spell it up all right? So that's the Single Sign On screen.
+
+Speaker 2  12:14  
+You can click go to Application. It's on the app one, yeah, I so this is one of the few things. And then I think we should, I don't have Azure access, so we can make Richard an owner, and we can do that after this. But basically what I'm doing, what this is, what I'm trying to configure right now, is the AWS Cognito connects to Azure Active Directory, which will give us the auth tokens and everything that we need to get the applicant to log in and stuff like that. So okay, and the firewall team has also are they're in progress of making the domain work, so I put in the chat the two domains that we will probably need to add that's interesting. Try it again.
+
+Ben Brooks  13:17  
+Ariel that was successful that time. So this is the RP adoption tracker. Where do you be going?
+
+Speaker 2  13:23  
+Here? Did it do that's a good question. Manage, again. I think it reset you all the way back. So yeah, on the left hand side, manage, oh, did it okay? Yeah, and authentication for you. And then yeah. So add redirect URI, yeah, and then let's do web I think, yeah, that should be fun. And then, yeah, just pay the two URLs I just put in there, yeah. And let me make sure. And then after we add those two should be fine, but we shouldn't. We'll add Richard as a as the application owner, so he can go go back through if we need to just do additional troubleshooting. Let's see here.
+
+Ben Brooks  14:23  
+Okay, where's my bloody chat going with you guys? There is oh in the in the teams chat on this meeting.
+
+Unknown Speaker  14:35  
+Yes, sorry, no.
+
+Ben Brooks  14:38  
+So chat, yeah, okay. So advisory app factory, do we? Do we? Do we? Is that one long? No? Is that two URLs? That's two, yeah. So do i comma it or just do
+
+Speaker 2  14:52  
+one at a time, one at a time, I don't think yeah, that one yeah, and then click Configure at the bottom. Oh yeah. They love their their bottom things, yeah, and then another one, yeah. I don't know if we need to do that for it's either a single sign on or web. So we'll, we'll find out here shortly. I'm sure that configure, yeah.
+
+Ben Brooks  15:22  
+So if you're here, should it not? Where is it showing them? Oh, I say they're showing up.
+
+Speaker 2  15:26  
+Yeah, on the left hand side. And can you do me a favour, just real quick, if you can click on the single page application on the right hand side, oh, on the right hand side, the pile. Oh, yeah. Okay. Yeah, all right. And then you can go to owners on the left hand side, yeah. And now let's add Richard there. I don't imagine you can add me, because I don't have I'm not in the Azure SSO yet for Moody's okay, if you can add Richard, then we can, we can troubleshoot in case that didn't immediately solve it, okay, that should, in theory, have allowed us to go through. So let me see here. Oh, hold on one second. I'm going to ask if we can modify this real, real quick. Let me I gave you the when you add this URL, specifically, it does slash the IRP application tracker. So if we go back to authentication preview, oh,
+
+Ben Brooks  16:44  
+with the slash on the end of it, yeah, the
+
+Speaker 2  16:48  
+Yeah, authentication preview and yeah, you can just web Yeah, with a Yeah. And then, actually, since we can do two, oh yeah, you know what, let's just do, yeah, configure for now. Okay, let me refresh and see if that immediately solves it. Probably not. But, you know, troubleshooting at its finest.
+
+Ben Brooks  17:19  
+Do you need the original one with the trading slash on it. That one there, I just felt like it doesn't have a slash on the end of it.
+
+Speaker 2  17:28  
+Yeah. No, that should be fine, yeah. It's just this is the redirect URI. So it should go back to where it was, which I am. It did seem to do something. But now on, nothing again, okay, all right, um, all right, let me, I think that that was what we needed. So let me go through, but now that Richard's the owner, we can, I can go through and test this out a little bit more, and then I'll bug Richard and we can troubleshoot if needed. But now that he's the application owner, we can, we can go through things a bit more, okay, but yeah, that that should help us all. Right, good stuff.
+
+Richard Dosoo  18:22  
+Just while we've got you me and Azmain were just going over the how much or what data we prep with real life examples for for the demo, I've set up a call on Thursday with our, like this essay team, just to go over, give them an update. But you mentioned that what we really need to do is the next programme review with the, I'm guessing, with the CSMs and with Natalia and that team. Is that the next like is that next week Tuesday, when you wanted to show this with real data, or data that to do to drive the actual,
+
+Ben Brooks  18:59  
+I mean, as sort of as soon as possible, really, I think what we should do is get one account in decent shape and use that as a demo account, maybe, and then populate it with stuff that's nonsense.
+
+Richard Dosoo  19:13  
+Yeah, this is this exactly the input that we wanted, because basically what Azmain has done already is populated the spreadsheet with the information from the golden source for the accounts that we have that information. But as you can see here, for example, if we go to customer adoptions, we didn't have anything these tabs, right? Because there's nothing in the golden source. So that's why, then Azmain created another version of this spreadsheet where we simply where we synthesise this data, right? So the question is, how many accounts do we want to demo in the meeting that we need to create synthetic data that is realistic for which one, which accounts do we want to do it for? That's basically the question of, when do we want to do it by? So we can work backwards from that time period and get it all in ship, ship.
+
+Ben Brooks  20:00  
+Uh, what's an easy way to strip it back out again if we want, if we want to get rid of it later
+
+Richard Dosoo  20:09  
+it delete script that's we just try and create the tables and then, because right now, we have scripts that load data from this spreadsheet into our data model. Yeah. So all we need to do is basically just give this version of the spreadsheet to that script every time we want to
+
+Ben Brooks  20:22  
+prime it. Why don't Should we just create one test account that's deliberately not a real client, you know, call it massive, IRP user, reinsurance, limited or something, and then flesh out something comprehensive for that single account, and then we can delete the whole thing, or it can sit there as an example to everybody. To everybody.
+
+Richard Dosoo  20:44  
+Yeah, I mean, to be honest, that Azmain has already done all that already. That's not hard, because we've we just need to read.
+
+Azmain Hossain  20:51  
+So I basically, like every single field within the adoption tracker for every single account is filled in so it's fully complete. That's a version that I've created with, like, fully dummy data. Add it to wherever we have real data, so we can always show that. But literally, the moment you start showing it, CSMs will be like, Oh, but that's not real, and you have to say it.
+
+Ben Brooks  21:14  
+So can we? Can we? Can we put a toggle in there and just flip between real and demo? I had that in the local version, but let's do that, and then I would in the demo version, I would maybe make up the account names as well, right?
+
+Richard Dosoo  21:33  
+ABC insurance company, that's the Yeah, the feeling. Now, I was joking at a company I used to work for that was always their demo data, ABC insurance premise once my American film. But we'll do something similar,
+
+Azmain Hossain  21:46  
+something like that. I can just edit the this dummy data file and just remove all our actual clients and just put in dummy names, yeah,
+
+Unknown Speaker  21:57  
+Acme insurance, I think that's the way. And then
+
+Ben Brooks  22:00  
+you and then you want, you just want to make sure that that you're not constantly scripting that right? That just wants to be a flag to change a different database or different set of tables, or something to demo,
+
+Richard Dosoo  22:13  
+yeah, we can, there's different we can put something in the database, we can put something in the API, and it can toggle and we can figure out what's like. We can just like, ask the cursor to tell us what's the best like, easiest, most efficient one to do.
+
+Ben Brooks  22:28  
+What I want to make sure is we we don't populate real accounts with stuff that people get annoyed at having to undo or gives cause for, sort of complaining about the quality of it. But I also think we need to be able to show that there's a lot of emptiness that we have to fill in fast structurally, in the first conversations that's that's important, yeah, and then you want the reporting up to be accurate, even if bad to begin with, right? So in a page that says, What are the data gaps, it needs to look horrendous, because there's a lot of data gaps. Or if Mike still goes and looks in it and looks at travellers, he'll find no use cases. That's true. Whether it should be or not, is a different matter. Like, I don't want to create a false picture of any of the real accounts. Yeah.
+
+Richard Dosoo  23:20  
+That makes sense. Azmain, would you mind bringing up the local build that you had just for a second, and then you can that will work backwards into which dashboards are we going to drive, to resonate, to drop like that, which metrics are going to have the most impact? And then that's the ones that we will make sure. Yeah. Sorry. So Ben, we
+
+Azmain Hossain  23:40  
+were going over use cases.
+
+Richard Dosoo  23:43  
+Yeah, I guess just for Ben and the other Ben's benefit, if he goes back one up to dashboard. Yep. So this is comes from the red, amber, green status burn. So, you know, you know, that's very easy. We could get for our existing customers. We can get this filled out, right? We can just ask the CSMs to tell us for the 300
+
+Ben Brooks  24:03  
+so, yeah, just if you flip through, if you've got data in the other ones at the moment, yeah, yeah. So somewhere in this whole process, the dashboards gotten broken. I think the blockers have gotten broken as well. Yeah, and I don't quite understand what happened is probably, I probably did something stupid before I uploaded it to GitHub, but I've been going through today and just fixing some of that stuff locally, more as an excuse to play with Opus than anything, because it's ridiculous. But you can, you can improve it fairly quickly as well, so that the dashboard looks a bit better on my local now I've got, like, migration stats in there working a bit better. I've got attention needed tabs and stuff like
+
+Richard Dosoo  24:49  
+that. Do you want to bring it up? And then we just,
+
+Azmain Hossain  24:52  
+could we see the Yeah, sure editions while you're bringing that up. I just had a question, just on the on the data. Side, if we, if you show this on Tuesday, will the deployment be in a state where, after the meeting, the CSMs can just go in and start putting in the correct data? That's a question for you.
+
+Richard Dosoo  25:13  
+Richard, yeah, so the builder, Ben, has got, right now, doesn't have edit screens for all of the information, so that's the that will need to
+
+Ben Brooks  25:25  
+be updated. What I started to edit here as well. I don't know whether I've done a very good job on it, yeah, I haven't had a chance to go back through it, but that kind of stuff needs, needs to be wrapped up before anything goes live.
+
+Richard Dosoo  25:38  
+Yeah, because we need, like, for example, I mean, the customer use case of it. You know, not all of the fields are editable on all the streams. Not all of the entities would need to spend their day time and going through it before. So we possibly could have that done on Tuesday. But I probably think it's safer to say, like, when have it done by end of day Wednesday, so you have a chance to test it and make sure everything is working.
+
+Azmain Hossain  26:04  
+So what I wanted to suggest is, rather than rushing you guys to do that, creating just a simple front end that will update the Excel file so that, like from whenever it's possible, if it's possible, on Friday this week, we just start asking CSMs, PMS, anybody to fill in whatever they can.
+
+Ben Brooks  26:24  
+I think that would be harder to do, to be honest, because you're putting the information back into a flat file is going to make, I don't know. I sort of feel like that might be harder than just bowing through. If we, if we've got a deployed database and a deployed front end, the edits to make it editable are incredibly are incredibly simple. I started doing that today, and really what it needs is somebody to go through page by page, fire up Opus thinking and say, make this as good as it can be. And it fucking does it. So, you know, block, a block of pages look a bit different to what they did before I got an yeah, there's just, there's like, just general tidy up per page that somebody with a, you know, with a brain needs to, kind of say, I want to fix this. I want to fix that. But it's very easy, and it's kind of like one or two prompts to sort stuff out.
+
+Richard Dosoo  27:23  
+Now, Opus is decent. I've been using it in Claude code to try and be unbelievable.
+
+Ben Brooks  27:26  
+Look at this. Look at this shit that I made for George in two prompts, two prompts. So he wanted an account planning.
+
+Richard Dosoo  27:41  
+Is it the is it done that as a React app for you, or is it a static web page?
+
+Ben Brooks  27:46  
+So it's a mock up for now, the depth of what it produces is insane, I think, whereas so I asked it for plan, like, give me a plan for a world class account planning application. It came up with all these things that it thought would be important. And I said, Great, build me the HTML mock ups and the app behind that would be next step and dead easy. Where is it? So that's the account. So this is the summary of the whatever it thinks we should be measuring for the account, all sorts of shit in here, key stakeholders, product adoption, renewals, revenue, health score, NPS score, contract details, blah, blah, blah, blah, blah stakeholders who's involved in the company, org chart, influence.
+
+Richard Dosoo  28:41  
+This is what we need to show, context all this
+
+Ben Brooks  28:50  
+kind of stuff, success plan. What do we need to do in order to make this stuff work? How am I doing on that success plan? What my mom? It's unbelievable
+
+Richard Dosoo  29:01  
+to Idris? But from the banking basically, no, he's basically like the George in the banking team for customer success, and he's doing exactly this, but for all his banking clients. And he's built out a whole bunch of dashboards that he's built also in cursor, and he's working with Azmain and myself and ourselves reconciling to funnel them in there. But we should, we should connect. But anyway, he's in London in a few weeks. We definitely should say something to connect the dots.
+
+Ben Brooks  29:29  
+Yeah, yeah. But that was, I think that was two prompts in Opus to generate all of that, and then you can imagine how many more it's going to take to just turn it into a structured data source and start filling it so it's mad. Anyway, that's not what we're here to talk about.
+
+Richard Dosoo  29:48  
+So I think then what we'll do Azmain For the next steps, we'll just try and we will. We'll have, we'll take some data, we'll take some we'll create some synthetic customers that we're. Not going to worry about and we'll pad them out with as much data as we can. That's what you've already got. We'll leave the customers that came from the actual golden source alone so people don't misinterpret what the data is telling us and come out with wrong results. And we'll also look to once we've got, well, Ben, I think once we've got the app up and running. Then the next thing will be, how do we update it? And Ben, that's the other bit, and that's where we will start coming to you tomorrow to talk about CICD pipeline from GitHub, actions, workflow that, yeah, whenever we check something into a folder into the main branch, it would go through the deployment and update it. Yeah, yep, that
+
+Unknown Speaker  30:44  
+makes sense to me. Cool,
+
+Richard Dosoo  30:47  
+I guess. Ben, okay, well, Ben, I know you were busy, so we'll let you go. Me Azmain And the other Ben, will just continue getting the app up and running, and then hopefully we get to a stage where we can actually show you, like I said, the older version of it working. And once that's been working, then we can start talking about
+
+Ben Brooks  31:04  
+so no pressure. Josh has just sent me a team's message saying, will your app be finished by 7pm because I have a leadership call I'd like to show is
+
+Richard Dosoo  31:20  
+that 7pm Eastern?
+
+Ben Brooks  31:22  
+Nope, no, no, that's two and a half hours from now.
+
+Speaker 2  31:25  
+Okay, that's the challenge. Can we Well, if that's the case, can we do one thing? Because I just realised that I had us configure it wrong, and then I Yeah, it's it should have clicked sing, single application versus web, and that in that tile for configuring,
+
+Ben Brooks  31:46  
+okay, I mean here, yeah,
+
+Speaker 2  31:49  
+so those like, so it's the same URLs, but instead of web, so we can actually delete those
+
+Ben Brooks  31:57  
+single page application, yes,
+
+Speaker 2  31:59  
+so that same, yep, and then we can actually do the same thing for the app factory as well, with the here, with this like that. All right, yeah, those two should be good. All right, and then configure
+
+Ben Brooks  32:22  
+that, yep, with the with the trailing slash, yeah, yeah, that should be fun. Or yeah, either way is that, is that doing it? It should have first configure it's not showing up down here. Interesting.
+
+Speaker 2  32:42  
+I tried without a trailing slash two, just because I don't know. Yeah, it's fine.
+
+Ben Brooks  32:52  
+That worked, right? But it's not showing up down here.
+
+Speaker 2  32:56  
+Could it be? Because we have web already set, so we might need to delete those three web Okay, and I don't need to, yeah, sorry.
+
+Ben Brooks  33:07  
+All right, no, not so let's delete
+
+Unknown Speaker  33:12  
+I think those three, yeah,
+
+Unknown Speaker  33:17  
+all right, and then add
+
+Ben Brooks  33:19  
+single page application that was the right one there, yeah.
+
+Speaker 2  33:24  
+And just for, just for my own sanity, you can remove the backslashes at the end too, just because, who knows, I don't want to Yeah.
+
+Ben Brooks  33:40  
+And then, yeah, the top right there. Yep, perfect. Okay. And then is there a third one or just those two?
+
+Speaker 2  33:46  
+No, just just those two, the advisory app factory will be the main domain, once we get the firewall team to approve it. Then the app factory. Dev is it's purely just well, Dev, so, okay, that was added, fantastic. All right, let me refresh. Okay, if there's anything else, then I can configure it myself here. Okay,
+
+Ben Brooks  34:18  
+so did someone have to go and buy that domain?
+
+Speaker 2  34:22  
+Yeah? Basically what happened is I had to go through and I registered the domain within our AWS account. But then the firewall team doesn't like any domains they don't know about, so they just black walled me immediately. So I had to get approval on that. All right, cool, but yeah, so hopefully that should be good, um, and we'll go from there. If not, I'll just harass Richard.
+
+Ben Brooks  34:51  
+That's what he's here for. Yeah. Okay, cool, good stuff. All right, thanks. Guys have. Crack off seven o'clock.
+
+Richard Dosoo  35:04  
+Yeah, yeah. So we're gonna all gonna be manually updating someone's HTML.
+
+Speaker 2  35:12  
+I feel like it'll be some puppeteers in the back where it's like everything's working.
+
+Richard Dosoo  35:20  
+Travellers is live. That's when they know effect where we actually got some client data in there.
+
+Ben Brooks  35:25  
+Yeah. All right, thanks guys. Let's see a bit.
+
+Richard Dosoo  35:29  
+Ben, that's me. Do you have a minute right now? Sorry? Ben, yep. So. Ben, I guess the is it the
+
+Unknown Speaker  35:39  
+sorry, let me be one.
+
+Richard Dosoo  35:41  
+How do we test what better? Just changed to see if it works. Do I need to?
+
+Speaker 2  35:48  
+I'm testing it right now, basically just going to that website and pressing login and seeing if it redirects appropriately. And that's what that's why I had it initially checked, because we had it configured for web, but it should be a single page application, and that's that was the error that I just got. So I'm actively testing it right now. But basically, you go to that website that I gave you, excuse me and those there's a login button, and you just click Login right now, it's, I haven't deployed the most recent changes, so I'm actually doing that right right now. It takes a millisecond to pick up the new image and then go from there. So the thing is, so once we get this resolved, what I will need to do is take because I don't like, I've made some changes to make this work on the IRP side of things, as far as like the Docker image and adding like something like nginx to it. So if I can gain access to GitHub, or I can give you all the code, or something like that, and push that up, because I don't want conflicting versions when I set up the CID CD pipeline, because then it could break things again. So no,
+
+Richard Dosoo  37:06  
+I'll even say the CICD pipe we can do tomorrow. I'll just say the first thing first, just get the app up and running. Let me so the IRP adoption. Oh, three. So let me try and add you to the repo now.
+
+Speaker 2  37:20  
+Security, yeah, I mean, I don't have the even the Moody's tile like, I'm assuming it's SSO tile.
+
+Richard Dosoo  37:33  
+No, just, well, I guess you could do that way. I've just your GitHub account. I'm going to add you
+
+Unknown Speaker  37:41  
+to hold on. You should have give me one second.
+
+Richard Dosoo  37:52  
+Team, members and roles, collaborators and teams. Sorry. It's just asking me to hit this authenticator again one second. So sorry. Azmain, this is probably a bit boring for you.
+
+Azmain Hossain  38:05  
+That's all right, you guys, you guys, need to work on this
+
+Speaker 1  38:11  
+shit. Heck, yeah. Okay, okay, okay. So next one is to add you. So let me add people.
+
+Richard Dosoo  38:30  
+Then your get your GitHub username. What is it?
+
+Speaker 2  38:33  
+Ben, that's a great question. It's van Hout b I'll send it over to you. I'll put it in this chat, actually.
+
+Speaker 1  38:42  
+Oh, you're having actually list. This is weird, because your account, I approved, I approved it. So I wonder why, why you're not in there. People are now, your GitHub accounts not registered yet.
+
+Speaker 2  39:08  
+I mean, I have access to the RMS consulting, and I'm using the let me check my profile here. I uh, what email Am I using?
+
+Speaker 2  39:31  
+Emails? Okay, yeah, I'm using my my Moody's email on this too.
+
+Richard Dosoo  39:40  
+Yeah, so the ticket that I raised for you guys, it says it's completed, and it says, Please wait up to 60 minutes before logging in. So, GitHub, ma member, yeah, that was that, you know, that was a couple hours ago. Yeah.
+
+Unknown Speaker  40:06  
+So I do
+
+Speaker 2  40:23  
+Oh, that's probably what it is. Let's see. I
+
+Richard Dosoo  40:47  
+Perfect. Now I can't even get into I don't anyway what today? What other bullshit is going to come and give us groups today?
+
+Unknown Speaker  41:09  
+Okay so?
+
+Speaker 2  41:25  
+Okay, um, the next thing I need is the Azure tenant and client ID.
+
+Unknown Speaker  41:32  
+Can give you that.
+
+Richard Dosoo  41:39  
+So the subscription ID, right?
+
+Speaker 2  41:42  
+Um, I they like naming things. I think that is the same. Is the client ID the same as a script subscription ID? I think so. Let me double check Hold on, the naming conventions of these things. Um,
+
+Unknown Speaker  42:19  
+so I just need to change my access.
+
+Richard Dosoo  42:27  
+It just they it logs you out every time of to have access just in the time. So after a certain number of hours, it removes your privileges, which is just like, I don't know how much I told you I hate this fucking Azure environment. Well, if
+
+Speaker 2  42:43  
+it makes you feeling better, I have the same disdain. All right. I think I actually already have them, because the client ID is that DD five and the tenant ID I just need to verify. And I think I know where to go to get that. No, are you able to get into Azure right now? Could you share your screen?
+
+Unknown Speaker  43:07  
+Yeah, and I'm just, it's just changing my privileges. Give me one second. So it's like, there now.
+
+Unknown Speaker  43:22  
+So
+
+Unknown Speaker  43:29  
+now the change hasn't come
+
+Speaker 2  43:32  
+in yet. That's fine. We can still get the tenant ID.
+
+Richard Dosoo  43:38  
+No, you don't even see the tenant until your privileges have been
+
+Speaker 1  43:44  
+Oh, it's thought It's so dumb. Like, trust me, it's just ridiculous. Let's try this. Maybe he's at RMS, no. So let's switch to that one.
+
+Speaker 2  44:09  
+Know the meantime, I can actually do this too, dude, dude, I do edit, do.
+
+Unknown Speaker  44:24  
+Ah.
+
+Speaker 2  45:16  
+Can you do me a favour real quick? Because I think you, I think you will still have access if you we just need to go to the subscription.
+
+Unknown Speaker  45:30  
+Yeah, there we go. It's this one, yeah,
+
+Richard Dosoo  45:35  
+let me paste this. Yeah.
+
+Speaker 2  45:39  
+I think that's different than the tenant and client ID, but I'll write it down either way.
+
+Unknown Speaker  45:44  
+Let me paste it in the chat.
+
+Unknown Speaker  46:01  
+Yeah, I Okay, so, can you look for entra ID?
+
+Speaker 2  46:22  
+I'm I think type it into the search bar at the top, because they renamed a Active Directory to enter. I think I remember, right? Yeah, okay, yep, that tenant ID right there. So I need that one. I think actually good news is I already think I have that correct. Let me double check though,
+
+Speaker 2  46:53  
+F, E, yep, okay, and then the client ID is
+
+Speaker 2  47:09  
+all right? Um, okay, go to Azure Active Directory and then application registration. Um,
+
+Unknown Speaker  47:23  
+I think yet,
+
+Unknown Speaker  47:35  
+the registration is this one, right, yep,
+
+Speaker 2  47:38  
+all right, and then we just need to find Yep. That yeah, okay, I already have, yep, that one right there. Let me double check it looks like I already had that one too. Okay, perfect. So now I was already deploying that.
+
+Speaker 2  47:58  
+Let me verify that activating. Okay. Azure, okay, those two things are correct. Perfect.
+
+Speaker 2  48:28  
+Okay, once this is finished, should be able to go through.
+
+Unknown Speaker  49:08  
+Okay, looks like we're getting somewhere that's good news.
+
+Speaker 2  49:21  
+All right. Um, so Richard, can you go to the website that I have above the with the slash, IRP,
+
+Speaker 1  49:32  
+Oh, you mean the one in the chat, right?
+
+Speaker 2  49:37  
+Yeah. I want to see if it's something with me, my particular user, or if it's something I need to fix. I think it's something I need to fix on the back end, which is fine.
+
+Unknown Speaker  49:48  
+This one, right, advisory app factory.com, the
+
+Speaker 2  49:51  
+other one. AOB, the app. The advisory app factory domain doesn't quite. Work yet. So we are using the app factory, Dev, ALB,
+
+Unknown Speaker  50:05  
+this one, right? Yes, yeah, your connection is not private, yeah, yep, yeah, this is a boy.
+
+Speaker 2  50:16  
+Okay, so let's see if this work. Well, don't, don't, not yet, not yet. Don't get too excited. So we don't have any data showing yet, from what I can tell, click customers,
+
+Richard Dosoo  50:33  
+yeah, but I this happened to me in my local build. What it is is the API is not returning the data. So if I went into network console, it's the API build. That's wrong, but at least the front end is there,
+
+Speaker 2  50:43  
+yes, so I'm fixing the back end connectivity right now, and that should be good, but, yeah, at least we're able to log in and see all that stuff. So big, move forward, and I can fix this back end issue fairly well. I'm not even going to say that word, because I don't even want to
+
+Unknown Speaker  51:02  
+jinx it. This is cool. This is awesome. So let me
+
+Richard Dosoo  51:07  
+Azmain, do you mind seeing if you can log in and share
+
+Speaker 2  51:12  
+the Yeah, I wonder. I wonder if it is some type of permission base and
+
+Richard Dosoo  51:17  
+it's not. This happened when I was doing the build on the Azure environment the there's some bullshit with cursor, like it basically points, it gives the wrong fucking IP address for the API. But you what? It doesn't have any logic in there that says, if the API basically doesn't exist or doesn't returns nothing. Tell me about it. It just is, like, again, I don't know.
+
+Unknown Speaker  51:39  
+Oh, wait, hang on. Oh, wait, hang on. I think, yeah, let me put it now,
+
+Azmain Hossain  51:45  
+yeah, sorry, no, I've got it cited with Microsoft. Okay, yep, it worked.
+
+Richard Dosoo  51:51  
+Are you able to log in with your
+
+Azmain Hossain  51:53  
+Yeah, yeah. It didn't give me, like, the user accounts, because I only have one. I just click Sign In Microsoft and it just the selection. Yeah, yeah,
+
+Speaker 2  52:05  
+and there's no data showing, right? There's, there's no data. Okay, Richard, could you do me a favour? Real quick, go. We need to go back to Azure. When that app registration section
+
+Azmain Hossain  52:18  
+actually, Richard, I was gonna say, Would it be all right if I jumped off, then I can start on the dummy data with made up accounts. All right. All right. Good luck guys. Speak soon. Thank you.
+

@@ -1,0 +1,154 @@
+# Open Threads & Unresolved Questions
+
+Last updated: 2026-03-09 (all transcripts through 6 March processed)
+
+Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially addressed, needs follow-up), or **CLOSED** (resolved — move to bottom with resolution date).
+
+---
+
+## OPEN
+
+### 1. Gainsight Integration Timeline
+- **First raised:** 12 Jan
+- **Updated:** 6 Mar — Meeting with Gainsight team (Tina Palumbo, Nadim, Rajesh) scheduled for next Thursday. Catherine offered to help with governance and decision tree for App Factory intake. Team also pushing for Salesforce programmatic access in same meeting. Azmain using Gainsight governance as legitimate reason to slow down pace.
+- **Context:** Natalia Plant's team owns Gainsight. API access blocked pending security review. March 2026 was mentioned as earliest.
+- **Question:** Will the Thursday meeting produce an integration plan? Will Salesforce programmatic access be granted?
+- **Why it matters:** Gainsight is the intended long-term customer health platform. CLARA and Gainsight overlap in scope — without integration, there's double-entry risk.
+
+### 2. Sales Recon Pilot Results
+- **First raised:** 11 Feb
+- **Context:** Two-week pilot (11-24 Feb) with 8 CSMs evaluating account intelligence, meeting prep agent, and share knowledge agent.
+- **Question:** What did CSMs think? Does it change the CLARA roadmap or the Sales Recon convergence timeline?
+- **Why it matters:** Determines whether Sales Recon is a viable end-state platform for CS, or if CLARA needs longer-term investment.
+
+### 3. AWS Bedrock / Claude Code Rollout
+- **First raised:** 9 Jan (licences), secured in principle 9 Feb
+- **Updated:** 3 Mar — Bedrock API key now working. Security audit caught personal Claude account usage for Moody's work; Ben Brooks providing cover. Azmain admitted "no proprietary information" defence is "wildly a lie."
+- **Context:** Access approved via AWS. Bedrock API key functional as of March.
+- **Question:** Is all development now on Bedrock/corporate accounts? Has the personal account usage been resolved?
+- **Why it matters:** Personal account usage is a compliance risk. Bedrock integration should resolve this but transition needs confirming.
+
+### 4. Andy Frappe Follow-up
+- **First raised:** 20 Feb (demo)
+- **Context:** Ben demoed CLARA to Andy Frappe, President of Moody's Analytics.
+- **Question:** What was the reaction? Any new asks, escalations, or mandates?
+- **Why it matters:** Highest-visibility moment for the programme. Reaction shapes resourcing and priority.
+
+### 5. Kevin Pern's CS Agent (WS3)
+- **First raised:** 6 Jan
+- **Context:** Kevin built a Copilot Studio + Salesforce prototype. Working alone. No programme oversight.
+- **Question:** Has anyone formally engaged him? What does the prototype actually do?
+- **Why it matters:** This workstream is essentially orphaned. Could be valuable or could be wasted effort.
+
+### 6. User Voice Integration Design
+- **First raised:** 26 Feb
+- **Context:** Peter Kimes gave detailed requirements. Azmain proposed separate data object. API integration preferred over Excel dumps.
+- **Question:** Has the data model been designed? Is User Voice API access available?
+- **Why it matters:** Another integration requirement landing on CLARA's growing backlog.
+
+### 7. Budget / Token Management & Developer Tooling Access
+- **First raised:** 9 Jan (licences), acute by 23 Jan, still acute 23 Feb
+- **Updated:** 23 Jan — Azmain hit Cursor "team user limit" block. Ben also blocked. Richard personally paid for Azmain's Claude Code Max subscription as workaround (cannot share due to Google SSO). Martin Davies still has 335/500 Cursor credits. Developer laptops approved for Tuesday delivery.
+- **Context:** Azmain burned $750 in Cursor tokens in 3 days. Corporate budget went from $10K to $20K. Opus 4.6 is 3x more expensive. Banking hackathon also consumed tokens.
+- **Question:** When will corporate Cursor/Claude Code licences be properly provisioned? Is the team on sustainable tooling costs?
+- **Why it matters:** Unsustainable costs could force downgrade to less capable models or slow development. Personal payment workarounds are not scalable.
+
+### 8. Infrastructure: CDK vs CloudFormation
+- **First raised:** 26 Feb
+- **Context:** Cat Accelerate has tech debt — manual Step Function deployment, no backup, no traceability. Debate on whether to stay with CDK or move to simpler CloudFormation.
+- **Question:** Has a decision been made?
+- **Why it matters:** Affects who can deploy and how reliable deployments are.
+
+### 9. Single Points of Failure Mitigation — ESCALATED
+- **First raised:** Implicit throughout, explicit by late Feb
+- **Updated:** 6 Mar — **CRITICAL**: Richard is interviewing for jobs in New York (partly because he dislikes working with Rhett). BenVH admitted his recent absence wasn't illness but being worn down by Nikhil taking credit for App Factory work. Both key people showing signs of disengagement/departure.
+- **Context:** BenVH is the only person who can deploy. Azmain is the only person building CLARA features. Richard carries irreplaceable institutional knowledge.
+- **Question:** What's the retention/mitigation plan? Is anyone documenting Richard's knowledge? Can BenVH/Nikhil conflict be resolved?
+- **Why it matters:** If Richard leaves, the programme loses its strategic brain. If BenVH leaves, nothing deploys. Both are now flight risks.
+
+### 10. Build in Five Scope
+- **First raised:** 5 Feb (Martin and Azmain both unclear), demo target shifted
+- **Updated:** 4 Mar — Exceedance event is in May, not March 21. Content due April. Richard: "timelines may not work." Martin tasked with summarising demo approach for Ben. MVP scope defined: three IRP API modules, foundation layer, drag-and-drop UI. No AI/LLM, no persistence, no security.
+- **Context:** Scope expanded from original concept. Martin actively developing. Demo target shifted.
+- **Question:** Is Martin on track for the revised May timeline? Has Ben approved the MVP scope?
+- **Why it matters:** Scope keeps expanding (Ben wants more scenarios), Martin's 12-week assignment has a clock.
+
+### 11. Alembic Migration / Deployment Sync
+- **First raised:** 19 Jan
+- **Context:** CLARA's deployed version broke because Alembic migrations did not propagate schema changes to production RDS. "Multiple migration heads" error encountered. BenVH was building an automated deployment script but it was not complete. By 23 Jan, BenVH's Alembic migration for portfolio review broke use case creation (500 error, duplicate key violation).
+- **Question:** Is the deployment pipeline reliable? Can anyone other than BenVH fix migration issues?
+- **Why it matters:** Every schema change risks breaking production. No tested rollback procedure exists. The team admitted they have never tested a rollback and attempting one could leave the system completely unusable.
+
+### 12. Dev/Test/Prod Environment Split
+- **First raised:** 19 Jan (implicit), 20 Jan (explicit)
+- **Context:** Richard proposes dev environment for frequent deploys, prod deploys only once a week. BenVH to set up when he returns. As of 23 Jan, still everything deploys to one environment.
+- **Question:** Has BenVH set up the environment split?
+- **Why it matters:** Without separation, every deployment risks breaking the live system that CSMs are using.
+
+### 13. Diya's Priorities for the Programme
+- **First raised:** 22 Jan
+- **Context:** Diya was invited to a priority-setting call but did not join (said she was slammed). Richard pre-filled priority slides. Diya told Richard she wants the Monday meeting to be "a continuation, not a reset" and wants outcome-based milestones with timelines.
+- **Question:** Has Diya formally endorsed the programme priorities? Does she agree CS workflow migrates to Sales Recon by end of FY26?
+- **Why it matters:** Without executive priority endorsement, the programme lacks direction on the critical CLARA-vs-Sales Recon fork.
+
+### 14. George's Account Planner Integration
+- **First raised:** 19 Jan (built in Cursor), 22 Jan (overlap with Sales Recon discovered)
+- **Context:** George built an account planner in Cursor. Overlap with Sales Recon's account planning features discovered. George distinguishes his work (writing the plan) from Sales Recon (informing the plan). Decision on folding into CLARA vs standalone deferred.
+- **Question:** Will this fold into CLARA, remain standalone, or be superseded by Sales Recon?
+- **Why it matters:** Multiple tools for overlapping needs creates confusion and maintenance burden. CSMs need account plans for non-IRP customers too, which CLARA does not cover.
+
+### 15. LLM Hallucination Risk in Executive Demos
+- **First raised:** 23 Jan
+- **Context:** Idris's banking team found that Copilot changes SRB figures when challenged. They hard-coded rules in Copilot Studio to handle dollar amounts. Bernard acknowledges risk but says it is manageable with focused prompts. Alexandra wants to know how to protect against it in the Monday presentation.
+- **Question:** What is the mitigation strategy for hallucination in customer-facing or executive-facing demos?
+- **Why it matters:** One incorrect figure in front of Andy Frappe or Colin Holmes could damage programme credibility.
+
+### 16. Richard Departure Risk
+- **First raised:** 6 Mar (Azmain revealed to BenVH)
+- **Context:** Richard is interviewing for positions in New York. Partly motivated by disliking working with Rhett. Richard carries irreplaceable institutional knowledge — programme strategy, stakeholder relationships, Diya management approach.
+- **Question:** Does anyone else know? Is there a knowledge transfer plan? Can the underlying issues (Rhett) be addressed?
+- **Why it matters:** Richard is the programme's strategic brain. His departure would leave a leadership vacuum at the worst possible time (Gainsight integration, Diya engagement, cross-OU expansion all in flight).
+
+### 17. BenVH / Nikhil Conflict
+- **First raised:** 6 Mar
+- **Context:** BenVH feels Nikhil is taking credit for his App Factory work, renaming it, and presenting his architecture as his own. BenVH's recent absence was not illness but being worn down. This is a serious morale/retention risk.
+- **Question:** Can this be mediated? Who manages Nikhil? Does Richard or Natalia know?
+- **Why it matters:** BenVH is the only person who can deploy. Losing him would be catastrophic for infrastructure.
+
+### 18. Security Audit / Personal Claude Usage
+- **First raised:** 6 Mar
+- **Context:** Security audit caught personal Claude account usage for Moody's work. Ben Brooks providing cover. Azmain admitted the "no proprietary information" defence is false. Team spending 200 GBP/month personal money for Claude that they cannot expense.
+- **Question:** Has Bedrock fully replaced personal accounts? Is there ongoing compliance risk?
+- **Why it matters:** Data governance violation. If escalated, could damage programme credibility or result in disciplinary action.
+
+### 19. Friday PM App Development
+- **First raised:** 4 Mar
+- **Context:** Azmain building Friday (internal Monday.com-like PM tool) as a side project using Claude Code. Named after "His Girl Friday." Diana supportive, plans to present to Ben/Charlotte. Azmain burned $500 Cursor in one day building it. Prashant to be allocated to help.
+- **Question:** Where does Friday fit in programme priorities? Is it sanctioned or a skunkworks project? Who funds it?
+- **Why it matters:** Could be valuable but risks diverting Azmain's already-stretched bandwidth from CLARA and other workstreams.
+
+### 20. Rhett Operating Independently
+- **First raised:** 5 Mar
+- **Context:** Rhett did adoption charter work (Excel-based) without consulting CSMs, Liz Couchman, or following the agreed Word-to-app approach. Richard wasted a day integrating his work.
+- **Question:** Is Rhett being managed? Does he understand the agreed approach?
+- **Why it matters:** Uncoordinated work creates rework and frustration. Richard's time is already scarce.
+
+---
+
+## WATCHING
+
+### Parent/Subsidiary Account Rollup
+- **First raised:** 12 Feb (CSM workshop)
+- **Context:** Updates to subsidiary accounts don't roll up to parent, making it look like CSMs haven't updated.
+- **Status:** Issue identified and acknowledged. Unknown if fix is in progress.
+
+### Scorecard Data Accuracy
+- **First raised:** 5 Feb
+- **Context:** The 30-31 migration target for 2026. Are switch-off dates populated? Is the data good enough to track against the scorecard?
+- **Status:** Catherine doing sense-check on complex accounts. Unclear if complete.
+
+---
+
+## CLOSED
+
+(None yet — this log starts from the debrief baseline)

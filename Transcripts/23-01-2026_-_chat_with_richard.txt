@@ -1,0 +1,126 @@
+Azmain Hossain  0:00  
+Hey Rich. Hey Azmain Hossain, I'm good. I was just looking over the new employees added,
+
+Richard Dosoo  0:12  
+I'll be honest, the data mapping. I didn't really review it. I was just like, just let me get this done quickly, because I was, unfortunately, I was rushing, because I'm trying to get out for jumbo but it did the first mapping. It started to do some crazy shit about levels, and I was just fucking, just get it in, right? That's sorry. I shouldn't.
+
+Azmain Hossain  0:35  
+So the only question I would have is, obviously, yeah, I don't. I don't want to keep
+
+Richard Dosoo  0:41  
+you too long, because even you should be good, I should be letting you go. So that's my feel. I feel bad. I was like, I can give you my password for this, but I'm like, maybe I need to give it to Ben, and we tell him that we're both going to connect.
+
+Azmain Hossain  0:54  
+No, no, don't worry. What I need is basically. So this new thing Ben saying to add solution architects and implementation leads, but
+
+Richard Dosoo  1:03  
+they'll be on there. They already live. So on the solution architects are basically, it's a type, it's a role type. Those are that data is not in.
+
+Azmain Hossain  1:12  
+Yeah, this is what I was gonna so what I'm basically gonna do is that when you go to select these people, it should be everyone. You just search, and you can just select anybody, yeah?
+
+Richard Dosoo  1:23  
+Because basically imagine right, like this is organisation structure which matches reporting lines. Now, if you go to, let's go, you go to Ben, right, go up to Ben, yeah, right. So Ben, right. I'm a solution architect. So is layers, so is Christine and Steve Gentilly, but Rhett is Rhett's not Solution Architect, but he's a difference between you two in this, yeah, no, this is it. So you need another field in the data model, right, which is going to be a bullock to add, right, to basically, to denote, like, someone's role, and not just the reporting structure, like another tab in another column next to the person that donates their role, like implementation leading Solution Architect, or whatever Customer Success person. And then then we have to do another data fix again, to update all of the ones that you need. But basically, you could get right so, but no, no,
+
+Azmain Hossain  2:20  
+I'm purely and simply thinking about what's achievable by Monday, even if I do stuff over the weekend, and fingers crossed, don't
+
+Richard Dosoo  2:30  
+break this. Is it right? The it's achievable, but it's the database changes. We're going to need to get bent on again, because I know that what's going to happen.
+
+Azmain Hossain  2:39  
+Because I'm like, we need to stop even having him as an option.
+
+Richard Dosoo  2:45  
+Yeah, yeah, because you know what's going to happen. Basically that that's gonna we're gonna add a feel that our male big thing's gonna break. We're gonna spend ages with Ben debugging why the code is up to date, model up to date, but the process failed, so the database option, database isn't up to date. In the meanwhile, you're going to be getting 500 errors on that screen, because the AR is not going to know,
+
+Azmain Hossain  3:13  
+honestly, just, is literally just letting them choose from everybody that's in the employee database.
+
+Richard Dosoo  3:27  
+Where do you where does that association happen? Because you could add you need only applies to
+
+Azmain Hossain  3:35  
+CSM, because the only thing you can assign from a client, from a customer, in a CSM, so I'm going to have to copy that model and do an implementation lead, do a solution architect, and be like, there's only five solution architects.
+
+Richard Dosoo  3:54  
+There's only five of us. So you could just hack it and hard code our five names in there. That means you've got no submission,
+
+Azmain Hossain  4:02  
+like, because we're going to have to rip it out later. It's actually easier just to have the exact copy, like, three exact copies, where it just pulls from the entire employee database, and you can just search for anybody and click,
+
+Richard Dosoo  4:15  
+because basically Ben is going to run his waste and then after that, he's just working in the same time zone as us for for the next couple of weeks. So that actually helps us, because we're going to have more crossover time of him while he's in Amsterdam. Yeah, that would be massively helpful. Yeah, none, 100% so, yeah, so if Ben is cool with that, and then even on Monday morning, we could decide, or if not, after the meeting on Tuesday, we don't do it properly. Yeah, the I mean, like, if for the meeting on Monday, we go with what we've got, right? But then after that, we do this first or afterwards, after the meeting. Basically get that changing. And this is the reason why we want Ben to spin up these up environments so we can be doing so there's like a broad, you know, so, so let's do this. Then the other thing I'm mindful of is, I guess, what was there any other things that Ben wanted you to do urgently this afternoon.
+
+Azmain Hossain  5:23  
+I mean, the main thing that is that nowadays, employees are in. I am trying to get the information from Josh miles, George, George, George and Miles first, because they're, they're here of the account team, because that's, that's the one thing that Ben wants before Monday. Like, it has to be in I think he messaged on the wait, no, I think he messaged me directly.
+
+Richard Dosoo  5:51  
+Can he wait till like, two o'clock and then we can connect. We can reconnect on that, because I should be back from jumbo by then, and you should be back. We'll come like, if we can connect at two, and then just run through all of it. Yeah, let's do that. And then I can get, like, what I wonder if this will work the because I want to see if I can give you my claw code, or give you a claw code thing so you can be at least using that if, quote, cursor fucking starts failing
+
+Azmain Hossain  6:21  
+me, you can just, I don't know if you can just change your password to like, shared password is nice and, yeah,
+
+Richard Dosoo  6:29  
+this is the problem is, I'm using my Google account, so I'm not authenticating into Claude. I'm authenticating into my good
+
+Azmain Hossain  6:38  
+can you not just go and go to Change Password. It'll send you a link on your email. You click it, and then you just set a password.
+
+Richard Dosoo  6:45  
+No, this is it. I can do that, but and it will change everywhere, right? My Google, my everything. So it's cool, we, let's do this, right?
+
+Azmain Hossain  6:52  
+Let's No, no. I meant set a password, just for cursor. No.
+
+Richard Dosoo  6:58  
+I mean for claw Cody. That's what I mean, because they you, I'm using my I didn't. I have to set up another user account and do that again. But don't worry, try and use this, this pass that I've just sent you.
+
+Azmain Hossain  7:17  
+It's like, hey, why don't you pay me money? It went straight to upgrade.
+
+Richard Dosoo  7:24  
+I need to, I need to get the fucking things done. Bros just was slammed yesterday, right, you know, but I need to get the I need to get the I need to get earlier,
+
+Azmain Hossain  7:35  
+because he asked that dumb question to the cursor guy. Now we legally know that we can't use our personal accounts.
+
+Richard Dosoo  7:44  
+This is with this right? We could, once I get the all clear that we should be able to move past that hurdle, right? Because we'll be using our RMS accounts, and we're just paying for usage, but they're going to create a snow ticket to give us access and the usage account. We're just paying for it out of our cost centre ahead of the overload. That's what that's the over the plan, but, but is this? Will this let you, will that guest pass? Let you use your, I'm not your Moody's account, because we haven't set up the snow ticket yet. Will it let you
+
+Azmain Hossain  8:16  
+use the No, no, like I'm signed into cloud with my personal account?
+
+Richard Dosoo  8:20  
+Yeah? Just unusually,
+
+Azmain Hossain  8:22  
+it just goes, it goes straight to Claude upgrade.
+
+Richard Dosoo  8:31  
+Yeah, this is annoying because I thought it would let you use. I thought it would let you use, let you use it, because this is it can't have you been blocked on cursor. And I'll be honest, even if you if you upgrade to pro, you upgrade to pro once you use about four Opus like prompts, it's your usage burnt, and you have to go to max anyway.
+
+Richard Dosoo  9:15  
+See, this is the thing. I'm going to use 3% and my current session resets in an hour and 57 minutes. If there was a way I could share,
+
+Azmain Hossain  9:27  
+don't worry about it now, man, go. Go for prayer. This stuff we can do, like from two o'clock,
+
+Richard Dosoo  9:39  
+one second. Let me just run this.
+
+Richard Dosoo  9:58  
+Yes. And yeah. Cannot share core course uses of a colleague
+
+Richard Dosoo  10:08  
+unless I do a team plan and shared workspaces. However, each field member has their own usage allocation rather than a shared call. Yeah, I can't. Okay, let me do this. I'll be back at two, bro, so it's just between now and two. I'm not going to, like, I'm going to just go for the hook bar, and then I'm going to come back here anyway, and then I will,
+
+Azmain Hossain  10:37  
+don't worry, man, you go thinking by that point, like, I had like, three calls with Ben. I need to get together all the stuff that he wants me to do, starting with the main thing is, for some reason, after this portfolio review, stuff's been added. We can't add stuff like, we can't add a use case. It's giving the stupid Axios error again. Sure.
+
+Richard Dosoo  10:57  
+Yeah, okay. So then the only other thing would be, do you have, I don't think you've got, do you? Would you mind do me a small favour? You know, we had them. It's basically starting a teams thread with, like, all of the people that were helping us, the individual contributors that were helping us with the meeting, like Jamie, you remember that call that we had with them, and then Alexander and Bernard, and I've got, actually, I'll do this when I get back. I'm going to show you the link to the slides anyway, but I'll do this. There's no way needs to happen right now. We can do this when I get back. Should be letting you go great as well as time, so last time. So let me and then when I'm back, we'll tell Ben, I'll be back up to you, and then we'll sort everything out for me. Yeah, yeah, no worries. Nice one, bro, I'll speak to you.
+
+Azmain Hossain  11:47  
+Speak soon. Bye.
+

@@ -1,0 +1,129 @@
+Speaker 1  0:00  
+Cover up what we're looking to discuss. So Stephanie, Petro commercial strategy, we're given a task middle of last year to set up the AI steer code for insurance petrol.
+
+Speaker 2  0:17  
+Yeah. Do you mind if we report the session? Not all, of course. So we don't need to take notes. Let's go pilot. Have taken note for us so we are sure we don't miss anything. Yep, sounds good. I can start. I
+
+Azmain Hossain  0:49  
+Here we go. All right, sorry, Colin, we cut you off.
+
+Unknown Speaker  0:53  
+No myself has started recording so absolutely fine, Richard, Richard, you back on.
+
+Unknown Speaker  1:04  
+Sorry I hadn't pressed the button, but yeah,
+
+Speaker 1  1:07  
+I'm back. That's okay. No worries. So let me just start again. And so at a high level, we were asked the middle of last year by dia so this was stemming from the dialogue that she had with both Colin and Mike to set up some kind of forum that would operate at a central level within insurance. It was agreed that that would be kind of managed, progressed to the commercial strategies team, which I set part of Natasha and Rani, forced to stop for Matlab was working on that with me, along with me. List advantage, who's still kind of doing some of the work on this as well. We basically set up a steer code with representation from across the different functions and sub segments of the insurance business. I can share with you that the introductory pack that we prepared for that the main objective that was set by both Colin and Mike was to get a bit of a better understanding in terms of the various AI activities that were happening across the insurance business. So if you like, come up with an inventory in terms of what everybody's doing. Then start forming what everybody would like to be doing in 2026 and then zoom back, pair this down to a handful of initiatives per sub segment and function. So whether that's analytical services or whether it was CS and the idea of doing this was to ensure that we're going to get the biggest bang for the buck, we'd either be doing things that are going to introduce material efficiency savings, or they would attract significant GMB, so post new business, or they would help in the retention efforts with our clients. So that was the three kind of main things. There was recognition that lasted. Had been lots of activity that had been done historically, but they've been very little work done to evaluate how successful these AI initiatives were. And so part of the other objective given was to come up with an evaluation framework, if you like, that allows us to form some KPIs and start to kind of manage it, an SLT and a segment level, all of the work that insurance are doing in terms of AI, whether it's generative stuff, whether it's agentic stuff, all the different facets of AI and help make it manage how we're progressing against that. So that's the second bit. And then very last the third bit, which is why we're chatting to you guys today, is, how do you then improve the cross functional working? How do you ensure there's greater collaboration happening? How do we make sure there's greater consistency in terms of the skills that people have got and the way that they're using AI and ensuring that kind of lessons learned and all that type of good stuff is kind of pushed out to everybody. Everybody's aware of it. You've got that whole idea of continuous improvement, etc. So that was the backdrop to it at a kind of inflection point now, and Richard has been working with all the guys in terms of coming up with a view for 2026 which is where Azmain comes in to manage some of the stuff. From a CS perspective, we've got a similar shortlist that's in place for both PNS, for the modelling guys, for casualty and for life, right? We're now looking at an insurance business in terms of how we then operationalize this and come up with a bit of a broader operating model view, and which is work that I'm doing with Maria caramel in the commercial strategy team. But the purpose of the call today was always to get. Of get a sort of drains up view in terms of the training that you've been running, understand how that's been structured, and then look at how we can then leverage that in other parts of the business moving forward. That's a very quick four minute download in terms of what's happened over the last six months. I'll pause briefly in case of any immediate questions on that.
+
+Azmain Hossain  5:30  
+So this is going this might sound. Sorry.
+
+Unknown Speaker  5:33  
+Richard, no question. No question.
+
+Azmain Hossain  5:37  
+Okay, so question from me. Colin, obviously it makes sense that we we find out whether or not we're duplicating efforts, and if we talk to other functions of the business, they might be doing stuff we're doing as well. Is the is the steer code basically just going to be for our insurance initiatives, and then a separate one for, like, to talk about it with banking or something like that, or is it going to be one, consolidated one? Yeah.
+
+Speaker 1  6:07  
+I mean, the whole idea was, it was set up purely from an insurance perspective, and I don't think it was. It was meant to be an enduring forum that's in place. Speaking to Colin Mickey about this just the turn of the year there, their view was that it's kind of done the main ticking of the boxes in terms of us understanding what was happening, and I was coming up with a bit of a better views of what we're doing for 2026 I think there's probably a need for us to kind of have a rethink in terms of how we create a broader operating model, establish that and then form these linkages with the likes of banking and the other kind of parts of the NA business, more formally. And I think the work that we've done thus far in terms of reaching out to applied AI, the platform and engineering services, etc, has been largely informal and kind of anecdotal. So I think we want to kind of industrialise it from an insurance perspective and put that kind of operating model in place. Banking have done a similar thing from an AI perspective. So want to kind of leverage some of the work that they've done, and come up with an ensuring specific view of that. But the main call it from call Mike was, you heard there's been some great training work done, and Richard did a good job of kind of showcasing that in the last year call that we had. They're now really, really keen that we start kind of rolling that out in anger, because you have heard from the stuff that Rob was talking about at the town hall, the whole idea is that AI becomes part of our DNA, and that the AI aspects actually get built into people's performance reviews, becomes one of the kind of key objectives for them. And certainly within commercial strategy, we've got an ask to have at least one or two objectives that kind of call it the AI work, does that answer your question?
+
+Azmain Hossain  8:11  
+Azmain, yeah, yeah, yeah, no, that gives me kind of Now, I understand there's, we're going to be keeping it within insurance. So you know, the thing that me and Richard have been talking about, kind of taking all these five projects, plus the training, because the training is a huge part of it. It enables everyone to come up with ideas, to think how they need to think, to actually use these tools that we're providing them. So the training element is going to become like project number six, because we have to enable it and we have to operationalize it. So, yeah, thanks for the explanation and like, yeah, I have a good map in my head now.
+
+Richard Dosoo  8:50  
+Okay, the I guess Colin, I gave a brief summary before, but Pietro and Stephanie really were the people that were helping us not only organise the sessions, drive the content and delivering the sessions like we had, like huge number of attendees, right? We had 80 people register for the sessions. We had a pretty good attendance. We did have some challenges, because we had to schedule quite a large number of sessions in quite a short window of time. But I don't want to underplay the amount of work that Petra has definitely had to put in to get us even to that point where it wasn't long true we I guess. So there's a couple of things that come out of that. Once I've gone through with you the training that we provided, do we want to just rerun those trainings again, like all I guess. How do we want to come up with what the plan is for 2026 do we want to first just revisit the training that we already have given to the insurance so you to customer success across the organisation? Or are we talking about actually defining different. Training criteria based off a set of priorities. I guess maybe that's maybe, if I stop there, that'll be the first question.
+
+Speaker 2  10:10  
+I think that you shouldn't start thinking in terms of of training, because for what I understand, you have some kind of new roadmap put in place for 2026 I think that you you can start, maybe I don't want to dive into operationalization right now, but at the very high level, you have identified five projects. Maybe let's, let's dive into those, each one of those projects, and try to understand which AI capabilities require those projects require. And I'm not talking about training, not even learning here. Just identify, how can AI help those projects? Is it about process automation? Is it about analysis? Is it about building report that kind of stuff, and then when you have identified the AI capabilities that needs to be actioned, then we can dive into the tool that are behind those capabilities, and then we can see what needs to be learned. And in the same time, I would this is something that we have started to implement, I would have some kind of survey where we try to take the picture in terms first of knowledge the people have of those capabilities. Are the novice, are the expert, either are they, you know, in the middle proficiency, and how important is that capability for their and so having that picture in mind, you know, level of knowledge, of practice importance for the role, the different capabilities and the learning that we can attach to them, then we can identify different chapters, and we can organise, maybe, like we have, like Stephanie basically has done a set, you know, a series of workshop dedicated to AI capabilities. But the learning is something that you you should consider at the very latest stage.
+
+Speaker 1  12:58  
+Okay, would you see that then Pietro? So what I'm hearing here is almost like a customization, so the sort of initiatives that are being worked on by the different parts of the business then are going to be quite tailored, quite specific to that part of the business. Is it then a kind of general foundational bit that would sit underneath that, then
+
+Speaker 2  13:21  
+we can have a general foundation shared by other, by all, and then we can have customised briquette, you know, depending on the role and the project.
+
+Speaker 3  13:33  
+Sorry. Stephanie, yeah, I totally agree with Pietro. And I just want to add on as we're thinking about, you know what, whatever like, what the learnings look at like, I would also, I would also be curious like, I tend to plan with the end in mind. So what is success? So if you were to go to upper management, and you were to define success in this area, what would that be? What is it you what? What is it you want to say to them, that this is successful? And then, once we know that, you know, we want to say it's successful because of this, this, this and this, and these are very clear measurements that we have, and this is very clear impact, we then plan backwards for that. So how do we get to that impact? So you mentioned that you know training or AI is going to be a key objective. So would success be that 95% of the business is meeting that key objective or exceeding that key objective. So you know what is, what is that specific? Because then, like Pietro said, we could do, you know, the surveys, we can figure out where people are, and then start to differentiate the learnings on what people need to reach their different objectives. And then you'll be able. To compare what your success measures are to what you're seeing.
+
+Speaker 2  15:07  
+And also, I would say, if you want to go deeper, when you say about success and exceeding success, what's the measure you know for to be able to say, we have success, or we have exceeded,
+
+Speaker 1  15:23  
+you know, yeah, yeah. Where's the bar at, yeah, yeah, okay.
+
+Speaker 3  15:28  
+Like, are you looking for? Like, let's say we have, we have the ability to get dashboard information on how people are using AI. So would it be a specific percent on the dashboard? Would it be, you know, you hear customers coming back and saying, everything's so much faster. You know, people getting more projects, more things done more efficiently.
+
+Speaker 2  15:55  
+Is it a time to market prediction? Is it, you know, an improvement in accuracy. Do you have a customer that promotes a score that has improved?
+
+Speaker 1  16:08  
+Yeah, I think you largely is kind of pointing to the internal initiative. So the stuff that should and Azmain have been working on, whether looking to introduce efficiencies and looking to improve customer contact times, etc, so we do need to come up with that set that kind of allows the KPIs for that. And I've been chatting the likes of Raj and gi como in terms of how we start to develop that framework for their having the KPIs in place. Whereas if you look at some of the AI initiatives that are then focused on GMB retention, largely, is based on money generated, whereas I think, you know, in terms of a team perspective, it's important we get the that foundational work in place. We understand how to measure and how we can determine whether we're kind of hitting the bar, whether we're exceeding that we're from. So sorry, Azmain, your hand up.
+
+Azmain Hossain  17:01  
+No, no. I'm really glad we were able to have this because exactly what Stephanie said, we need to know where the bar is set, so that we know what we have to clear it. My question was more going back to how Pietro described the training structure. So obviously, like you said, Colin, there's going to be a foundation level training, which is like, you know how to get started basic stuff. And then Pietro, when you describe the kind of buckets of things based on how people what kind of work people want to do, I think that's a really good way to go. And I'll give you an example. If somebody's like, I want to make dashboards. Like, I have a bunch of Excel sheets. I want to make dashboards. There will be a training on dashboarding. Obviously, it will teach you the technical stuff, but it will also teach you general stuff, like, how do you present data so that it's useful? How do you pull out rag statuses and blockers and stuff like that, all the things that makes a good end product. We teach them that as well. And that can happen with a different one, where someone's like, I just want to make nice presentations. Like, I have a bunch of Word documents. I need them made into presentations. They attend a different training, where it's about how to make presentations, how to craft them, and then all of the general knowledge of how to make a good deck, that knowledge as well. So, yeah, I like the idea of bucketing these,
+
+Speaker 2  18:27  
+yeah, and for good, good presentation is a good example, because what does it mean? Good presentation? Is it to have nice bar chart, you know, with colour that are complementary that you know, or is it bringing insight?
+
+Azmain Hossain  18:44  
+Yeah, exactly, so that that's one of the things. Like, for example, when we're developing that training, we're going to have to decide, like, do we focus more on how to training people, on how to surface insights from long word documents into their presentation? Or do you think the more urgent thing is that all of our presentations look ugly, like, what's the what's the need for the business?
+
+Richard Dosoo  19:11  
+But Azmain, you you're really hitting on some salient points there, because you're taking the training we did before was very like targeted about products and capabilities, and then we had examples of use cases, but now we're flipping that right, and we're making a solution focus, yes, and we'll figure out which people fit, like, who's doing that job. That's going to help define the scope of the training and the requirement. So it's a it's it's taking what we've done already and rearranging the order, but I think it will be valuable if we do it that way, but it's definitely much more. We'll have to really support you guys with more like content, more use cases, more data, right? Because the training is going to be so i. It's going to be so domain specific now at that point, right? Because you're going to be well, however, we decide to do it right. But then it's valued. Doing it that way, right? If we make it really domain specific,
+
+Azmain Hossain  20:09  
+and we don't have to aim for, like a home run on the first go, we do the first training, we get feedback on people, from people, on what they liked, what they didn't like. But it just means that, obviously, like Richard you said, it becomes a bit more role specific, but it also allows people who might not do that role to acquire skills. Somebody like a data modeller who maybe doesn't make presentations, can take the training on presentations and learn a bunch of stuff.
+
+Speaker 3  20:39  
+Sorry, Stephanie, please go ahead. Oh no, I I'm in. I'm very much agreement. And then with with all of the trainings that we're doing, because they're all going to be different depending on what people need as we plan them, we're also going to need to think about what people know going into it, and then what they're learning versus what they're going to leave with. So thinking about different questions we can ask and different ways we can collect that learning data within the presentation, and also what is the materials and what is the ongoing support that somebody might need. So then you all are seeing what they're learning in that presentation, like what they're learning it. They're being transferred into their every day. So what is the artefacts that we're also collecting? So let's say we have 30 people go to a dashboard training, and 25 of those people, within two months, are creating dashboards. They're using dashboards and then sharing them back. We now have good we have good data to show that the majority of the people who went are now using the information to then, then go back to our original KPIs to then say, this is the impact that that's making, and then also understanding where people are. So we might do a training that misses and, you know, thinking about, what do we need to do to go back and reteach or go back and think about who the people are in the session, and then what else they might need?
+
+Azmain Hossain  22:11  
+Yeah, we definitely need to get a lot of feedback in the beginning. We need to get feedback on content to keep it updated. But then we or the people creating the training, so this will be Pietro Stephanie. You guys, it's also keeping the training up to date with the technology that's available right now. We're all using Opus or sonnet from Claude, so we give training based on that. A new model comes out in three months that's a little bit different and way better we would have to update the training so it becomes an ongoing process, because the landscape is shifting, the tech is changing,
+
+Speaker 3  22:50  
+and what, what would be ideal is within our our year is if during the trainings, we start seeing SMEs within your line of business, we can work with them so they can also deliver the training. So now it's at scale, and you don't have to always worry about, you know, Pietro and I doing it. You now can say, Oh, we have two or three SMEs who are aware of the information, who are, you know, with the training, who understand the updates, and everybody knows them within the business, so we can still support it, but then now they're able to grow, and you're able to also grow, and see that that scale growth within your line of business,
+
+Speaker 1  23:34  
+yeah, that whole train, the trainer approach, definitely The content that you've got then, has that been refreshed? Or is it the process of being refreshed from the CS train that you ran? Do you get feedback on
+
+Speaker 3  23:55  
+that you can start? There was some trainings that I did with you all that I redid, and then I've been refreshing as we go. But that was the the AI training, okay?
+
+Speaker 1  24:10  
+And then content that you guys, is that, then applied sort of the parts of the business, is it kind of, you know, one size,
+
+Speaker 3  24:25  
+some parts, yes. Other parts, no. So if it's if it's a overall of how x is used, or how Microsoft graph looks, that's the same throughout the business, because that's your data, and we want to understand where your day is going. But if we're doing a lab, we'd like to make sure it's aligned to what your business does.
+
+Richard Dosoo  24:57  
+We took specific problems that there's custom. Have successes we're facing today, and we use that to drive some of the training content. So we'll have to boil that up find use cases that resonate broadly across the business
+
+Speaker 1  25:14  
+here in order to help inform that the colleagues to be a bit of too late. Happy to hear some kind of describe, some view of cases that are in place at a high level. For example, within insurance, casualty versus PMS versus life understands the kind of nuances.
+
+Richard Dosoo  25:36  
+Yes, good examples of that the Life team, the and us, we both have a requirement to do customer sentiment from Salesforce. So that's easy, right? So that training actually benefited me, benefited Bernard, benefit Alexandra, because we're both doing the same thing. It's just across different customer bases and different products, where some of the training isn't going to be applicable is maybe we did some training on Moody's copilot. That was relevant for some parts of the organisation, but for some parts of the organisation, they don't have their data, they don't have their IP and Moody's copilot, so it was less relevant to them. Those are the kind of differences that you're seeing Okay,
+
+Speaker 1  26:27  
+and from an objectives perspective, and Pietro Stephanie, what do you kind of have on your your your roster for this year? What does good look like from from a training perspective, in terms of targets, okay? So again, turning around on his
+
+Speaker 3  26:45  
+head, yeah, I think from, from, I mean, my perspective, I know pietras might be different because we were covering different areas, but it's really making sure that the trainings that we're doing are meeting the the end results that were expected. So as we plan with you, and I'm kind of turning it back, but the end results that you want us to meet. So if you're saying, These are the KPIs, and this is what we want to do to get people there, we want to make sure that we're doing everything we can to make sure we get your people to those KPIs.
+
+Speaker 2  27:21  
+Do Yeah, nothing, nothing else to add. The main goal of what we are going to do is really to target the end goal and leveraging the different KPIs that we will identify, you know, across the different different projects, and all the training, all the experience, I would say that we are going to put in place will be to help achieve the end result.
+
+Speaker 1  27:53  
+Okay, great. And just in terms of the stuff that was used as CS, I don't know, Richard heard that you shared that is a place that you can thanks. Stephanie. Is there a point in terms of just sharing the collaterals put in place?
+
+Richard Dosoo  28:06  
+Yes, great job. And she's put it on Moody's University. So I've just shared the link in the chat, but she created a playlist with all the training so you can just come in here one stop shop, see everything and watch the recording. Is everything. So that's all there that's been shared, but definitely share it amongst the leadership team, the strategy team, and we can figure out how we build from it.
+
+Speaker 1  28:27  
+Great, perfect. Okay, I'm just conscious of time that's been super useful Pietro and Britain, thanks for asking for you can join me. Let me feed this back as a declaration of strategy team, and we'll be in touch to kind of take this forward, but really appreciate time and input on this.
+
+Azmain Hossain  28:46  
+All right. Awesome. Thanks. Thank you, everyone. Thanks all.
+

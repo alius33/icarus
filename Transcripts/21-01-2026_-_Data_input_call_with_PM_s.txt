@@ -1,0 +1,252 @@
+Azmain Hossain  0:00  
+Information that's that they need to fill in. So easy stuff, like, you know, every account needs a CSM assigned to it. That stuff we can do with them in the call, bigger stuff, we ask the CSMs to fill in. Sorry, go ahead,
+
+Vlad  0:16  
+just a quick question to understand about the, let's say broader picture. You were talking about the underlying data needed for the IRP report that we are making with Stacey, right? It's not just for the IRP report, because the thinking is that that IRP report
+
+Azmain Hossain  0:37  
+will go away. We don't need it because senior people can just go on the dashboard and see any data they want. It takes the manual exercise out of it. So it's not just information that we were gathering for those reports, it's other information that people need around the business, anybody who's involved with IRP information that they need that only the CSMs know about.
+
+Vlad  1:08  
+Okay, and then, which accounts should we cover? Yeah, so I am sending you guys a link in the chat for the adoption
+
+Azmain Hossain  1:17  
+tracker, like this is the live version I um, so yeah, click it, and it should load up. Now, answering your question, Vlad, what are the key bits of information that need to be filled right away, and for which accounts? That's the question I need answered. So I'm going to have a call with Natalia, with Ben Brooks, and I need that like, confirmed by them. What are the accounts that we're targeting? How do I how do we identify them and within those accounts? What's the data fields? There's a lot of missing data fields. What's the most crucial ones? Hi, Diana, sorry, I had launched into, kind of explaining the purpose of the
+
+Diana  2:06  
+exercise to everyone. No worries Azmain for taking time to clarifying the purpose of the exercise. Yeah, yeah.
+
+Azmain Hossain  2:15  
+So one thing I wanted to show everyone here, and also yourself, Deanna, is initially when I made the request to Natalia, the thinking was that there would be giant Excel sheet and we would sit down with with the CSM and fill in as much data as possible. It's a bit of a painful exercise. So instead of that, I created a section just for us and CSMs to be, like a data input hub. So when you sit down with the CSM you can literally just be like, okay, which client is yours? Okay, arch is your client. It's showing that there's like, use cases are only less than half complete. Account is less than half complete, and the CSM says, Okay, let's have a look at the use cases. You're like, okay, these are the three use cases under arch. You click into primary, and it instantly tells you. It's like, this is the stuff that you need to fix. Need to put in target completion date. What's the adoption stage? The fact it's currently Amber, but there's no blockers. Like, there should be a blocker listed. If there is, there's like a dummy one right now. So and then off the blockers. Another thing we ask for is an action plan. So if you have a blocker, one of the things that seniors will be start asking CSMs is, where's the action plan to fix this blocker? Or if you you know, if you have five blockers, you can have one action plan to fix those blockers, but you need one. So the logic is, anything not in green needs blockers to explain why, and any blockers needs action plan to know how to fix it. And it's essentially this exercise. So you go through the primary underwriting, then you go to the second use case, and you see, literally same things are missing. And it's literally going through accounts with the CSM, filling in the easy stuff and asking them to fill in the more time consuming stuff. So for example here, there's no use cases at all. So you can be like, What is going on? Is this customer? Not a customer? CRC group, if you go into the count, yeah, it's showing as active, but there's nothing happening. There's no CSM assigned. There's no executive summary to explain what is going on. These are all the gaps, and I've kind of made it as easy as possible for them to do it. So they can go they can search for themselves. They can assign themselves as CSM. They can put in all the data, like without having to go into a different field, sorry, a different page. If they want to add blockers, they can add use cases, action plans. Everything they can do in this one page, and when they're done, it moves to 75 or 100% and then it's green.
+
+Azmain Hossain  5:13  
+So any questions now on how to fill in the data?
+
+Vlad  5:18  
+Yes, but before we get into that, all these data that you put in here, or, sorry, my question is, did you add all these data, all these, these accounts and everything?
+
+Azmain Hossain  5:29  
+Yes, this is all taken from the December golden source sheet that friend and Deanna, I think,
+
+Vlad  5:40  
+worked on. Okay. So how are you going to split this?
+
+Azmain Hossain  5:48  
+Okay, step one is we find out how many critical accounts are there that we need to update. Once we know that number, then we can discuss between us who has availability. If somebody has more availability, they can go through they can be given 10 accounts.
+
+Vlad  6:10  
+And sorry, Azmain, quick question, is there some kind of a deadline for this, like some, I don't know, you want to have this done before the end of the month, or what will be the by the and the reason
+
+Azmain Hossain  6:27  
+for asking both you, like us and CSMs, to do it on the platform, like not using an Excel sheet, is to get as much data in there as possible, as fast as possible. So while you know, one of us is going and doing something with one account in one CSM, the other CSM can be inputting data, and everything gets saved. And the thinking is we're asking them to stop putting stuff in Salesforce, like updates and stuff like that, and put it here. So going forward, this will be the most up to date and accurate source of what is happening with IRP overall.
+
+Vlad  7:06  
+Yeah, because as far as I'm concerned, I have availability here and there, so I can fill in, you know, some like, if I have a little time, you know, in the afternoon, or a little bit in the morning, I can enter into the platform and fill in some data, where I have the information, and so on. So doesn't necessarily need to be like full day on that, or two afternoons or things like that. The thinking is literally
+
+Azmain Hossain  7:34  
+just like we were doing for the end of month, reporting where we were reporting Exactly. We would reach out, we would get a list of accounts, and we would reach out to the CSMs and be like, what's the update on these? It's just, instead of a small exercise like that, this is more like setting up a call with them, understanding who are their accounts, because that's, that's the big thing that we're missing right now. Everybody wants metrics by team, metrics by CSM. The problem is it didn't pull through any data of who owns which account. So that's the that's the first thing to to input. And even there, I'm going to need your guys help, because, for example, what I've done is painfully, I've gone through the Moody's people directory, and I've added every single person under dia. And my thinking is any and all CSMs that are assigned to these projects or these use cases or customers will come from this list. But what if, like, I don't know, what if there's other CSMs that are not working under data that are assigned to stuff. If you find such a case, that's where you raise it with me, and then I can add that functionality in.
+
+Vlad  8:57  
+Okay? And since we have just like nine days until the end of the month, what would be the critical information that we should input first? Because, honestly, how many accounts do we have? There are? There are so many.
+
+Azmain Hossain  9:13  
+So right now, yeah, let me go to dashboard. We filtered in 155 that are active. So we're just skipping the inactive ones. Those are useless. But of these, I need to speak to Ben Brooks and understand for him and dia what are the critical, critical accounts that need the information first. And it will probably be like some kind of some kind of tag that that will, that will put on the critical account.
+
+Vlad  9:47  
+Okay, so when will you have this information so that we can, we can start, because by the end of today. Okay, okay, then, so, yeah.
+
+Speaker 1  10:00  
+Hey, Azmain, I have one question, yeah, please, please, yes. So this is looking really good. We can see so much of progress since Sol last week. In the long term, Azmain, who would be like, maintaining and updating these dashboards? Would it still continue to be us SPMs, or would the accountability be like, fully with the CSM so because we can, we can, obviously we can go ahead and, you know, work with them and start updating things, but they would require to be updated regularly, right, every month, at least.
+
+Azmain Hossain  10:33  
+So right now, this entire platform is fully CSM focused, right? Falls on them. After the initial push to get in data, the burden falls on them, just like right now you know the burden is on them to update Salesforce,
+
+Unknown Speaker  10:52  
+right, right, right, right. Okay, that
+
+Azmain Hossain  10:55  
+exercise moves over to here. So it'll be so you know, people like Stacy, Natalia, Ben, they'll be looking to CSMs to keep this thing updated. Going forward, I do want to add in a pm section into it, because I think we they really need our perspective. Because we saw with Salesforce, there was a lot of discrepancies where a CSM might see something as Amber, but as a project manager, we're like, this is like, flashing red. There's a lot of problems, right? Yeah, I think having that kind of visibility is really useful, but that's kind of a afterwards, and that's something that I don't want to do in this haphazard kind of way that we've done where it's like, you know, requirements flying in from chat messages. I want to sit down with all of us and be like, Guys, if we build a project management thing, what should it
+
+Unknown Speaker  11:51  
+be, right? Yeah, yeah.
+
+Vlad  11:54  
+And I'll just mean one more sorry,
+
+Speaker 1  11:59  
+yeah. So one other question I had, Azmain was like you provided an example of a account without a CSM. In that case, who would we reach out to someone like miles or George to see who would be assigned to? Obviously, what we'll do is we'll get the list of accounts that is
+
+Azmain Hossain  12:22  
+critical. Critical, and then we're going to send it to miles, or Josh Alanson or whoever, and be like, yeah, account, who is the listed? CSM, like, not relying on this data, just from their data, who's and then you set up call with, you know, CSM X, and you're like, yeah, here's the five customers that you have. You click on the customer and they will Yeah, they will not have miles assigned to CSM. So you literally
+
+Speaker 1  12:51  
+have to do it. You have to write as the CSM and then make the other changes. All right, perfect, because previous, previous reporting work that we did, a lot of time for me at least, was consumed in finding who the CSM was, because there was a little bit of error in the data. So okay, cool. So as long as the most accurate information, like exactly department
+
+Azmain Hossain  13:23  
+managers, yeah, on a document or an Excel file somewhere. So we'll get the information from there, and then we'll put
+
+Speaker 1  13:31  
+it in here to be the source of truth. Cool, that saves us a lot of time. Yeah, thanks for that cool and stuff like that. But we will add that in. That's the
+
+Azmain Hossain  13:41  
+whole point of getting all this data in. Is that down the line we can make reports out of it?
+
+Vlad  13:46  
+Yeah, for sure. And Azmain, how about the CSMs? Are they happy to work with us, or to start filling this platform instead of SLDC? Or are they aware of this? I'll tell
+
+Azmain Hossain  13:59  
+you what Ben Brooks told me when I was like, we were talking about Josh Alanson, and I was like, Yeah, we really need to get his and his team's buy in to get this into work. And Ben was like, buy in is not optional. This is what they have to do, okay.
+
+Vlad  14:14  
+But were they informed? Sorry, were they informed, yeah, literally from the very beginning,
+
+Azmain Hossain  14:21  
+like early prototypes, they've been informed. We're actively taking feedback from George dyke and Josh Alanson, who are the leaders of the CSM teams. We're really like building this in conjunction with them, so they they fully know what's coming and what's expected of them. The problem occurs, as it always does, is actually
+
+Vlad  14:47  
+getting them to do it. Azmain, very good. So I guess so like the next step would be to for you to meet Dan Brooks and see. Which are the critical accounts on which we we need to have, let's say, some priority, and then somebody, probably you or Diana Stacy, will will split those accounts to us so that we can, we can start discussing with the with the CSMs.
+
+Azmain Hossain  15:17  
+Want to do it like as a group, so once we have an Excel file of these are all the accounts. I really want everyone to be like, I have 20% availability, 3050, and then we'll assign accounts like that. And we'll do it, you know, so that you don't get random ones, you get all the ones for one CSM, so you can just talk to that one person. We'll just make it as easy as possible. I
+
+Diana  15:46  
+Azmain, do it, we have some best practices, how we should update the missing information because, yeah, there are a lot of edit fields where there is, yeah, free text. So I'm not confident that our CSM have one. In the same approach, we've tried to limit free text as much as possible.
+
+Azmain Hossain  16:10  
+Okay, I just realised this region shouldn't be a free text. We have a list of regions, so we've tried to limit everything to drop downs as much as possible. Some stuff that we were just like, I don't even know what to put as options. We've left it. But some things have to be free text, like when we want description and details of of blockers, for example, we need them to be able to put in the data. But again, little gaps like this, where the owner, when you create a blocker, is a free text field that shouldn't be this is where I'm going to need your help. This is where you find a little okay, you click this button and you submit some feedback. This thing is broken.
+
+Diana  17:01  
+Can you fix this? The other question that I have, in fact, from this dashboard, for example, yeah, we have the use cases, but for me, it's not clear where we have some commitments for delivery of services, where we have a project going on. It's not clear for me, yes, so how we track this? I mean, one of the things that we we have to do as we're
+
+Diana  17:36  
+going through is fix the status like, okay, but look what use cases are objectives or success criterias that are miles client would like to reach, but not always with Moody's is leading that change. For example, some of the clients are using their implementation teams. So we are just, we are just monitoring how, for example, they are progressing with portfolio management, yeah. But for other things, when we are doing they're doing underwriting and they're integrating a new tool. We are providing safeguarding so how this is tracked within this chapter, and how we are sure that how we are ensure that our services are with the right quality, or we don't care at all when we are monitoring the health status because, yeah, as a PM, I cannot comment on any of these use cases. Yeah, exactly. This thing is really not built for,
+
+Azmain Hossain  18:57  
+okay, the way that we PMS See, see these projects and see these customers, okay? Literally, everything you just raised is something that I've raised because I think that information needs to be in here, but okay, that I've gotten over and over is we need to get the CSM stuff.
+
+Diana  19:16  
+Yeah, yeah. Okay. This is
+
+Azmain Hossain  19:19  
+everything is geared towards how a CSM C data we can get out of
+
+Diana  19:25  
+them, right? Okay, so when we is it correct to say that when we are reviewing actions on the use cases, actions should state, in fact, which part, which team within Moody's organisation needs to provide some inputs? For example, if we have a Blocker with the product, action should be with the product. If we have some problem with licences, sizing of the platform. This should be with the sales, yes, if we have, yeah, okay,
+
+Azmain Hossain  20:04  
+this is why like blocker type, we've got that like client, okay,
+
+Diana  20:09  
+we've been, Oh, we got, okay, I got it where it is, yeah, yeah.
+
+Azmain Hossain  20:14  
+So again, this is exactly what we want to do. But we want to be make, we want to be able to make a report and say, what are all the blockers that are for product? Let's send that. Yeah, let's have a chat with them.
+
+Diana  20:25  
+So before that, at least we have some quantification. I got it, okay, yeah, there is, yeah.
+
+Azmain Hossain  20:29  
+We've tried to put in as much as possible. But like I said, this has been done very iteratively, so there might be stuff that's missing if there is, okay, this is where it's really helpful to have an Excel sheet in the background that's capturing all the feedback stuff. Just start submitting them. And if you try and submit one actually, oh my god, I'm going to try and submit one now, and it's going to fail, isn't it, God knows where it's gone. I'll find it. It's in there somewhere, okay, but, yeah, the feedback system
+
+Diana  21:08  
+works, great. Okay, got it?
+
+Vlad  21:11  
+Sorry, I have also a question. It's a little bit related to what Diana said. So I understand that this information, sorry, this platform is mainly populated by the CSM. So for example, if there is an information already provided by the CSM, there is basically we shouldn't challenge that, right? Or there is nothing else we can contribute, right? So our role is mostly to ensure that the critical fields are filled in, right? Yes, yeah, okay. And we might not be the person to provide that information, but we are going to kind of find the right persons to provide this information. Yes, having a session with
+
+Azmain Hossain  21:54  
+them really puts it in their head that this is a they get
+
+Azmain Hossain  22:02  
+to see you editing fields and putting in data so they know how usable it is. And B, it puts the pressure on them of like, okay. Now you've had a session with a pm showing you how to do stuff. Why are you not filling in this data?
+
+Vlad  22:19  
+Okay? And last question, I think, you know, some of the CSMs may not be available before the end of the month, and if there is one of the critical accounts, what's the solution available in the next two weeks? That's when we we raise it up the line. We go to we
+
+Azmain Hossain  22:34  
+go to Natalia, we go to Ben, and we're like this. Person is not available. How do we get
+
+Vlad  22:47  
+this information? Should we go that far? Probably just the first level, like the CSMs manager. Wouldn't that be enough? Because probably the CSS manager knows who else can cover the topic. Because probably going to Ben Brooks, it could be like an escalation, like, you know, I mean, one
+
+Azmain Hossain  23:06  
+of the reasons they wanted PMS to do this is they rely on our critical decision, just like, get it done without causing
+
+Unknown Speaker  23:16  
+problems. Yeah, exactly.
+
+Speaker 1  23:22  
+Yeah. All right, okay. On final question, sorry, there's been one final question. Is there a way of like, Have you, have you all started thinking, or is there a process in like, to back up the data that you currently have on the on these dashboards? Because I'm a little bit conscious if we need to revert back to what was there previously, because it's our first time doing this data entry exercise, and given that in the previous round of reporting, we had a golden source to work on, but now this is the golden source. Yeah, so just wondering if there was a data backup in place every item,
+
+Azmain Hossain  23:58  
+every use case or blocker, or how or action item, whatever it has an audit trail of what was changed by whom at what
+
+Unknown Speaker  24:08  
+date. Okay, perfect, right.
+
+Azmain Hossain  24:10  
+Okay, if an error happens, we can just roll back to the last time we had the
+
+Speaker 2  24:15  
+correct data. Excellent. Cool, sorry, Azmain, I think you already covered this last time, but it's it's not possible to do an export of that view that you showed us. Is it No, no, okay, and that's intentional, isn't it?
+
+Azmain Hossain  24:36  
+Yeah, the thinking is, when we get around to making reports, they will be exportable, but like, huge views with, like, hundreds and hundreds of accounts. Yeah, we didn't want to make that exportable. It just adds a lot of problems.
+
+Speaker 2  24:54  
+Okay, so for the time being, it's just available on that dashboard. Yeah, and
+
+Azmain Hossain  24:59  
+I think. The thinking is also to change people's behaviour, because if you can export something into Excel, they're just going to do that and then use the Excel going forward. Yeah, we want them to use this. Okay, thank you.
+
+Vlad  25:16  
+Okay, so Azmain, I think you raised the question, but nobody answered is, like, how much availability will we have? As for myself, I can provide probably an answer this afternoon, when you have what's that feedback from Ben, yeah, because I believe I could take, definitely, I will have some availability. But now, whether I can take, like, cover like five, six entities or more, like one or two, it's a it's a matter of how much information is needed in for each of them, okay, but there are already three accounts that I can cover. And I saw this Mafra. I i saw it in the in the list, and this is something that I'm working on actively. So there is quite a lot of information that I can give. And I also know the CSS, the CSM, because I'm working with and the same is with, with what's the other one star, and then very soon it will be with AIG. So knowing that I'm working with the team, it's very straightforward, and we have quite a lot of information, you know, yeah, that's the perfect
+
+Azmain Hossain  26:24  
+situation where, obviously, you'll speak to the CSM, but you have a
+
+Vlad  26:29  
+little bit of background information as well. Yeah, yeah. So, if it's, if it's about these three accounts, I would say it's a quick win, because I can, I can do it before the end of the day, you know, if it's some other accounts that I
+
+Azmain Hossain  26:42  
+would ask you to do is, literally, just as a test, go into one of those accounts and just, like, edit the health status and just putting, like, you know, whatever the latest is, because we're going to be making changes, and I just want to test that the data itself doesn't change. So if a user puts in data, you know, we can make the website look pretty or move things around, but the back end data in the database doesn't get touched. So that would be a nice test to do.
+
+Vlad  27:11  
+So on the help you said, Okay, if you just edit a field and just
+
+Azmain Hossain  27:18  
+keep in mind, and then I can check on it, like, later in the day, when we've done, like, three, four more updates, and see that, fingers crossed, the data is still there.
+
+Vlad  27:31  
+Okay, but we can, we can keep, you know, some kind of a communication ongoing. We say, okay, look, I have updated. I don't know which account. So then you can, you can check, check, and there is no when somebody updates something, there is no information like, who did it the last time? Or, yeah, that's what I
+
+Azmain Hossain  27:53  
+was saying. There's an audit log, so that's saved in the background of who changed things, what time, and what was the change?
+
+Vlad  28:02  
+Yeah, was the change? Okay, that's great. Okay, okay, Azmain time, so you're gonna write us something, right? Yes, so by the end of the day, I will, I will find out, how do we identify the critical accounts?
+
+Azmain Hossain  28:22  
+Hand of those critical accounts? What is the most critical information that needs to be filled in? And that can be kind of our plan of what we like, the mandatory stuff we have to do. That's part of this exercise. Well, the end of John, again, that's a good thing. I need to confirm what is the thinking. Obviously, if I ask Ben, he'll be like Friday. But realistically, this is where having Natalia in the call will be helpful. Yeah, realistically, What? What? What's the deadline?
+
+Speaker 2  28:56  
+Of course, yeah, mistakes, yeah. If you could also confirm that, maybe in your message to us by the end of the day that would be good. Perfect. All right, excellent.
+
+Speaker 1  29:07  
+Thanks. Thanks for this, Azmain. Is great. Thank you.
+
+Speaker 2  29:10  
+Thanks guys. Bye. Thank you, Azmain, yeah. Thank you, Azmain. Quick
+
+Vlad  29:18  
+one. I just, yeah, I just have to run. Just,
+
+Azmain Hossain  29:20  
+yeah, I just have to run, because I've got another meeting in 20. Okay. I just need to get some stuff
+
+Vlad  29:29  
+ready for it. Oh, okay. Would it be
+
+Vlad  29:35  
+okay to have a call like after lunch, when my brain, yes, yes, yeah, no, no worries. No worries. No worries. We can, we can find some other slot, but even later in the afternoon, you know, so something like 3pm your time, if that's fine. Okay, okay, very good. Thank you. Bye, have a nice one. Bye.
+

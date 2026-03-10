@@ -1,0 +1,198 @@
+Diana  0:00  
+Um, in parallel of the routine, things like day to day, client facing projects, which is, yeah, good, yeah, I'm supporting iOS team, helping them to use as much as possible, available, Moody's platforms, Microsoft team, lists planner to make something like more, to make a whole solution for them, how to
+
+Azmain Hossain  0:33  
+what is the ILS team, sorry.
+
+Diana  0:37  
+Card bond, RP, cat bond. Team, yeah. Okay, yeah. Because they have, they are doing everything very old fashioned. They haven't benefit of any tools that we have within Moody's, they block processes, anything, yeah. So they're, yeah, they're all of them are very experienced, but literally doing the things like, yeah, people has been dealing with documents and tracking progress in some
+
+Speaker 1  1:11  
+everyone has his or her Excel. They have to make
+
+Diana  1:18  
+number of documents, but that are client agnostic, but they're copying one document from another to produce a new one. So everything is, yeah, yeah. So, yeah, yeah. So I'm training them now how to use some AI tools that help them for the documents.
+
+Azmain Hossain  1:37  
+Operating Procedure is what's missing in Yeah, yeah, workflows, yeah. I don't know. I don't know if this is a symptom of the restructuring or, Oh yeah, I think so yeah. This is how it's always been done. Because my thing is, if there was tooling to do this stuff, restructuring wouldn't touch that. So it just makes me think there was no tools, and people have just been managing somehow.
+
+Diana  2:05  
+Yeah, I found some procedures that they have documented, but now, after the transition, what they have in place is useless, so we are starting from scratch. And yeah, before the transition that they haven't they have used, what is it slack, or, I don't know, they didn't use at all ms teams. So they were like, they didn't know how to use it, literally. So we started from that house. We can use the channels now. Yeah, I'm building for them. Lease with the idea list to be kind of merged, and we to have a reporting in power. Bi, yeah, I have a lot of ideas, but you know, all of this has to be sold to the to the team. Because, it was simple things like, yeah, how to use the channels for some of them are very awkward, but I see that some of them are great supporters and enjoy and they started to experiment.
+
+Azmain Hossain  3:14  
+Yeah, there will. There's always enthusiastic people that are that are willing to try new things.
+
+Diana  3:21  
+But, yeah, poor people, they have to do all that in parallel of normal day to day work.
+
+Azmain Hossain  3:29  
+Yeah, yeah. That's how you innovate is like, unless you hire a whole innovation. The way to innovate is people to do a little bit extra from their data. Yeah, exactly.
+
+Diana  3:45  
+So I'm now the kind of
+
+Azmain Hossain  3:52  
+this, they need these processes because yeah, I just yeah, I'm glad that you're looking at this and kind of raising these questions, introducing tools and procedures to them. Because, yeah, if we're going to scale this up at the at the rate that everyone keeps talking, it's going to be a nightmare unless we put these tools and playbooks and operating procedures in so that we can all not go crazy asking the same question over and over again. So that kind of brings me to why I set up this call. It was, it was literally just a thinking, just a thought. I haven't discussed this with anybody. I just wanted to discuss with you first, so first question you're in the portfolio review calls on Mondays? Yeah, yes, I am so my my literal thinking is, instead of having a PowerPoint to run the project meetings on a weekly basis, what's the what's the version one that you could. To actively use, to use the Clara tool to run your meetings, like, what's the minimum viable product? That's kind of what I wanted to very kind of early stage, get you kind of thinking
+
+Diana  5:17  
+when you're talking about my meetings is the ones that I have that I'm having with CSMs and project teams, yeah,
+
+Azmain Hossain  5:27  
+the one that you're gonna have today, later on,
+
+Diana  5:31  
+the one, advisory,
+
+Azmain Hossain  5:33  
+yeah, yeah, advisory projects speaking.
+
+Diana  5:37  
+I think this meeting is absolutely useless. I don't know how to
+
+Azmain Hossain  5:44  
+that is really useful feedback, because it's like, I'm
+
+Diana  5:47  
+afraid how to, how to tell this to Stacy, by the way, because that is, that is the most awkward meeting that I have to host. In addition, those same people have a meeting on Monday where they're discussing that is hosted by Arno Arnold pronounced, and they're discussing project status and and resources. So I don't need, I don't see the need of this Wednesday meeting at all.
+
+Azmain Hossain  6:21  
+I mean, okay, let's
+
+Diana  6:25  
+brought that up because, yeah, but in Clara, yeah. In Clara, what? Yeah, if we would like to to have discovered in Clara, in I need, we need a project, project section for each of the customers. Customers, we need to list ongoing engagements. We need we know from s UTC In fact, we can extract the active projects, because Stacy is creating a project for each of the engagements that are valid. And yeah, if we
+
+Azmain Hossain  7:07  
+have, we can't pull anything from Salesforce like that. Yes, that's a big blocker. Yeah, unless it's manual, and you know, then that creates his own problem.
+
+Diana  7:19  
+Absolutely like that. No. From SADC, we can extract information where we have an engagement, valid engagement with starting 10 days. This is because they're aligned with the contractual commitments. After that, what will be needed is, is PMS to add the recent status, because the recent status is not in sftc. Is that make sense? Yeah, yeah, yeah, yeah.
+
+Azmain Hossain  7:49  
+So my, my first thinking was this, let me, let me show you, like, very, very simple, yeah.
+
+Azmain Hossain  8:01  
+So, the the standard format for the presentation layout that's used by everybody, my my thinking was just recreate this entire screen in the app. So what would happen is you would have a customer, let's say Beasley, and obviously, here, it has all of this stuff just have, you know, in Salesforce, you've got, like, an opportunities tab, a Products tab, add in another tab here that says project management. And inside that, on a weekly basis, the pm goes in, clicks new, and what it does is it brings up this screen with all the updates from last week. And then the pm can change whatever they want, you know, change the dates, change the colour of the statuses, put in new things, delete old things, whatever is needed, click Save, and a snapshot is saved of this exact screen. And then, just like, here, you know, you're going through slide by slide asking, Okay, what's happening with this? What's happening with this. You just have that, but in the app. So just like, you know, oh, yes, that will be lovely. Yeah, yeah, you know. She goes into Beasley, she clicks there, she sees that there's red you would have your little section called, I don't know something, project management review, and you would click on Beasley, and you would see Jesus. Where is it? You would see this screen,
+
+Diana  9:31  
+yeah, yeah, makes sense. But are we? Will we be able to see the project status alongside with the use cases? Or how it is.
+
+Azmain Hossain  9:43  
+So initially I was thinking just doing this at a customer level, not pulling in use cases, because right now,
+
+Diana  9:50  
+okay, at customer level, Yeah, makes sense. Yeah. It should be at customer level
+
+Azmain Hossain  9:55  
+like this, this slide that Prashant makes should be inside the Morgan's. Friendly customer page, yeah, which use case? This is specifically tracking. We can do with that later. We can, you know, because use cases are already saved in the app, we can add links and stuff like that. But as a very first MVP, just a recreation of this screen. Everybody's comfortable using this template, having the milestones on the right, having health summary, key accomplishment, planned activities. You know, this exact thingy. It's just, instead of doing it on an Excel, sorry, in a PowerPoint, they would do it in the app, and that way, you know, now, week to week to week, you have, you know, after 52 weeks, you've got 52 PowerPoint files. If somebody wants to ask, what's happened with Morgan Stanley in the last six months? How do you answer that question? Whereas, if week to week to week, the pm was creating a new version of this and saving it, you could ask that question and you would have the update for the last 15 and you could genuinely create a summary document of what's happened, where, where, dates have changed. You know, week to week, dates have changed. Things have fallen behind. Issues have come up. They've been resolved, all of this stuff.
+
+Diana  11:13  
+Yeah, makes sense? Yeah, absolutely. That's that's feasible to be added in that it will be lovely way to have everything at one place. Yeah, I don't.
+
+Azmain Hossain  11:21  
+I don't want to mess around with databases or anything like that just as it is right now, just text fields and a consolidated view for you to go through the clients and ask the question and have the call exactly as you are now.
+
+Diana  11:36  
+Yeah, yeah. That will be great and like that when CSMs are feeling Yeah, the updates on the use cases. They can also have a visibility on where are we with the project, if they are not closely following, yeah, exactly, yeah. Because this is my biggest problem, some CSMs are just ignoring what's going
+
+Azmain Hossain  11:59  
+on exactly. If we because that's why I'm saying, like, working on these projects and now seeing it from the CSM side, I'm like, there's a big piece that's not being what's the word, brought forward and made visible? Which is the project management side of it?
+
+Diana  12:20  
+Azmain, what about the card bond? Then the slides that are with this greenish, yeah, this, in fact, each of this line in sfdc is a separate project in this year. In the first column, you have the client, and after that, for each line, you have an ongoing project with with them, because these are separate contracts. They have new issues. They have resets, where we have commitments. Are we going
+
+Azmain Hossain  12:59  
+to first? I don't know how to do the cat bonds piece,
+
+Diana  13:05  
+because it's the same team. It's again, advisory team, but just different type of consultancy services and different type of in but we have, we are making a huge revenue from this as well. This is not something, it's negligible. And yeah, we have for some of these clients. Yeah, you will see familiar names, apart from the RP transition, we are supporting them for this cat bond missions and resets.
+
+Azmain Hossain  13:37  
+I would like to come back to the cat bonds and how how to do that in the app as well, after building these out, because obviously you're working with the ILS team, I need time to understand, yeah, just please work and stuff.
+
+Diana  13:54  
+Okay, yeah, just keep it in mind that this, this slide, 11 and 12 are also client facing projects, yeah, yeah, yeah. So if we have significant part of the team involved there, okay, so I don't know to what extent CSMs are aware of this, because I assume, yeah, some of the CSMs even don't know, or don't care that the client, because it's different team who is work at clients and who is involved on the card bonds, I assume, and it's usually with The brokers,
+
+Azmain Hossain  14:40  
+so it's in no way related to IRP.
+
+Diana  14:44  
+It's not related to IRP. It's, yeah, it's, maybe we should keep that separately, yeah, I will Yeah, because it's, it's, the product is different. It's Alice, yeah, maybe we just need to
+
+Azmain Hossain  14:58  
+to ignore that we could be for. Honestly, if this is a big moneymaker, and there are this many projects, why is there not a separate 30 minute call just for this?
+
+Diana  15:08  
+Oh, that will be lovely instead of, yeah, just because, instead
+
+Azmain Hossain  15:12  
+of tag, because by the time we get to slide 11, there's never much time everyone gives updates really quickly, yeah, if this is, if this is a revenue generator, then more time should be spent on this.
+
+Diana  15:24  
+Yeah, this is something that, in fact, should be a decision goal of Ben and Charlotte. But I would my thinking is, although our team is using, I'm not sure even how they're using, in fact, RP platform to make this analysis, but, but I believe they are doing something on behalf of the client using, again, our RP product I'm very new to. I hope that's just confusing, yeah, but this is different type of services that we are providing. Yeah, it's not, it's not aligned with other objectives for the CSM where we need to, we have a mission to clients to migrate. Yeah, so it's completely different story. So for me, you should,
+
+Azmain Hossain  16:20  
+I would say putting the IRP projects in the app, which is completely IRP focused. Yes, you an opportunity to break up this call and restructure it to how you want it to be. Yeah, because, like, I'll be honest, like, I worked on the AXA project. I Gave weekly updates. I don't understand this One Minute Manager thing. Like, what are you talking about? I can't say everything in one minute. That's insane. Like, do you remember when we had three clients in in ESG, we would spend 90 minutes a week talking about it, and suddenly you're supposed to manage 30 projects in a 30 minute call,
+
+Diana  17:01  
+exactly, yeah. I think for this one minute update it it's manageable only if you're doing safeguarding, but for the projects, like what you're doing, what Christian is doing, which is not RP, but can't accelerate projects,
+
+Azmain Hossain  17:17  
+yeah, yeah, you can't. You need time to discuss, and that's why the call. So, yeah, the call being kind of pointless right now make make sense, because there's duplicate calls happening. Yes, and I completely understand, like, obviously you've taken this over from Stacey, and you know, you don't want to step on anybody's toes, but, yeah, because also, like, I'll be completely honest with you, I so I spoke to Natalia, and obviously there's going to be team movement where I can't stand or Natalia as a direct report. So I, like, requested so that I could work in your team. I knew. Oh, okay, yeah, no, I'm glad. I'm glad she told you. So this is,
+
+Diana  18:08  
+yeah, you're more than welcome to join my the people who are reporting to me, yeah, I hope this is
+
+Azmain Hossain  18:15  
+why I've been thinking about, like, obviously, I'm working on the app. I'm like, how, to make your life easier, just just by structuring stuff, taking some stuff out, and kind of giving you the room to manage all this the way you want to manage. Because I, over the last two, nearly three years, I've seen the way that you and Natalia manage the life side of things, the Skyfall project and stuff, and it was easy to manage because, I guess because you guys did have standard operating procedure. We had playbooks, we had all this documentation and processes to build that stuff out within these RMS offerings. Means breaking the old stuff. We have to break the old stuff. It can't keep working because someone, somewhere two years ago, started a simple call, and now it's insanely complicated. With really complicated projects, we need to, we need to find a way to do it without hurting anybody's feelings or giving them a good enough reason of why we're doing it, and saying that Natalia runs the IRP call from the platform, why can't Deanna run the project? Project call from the platform? All the information is in there. Everything IRP related is going in there. Why is project management being done on a presentation on a deck every week. That's a good impetus. And if I can get Ben Brooks on it as well, I just need to present him an argument.
+
+Diana  19:53  
+Yeah, I think this. This should be the this is the right direction. Yeah. RP projects. I have. B related work that fails in the contracts for RP clients, like Quickstart safeguarding to be also in Clara regarding cat bond projects, according to me, we need a separate platform because the process is completely different. They have different challenges from RP and the product is different, and after that, the piece of other projects, these are internal stuff. I don't think it should be with me at all, because, yeah, my role should be focusing on the client facing project. Yeah, I am happy to lead coordination for cat bond, because we have, to some extent, some clients interactions, but all the race should be, yeah, something managed differently. Somebody else might be advena or, I don't know, Charlotte, have to coordinate these internal projects are against Stacy, but I don't think it's I have to deal with internal initiatives. Yeah, yeah. Are you discussing these kind of codes with Ben?
+
+Azmain Hossain  21:17  
+Or the project management piece I haven't really brought up, because there's, there's so many things that he wants to do, like, firstly, is adoption charters, so that we can draw a big difference between what is a migration, what is an adoption. People could migrate but not have adopted IRB products into their workflow, or they've done all the mapping for the adoption, but they haven't actually done the migration yet. You've got clients on both sides. And Ben's like all his thinking right now is on these 30 clients. This is what's on the MA scorecard for IRP. So we need to get these 30 clients over the line by the end of the year? Yeah? So anything and everything that that helps that, and a bunch of these are projects that we're managing. Projects, yeah? Project, Amblin, the nightmare project, yeah, yeah, right. Now, you look at Amblin and it's like, oh, 90% is green. Only one thing is red. But you talk to somebody who works on the MS Amblin project, they're going to be like, it's insane, but that. But nobody knows that. Everybody knows that it's in their heads, because we talk to each other. But nowhere in this app with zero knowledge can you come in and be like, Ms Amblin is a nightmare of a project because it just looks green. Everything looks Yeah, so that's, that's the, that's the element that's not in there, the project management
+
+Diana  22:46  
+element, correct? Yeah, I fully agree with you. And, yeah. RP, yeah, Clara is not giving us the whole truth, as you as if the project's status is missing, yeah. So we need to, and if we do it, just for these 30 clients, will be more than sufficient, yeah, yeah.
+
+Azmain Hossain  23:08  
+All we have to do is just yeah, one, one extra page that nobody other than project managers will touch so it doesn't bother CSMs at all, yeah, just a separate section, just for project managers to go in, put in updates. You know, day to day something happens, they can go and put in an update.
+
+Diana  23:25  
+Absolutely, yeah, yeah. I'm happy to work with you on the interface if needed, or to have a discussion with Ben on that. But, yeah, I think it's better we to integrate that visibility also in Clara, and to get rid of this advisor weekly meeting, because it doesn't help anyone. It just lost 30 minutes for every week.
+
+Azmain Hossain  23:49  
+What I would recommend is let me, let me build out a version one, because it's better to go with something built out rather than a concept. And then, and then we'll take it to
+
+Diana  24:00  
+it okay. One other thing that I will try to verify with Natalia and Stacy for these 30 clients that has been announced as a priority. We have project managers assigned just for probably, I would say, 10% what about the rest? We don't have a pm for each of them. So I asked Natalia, yeah, what are what is the strategy? How are we? Is it expected we to have a pm for each of these because we might, we don't have a bandwidth at the moment, and if this is the case, that we need to update Clara with projects for all these 30 we need to somehow be prepared,
+
+Azmain Hossain  24:43  
+yeah, yeah, and that that's maybe not for
+
+Diana  24:46  
+all these dirty clients we have projects, in fact, because some of them, yeah, Quick Start is finished and there is nothing else to be done.
+
+Azmain Hossain  24:54  
+Yeah? Like, okay, showing all kinds of amber and red. But I but Chaucer is not. In our project reviews, it's not one of the slides. So, yeah, have a pm like, why? Yeah, what's going
+
+Diana  25:08  
+Azmain, I think it will be very difficult we to to decide whether there is a project or, I don't know who will be the decision maker.
+
+Azmain Hossain  25:17  
+Is it? What's the thing that's for? Not that's not for us to decide. What we need to be able to do is show this confirmation information. Ask the question, yeah, is a priority customer on the MA scorecard. They've got six, sorry, five use cases. All of them are amber and red. What is happening?
+
+Diana  25:38  
+Why? Okay, doesn't Yeah. Let's start with here. Let's keep the things simple.
+
+Azmain Hossain  25:42  
+Yeah, and then that's for Ben and Natalia and everybody to answer, yeah. Like, do we put a pm on this? Okay, so yeah, but first, I'll be completely honest with you, the first thing I want, I have to build out is the partnership thing that Alexandre and Liz McLogan have asked for. That's going to be this week, like tomorrow and Friday, but from next week, I'm going to start building out the v1 for project management.
+
+Diana  26:10  
+Yeah, great. Keep me posted.
+
+Azmain Hossain  26:12  
+Yeah, yeah. All right. Well, thank you so much for your time. Thank you. I'll put in some I don't know when the team restructuring and stuff will happen, but I'll put in some time just to talk to you. Yeah, go ahead. All right. Thanks so much for your time. Deanna, bye, we'll
+
+Diana  26:29  
+keep in touch. Thank you, Azmain, have a good rest of the day. Bye, you too. Bye.
+

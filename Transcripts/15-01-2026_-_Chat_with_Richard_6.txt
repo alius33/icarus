@@ -1,0 +1,288 @@
+Richard Dosoo  0:00  
+Think our goal would be get feedback from Stacey, do a bit of tidy up, get over to her straight away. But Liz raised a really good point about making sure Josh's feedback and George's feedback is in and that means probably when we're going to be doing a few more builds before we go to Stacey. Yeah, because we're going to have to make sure the stakeholders feedback is incorporated. Otherwise they feel like they left out the process. We start engaging with their teams, and they're like, hang on and you just use them straight away. So what I think that means that's main is, well, first things first, we definitely should finish the work on the build, on the website, on the on the site right now to get it up and running. I think what then that will mean next is obviously as mean I'm out tomorrow, but what we can do is I'll write up, watch it. I'll be around for about an hour in the morning, UK time. Then I'm gonna head over to the cemetery stuff. So we can work on the stakeholder list. I work on it even like maybe today, when I get back in. Back from the cinema, I'll work on this. I'll put together, like, the list. It's going to have, like, the CSM management stakeholders. It's also going to have Alexandra on there, and no and Bernard, because they're involved in one of the other actually, sorry guys, I'm kind of ad libbing here. Let me bring this up and explain So Ben, right now, Azmain is aware of this, but you're not as familiar with it right now, we're working on project, one of some of the AI initiatives that are reminding me within insurance being largely focused on customer success. But now they involve consultant. And this PMO dashboard is the first project, and this adoption charter generation is the second one, which we're kind of merging into it, as you saw, right? We've got placeholders for adoption charter they're basically the data elements that help drive creation of like a scope document, which is essentially, you can imagine, right, a scope document that defines the use cases, the milestones that we're going to go into the implementation plan. So that's the next step. What we haven't spoken about is this one, which is, we thought this was going to be an agent in copilot studio integrated with Salesforce. It may still end up that way, but there's a different set of stakeholders that we need to engage in here. Still need to talk to Catherine, still need to talk to Kevin, but Alexandra as well, to get the life team's input and the KYC team's input this bill, we haven't really decided we thought it was going to be a agent in copilot studio, but it might not be right. But more importantly, we want to, like, we may get the requirements for this. We may prototype it in person and hand it off to sales recon or put it in we might we need to engage Idris on it, because he's doing some stuff with copilot studio and Salesforce already, and then Ben, what's the other piece? Which is what we've been talking about, is there's a project here about navigator, which I'm going to come back to in a minute. But this is the real meat and potatoes about why we're building out the infrastructure. Because we've got cursor for internal productivity, which, you know, we're doing some of it now, but inevitably, we don't have cursor for client pipeline development as well. So essentially, one of those is going to be the Azure or the AWS environment that we use for internal stuff. The client pipeline development environment is still going to use GitHub as our source code repository, but it may be that that app gets deployed to restate a link as an example that could it may be somewhere else. We've got to think about what that looks like. So what does that mean? Azmain Tomorrow, I'll basically take this create five project chart, not documents, but just like tabs in a spreadsheet we've already seen for each one the stakeholders listed, who's, who's, you know, confirmed, who, who's responsible, who's accountable, who's just communicated, who's informed. For each of these things, I'll basically generate that within these projects in a spreadsheet, and I'll send it to you to pad out, and then there's going to be some immediate milestones that we need to talk about for. We've got some for this. Ben's already created the task list for this one. I need to do the same for for these, for these other ones as well, coming out with like milestone plans and stuff, maybe some high level resources that we can review next week. But the immediate ask is going to be the stakeholders that need to be consulted for the first build Azmain That you and Ben are going to be supporting for this. Sorry, I went through that very, very quickly. But does that all make sense?
+
+Speaker 1  4:58  
+Oh, yeah. Sorry. Yeah, I believe so.
+
+Richard Dosoo  5:02  
+All right, so with that, then maybe if we just switch gears back to the build, and then Ben, I guess that you're raising some good points about the database, yeah, just wanted to talk through what that means for us going forward, like how we manage the database changes. And then, obviously, Azmain is probably going to be doing more builds tomorrow. So it's whether we just have him working in the branch and not checking into main, or whether we want to change checking to main when he's ready with his change.
+
+Azmain Hossain  5:28  
+Yeah, and this is a really good time to have this conversation, because I'm literally doing the build for the entire demo side that Steve Gentilly wanted. Okay, you know that Ben put in in the initial version as well. It's just, you know, just an Excel file with a lot of data filled in. But it is, I think it said that in the code, there's already a demo database, so I'm just making it so that at the point of deployment that gets filled in that database get gets filled in with the demo data, Excel file.
+
+Speaker 1  6:05  
+Wait, okay, hold on, all right, I want to make sure I'm following on that, because this is, this is so Okay, sorry. One second I have, I've been doing a fair amount behind the scenes here, basically what, was going on is that the modifications that we are making in the back end, and I'll be honest, cursor, this is where AI cursor is a little, let's say naive. So if you're trying to make a modification, it can make a modification on the back end. API schema there you're currently using, I think it's called album al I can't pronounce that albic alambic for the migrations. I'm assuming,
+
+Azmain Hossain  6:54  
+if you know what that is, I do not know what that is, okay, I cannot answer that question. I'm sorry.
+
+Speaker 1  6:59  
+No, it's fine. So this is, this is the these are the things that can kind of, unfortunately mess us up a bit. So you have the back end code, the back end API, that references the schema. And let's say, for example, you want to add something like, what was something that we just that was recently added? Let's see one second. Let me scroll through because I was fixing a whole bunch of stuff, like, for example, like the target
+
+Azmain Hossain  7:26  
+date on use cases
+
+Speaker 1  7:29  
+in the latest one. Okay, so All right, so you added that. Now, where did you add that in the code? I do not know. Okay, um, can you share your screen. Yeah, okay, we can go through it because so basically, once you make a modification, and let's say you want that,
+
+Azmain Hossain  7:49  
+I thought you meant on the on the deployed code. Did you mean, like, what's the latest change that I'm making? Yeah, I actually wanted to show you that. Share my whole screen. So if you can read, this is basically because I did a planning. This is basically what it's doing to create this demo mode
+
+Unknown Speaker  8:12  
+one second. Let me see All right, there's a Okay.
+
+Speaker 1  8:36  
+All right, so just I apologise for a stupid question, what's the relevance of the demo mode? Just so it can fill in data,
+
+Azmain Hossain  8:46  
+it's literally just people who first start using it for them to get an idea of once it's all filled in, what will it look like they got it able to see that end state? Yeah. So if it looks like it's finished, it's just telling me all the stuff I did. Okay, maybe I can just show you i
+
+Richard Dosoo  9:26  
+Yeah, basically, but imagine that like we've got a data set with synthetic data in it, yeah, obviously we don't want to. We could have two different environments, right? Or we could have, you know, yeah, both of the
+
+Speaker 1  9:39  
+data, yeah. Yeah. I mean, this makes sense for I mean, most SaaS applications have something like this, where it pre fills some demo data so it gives customers an idea of what's going on, yep. So that makes sense. Okay, this time there is nothing.
+
+Richard Dosoo  9:59  
+Yeah, that. Thing is, did you have, have you see? Did you create a script to see the demo data? Because it might exist in the local, but it may not have, it been migrated over to,
+
+Speaker 1  10:09  
+well, this is, this is, this is local right now. This is the local. So, okay, um, hold on one second.
+
+Azmain Hossain  10:21  
+Switches back.
+
+Azmain Hossain  10:38  
+So, yeah, this is what I was saying, Ben, that this is what I'm working on. So this will obviously make changes to the database when it's deployed, but both, okay, normal one and the
+
+Speaker 1  10:54  
+demo, yeah, okay, so I think this will, and this is a good, good segue here. So one second, let me do this. I'm going to share my screen, and then we can kind of, is there a paint and what's, what's the Mac equivalent of paint? Or I don't have on, do I have a skele draw on here?
+
+Speaker 1  11:21  
+Okay, yeah, this works, okay, one second, so this will help clarify some things, just so we can all level set here. All right, can you see my screen?
+
+Azmain Hossain  11:33  
+Yeah, yeah. Okay,
+
+Speaker 1  11:35  
+so this, right here is production database. Okay, there is essentially what's called a database schema that, as you know, probably has, like the all the columns and everything along those lines that is applied here, okay? And that basically helps keep the data and database organised and stuff like that when you're developing over here. And let's say local, just local, and then I don't know back end. And let's say, for example, you want to add a table just randomly, okay, what you what needs to happen is essentially what's called a migration to update this schema. So a migration to update schema, and then this schema needs to be applied to this database, if that makes sense. Yeah, so any changes that you add over here, if it doesn't get applied to the database over here, then it can just end up getting funky errors, like we've been getting where like, customer doesn't exist, or something like that doesn't exist. So anytime you add either a table name or column and like, the issue is is, obviously, since we don't have a I'm actually setting up the migration right now so that this is entirely automated. But let's say you have a local database right now. Cursor will probably do the migrations and everything onto your local database. So it will add the table here, and it will do all that stuff here. But when it comes to production. It's not actually adding it over here, if that makes sense.
+
+Richard Dosoo  13:45  
+No, it does. And that was the that's my little bit. I thought the back end deployment process was picking up the database changes already, and scripts that were even doing the data changes as well as the schema changes. Yeah.
+
+Speaker 1  13:58  
+So right now, if you're making, like, local backend code changes that's currently pushed and being updated, the migration is something separate because and I'm adding to, like, I'm currently fixing that right now, so that it's fully automated process, so that will be be handled accordingly. And we use something the cursor added, something called albic, or, I can't even pronounce that, but that's how we are managing the schema and stuff. So as long as it's managed through this, this will keep all the versions and everything in order, so we don't ever get corruption data or anything like that. That's really that's weird. So I'm currently working on this, or the, well, actually, more specifically, I'm working on this part right here that will automatically update when the back end changes get made. Because there, there is a difference between like, let's say, for example, you're making a code change and you're just changing. Something simple as going from a, you know, HTTP code, 200 to a 201, right? That doesn't need to update the database schema. So that's what that's currently going right now. So the migrations is another part which I and I need to add right now. If that makes
+
+Richard Dosoo  15:16  
+sense, no, it makes complete sense. And as I said, the I think the like your the back, most of the database changes now are probably in because Azmain did a whole bunch last night. You may have a few more to do now, but the volume is going to be a lot smaller, so there'll be easier to manage over the next like day or so, manually. And then we can circle back next week, once the automated migration is in place for stuff going forward.
+
+Speaker 1  15:42  
+Yeah, so and I went through and I have been fixing pretty much all the all of the database issues. I think we should be good on all that we'll need to check. But, yeah, I think we're we should be good on, like, at least for now, we're in a good spot. Database wise, I've been doing everything within. I keep mispronouncing this, but I'm gonna call it almek albic. And so that is that stores everything in these versions here. And as long as that, that remains the same. I'm, as you can see, I'm currently working on the migrations right now, so anytime that this version gets checked, should be fine. And we just, when you talk to cursor, all we need to do is just say, hey, you know, look through the version, the schema version for albic, and that will be aligned. And then any changes or anything like that will be good. And so if you, even if you use something local, it'll be fine. As far as the dummy data you're you're storing some dummy data inside of the database right now, is that correct?
+
+Azmain Hossain  16:55  
+So this what I was going to ask, because, yeah, cursor is stupid. Yes, what it suggested it was like in the code, I can see that there is already something about a demo database, yeah, which has fake, like dummy data. Do you want me to just update that with the dummy data. I was like, yeah, if there's already one there, but I also asked it to make sure it made all the changes so that when it's deployed, after being pushed to get there's not a lot of problems when I'm merging it with the main branch. So again, worried that now it's going to include instructions to create a whole separate database. Yeah.
+
+Speaker 1  17:46  
+So the thing I will say, when it comes to communicating with cursor, don't talk. I would say, Let's avoid communicating. Of like, hey, it needs to do something with production because it doesn't understand. It doesn't have context of our infrastructure. So as far as this dummy data goes, there's a couple different ways we can do this, and we can store dummy data in the database. But the problem is, is like, how do we know that it's the dummy data versus the real data? Now you can add flags in there, as far as dummy data goes. But like, are they going to be able with this dummy data? Are they ever going to actually be able to, like, create stuff off of that dummy data, or when they go through, like, it's just to show? Is it? Is it just for show? I guess, is that the point of the W here, this
+
+Richard Dosoo  18:42  
+is the question. These are the things, right? Who? No one's really thought that through, right? Ben was only using it to demo so he never got instead of meat, potatoes or, Oh, if someone says Demo, demo mode, what happens if they start adding a whole bunch of data? Is that data part of the demo mode data set going through these little things that you know.
+
+Speaker 1  19:03  
+So what I would what I would suggest, and this is what, like I believe to be best practices, is that you don't act with the demi data. You don't actually need a database at all. What you can do is just pre fill the UI with data that looks legit. So like, if there is no when it's in demo mode, the front end will just, will prioritise displaying the demo data so there's not actually so in the front end, or the way I would communicate it with cursor is, I want to display dummy data on the website, because that way, we don't have to add this demo data into the database. Because if you add the demo data to database, you're going to need a probably a flag or something, to say that it's demo data, because you don't want it corrupting our production data. So what I would say to cursor is. Hey, I want to make a demo mode. That demo mode will display a bunch of information on the front end, but not actually store. There won't be any it's not actually referencing anything in the database or anything like that. And when the demo mode is off, that's when the data, the database starts coming through. So someone can, quite literally go through, toggle demo mode, see what it's supposed to look like and then toggle it off and start creating stuff. Yeah, if that makes sense, yeah.
+
+Richard Dosoo  20:28  
+That's, that's me.
+
+Speaker 1  20:29  
+So, so that way, that way you wouldn't, you don't actually need to touch the database in any way, shape or form. It's just, frankly, static display information that's more that's actually what it's called, what it is.
+
+Azmain Hossain  20:43  
+So my question here would be, how difficult would it be, or what would be the disadvantages of including all of the demo data as data just with a flag?
+
+Speaker 1  20:59  
+I mean, so it's not necessary. The biggest, I guess, disadvantage in that is, if you have the flag that's that's fine, but every store procedure, every calculation that we have to do going forward, we'll have to analyse for that flag, which is perfectly fine. We can definitely make sure we add that overhead. Yes, and like to be completely honest, if we're talking about fast iteration with cursor, cursor will likely forget about that flag at some point in time. If you open up a new chat or anything like that, that if that flag is no longer in its context, it could attempt to write things that could cause issues. So the best thing to do in this scenario is like, hey, like, actually, I tell cursor, like, hey, create a file, like a JSON file or something like that that matches our schema that we can use to display information like and that way, it's a JSON file. It's untouched. We can actually just change it, control it, manipulate it, however we want. And like in my in my personal opinion, if someone's going like, the demo mode is only for exact purposes is the demo is to get them to understand how to use the product, so they can click around and see things. So I would tell cursor, hey, use a JSON or let's make a JSON file to to mimic the data set so we can display that and then that way, moving forward in the future, if we want to, like, it's a quick iteration on the database, on the display information, if we want to do anything demo mode wise,
+
+Azmain Hossain  22:48  
+yeah, that's a really good idea.
+
+Speaker 1  22:52  
+We can definitely do a we can definitely do the flag. But as far as, like, just quick iterations, I just think the overhead isn't worth it.
+
+Azmain Hossain  23:03  
+Yeah, there's no way to have, like, I don't know, like, a virtual database that just holds the demo mode data.
+
+Speaker 1  23:12  
+Um, I mean, moving forward, we can definitely,
+
+Azmain Hossain  23:16  
+I'll explain that my longer term, my longer term thinking, is that we're gonna have a dev environment and we're gonna have environment maybe, yes, clicking demo mode will essentially take you into a test environment where it's like a playground. You can just create whatever you want and it'll just be there.
+
+Richard Dosoo  23:33  
+But that's, that's, that's, if we want that, right? We could. That's a different pattern, right? That means we should just have a separate environment with with stage data in it that people can come in and have a look at. And then we have another environment that is where the guys are actually creating a production data. But that's that, then it gets us into having these multiple environments that Ben has
+
+Speaker 1  23:55  
+got set, yeah, and I already started working on that last night, which is why Ben got a 503 error last night briefly, so I already started working on the multiple environments side of things. But yeah, like ideally, because, like, the production environment, like, we want that data to be as clean as possible, especially if we're starting to do, like, imports and stuff like that. But yeah, so I would say, at least for the time being, for demo mode, let's just tell cursor to, Hey, make a JSON object that follows our database schema, that we can make demo data and display it on the front end. So like whenever that demo mode is clicked, we display that JSON data versus going out and going to our database, okay, yeah, and that will just be and like, and truthfully, the other benefit to that is that we will inadvertently have, like, basically a good set of data in like, see how our schema wants to be. In that regard. Um, and go from there, but yeah. Well, the reason why we're like, I went, I'm going through the site right now, and it looks like we're should be good, though. For some reason, the dashboard isn't displaying customers, which is interesting. The rag status is off, so I'm looking through that again. Do
+
+Azmain Hossain  25:49  
+get worried about the rollback feature. I'm like, if I roll back, is it actually going to roll back everything it's did? What if it's stupid and doesn't Yeah,
+
+Speaker 1  25:59  
+that's like, cursor is a very powerful tool, but it's still like, the thing that I will always say is, like, it just doesn't have the context that the human brain does, yeah, and like, so like, I get the same thing. It's like, oh, rolling. Like, I it's funny. I have like, two workstations open right now, and I asked it something in the wrong workstation, and it changed my code. I'm like, no, no, that's not what I wanted. All right, let's see Asian i
+
+Speaker 1  26:53  
+right? But, yeah, I'll get the migrations going. So that way, if you do have to change the schema any new way, shape or form. Let's see where is the schema actually now I think about it. Let me look through
+
+Azmain Hossain  27:11  
+actually while you look, I just wanted to confirm something with yourself, Richard, while I've got you from the call earlier regarding blockers and action plans, so my understanding is that multiple blockers can have one action plan to resolve them. So, like, you can have one action plan to fix, like five different blockers.
+
+Richard Dosoo  27:34  
+Is maybe I was thinking it was the other way around, but it's fine, but it's probably not a plan. It's like action items. We need to have a clear hierarchy between action items and action plan and action items. I'm just going to send you the recording Azmain of the meeting. I'll send it to you guys now so, because then you can just run it through as well. Azmain running through cursor to me to get the it can tell us what people said, right, I'll be honest. Because I Yeah. I was, yeah, you know what? Right? Some things are even not best talked about, like that. Ask Natalia Diana and maybe, and maybe Stacy from a pm perspective. How do they want that stuff captured? And just tell everyone else that's gonna know how it's gonna work. I know Ben's gonna be like, Oh, ask me by slide that system. There's another right people to ask the people who would know, do you get what I mean, like the PMO people are the people who are best placed to tell you how you should be capturing action items, blockers, issues and risk, like even a blocker, right? When you write a blocker, as you know, right? There's a different thing between an issue and a risk, when a risk becomes a when an issue becomes a risk, and when it's not right. And there's certain language that you use to capture these things in the in the dashboard today, like Vanessa used to be quite good at documenting it in the right format, but from a PMO standpoint, we should be making people do the same thing, forcing that that nomenclature, right, this so that way, rather than us, like trying to retroactively doing it, we should be forcing it, forcing that structure in, in, in the data entry. Do you know? I mean, yeah, I know, like it's a little bit, we'll do slight of hand, right? Soft power move. Get a requirement from China Natalia, put it in the app and be like, Oh, hey guys, I implemented your feature, and they will definitely, yeah, exactly,
+
+Richard Dosoo  29:35  
+but I guess the yeah so in terms of that pristine file, right? Is it just, if we have an Excel representation, convert that into JSON, give that to the app, give that to cursor. That's fine, right? We don't need to change any of the A buyers to understand the demo mode or anything, right? We just say, have a static version of the website that when someone clicks that button that references this J. Some file this data, that's it. That's what we have to do. So yeah, if
+
+Azmain Hossain  30:05  
+the information is stored in a JSON file within that session of a person you know that's logged in, they could add accounts and action items and anything they want.
+
+Richard Dosoo  30:17  
+It just No, but that's the that's that's the situation we're trying to avoid, right? Because once you do that,
+
+Azmain Hossain  30:23  
+like, the moment they close the
+
+Speaker 1  30:26  
+Yeah, so I would, I would suggest, and, like, I mean, this is where, like, we can, this is where we make the rules. What I would suggest is, like, if it's demo mode and they try to add account or anything along those lines, just give them a little notification. Be like, Hey, you're in demo mode right now. Like, switch out of demo mode to add an account, okay? Like, because that way, like, it'll display whatever. And like, in theory, I mean the whole point. I mean, correct me if I'm wrong. But is, I guess, the purpose of the demo mode is just to get them to understand what the data set is supposed to look like,
+
+Azmain Hossain  31:04  
+yeah, basically, so that they know why they're doing this.
+
+Speaker 1  31:09  
+Yes. Okay, then I would say, if that's the case, then don't give them any, like, CRUD operations, just like, don't let them allow to they can't create, they can't read, they can't delete when they're in demo mode. So I would just say any, anytime they there's a CRUD operation and they're in demo mode, just add a little pop up, a little alert that says, hey, you're in demo mode. Turn it off if you want to add things. Yeah. In the meantime, what I'm having, I'm having cursor do right now is draw out this entire schema for us in a database schema Markdown file, since it loves writing markdown files, and that way we can at least like, at least keeping that information will allow us to be like a source of truth that we can iterate on. Let's see. Yeah, all right, and then I need to push my update here in a second. Then
+
+Unknown Speaker  32:28  
+all right, database schema.
+
+Unknown Speaker  32:38  
+All right, yeah, cuz, then what we Can do, oh, let's do that too.
+
+Speaker 1  33:14  
+Okay, all right, yeah, that should be good. My next priority is just making sure the migrations and everything work out well, so that way. Well. So that way, if there is any database schema changes that you need to make, it will be easy for you to do and do so, and we don't run into these collisions in the future. Because basically, if you want to add like a column, for example, you can add it. You'll just need to tell like, I'll actually put it in the the Markdown file so that, that way we can go through and at the very least, you can always just say, hey, cursor, look at this, this file here, and make sure we're Good on that. But yeah, We should be Fine. I
+
+Unknown Speaker  34:33  
+And then
+
+Richard Dosoo  34:50  
+look, yeah, no, I was going to say so Ben for that, right the yeah, as I. Thinking Azmain, the key next steps for us are going to be, obviously deploying the feedback that we got from the team today, getting the action items and other pieces all nailed, and then you're probably going to get feedback from George and Josh tomorrow, and then you'd probably want to push it.
+
+Azmain Hossain  35:23  
+I So the call with George and George, I would feel much more comfortable, honestly, if you or Ben would be there. So I want to set it up on Monday.
+
+Richard Dosoo  35:32  
+Yeah, yeah, that's fine. I'm around Monday,
+
+Azmain Hossain  35:35  
+and it also gives me a little bit of time to test some style stuff out, because when I spoke to Ben yesterday in the office, he gave me a bunch of stuff to do that I need to add in that. He was like, this stuff is critical. We want it. He wanted it by that Tuesday demo. Yeah, yeah. So I want to add that stuff in tomorrow. Ben's gonna be here, right? Ben, you don't you don't leave for Amsterdam until the
+
+Speaker 1  36:00  
+weekend and 8pm so I'll be at the airport APM. So Eastern, Standard Time. So, yeah,
+
+Azmain Hossain  36:08  
+man, that's like 2am so I will my my daughter will just be going to sleep, and I will just come in and chill, watch and look at memes. Okay, I'll be done by then, but it gives me the chance to kind of build some stuff, ask you any questions, in case I start running into problems.
+
+Speaker 1  36:28  
+Okay, yeah, and yeah, I'll also, when I land, I'll just open up my teams and check and everything, but it should be good I land. I think 1pm on Saturday,
+
+Richard Dosoo  36:42  
+yeah, but, dude, you're gonna want to rest like, man, after tomorrow, you're just like, that's it.
+
+Speaker 1  36:49  
+I truly don't know what jet lag feels like. So it's been a long time.
+
+Richard Dosoo  36:54  
+It sucks on the way back, right on the way here. It sucks rock, because you're you're basically just tired all the time. So that's from the morning. So you're gonna want to, like, basically, you're gonna get the red eye over. You're gonna land in the morning European time, but you're not gonna have slept well on a plane. Then you're gonna be like, right? Do I push this sleep off so I get into a normal sleep cycle, or do I just fuck it and go to bed now? Then I'm going to be struggling going to bed later. So,
+
+Azmain Hossain  37:31  
+yeah, I'm hoping it doesn't come to that, that by the end of tomorrow, by the time you you sign off, then we're in a good position. And worse comes to worse, like, obviously, I'll keep doing this stuff over the weekend unless my wife murders me for never, and then I could just show it to like Josh and George call. I can just show the local version.
+
+Richard Dosoo  37:59  
+Yeah, that's, I guess, the that will be it, but it will be good to because you know what's going to happen is very soon after, like, you won't get Josh on Monday. You'll only get Josh tomorrow, because Monday's a holiday in America. Yeah. Monday is
+
+Unknown Speaker  38:17  
+Martin Luther King.
+
+Richard Dosoo  38:19  
+Martin Luther King Day. Oh, oh,
+
+Speaker 1  38:24  
+yeah, you know, for some reason I forgot y'all don't have that over there, and that makes sense, yeah.
+
+Richard Dosoo  38:31  
+And that's one of the things I've missed about the US, that nice little holiday that you get after Christmas that you don't even have to start adjusting to be back to work. I
+
+Speaker 1  38:43  
+Wait, does that mean that I still get to have Monday off, even though I'm an answer? Ah, there you go. You guys have
+
+Azmain Hossain  38:53  
+so many weird day like, what is President's Day? And why is there a sale?
+
+Speaker 1  39:00  
+I honestly, well, it's America. We love sales. That is our, that is our main attraction. Just like, why is that a date? I mean, honestly, yeah, the, I mean, one of our biggest holidays is called, you know, Black Friday deals. That's all it
+
+Richard Dosoo  39:21  
+but that, that that thing, right? Like, that's where you get most of your stuff. Like, if you want a TV or a bed or whatever, that's the day you get it, you know, I mean, like,
+
+Azmain Hossain  39:32  
+you gotta join Gen Z. The best place to get things is on Alibaba, on Singles Day. Align your shopping habits with the wholesale events of China.
+
+Speaker 1  39:46  
+Now it's, uh, there's actually a very sad statistic about the American Black Friday, so apparently, sorry one second a. Apparently, this year, we broke records on the most amount of money we spent, but it was the least amount of products we've ever spent on. So we spent more money than we ever have before, but we got less, way less,
+
+Richard Dosoo  40:17  
+yeah, because the inflation that's right in it. So yeah, yeah. I mean, like, eggs are still $14 a thing and all this shit, but it's better than England, because we, you guys, have higher wages than us. We have the shit inflation, and we get paid fuckled. At least you guys get paid more than us. Okay, you got inflation, but you, you're, you're, you're, net is higher, right? We got, we got, and everyone's like, Oh, but that's because we got paid for healthcare, we got paid for all that shit. But it still costs me fucking, like, $100 to go and buy a pair of jeans or, like, you know, yeah, trust me, bro, these are all the things that if you're gonna think about a move, you gotta be like, Man, is it? Does it? Like, do, you know? I'm saying because there's, there's the America's got advantages, you know, and it's like, there's swings that piss you off, don't get me wrong. But you know, there's also like, like, you're not going to be able to just get food at like, two o'clock in the morning, like, true. So, all right, so then let's do that. Then, as the game plan Azmain, so you're going to keep building locally, but then you're going to look at the to basically get the build of the app up as it is, to remove the database issues. And then we still got tomorrow if Azmain wants to do any build, but Azmain Your, your priority tomorrow will be feedback from George and Josh, or Josh maybe is the main one George, you can probably do Monday, because he's not going to be off, right? He's going to be working, yeah, yeah. And then once we've got that done, and the database errors are done, and the CRUD operations for those entities are there, and it's all clean, and you've got in the feedback from Liz and those guys from the meeting invite I've just sent, then that's like a really good place that we can reconnect. Ben, that you're going to be are you out most of next week? Ben, are you when? When's race day?
+
+Speaker 1  42:14  
+It's the 21st and the 24th so my solo is on the 24th my and then the doubles is on the 21st so, but yeah, so like, if needed though, like I'm I'm around, I'm not, I'm not all that.
+
+Azmain Hossain  42:33  
+Keep it like answering teams, messages mid runs,
+
+Speaker 1  42:41  
+I'll be in the middle of the wall balls. It'll be fun. But, yeah, I mean, I'll make sure. I mean, on the 19th, I'll, I mean, even though it's a holiday for me, I'll gladly hop on and look and make sure that everything's good on that end, I'm hoping to have, I mean, honestly, I would hope all the migration stuff would be done tonight. Frankly, for me on my side, because I'm already kind of close to being done there. Also, if you pull down the most recent change that I just pushed up, it will have a file in the back end folder called database schema. You can go over that and you can have cursor go through things, whatever you want, or stuff like that, in that way, we can like that'll just be our kind of source of truth for documentation wise, at least for the database to make sure. So if you want to add a column, that's fine. That's where the migration automation is going to come into play. But, yeah, what
+
+Azmain Hossain  43:42  
+about the fact? Okay, I'm just thinking because I'm working on right now. I'll push that into my branch, and then,
+
+Richard Dosoo  43:50  
+yeah, but you can do, you can do the script that I sent you earlier, right where you can say, resolve merge conflicts between this main and your branch, and then you can tell it to look at the database project, or you can tell it to look at the whole, the whole, the whole build, right? Yeah, what I've been doing Azmain is like, if I'll use, like, chat GPT to figure out the prompt that I want to put into cursor, or you, or you can use, right? That's, that's what I've been doing to make to because Chris is really good, right? But it's not, it's sometimes, obviously the context window is only so big. So when you give it these broad prompts that require a lot of, like, reasoning or stuff, it's like, Okay, does deals better with much specific instructions, right? So you use, like, chat, GPT for your, like, general purpose thinking stuff, come up with the prompts you need, then stick that into cursor. Tour.
+
+Azmain Hossain  44:44  
+That's a really good idea. Okay, I'll try doing
+
+Richard Dosoo  44:52  
+that. Cool. All right. Well, guys, again, this has been really good. Appreciate all your hard work and support on this and Azmain. I'll probably. Probably, I'll probably put some time with you and like, maybe Martin, because we couldn't get Martin. There's a shit. Actually, let me see if, Mark, do you guys have a second? I actually just want to see if Martin now, because Ben, so there's one thing that I forgot,
+
+Speaker 1  45:18  
+yeah, and I apologise. I have to leave here in about five minutes to go to technical therapy.
+
+Richard Dosoo  45:25  
+No, no, it's actually, don't worry. We'll talk about this next week. For now, I'll just deal with it in a separate branch. But basically, Martin has got another app, okay? And I thought that app was going to become part of the scope that Azmain is looking at, but Ben is like, let's treat it separately for now. Okay, so I'm debating like I thought we had more time to worry about the multiple app slash databases in that single ECS cluster that you've built, but that was it. I was like, shit, what do we do? Do you need to do the whole like, URL unblocking everything like that again? Or can we leverage the stuff that you've already built? I just have another app within the same cluster.
+
+Speaker 1  46:02  
+So, yeah, so good news is I thought ahead. So it's just gonna be creating a new app. Um, I haven't created the four I started. I started creating the form, and it's actually going to be so I'm just it's not there yet because I haven't pushed it. But basically, if you go to the website, just advisory@factory.com with no, pretend no product name at the end of it, or project name, that will be the form, the intake form, and then that will dynamically update things accordingly. So I'll have that done, and we can add that, but yeah, like, we're good. It's just like, it's gonna, long story short, yes, I'm ready for it. It's just like the migration stuff that we're working on right now is going to be good. Is going to be very helpful for whatever the Martin's working on in the only difference is, or the, I guess the only thing that would slow us down in that regard. Would be the if it needs a separate database, it will, yeah, okay, then,
+
+Richard Dosoo  47:11  
+okay, we can deal with that later. I just I realised when, when, because I thought initially it was going to be part of the same app. So I was like, no problem. We just deal with it later, but it'll just be a new set of new set of tables. But Ben was like, No, it's separate and shit. From a timeline perspective, I need to get that app. I can, we can, I guess we're running with it locally, but it would be helpful if I had it all in the same place by that 26 because that's when we've got, me and Azmain have got a meeting with Jamie and the rest of the Gen AI team on that day, and we want to even maybe a bit before then go through the app. So let's, let's pick that one up next week. I'll start more broadly about it, and we can take it from it.
+
+Speaker 1  47:51  
+Yeah, I mean, so the good news is, we're using rds. I can just make a set like within, within the server. I can just make a separate database for them. Okay, yeah, the database is the most complicated part there. So that's that's well, we can resolve that. That's fine.
+
+Richard Dosoo  48:12  
+Okay, cool. All right. Well, thanks everyone. Let's definitely catch up. Azmain, I might catch you up a little bit for a small time tomorrow before I head to the head app, but it probably be about nine and 10 ish, and then we take Yeah,
+
+Speaker 1  48:27  
+and then let's see, I think we should be good as far as all the potential conflicts and stuff like that on the database side of things. So yeah, the only thing that I'm working on right now is I'm curious as to why the stats card is zeroed out right now, but I'll fix that, and I'll fix the migration stuff today as well. Cool.
+
+Richard Dosoo  48:54  
+No, awesome. Thank you. All right. Well, Azmain, let's catch up tomorrow. Ben, thanks very much for your help again as well, and we'll catch up more tomorrow. All right, thank you. Everyone, thanks. Everyone. Bye.
+

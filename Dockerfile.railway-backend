@@ -1,0 +1,20 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y gcc libpq-dev && rm -rf /var/lib/apt/lists/*
+
+# Copy data files
+COPY Transcripts /data/Transcripts
+COPY analysis /data/analysis
+COPY context /data/context
+COPY programme_debrief.md /data/programme_debrief.md
+
+# Copy backend
+COPY backend/ /app/
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+EXPOSE 8000
+
+CMD sh -c "alembic upgrade head && python -m scripts.import_data --data-root /data && uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"

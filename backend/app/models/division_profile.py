@@ -1,0 +1,23 @@
+from datetime import datetime
+
+from sqlalchemy import Column, Integer, String, Text, DateTime, Index
+
+from app.database import Base
+
+
+class DivisionProfile(Base):
+    __tablename__ = "division_profiles"
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String, unique=True, nullable=False)
+    status = Column(String, nullable=False, default="not_engaged")  # not_engaged | early_talks | collaborating | active_partnership
+    current_tools = Column(Text)
+    pain_points = Column(Text)
+    key_contact = Column(String)
+    notes = Column(Text)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    __table_args__ = (
+        Index("idx_division_status", "status"),
+    )

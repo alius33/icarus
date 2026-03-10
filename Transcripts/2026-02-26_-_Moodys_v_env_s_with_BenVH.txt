@@ -1,0 +1,237 @@
+Speaker 1  0:00  
+Yeah, I don't even know where to just start with that, because the conversation we just had, I mean, it's fantastic. It's going to show us a lot of exposure and everything. But yeah, he needs, he needs an actual web dev on his team to help.
+
+Azmain Hossain  0:13  
+So, I mean, is it expanding the capabilities of the dashboard, or is it just
+
+Speaker 1  0:23  
+he didn't know what git was. Oh, man, that gives you an idea of how where we are. So he was asking about how to take one folder and put it into another folder to make the website with the forward slash. Yeah. So like nothing and not sliding him in any way, shape or form. Everyone has their own skill sets, but, but it just that I'm now hyper aware of what I'm up against. So yeah,
+
+Azmain Hossain  0:54  
+but yeah, it has to be idiot proof, like disparaging anybody, but it has to be very non tech, yeah,
+
+Speaker 1  1:06  
+which is going to be difficult, to say the least. So it's a lot of effort, um, which is fine. It's just like, I need to get done with the security stuff so I can focus on other things. But I wanted to talk to you and show you something. Well, I don't know if I can actually show it to you, because it's on another computer, but another computer, but I wanted to talk to you about this because, frankly, I really wanted to get your opinion on it, and I'm super excited about this thing. So we talked about this kind of briefly. When I was in Amsterdam. I don't know if you remember, but I built a solution, and now I don't mind going on. I'll share my screen real quick.
+
+Speaker 2  1:46  
+All right, I'm trying to remember the name of it, starting with S,
+
+Speaker 1  1:51  
+no, it says it's fun to put on. Yeah, yeah, hold on. So many pop ups, alright? So the idea behind, like, what I built, I built this. This is me, like 100% me. I patented it and everything. It was around CICD orchestration, but I realised that, frankly, it's completely different, like it's better for AI agents. Okay, so anyways, I can log in and actually show you the actual functionality of it. Um, let's hope I don't break it one second, I need to remember my passwords one second. What is the passwords for this?
+
+Speaker 1  2:39  
+Hold on, everything is auto. When I'm developing at home, everything is auto, auto, authenticated, so I don't have to never type anything, yeah,
+
+Unknown Speaker  2:51  
+all right, one second. Okay, you know what? Maybe if I can just I'm um,
+
+Speaker 1  3:05  
+hold on. Sorry, I want to make sure I don't break anything trying to just show this to you. Uh,
+
+Unknown Speaker  3:24  
+okay,
+
+Speaker 1  3:33  
+there we go, okay, um, so basically, in here it's like, it's all this is around AI, Agent governance. So the big primary issue, which you are probably already aware of, and where the conversations we're having are more and more and more. What I built around this is the ability to have, I'm calling it Atlas, but it's really any, any AI, any execution layer, custom llms, anything along those lines. And basically what what it does, and it can use SSO to allow employees of companies. So basically the idea is, like from cursor to Claude to I'm making my a mobile app interface called Atlas, and it's basically a chat GDP wrapper, but basically they log in and they're actually going to because of their SSO they were, they're able to authenticate because they're SSO, they're able to authenticate with with the solution, and we're able to determine what teams a person is on. So the idea behind it is like, I can actually specify, like my organisation, or anything like that, and I can say, okay, Azmain, you are in Team A. I'm in Team B. Okay, and like this, and from
+
+Azmain Hossain  5:02  
+and within the app, not from the SSO, it's not coming,
+
+Speaker 1  5:06  
+no, no. So I can, yeah, so I can actually start saying, I can start adding things like, you know, your team one, right? I'll just call it, call it that, right? We can add all these MCP servers that we're in, services that we want, whatever we want, like, and we can literally add an infinite amount of it, and then we permit like, we submit it. Now that creates a configuration so that way, anytime someone uses cursor, an employee that uses cursor, and an employee or a team or whatever, we can actually tell we can actually tell that cursor agent or whatever, like, let's say you're using Claude. Let's use that, right? You can connect to this solution behind the scenes. It will you like. You can talk to it just like you normally do, and ask it to create a an AI agent for you, right? But because I'm an IT admin, I can actually configure all these different networks and resources, and I can say, Okay, well, Azmain only has access to this Kubernetes cluster out for this particular instance or this Azure instance, so all of your AI agents could spun up within, within that environment that I can specify. So all these teams have their own cost control. So I can actually tell, like, so it does a couple things. One, every AI agent will have its own standalone resource, right? So, like, you can spin up 100 1000s, and it doesn't need to worry. It doesn't need to bog down your own computer, right? Because that's one big issue with working development wise, is it bogs down. The other aspect is, well, how do you know how much Azmain is spending, how much you know Ben is spending, how much you know Richard is spending? No idea. All you know is API key. Well, if now we're all now, people are starting to talk about, what if I spin up my own EC two instance and have that running an AI agent, right? Well, how the hell do you control that, right? So this, this is a solution for controlling the governance and helping give cost analysis. Because now here's the other thing, we can also spin up, what you call it like, we can also look right now, it's dynamic scaling, but I'll give you an example from like on this, these other orchestrators, but basically based off of per team, you can actually add a scaling policy and say, hey, I want a, you know, 50 pre warmed agents ready To run between this time and this time just to have it ready, so that way it's on demand fast, like, fast enough. Or it's just by default, dynamic scaling, so per request it comes in and then. Now, here's the thing, based off of what you and I were talking about yesterday or the other day, where, like, because this is honestly why I built it. I a mobile interface where I can say, hey, like in this scenario, I'm talking to Atlas, but you could talk to fucking excuse my language cursor, or anything like that. But you can literally say, hey, Atlas, spin up a AWS EC two instance that can provision this, this and this and this, and spin up a web server, and it will go in, quite literally, spin up a resource in there, and it will actually inject an l like these. AI agents have their own AI like their own LLM, so like you're talking to it's very similar to get done and an open claw, so you have a leader communicating with agents, the only difference primarily, and you can actually still use openclaw. You can still use GSD and all of these things. It's just now we can control where the instances are being spun up. So now we can have control over security and governance, and we can also start using our own llms, if, heaven forbid, Moody's wants to get that far right. We can also, like, we can now inject our own llms and have our own agents learning things and like we can all because we can spin it any, spin it up anywhere. We now have access to, like, cloud watch data and things along those lines. So, yeah, sorry, that's a long, a long window.
+
+Azmain Hossain  9:26  
+I'm literally, as you're talking, I'm thinking about, how would I explain this to a to a senior person? And yeah, the closest I can think of is basically on in cloud code. You can run things locally, and then it keeps asking you for freaking permission every two seconds, yes. And then what me and rich started doing was just chose a virtual environment and just did all the dev there, because then. Can, yeah, that's essentially what we're doing. But instead of it all being on anthropic side, and you know, all the data going out of Moody's, this allows us to spin up that exact same thing you can develop on a virtual environment where it can instal whatever dependencies at once. It can do whatever the hell it wants. It doesn't touch your laptop. It doesn't use your laptop's computing power, which means, literally, like I was, I was showing my managers, manager today how to use cursor, and he was like, Yeah, but when I put in a complicated, like, a long thing, oh, it takes forever, my laptop crashes. And I'm like, that, yeah, that's purely a hardware issue. Like, you haven't done anything wrong. It's just I was having the same problem before I got this dev laptop. It's because our laptops were meant for just like Excel and PowerPoint. They're not very powerful. Yeah, it. I mean, the way to sell it is, look at the cost benefit. You really want to get everybody else five grand laptops. Like, if you want everybody to innovate, then eventually, like, one day, two day, three weeks down the line, they're going to start getting better at this and asking more and more and more from AI and and the agents can do it. It's just their hardware can't keep up this way. They can develop on a virtual machine within the walled garden of Moody's with all the security bells and whistles. And it allows us to monitor stuff literally what you just said. You assign them to teams, and you can, you can monitor by team, and you can monitor usage as $1 amount of like, how much is. Yeah, you
+
+Speaker 1  11:40  
+can, you can, literally, you can actually even cap. Like, I've designed it so you can even cap. So you can be like, hey, this team is spending too much. Capped, yeah. Like, yeah. Like, so, I mean, this is something I've been, I'll be honest, I've been working on this orchestration solution for about five years. This be this the solution itself, all the RBAC, all, everything is just flexible enough, and the way I designed it to integrate with perfect, like, literally, it's actually scary how easily I integrated it with the AI agents. And so I'm like, Well, we're heading this path. We're heading to this path. I just like, personally, and this is where I would love to get, like, your personal feedback is, like, I built this. I would honestly love for Moody's to actually use it. I have no idea how to even get that conversation going or get people to understand what I'm talking about. Because this is, like, next level, like, where everyone's, like, just trying to figure out how to do X, Y and Z. But like, you know what the things that we were talking about with, what you call it, the things that we were talking about with Raul in the meeting earlier today, where you have a an AI agent, look at cloud, watch logs, that's not possible without this solution. Like you need the ability to dynamically provision AI agent, or you will have an AI agent actively running in that environment which will just destroy your your cost. You know, whereas if you can spin it up dynamically every time a bug report comes in, every time a feature comes in, that's your bread and butter. You anyways, that's my, my rambles. But like, I would like moody, Moody's getting perfect. Like, where Moody's is, like, I could not have planned a better solution for for this. And I'm like, I wish I could just, I don't know how to explain it. And I honestly, I know this is putting the cup before the horse, but I'm like, it is also mine. And I don't want Moody's to own it, but I would also love, love Moody's to use it, because I think, I think it would make the best
+
+Azmain Hossain  13:51  
+solution like Moody's, like phantom agent, like as a company, like going from you becomes a vendor of this technology to Moody's, yeah, 100% Yeah.
+
+Speaker 1  14:07  
+Like, because, like, honestly, I mean, everything that we're talking about, it's I see, like, I mean, I designed it, and this is where I wanted your feedback on is, like, I see all roads heading this way. Because, like, what was that video that Richard sent us where it's like, the spend of an AI agent is double an employee. Yeah, and like, the other part is you don't know where that money you can't, you can't. The worst part is you, you can't do a cost centre analysis at all.
+
+Azmain Hossain  14:37  
+So this solution would essentially mean every single person, because, let's just work with Claude, sure they're using the the AWS bedrock Claude API. Yeah. Sorry, this is my non technical brain, yeah. When. They run it. It's being deployed virtually. But yes, it still has all the capability that cloud can do. You can still have multi agent teams. You can still have the skills the MCP servers, everything.
+
+Speaker 1  15:15  
+Yes, you should. Yes, you should. I mean, and like I actually, you can also configure it to auto inject MCP servers. So, like, like, and I mean, granted the flexibility. Like, I'll be honest, it's so flexible that I don't know everything that it can do. Like, that's the scary part about it. But like, one thing I added here is, like, you can add your own MP MCP servers, and like, Phantom agent in itself is an MCP server, so any LLM can actually leverage Phantom and provision it. It's just the authentication piece and stuff like that, of like, where it controls to and things. But yeah, like, underneath the hood, Phantom agent is also, sorry, Phantom agent is also an MCP server. So like, that's how like, right now, like, for my testing, and like the Atlas, like the Atlas mobile app that I'm building. And, like, literally, it's just a chat GP wrapper. It's using anthropic, and I'm just injecting phantom agent, MCp into it. So like, this is just a middle layer where an IT admin or support or security team can have control over and we can orchestrate where work actually goes.
+
+Azmain Hossain  16:35  
+So the, I mean, what would be, I mean, what would be the the best thing to be able to, like, get approval and be like, hey, we need budget to be able to do this, and then we can also get you paid. Because, like, come on, it'd be pretty awesome. You're like, I built this thing and now Moody's is my customer as an organisation.
+
+Speaker 1  16:57  
+Oh, I would, yeah, I would that would frankly, change my life, and I would love that truly
+
+Azmain Hossain  17:03  
+like that. That's what I'm thinking. Is literally an example, like we build a test case on, maybe on your machine you're controlling, you're controlling phantom by yourself you've got your machine and being able to demo it to Ben, to manage your BEN, and just being like, Look at this. Like, I'm sure he was, he was using it with Claude code. But like, you know how we got dinged by the security audit because we were doing all this stuff, yeah, imagine if we had control. And then the piece that, like is the cherry on top is you can do cost control. And yeah, sooner or later, like, Ben's already raised it, our spend is going to get to a point where people are going to ask questions about, what are you spending all this money on? And you can answer exactly what we're spending this money on, and what, sorry, and how we're spending the money. Yeah. Like, you'll have the answers before the questions are asked, showing that we've thought this stuff through.
+
+Speaker 1  17:59  
+Exactly No. I mean, honestly, yeah, like, that would I think you're right. I think getting in front of it and, like, this is me just now touting a little bit more about the solution. But like, yeah, I can, like, I can have my local, my own phantom workstation. Like, it's, it's hosted in my AWS account. But the amazing part is that it's configured to use OIDC connect, so I can actually connect it to Moody's, for example, like I wouldn't, but I'm saying, like, I could connect it to Moody's through OIDC and auto provision instances through there, like you we can truly provision instances anywhere, like On Prem as well, like on premise data centres.
+
+Azmain Hossain  18:42  
+So one thing you got to be prepared for is the whole RFI RFP, because if you're going to come in as a vendor, there's like, you know, you got to answer all these security questions and stuff like that, because that's kind of what I've seen vendors go through when, when we're buying something for for a bunch of people at Moody's, but the first thing is just demoing the capability. And now that we're getting more and more technical people in, it's not just like the four of us the benefits of this. It took me, like, 10 minutes to understand and figure it out somebody like, come on brain.
+
+Speaker 1  19:27  
+So I have a meeting. I have a meeting with Melinda Tris Trinh next week. So we were in a meeting earlier today with on Amanda's with Edward, right? Yeah. So Edward, he mentioned Melinda specifically, so I reached out to her around this particular solution, because I wanted, like, Do you think that's a little too quick, or should I actually have, like, a actual working scenario? Yeah.
+
+Azmain Hossain  20:03  
+Yeah, because this is so technical, yeah, to speak to somebody else, it would be like the if you want to knock it out of the park and just get them to get it in their heads within five minutes, and then actually have the conversation of like, Okay, now what do we do? Instead of spending, you know, 50% or 60% of the call just explaining to them what the hell it does? Yeah, just a working a working demo, okay, like, and because you control this, I can ask this, like, once we sort out how the hell to get the AWS bedrock. I don't know if you already have it. Turns out I don't have the right AWS. Have the right AWS role Richard.
+
+Speaker 1  20:45  
+Richard gave me the API key so I have access. Have you tested it? I have not yet with my solution. No. I have not.
+
+Azmain Hossain  20:56  
+No, no. Just, just like putting it into into cursor as like turning off all of cursors model, putting in the anthropic API key.
+
+Unknown Speaker  21:05  
+Oh, no, not yet. Yeah, that's
+
+Azmain Hossain  21:08  
+where I got the API key. I put it in. Then it was like, unauthorised. And then rich had a look at he was like, Oh, you don't have the right roles when you when you log into AWS, what role do you select? Like, I don't get that option. I just logged me in.
+
+Speaker 1  21:25  
+Okay, yeah. I mean, if I think it's if you I think I have access, yeah?
+
+Azmain Hossain  21:30  
+So if you've got access, I would say, like in your off time, like, if you have the time to create just a demo version, yeah. Okay.
+
+Speaker 1  21:44  
+I mean, honestly, I mean, it's, it's working right now where I'm able to spin up agents, like, I'm actually testing it right now to go through like, so I'll be honest, one of the other reasons why I wanted to do this was I wanted an AI agent to actively monitor my own personal email and be like, my personal assistant and like, notify me of like, stuff and like, handle my spam and everything like that. So yeah, like, it's currently working. It's just like, You mean working with our bedrock API.
+
+Azmain Hossain  22:16  
+Yeah, that I'll tell you right now. Like, you want to get the buy in, you got to have something working, yeah, that's how you can get the ball moving, okay, but in terms of, literally, what you just said about, you know, measuring your because I haven't used openly, I just saw a bunch of reels and stuff about it, yeah, but one of the things that I have been thinking about is share screen like I it's great that copilot can read and access all my emails and all this stuff, and I can ask it questions, but it's not very smart, so I hate it. So I was like, Okay, I wish I could put this stuff through Claude, but obviously, you know, we can't get Claude co work to actually work, because that would mean getting all of the Moody's data. So I was like, what if I somehow used internal tools or build something that uses the graph API to call stuff, SharePoint, teams, email whatever, and then pushes that to plot using the the bedrock version, and then get an answer back. I don't know if that's possible, but it's no. I mean, that's when you when you say, that's exactly what. Sorry, good, yeah. Like when you say, can you look through my emails for the last week and tell me all the things that I'm supposed to do? The orchestrator agent knows that it needs to query email, so it looks at emails through the graph API and then sends all that raw output to Claude to do all the stuff and then give me a response 100% 100%
+
+Speaker 1  24:03  
+like that. There's like, the integration with like, my solution would be able to do that exactly, yeah.
+
+Azmain Hossain  24:09  
+That's why I was thinking I'm like, because if you can spin up a little, a little virtual environment that maybe just runs like Haiku, because it's the dumbest model, and that's all you need to read emails and give me a summary. Do that, yeah, and then close it down. No. Need to keep it running for one second longer than it needs to. Yeah? Yeah. That's the piece that I was missing. Because I was like, where's it gonna do this stuff?
+
+Speaker 1  24:34  
+Because it can't be exactly, because it can't be on your workstation.
+
+Azmain Hossain  24:37  
+Yeah, it can't be on your workstation. So that's where I was drawing a blank. And then you came along and gave me the perfect solution for this.
+
+Speaker 1  24:44  
+I ironically, it's funny that you bring up this particular slide, because that's why I brought like, I reached out to you, because I'm like, Well, you and I have been talking about this to begin with, but like, when you saw this slide, like it is literally, it's solving this, this issue. And this is, like, to be honest, it. You really want your employees to be, like, next level, effective employees. You want to, you want to be able to do something like this. So, like, being able to connect to, for example, you know, via SSO, right, like, and collect all the user team information, and then being able to access things. Like, I like, yeah, basically this, this is it. So, like, I mean, I don't mind making the first example, like this, if you want to, like, we can connect with it. Like, I'm, let me, let me get to the point where I think we can. We can do it. And I definitely think we can.
+
+Azmain Hossain  25:40  
+I think it's not to mess with this, like the exact situation that you just showed, literally, like what we what we have in Claude, where we can select a folder, click local or cloud environment, exactly this. We just envision a cloud environment, but within our own instance, which also kind of draws me to the point of like, Oh yeah, you were in the call with with Ed and Amanda, right where he was, I think so, yeah, it's so easy. You can do this. I'm like, you really want to can you? Can you imagine giving this to Idris and being like, oh yeah, oh my God, no, not at all. Yeah. Just build using our AWS bedrock. And it's like, What the hell are you talking about? Man, like, What the hell is better? Yeah, how do I do shit? Like, oh, you just go, yeah, settings, and put in the API key, and you test it, and, blah, blah, blah, that's bullshit. What I want to do is build this. I don't you know, everybody in their grandma's building a chat GPT wrapper. I want to build a clothes a clod wrapper. Literally this with, like, Moody's numbers and branding and shit, do the exact same thing. You can exact same functionality. Uses AWS bedrock. And then when it comes to the cloud environment, you can always do it locally if you want to. But yeah, environment option, and that's where your solution comes in.
+
+Speaker 1  27:02  
+I mean, honestly, so, like, that's actually kind of where, like, so I'm calling it Atlas. The the UI side is Atlas. It's just the lack of better words, the AI leader in the sense. But like, it's, there's a mobile app that, literally, it's like a chat GP, rapper, like, and you can integrate it, like, honestly, like, you could very easily make an ad, like, make a rapper, like this, and then just introduce, like, introduce phantom agent to it, like you said, and boom, like, like, it'll be, yeah, anyways.
+
+Azmain Hossain  27:33  
+Like, we don't, like, why should we use our brain coming up with, like, oh, how should we do this? Very, very smart people have already done this, so let's just steal everything that they've done. We can't use Yeah, exactly, yeah. It just won't work. And I don't, I don't care what anybody I know people are right now wowed by like, oh my god, I can get a summary of my emails. I'm like, oh boy. Wait till you actually get the power of, like, actually good models and see what they can do. And then you're going to go back to copai and be like, This is terrible. I want something better. Yeah, I'll give you the solution before you face the problem. Yeah.
+
+Speaker 1  28:13  
+And like, to be honest, that's the other thing. It's like, How can a company control what models employees are using? You know, yeah, like, so, no, I appreciate you letting me control
+
+Azmain Hossain  28:25  
+the very environment where their code is being generated, tested and deployed. It means you can have an orchestration layer that actively looks at, you know, the the app building pipeline that you're doing. Somebody asked for something basic. An orchestration layer agent can be like, you don't need Opus for this. Pull up, I don't know, like Sonic four, or like, yes, pull up haiku and use it that and save costs that way and dynamically use the models. I mean, I think that's what open law also does as well, 100%
+
+Speaker 1  28:59  
+no. I mean, openclaw. Openclaw is fairly similar. It's just they don't have the orchestration piece, and to be completely honest, they don't have the security aspect of things, you know, like, that's, that's the big issue with open claw is like, how does the enterprise level solution, enterprise level company control something like openclaw? You can't, yeah, like, they need an entire layer. But okay, no, I appreciate you letting me, like, ramble on this. It's clearly a passion of mine, but I'm like, like, honestly, I think, like, I don't, but my thing is, like, I've never had a scenario like this. Like, this is something I built to be completely honest, because this exact issue that you're having with AI agents and the orchestration and the cost and stuff has been happening in the CICD space for a decade, but no one cares, because it's just a consideration. It's it's a cost of doing business, yeah, until you get hurt by it. Ai. Agents. If you, if it's not controlled, You are bleeding money. Yeah? And like, that's where it's becoming more of a value, a value add there. But like,
+
+Azmain Hossain  30:11  
+that thing that Ben shared, where, for like, senior leadership, like him, that's, that's the big fear of, like, we're doing all this cool stuff, but then we rack up a bill so high we can't justify it.
+
+Speaker 1  30:22  
+Yeah, so would it be possible? And, like, I'm not gonna ask you to lean on you or anything, but, like, because I, I've also, I'm gonna, I'm trying to communicate this with Richard. He just has a lot, and I know you, like, I just, I figured you would be able to understand this. Like, this, I would love. Like, I mean, ultimately, this is just,
+
+Azmain Hossain  30:43  
+I already know, like, I'm literally from next week, like, while you're working on this and doing stuff, I can start just asking the question of being like, man, you know, like, to my manager's manager, being like, hey, Alexandre, you know, when you run things and it crashes your laptop, wouldn't it be cool if you could run stuff in a secure environment that's super powerful and cost next to nothing, and he'll be like, but the balls, because he's French,
+
+Speaker 1  31:09  
+perfect accent, by the way, and just No, like, ask that
+
+Azmain Hossain  31:13  
+question, like, I don't know, one time I'll be talking to Ben and be like, Gee man, you know that real you shared where it's, like, super expensive. Wouldn't it be nice if we could control the cost just, yeah, plot little seeds, and then when you're finished, when you'd be like, hey, remember that thing we talked about two weeks ago? What about this? Yeah, that that I that's the best way.
+
+Speaker 1  31:36  
+No, I appreciate it. Like this is, I mean, that's more than what I can ask for. Because, like, I think, as you've already mentioned, it is a very, very difficult thing to explain to people, yeah. Like, I mean, it's been difficult on the CICD space, because people get their their eyes glaze over with DevOps, you know. But like, ultimately, this is just being able to, quite literally, provision any resource anywhere, and have, like, the control over it.
+
+Azmain Hossain  32:07  
+So I'm, yeah, I'm already, like, the app that you're talking about. Like, yeah, you saw how Ben, how excited Ben was when he found out that, like, you can code on your phone in using hot code. And I was like, Ah, shit, guys, I've been doing it already. I didn't realise that you didn't do it. I didn't know because I've done it you can. Yeah, maybe I should like but imagine the thing that all of that within the wall garden of Moody's safe and fast stuff,
+
+Speaker 1  32:39  
+exactly and like, Moody's security would love that, you know? And then, like, I mean, yeah,
+
+Azmain Hossain  32:46  
+but then you have all of this at a price, and that's where you get those price, pricing, pricing contracts.
+
+Unknown Speaker  32:55  
+I mean, truly of
+
+Azmain Hossain  32:56  
+interest, if it is make your mom the official owner of
+
+Speaker 1  33:04  
+exactly No. I mean, I truly, like, Thank you for letting me, like, kind of run this by you. Because, like, this is something like, a, it's a passion project of mine. B, like, if this is actually something that I can turn into something like, I would absolutely love something I that I invented, be used, you know?
+
+Azmain Hossain  33:22  
+Because, I mean, we're obviously talking further down the line, but when you get like, Moody's being like that, that's our thingy, and we adhere to all their security stuff. You can take the same thing to SNP and to Fitch and be like, Hey, don't you want to be like the number one rating agency and use all this? Yeah, yeah. Man, that's, I know it becomes, I can quit my job and come join them, and you can give me money Exactly.
+
+Speaker 1  33:45  
+Well, I 100,000% What job do you want?
+
+Azmain Hossain  33:51  
+Man, I am. Do you know, I can't remember someone, someone in the office, because there are some people that are really into, like, titles and ranks and stuff. Yeah, they were like, you're so Junior, how do you know all this stuff, and you know you're now rubbing shoulders with MDS? I was like, brother, I was rubbing shoulders with CEOs at my last job. I worked at a startup. Like, yeah, this is, this is not intimidating for me.
+
+Speaker 1  34:17  
+Yeah, no, it's, it's, it's funny that you mentioned that. Because, like, I literally, yeah, that's 100% the same thing. Like, I've been in, like, I've talked to CEOs, everything like that and but yeah, it's, I always laugh, because it's it that reaction title wise, are people who've been in the, like, enterprise space for way too long? Yeah?
+
+Azmain Hossain  34:39  
+Yeah. Yeah, it's just like, you're, you're in the IRP adoption chat, like, Man, I want to, like, throw rotten eggs at Catherine lady doing this, like features where it says, under construction. Option features might break. She's like, why are features breaking? Why is this not fully built out? I don't know. Yeah, one person just yeah, I'm she is, I've met people like her. She is maliciously trying to just undermine everything, and I hate it.
+
+Speaker 1  35:21  
+Well, it's, it's, I mean, you've, if you've met people like this, like, the way I classify it is, like, it wasn't her idea, yeah, thus is it bad, you know? And like, and people are just like that.
+
+Azmain Hossain  35:35  
+And like, like, Josh Ellison, he was a bit like this. But when I actually sat down with him, and I'm like, What is your sign of criteria he gave me. I met them. He signed off. Great. Now we have a great relationship. But then then you get people who are just mad because you took away their main function. And now, you know they're not the person who everyone has to go to to get empty level reporting Exactly. Yeah, and now they're mad, and they're like, oh, this thing is weird, and that thing is weird.
+
+Unknown Speaker  36:05  
+Hey, I took my job.
+
+Azmain Hossain  36:09  
+Like, when she's like, I noticed a number of customers where the target date has passed. And like, why are you telling me go talk to the CSMs. Like, yeah, why are you talking to me, and I was, I was in a call, yeah, where, literally, she was just complaining, non stop, of like, this is wrong and this is wrong and this is wrong. And do you know Stacey dixtra, yes, she basically came in and she was like, okay, Catherine, I'm going to spend a couple of hours this evening, just manually fixing everything. And I was like, firstly, why? Why someone so senior having to do this? And secondly, yeah, like, Catherine should be like, oh, yeah, that's a good idea. Okay, I'll do that. Yeah. Literally never volunteers to do anything, just find problems.
+
+Speaker 1  37:03  
+I mean, like, Alright, so I've been much like you. I've been in the startup realm for a while. My biggest gripe with the and like, I was talking to Richard about this too, because he wanted, like, rightfully so, we need resources and stuff. But I was like, I was warned. I was like, not warning him, but I was like, I'm just slightly concerned about, like, we can't bring on too many people too quickly, because if we bring on the wrong people, we get we slow down and, like, literally, and the enterprise space, like Moody's, there's 1000 people who are just, they would rather complain and never bring a solution to the table. You know, then, yeah. Anyways, that's they'll spawn a whole
+
+Azmain Hossain  37:45  
+other rank. I think, I think Rich. I mean, this is why he's bringing Martin and Chris and man Nicole. Sorry, yeah. I thought we know guys that we know can run at the same pace. And then from my front I'm talking to graduates, like I had, like, it's not really an interview. We're just talking, I talked to one of them today. I'm talking to another one. That's kind of what we need, guys with energy who can run as fast or new people that aren't corrupted by the corporate bullshit that they are, you know, new and excited. They just come out of college, and they're like, Yeah, I want to work in a fast paced stuff and do interesting stuff. That's, that's why I want to work with, yeah, 100% so. But thank you. All right, taking the time. I'm going to start, I'm going to start planting the seeds. Start working on it. I'm also going to kind of float the idea of this CO work. Sorry, I don't know what to call it. I'll think of a name, but yeah, just being able to use the Microsoft Graph API to do, to do stuff, and it can literally start all with like five people using it, and we can just show and be like, let's get a few more people into it.
+
+Speaker 1  39:03  
+100% I mean, like, legitimately, I, yeah, I'll give some thought into it. And, like, when I, when I get something good, I'll give you access to Atlas so you can play around with it and break it,
+
+Azmain Hossain  39:18  
+yeah, yeah. And I'm just really looking forward to Martin being able to come in and help me a little bit. Yeah, yes, yeah. I'm just drowning in like right now that the core functionality has been kind of built out, and forgetting all the Catherine stuff. Now everybody just wants to talk about the new ideas that they have, and it's just a lot of stuff to keep in your head, because everyone's like, we could do this and this, and strategically, there's a problem and there's a problem. Well, like, Okay, can you just write me a message and tell me what you want, and I'll just do it.
+
+Speaker 1  39:57  
+Well, this is where. Not to go back to pandemic again. But like, this is where, like, we make a project board in GitHub, you know, and it spins off a worker. Like, it's like, basically, we trigger something to do the work for you, and then all you have to do is go through and review, like, automatically handles any feedback.
+
+Azmain Hossain  40:22  
+Said what I was thinking. I'm like, Wouldn't it be awesome if somebody was like, I would like to make this change. And it's like, okay, if you make this change, then this, this, this, can you review it? And suddenly they're not just, they can't just leave a throwaway comment and go away. They actively have to be and if someone's like, I want this feature, okay, go and build it yourself. And if it's good, send it a PR, and we'll review
+
+Speaker 1  40:45  
+exactly, and like, being able to, yeah, so that's kind of like where I would love to see, like the integration goes. Maybe that's an example that we we work with, you know, but yeah, we can connect with the the graph API as well and how like, go from there. Like, legitimately, we can connect the like, maybe make an MCP of the like graph, you know, just because, like, here's the thing with SSO. Like, ideally with phantom Adrian with us. Like, with the ability to configure SSO, you'll be able to get their, well, Microsoft Azure credentials, which would allow you to have access to the entire graph API so they can start querying things they have access to. So they can query whatever. So, like, that's like, that's the enterprise level kind of a, you know, feature aspect,
+
+Azmain Hossain  41:36  
+and I can't do any of that without being able to do it in a secure environment, which is where yes comes in. Yes, exactly, okay, yeah, then yeah. Phantom has to take precedence, and we sell it using that use case of, do you really want to get everybody developer laptops? Like we want to enable everyone. Give them cursor training, yes, give them, you know, AI General Training. But do you want to give everyone dev laptops? No, here's the solution, and at the cost of one person's laptop, like five grand, you can run this whole system for like, 1000 people for a month, exactly. Yeah, awesome. Well, thank you so much for taking the time and just, yeah,
+
+Speaker 1  42:25  
+I mean, I mean I give, thank you for giving me the outlet. To be honest, I have issues trusting people with my ideas, so the fact that I'm able to come to you like, thank you and like, honestly, a I would love to work on this, like, kind of full time in general, but like, the I can see what Moody's is capable of right now. So I'm like, here's a good solution. Like, let's use this and we can love, like,
+
+Azmain Hossain  42:51  
+this is the thing that, like, my my manager, she's like, Oh, amain, you shouldn't work so late and work so hard. I'm like, listen, I literally studied innovation management during my masters, when the wheel starts turning, it's really hard to get the you know, it's like the first thing is, Oh yeah, yeah. The first few cycles, you got to push it through with manual effort. Then when the momentum gets going, you let it run. But the first couple of turns, you got to just put maximum effort
+
+Speaker 1  43:24  
+in exactly. But all right, sir, I know it's late in your time, so yeah, thank you. Thank you again, like truly, and then
+
+Azmain Hossain  43:31  
+thank you as well for taking the time. But yeah, I wish you a great rest of the day. You too, sir. Yeah, speak soon. All right. Bye. I.
+
