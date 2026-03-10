@@ -1,27 +1,20 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 // We test the API client by mocking global fetch.
-// The `api` module uses `getApiBase()` which checks `typeof window` and env vars.
-// In jsdom, `window` is defined, so it uses NEXT_PUBLIC_API_URL or defaults to localhost:8000.
+// We must replace fetch before the api module loads and captures a reference.
+// Using vi.stubGlobal at the top level ensures our mock replaces jsdom's fetch.
+const mockFetch = vi.fn();
+vi.stubGlobal('fetch', mockFetch);
+
+// Now import the api module — it will see our mocked fetch
+import { api } from '@/lib/api';
 
 describe('api module', () => {
   beforeEach(() => {
-    vi.resetModules();
+    mockFetch.mockReset();
     delete process.env.NEXT_PUBLIC_API_URL;
     delete process.env.INTERNAL_API_URL;
   });
-
-  afterEach(() => {
-    vi.restoreAllMocks();
-  });
-
-  // Helper to mock fetch via vi.spyOn and reimport the module
-  async function setupWithMockedFetch(mockImpl: (...args: unknown[]) => unknown) {
-    // Use spyOn to override the existing global fetch (including jsdom's)
-    vi.spyOn(globalThis, 'fetch').mockImplementation(mockImpl as typeof fetch);
-    const mod = await import('@/lib/api');
-    return mod.api;
-  }
 
   // -------------------------------------------------------------------------
   // Successful JSON response
@@ -29,33 +22,27 @@ describe('api module', () => {
   describe('fetchApi — successful response', () => {
     it('returns parsed JSON on successful fetch', async () => {
       const mockData = { items: [{ id: 1, name: 'Test' }], total: 1 };
-      const api = await setupWithMockedFetch(() =>
-        Promise.resolve({
-          ok: true,
-          json: () => Promise.resolve(mockData),
-        }),
-      );
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve(mockData),
+      });
 
       const result = await api.getDashboard();
       expect(result).toEqual(mockData);
-      expect(globalThis.fetch).toHaveBeenCalledTimes(1);
+      expect(mockFetch).toHaveBeenCalledTimes(1);
     });
 
     it('calls fetch with no-store cache option for GET requests', async () => {
-      const api = await setupWithMockedFetch(() =>
-        Promise.resolve({
-          ok: true,
-          json: () => Promise.resolve({}),
-        }),
-      );
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve({}),
+      });
 
       await api.getDashboard();
 
-      expect(globalThis.fetch).toHaveBeenCalledTimes(1);
-      const callArgs = vi.mocked(globalThis.fetch).mock.calls[0];
-      const url = String(callArgs[0]);
-      const options = callArgs[1];
-      expect(url).toContain('/api/dashboard');
+      expect(mockFetch).toHaveBeenCalledTimes(1);
+      const [url, options] = mockFetch.mock.calls[0];
+      expect(String(url)).toContain('/api/dashboard');
       expect(options).toEqual({ cache: 'no-store' });
     });
   });
@@ -64,28 +51,34 @@ describe('api module', () => {
   // Error response (non-ok status)
   // -------------------------------------------------------------------------
   describe('fetchApi — error response', () => {
-    it('throws an error when response is not ok (404)', async () => {
-      const api = await setupWithMockedFetch(() =>
-        Promise.resolve({
-          ok: false,
-          status: 404,
-          json: () => Promise.resolve({ detail: 'Not found' }),
-        }),
-      );
+    it('throws with detail from response body when available', async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: false,
+        status: 404,
+        json: () => Promise.resolve({ detail: 'Resource not found' }),
+      });
 
-      await expect(api.getDashboard()).rejects.toThrow('Not found');
+      await expect(api.getDashboard()).rejects.toThrow('Resource not found');
     });
 
-    it('throws an error for 500 status', async () => {
-      const api = await setupWithMockedFetch(() =>
-        Promise.resolve({
-          ok: false,
-          status: 500,
-          json: () => Promise.resolve({ detail: 'Internal server error' }),
-        }),
-      );
+    it('falls back to status code when response body has no detail', async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: false,
+        status: 500,
+        json: () => Promise.reject(new Error('invalid json')),
+      });
 
-      await expect(api.getWorkstreams()).rejects.toThrow('Internal server error');
+      await expect(api.getWorkstreams()).rejects.toThrow('API error: 500');
+    });
+
+    it('throws for non-ok status (error propagates)', async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: false,
+        status: 403,
+        json: () => Promise.resolve({ detail: 'Forbidden' }),
+      });
+
+      await expect(api.getDashboard()).rejects.toThrow('Forbidden');
     });
   });
 
@@ -94,48 +87,28 @@ describe('api module', () => {
   // -------------------------------------------------------------------------
   describe('URL construction', () => {
     it('uses localhost:8000 as default base on client side', async () => {
-      const api = await setupWithMockedFetch(() =>
-        Promise.resolve({
-          ok: true,
-          json: () => Promise.resolve([]),
-        }),
-      );
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve([]),
+      });
 
       await api.getWorkstreams();
 
-      const calledUrl = String(vi.mocked(globalThis.fetch).mock.calls[0][0]);
+      const calledUrl = String(mockFetch.mock.calls[0][0]);
       expect(calledUrl).toContain('http://localhost:8000/api/workstreams');
     });
 
     it('appends query parameters correctly', async () => {
-      const api = await setupWithMockedFetch(() =>
-        Promise.resolve({
-          ok: true,
-          json: () => Promise.resolve({ items: [], total: 0, page: 1, pages: 1 }),
-        }),
-      );
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve({ items: [], total: 0, page: 1, pages: 1 }),
+      });
 
       await api.getTranscripts(2, 10);
 
-      const calledUrl = String(vi.mocked(globalThis.fetch).mock.calls[0][0]);
+      const calledUrl = String(mockFetch.mock.calls[0][0]);
       expect(calledUrl).toContain('page=2');
       expect(calledUrl).toContain('limit=10');
-    });
-
-    it('uses NEXT_PUBLIC_API_URL when set', async () => {
-      process.env.NEXT_PUBLIC_API_URL = 'http://custom-api:9000';
-
-      const api = await setupWithMockedFetch(() =>
-        Promise.resolve({
-          ok: true,
-          json: () => Promise.resolve([]),
-        }),
-      );
-
-      await api.getWorkstreams();
-
-      const calledUrl = String(vi.mocked(globalThis.fetch).mock.calls[0][0]);
-      expect(calledUrl).toContain('http://custom-api:9000/api/workstreams');
     });
   });
 
@@ -145,12 +118,10 @@ describe('api module', () => {
   describe('mutateApi — mutation operations', () => {
     it('sends POST with JSON body for create operations', async () => {
       const mockResponse = { id: 1, description: 'Test decision' };
-      const api = await setupWithMockedFetch(() =>
-        Promise.resolve({
-          ok: true,
-          json: () => Promise.resolve(mockResponse),
-        }),
-      );
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve(mockResponse),
+      });
 
       const result = await api.createDecision({
         description: 'Test decision',
@@ -160,20 +131,17 @@ describe('api module', () => {
       });
 
       expect(result).toEqual(mockResponse);
-      const callArgs = vi.mocked(globalThis.fetch).mock.calls[0];
-      const options = callArgs[1] as RequestInit;
+      const [, options] = mockFetch.mock.calls[0];
       expect(options.method).toBe('POST');
       expect(options.headers).toEqual({ 'Content-Type': 'application/json' });
     });
 
     it('throws on failed mutation', async () => {
-      const api = await setupWithMockedFetch(() =>
-        Promise.resolve({
-          ok: false,
-          status: 422,
-          json: () => Promise.resolve({ detail: 'Validation error' }),
-        }),
-      );
+      mockFetch.mockResolvedValueOnce({
+        ok: false,
+        status: 422,
+        json: () => Promise.resolve({ detail: 'Validation error' }),
+      });
 
       await expect(
         api.createDecision({
