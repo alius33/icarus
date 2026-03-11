@@ -43,20 +43,3 @@ class OpenThreadUpdate(BaseModel):
     trend: str | None = None
 
 
-class OpenThreadPositionUpdate(BaseModel):
-    status: str
-    position: int
-
-
-class ThreadBoardColumn(BaseModel):
-    status: str
-    label: str
-    color: str
-    order: int
-    threads: list[OpenThreadSchema]
-    count: int
-
-
-class ThreadBoardResponse(BaseModel):
-    columns: list[ThreadBoardColumn]
-    total: int

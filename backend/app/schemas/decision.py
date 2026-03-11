@@ -37,24 +37,6 @@ class DecisionUpdate(BaseModel):
     workstream: str | None = None
 
 
-class DecisionPositionUpdate(BaseModel):
-    execution_status: str
-    position: int
-
-
-class DecisionBoardColumn(BaseModel):
-    status: str
-    label: str
-    color: str
-    order: int
-    decisions: list[DecisionSchema]
-    count: int
-
-
-class DecisionBoardResponse(BaseModel):
-    columns: list[DecisionBoardColumn]
-    total: int
-
 
 class DecisionTimelineItem(BaseModel):
     id: int

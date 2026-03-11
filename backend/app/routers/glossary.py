@@ -1,85 +1,63 @@
 from collections import defaultdict
-from datetime import datetime
 
 from fastapi import APIRouter, Depends
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
-from app.exceptions import DuplicateError, NotFoundError
-from app.models.deleted_import import DeletedImport
+from app.exceptions import DuplicateError
 from app.models.glossary import GlossaryEntry
-from app.schemas.glossary import GlossaryCreate, GlossaryEntrySchema, GlossaryGrouped, GlossaryUpdate
+from app.routers.crud_factory import CRUDConfig, create_crud_router
+from app.schemas.glossary import (
+    GlossaryCreate,
+    GlossaryEntrySchema,
+    GlossaryGrouped,
+    GlossaryUpdate,
+)
 
-router = APIRouter(tags=["glossary"])
 
-
-def _entry_schema(entry: GlossaryEntry) -> GlossaryEntrySchema:
+def _to_schema(entry: GlossaryEntry) -> GlossaryEntrySchema:
     return GlossaryEntrySchema(
-        id=entry.id, term=entry.term, definition=entry.definition,
-        category=entry.category or "Uncategorized", aliases=[], is_manual=entry.is_manual,
+        id=entry.id,
+        term=entry.term,
+        definition=entry.definition,
+        category=entry.category or "Uncategorized",
+        aliases=[],
+        is_manual=entry.is_manual,
     )
 
 
-@router.get("/glossary", response_model=GlossaryGrouped)
-async def list_glossary(db: AsyncSession = Depends(get_db)):
-    result = await db.execute(select(GlossaryEntry).order_by(GlossaryEntry.category, GlossaryEntry.term))
-    grouped: dict[str, list[GlossaryEntrySchema]] = defaultdict(list)
-    for entry in result.scalars().all():
-        grouped[entry.category or "Uncategorized"].append(_entry_schema(entry))
-    return dict(grouped)
-
-
-@router.get("/glossary/{entry_id}", response_model=GlossaryEntrySchema)
-async def get_glossary_entry(entry_id: int, db: AsyncSession = Depends(get_db)):
-    result = await db.execute(select(GlossaryEntry).where(GlossaryEntry.id == entry_id))
-    entry = result.scalar_one_or_none()
-    if not entry:
-        raise NotFoundError("Glossary entry", entry_id)
-    return _entry_schema(entry)
-
-
-@router.post("/glossary", response_model=GlossaryEntrySchema)
-async def create_glossary_entry(body: GlossaryCreate, db: AsyncSession = Depends(get_db)):
-    existing = await db.execute(select(GlossaryEntry).where(GlossaryEntry.term == body.term))
+async def _create_to_orm(body: GlossaryCreate, db) -> dict:
+    existing = await db.execute(
+        select(GlossaryEntry).where(GlossaryEntry.term == body.term)
+    )
     if existing.scalar_one_or_none():
         raise DuplicateError("Glossary entry", "term", body.term)
 
-    entry = GlossaryEntry(term=body.term, definition=body.definition, category=body.category,
-                           is_manual=True, source_file="manual", file_hash="")
-    db.add(entry)
-    await db.commit()
-    await db.refresh(entry)
-    return _entry_schema(entry)
+    return {
+        "term": body.term,
+        "definition": body.definition,
+        "category": body.category,
+        "is_manual": True,
+        "source_file": "manual",
+        "file_hash": "",
+    }
 
 
-@router.patch("/glossary/{entry_id}", response_model=GlossaryEntrySchema)
-async def update_glossary_entry(entry_id: int, body: GlossaryUpdate, db: AsyncSession = Depends(get_db)):
-    result = await db.execute(select(GlossaryEntry).where(GlossaryEntry.id == entry_id))
-    entry = result.scalar_one_or_none()
-    if not entry:
-        raise NotFoundError("Glossary entry", entry_id)
+config = CRUDConfig(
+    model=GlossaryEntry,
+    schema=GlossaryEntrySchema,
+    schema_create=GlossaryCreate,
+    schema_update=GlossaryUpdate,
+    prefix="/glossary",
+    entity_name="Glossary entry",
+    tags=["glossary"],
+    to_schema=_to_schema,
+    create_to_orm=_create_to_orm,
+    ordering=[("category", "asc"), ("term", "asc")],
+    track_deletions=True,
+    deletion_entity_type="glossary",
+    deletion_key=lambda entry: entry.term,
+)
 
-    if body.definition is not None:
-        entry.definition = body.definition
-    if body.category is not None:
-        entry.category = body.category
-    entry.is_manual = True
-    entry.updated_at = datetime.utcnow()
-    await db.commit()
-    await db.refresh(entry)
-    return _entry_schema(entry)
-
-
-@router.delete("/glossary/{entry_id}")
-async def delete_glossary_entry(entry_id: int, db: AsyncSession = Depends(get_db)):
-    result = await db.execute(select(GlossaryEntry).where(GlossaryEntry.id == entry_id))
-    entry = result.scalar_one_or_none()
-    if not entry:
-        raise NotFoundError("Glossary entry", entry_id)
-
-    if not entry.is_manual:
-        db.add(DeletedImport(entity_type="glossary", unique_key=entry.term))
-    await db.delete(entry)
-    await db.commit()
-    return {"ok": True}
+router = create_crud_router(config)

@@ -52,24 +52,6 @@ class TaskUpdate(BaseModel):
     parent_id: int | None = None
 
 
-class TaskPositionUpdate(BaseModel):
-    status: str
-    position: int
-
-
-class TaskBoardColumn(BaseModel):
-    status: str
-    label: str
-    color: str
-    order: int
-    tasks: list[TaskSchema]
-    count: int
-
-
-class TaskBoardResponse(BaseModel):
-    columns: list[TaskBoardColumn]
-    total: int
-
 
 class TaskTimelineItem(BaseModel):
     id: int

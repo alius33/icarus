@@ -1,18 +1,23 @@
 from datetime import datetime
 
-from fastapi import APIRouter, Depends, Query
-from sqlalchemy import select
-from sqlalchemy.ext.asyncio import AsyncSession
-
-from app.database import get_db
-from app.exceptions import NotFoundError
 from app.models.adoption_metric import AdoptionMetric
+from app.routers.crud_factory import CRUDConfig, create_crud_router
 from app.schemas.adoption_metric import AdoptionMetricCreate, AdoptionMetricSchema
 
-router = APIRouter(tags=["adoption"])
+
+# Adoption doesn't have an update schema — create a minimal one
+from pydantic import BaseModel
 
 
-def _schema(m: AdoptionMetric) -> AdoptionMetricSchema:
+class AdoptionMetricUpdate(BaseModel):
+    date: str | None = None
+    metric_type: str | None = None
+    value: int | None = None
+    workstream: str | None = None
+    notes: str | None = None
+
+
+def _to_schema(m: AdoptionMetric) -> AdoptionMetricSchema:
     return AdoptionMetricSchema(
         id=m.id,
         date=str(m.date) if m.date else "",
@@ -23,49 +28,32 @@ def _schema(m: AdoptionMetric) -> AdoptionMetricSchema:
     )
 
 
-@router.get("/adoption", response_model=list[AdoptionMetricSchema])
-async def list_adoption_metrics(
-    workstream: str | None = Query(None),
-    metric_type: str | None = Query(None),
-    db: AsyncSession = Depends(get_db),
-):
-    query = select(AdoptionMetric)
-    if workstream:
-        query = query.where(AdoptionMetric.workstream == workstream)
-    if metric_type:
-        query = query.where(AdoptionMetric.metric_type == metric_type)
-
-    result = await db.execute(query.order_by(AdoptionMetric.date.desc(), AdoptionMetric.id.desc()))
-    return [_schema(m) for m in result.scalars().all()]
-
-
-@router.post("/adoption", response_model=AdoptionMetricSchema, status_code=201)
-async def create_adoption_metric(body: AdoptionMetricCreate, db: AsyncSession = Depends(get_db)):
+def _create_to_orm(body: AdoptionMetricCreate, db) -> dict:
     metric_date = None
     try:
         metric_date = datetime.strptime(body.date, "%Y-%m-%d").date()
     except ValueError:
         metric_date = datetime.utcnow().date()
-
-    metric = AdoptionMetric(
-        date=metric_date,
-        metric_type=body.metric_type,
-        value=body.value,
-        workstream=body.workstream,
-        notes=body.notes,
-    )
-    db.add(metric)
-    await db.commit()
-    await db.refresh(metric)
-    return _schema(metric)
+    return {
+        "date": metric_date,
+        "metric_type": body.metric_type,
+        "value": body.value,
+        "workstream": body.workstream,
+        "notes": body.notes,
+    }
 
 
-@router.delete("/adoption/{metric_id}")
-async def delete_adoption_metric(metric_id: int, db: AsyncSession = Depends(get_db)):
-    result = await db.execute(select(AdoptionMetric).where(AdoptionMetric.id == metric_id))
-    metric = result.scalar_one_or_none()
-    if not metric:
-        raise NotFoundError("Adoption metric", metric_id)
-    await db.delete(metric)
-    await db.commit()
-    return {"ok": True}
+config = CRUDConfig(
+    model=AdoptionMetric,
+    schema=AdoptionMetricSchema,
+    schema_create=AdoptionMetricCreate,
+    schema_update=AdoptionMetricUpdate,
+    prefix="/adoption",
+    entity_name="Adoption metric",
+    tags=["adoption"],
+    to_schema=_to_schema,
+    create_to_orm=_create_to_orm,
+    ordering=[("date", "desc"), ("id", "desc")],
+)
+
+router = create_crud_router(config)
