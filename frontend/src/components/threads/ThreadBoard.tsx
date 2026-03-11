@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { OpenThreadSchema, ThreadBoardColumn, ThreadBoardResponse, THREAD_STATUS_CONFIG, ThreadStatus } from "@/lib/types";
 import ThreadCard from "./ThreadCard";
 import { api } from "@/lib/api";
@@ -85,10 +85,13 @@ export default function ThreadBoard({ data, onThreadClick, onRefresh }: ThreadBo
   const [columns, setColumns] = useState(data.columns);
   const [activeThread, setActiveThread] = useState<OpenThreadSchema | null>(null);
   const [collapsedColumns, setCollapsedColumns] = useState<Set<string>>(new Set());
+  const prevDataRef = useRef(data);
 
-  // Sync with new data
-  if (data.columns !== columns && !activeThread) {
+  // Sync only when parent passes genuinely new data (after a fetch),
+  // not when local columns diverge from the prop due to drag-and-drop.
+  if (data !== prevDataRef.current && !activeThread) {
     setColumns(data.columns);
+    prevDataRef.current = data;
   }
 
   const sensors = useSensors(
@@ -168,9 +171,9 @@ export default function ThreadBoard({ data, onThreadClick, onRefresh }: ThreadBo
 
     try {
       await api.updateOpenThreadPosition(active.id as number, { status: colStatus, position });
+      onRefresh(); // Sync parent with server state
     } catch {
-      // Revert on error
-      onRefresh();
+      onRefresh(); // Revert on error
     }
   }
 

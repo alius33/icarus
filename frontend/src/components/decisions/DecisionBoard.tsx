@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { DecisionSchema, DecisionBoardColumn, DecisionBoardResponse, DECISION_STATUS_CONFIG, DecisionStatus } from "@/lib/types";
 import DecisionCard from "./DecisionCard";
 import { api } from "@/lib/api";
@@ -85,10 +85,13 @@ export default function DecisionBoard({ data, onDecisionClick, onRefresh }: Deci
   const [columns, setColumns] = useState(data.columns);
   const [activeDecision, setActiveDecision] = useState<DecisionSchema | null>(null);
   const [collapsedColumns, setCollapsedColumns] = useState<Set<string>>(new Set());
+  const prevDataRef = useRef(data);
 
-  // Sync with new data
-  if (data.columns !== columns && !activeDecision) {
+  // Sync only when parent passes genuinely new data (after a fetch),
+  // not when local columns diverge from the prop due to drag-and-drop.
+  if (data !== prevDataRef.current && !activeDecision) {
     setColumns(data.columns);
+    prevDataRef.current = data;
   }
 
   const sensors = useSensors(
@@ -168,9 +171,9 @@ export default function DecisionBoard({ data, onDecisionClick, onRefresh }: Deci
 
     try {
       await api.updateDecisionPosition(active.id as number, { execution_status: colStatus, position });
+      onRefresh(); // Sync parent with server state
     } catch {
-      // Revert on error
-      onRefresh();
+      onRefresh(); // Revert on error
     }
   }
 

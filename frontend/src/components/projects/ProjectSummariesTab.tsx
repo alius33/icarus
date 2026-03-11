@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import type { ProjectWeeklyTimeline, ProjectWeek, ProjectBase } from "@/lib/types";
 import MarkdownContent from "@/components/MarkdownContent";
+import { extractProjectContent } from "@/lib/markdown-extract";
 import {
   ChevronDown,
   ChevronRight,
@@ -13,6 +14,7 @@ import {
   Calendar,
   Gavel,
   CheckSquare,
+  ExternalLink,
 } from "lucide-react";
 
 interface Props {
@@ -29,7 +31,7 @@ function isEmptyWeek(week: ProjectWeek): boolean {
   );
 }
 
-export default function ProjectSummariesTab({ timeline }: Props) {
+export default function ProjectSummariesTab({ timeline, project }: Props) {
   const [expanded, setExpanded] = useState<Set<number>>(() => {
     const initial = new Set<number>();
     let activeCount = 0;
@@ -195,17 +197,34 @@ export default function ProjectSummariesTab({ timeline }: Props) {
 
             {isOpen && !empty && (
               <div className="border-t border-gray-100">
-                {hasReport && (
-                  <div className="px-6 py-5">
-                    <div className="mb-3 flex items-center gap-2">
-                      <BookOpen className="h-4 w-4 text-indigo-600" />
-                      <span className="text-sm font-semibold text-gray-900">Weekly Report</span>
+                {hasReport && (() => {
+                  const filtered = extractProjectContent(week.weekly_report_content!, project.name);
+                  return (
+                    <div className="px-6 py-5">
+                      <div className="mb-3 flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <BookOpen className="h-4 w-4 text-indigo-600" />
+                          <span className="text-sm font-semibold text-gray-900">Weekly Report</span>
+                        </div>
+                        {week.weekly_report_id && (
+                          <Link
+                            href={`/analysis/weekly/${week.weekly_report_id}`}
+                            className="flex items-center gap-1 text-xs text-gray-400 hover:text-indigo-600 transition-colors"
+                          >
+                            Full report <ExternalLink className="h-3 w-3" />
+                          </Link>
+                        )}
+                      </div>
+                      {filtered ? (
+                        <div className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-h2:mt-6 prose-h2:mb-3 prose-h2:text-base prose-h3:mt-4 prose-h3:mb-2 prose-h3:text-sm prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900">
+                          <MarkdownContent>{filtered}</MarkdownContent>
+                        </div>
+                      ) : (
+                        <p className="text-sm text-gray-400 italic">No project-specific updates this week.</p>
+                      )}
                     </div>
-                    <div className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-h2:mt-6 prose-h2:mb-3 prose-h2:text-base prose-h3:mt-4 prose-h3:mb-2 prose-h3:text-sm prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900">
-                      <MarkdownContent>{week.weekly_report_content!}</MarkdownContent>
-                    </div>
-                  </div>
-                )}
+                  );
+                })()}
 
                 {week.transcripts.length > 0 && (
                   <div className={`border-t border-gray-100 ${hasReport ? "bg-gray-50/30" : ""}`}>

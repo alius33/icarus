@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { TaskSchema, TaskBoardColumn, TaskBoardResponse, STATUS_CONFIG, TaskStatus } from "@/lib/types";
 import TaskCard from "./TaskCard";
 import { api } from "@/lib/api";
@@ -85,10 +85,13 @@ export default function TaskBoard({ data, onTaskClick, onRefresh }: TaskBoardPro
   const [columns, setColumns] = useState(data.columns);
   const [activeTask, setActiveTask] = useState<TaskSchema | null>(null);
   const [collapsedColumns, setCollapsedColumns] = useState<Set<string>>(new Set());
+  const prevDataRef = useRef(data);
 
-  // Sync with new data
-  if (data.columns !== columns && !activeTask) {
+  // Sync only when parent passes genuinely new data (after a fetch),
+  // not when local columns diverge from the prop due to drag-and-drop.
+  if (data !== prevDataRef.current && !activeTask) {
     setColumns(data.columns);
+    prevDataRef.current = data;
   }
 
   const sensors = useSensors(
@@ -168,9 +171,9 @@ export default function TaskBoard({ data, onTaskClick, onRefresh }: TaskBoardPro
 
     try {
       await api.updateTaskPosition(active.id as number, { status: colStatus, position });
+      onRefresh(); // Sync parent with server state
     } catch {
-      // Revert on error
-      onRefresh();
+      onRefresh(); // Revert on error
     }
   }
 
