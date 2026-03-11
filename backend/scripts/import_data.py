@@ -43,6 +43,7 @@ from app.models import (
     SentimentSignal,
     Stakeholder,
     Summary,
+    Task,
     TopicSignal,
     Transcript,
     TranscriptMention,
@@ -94,9 +95,8 @@ def _slugify(name: str) -> str:
 # Project seeding — ensures all expected projects exist in the DB
 # ---------------------------------------------------------------------------
 
-# Canonical project definitions. Workstream-linked projects are seeded from
-# the workstreams table (migration 002), but custom projects and "Sales Recon"
-# need explicit creation.  This list is the single source of truth for Railway.
+# Custom (non-workstream) project definitions.  Workstream-linked projects are
+# created dynamically from the workstreams table by seed_projects().
 CUSTOM_PROJECTS = [
     {"name": "Cross OU Collaboration", "description": "Cross-operational unit collaboration — banking, life insurance, and asset management AI enablement", "is_custom": True, "status": "active", "color": "#10B981"},
     {"name": "Program Management", "description": "Programme governance, standups, infrastructure, budget, and strategic alignment", "is_custom": True, "status": "active", "color": "#6366F1"},
@@ -105,14 +105,39 @@ CUSTOM_PROJECTS = [
 
 
 async def seed_projects(session: AsyncSession, verbose: bool) -> dict:
-    """Ensure all custom projects exist in the database.
+    """Ensure all projects exist in the database.
 
-    Workstream-linked projects are created by migration 002 from the
-    workstreams table.  This function creates the non-workstream projects
-    that would otherwise only exist if setup_new_projects.py was run manually.
+    Creates workstream-linked projects from the workstreams table (migration
+    002 tries this too, but it runs before workstreams are imported on a fresh
+    DB).  Also creates non-workstream custom projects.
     """
     stats = {"created": 0, "existing": 0}
 
+    # 1. Create workstream-linked projects
+    ws_result = await session.execute(select(Workstream))
+    workstreams = ws_result.scalars().all()
+    for ws in workstreams:
+        result = await session.execute(
+            select(Project).where(Project.workstream_id == ws.id)
+        )
+        existing = result.scalar_one_or_none()
+        if existing:
+            stats["existing"] += 1
+            _log(f"  Project '{existing.name}' already exists (id={existing.id}, ws={ws.code})", verbose)
+        else:
+            project = Project(
+                name=ws.name,
+                description=ws.description,
+                workstream_id=ws.id,
+                is_custom=False,
+                status=ws.status or "active",
+            )
+            session.add(project)
+            await session.flush()
+            stats["created"] += 1
+            _log(f"  Created project '{ws.name}' (id={project.id}, ws={ws.code})", verbose)
+
+    # 2. Create custom (non-workstream) projects
     for proj_data in CUSTOM_PROJECTS:
         result = await session.execute(
             select(Project).where(Project.name == proj_data["name"])
@@ -1724,6 +1749,154 @@ async def import_project_summaries(
 
 
 # ---------------------------------------------------------------------------
+# Project link builder — connects entities to projects
+# ---------------------------------------------------------------------------
+
+# Keywords that map entity text to projects.  Each tuple is
+# (keyword_or_phrase, project_name_prefix) where the prefix is matched
+# against the lowercased project name stored in the DB.
+_PROJECT_KEYWORDS: list[tuple[str, str]] = [
+    ("clara", "clara"),
+    ("irp", "clara"),
+    ("adoption tracker", "clara"),
+    ("dashboard", "clara"),
+    ("friday", "friday"),
+    ("build in five", "build in five"),
+    ("cursor for pipeline", "build in five"),
+    ("martin", "build in five"),
+    ("training", "training"),
+    ("enablement", "training"),
+    ("navigator", "irp navigator"),
+    ("l1 automation", "irp navigator"),
+    ("customer success agent", "customer success agent"),
+    ("cs agent", "customer success agent"),
+    ("cross ou", "cross ou"),
+    ("banking", "cross ou"),
+    ("asset management", "cross ou"),
+    ("life insurance", "cross ou"),
+    ("programme management", "program management"),
+    ("program management", "program management"),
+    ("governance", "program management"),
+    ("steering", "program management"),
+    ("tsr", "tsr"),
+]
+
+
+async def build_project_links(session: AsyncSession, verbose: bool) -> dict:
+    """Create ProjectLink entries for decisions, tasks, and open threads.
+
+    Uses two strategies:
+      1. Tasks: match context field (transcript filename) → transcript →
+         primary_project_id.  Also sets task.project_id directly.
+      2. All entity types: keyword match on title/description text.
+    """
+    stats = {"task_links": 0, "decision_links": 0, "thread_links": 0,
+             "task_project_ids": 0}
+
+    # Load project name → id mapping
+    p_result = await session.execute(select(Project.id, Project.name))
+    project_rows = p_result.all()
+    name_to_id: dict[str, int] = {}
+    for row in project_rows:
+        if row.name:
+            name_to_id[row.name.lower().strip()] = row.id
+            short = re.sub(r'\s*\(.*?\)\s*$', '', row.name.lower().strip()).strip()
+            if short:
+                name_to_id[short] = row.id
+
+    def _match_projects_by_keywords(text: str) -> set[int]:
+        """Return project IDs that match keywords in the given text."""
+        lowered = text.lower()
+        matched: set[int] = set()
+        for keyword, proj_prefix in _PROJECT_KEYWORDS:
+            if keyword in lowered:
+                for name, pid in name_to_id.items():
+                    if name.startswith(proj_prefix):
+                        matched.add(pid)
+                        break
+        return matched
+
+    async def _ensure_link(project_id: int, entity_type: str, entity_id: int) -> bool:
+        """Create a ProjectLink if it doesn't exist. Returns True if created."""
+        existing = await session.execute(
+            select(ProjectLink.id).where(
+                ProjectLink.project_id == project_id,
+                ProjectLink.entity_type == entity_type,
+                ProjectLink.entity_id == entity_id,
+            )
+        )
+        if existing.scalar_one_or_none():
+            return False
+        session.add(ProjectLink(
+            project_id=project_id,
+            entity_type=entity_type,
+            entity_id=entity_id,
+        ))
+        return True
+
+    # --- Build transcript stem → primary_project_id lookup ---
+    t_result = await session.execute(
+        select(Transcript.id, Transcript.filename, Transcript.primary_project_id)
+        .where(Transcript.primary_project_id.isnot(None))
+    )
+    transcript_rows = t_result.all()
+    stem_to_project: dict[str, int] = {}
+    for row in transcript_rows:
+        stem = Path(row.filename).stem.lower() if row.filename else ""
+        if stem and row.primary_project_id:
+            stem_to_project[stem] = row.primary_project_id
+
+    # --- Tasks: link via context (transcript filename) + keywords ---
+    task_result = await session.execute(select(Task))
+    tasks = task_result.scalars().all()
+    for task in tasks:
+        project_ids: set[int] = set()
+
+        # Strategy 1: match context to transcript
+        if task.context:
+            ctx_stem = task.context.strip().lower()
+            pid = stem_to_project.get(ctx_stem)
+            if pid:
+                project_ids.add(pid)
+
+        # Strategy 2: keyword match on title/description
+        search_text = f"{task.title or ''} {task.description or ''}"
+        project_ids |= _match_projects_by_keywords(search_text)
+
+        # Set project_id on the task itself (use first match)
+        if project_ids and not task.project_id:
+            task.project_id = next(iter(project_ids))
+            stats["task_project_ids"] += 1
+
+        for pid in project_ids:
+            if await _ensure_link(pid, "task", task.id):
+                stats["task_links"] += 1
+
+    # --- Decisions: keyword match ---
+    dec_result = await session.execute(select(Decision))
+    decisions = dec_result.scalars().all()
+    for dec in decisions:
+        search_text = f"{dec.decision or ''} {dec.rationale or ''}"
+        project_ids = _match_projects_by_keywords(search_text)
+        for pid in project_ids:
+            if await _ensure_link(pid, "decision", dec.id):
+                stats["decision_links"] += 1
+
+    # --- Open threads: keyword match ---
+    thread_result = await session.execute(select(OpenThread))
+    threads = thread_result.scalars().all()
+    for thread in threads:
+        search_text = f"{thread.title or ''} {thread.context or ''} {thread.question or ''}"
+        project_ids = _match_projects_by_keywords(search_text)
+        for pid in project_ids:
+            if await _ensure_link(pid, "open_thread", thread.id):
+                stats["thread_links"] += 1
+
+    await session.commit()
+    return stats
+
+
+# ---------------------------------------------------------------------------
 # Main orchestrator
 # ---------------------------------------------------------------------------
 
@@ -1745,7 +1918,7 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
 
     all_stats = {}
 
-    total_steps = 20
+    total_steps = 21
 
     async with Session() as session:
         # 1. Transcripts
@@ -1764,8 +1937,8 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
         print(f"[4/{total_steps}] Importing workstreams...")
         all_stats["workstreams"] = await import_workstreams(session, root, verbose)
 
-        # 5. Seed custom projects (must run after workstreams, before summaries)
-        print(f"[5/{total_steps}] Seeding custom projects...")
+        # 5. Seed projects (must run after workstreams, before summaries)
+        print(f"[5/{total_steps}] Seeding projects...")
         all_stats["project_seed"] = await seed_projects(session, verbose)
 
         # 6. Open threads
@@ -1828,6 +2001,10 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
         print(f"[20/{total_steps}] Importing project summaries...")
         all_stats["project_summaries"] = await import_project_summaries(session, root, verbose)
 
+        # 21. Build project links for decisions, tasks, threads
+        print(f"[21/{total_steps}] Building project links...")
+        all_stats["project_links_built"] = await build_project_links(session, verbose)
+
         # Generate slugs for projects that are missing them
         print("\nGenerating project slugs...")
         p_result = await session.execute(
@@ -1859,6 +2036,9 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
                   f"{stats['mentioned']} mentioned, {stats['cleared']} cleared")
         elif entity == "project_seed":
             print(f"  Project seed: {stats['created']} created, {stats['existing']} existing")
+        elif entity == "project_links_built":
+            print(f"  Project links: {stats['task_links']} task, {stats['decision_links']} decision, "
+                  f"{stats['thread_links']} thread | {stats['task_project_ids']} task project_ids set")
         elif entity == "workstreams":
             ws = stats["workstreams"]
             ms = stats["milestones"]
