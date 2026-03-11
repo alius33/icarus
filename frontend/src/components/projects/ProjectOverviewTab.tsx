@@ -139,7 +139,7 @@ export default function ProjectOverviewTab({ project, hub, timeline }: Props) {
         if (!grouped.has(key)) grouped.set(key, []);
         grouped.get(key)!.push(s);
       }
-      return [...grouped.entries()]
+      return Array.from(grouped.entries())
         .sort((a, b) => b[0].localeCompare(a[0]))
         .slice(0, 5)
         .map(([date, items]) => ({ type: "summary" as const, date, items }));
