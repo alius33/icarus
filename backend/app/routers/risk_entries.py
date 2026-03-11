@@ -12,6 +12,11 @@ from app.schemas.risk_entry import (
     RiskEntryCreate,
     RiskEntryUpdate,
 )
+from app.services.risk_writeback import (
+    append_risk_entry as wb_append_risk,
+    remove_risk_entry as wb_remove_risk,
+    update_risk_fields as wb_update_risk,
+)
 
 router = APIRouter(tags=["risk-entries"])
 
@@ -127,6 +132,24 @@ async def create_risk_entry(body: RiskEntryCreate, db: AsyncSession = Depends(ge
     db.add(record)
     await db.commit()
     await db.refresh(record)
+
+    # Writeback to markdown
+    wb_append_risk(
+        risk_id=record.risk_id,
+        entry_date=record.date,
+        title=record.title,
+        description=record.description,
+        category=record.category,
+        severity=record.severity,
+        trajectory=record.trajectory,
+        source_type=record.source_type,
+        owner=record.owner,
+        mitigation=record.mitigation,
+        last_reviewed=record.last_reviewed,
+        meetings_mentioned=record.meetings_mentioned,
+        confidence=record.confidence,
+    )
+
     return _schema(record)
 
 
@@ -174,6 +197,18 @@ async def update_risk_entry(
 
     await db.commit()
     await db.refresh(record)
+
+    # Writeback to markdown
+    if record.risk_id:
+        wb_update_risk(
+            risk_id=record.risk_id,
+            severity=record.severity,
+            trajectory=record.trajectory,
+            owner=record.owner,
+            mitigation=record.mitigation,
+            last_reviewed=record.last_reviewed,
+        )
+
     return _schema(record)
 
 
@@ -185,6 +220,11 @@ async def delete_risk_entry(entry_id: int, db: AsyncSession = Depends(get_db)):
     record = result.scalar_one_or_none()
     if not record:
         raise NotFoundError("Risk entry", entry_id)
+
+    # Writeback: remove from markdown before deleting from DB
+    if record.risk_id:
+        wb_remove_risk(record.risk_id)
+
     await db.delete(record)
     await db.commit()
     return {"ok": True}

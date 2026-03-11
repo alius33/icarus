@@ -8,6 +8,12 @@ from app.database import get_db
 from app.exceptions import NotFoundError
 from app.models.deleted_import import DeletedImport
 from app.models.open_thread import OpenThread
+from app.services.thread_writeback import (
+    append_thread,
+    move_thread,
+    remove_thread,
+    update_thread_fields,
+)
 from app.models.project_link import ProjectLink
 from app.schemas.open_thread import (
     OpenThreadCreate,
@@ -162,6 +168,18 @@ async def create_open_thread(body: OpenThreadCreate, db: AsyncSession = Depends(
     db.add(thread)
     await db.commit()
     await db.refresh(thread)
+
+    # Writeback to markdown
+    append_thread(
+        number=thread.number,
+        title=body.title,
+        status=body.status or "OPEN",
+        first_raised=body.first_raised or datetime.utcnow().strftime("%Y-%m-%d"),
+        context=body.context,
+        question=body.question,
+        why_it_matters=body.why_it_matters,
+    )
+
     return _thread_schema(thread)
 
 
@@ -172,6 +190,9 @@ async def update_open_thread(thread_id: int, body: OpenThreadUpdate, db: AsyncSe
     thread = result.scalar_one_or_none()
     if not thread:
         raise NotFoundError("Open thread", thread_id)
+
+    # Capture old status before mutation for writeback
+    old_status = thread.status
 
     if body.title is not None:
         thread.title = body.title
@@ -196,6 +217,22 @@ async def update_open_thread(thread_id: int, body: OpenThreadUpdate, db: AsyncSe
     thread.updated_at = datetime.utcnow()
     await db.commit()
     await db.refresh(thread)
+
+    # Writeback to markdown
+    if body.status is not None and body.status != old_status:
+        move_thread(thread.number, old_status, body.status, body.resolution)
+    else:
+        update_thread_fields(
+            number=thread.number,
+            current_status=thread.status,
+            title=body.title,
+            context=body.context,
+            question=body.question,
+            why_it_matters=body.why_it_matters,
+            resolution=body.resolution,
+            first_raised=body.first_raised,
+        )
+
     return _thread_schema(thread)
 
 
@@ -209,12 +246,20 @@ async def update_thread_position(
     if not thread:
         raise NotFoundError("Open thread", thread_id)
 
+    # Capture old status before mutation for writeback
+    old_status = thread.status
+
     thread.status = body.status
     thread.position = body.position
     thread.is_manual = True
     thread.updated_at = datetime.utcnow()
     await db.commit()
     await db.refresh(thread)
+
+    # Writeback to markdown (status change from drag-and-drop)
+    if body.status != old_status:
+        move_thread(thread.number, old_status, body.status)
+
     return _thread_schema(thread)
 
 
@@ -225,6 +270,9 @@ async def delete_open_thread(thread_id: int, db: AsyncSession = Depends(get_db))
     thread = result.scalar_one_or_none()
     if not thread:
         raise NotFoundError("Open thread", thread_id)
+
+    # Writeback to markdown (before delete)
+    remove_thread(thread.number, thread.status)
 
     if not thread.is_manual:
         db.add(DeletedImport(entity_type="open_thread", unique_key=f"{thread.number}:{thread.status}"))

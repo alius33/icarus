@@ -7,6 +7,11 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.database import get_db
 from app.exceptions import NotFoundError
 from app.models.commitment import Commitment
+from app.services.commitment_writeback import (
+    append_commitment,
+    remove_commitment,
+    update_commitment_status,
+)
 from app.schemas.commitment import CommitmentBase, CommitmentCreate, CommitmentUpdate
 
 router = APIRouter(tags=["commitments"])
@@ -77,6 +82,17 @@ async def create_commitment(body: CommitmentCreate, db: AsyncSession = Depends(g
     db.add(item)
     await db.commit()
     await db.refresh(item)
+
+    # Writeback to markdown
+    append_commitment(
+        date_made=item.date_made,
+        person=body.person or "",
+        commitment=body.commitment or "",
+        deadline_text=body.deadline_text,
+        condition=body.condition,
+        status=body.status or "pending",
+    )
+
     return _schema(item)
 
 
@@ -120,6 +136,11 @@ async def update_commitment(
 
     await db.commit()
     await db.refresh(item)
+
+    # Writeback to markdown on status change
+    if body.status is not None:
+        update_commitment_status(item.person, item.commitment, body.status)
+
     return _schema(item)
 
 
@@ -131,6 +152,10 @@ async def delete_commitment(commitment_id: int, db: AsyncSession = Depends(get_d
     item = result.scalar_one_or_none()
     if not item:
         raise NotFoundError("Commitment", commitment_id)
+
+    # Writeback to markdown (before delete)
+    remove_commitment(item.person, item.commitment)
+
     await db.delete(item)
     await db.commit()
     return {"ok": True}

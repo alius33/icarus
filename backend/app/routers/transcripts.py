@@ -175,6 +175,64 @@ async def get_transcript_summary(
     )
 
 
+@router.patch("/transcripts/{transcript_id}", response_model=TranscriptBase)
+async def update_transcript(
+    transcript_id: int,
+    primary_project_id: int | None = None,
+    db: AsyncSession = Depends(get_db),
+):
+    """Update transcript fields (currently supports primary_project_id)."""
+    result = await db.execute(
+        select(Transcript).where(Transcript.id == transcript_id)
+    )
+    transcript = result.scalar_one_or_none()
+    if not transcript:
+        raise NotFoundError("Transcript", transcript_id)
+
+    if primary_project_id is not None:
+        # Verify project exists
+        p_result = await db.execute(
+            select(Project).where(Project.id == primary_project_id)
+        )
+        if not p_result.scalar_one_or_none():
+            raise NotFoundError("Project", primary_project_id)
+        transcript.primary_project_id = primary_project_id
+
+        # Also create ProjectLink if not exists
+        existing_link = await db.execute(
+            select(ProjectLink).where(
+                ProjectLink.project_id == primary_project_id,
+                ProjectLink.entity_type == "transcript",
+                ProjectLink.entity_id == transcript_id,
+            )
+        )
+        if not existing_link.scalar_one_or_none():
+            db.add(ProjectLink(
+                project_id=primary_project_id,
+                entity_type="transcript",
+                entity_id=transcript_id,
+            ))
+
+    await db.commit()
+    await db.refresh(transcript)
+
+    # Get summary status
+    summary_result = await db.execute(
+        select(Summary).where(Summary.transcript_id == transcript_id)
+    )
+    has_summary = summary_result.scalar_one_or_none() is not None
+
+    # Get project name
+    project_name = None
+    if transcript.primary_project_id:
+        pn_result = await db.execute(
+            select(Project.name).where(Project.id == transcript.primary_project_id)
+        )
+        project_name = pn_result.scalar_one_or_none()
+
+    return _transcript_base(transcript, has_summary, project_name)
+
+
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
 
 

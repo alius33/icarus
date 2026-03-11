@@ -37,6 +37,7 @@ from app.models import (
     MeetingScore,
     OpenThread,
     Project,
+    ProjectLink,
     ProjectSummary,
     RiskEntry,
     SentimentSignal,
@@ -87,6 +88,48 @@ def _slugify(name: str) -> str:
     slug = re.sub(r'[^a-z0-9]+', '-', slug)
     slug = slug.strip('-')
     return slug
+
+
+# ---------------------------------------------------------------------------
+# Project seeding — ensures all expected projects exist in the DB
+# ---------------------------------------------------------------------------
+
+# Canonical project definitions. Workstream-linked projects are seeded from
+# the workstreams table (migration 002), but custom projects and "Sales Recon"
+# need explicit creation.  This list is the single source of truth for Railway.
+CUSTOM_PROJECTS = [
+    {"name": "Cross OU Collaboration", "description": "Cross-operational unit collaboration — banking, life insurance, and asset management AI enablement", "is_custom": True, "status": "active", "color": "#10B981"},
+    {"name": "Program Management", "description": "Programme governance, standups, infrastructure, budget, and strategic alignment", "is_custom": True, "status": "active", "color": "#6366F1"},
+    {"name": "TSR Enhancements", "description": "TSR automation and AI enhancement work", "is_custom": True, "status": "active", "color": "#F59E0B"},
+]
+
+
+async def seed_projects(session: AsyncSession, verbose: bool) -> dict:
+    """Ensure all custom projects exist in the database.
+
+    Workstream-linked projects are created by migration 002 from the
+    workstreams table.  This function creates the non-workstream projects
+    that would otherwise only exist if setup_new_projects.py was run manually.
+    """
+    stats = {"created": 0, "existing": 0}
+
+    for proj_data in CUSTOM_PROJECTS:
+        result = await session.execute(
+            select(Project).where(Project.name == proj_data["name"])
+        )
+        existing = result.scalar_one_or_none()
+        if existing:
+            stats["existing"] += 1
+            _log(f"  Project '{proj_data['name']}' already exists (id={existing.id})", verbose)
+        else:
+            project = Project(**proj_data)
+            session.add(project)
+            await session.flush()
+            stats["created"] += 1
+            _log(f"  Created project '{proj_data['name']}' (id={project.id})", verbose)
+
+    await session.commit()
+    return stats
 
 
 # ---------------------------------------------------------------------------
@@ -597,11 +640,57 @@ async def import_glossary(
     return stats
 
 
+def _parse_project_fields(content: str) -> tuple[str | None, list[str]]:
+    """Extract Primary project and Secondary projects from summary markdown header.
+
+    Returns (primary_project_name, [secondary_project_names]).
+    """
+    primary = None
+    secondary: list[str] = []
+
+    for line in content.splitlines()[:20]:
+        m = re.match(r"\*\*Primary project:\*\*\s*(.+)", line)
+        if m:
+            val = m.group(1).strip()
+            if val and val.lower() not in ("none", "n/a", "—", "-"):
+                primary = val
+
+        m = re.match(r"\*\*Secondary projects?:\*\*\s*(.+)", line)
+        if m:
+            raw = m.group(1).strip()
+            if raw and raw.lower() not in ("none", "n/a", "—", "-"):
+                parts = re.split(r",\s*", raw)
+                secondary = [p.strip() for p in parts if p.strip()]
+
+    return primary, secondary
+
+
+def _extract_key_points(content: str) -> str:
+    """Extract the Key Points section from a summary as plain text for ProjectSummary."""
+    m = re.search(r"^## Key Points\s*$", content, re.MULTILINE)
+    if not m:
+        return ""
+    start = m.end()
+    next_heading = re.search(r"^## ", content[start:], re.MULTILINE)
+    section = content[start:start + next_heading.start()] if next_heading else content[start:]
+    # Clean up bullet points into a compact summary
+    lines = [line.strip().lstrip("- ").strip() for line in section.strip().splitlines() if line.strip()]
+    return "; ".join(lines[:5])  # First 5 key points, semicolon-separated
+
+
 async def import_summaries(
     session: AsyncSession, data_root: Path, verbose: bool
 ) -> dict:
-    """Import summary files from analysis/summaries/*.md."""
-    stats = {"inserted": 0, "updated": 0, "skipped": 0, "errors": 0}
+    """Import summary files from analysis/summaries/*.md.
+
+    Also parses **Primary project:** and **Secondary projects:** fields from
+    each summary to:
+      1. Set primary_project_id on the linked transcript
+      2. Create ProjectLink entries (transcript ↔ project)
+      3. Create ProjectSummary entries (project-specific content from Key Points)
+    """
+    stats = {"inserted": 0, "updated": 0, "skipped": 0, "errors": 0,
+             "project_links": 0, "project_summaries": 0, "project_ids_set": 0}
     summaries_dir = data_root / "analysis" / "summaries"
 
     if not summaries_dir.exists():
@@ -615,6 +704,37 @@ async def import_summaries(
 
     _log(f"Found {len(md_files)} summary files.", verbose)
 
+    # Build project name -> id mapping with fuzzy matching support
+    p_result = await session.execute(select(Project.id, Project.name))
+    _project_rows = p_result.all()
+    project_name_to_id: dict[str, int] = {}
+    _project_full_names: list[tuple[str, int]] = []  # (lowercase name, id)
+    for row in _project_rows:
+        if row.name:
+            lowered = row.name.lower().strip()
+            project_name_to_id[lowered] = row.id
+            _project_full_names.append((lowered, row.id))
+            # Also index by short name (before parenthetical)
+            short = re.sub(r'\s*\(.*?\)\s*$', '', lowered).strip()
+            if short and short != lowered:
+                project_name_to_id[short] = row.id
+
+    def _resolve_project_name(name: str) -> int | None:
+        """Resolve a project name to an ID with fuzzy matching."""
+        norm = name.lower().strip()
+        # Remove parenthetical qualifiers from summary names
+        norm_clean = re.sub(r'\s*\(.*?\)\s*$', '', norm).strip()
+        # Remove common noise like "tangential —" qualifiers
+        norm_clean = re.split(r'\s*[-–—]\s*', norm_clean)[0].strip()
+        # Exact match
+        if norm_clean in project_name_to_id:
+            return project_name_to_id[norm_clean]
+        # Check if summary name is a prefix of any DB project name
+        for full_name, pid in _project_full_names:
+            if full_name.startswith(norm_clean):
+                return pid
+        return None
+
     for filepath in md_files:
         try:
             filename = filepath.name
@@ -627,6 +747,7 @@ async def import_summaries(
             base_name = filepath.stem  # e.g., "2026-01-06_-_Ben_explains_new_dashboard"
 
             # Parse date from summary filename (YYYY-MM-DD prefix)
+            summary_date = None
             date_match = re.match(r'^(\d{4})-(\d{2})-(\d{2})', base_name)
             if date_match:
                 try:
@@ -686,6 +807,13 @@ async def import_summaries(
             if existing:
                 if existing.file_hash == file_hash:
                     stats["skipped"] += 1
+                    # Even if summary unchanged, still ensure project attribution
+                    # is set (handles cases where summary existed before this feature)
+                    if transcript_id:
+                        await _ensure_project_attribution(
+                            session, content, transcript_id, summary_date,
+                            source_file, _resolve_project_name, stats, verbose,
+                        )
                     continue
                 existing.content = content
                 existing.file_hash = file_hash
@@ -705,12 +833,109 @@ async def import_summaries(
                 stats["inserted"] += 1
                 _log(f"  Inserted: {filename}", verbose)
 
+            # Set project attribution from summary content
+            if transcript_id:
+                await _ensure_project_attribution(
+                    session, content, transcript_id, summary_date,
+                    source_file, _resolve_project_name, stats, verbose,
+                )
+
         except Exception as e:
             stats["errors"] += 1
             _log(f"  ERROR importing summary {filepath.name}: {e}", verbose)
 
     await session.commit()
     return stats
+
+
+async def _ensure_project_attribution(
+    session: AsyncSession,
+    summary_content: str,
+    transcript_id: int,
+    summary_date,
+    source_file: str,
+    resolve_project,
+    stats: dict,
+    verbose: bool,
+) -> None:
+    """Parse project fields from summary and create project attribution records.
+
+    Sets primary_project_id on transcript, creates ProjectLink and ProjectSummary entries.
+    resolve_project is a callable(name: str) -> int | None for fuzzy project name matching.
+    """
+    primary_name, secondary_names = _parse_project_fields(summary_content)
+    if not primary_name and not secondary_names:
+        return
+
+    # Resolve primary project
+    primary_project_id = None
+    if primary_name:
+        primary_project_id = resolve_project(primary_name)
+        if not primary_project_id:
+            _log(f"    No project match for primary: '{primary_name}'", verbose)
+
+    # Set primary_project_id on transcript (only if not already set)
+    if primary_project_id:
+        t_result = await session.execute(
+            select(Transcript).where(Transcript.id == transcript_id)
+        )
+        transcript = t_result.scalar_one_or_none()
+        if transcript and not transcript.primary_project_id:
+            transcript.primary_project_id = primary_project_id
+            stats["project_ids_set"] += 1
+            _log(f"    Set primary_project_id={primary_project_id} on transcript {transcript_id}", verbose)
+
+    # Collect all project IDs (primary + secondary)
+    all_project_ids: list[int] = []
+    if primary_project_id:
+        all_project_ids.append(primary_project_id)
+    for sec_name in secondary_names:
+        sec_id = resolve_project(sec_name)
+        if sec_id:
+            all_project_ids.append(sec_id)
+        else:
+            _log(f"    No project match for secondary: '{sec_name}'", verbose)
+
+    key_points = _extract_key_points(summary_content)
+
+    for project_id in all_project_ids:
+        # Create ProjectLink if not exists
+        existing_link = await session.execute(
+            select(ProjectLink).where(
+                ProjectLink.project_id == project_id,
+                ProjectLink.entity_type == "transcript",
+                ProjectLink.entity_id == transcript_id,
+            )
+        )
+        if not existing_link.scalar_one_or_none():
+            session.add(ProjectLink(
+                project_id=project_id,
+                entity_type="transcript",
+                entity_id=transcript_id,
+            ))
+            stats["project_links"] += 1
+            _log(f"    Created ProjectLink: project {project_id} ↔ transcript {transcript_id}", verbose)
+
+        # Create ProjectSummary if not exists (only if we have key points)
+        if key_points:
+            existing_ps = await session.execute(
+                select(ProjectSummary).where(
+                    ProjectSummary.project_id == project_id,
+                    ProjectSummary.transcript_id == transcript_id,
+                )
+            )
+            if not existing_ps.scalar_one_or_none():
+                relevance = "HIGH" if project_id == primary_project_id else "MEDIUM"
+                session.add(ProjectSummary(
+                    project_id=project_id,
+                    transcript_id=transcript_id,
+                    date=summary_date,
+                    relevance=relevance,
+                    content=key_points,
+                    source_file=source_file,
+                ))
+                stats["project_summaries"] += 1
+                _log(f"    Created ProjectSummary: project {project_id} ← transcript {transcript_id}", verbose)
 
 
 async def import_weekly_reports(
@@ -1520,7 +1745,7 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
 
     all_stats = {}
 
-    total_steps = 19
+    total_steps = 20
 
     async with Session() as session:
         # 1. Transcripts
@@ -1539,64 +1764,68 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
         print(f"[4/{total_steps}] Importing workstreams...")
         all_stats["workstreams"] = await import_workstreams(session, root, verbose)
 
-        # 5. Open threads
-        print(f"[5/{total_steps}] Importing open threads...")
+        # 5. Seed custom projects (must run after workstreams, before summaries)
+        print(f"[5/{total_steps}] Seeding custom projects...")
+        all_stats["project_seed"] = await seed_projects(session, verbose)
+
+        # 6. Open threads
+        print(f"[6/{total_steps}] Importing open threads...")
         all_stats["open_threads"] = await import_open_threads(session, root, verbose)
 
-        # 6. Action items
-        print(f"[6/{total_steps}] Importing action items...")
+        # 7. Action items
+        print(f"[7/{total_steps}] Importing action items...")
         all_stats["action_items"] = await import_action_items(session, root, verbose)
 
-        # 7. Glossary
-        print(f"[7/{total_steps}] Importing glossary...")
+        # 8. Glossary
+        print(f"[8/{total_steps}] Importing glossary...")
         all_stats["glossary"] = await import_glossary(session, root, verbose)
 
-        # 8. Summaries
-        print(f"[8/{total_steps}] Importing summaries...")
+        # 9. Summaries
+        print(f"[9/{total_steps}] Importing summaries...")
         all_stats["summaries"] = await import_summaries(session, root, verbose)
 
-        # 9. Weekly reports
-        print(f"[9/{total_steps}] Importing weekly reports...")
+        # 10. Weekly reports
+        print(f"[10/{total_steps}] Importing weekly reports...")
         all_stats["weekly_reports"] = await import_weekly_reports(session, root, verbose)
 
-        # 10. Programme debrief (as Document)
-        print(f"[10/{total_steps}] Importing programme debrief...")
+        # 11. Programme debrief (as Document)
+        print(f"[11/{total_steps}] Importing programme debrief...")
         all_stats["programme_debrief"] = await import_programme_debrief(session, root, verbose)
 
-        # 11. Project pages (as Documents)
-        print(f"[11/{total_steps}] Importing project pages...")
+        # 12. Project pages (as Documents)
+        print(f"[12/{total_steps}] Importing project pages...")
         all_stats["project_pages"] = await import_project_pages(session, root, verbose)
 
-        # 12. Sentiments
-        print(f"[12/{total_steps}] Importing sentiments...")
+        # 13. Sentiments
+        print(f"[13/{total_steps}] Importing sentiments...")
         all_stats["sentiments"] = await import_sentiments(session, root, verbose)
 
-        # 13. Commitments
-        print(f"[13/{total_steps}] Importing commitments...")
+        # 14. Commitments
+        print(f"[14/{total_steps}] Importing commitments...")
         all_stats["commitments"] = await import_commitments(session, root, verbose)
 
-        # 14. Topic signals
-        print(f"[14/{total_steps}] Importing topic signals...")
+        # 15. Topic signals
+        print(f"[15/{total_steps}] Importing topic signals...")
         all_stats["topic_signals"] = await import_topic_signals(session, root, verbose)
 
-        # 15. Influence signals
-        print(f"[15/{total_steps}] Importing influence signals...")
+        # 16. Influence signals
+        print(f"[16/{total_steps}] Importing influence signals...")
         all_stats["influence_signals"] = await import_influence_signals(session, root, verbose)
 
-        # 16. Contradictions
-        print(f"[16/{total_steps}] Importing contradictions...")
+        # 17. Contradictions
+        print(f"[17/{total_steps}] Importing contradictions...")
         all_stats["contradictions"] = await import_contradictions(session, root, verbose)
 
-        # 17. Meeting scores
-        print(f"[17/{total_steps}] Importing meeting scores...")
+        # 18. Meeting scores
+        print(f"[18/{total_steps}] Importing meeting scores...")
         all_stats["meeting_scores"] = await import_meeting_scores(session, root, verbose)
 
-        # 18. Risk entries
-        print(f"[18/{total_steps}] Importing risk entries...")
+        # 19. Risk entries
+        print(f"[19/{total_steps}] Importing risk entries...")
         all_stats["risk_entries"] = await import_risk_entries(session, root, verbose)
 
-        # 19. Project summaries
-        print(f"[19/{total_steps}] Importing project summaries...")
+        # 20. Project summaries
+        print(f"[20/{total_steps}] Importing project summaries...")
         all_stats["project_summaries"] = await import_project_summaries(session, root, verbose)
 
         # Generate slugs for projects that are missing them
@@ -1628,6 +1857,8 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
         if entity == "mentions":
             print(f"  Transcript mentions: {stats['speaker']} speakers, "
                   f"{stats['mentioned']} mentioned, {stats['cleared']} cleared")
+        elif entity == "project_seed":
+            print(f"  Project seed: {stats['created']} created, {stats['existing']} existing")
         elif entity == "workstreams":
             ws = stats["workstreams"]
             ms = stats["milestones"]
@@ -1648,8 +1879,16 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
             updated = stats.get("updated", 0)
             skipped = stats.get("skipped", 0)
             errors = stats.get("errors", 0)
+            extra = ""
+            # Show project attribution stats for summaries
+            if entity == "summaries":
+                pl = stats.get("project_links", 0)
+                ps = stats.get("project_summaries", 0)
+                pid = stats.get("project_ids_set", 0)
+                if pl or ps or pid:
+                    extra = f" | project: {pid} IDs set, {pl} links, {ps} summaries"
             print(f"  {label}: {inserted} inserted, {updated} updated, "
-                  f"{skipped} skipped, {errors} errors")
+                  f"{skipped} skipped, {errors} errors{extra}")
 
     print("=" * 60)
 

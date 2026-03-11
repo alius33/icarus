@@ -8,6 +8,11 @@ from app.database import get_db
 from app.exceptions import NotFoundError
 from app.models.decision import Decision
 from app.models.deleted_import import DeletedImport
+from app.services.decision_writeback import (
+    append_decision,
+    remove_decision,
+    update_decision_status,
+)
 from app.models.project_link import ProjectLink
 from app.schemas.decision import (
     DecisionBoardColumn,
@@ -210,6 +215,17 @@ async def create_decision(body: DecisionCreate, db: AsyncSession = Depends(get_d
     db.add(d)
     await db.commit()
     await db.refresh(d)
+
+    # Writeback to markdown
+    append_decision(
+        number=d.number,
+        decision_date=decision_date,
+        decision=body.decision or "",
+        rationale=body.rationale,
+        key_people=body.key_people or [],
+        execution_status=es,
+    )
+
     return _decision_schema(d)
 
 
@@ -239,6 +255,10 @@ async def update_decision(decision_id: int, body: DecisionUpdate, db: AsyncSessi
     d.updated_at = datetime.utcnow()
     await db.commit()
     await db.refresh(d)
+
+    # Writeback to markdown
+    update_decision_status(d.number, d.execution_status or "made")
+
     return _decision_schema(d)
 
 
@@ -258,6 +278,10 @@ async def update_decision_position(
     d.updated_at = datetime.utcnow()
     await db.commit()
     await db.refresh(d)
+
+    # Writeback to markdown
+    update_decision_status(d.number, body.execution_status)
+
     return _decision_schema(d)
 
 
@@ -268,6 +292,9 @@ async def delete_decision(decision_id: int, db: AsyncSession = Depends(get_db)):
     d = result.scalar_one_or_none()
     if not d:
         raise NotFoundError("Decision", decision_id)
+
+    # Writeback to markdown (before delete so we have the number)
+    remove_decision(d.number)
 
     if not d.is_manual:
         db.add(DeletedImport(entity_type="decision", unique_key=str(d.number)))

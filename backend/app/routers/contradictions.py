@@ -12,6 +12,13 @@ from app.schemas.contradiction import (
     ContradictionCreate,
     ContradictionUpdate,
 )
+from app.services.contradiction_writeback import (
+    append_contradiction as wb_append_contradiction,
+    append_gap as wb_append_gap,
+    remove_contradiction as wb_remove_contradiction,
+    remove_gap as wb_remove_gap,
+    update_contradiction_resolution as wb_update_resolution,
+)
 
 router = APIRouter(tags=["contradictions"])
 
@@ -113,6 +120,31 @@ async def create_contradiction(body: ContradictionCreate, db: AsyncSession = Dep
     db.add(record)
     await db.commit()
     await db.refresh(record)
+
+    # Writeback to markdown
+    if record.entry_kind == "gap":
+        wb_append_gap(
+            entry_date=record.date,
+            gap_description=record.gap_description,
+            expected_source=record.expected_source,
+            last_mentioned=record.last_mentioned,
+            meetings_absent=record.meetings_absent,
+            severity=record.severity,
+        )
+    else:
+        wb_append_contradiction(
+            entry_date=record.date,
+            contradiction_type=record.contradiction_type,
+            person=record.person,
+            statement_a=record.statement_a,
+            date_a=record.date_a,
+            statement_b=record.statement_b,
+            date_b=record.date_b,
+            severity=record.severity,
+            resolution=record.resolution,
+            confidence=record.confidence,
+        )
+
     return _schema(record)
 
 
@@ -164,6 +196,11 @@ async def update_contradiction(
 
     await db.commit()
     await db.refresh(record)
+
+    # Writeback resolution changes to markdown
+    if body.resolution is not None and record.entry_kind != "gap" and record.person and record.statement_a:
+        wb_update_resolution(record.person, record.statement_a, record.resolution)
+
     return _schema(record)
 
 
@@ -175,6 +212,13 @@ async def delete_contradiction(contradiction_id: int, db: AsyncSession = Depends
     record = result.scalar_one_or_none()
     if not record:
         raise NotFoundError("Contradiction", contradiction_id)
+
+    # Writeback: remove from markdown before deleting from DB
+    if record.entry_kind == "gap" and record.gap_description:
+        wb_remove_gap(record.gap_description)
+    elif record.person and record.statement_a:
+        wb_remove_contradiction(record.person, record.statement_a)
+
     await db.delete(record)
     await db.commit()
     return {"ok": True}
