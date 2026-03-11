@@ -2,14 +2,108 @@
 
 import { Suspense, useEffect, useState, useCallback } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { OpenThreadSchema, ThreadBoardResponse, ThreadViewMode } from "@/lib/types";
+import {
+  OpenThreadSchema,
+  ThreadBoardResponse,
+  THREAD_STATUS_CONFIG,
+  THREAD_STATUSES,
+  SEVERITY_CONFIG,
+  THREAD_SEVERITIES,
+  ThreadStatus,
+  ThreadSeverity,
+} from "@/lib/types";
 import { api } from "@/lib/api";
-import ThreadBoard from "@/components/threads/ThreadBoard";
-import ThreadList from "@/components/threads/ThreadList";
+import GenericBoard from "@/components/generic/GenericBoard";
+import GenericList, { ColumnDef, GroupOption } from "@/components/generic/GenericList";
+import GenericViewSwitcher, {
+  BOARD_LIST_VIEWS,
+  FilterDef,
+} from "@/components/generic/GenericViewSwitcher";
+import { threadBoardConfig } from "@/config/board-configs";
+import ThreadCard from "@/components/threads/ThreadCard";
 import ThreadDetailPanel from "@/components/threads/ThreadDetailPanel";
 import ThreadCreateModal from "@/components/threads/ThreadCreateModal";
-import ThreadViewSwitcher from "@/components/threads/ThreadViewSwitcher";
 import { Plus } from "lucide-react";
+
+// ── Helpers ──────────────────────────────────────────────────────────
+
+function trendLabel(trend: string | null): string {
+  if (!trend) return "Unknown";
+  if (trend === "escalating") return "\u2191 Escalating";
+  if (trend === "stable") return "\u2192 Stable";
+  if (trend === "de-escalating") return "\u2193 De-escalating";
+  return trend;
+}
+
+// ── List column config ───────────────────────────────────────────────
+
+const listColumns: ColumnDef<OpenThreadSchema>[] = [
+  { key: "title", label: "Thread", sortable: true, sortValue: (t) => t.title.toLowerCase() },
+  {
+    key: "status", label: "Status", width: "w-28", sortable: true,
+    sortValue: (t) => THREAD_STATUS_CONFIG[t.status as ThreadStatus]?.order ?? 99,
+  },
+  {
+    key: "severity", label: "Severity", width: "w-24", sortable: true,
+    sortValue: (t) => {
+      const order: Record<string, number> = { CRITICAL: 0, HIGH: 1, MEDIUM: 2, LOW: 3 };
+      return order[t.severity ?? ""] ?? 4;
+    },
+  },
+  {
+    key: "trend", label: "Trend", width: "w-32", sortable: true,
+    sortValue: (t) => {
+      const order: Record<string, number> = { escalating: 0, stable: 1, "de-escalating": 2 };
+      return order[t.trend ?? ""] ?? 3;
+    },
+  },
+  { key: "opened_date", label: "First Raised", width: "w-28", sortable: true, sortValue: (t) => t.opened_date ?? "zzz" },
+];
+
+const listGroupOptions: GroupOption[] = [
+  {
+    key: "status", label: "Status",
+    groupFn: (item) => {
+      const t = item as OpenThreadSchema;
+      return THREAD_STATUS_CONFIG[t.status as ThreadStatus]?.label ?? t.status;
+    },
+  },
+  {
+    key: "severity", label: "Severity",
+    groupFn: (item) => {
+      const t = item as OpenThreadSchema;
+      return SEVERITY_CONFIG[t.severity as ThreadSeverity]?.label ?? (t.severity || "Unknown");
+    },
+  },
+  {
+    key: "trend", label: "Trend",
+    groupFn: (item) => trendLabel((item as OpenThreadSchema).trend),
+  },
+];
+
+// ── Filter config ────────────────────────────────────────────────────
+
+const filterDefs: FilterDef[] = [
+  {
+    key: "status", label: "Status", type: "select",
+    options: THREAD_STATUSES.map((s) => ({ value: s, label: THREAD_STATUS_CONFIG[s].label })),
+  },
+  {
+    key: "severity", label: "Severity", type: "select",
+    options: THREAD_SEVERITIES.map((s) => ({ value: s, label: SEVERITY_CONFIG[s].label })),
+  },
+  {
+    key: "trend", label: "Trend", type: "select",
+    options: [
+      { value: "escalating", label: "\u2191 Escalating" },
+      { value: "stable", label: "\u2192 Stable" },
+      { value: "de-escalating", label: "\u2193 De-escalating" },
+    ],
+  },
+  { key: "search", label: "Search", type: "text", placeholder: "Search threads..." },
+];
+
+// ── Page ─────────────────────────────────────────────────────────────
 
 export default function OpenThreadsPage() {
   return (
@@ -23,7 +117,7 @@ function ThreadsContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const view = (searchParams.get("view") as ThreadViewMode) || "board";
+  const view = searchParams.get("view") || "board";
 
   const [filters, setFilters] = useState({
     status: searchParams.get("status") || "",
@@ -40,7 +134,7 @@ function ThreadsContent() {
   const [selectedThread, setSelectedThread] = useState<OpenThreadSchema | null>(null);
   const [showCreate, setShowCreate] = useState(false);
 
-  function updateUrlParams(newView?: ThreadViewMode, newFilters?: Record<string, string>) {
+  function updateUrlParams(newView?: string, newFilters?: Record<string, string>) {
     const params = new URLSearchParams();
     const v = newView ?? view;
     if (v !== "board") params.set("view", v);
@@ -50,7 +144,7 @@ function ThreadsContent() {
     router.replace(`/open-threads${qs ? `?${qs}` : ""}`, { scroll: false });
   }
 
-  function handleViewChange(v: ThreadViewMode) {
+  function handleViewChange(v: string) {
     updateUrlParams(v);
   }
 
@@ -64,16 +158,14 @@ function ThreadsContent() {
     setLoading(true);
     try {
       if (view === "board") {
-        const data = await api.getThreadBoard();
-        setBoardData(data);
+        setBoardData(await api.getThreadBoard());
       } else {
         const params: Record<string, string> = {};
         if (filters.status) params.status = filters.status;
         if (filters.severity) params.severity = filters.severity;
         if (filters.trend) params.trend = filters.trend;
         if (filters.search) params.search = filters.search;
-        const data = await api.getOpenThreads(params);
-        setListData(data);
+        setListData(await api.getOpenThreads(params));
       }
     } catch (e) {
       console.error("Failed to fetch threads:", e);
@@ -82,9 +174,7 @@ function ThreadsContent() {
     }
   }, [view, filters]);
 
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+  useEffect(() => { fetchData(); }, [fetchData]);
 
   async function handleStatusChange(threadId: number, status: string) {
     try {
@@ -97,6 +187,54 @@ function ThreadsContent() {
 
   function handleThreadClick(thread: OpenThreadSchema) {
     setSelectedThread(thread);
+  }
+
+  // ── List row renderer ────────────────────────────────────────────
+
+  function renderRow(thread: OpenThreadSchema) {
+    const statusCfg = THREAD_STATUS_CONFIG[thread.status as ThreadStatus];
+    const severityCfg = SEVERITY_CONFIG[thread.severity as ThreadSeverity];
+    return (
+      <>
+        <td className="px-3 py-2">
+          <div className="flex items-center gap-2">
+            {severityCfg && <span className={`w-2 h-2 rounded-full shrink-0 ${severityCfg.dotColor}`} />}
+            <span className="text-gray-900 dark:text-gray-100 truncate">{thread.title}</span>
+          </div>
+        </td>
+        <td className="px-3 py-2" onClick={(e) => e.stopPropagation()}>
+          <select
+            value={thread.status}
+            onChange={(e) => handleStatusChange(thread.id, e.target.value)}
+            className={`text-xs font-medium rounded px-2 py-1 border-0 ${statusCfg?.bgColor ?? "bg-gray-100"} ${statusCfg?.color ?? "text-gray-600"}`}
+          >
+            {THREAD_STATUSES.map((s) => (
+              <option key={s} value={s}>{THREAD_STATUS_CONFIG[s].label}</option>
+            ))}
+          </select>
+        </td>
+        <td className="px-3 py-2">
+          <span className="flex items-center gap-1.5">
+            <span className={`w-2 h-2 rounded-full ${severityCfg?.dotColor ?? "bg-gray-300"}`} />
+            <span className="text-xs">{severityCfg?.label ?? (thread.severity || "None")}</span>
+          </span>
+        </td>
+        <td className="px-3 py-2">
+          {thread.trend && (
+            <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
+              thread.trend === "escalating" ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" :
+              thread.trend === "stable" ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400" :
+              "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
+            }`}>
+              {trendLabel(thread.trend)}
+            </span>
+          )}
+        </td>
+        <td className="px-3 py-2 text-xs text-gray-500 dark:text-gray-400">
+          {thread.opened_date ? new Date(thread.opened_date).toLocaleDateString("en-GB", { day: "numeric", month: "short" }) : "\u2014"}
+        </td>
+      </>
+    );
   }
 
   return (
@@ -117,11 +255,13 @@ function ThreadsContent() {
         </button>
       </div>
 
-      <ThreadViewSwitcher
+      <GenericViewSwitcher
         view={view}
         onViewChange={handleViewChange}
+        views={BOARD_LIST_VIEWS}
         filters={filters}
         onFilterChange={handleFilterChange}
+        filterDefs={filterDefs}
         showFilters={showFilters}
         onToggleFilters={() => setShowFilters(!showFilters)}
       />
@@ -133,14 +273,26 @@ function ThreadsContent() {
       )}
 
       {!loading && view === "board" && boardData && (
-        <ThreadBoard data={boardData} onThreadClick={handleThreadClick} onRefresh={fetchData} />
+        <GenericBoard
+          columns={threadBoardConfig.toColumns(boardData)}
+          statusConfig={threadBoardConfig.statusConfig}
+          entityName={threadBoardConfig.entityName}
+          renderCard={(item, onClick) => <ThreadCard thread={item} onClick={() => onClick(item)} />}
+          renderDragOverlay={(item) => <ThreadCard thread={item} onClick={() => {}} isDragging />}
+          onItemClick={handleThreadClick}
+          updatePosition={threadBoardConfig.updatePosition}
+          onRefresh={fetchData}
+        />
       )}
 
       {!loading && view === "list" && (
-        <ThreadList
-          threads={listData}
-          onThreadClick={handleThreadClick}
-          onStatusChange={handleStatusChange}
+        <GenericList
+          items={listData}
+          columns={listColumns}
+          groupOptions={listGroupOptions}
+          entityName="threads"
+          renderRow={renderRow}
+          onItemClick={handleThreadClick}
         />
       )}
 
@@ -148,10 +300,7 @@ function ThreadsContent() {
         <ThreadDetailPanel
           thread={selectedThread}
           onClose={() => setSelectedThread(null)}
-          onUpdated={() => {
-            setSelectedThread(null);
-            fetchData();
-          }}
+          onUpdated={() => { setSelectedThread(null); fetchData(); }}
         />
       )}
 
