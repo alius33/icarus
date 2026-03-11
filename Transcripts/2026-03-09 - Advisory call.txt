@@ -1,0 +1,363 @@
+Unknown Speaker  0:00  
+Yes, yes, it is
+
+Unknown Speaker  0:07  
+waiting for a few more people, I guess.
+
+Speaker 1  0:21  
+Thank you. I see we have Azmain, Prashanth, Diana and Christine joining. So hello everyone. I don't know how much background do you have on this call? Should we add a bit more colour about what the intention of this call is for you guys? Or do you have an intro already?
+
+Azmain Hossain  0:41  
+It would be really helpful. Arno, this is my first time. Dana showed me the sheet that you the sheet that you're using to track everything. But I just wanted to see, you know, what's the workflow, how you go through it? Yeah, a little bit of context would be really helpful.
+
+Speaker 1  0:57  
+Sure. Yeah, I can do that. Eddie, feel free to jump in as well, if you if needed. Yeah, so I think we started at a point where we had a combined call across the entire advisory team, including implementation. That meant that we were talking quite a lot of project in parallel, and we decided at some point last year that's given the very little overlap in terms of stuffing across the implementation and, say, non implementation project streams, that it was forced kind of dividing, dividing that up into into two, two different streams, right? So I think there is a separate, similar call every week looking at implementation projects. And this one is for everything else. I like it by by lack of better terms, so by everything else, this is essentially all of the projects that fall somewhere within Charlotte's organisation, which is a mixture of, well, everything ILS first, so ILS casual issuances, ils directory services, and then all of the climates and banking activities, And then the usual everything else, like the new advisory work that the team does. The way we run this call is 30 minutes on a weekly basis, and we go through the list of ongoing projects or upcoming pipeline projects, and we decide who Well, each project lead will give an update on where things are at contracting or execution side, and where needed we agree on stuffing updates for new projects or where we need to shuffle things around, which hopefully is not too often. And yeah, that we just, we just use this call to have all project leads and PMs in one room, just to make sure there is no conflict of people or timelines or deliveries. I think this is a main goal, really, any order.
+
+Speaker 2  3:18  
+No, I think, I think that's really nicely put. It's a snappy update from everybody on how things are going. If there are any blockers that you know, we should raise up to Charlotte, if there's any conflict of resource, but it's on a project, and also not just a project basis, if there's internal work as well that we need people to work on internal projects or ongoing, recurring projects. So while we say it's strictly not staffing meeting, it is talking about resourcing quite a lot.
+
+Speaker 3  3:49  
+Yeah, it's kind of a combined, holistic everything. Meeting, yeah, that makes sense. Thanks. So much good
+
+Speaker 1  3:58  
+from the top. Yep, we see missing a few folks, but I think, yeah, we can, we can get started. All right. Camila,
+
+Speaker 4  4:12  
+yeah, hasn't changed from the previous week. Really, we're anticipating to get the data that we need, Kayla for in March, for that one week of work we're anticipating to get that data this week. So I'm not sure when exactly this week could be any time, but as soon as we receive it, I guess we'll I'll reach out to Kayla so she can start looking at it. Yeah, it could be this week or next week or by end of Friday, yeah,
+
+Speaker 1  4:46  
+yeah, this is the exposure for the code process, right? Emily, yeah, yeah. So we've followed up with the client end of last week. Hopefully we're expecting something response this week. Uh, for us to begin, but they have provided the sign off on going ahead, utilising their support bank. So once that has the exposure data comes through, we'll be able to crack on with the work, maybe before we go to the next one, one quick, one, quick update I wanted to give after I had a chat with Diana last last week, I added two columns here, one with the pm on each project. Some of them I left blank because I don't know if they this one or who it is. So anybody from the PMO team please tell me if I'm missing some information here as we go through the list. And there is also a red, amber, green flag here. So yeah, anything that needs to be flagged in terms of how the project is going and and how we're tracking against against projected timelines, also feel free to flag
+
+Speaker 2  6:00  
+super quick question, Philip, how full on is Tim on your cat bond? I know that's further down, just seeing that Tim is oversight here, but what could stand in the next week or so,
+
+Speaker 5  6:14  
+it'll be a little bit full on. Okay? Is, is that oversight for May or march
+
+Unknown Speaker  6:21  
+out of both, okay,
+
+Speaker 4  6:24  
+May will be a little bit more work. So the cob pro stuff should be like four days, but of Tim's time, that will be maybe a day over the course.
+
+Speaker 5  6:37  
+I mean, if we're still working on this cap on in May we have, I guess the next week for the March is that, like a day an hour,
+
+Unknown Speaker  6:50  
+about a day of Tim's time, okay, for a week, okay. Do you think that's doable?
+
+Speaker 5  6:59  
+I think that'll be okay. I mean, our scripts are ready to go, so we just need the layer from the from the broker.
+
+Speaker 4  7:09  
+And I know that's that's one day, yeah, this week. And then in terms of oversight for the may work. I can't remember how much it is, but it's going to be more than that, a lot more than that, maybe about a week, right, over two or three weeks. Okay,
+
+Speaker 1  7:36  
+good. PG is still on hold, so let's keep that one. Tria, um,
+
+Speaker 4  7:44  
+on the on the Imagineer work, um, interestingly, it's there's no RM automation anymore. So I would call it the tuya damage estimation, or tuya damage workflow, automatous two but two years Lab project, or something like that. Unfortunately, risk modeller and the IRP got dropped entirely earlier on in the project due to due to us learning from products that data Databricks may not be supported in the future in risk data lake, which might be of note to other people who are using Databricks workflows and depending on them. Yeah, right now we're we're all good in terms of my and Emily's time. So nothing changed there since last week.
+
+Speaker 4  8:54  
+Not sure if snow her is on the call. If not, I'll reach out to her so we can start scheduling the first kind of kickoff session with with the whole team.
+
+Diana  9:08  
+Yes, of this afternoon, but she's available tomorrow. Yeah, any
+
+Speaker 1  9:21  
+change any update from you, Jack or camellia on Titan, I'll
+
+Speaker 2  9:26  
+give an update, because it came through this morning. It's still in contract negotiation, so I thought this was sorted and just being signed off, but actually they've come back to negotiate on price again. So I think it's good that we have moved resourced off that one for the short term
+
+Unknown Speaker  9:47  
+digest. I mean,
+
+Speaker 2  9:52  
+there's ongoing stuff happening. Prashant is the pm here, and so there's we have breakfast briefing. Last week, there's ongoing sort of blogs and things to be doing, but there's no analyst time required before, really between now and May,
+
+Speaker 1  10:12  
+good for sure. So not before May, right?
+
+Speaker 2  10:15  
+Yeah, those guys involved in May and probably too much killing before,
+
+Unknown Speaker  10:20  
+sounds good, okay. Uni, Paul,
+
+Speaker 4  10:24  
+we have the kickoff call client kickoff call next Wednesday. Flo's already up to speed with the project, and she's got some free time in terms of kind of other project demands, so she's started kind of fully onboarding onto the project, doing some learning, I guess, from her side of the Italy earthquake earthquake model.
+
+Speaker 4  11:00  
+And that's Eddie using a kind of non billable category that Stacey has now
+
+Unknown Speaker  11:05  
+created. Perfect
+
+Unknown Speaker  11:08  
+Do you have a pm on this one coming
+
+Unknown Speaker  11:12  
+in? We don't,
+
+Speaker 2  11:14  
+and I should do we what? What's the guidance Diana on PMs on these ones? Because, I mean, the smaller projects, we wouldn't typically have a pm on them. Should we have a pm on everything?
+
+Diana  11:27  
+No, we will. Can afford having a pm on each of the projects. But fine, yeah, yeah.
+
+Unknown Speaker  11:37  
+That makes sense. So keep going as usual. Yeah.
+
+Speaker 1  11:42  
+And we envy. I had an update from Highway, which is, it's not anytime soon, and definitely in one. So we can leave that one out for now. Excel, not a huge amount of movement yet. We'll have a kick off with only moody and the clients. At some point next week, the sales team has reached out to to get that organised in terms of starting. That's actually one, one I wanted to check in. I cannot see the list of attendees. Do we have shout out all the rest on
+
+Unknown Speaker  12:22  
+sure, that was going to join for the second heart. Oh, she's here now.
+
+Unknown Speaker  12:25  
+Yeah, I'm on home.
+
+Speaker 1  12:27  
+Hi, hi, shot, yeah, I heard there's been some slight changes as of this morning. On embers availability on this one, just want to check a few elements. Had an estimate on how long should it be needed? On the new carbon
+
+Speaker 6  12:41  
+it needs to be out in the market, first.
+
+Speaker 2  12:47  
+13th of March, 13 of April, sorry.
+
+Unknown Speaker  12:55  
+Hang on, okay, that's an email
+
+Unknown Speaker  12:59  
+the week, the 13th of April in an email. Yeah.
+
+Speaker 1  13:04  
+Okay, so on the analytics, that means she will be done by the end of the first week of April. Is that fair?
+
+Unknown Speaker  13:13  
+Yeah, yeah,
+
+Speaker 1  13:16  
+okay, I'll have a thing, but that could, that could work, it would be she wouldn't have a lot of break between projects, which is a, well, maybe not, not, not ideal, if the Cal bond is, is a stressful one, but I think we can probably get things working still to have her on on Excel, because realistically, we'll have some, some workshop with filter, then some time on data exchange with the client to actually get the mitigation data we need. So I don't think that's going to be less than 334, weeks easily. Okay, good to know. Thank you.
+
+Speaker 2  13:49  
+She, I've got a call with her at 330 just so you know, just to talk it through so she, she's not aware at the moment.
+
+Speaker 1  13:57  
+Cool, okay. I will leave her on that for now, and we can always discuss next week if there is any change to Caliban timelines or or Excel. We also talked with Philip and agreed that Allison would be the right person in the US. Is that correct? Philip? Uh, yes. Amazing. Good. Then that's all the cat bonds. I don't think we have Lawrence on,
+
+Diana  14:30  
+yeah, for John Vera King, this is completed. Yeah, maybe we can change the status.
+
+Speaker 1  14:36  
+Okay, yeah, I know some of them were due to have the escrow package was still due,
+
+Diana  14:42  
+according to the tracker, it's okay,
+
+Speaker 1  14:50  
+good. Jacob,
+
+Speaker 7  14:57  
+yeah, probably was. A bit delayed last week due to the conflict in Iran, so they have now gone to market in a very limited manner, so we might get the offering documents coming through for investors in the coming weeks, and then they're going to launch three days before they intend to close at the end of the month. So technically not launched, but it has sort of launched, and it's just going to be supporting client questions and doing a wrap up now, but in terms of the tracker, it's going to have to stay not launched. But Kaya and Flo are now free.
+
+Unknown Speaker  15:39  
+Is it on this cruise? Crawl on this one
+
+Speaker 7  15:44  
+as well? Yes, but we obviously a long way from that. At the moment,
+
+Unknown Speaker  15:50  
+it's effectively launched in stealth mode, right? Jacob,
+
+Speaker 7  15:53  
+exactly. Well, no one's actually told us that that happened on Friday, but the plan was that that would happen on Friday, and we obviously won't see it on Artemis, so we're assuming it has
+
+Unknown Speaker  16:08  
+good I don't think we have anybody from American Integrity, but that was mostly done. Jack Federer, yeah.
+
+Speaker 8  16:22  
+I think we'll aim to get that ready final reset report ready for signature by the end of today, is the target. So, yeah, I think if that is the case, then Idris and George will be off it after today. But, yeah, they've just got a final, final few tables to sort and then we should be able to have them off this
+
+Unknown Speaker  16:55  
+do you need much of George's time still on this one,
+
+Speaker 8  16:59  
+until he's finished today? Yes, okay, just couple labels that needed like him to to. I don't know where he's at. Okay, is there a conflict on it
+
+Diana  17:13  
+for me? This the HRDC project. End Date is 13 of March. Do you think we will need to extend
+
+Speaker 8  17:26  
+it the, sorry, the project end date, the it's not the reset reports, not due quite that soon?
+
+Diana  17:36  
+Yeah, I know. Just the sftc report, yeah, report the sfdc project is said, if you're reporting time, you won't be able to report time in sfdc after 13 of March. Yeah, this is what
+
+Speaker 8  17:51  
+I do. You know what I think that will be I think, I think, I think that'll be fine. I think that'll be fine. Yeah, thanks. Yeah. Good point
+
+Speaker 1  17:59  
+on, sorry, time conflict with George. If it's just a couple of risk cases with a table between two and two most, that should probably be fine. But I know it's been discussed. As the analyst on one of the cat bond new cat bonds has been stuffed. I mean, that we discussed stuffing for this morning.
+
+Speaker 8  18:19  
+Yeah, okay, okay. Well, look, I mean, he shouldn't be if he gets it done, he shouldn't be needed after today, if that helps, and what I asked him to do wasn't more than a couple of a few hours. So hopefully, I think he should have fixed it. I'm just not aware of he hasn't let me know yet.
+
+Speaker 1  18:37  
+Okay, that should be fine. We don't have any money from this one. Check on Cape lookouts.
+
+Speaker 8  18:47  
+Yeah, yeah. So the reset reports so, so the resets are done. The reset reports for longleaf pine and Cape Lookout 2024 and 2025 are completed. Cape Lookout is, yeah, that's, that's, that's basically done, except for the final set of agreements like escrow, etc. So longleaf pine, you should be able to take off that's completed. Cape Lookout needs to stay on while we sort out the escrow and, you know, various other things, like the exercisation letter, that kind of thing, that are ongoing,
+
+Unknown Speaker  19:35  
+but no, be released then from that,
+
+Speaker 8  19:39  
+yeah, yep, yep, definitely, yeah. She's not, she's not been, been needed on it for, she's not worked on it for at the back end of last week. So yeah, she's got cool, yeah, yeah.
+
+Speaker 1  19:53  
+Good. Grab anyone for these guys. Jacob, is anything new? Learner as I started,
+
+Speaker 7  20:02  
+yeah, so that's taking probably 50% Kara, nice time, as we character thought, is all the document review
+
+Speaker 1  20:15  
+is 50% of yours and kaya's time for how long about
+
+Speaker 7  20:22  
+certainly, this week, probably sort of network some next week, had a thought, Okay,
+
+Unknown Speaker  20:34  
+wonderful Olympus and, Oh, sorry I missed one shields, that's you, Philip,
+
+Speaker 5  20:43  
+yeah, it's going okay. There was an issue last week around kind of the data that Lockton used to structure the transaction. And so now there needs to be a new layer. We're definitely well past started. We are strongly in the middle, but our scripts are kind of ready to go. We're just really waiting on a layer that the broker and seed are happy with. A lot of our documentation is done. We were kind of on pause until we have a layer.
+
+Speaker 1  21:27  
+Good anybody for that knows what's going on with Olympus. I went to market last week. Should probably have seen that. Okay, so presumably escrow and final docs, right? Okay, good. I think this one hasn't started yet. Sounds good. What about the I can
+
+Speaker 7  21:53  
+tell you when it starts. If that helps, yeah, we, we get the data early April. Okay, or late, very, very early April, though, like right at the start, okay.
+
+Speaker 8  22:13  
+And I think in addition, I'll know what isn't on here is Totara. I think I might have seen a row of it somewhere, maybe towards the bottom, that it can move from, but maybe not, maybe I'm imagining that. Okay, so that's ongoing. It's with, it's with as but that's me on that, trying to get as much right. Yeah, correct, yep, yep, yeah, trying to get as much done as possible, like preliminary reset report, etc, before I head off,
+
+Speaker 2  22:52  
+because we need anyone to shadow you in case you need to head off early. Or are you not concerned?
+
+Speaker 8  22:58  
+Not super concerned. On that one. I can ask Lawrence. Lawrence asked me to move on it. I think, yeah, not really. I can leave in instructions or something. Yeah, I'll handle it. I don't think it needs someone to sort of shadow me on it, per se. But maybe that's a good idea that I've not considered. But I'll chat with Lawrence. I always play that. I Lawrence.
+
+Speaker 3  23:27  
+That's an HD transaction, right? Yeah, what pro region was that again?
+
+Unknown Speaker  23:32  
+New Zealand earthquake, version two.
+
+Speaker 3  23:36  
+We've been having challenges with HD correlation within our deal library portfolio. So maybe one ask would be to maybe have a check that it the way that we prepare the data file appeal to this is consistent with the original issuance. A supports date correlation there,
+
+Speaker 8  24:02  
+yeah, yeah, okay, the original, yeah, okay, it was like the first one we did. So the original issuance may not be the best. I'll drop you a note on that. Yeah. Sounds good. Yeah. Thanks for the
+
+Speaker 1  24:18  
+plug. Then I believe we had one or two new cat bonds.
+
+Speaker 9  24:23  
+We've got a mangrove cat bond Arno, which is just starting. And we received data over the weekend for that one, and I think we had discussed potentially getting Amber on that. I know she's also pencilled in for Excel as well. So that's looking to launch early or early to mid April, and then George as well,
+
+Unknown Speaker  24:55  
+either the one that was the 13th
+
+Unknown Speaker  24:58  
+Week of the 13th of April.
+
+Speaker 6  25:10  
+Hmm, yeah, there's a few other pipeline ones out there. I don't believe there's any others, though, that are over the line, apart from mangrove. But there's other others in the hot pot, including the potentially the World Bank One, which is still yeah progressive.
+
+Speaker 1  25:39  
+Good luck with that one. All right, any other projects that need to be tracked, or should we move to recurring? Okay, sounds like recurring. And do you want to get started with the library?
+
+Speaker 3  25:57  
+Yep, sure. So we just have that Olympus transaction that's in the market. I understand the deal team is going to take the characterization for that one, so I think we should be good. I mentioned we've been having challenges with HD correlation within the deal library, in particular for our own transactions, something I could use help with, if there's availability, maybe Harris could lead in another analyst. Our king Max transaction needs some attention. I think we'll need to probability match what we provided in the data file so that it correlates well with the rest of the transaction library. So that's, yeah, so just those two things on the do the library front,
+
+Speaker 7  26:51  
+there's also Baltic to bullri. Could we catch up this afternoon about that one? Because I think we first about how to start that one within your team, but also correlation, which may be a problem.
+
+Speaker 3  27:06  
+Yes, yes, let's chat about that.
+
+Speaker 5  27:10  
+Thanks. I know that Kayla and Julia, that are currently staffed to deal library, have time to help out.
+
+Speaker 3  27:22  
+If is Harris still available? Maybe that'd be good one for Harris to lead, and either or both of them can help out with that he's available. Awesome, cool. So I'll get them starting on that.
+
+Speaker 1  27:43  
+Good one quick quote on augment. We started our third year of our current contracts end of last week. And yeah, we already have a few requests on the support side, and it's an ember is going to be quite heavy, heavily utilised, so I'll take that off a plate. Yes, Jack, let's, let's discuss out of this call, who might be the best test that we have a few of those support activities to handle. I'll, I should have time to to lead that one with anybody who has time. So, yeah, yeah, Jack, we can discuss later today.
+
+Speaker 2  28:32  
+Yeah, if Amber's going to be stepping up to run the analytics on a cat bond, it'd be good to clear her of augment and bnpp for this month so she can focus, if possible,
+
+Speaker 8  28:43  
+just like a day of bnpp between now and Wednesday, but then that clears her until May.
+
+Unknown Speaker  28:50  
+Okay, so it's between now Wednesday, it's Tuesday,
+
+Speaker 8  28:57  
+yeah, between now and Wednesday. She has okay end of day, Wednesday, yeah, Wednesday, sorry, I mean, I mean, like, probably half a day actually, yeah, no more.
+
+Unknown Speaker  29:13  
+Is frosty needed this week on TV?
+
+Speaker 8  29:15  
+I believe she's tied up her part of it. So no, okay,
+
+Unknown Speaker  29:28  
+good. Anything to add?
+
+Speaker 7  29:33  
+Yes, you promised me George for some terrorism. Yeah, George,
+
+Unknown Speaker  29:41  
+that was before I heard about the new cat bond.
+
+Speaker 7  29:47  
+I haven't spoken to him yet. I could quite easily use a different analyst help. It's just,
+
+Speaker 1  29:53  
+yeah, I think, I think that feels that feels better. Let me check what each of my. Piece working on. I know I have people with a bit of time with their hands, so maybe someone I just don't know who that is. Now, yeah, it doesn't give me 10 minutes.
+
+Speaker 7  30:10  
+Doesn't have to be UK, and probably a good one for a newer analyst, just to get some rich modeller experience.
+
+Speaker 1  30:17  
+So anyone who wants what the ask is, that's how many days, what's
+
+Speaker 7  30:24  
+depends how much experience they have. But it's run some IED runs and pull some EP curves together. So shouldn't be too difficult.
+
+Unknown Speaker  30:32  
+Okay, okay,
+
+Speaker 5  30:34  
+it's like if I might have some capacity with either Julia or Kayla to help you out, maybe around.
+
+Unknown Speaker  30:47  
+Perfect. Thanks.
+
+Speaker 7  30:52  
+Does George know he's on a cat bond? If I just randomly cancel this catch up, trying to speak to him first?
+
+Unknown Speaker  30:58  
+Oh yeah, I think
+
+Speaker 7  31:01  
+I'm speaking to him soon, so maybe you let him know sooner rather than later, that would be helpful,
+
+Speaker 1  31:13  
+right? Thank you. Thanks all. Thank you. Right? Have a good day. Thanks all, bye, bye.
+

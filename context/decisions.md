@@ -49,3 +49,6 @@ Decisions are listed chronologically. Each entry includes context and rationale 
 | 39 | 10 Mar | TSR automation treated as a proper scoped project | Not just a side experiment — Azmain to help define plan and scope. Team to support. | Richard, Azmain, Idris |
 | 40 | 10 Mar | Navigator MCP server integration is Build in Five's top priority | Must be plugged into Martin's dashboard builder before exceedance to complete the live demo loop. | Richard, Martin |
 | 41 | 10 Mar | Build in Five stakeholder cascade defined | Sequence: MCP integration → tech consulting team → demo team (Bibo/Gibson) → sales (Flemington) → exceedance content factory | Richard, Azmain |
+| 42 | 9 Mar | Date input min set to 2022 across all CLARA date fields | Someone entered a 1999 date breaking the migration burndown chart. Ben Brooks asked for limits. Max also defined explicitly. | Azmain, Chris |
+| 43 | 9 Mar | Users should use calendar picker for dates, not type manually | Prevents format and range issues. Free-form typing allowed but edge cases handled via user feedback. | Azmain |
+| 44 | 9 Mar | Dan Flemington's app to be deployed to App Factory | Rather than running locally, Dan's sales tool will be hosted on the shared AWS infrastructure with user access controls. | Richard |

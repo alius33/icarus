@@ -1,6 +1,6 @@
 # Stakeholder Map
 
-Last updated: 2026-03-10 (all transcripts through 10 March processed)
+Last updated: 2026-03-11 (all transcripts through 10 March processed, plus 9 March advisory/sales/bug fix calls)
 
 ## Tier 1 — Decision Makers & Sponsors
 
@@ -106,7 +106,9 @@ Last updated: 2026-03-10 (all transcripts through 10 March processed)
 | Diana | PM → Azmain's new manager (4 Mar) | Now Azmain's reporting line. Supportive of Friday development. Planning to present Friday vision to Ben/Charlotte. |
 | Martin Davies | Build in Five (WS6) | Exceptional output. Dashboard builder dramatically exceeded expectations (10 Mar). Richard compared to Databricks Genie. Live RM API integration working. Demo shifted to May. 12-week clock ticking but output justifies investment. |
 | Catherine | Data alignment + Gainsight governance | March: Offered to help with governance and App Factory decision tree. Key new ally. |
-| Dan Flemington | Sales | March: New stakeholder with existing tools. Julia Valencia identified for Salesforce access. |
+| Dan Flemington | Sales | March: New stakeholder with existing tools. Julia Valencia identified for Salesforce access. In Vienna at event (w/c 9 Mar). |
+| Juliet Valencia | Sales analytics / Power BI dashboards | New 9 Mar. Manages Sales Hub dashboards. Clarified data ownership: Dan's data likely from SPM team (Tableau), not her. Uses Cursor for dashboards. Cooperative, good data governance instincts. Will connect team with SPM contacts. |
+| Arno | Advisory team project lead | New 9 Mar. Leads weekly advisory project status call under Charlotte's org. Manages ILS, climate, banking advisory staffing. Diana brought Azmain to observe. |
 | Gina Greer | Banking customer engagement (central) | New 10 Mar. Mapping banking AI initiatives. Same stage as insurance Nov 2025. Potential cross-OU ally. |
 | Olivier | Banking AI enablement lead | New 10 Mar. Thoughtful about tool selection. Working with Nick Louder/Kentucky teams. Deployment gap concern. |
 | Jack Cheyne | Life insurance | New 10 Mar. Technically curious about NME. Aware of CAP from banking. Potential cross-OU expansion. |

@@ -19,17 +19,19 @@ There are TWO distinct types of work in this project:
 4. The **most recent weekly summary** in `analysis/weekly/` — current programme state
 5. `programme_debrief.md` — full chronological history (read sections as needed, not cover-to-cover)
 
-### Running the app:
+### Running locally (development):
 ```bash
-# Full stack via Docker
-docker-compose up
+# 1. Start backend + DB in Docker (Python 3.12 required, local is 3.14)
+docker compose up -d db backend
 
-# Or separately:
-cd backend && uvicorn app.main:app --reload --port 8000
+# 2. Start frontend directly (hot reload, instant changes)
 cd frontend && npm run dev
 ```
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:8000/api
+- Frontend: http://localhost:3000 (Next.js dev server, hot reload)
+- Backend API: http://localhost:8000/api (Docker container)
+- PostgreSQL: localhost:5432 (Docker container)
+
+**IMPORTANT:** Do NOT run the frontend in Docker for local dev. The Docker frontend requires a full rebuild on every code change. Run `npm run dev` directly for instant hot reload. Backend stays in Docker because local Python is 3.14 (pydantic-core requires <=3.13).
 
 ---
 
@@ -777,7 +779,6 @@ These are the through-lines to watch across transcripts:
 | 3 | Build in Five | WS6 — Martin's rapid prototyping |
 | 4 | Training & Enablement | WS1 |
 | 5 | Navigator L1 Automation | WS5 |
-| 6 | Sales Recon | Standalone → platform migration |
 | 7 | Customer Success Agent | WS3 |
 | 8 | Cross OU Collaboration | Banking, AM, Life outreach |
 | 9 | Program Management | Governance, steering, portfolio reviews |

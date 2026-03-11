@@ -980,3 +980,9 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 616 | 10 Mar | Deploy dashboard builder to App Factory | BenVH | TBD | 2026-03-10_-_Build_in_Five_Standup |  |
 | 617 | 10 Mar | Define exceedance panel format and guest list | Ben Brooks | April | 2026-03-10_-_Showing_BenB_Martins_Build_in_5 |  |
 | 618 | 10 Mar | Arrange product team meeting to assess Build in Five as product feature | Ben / Richard | Before exceedance | 2026-03-10_-_Showing_BenB_Martins_Build_in_5 |  |
+| 619 | 9 Mar | Confirm with Dan Flemington which data source he uses (Tableau/SPM vs Sales Hub) | Richard | When Dan returns from Vienna | 2026-03-09_-_Sales_dashboard_call_with_Juliet |  |
+| 620 | 9 Mar | Connect Richard/Azmain with SPM team contacts once data source confirmed | Juliet Valencia | Next week | 2026-03-09_-_Sales_dashboard_call_with_Juliet |  |
+| 621 | 9 Mar | Share skills repo and prompt library with Juliet and tooling channel | Richard | End of this week | 2026-03-09_-_Sales_dashboard_call_with_Juliet |  |
+| 622 | 9 Mar | Update all CLARA date input fields with min=2022 and explicit max | Chris | This week | 2026-03-09_-_bug_fixes_chat_with_Chris_M |  |
+| 623 | 9 Mar | Verify date format ordering (US vs EU) handled correctly by database | Chris | This week | 2026-03-09_-_bug_fixes_chat_with_Chris_M |  |
+| 624 | 9 Mar | Get prod database access for Chris from BenVH | BenVH / Chris | Ongoing | 2026-03-09_-_bug_fixes_chat_with_Chris_M |  |

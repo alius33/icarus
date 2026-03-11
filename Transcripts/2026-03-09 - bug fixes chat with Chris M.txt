@@ -1,0 +1,303 @@
+Chris M  0:02  
+Perfect. Oh, this morning has been back to back meetings. I've literally been talking since 8am
+
+Azmain Hossain  0:11  
+dude, I yeah, for me, it's so like the call, actually, you're not in the call. The big call, that's a 90 minute call where everybody uses Clara to do stuff. I hate that call so much because literally, it's like, they never touch the app beforehand, and then when somebody is looking at it, being like, why are your numbers not updated? I just start getting, like, 17 messages, where do I click? How do I do this? And just like, at this point, it's been four weeks, and you're an adult and it's 2026, I shouldn't have to teach you how to use a website. Just click around, dude.
+
+Chris M  0:52  
+Well, they look to you for guidance, though it's not, man,
+
+Azmain Hossain  0:57  
+I've worked with sales guys, and I've been a CSM, and I know CSMs, if they can say, Oh, I couldn't update it because Salesforce was broken, it's like their ultimate get out of jail card, except they can't say that anymore, because someone will be like, Oh, just go talk to Azmain. He'll fix it. And except, you know, it's not four weeks ago. We've got three environments to push things through, and 1000 literally 940 tests before each environment deployment. I'm just like, Yeah, I can't, like, unless you're like, like, an MD or a senior director and you've got massive things. Yeah, I'm not pushing shit through.
+
+Chris M  1:35  
+Yeah, no, I follow you. Like, I get it. It's like, the simple questions that drive me crazy. I was actually just on a call with one of our analysts that's rotating through, and he's helping, actually, with an AI project, which I think you'll find really cool, but we're trying to get something installed, and he keeps asking, and I'm like, Just tell AI, like, just because I'm sitting here trying to explain it to him, I'm like, okay, he's doing a lot of really advanced things that a develop, normal developer would do. So it's cool that you can have, you know, someone, do something without context of what it's doing, but then trying to explain an instal process while you're going through that in real time, and be like, well, here's what it is. Just make it. Do it. Now I understand, like, why you're, like, tell damn cursor to do it. Yeah. Like, I It's only been a week. It's only been a week, and I might at that point, yeah, go ahead.
+
+Azmain Hossain  2:28  
+Sorry, yeah, I'm having, I was having so many problems on my, on my PC, with the with Docker being just a general day. Like, look at this. To deploy, run the Olympic upgrade, head, why? Why are you asking me to run it? Dumb, stupid. I know.
+
+Chris M  2:47  
+I completely agree. Just getting Docker installed, like, you guys don't have Azmain access on Windows, and going through that whole jumping through the hoop,
+
+Azmain Hossain  2:55  
+I had to, I had to basically lie to a to an IT person to get to for him to put in the admin username and password so that I could instal the Linux substance subsystem for Windows to get Docker working. This idiot was literally like, raise a ticket. Raise ticket. I'm like, I've raised three tickets. Nobody under none of you guys are smart enough to understand what I'm doing. You guys are dumb. IT people, can you just do this? Oh, what if something goes bad? I'm like, what if something goes bad? It's a little plugin for an application that's already authorised. Anyway.
+
+Chris M  3:39  
+That was a good call out. Well Docker, Docker Compose, should be installed with Windows, right? Or do you have to do this separately?
+
+Azmain Hossain  3:46  
+So because, because of the environment that we're deploying in, when you spin up Docker for Clara to run it locally, it needs to do the Linux version of it. And so you got it, got it. Got it. Okay, that little plugin, okay. I finally have, like, I don't know if it's admin access, but I have elevated access to be able to instal stuff. Because that was another nightmare where I was just like, I just need to instal AWS CLI, so I can use this bedrock thing. And they were like, what's bedrock? And what are you doing with it? Ai Claude, how, like, just do the thing. Just give me the thing. I know what I'm doing. You just need to do your job so I can do my job.
+
+Chris M  4:37  
+Anyway, man, I'm with you. Okay, yeah, because I was trying to get the MCP server installed, I get it. It's like, it the restrictions I get why they're in place. We all need safeguards. We because it can go
+
+Azmain Hossain  4:52  
+we are now dealing with stuff that's so advanced that, like, if you get hired as a developer, you get all this. Is access already, but when your job title is not developer, they just go back to bureaucracy, and they're like, Oh, your job title is blah, blah, blah. Why do you need? Yeah, anyway,
+
+Chris M  5:13  
+it's like, within Moody's day, good,
+
+Azmain Hossain  5:16  
+no, no, i It's because we're the tip of the spear, like, once we go through it, you know, when the next batch of people come and they're like, hey, I need to instal AWS CLI for bedrock, they'll be like, oh, yeah, I had a bunch of guys had to do that. Okay, here's how you do it. But we're the we're the frontier,
+
+Chris M  5:33  
+yeah, because I was just getting, I'm trying to get that all done. I'm like, Okay, well, I can at least do the AWS API key for this, for Elliot, and then I get all the way through, and I was all excited. We got to change that update. I'm like, Oh crap, you don't have Docker, do you? I just make making these assumptions.
+
+Azmain Hossain  5:51  
+So, anyways, all right, anyway, yeah,
+
+Chris M  5:57  
+so bug fix,
+
+Azmain Hossain  5:59  
+how? How's it going? Good?
+
+Chris M  6:04  
+I mean, honestly, I got to the bug fix on Friday, and I've literally been this the first time I'm going to sit down with Clara today.
+
+Azmain Hossain  6:12  
+So again, that's perfect. If you spend too much time with this stuff, it melts your brain. Yeah, I didn't touch it for most of today.
+
+Chris M  6:20  
+Fair enough? Yeah, no, I'm just frustrated because I'm like, No, I want to get back to I'm still on that, like, new honeymoon phase with it, right? So I don't have that apprehension, or, I don't know if it's disdain for it, but
+
+Azmain Hossain  6:34  
+it's not. I mean, it's, it's just, I'm just sick of people just being dumb. And it's not, I can't even hate them for it, because this is a completely new process. People aren't used to thinking things through. You can see this in like, the, you know, the chat with Ben Brooks and everybody, the IRP adoption tracker chat where, like, every day, Catherine is just like, oh, this number is wrong. I'm like, remember when I sent you huge messages and we had a call to confirm exactly how you want these numbers, and then I did it exactly how you want it, and now you've changed your mind. Like, what the hell this is like? A person with goldfish memory being like, why is the number this like? Because you told me, remember? Like, no, no, listen, right? Yeah, I Yeah, that's the stuff that that bugs me. I wish I could just do like, you know, a user feedback stuff, instead of just people being dumb anyway. So, yeah, what? What did you want to go through? Because you haven't, you haven't done the the full like three environment push yet. So that's what I want to help you out with. Yeah.
+
+Chris M  7:49  
+I just want to see, like, talk through and see, like, a philosophically that the update process be the actual update process. And then I just wanted you on the call. So then when I get the go through it, if it breaks, then I have a I talked to somebody, I swear, yeah, yeah, yeah, but a little plausible deniability. So what I was working on is is actually a fix for the it's funny, AI is smart, but it hasn't gotten all the way to this point yet.
+
+Azmain Hossain  8:24  
+It doesn't understand context.
+
+Chris M  8:27  
+Yeah, like, it can find these things that I would have never seen, never looked for, but then once you're really digging in, I'm like, Well, why didn't you look here? Are you? I'm sorry I wasn't prepared for this. No, no, no,
+
+Azmain Hossain  8:45  
+I'm I'm trying to build out an app to manage all these six, seven projects, because I have, like, call transcripts and, you know, just so many notes and stuff, and just getting this thing to understand, like, this note applies to the thing that Martin is building building five. This applies to Clara. This applies to the asset management thing.
+
+Chris M  9:09  
+Yeah, and that thought they're asking very well right
+
+Azmain Hossain  9:15  
+now, like sending screenshots to Claude, being like, this is broken.
+
+Chris M  9:19  
+Fix it Okay, here I'd send it to prod, like, the actual fund and traffic,
+
+Azmain Hossain  9:28  
+yeah, because I'm it's like, I'm paying for it myself, so I'm just doing it on my desktop. And also, my desktop is ultra powerful. It can just run through things. Where's the laptop? It's great. It's a $5,000 laptop compared to my desktop, which I hand built, still not as powerful.
+
+Chris M  9:49  
+Why am I not finding this adoption product? For some reason, it doesn't because I'm not like.
+
+Azmain Hossain  10:00  
+Me. Let me say to it, because you should be, man, that's why you're not, uh, you're not added as a contributor to this. I thought I did.
+
+Chris M  10:10  
+Thank you. Okay, for some reason, every time I have to, like, find it doesn't show up on my
+
+Azmain Hossain  10:18  
+let me. Let me share screen so you can see, because it's showing you here as a contributor, but, so yeah, you're here as admin. Okay, so if I send you the link, you should be able to open it.
+
+Chris M  10:37  
+Yeah, I found it. It's just for some reasons, like when I go and click things, I just doesn't show up because I have too many RMS stuff, and then the single sign in is different between the two accounts, but I use the same ID, so it's just trying to All Right, so bug fix, what this was, was the I I went and started up the old one. And
+
+Chris M  11:17  
+I swear,
+
+Chris M  11:25  
+it was P 30, so I went and did the date on the cursor analysis, and then ended up being p3 was the oldest one that needed to be fixed, or s3 Excuse me. Okay, so do show you this guy. Oh, my bad. Context would be helpful. So this guy, whoever put it in doesn't matter. It's the target date and essentially cursor told me it was due to a context. Essentially different browsers have a different min, max field when you actually look at them, and it will determine how many characters you can inject into that field for that data type. And so some browsers will allow five digits for the year. Well, some browsers only allow four or six for some and four for the other. And so this user was saying he was having problems entering and doing things, and I'm like, well, it's probably because you just don't have the data structure to find so when I went through and looked everywhere in the app itself does not have the data structure defined, so, meaning that the browser defines the min and the max, and so if nothing's filled in, then it'll populate to that min or max. But if it's required, then obviously the user can't get past that point. Yeah, but it still doesn't solve then that problem with entering those numbers, and then that's what causes the browser to air, because some of them are seeing the six, but it really requires four, and then that's where you get the discrepancy. So it's just not a defined problem. So what I did, and this is where it's like, the philosophical question of how large of a change should you make? So theoretically, you can go through and within the files, open my branch. Okay. So it went through and found all the changes. And so anytime there is a date field within the application, and there's a bunch of places you can go through and define the min and max of the data type date that is entered. Some of them you can define in a in a setup file, which can be done like this, data input right here, you can put the max as this. So this one, anything that uses
+
+Azmain Hossain  14:14  
+and let the browser, whatever browser people are using it, just let it define
+
+Chris M  14:20  
+it correct. Yeah, before it just had max. So it would just fill in whatever the browser's Max would be, and so it just was not hard set, and so it'd be essentially prone to an error if one browser used it differently than the other, yeah, etc, yeah. So what you can do is go through and just add a little bit more bounds to it. And especially, on dates, right? It's not that big of a deal. But in this case, because of the difference between some whoever was using chromium versus, I guess, Safari or edge, what the fix can be is just to define the Mac so you can do them in the TSX files. So. Uh, essentially, there's places where you can do it that does all the changes like this one's a specific change. These are specific changes for specific functions, but this one is a specific change to like this date input, TSX, this one's applied to like 27 different ones. So what I'm trying to say is there's a lot of changes this would impact if you want it to be consistent and update this across the board. And the reason why I want to ask if you want to do this is because if you're entering six digits on some dates, someone might type in 22 to six, right? So they might be accidentally enter in, for example, like they're going, I want 2026 right, but they might be going to 26 right. And so then it is 22
+
+Azmain Hossain  15:57  
+Well, one of the things that's I've done, I mean, I didn't, I didn't, kind of lock it down, is that users shouldn't type in dates like you click the icon, you select a date from the calendar, the little calendar that pops up, and that's it, like, you shouldn't be typing dates in, and that way, we can make sure that it Always matches the format that we want.
+
+Chris M  16:21  
+Okay, so that that is set because it the code. I don't think worked that way. No, it allowed
+
+Azmain Hossain  16:28  
+me, and I never even thought about this. But now that I am it's, yeah, I feel like that's, that's the quick way to do it, because that's how everybody, nobody wants to type it in. They just click it and doesn't do it that way. Yeah.
+
+Chris M  16:43  
+So, yeah, I would just suggest that if we're going to go through it, either what you suggested you could go through and do that, where you could have the dynamic, or a walk so that it only allows, I guess, browser. I don't know how you do I would have to think I'd go through it. It has to be a browser implied date, or you just set the date max, and therefore it has to follow this exact structure, meaning it has to, you know, have these, these number of characters or digits. I don't know, whatever you whatever we want to go for. I just wanted
+
+Azmain Hossain  17:15  
+to know, like I would say, to push the change as it is now, because everyone I know uses that calendar function. If somebody tries to put in small, like, another format and it breaks, then they can, they can reach out. Or, yeah, yeah. I mean, I'm just thinking, we don't have the time or the team to do all these, like, super intricate like, let's make life super easy for them. Like, no, just don't be dumb and raise anything that that's broken. This is, this is another thing that they can use the feedback form for.
+
+Chris M  17:52  
+Okay, cool, because, yeah, I just wanted, like, thinking like, if it was a free form field and it didn't verify the date, then you could have mismatches in the dates. Now most likely of the browser would air out, because, you know, if you put in 2002 in the wrong date structure, it would check it. But, yeah, yeah.
+
+Azmain Hossain  18:09  
+Okay. So right now, it's your your month, month date, date. But obviously, in the in the app, it's going to be the other way around. It's going to be like the European format of day, day, month, month. That's okay, right? Or am I? Am I being stupid at asking that? That
+
+Chris M  18:33  
+is a good question. Actually, I'm trying to think this is why the Mars Rover land crest hunted on Mars the first one, because some of that is kilometres and sort of metres instead of miles. Yeah, that's actually a very good question. I was making the assumption that any date structure that's passed in the database will automatically adjust, because this is an object that's passed so it knows. Let me check that I can't answer that with certainty.
+
+Azmain Hossain  19:09  
+Yeah, just, just ask cursor, like, what's going on? Yep.
+
+Chris M  19:15  
+Any. So what I did is,
+
+Azmain Hossain  19:21  
+any, any other changes that you think might break things?
+
+Chris M  19:27  
+No, I mean, this is the only it's only a change in the max field, and it's only a definition. It's not actually changing the data. Yeah, yeah. So it's just defining in it this way, so I don't see it breaking anything. Yeah. I don't say change, break anything, but this was just my first push, and I just wanted to verify 100% Yeah. What other 1am I thinking now that I'm thinking, if you're going to do the max, you probably should define the men. Um, because you could have the same error on the men's side, we were just focusing on the mag, so I might go through and just set it as like 1900 or something. Now that's that's that that fixes,
+
+Azmain Hossain  20:22  
+okay, so or not 1900 what I would say is the minimum to 2022 because this morning I discovered that someone had gone in and put date in 1999 and now the the migration burn down chart is insane, because it's got like, five in 1999 nothing for 26 years, and then all the other stuff. Okay, so, and Ben Brooks was like, can you just put a limit in so people can't do that even by accident.
+
+Chris M  20:58  
+Okay, yeah, that'll, that'll right there. Fix it, because you can't, literally put the data in. Won't fix any legacy data that's in there, but fixing the input, okay, all right, so setting the end of 2022 I'll verify the date ordering. And then I went through and created the test, tests that are required in the documentation here. So it goes through and does the various use, I guess, corner cases, manious case, in the corner cases, and then past everything that's required in the Ruby one thing it didn't do is the full test, because I don't have access to data, right?
+
+Azmain Hossain  21:50  
+Man, me and you both, we need to, we need to figure it out. We need to talk to Ben Van Houten.
+
+Chris M  21:55  
+Oh, I already talked to Ben. He's getting that fixed. I just hadn't heard an update, and he was extremely swamped when I asked him, yeah, so I was giving working. I didn't want to be that annoying person.
+
+Azmain Hossain  22:06  
+It's honestly Same for me, man. I know he's completely swamped. He's working on this, working on a bunch of stuff. If he's on it, he's on it, but yeah, you know, I'm getting all these questions of, why does the number on this chart look like that? Like? I don't know. I don't know what the data is in prod database.
+
+Chris M  22:24  
+I agree, cool. So that's done. And then there was the plans. I forget where this was in the development. Test Driven. Did that try? I just I did a read up to this before this Friday afternoon, and I followed the steps so I did wasn't able to x the box with all the tests I'm looking for the deployment strategy. Here we go. Okay, here we go. Oh, man, I
+
+Chris M  23:06  
+know, I know this was partially AI written because it's so nicely ordered and so wordy. Like, if you ever look at actual like, human drive, code banks, like, the principle is, documentation is less is more.
+
+Azmain Hossain  23:24  
+Exactly, exactly the opposite. More is less, more than more.
+
+Chris M  23:31  
+I'm reading through it. I'm like, crap, all right, man, you're actually, oh
+
+Azmain Hossain  23:38  
+my god. I've never looked at these. I've never looked I'm not
+
+Chris M  23:41  
+reading through it. I just whenever I see when Kirsten starts referencing things, I didn't go back and reference it really quick to see if that was going through. But essentially, for the for the development build test, it went through and had all the check boxes, and the only thing I couldn't do is all tests, because I didn't have the data to test it. Yeah, so everything else passed. So I will update the times or add them in, check the date tests, and then get the all test done when I can get that back end updated, hopefully today or tomorrow. So I'll push it when I can run the old test. So given we're at this point, and I realised that one minute, do you have another meeting after this.
+
+Azmain Hossain  24:21  
+I don't, no, no, no, I've got time. So, yeah, I What, what? What I was gonna say is, let's, let's run through, like, the deployment process. And it's, it's literally, really simple, the way that we've done it. Literally, you just, first you pull your your branch into develop, and then it goes through 1000 tests. So I'll you on my screen, because I'm, I'm doing it right now, so like I moved things through from my. Branch into develop, and then from develop into staging. And now I'm going to do staging to prod, but at every single stage it's going to do these like seven checks, front end, back end. I don't even know how Ben van Houghton set this up, but he set it up in a way that it takes a bit of time, but it never breaks, and when, when if something does break, I just, like, click into it wherever the error is. I just copy and paste the error into cursor, and it just fixes. It does another push, and the test just auto run. So what I'll usually do is when, like, a build is finished, like, I haven't tested it, but a build is finished, I'll push it to my branch and then create a PR, and as it's doing this test, I think this is basically he's emulating an entire deployment here. So whenever the tests, whenever there's errors, I push it back into cursor. It fixes, push it back, and it just keeps going on that loop until everything passes. And then yeah, and then I actually do the do the merge. And then okay, during the merge, it like, does I think everything again, because now it has to actually thingy it. So you can see like actually pushing into develop takes a bit of time, and then you create another pull request from develop into staging. Go through all the tests. Once everything passes, you push and now it's it's been pushed it to staging, and now I'm moving from staging to main, same process. I am waiting for these tests to finish. There's so many like, Oh, this is done, okay. But yeah, you can, if you come here and you just scroll down, there used to be, yeah, 939 tests. Okay, so that's literally the So,
+
+Chris M  27:12  
+okay, cool. So makes perfect sense to me. So when you have the version, I have that bug fix, right? Yeah, I push the branch and it has it in the, whatever version it is.
+
+Azmain Hossain  27:24  
+Now, actually you're, you're currently working on it, right? What's the, what's the branch called bug fix?
+
+Chris M  27:35  
+Yeah, correct. So that's I had it just correct. Bug fix three. Yeah. F3 gate input, yeah, that's it. Are you doing, but I did an auto commit?
+
+Azmain Hossain  27:48  
+Are you doing each fix on a different branch, or are
+
+Chris M  27:52  
+you bundling everything? The fix was just it was just one, the max, the max is just one. Okay, yeah,
+
+Azmain Hossain  28:02  
+see it would just be like, first thing is to push it into dev pull. And now, because this this PR is now open, you can continue working on it. And every time you fix something and do a push, it'll just run these tests again to make sure the latest changes fit in with this.
+
+Chris M  28:25  
+Okay, so it'll run against the actual data. Yeah, right. It'll do all the tests against Okay, so that's the way around the back end test.
+
+Azmain Hossain  28:31  
+It doesn't do the actual data, so it'll do it like when I'm pushing it from staging to main, that's when it'll do it, because main has the actual prod data, but this test is going to test against the data in the dev branch, which is just like placeholder data. Got it, and then I didn't I didn't know what the hell this meant. First I would just click this button, and then I realised I can just tell cursor, like, you know, when I've done a next, the next round of changes, I'll I can just be like, update the branch before you push and it does it in this,
+
+Chris M  29:11  
+yeah, either rebase it or merge it. Yeah.
+
+Azmain Hossain  29:14  
+I have no idea what. Okay. I just use words. What
+
+Chris M  29:19  
+would you have your branch off of a main and the main updates you can either it's how you factor in those changes against the main. I like, GitHub is actually, like, super fascinating when you actually look at how powerful it is, yeah,
+
+Azmain Hossain  29:33  
+especially like, because, because Ben van Houghton used to work at GitHub, and he built a lot of the cool stuff. He understands it way more, and that's why he was, like, the perfect person to build out the infrastructure for this wackadoo shit that we're doing. Cool, all right, man, I will
+
+Chris M  29:57  
+go, but then that can run, and then I'll go from there. It,
+
+Azmain Hossain  30:00  
+yeah, I would say, like pushing up to staging is all good. Even if you break staging, it's fine. That's what it's made. That's what it's built for. Okay?
+
+Chris M  30:11  
+And then once I get the date with the data test, then I can go all the way through and go from there, and then just start working on a minute. Can you work on multiple branches at the same time and merge it into development? Or do you have to go one at a time? That makes sense?
+
+Chris M  30:37  
+Oh, hold on a second. Do
+
+Chris M  30:48  
+Can you hear
+
+Azmain Hossain  30:59  
+me? Testing, oh, there we go. Yeah. Sorry, my mic. Yeah, you can, you can basically, like this one. I'm This is the Friday thing. But if I, if I move to this one, I've got like, one cloud environment here called Clara, but then if I want to, I could just create another one and do a bunch of other stuff in that one, and then just merge it all in GitHub. This is what Ben can build for us internally. He, like me and him, are really pushing Ben Brooks on this, because if you start rolling this out, everybody's going to start asking for 5k Dev laptops, because everyone's laptop is breaking running cursor. What we need is for people to be able to spin up virtual environments and do the building there, literally what Claude allows you to do, but we need to do it within the Moody's environment. Got it, okay, but yeah, that's yeah, because I'm just looking that's another thing.
+
+Chris M  32:06  
+Yeah, okay, but that makes perfect sense. But like in GitHub here in our IRP prod, I'm just looking at the pull requests that we just put in, and then I'll let you go. Sorry. Okay, so that's there. I see it's no longer in I'm just trying to figure out the structure of got it so you moved it to staging, so you're just using the branches. And as as
+
+Azmain Hossain  32:45  
+as environments, yeah.
+
+Chris M  32:48  
+So why don't I not see my dev or that feature in the stage?
+
+Azmain Hossain  32:59  
+Because your branch hasn't been pushed into develop, into develop yet.
+
+Chris M  33:09  
+Oh, I thought that's okay. Got it, got it. Got it. There it is open.
+
+Azmain Hossain  33:18  
+Do you have the URLs for dev and staging, right? No. Okay, so it's, yeah, we made it really simple where it's basically the normal thingy, which is this, and you just like, put dev in front of it. And that's the dev one,
+
+Chris M  33:41  
+Dev in front of
+
+Azmain Hossain  33:42  
+advisory, so HTTPS, and then, instead of slash, slash advisory app factory, it becomes dev dot advisory app factory. And then, like for staging, it's staging, dot advisory app factory.
+
+Chris M  34:02  
+Okay, so that's to view the different Claras, yeah, yeah, exactly. Okay. And then in GitHub, so I haven't pushed it. Were you running something else on staging? Because I don't see,
+
+Azmain Hossain  34:16  
+yeah, yeah. That was me. I was pushing those through, which should be in fraud now. So yeah, now the The coast is clear, like everything that was on Dev has moved through the through staging, into prod, so now you can start pushing your stuff into div,
+
+Chris M  34:35  
+into dev. Okay, this is where I'm confused. Sorry, I'm being
+
+Azmain Hossain  34:41  
+No, no, no, it's completely fine. F3
+
+Chris M  34:50  
+okay, so I would Okay, got it. I'll request that, and just stay tuned now I get it. This is just a little bit different structure than the way. Use cat accelerate. This is more official, but
+
+Azmain Hossain  35:04  
+cat accelerate is less official.
+
+Chris M  35:09  
+Yeah, you at least have a order on how you name your your different stages of your testing. We literally just have, it's the wild wild west. Oh, my God. So we can just make a branch, and then we have to make sure our tests pass, and then if we're happy and we have two reviewers, we just merge it to Maine. It's scary. So you at least have two buffers where you have the developer, the staging and then production.
+
+Azmain Hossain  35:37  
+So this is why, man, I am, I'm like, so grateful for for Ben, because, like me and rich, we don't even understand this stuff. He's our cursor. We just get on calls with him. We're like, Wouldn't it be nice if we could do this? He's like, I can do that. I can do that. Let me do it.
+
+Chris M  35:53  
+Yeah, it's smart, because I can see how, like, normally, I guess we have a bunch of developers working this, the idea of staging and then production kind of is the developers brain, yeah, but if there's people that don't know, then at least having those two barriers can help reduce a little bit. So yeah, yeah, that makes sense.
+
+Azmain Hossain  36:14  
+Let me go back to these knuckleheads and be like You happy now the numbers look good. Awesome.
+
+Chris M  36:21  
+Well, hey, thank you. I really appreciate your time. No problem, man, just have to take show anytime, taking more and more from you. No Awesome. Well, have a good rest of your afternoon.
+
+Azmain Hossain  36:31  
+You too. Take care. Chris. Bye.
+

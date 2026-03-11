@@ -3,6 +3,10 @@
 ## Influence Signals
 
 | Date | Person | Influence_Type | Direction | Target_Person | Topic | Evidence | Strength | Confidence |
+| 2026-03-09 | Diana | Bridging | → | Azmain | Advisory project visibility | Invited Azmain to observe advisory call to understand her workload | Medium | High |
+| 2026-03-09 | Richard | Proposal_adopted | → | Juliet | App Factory hosting | Pitched App Factory for Dan's tool; Juliet receptive | Medium | Medium |
+| 2026-03-09 | Richard | Bridging | → | Azmain | Cross-OU strategy | Explained how each cross-department engagement builds the case for a dedicated team | Strong | High |
+| 2026-03-09 | Azmain | Deferred_to | → | Chris | CLARA bug fixes | Delegating small fixes to Chris to create brain space | Medium | High |
 |------|--------|----------------|-----------|---------------|-------|----------|----------|------------|
 | 2026-01-06 | Richard Dosoo | Strategic direction | Downward | Azmain | Programme structure | Set the six-workstream architecture and programme vision | Strong | High |
 | 2026-01-07 | BenVH | Technical authority | Lateral | Azmain | Deployment architecture | Defined AWS deployment approach; Azmain defers on all infra decisions | Strong | High |

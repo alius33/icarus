@@ -62,3 +62,9 @@
 | 2026-03-06 | Catherine as governance ally | Political | High | 2026-03-06 | 1 | New (positive) | "Speaking my love language" | High |
 | 2026-03-06 | April grads arriving | Resource | Medium | 2026-03-06 | 2 | New | N/A | Medium |
 | 2026-03-06 | App Factory governance board | Governance | Medium | 2026-03-06 | 2 | New | N/A | Medium |
+| 2026-03-09 | Cross-department enablement (Sales) | Strategy | Medium | 2026-03-04 | 3 | Rising | N/A | High |
+| 2026-03-09 | Salesforce/SPM data access | Technical | Medium | 2026-03-04 | 3 | Rising | N/A | High |
+| 2026-03-09 | CSM adoption friction | Adoption | High | 2026-01-26 | 10+ | Escalating | "It's been four weeks, and you're an adult" | High |
+| 2026-03-09 | CLARA deployment maturity | Technical | Medium | 2026-01-19 | 8+ | Stable | Cat Accelerate "wild west" comparison | Medium |
+| 2026-03-09 | Databricks Risk Data Lake deprecation | Technical | Low | 2026-03-09 | 1 | New | N/A | Medium |
+| 2026-03-09 | Advisory project portfolio visibility | Governance | Low | 2026-03-09 | 1 | New | Diana: "this is a shit show" | Medium |

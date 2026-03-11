@@ -77,3 +77,6 @@
 | 2026-03-06 | Chat with BenVH | Personnel | 6.2 | 6 | 5 | 7 | 6 | N/A | BenVH, Azmain | Medium |
 | 2026-03-06 | Chat with Chris | Onboarding | 6.8 | 7 | 6 | 7 | 7 | N/A | Chris, Azmain | Short |
 | 2026-03-06 | Pre Gainsight Team Meeting | Strategy | 8.0 | 8 | 7 | 8 | 9 | N/A | Richard, Azmain, BenVH, Chris, Catherine | Medium |
+| 2026-03-09 | Advisory call | Status | 5.5 | 4 | 6 | 7 | 6 | N/A | Arno, Eddie, Diana, Azmain, Prashant, Philip, Jack, Jacob, Camila, Courtney | Medium |
+| 2026-03-09 | Sales dashboard call with Juliet | Discovery | 6.8 | 6 | 7 | 7 | 7 | N/A | Richard, Azmain, Juliet Valencia | Short |
+| 2026-03-09 | Bug fixes chat with Chris M | Technical | 7.5 | 8 | 8 | 7 | 7 | N/A | Azmain, Chris | Medium |

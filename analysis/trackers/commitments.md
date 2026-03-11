@@ -67,3 +67,6 @@
 | 2026-03-06 | Catherine | Set Salesforce agenda for Thursday Gainsight call | 2026-03-12 | Before Thursday | Open | Pre Gainsight Team Meeting | High |
 | 2026-03-06 | Catherine | Help design App Factory governance/decision tree | 2026-03-20 | None | Open | Pre Gainsight Team Meeting | High |
 | 2026-03-06 | Azmain | Adapt CLARA architecture to fit Gainsight | Ongoing | None | Open | Pre Gainsight Team Meeting | High |
+| 2026-03-09 | Juliet Valencia | Connect Richard/Azmain with SPM team for data access | Next week | Dan confirms data source | Conditional | Sales dashboard call with Juliet | High |
+| 2026-03-09 | Richard | Share skills repo and prompt library with Juliet | End of week | None | Open | Sales dashboard call with Juliet | Medium |
+| 2026-03-09 | Chris | Push date input fix through full pipeline | This week | Tests pass | Conditional | Bug fixes chat with Chris M | High |

@@ -1,0 +1,228 @@
+Azmain Hossain  0:02  
+Hi Azmain, hi Juliet. Thank you so much for making the time. Sorry, sorry, we had to move the call kind of last minute. That's okay. Let's just give a minute for for Richard to join the
+
+Unknown Speaker  1:46  
+he said he's running over from a previous meeting.
+
+Azmain Hossain  1:50  
+I think so. Let me. Let me just message him.
+
+Unknown Speaker  1:54  
+Oh, he sent. He said that he message. Do you know what this is about?
+
+Azmain Hossain  2:02  
+I know, yeah, I know roughly, because we, we spoke to Dan Flemington about some AI workflows that he's working on, and then he kind of pointed us towards you to kind of discuss the data side of it. Okay, let me just check rich hasn't messaged. Let me just confirm i
+
+Richard Dosoo  2:45  
+Hey, Julia, apologies. I was on another call that ran over and how are you Nice to meet you. Nice to meet you. Sorry. It's, I haven't got my camera on, but I'll switch on momentarily, Julia, I guess, in terms of just context, like, what, what? Where the conversation started. Myself and Azmain work with Dan and the insurance so you we work on we're in the customer success team, but we obviously work quite a lot with Dan and the sales organisation on opportunities, on pre sales opportunities, and helping drive IRP adoption platform sales. Well, we met with Dan last week to actually just walk through some, essentially some we were trying to get him up and running on cursor, because we've been doing a lot with it in our group for productivity improvements, and we were just sharing some scripts with Dan to get up and running during that conversation, Dan actually had got quite made much more progress than what had made much more progress than we had initially thought, and he'd actually built out a process that ingests data from sdfc into one of his applications, and also generates a report, which is amazing, right? We didn't have no idea and got that far, but the process that he's got is quite is semi consummated, ie, he takes a report from yourself, and then He then puts that in a folder, then he runs his application, then it generates the report. What we were talking about of him last week is we said, if we have the right access, we could completely automate that workflow for him, or we could show him how to do it, and then that way, he could be pulling the data directly into his application and running the reports and running them more frequently. And that's why Juliet, he suggested reaching out to you, because he said you're you essentially prepare that report for him, and you may know the list of fields that come out of that report, and then we could then figure out if there was a way for us to get programmatic access to that data, like API access to that data, so we could fully integrate and automate the workflow.
+
+Speaker 1  4:55  
+Do you have an example of what report he's saying? Because. Is the one you show me. It comes from SPM team.
+
+Richard Dosoo  5:05  
+So, okay, I don't think he sent me the example. He just showed it.
+
+Azmain Hossain  5:10  
+Yeah, he didn't send us what he's built. Okay, we can,
+
+Speaker 1  5:15  
+because I don't send, I don't send him anything. What I he showed me his cursor input, and what I've seen is, is the data from SPM, which is a separate team from me. I know how to get the data, but it's not my data, so I wouldn't feel good by sharing the data with you. So I will need to check, if we can check exactly what report he's using, which I think is, we call it Tableau. It's Tableau. I can connect you with the SPM team, because you see SPM team that owns the data, and it's in Databricks.
+
+Richard Dosoo  5:54  
+And, yeah, that's we've got Databricks environment as well. So we can, if, Juliet, you can make that introduction. That'll be really helpful.
+
+Speaker 1  6:04  
+Let's, let's first just make sure which report it is, because maybe it's my report. I do update. I've got a lot of Power BI dashboards, and our data is sales data, but from what I have seen, Dan uses a different set of data. So let's just figure out what data Dan is using, and then if it's me or if it's SPM, we can handle that. And for me, I will have to ask as well, because there's a restriction on security on who can access the data. So yes, if you can figure out which data he's using, and then we can take it from
+
+Richard Dosoo  6:44  
+them other than I'll reply to him. Now, actually, while I've got you on the phone, just to make sure we've got the terminology correct.
+
+Speaker 1  6:51  
+So everybody thinks everything comes from me, but it doesn't I.
+
+Richard Dosoo  7:06  
+Yeah, we need access to more than Tableau extracts,
+
+Speaker 1  7:10  
+yeah, but it's probably the data of Tableau that he's talking about,
+
+Richard Dosoo  7:16  
+yeah, to see if the forced on the best mean to tap into sfds, they would be consolidation price. So I guess, given that context, right, let me just write this.
+
+Speaker 1  7:41  
+I can just watch teams, teams, message him on teams, and ask him if he is the tableau data he needs.
+
+Unknown Speaker  7:49  
+Okay, let me do that right now. Yeah,
+
+Speaker 1  7:52  
+might be easier. He's out of office as well. Are you all on the Connect thing?
+
+Richard Dosoo  7:58  
+We're not, but I know Dan is there in Vienna, which is why Julie, I don't think we're going to get a response from him until he gets back next week, because those guys, they're going to be all tied up. Look, I'm going to
+
+Speaker 1  8:14  
+check who I need to introduce you to for SPM side, so that I can advance on that. And as soon as we have the reply, we can, we can, I can make the introduction.
+
+Unknown Speaker  8:25  
+Okay, cool. Let
+
+Speaker 1  8:27  
+me so, yeah, we just need to ask him, is this the is it the underlying data of Tableau that you're looking for? Which I think it is, because the SPM, so, just for contest, SPM, data slash Tableau has information at rep level and manager level, while my data doesn't have that level of detail. So if Dan wants to see how his team is performing against targets and all that, that's more Tableau data.
+
+Richard Dosoo  8:56  
+Yeah, I think it's the granular data is what he's after. But let me just send this mission now. So here. Dan, yeah,
+
+Unknown Speaker  9:41  
+let me just bring this up.
+
+Speaker 1  10:04  
+And no, no, not the so we assume it's the details from Tableau, not the sales hub extract data, yeah, sales hub, sales hub. Slash sales update, yeah, extract, yes.
+
+Unknown Speaker  10:28  
+Is that? Is that the correct terminology?
+
+Speaker 1  10:30  
+Yeah, yeah, the sales hub is the dashboard that I managed
+
+Richard Dosoo  11:17  
+I'll tidy this up the way. I'll let Smith this in a sec.
+
+Richard Dosoo  11:29  
+Um, okay, so Julia, I'll, I'll message Dan, and hopefully, if he comes back, great, if not, we can pick it up next week when he's back. I guess, just for context, what, we're probably going to do is, and Dan's running his app locally right now, which is great, but he's expressed interest in wanting to deploy it to an environment, and that's what me and Azmain have really been looking at, where you can host the application and, you know, give put user access controls in it, and give access to a wider group of people. So for us to do that, that's why we need the that's that's why we need the API access if we're going to post the data somewhere and fully automate the workflow.
+
+Unknown Speaker  12:09  
+So would you do it in with copilot or with what?
+
+Richard Dosoo  12:13  
+Oh no, we're going to build the app with cursor, and then we will deploy it to an AWS environment. Okay, so that's what we've been doing in customer success, and we've got some dedicated infrastructure to host these applications. Azmain has been and the team have been, like immense at building out that infrastructure, and now we've got to a place where the infrastructure is quite automated, so we can essentially deploy many apps on there. We just have to add more more compute resources. So that's where the it saves down having to go and set up his own environment, go and create some deployment code, go and spin all of that stuff is already done. He just needs to bring his application and you deploy it basically, yeah.
+
+Speaker 1  12:59  
+Okay, good. Just got reply from the SPM team, so whenever that confirms, I'm gonna send you the names of the people you need to request access. So yeah, you would send an email to these persons, because they need to keep track of all the teams who have access to the data.
+
+Richard Dosoo  13:21  
+Yeah, no, it makes sense. So I'll send this over to Dan shortly, and then, I guess, more specifically, Julia Ben Dan had also mentioned that you use cursor quite heavily as well in your to build out some of your dashboards. Is that? Yeah? So what we can do is, I think I think I invited you to another channel where some of us are collaborating and sharing ideas and scripts and so, in terms of, is there anything that has a way to phrase this? So we have a lot of we've built up a lot of collateral now within the team about, for example, what's a good prompt that helps you create a user interface? What's a good prompt that helps you create a workflow to an issue? What's a good prompt that helps you create an interactive dashboard? We've, we've, we started to collect this information, share it amongst the group. Is that helpful? If we set up a session with you to go over some of those insights and some of those prompts that we've had, or are you, are you pretty good with with the information that you already have?
+
+Speaker 1  14:27  
+No I'm always looking forward to learn, but we definitely should have, like a GitHub repository or team where we can share all that rather than sending files on teams.
+
+Richard Dosoo  14:41  
+So I don't think I've added you to this group. Let me see if I can add you there.
+
+Speaker 1  14:46  
+Now, I am on one group. I didn't territor, authentic tooling for customers success.
+
+Richard Dosoo  14:54  
+That's right. So what we're going to do is we've got, we've got a couple of different repos. At the moment, but we've got one which has got all the skills that were in there. So what I'll do is I'm gonna I just need to prepare some like slides to help talk people how the repo works, and a readme, so I can share that repo with you and with everyone in that group, and then we can follow up if you've got questions on any of these skills or the prompts or the setup stuff that can help you get up online. Yeah, okay, thank you. No, thank you. So let me send that message over to Dan. No, I've sent it now. Yeah, you have so, yeah, hopefully we get that going, and then once we hear back from Dan, we can definitely revisit the conversation about access, and then I'll also then send you the repo at the end of this week with the skills. And it's meant to be like, the skills are going to grow, right? Because we're only getting the group like it's we have people within our OU that are going to contribute to the library, but there's people outside our OU that are also going to contribute to the library as well. Sounds great, awesome. All right. Well, Juliet, thanks again. Sorry about the impromptu meeting. It was just last week. Was very busy, so I didn't get to catch up with you on this then, but hopefully Dan responds, and then we can figure out what the next steps are. We can talk about what it means to get access to this data and update Dan's application.
+
+Speaker 1  16:17  
+Yeah, I'm already putting who you need to contact if Dan is looking for SPM data,
+
+Richard Dosoo  16:22  
+okay, perfect and Juliet, what office do you go into? Do you go into Canary Wharf?
+
+Speaker 1  16:27  
+Very little. No, I stay at home. No worries. No worries. Yeah, I like working from home. Where are you based? Near London, in Loudon, Essex, yeah,
+
+Richard Dosoo  16:42  
+I grew up in Newbury Park, so I know louder very well. I spent a lot of time there as a kid. But no, if you do end up coming in, definitely let us know, and then we can meet in person as well. Okay, sounds good. Awesome. Thanks.
+
+Azmain Hossain  17:00  
+Hey, Azmain, can you hear me? Hey, man, yeah, yeah. Sorry.
+
+Richard Dosoo  17:05  
+I'm hustling on a lot of these different fronts, right? But
+
+Azmain Hossain  17:09  
+this, this Dan Flemington stuff, just kind of came out of nowhere. It's not part of anything that we're existing, doing what I wanted, obviously, I want to track this as well the work that we're doing exactly? It's like a little thing, right? It's not a full flesh project, or not yet, at least unless it starts expanding massively.
+
+Richard Dosoo  17:33  
+But this is it, right? The like, we're not gonna this isn't gonna land on me and your plate. This is going to land on like Ben. Is going to say our Ben, not Matt Dutch, Ben, the dad, needs to bring a resource to help him with this, right? We can do the initial enablement, but he needs to bring like a he needs to go and get an analyst from the analyst pool to keep, to keep doing updates. But from our perspective, we're just enabling them and giving them the onboarding onto the platform, right? So onto the app factory, so not platform. And then once they slash, onboarded onto the app factory, Ben will handle the integration, because the integration will be generic, right? So people don't figure, I have to figure out how to do it all themselves. And then once that's done, then Dan's another stakeholder that is cool with the approach that we're taking. And the reason why I'm doing this kind of like, it's like, it gets more like, not visibility, but it kind of demonstrates that, not cross ou, but cross department, like, efficiencies that we're getting out of this, and that helps build the case that Ben is trying to push dia for to get a solid team behind this of dedicated
+
+Azmain Hossain  18:37  
+people. Yeah. Oh, man, that would be the dream. Yeah.
+
+Richard Dosoo  18:41  
+So that's basically what Ben is pushing for. And this just helps, like, it's not, it's not, like, just for the sake of it, it just, you know, I mean, like, that's why we got these asset manager guys we want to talk to. Got a life guys, it puts it, makes putting
+
+Azmain Hossain  18:55  
+it into context. Because I was just like, oh, there's so many things. It's like, it's growing, it's growing octopus legs and reaching out. But now I can, like, all these cross ou stuff. Basically, I'm, I'm building, you know, I built that project management tool. I'm going to use it to run this gen AI stuff. So I wanted to bucket all of this stuff under something, and now I know it's under cross. You collaboration.
+
+Richard Dosoo  19:22  
+Yeah, exactly. And we've got one. This is with sales. We got one with the banking team that dia, you haven't seen the thread yet, so, bro, the reason why dia set up the thread, and it's but Dio and Mena, right? So dira, Mina appears right. Diaz for cutting insurance, menas for banking. Dio was like, you not need to speak to this my team, they're doing all this stuff, yeah. So she then used for a meeting right with the banking people. So that's tomorrow, right? So we got banking, we got sales, we got asset management, we got these guys in Singapore. Do you see what I'm saying? Like now? So we've got life, if that's not enough of a reason, right? For. Up there to solidify this with a proper team and a proper mandate with proper resources, then, do you know what I mean?
+
+Azmain Hossain  20:05  
+Oh, man, you're, you're, you're speaking my dreams. Is there any chance I could be a fly on that wall for the
+
+Unknown Speaker  20:13  
+due to the meeting tomorrow?
+
+Azmain Hossain  20:15  
+Have you Sorry, that's my mistake. Let me just check, actually, while I'm checking, so is this the AI efficiency group? Nope, that's not it. Yeah, that's it. That's it. Oh, that's Gina me and, okay, one question, so MENA is Dias counterpoint in banking, but Idris reports up to Irena. Where does IRENA sit?
+
+Richard Dosoo  20:46  
+Irina sits one in between. Irena reports into manna.
+
+Azmain Hossain  20:49  
+Oh, okay, okay, okay, understood.
+
+Speaker 2  20:53  
+See what I'm saying, right? Irina is like Ben MENA is like Dio,
+
+Azmain Hossain  20:57  
+yeah, yeah, makes sense.
+
+Richard Dosoo  21:01  
+All right, so this is that's basically, like, the, I think it's gonna happen, bro, like, obviously, I'm pushing for it, but I think it's gonna happen. We and if it happens,
+
+Azmain Hossain  21:12  
+it's a bunch of effort. I'm just so I feel really bad that a it's like your first year of fasting and everything is going crazy, and it's like your body is breaking down.
+
+Richard Dosoo  21:24  
+It's second year, bro, for our second last year was the trial run. This year is the main event. Man, so it's cool. Man, 10, there's even bro, it's all good. Man, Alhamdulillah, bro. We awkward. We get to do this stuff in it. So yeah, just gotta be grateful for the family.
+
+Azmain Hossain  21:38  
+I always like when I get exhausted and stuff. I'm always just like, I show gratitude, and I'm like, how lucky I am to be exhausted by the life I once dreamed of,
+
+Richard Dosoo  21:48  
+bro, this, this is it, man. Like, we just, like, it's test you, not people that Allah doesn't care about don't get tested. You just get to go and do whatever you want. No one gives a shit.
+
+Azmain Hossain  21:58  
+Wow, to really like me.
+
+Richard Dosoo  22:02  
+Well, all the tests, man, that's it. Your rank get elevated. That's what one of my friend's sister was telling me. She was like, imagine how much higher your rank is going to be in Jannah because of all the trials and tribulations that you had to go through. She was like, you just got to not give up. You just got to keep moving
+
+Azmain Hossain  22:16  
+through it. That's it, man. And I'm, I'm here, like, oh man. I'm like, I'm slowly trying to convert. Prashant, like, he's getting into it. Like, the more I talk, he's like, may you talk to me like this for three more months? I'm gonna, I'm gonna convert. Yeah, no, I hope your fault is doing all right. Like, I can't. I've had, I don't know where your pain is, but like, I said, I've had, like, broken ankles and stuff. God, it's nightmare.
+
+Richard Dosoo  22:48  
+Yeah, nice this. The thing was, I that's my own fault. Like, I had a diet. I broke my toe last year before last. I've got, like, really bad, like, diabetic ulcers. It went in a bone. It's okay, just to heal. It healed up. And then I was like, I'm gonna start running again, because I'm gonna fucking run. So excuse my language. And then I was running. And then it got worse. And then I healed up again. And then I was like, I'm gonna start running because I can run. And then it happened again. So the doctor was like, Are you gonna stop running now? And I was like, so that's basically it, man. I just need to take my ego out of it and just be cool. I'm going to be Motta, I'm going to be fat, and just That's it. So smile.
+
+Azmain Hossain  23:29  
+It happened to my best mate as well. He was properly into, like, bodybuilding, and then he busted out his knee doing so much power lifting. It healed. He went back to it. It healed. He went back to it until the doctor was like, stop picking up heavy things. Just be fat.
+
+Richard Dosoo  23:46  
+Or this is the thing, man, you gotta like, basically, you gotta like, yeah, you gotta take your ego out of it, cuz your ego put you in there, right, check your ask out cash. That's what they used to say in the old days. Man, so good.
+
+Azmain Hossain  24:04  
+Man, yeah, man, the Take care of yourself. It's good that you're staying home all this week. Yeah, you need all the rest that you can get 100%
+
+Richard Dosoo  24:14  
+but yeah, I'm going to spend a bit more time today, just getting a bit more organised about all this stuff so it's less chaotic. And we'll reply to, I'll get, I see Liz was talking and all this stuff. But we'll put together, like, a, like, right? We're going to do a build for Clara next week. We're going to do, you know, I'll lay, I'll just get create a bit of space so we can think through some of this stuff.
+
+Azmain Hossain  24:36  
+Yeah, yeah. And it gives me time to get everything done as well. Like me, I've got, yeah, I've got so much notes and transcripts of calls and handwritten bits and bobs that I just need to organise. That's why I'm I'm just staying away from the Clara work, anything small. I'm giving it to Chris. I'm like, Hey, test it out before you push it. Yeah, I just need some brain space to think. Cool.
+
+Richard Dosoo  24:59  
+No. Absolutely, let's use that, and then we'll catch up more tomorrow.
+
+Azmain Hossain  25:02  
+Yeah, I'm gonna join this advisory call, because Diana is like, this is a shit show, please. Can you join and see what I'm dealing with? So I'm like, okay,
+
+Speaker 2  25:09  
+yeah, no, I'll get all good, no worries, and then we'll catch up more later.
+
+Azmain Hossain  25:13  
+Yeah, yeah. Take care. Speak soon. Bye, bye. But.
+
