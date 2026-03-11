@@ -30,6 +30,7 @@ services:
       CORS_ORIGINS: '["http://localhost:3000","http://localhost:3001"]'
     volumes:
       - .:/data:ro
+      - ./Transcripts:/data/Transcripts
       - ./backend/app:/app/app
       - ./backend/scripts:/app/scripts
       - ./backend/alembic:/app/alembic

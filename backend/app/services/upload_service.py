@@ -7,12 +7,15 @@ with in-memory file bytes rather than filesystem paths.
 """
 
 import hashlib
+import logging
 import re
 from datetime import datetime
+from pathlib import Path
 
 from sqlalchemy import delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.config import settings
 from app.models.stakeholder import Stakeholder
 from app.models.transcript import Transcript
 from app.models.transcript_mention import TranscriptMention
@@ -23,10 +26,29 @@ from scripts.parsers.transcript_parser import (
     _parse_date_and_title,
 )
 
+logger = logging.getLogger(__name__)
+
 
 def _compute_hash(content_bytes: bytes) -> str:
     """Compute SHA256 hash of raw bytes."""
     return hashlib.sha256(content_bytes).hexdigest()
+
+
+def _save_to_filesystem(filename: str, content: str) -> None:
+    """Write transcript to Transcripts/ directory on disk.
+
+    This ensures uploaded transcripts are available on the host filesystem
+    for offline analysis by Claude Code. Failures are logged but never
+    raised — the DB is the primary store.
+    """
+    transcripts_dir = Path(settings.DATA_ROOT) / "Transcripts"
+    try:
+        transcripts_dir.mkdir(parents=True, exist_ok=True)
+        filepath = transcripts_dir / filename
+        filepath.write_text(content, encoding="utf-8")
+        logger.info("Saved transcript to filesystem: %s", filepath)
+    except OSError as e:
+        logger.warning("Could not save transcript to filesystem: %s", e)
 
 
 async def _rebuild_mentions_for_transcript(
@@ -193,6 +215,8 @@ async def process_uploaded_transcript(
         await _rebuild_mentions_for_transcript(db, existing)
         await db.commit()
 
+        _save_to_filesystem(filename, content)
+
         return {
             "status": "updated",
             "id": existing.id,
@@ -218,6 +242,8 @@ async def process_uploaded_transcript(
         # Rebuild mentions for this transcript
         await _rebuild_mentions_for_transcript(db, transcript)
         await db.commit()
+
+        _save_to_filesystem(filename, content)
 
         return {
             "status": "inserted",

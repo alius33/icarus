@@ -60,7 +60,7 @@ Read ALL of these files into memory before any analysis begins. Read them in par
 12. `analysis/trackers/risk_register.md`
 
 **Projects:**
-13. Read all project data. Try `GET /api/projects` if backend is running, otherwise scan `analysis/projects/` directories. For each project, need: name, slug, description, keywords, linked workstream, key stakeholders. Store as a lookup table for project segmentation.
+13. Read all project data. Try `GET /api/projects` if backend is running, otherwise scan `analysis/projects/` directories. When running without a local backend (e.g., Railway-deployed workflow), project data is loaded from filesystem only — this is fine. For each project, need: name, slug, description, keywords, linked workstream, key stakeholders. Store as a lookup table for project segmentation.
 
 If any tracker files are missing, create them with empty table headers as shown above.
 

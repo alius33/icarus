@@ -518,6 +518,37 @@ Frontend displays everything via API
 
 ---
 
+## Railway Deployment Workflow
+
+The app is deployed on Railway (auto-deploys from GitHub). Analysis runs locally without a database — Railway handles the DB import automatically on every deploy.
+
+### How it works
+
+```
+LOCAL (no database needed):
+  git pull                                    ← get latest code
+  Copy .txt files into Transcripts/           ← add new transcripts
+  /analyse-deep                               ← Claude Code runs full analysis
+  git add Transcripts/ analysis/ context/     ← stage all changed files
+  git commit -m "Analysis: [date] transcripts"
+  git push                                    ← push to GitHub
+
+RAILWAY (automatic on every deploy):
+  GitHub push triggers auto-deploy
+  Docker rebuilds → COPY Transcripts/, analysis/, context/ into container
+  alembic upgrade head                        ← run migrations
+  python -m scripts.import_data               ← import all markdown into PostgreSQL
+  uvicorn starts                              ← serve updated data via API
+```
+
+### Key points
+- **No local database needed** for analysis. The `/analyse-deep` command detects new transcripts by comparing filenames (`Transcripts/*.txt` vs `analysis/summaries/*.md`), loads context from markdown files, and writes output to markdown files. Purely filesystem-based.
+- **Railway import is automatic.** The `Dockerfile.railway-backend` startup command runs `import_data.py` on every deploy, which reads all markdown files and upserts them into PostgreSQL (idempotent via SHA256 hash dedup).
+- **Commit everything.** After analysis, stage `Transcripts/`, `analysis/`, and `context/` — these all need to be in the repo for Railway to pick them up.
+- **Import covers all entities:** transcripts, summaries, weekly reports, action items, decisions, open threads, stakeholders, workstreams, commitments, risks, contradictions, meeting scores, influence signals, topic signals, sentiments, and transcript mentions.
+
+---
+
 ## Transcript Naming Convention
 
 Transcripts use two date formats (both are valid):
