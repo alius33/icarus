@@ -71,6 +71,13 @@ async def _build_project_base(project: Project, db: AsyncSession) -> ProjectBase
     )
     counts = dict(count_result.all())
 
+    # Count project summaries from the dedicated table (not ProjectLink)
+    ps_count_result = await db.execute(
+        select(func.count(ProjectSummary.id))
+        .where(ProjectSummary.project_id == project.id)
+    )
+    ps_count = ps_count_result.scalar() or 0
+
     return ProjectBase(
         id=project.id,
         name=project.name,
@@ -82,7 +89,7 @@ async def _build_project_base(project: Project, db: AsyncSession) -> ProjectBase
         workstream_id=project.workstream_id,
         workstream_code=ws_code,
         transcript_count=counts.get("transcript", 0),
-        summary_count=counts.get("summary", 0),
+        summary_count=ps_count,
         decision_count=counts.get("decision", 0),
         action_count=counts.get("task", 0) or counts.get("action_item", 0),
         open_thread_count=counts.get("open_thread", 0),

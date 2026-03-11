@@ -1783,15 +1783,22 @@ _PROJECT_KEYWORDS: list[tuple[str, str]] = [
 
 
 async def build_project_links(session: AsyncSession, verbose: bool) -> dict:
-    """Create ProjectLink entries for decisions, tasks, and open threads.
+    """Create ProjectLink entries for transcripts, summaries, decisions, tasks,
+    and open threads.
 
-    Uses two strategies:
-      1. Tasks: match context field (transcript filename) → transcript →
+    Strategies:
+      1. Transcripts: keyword match on title → set primary_project_id + ProjectLink
+         + create ProjectSummary entries from linked Summary content.
+      2. Tasks: match context field (transcript filename) → transcript →
          primary_project_id.  Also sets task.project_id directly.
-      2. All entity types: keyword match on title/description text.
+      3. Decisions & threads: keyword match on title/description text.
     """
-    stats = {"task_links": 0, "decision_links": 0, "thread_links": 0,
-             "task_project_ids": 0}
+    stats = {
+        "transcript_links": 0, "transcript_project_ids": 0,
+        "project_summaries": 0,
+        "task_links": 0, "decision_links": 0, "thread_links": 0,
+        "task_project_ids": 0,
+    }
 
     # Load project name → id mapping
     p_result = await session.execute(select(Project.id, Project.name))
@@ -1834,17 +1841,98 @@ async def build_project_links(session: AsyncSession, verbose: bool) -> dict:
         ))
         return True
 
-    # --- Build transcript stem → primary_project_id lookup ---
-    t_result = await session.execute(
-        select(Transcript.id, Transcript.filename, Transcript.primary_project_id)
-        .where(Transcript.primary_project_id.isnot(None))
+    # --- Transcripts: keyword match on title + summary content ---
+    all_transcripts_result = await session.execute(
+        select(Transcript.id, Transcript.title, Transcript.filename,
+               Transcript.meeting_date, Transcript.primary_project_id)
     )
-    transcript_rows = t_result.all()
+    all_transcripts = all_transcripts_result.all()
+
+    # Pre-load summaries keyed by transcript_id
+    summary_result = await session.execute(
+        select(Summary.transcript_id, Summary.content, Summary.source_file, Summary.file_hash)
+        .where(Summary.transcript_id.isnot(None))
+    )
+    summary_by_transcript: dict[int, tuple] = {}
+    for row in summary_result.all():
+        summary_by_transcript[row.transcript_id] = (row.content, row.source_file, row.file_hash)
+
+    # Track transcript → project mappings for task linking later
+    transcript_to_projects: dict[int, set[int]] = {}
+
+    for t in all_transcripts:
+        # Build search text from title + summary content
+        search_text = t.title or ""
+        summary_data = summary_by_transcript.get(t.id)
+        if summary_data:
+            # Also search first ~500 chars of summary for keywords
+            search_text += " " + (summary_data[0] or "")[:500]
+
+        project_ids = _match_projects_by_keywords(search_text)
+        if not project_ids:
+            # Fallback: try matching on filename
+            fname = Path(t.filename).stem if t.filename else ""
+            project_ids = _match_projects_by_keywords(fname.replace("_", " ").replace("-", " "))
+
+        if not project_ids:
+            continue
+
+        transcript_to_projects[t.id] = project_ids
+
+        # Set primary_project_id if not already set
+        if not t.primary_project_id:
+            primary_pid = next(iter(project_ids))
+            await session.execute(
+                Transcript.__table__.update()
+                .where(Transcript.id == t.id)
+                .values(primary_project_id=primary_pid)
+            )
+            stats["transcript_project_ids"] += 1
+
+        # Create ProjectLinks for transcripts
+        for pid in project_ids:
+            if await _ensure_link(pid, "transcript", t.id):
+                stats["transcript_links"] += 1
+
+            # Create ProjectSummary entry if a summary exists
+            if summary_data:
+                content, source_file, file_hash = summary_data
+                ps_check = await session.execute(
+                    select(ProjectSummary.id).where(
+                        ProjectSummary.project_id == pid,
+                        ProjectSummary.transcript_id == t.id,
+                    )
+                )
+                if not ps_check.scalar_one_or_none():
+                    # Extract key points as summary content
+                    key_points = _extract_key_points(content) if content else ""
+                    if not key_points:
+                        key_points = (content or "")[:300]
+                    session.add(ProjectSummary(
+                        project_id=pid,
+                        transcript_id=t.id,
+                        date=t.meeting_date,
+                        relevance="MEDIUM",
+                        content=key_points,
+                        source_file=source_file,
+                        file_hash=file_hash or "",
+                    ))
+                    stats["project_summaries"] += 1
+
+    await session.flush()
+
+    # --- Build stem → project lookup (now includes newly linked transcripts) ---
     stem_to_project: dict[str, int] = {}
-    for row in transcript_rows:
-        stem = Path(row.filename).stem.lower() if row.filename else ""
-        if stem and row.primary_project_id:
-            stem_to_project[stem] = row.primary_project_id
+    for t in all_transcripts:
+        stem = Path(t.filename).stem.lower() if t.filename else ""
+        if not stem:
+            continue
+        # Use primary_project_id or first matched project
+        pid = t.primary_project_id
+        if not pid and t.id in transcript_to_projects:
+            pid = next(iter(transcript_to_projects[t.id]))
+        if pid:
+            stem_to_project[stem] = pid
 
     # --- Tasks: link via context (transcript filename) + keywords ---
     task_result = await session.execute(select(Task))
@@ -2037,8 +2125,11 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
         elif entity == "project_seed":
             print(f"  Project seed: {stats['created']} created, {stats['existing']} existing")
         elif entity == "project_links_built":
-            print(f"  Project links: {stats['task_links']} task, {stats['decision_links']} decision, "
-                  f"{stats['thread_links']} thread | {stats['task_project_ids']} task project_ids set")
+            print(f"  Project links: {stats['transcript_links']} transcript, {stats['task_links']} task, "
+                  f"{stats['decision_links']} decision, {stats['thread_links']} thread")
+            print(f"  Project attribution: {stats['transcript_project_ids']} transcript IDs set, "
+                  f"{stats['task_project_ids']} task IDs set, "
+                  f"{stats['project_summaries']} project summaries created")
         elif entity == "workstreams":
             ws = stats["workstreams"]
             ms = stats["milestones"]
