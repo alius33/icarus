@@ -1,0 +1,195 @@
+Richard Dosoo  0:00  
+Management coming. Yes, okay, but Idris is the only person who's going to be there from banking, right? Unless he says he wants someone from Canary Wharf to come over to Mr. Court, yeah. And then it's really the people that were
+
+Azmain Hossain  0:14  
+Idris is going to join remotely, or is he going to be in London?
+
+Richard Dosoo  0:18  
+No, no, he's going to join remotely. Yeah, yeah. Okay, he's not travelling next week, bro, is he next week? He ain't gonna know it.
+
+Azmain Hossain  0:24  
+Yeah, my plan was not to come to the office next week, but I will,
+
+Richard Dosoo  0:29  
+nah, listen, I'm only if we do this on Wednesday. I'm only going to come in for that. I'm not going to come in any other day next week. Yeah, yeah, yeah. And again, the reason I want to do this is because I want, I want Ben to launch the app factory in that meeting with those guys, with the senior people, yes, and this thing cuts out all the bullshit, all the back channel, all the other crap that people are trying to do here.
+
+Azmain Hossain  0:55  
+That's it. I feel like, for senior leadership, when you're looking at things strategically, you don't care about the individual apps and shit. You're just like, do you have an invite like a process to do everything in one process, all while maintaining all the rules and safety shit?
+
+BenVH  1:11  
+So, um, what's called, and I think this might be a good segue, Richard, do you mind if I share my screen and show Azmain What we're talking about?
+
+Richard Dosoo  1:19  
+No, 100% guys. I'm just going to grab some I'm just slipping away. But keep going. I'll be back in one minute.
+
+BenVH  1:25  
+Yeah, yeah, perfect. Alright, so let me Where am I? Where am I? Where am I here? Scala, draw, okay, so to simplify everything, basically, app factory will now have a MCP server, yep, that every application will be connecting to. And hold on, let me move this. Or, you know what, I'll copy this, because it'll be the same as Clara and everything like that. So right now, like obviously, LLM agents and stuff like that are running. Every single thing is running in its own ECS service. And obviously it's running in the same task as the application. So basically, anytime that, anytime an application needs anything in any way, shape or form, it just connects to the app factory MCP, and request it. So it's like, okay, I want an AI worker to do this task or whatever. It will just reach out and it'll spin up and it can pass whatever there, and the app factory will give the connection to Clara, or the app in itself. So the communication happens seamlessly. It's just the app factory maintains the lifecycle of that LLM worker, if that makes sense.
+
+Azmain Hossain  2:46  
+So, two questions. One, so this is like in Clara, if we're like, we want, you know, we pulled the bedrock Claude key in, we're like, we wanted to analyse every single blocker, like, basically read all the updates from a customer, then read the blocker and propose a solution that instead of like building out the whole LLM pipeline within Clara, it's just going to throw it to app factory, and app factory is going to manage that request 100%
+
+BenVH  3:17  
+and so all all that ends up happening Is that Clara passes the context and whatever it needs and like it basically it'll just say, hey, I want to do like, hey, I need a LLM worker. That's essentially what it's going to say is, like, I need an LLM worker. Then I return the app factor will return back and says, Here's your here's your LLM worker. Do what you want with it.
+
+Azmain Hossain  3:39  
+Does that make sense? Yeah, that makes sense. And also, if everything is talking to each other through a central place, it solves one of my big worries, which is, how do we get apps to talk to each other? Example, exactly, somebody goes and goes, I want to make an Excel. Sorry, I want to make a PowerPoint on the current status of actual Excel. All the data is in Clara, the process is in slidey. So you just talk through app factory. You build an MD file in Clara, you send it to slidey, and that makes the PowerPoint Exactly.
+
+BenVH  4:14  
+Now that being said, I like if you can write that up and send that to me so I don't forget that, because that's very critical. So enter, enter app communication.
+
+Azmain Hossain  4:29  
+Don't worry, man, I'm recording this. Okay? Send you a summary.
+
+BenVH  4:32  
+Okay, but this way, the goal of it is that every application is inherently dumb as far as the underlying functionality of it all, and it just focuses on what it needs to do, right so. And then every AI worker and everything like that, like these are all, imagine, these are all the ECS services. Each AI worker is spun up in that appropriate ECS service. So we can just. Mean, like, we can control the blast radius of along all those lines. And then, what you call it true, and then, I mean, obviously, for build five, it's like the result of his code creates a PR we can actually have AI agents like this is where, like, the AI agents that are auto healing and stuff like that can all come from the app factory in itself. Oh, yeah, you
+
+Azmain Hossain  5:24  
+don't, yeah, yeah, yeah, because then we don't have to build stuff into individual apps. Man, this is,
+
+BenVH  5:29  
+yeah, exactly cool. So all the everything is in is in one place. And this is why I've been kind of wanting to control everything, because this is and, like, now that I know that is, it's going to be packaged up this way, like we can control the authentication and communication between everything, but it's all in one place. App factory will be aware of the connection of Salesforce maps, IDP, any off an application if it if a user wants to connect to the app factory, MCP, on cursor, they can say, hey, create a I want to create a new app factory project, and it will spin like it can ask questions and spin up the repo for them immediately, and it can include the cursor rules and everything along those lines that we already have pre baked. So that way, if a user is using cursor straight up, they just say, hey, create an app factory project. And boom, done.
+
+Azmain Hossain  6:25  
+Yeah, that makes complete sense, yeah. And it's so
+
+BenVH  6:29  
+now the app factory is one central. Ironically, this is very similar. It's very similar to what I've done with phantom agent,
+
+Azmain Hossain  6:39  
+but it's similar, but, yeah, similar still gonna put it phantom agent
+
+BenVH  6:44  
+for the thing it's built. No, it's fine. It's fine, like phantom so phantom agent, the the correlation with phantom agent is that it phantom agent spins up AI workers anywhere, the crate project, the integration to all of these things, ironically, is another aspect of phantom agent. But either way it like, these are, this is, I mean, this is getting a bigger push anyway, so I don't really care. But, and like, I haven't built these things into phantom agent. I just felt built the LLM worker orchestration in there. But, yeah, basically this is every app, I mean, to the two. It will now be to the truest extent of an app factory. Every, every app goes to the app factory for whatever it needs.
+
+Unknown Speaker  7:29  
+That is it? Yeah.
+
+BenVH  7:32  
+So easy enough. Did you just put SharePoint in there? I mean, rich we were talking Well, I mean, yeah, so Richard, and no
+
+Azmain Hossain  7:40  
+idea how many people have asked me about that. It's like, this is all really cool, but like, I can't take stuff out of SharePoint and put stuff back in SharePoint that literally, yeah, I'm telling you just, like, how everyone we mentioned slidey to drops everything else, and you're like, what? Let's talk about this. If we can tell them that you can pull and push into SharePoint, that's that will be a huge win. Yeah.
+
+Richard Dosoo  8:03  
+So Azmain, the what, I'll be honest, I was thinking about more pulling from SharePoint, right? But you're right, the pushing back in is also important, and that the reason you're saying pulling for SharePoint was I want to put a vector database and MCP server over our SharePoint tag the data, so everyone knows what their data is about, and then slightly integrates with that MCP, right? That's the consultant IP,
+
+Azmain Hossain  8:28  
+the graph API.
+
+Richard Dosoo  8:30  
+Well, it so as you we're using a combination of a couple tools, right? We're going to use the SharePoint API, or the Microsoft Graph API, the SharePoint we then have to tag the information, right? So, for example, in SharePoint, we've got our stuff in folders, but the folder descriptions don't really tell you anything about the file, yeah. So we need to do some like intelligent tagging of that information, and then we need to put like permission, take the SharePoint permissions and use that essentially a master data management tool that can help, like, catalogue all of that information, and once all of that data
+
+Azmain Hossain  9:10  
+is I feel, yeah, so we can't do all of Moody's. That's huge. We could maybe limit no insurance.
+
+Richard Dosoo  9:18  
+When I say all of Moody's, I mean our insurance, like the stuff in our customer success SharePoint site, and basically what we need to do is run some PowerShell scripts to profile every single document that's in every single directory and get essentially the path of where all the documents are. We get that information, we stick it in purview. We then do some intelligent tagging of the information, and we augment everybody using permissions, and then we stick all that stuff in a vector database, and then you do rag or then you stick an MCP server on top of it. So that's the query engine for you to figure out all of our documents, what they are, what they do, and you've got the link to the document. So when someone says, oh. Well, I want to build a underwriting proposal for X right, like Ben does that in slightly rather than the content just coming out of thin air, it can come from material that we've already written.
+
+Unknown Speaker  10:14  
+Does that make sense? Okay, yeah, yeah. I get it now,
+
+Richard Dosoo  10:19  
+and you could take it one step further right where you can take you once you have all that catalogue, if you really want it to this is what Ey and other people have done. It. They train their model on all of that data, not just the tagging, but also the documents. So they fine tune the model that understands every single consulting deliverable they've ever done in the past 10 years. And then all you do is you ask the model a question about a client, a use case, and it knows, right?
+
+Azmain Hossain  10:49  
+I mean, if you guys have that level of, like, all those years and years of information in it, that's that. That's a huge win. I was surprised because, like, I've in legacy movies. I haven't seen anything like that. Everybody just spins up and spins up a new SharePoint site, little things, no.
+
+Richard Dosoo  11:06  
+So we have in the consulting folder. Let me show it to you now. We have all of the projects going back at least the last 10 years, if not longer.
+
+Azmain Hossain  11:15  
+That's amazing.
+
+Richard Dosoo  11:18  
+So and a lot of the stuff's like, it's not catalogue correctly. It's all bullshit, right?
+
+Azmain Hossain  11:23  
+But, but that's the point, yeah, when I, when I got, when Stacy gave me access to the IRP SharePoint, I was like, this is a mess.
+
+Richard Dosoo  11:32  
+So you see here, right? Clients, pre, sales, material, delivery, methodology and solution, architect, services, input. But if you go in here clients, right? Then you have every single client, the client name. Then within here, then you have, like, a project, yeah? So you can, what we need to do, right is we need to you. We need to script out the, essentially, this tree of information, right?
+
+Azmain Hossain  11:58  
+Yeah. Sorry, I'm thinking, I'm in second order. Effects of how much cloud credit is it going to cost to analyse 10 years worth of documents and context?
+
+Richard Dosoo  12:12  
+Well, so that this is it right, we break the problem down into chunks, right? And profiling the data, we don't need a model for that, right? That's PowerShell scripts tagging the data. You don't need a model for that, right? That's, that's, that's, that's purview or MDM functionality. And right now we're just talking about MCP on the top right. So that would then give you the navigation to SharePoint, to know where the document, what the type of document it is, and how to go and find it. Then when you find your document, then you pull that into the model, right, into context. You don't pull the whole entirety of our 10 years everything, okay? Now, what you but the question that you raised is a valid one, right? Which is, if you want to train the model on all of the document, that's then a model training exercise, right? That you need GPUs, you need a you need lots of stuff to
+
+BenVH  13:05  
+do that. No, well, and I mean to that point too, if we need that the I mean, this is quite literally what pandemic does. But we can spin up dynamically, EC, two instances on demand to run things in the background that applications may need if we want to train anything or anything like that. Just think of the MPC MCP server as just the junkie that does all the tasks for all of the applications. Yeah.
+
+Unknown Speaker  13:37  
+Now I was reading this thing. This guy did something the other day about
+
+Richard Dosoo  13:57  
+I'll find the article. I sent it out to you guys the other day, right? But he found a really cheap and effective way to do rag, which kind of everyone is now looking at and saying, Oh, shit, before, yeah, the cost of doing right, you need, you need a really good infrastructure is quite expensive, but you figured out a much cheaper way to do it.
+
+Azmain Hossain  14:15  
+I mean, much cheaper how? Because, like, 100k to 50k is much cheaper, but it's still
+
+Speaker 1  14:22  
+super expensive. Did I send it to you guys in WhatsApp?
+
+Unknown Speaker  14:37  
+Yeah, I sent it to you on WhatsApp. It's here. Oh, let me read
+
+Speaker 2  14:39  
+the notes of this past weekend. Open. Sourced something called on a research with absolutely everyone's wearing.
+
+Azmain Hossain  14:49  
+Reply to it, just saying this, and then I'll have a watch.
+
+Unknown Speaker  14:59  
+Yeah. There you go. This is it. So let me reply back and say this,
+
+Unknown Speaker  15:19  
+yeah, so, let me bring the thing up here, right?
+
+Speaker 3  15:25  
+See who's this auto research project and sending out packaged up. All right, let's see what you said.
+
+Richard Dosoo  15:31  
+Actually, let me just go to the YouTube video that's 20 minutes long, but I'll research this tonight. Basically.
+
+Azmain Hossain  15:38  
+Okay, that that's it would be. It's a nice to have, but all the steps before it is is also massively helpful.
+
+Richard Dosoo  15:48  
+Yeah, as I said, even just cataloguing the data, right? And having data, having a pipeline for when new stuff's added to SharePoint that he ends up in the repository, so everyone can interact with it. But I think that's still even a win, right? Yeah, yeah,
+
+BenVH  16:08  
+but yeah. So, I mean, if, if, if y'all are on board with that, like, I'm, I mean, I'm already working through this right now, and like, so any if we can think of all, what I'll say moving forward is if, if y'all can think holistically of any app, like, Can this process be moved outside of an app? It will go into the the app factory, sorry.
+
+Azmain Hossain  16:37  
+And like, could you, I didn't get that Think of it like that would
+
+BenVH  16:42  
+so like, so don't think of just applications as just like, for example, Clara. So like, let's say there's something that you're making for Clara, but it could also be used in another application. If it can also be used in another application, then it should probably go within the app, factory, MCP server, okay, okay, does that make sense? Yeah. So that way like because increases reusability and it allows us to package this up so other OUs can use this. And I think that will be the biggest selling point in general, to have the ability to have any ou pick up and use this, yeah. And like, then we also solve the issue of, like, if someone wants to make their own app well, and they have access to cursor, for example, they can just, literally, just like any other tool, connect to app factory, MCP server, say, I want to create a project. It asks some general questions and spins it up, and then that way, at the very least, they have a skeleton of the application up and running, not
+
+Richard Dosoo  17:52  
+100% and like Ben, I'm just thinking more like for next week, because obviously there's a lot we're going to do, right? But I thought that what we should just do next week is show the MCP server that has the info that deploys the infrastructure for you, and you can enter it. But then we can just have a slide saying this is what is coming in the MCP server later on. And then we can just lay on the boxes to say, skills, PowerPoint, generation, you know, requirements, database, IP, catalogue essentially, is basically it. And Ben, like, was telling me this about slightly, right? The whole reason why he put it up there was because he was like, people want to generate content. And they're like, I don't know what the I don't have to go to climb on demand, or RM, or whatever. He was like, they just want one place to go and put a slide information in. So slidey is the front end to this perfect so I'm going to work on this. Well, I tell a lie. I'm going to go and eat some fatty biscuits and shit now, but I'm going to work on slightly tonight, do my changes locally Ben, and then once I've tested them, then I've deployed it. But then, yeah, I connect with our band tomorrow, and I want to get this meeting in a calendar for Wednesday, because I really want to use it as the opportunity. It as the opportunity to launch this and get everyone else's buy in, and then we can get the people that we've already met to come to that meeting. We already got customer service people, Azmain, if you can reach out to that Scottish brother that you know, we can get him to come, George to come, like surgical, yeah.
+
+BenVH  19:19  
+And as far as I know we're doing, we're actively doing, like, AI worker, work in all these applications. And each application has its own thing. Um, I'm playing a little catch up at this regard. So what I'll do, like, basically, I'll make it so that it's a very little lift and shift to leverage, the fully leverage the app factory MCP, so that way the LLM workers and stuff will be spun up, and that way we can also control what API keys each app uses and stuff of that nature. So go from there.
+
+Azmain Hossain  19:55  
+Yeah, sorry. Ben, I was just thinking, how can we slide phantom agent? This and get Moody's, um,
+
+BenVH  20:04  
+I mean, like I would,
+
+Azmain Hossain  20:07  
+I'm gonna have a feedback as well. Yeah, that's well
+
+BenVH  20:10  
+like, so the easiest route to be completely honest is like, I built full transparency. I built phantom agent, pretty much designed exactly like this. It already has 99.9% of this thing kind of already built. I don't know if it's going to be a thing that we can easily squeeze in right now, but I will say this, if we can get app factory on, like in people's perv, like in people's like line of sight, the next step I would see. So the big benefit of app factory is governance and the ability to spin up AI agents anywhere. So in theory, the app factory could very easily use phantom agent to spin up AI agents anywhere. So that way, like a security team for Moody's, for example, could very easily control every AI agent across any ou across anything, because they, like everything goes through phantom agent. So like, app factory would just be a MCP client, more or less of phantom agent. And that's ultimately how I would do that. But I don't know right now. I think right now just getting app factory to the point where people say, Okay, we want this, and then if we can get people to listen to us a little bit more, and then, like, yeah. And then, like, frankly, from a governance standpoint, if we can be like, okay, like, I mean, this is an ideal world, but like, app factory could very like, Hold on, I'll share my screen again one second. So, like, Excuse me. So like, there's going to be things that app factory can do, that phantom agent can't, you know, or like, shouldn't anyways, but like, it will, it can do all of these things here. App factories thing will be all of this, whereas the LLM stuff, like the LLM orchestration, so that every application can just request an AI worker and stuff like that. All of that is essentially phantom agent that, if that makes sense, and like and but, yeah,
+
+Azmain Hossain  22:39  
+okay, okay, sorry, guys, I gotta jump off.
+
+BenVH  22:42  
+Yeah, of course.
+
+Richard Dosoo  22:45  
+All good. Azmain, no worries. Just Ben, just while I got you, why didn't you?
+

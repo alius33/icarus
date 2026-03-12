@@ -986,3 +986,30 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 622 | 9 Mar | Update all CLARA date input fields with min=2022 and explicit max | Chris | This week | 2026-03-09_-_bug_fixes_chat_with_Chris_M |  |
 | 623 | 9 Mar | Verify date format ordering (US vs EU) handled correctly by database | Chris | This week | 2026-03-09_-_bug_fixes_chat_with_Chris_M |  |
 | 624 | 9 Mar | Get prod database access for Chris from BenVH | BenVH / Chris | Ongoing | 2026-03-09_-_bug_fixes_chat_with_Chris_M |  |
+| 625 | 11 Mar | Complete App Factory MCP server | BenVH | End of week (14 Mar) | 2026-03-11_-_App_Factory_Standup |  |
+| 626 | 11 Mar | Have direct boundary conversation with Nikhil about repeated overstepping | Richard | This week | 2026-03-11_-_App_Factory_Standup |  |
+| 627 | 11 Mar | Escalate Nikhil behaviour to Ben Brooks | Richard | This week | 2026-03-11_-_App_Factory_Standup |  |
+| 628 | 11 Mar | Set up App Factory Town Hall / Lunch and Learn for wider org visibility | Richard | Next 2-3 weeks | 2026-03-11_-_App_Factory_Standup |  |
+| 629 | 11 Mar | Redirect Nikhil to Salesforce integration or AIG project, away from App Factory | Richard | This week | 2026-03-11_-_App_Factory_Standup |  |
+| 630 | 11 Mar | Set up cross-OU App Factory presentation (Dennis Clement, Dubai, Asia-Pac, banking, life) | Richard | Next 2-3 weeks | 2026-03-11_-_App_Factory_Standup |  |
+| 631 | 11 Mar | Create new GitHub repo for Build in Five (ins-build-in-five naming) | Martin | This week | 2026-03-11_-_Build_in_5_standup |  |
+| 632 | 11 Mar | Create updated Build in Five project plan merging Martin/Nikhil/Elliot workstreams | Azmain | This week | 2026-03-11_-_Build_in_5_standup |  |
+| 633 | 11 Mar | Extend Elliot grad rotation to support Martin on Build in Five | Elliot / Nikhil | This week | 2026-03-11_-_Build_in_5_standup |  |
+| 634 | 11 Mar | Raise AWS account Snow ticket for own infrastructure | Juliet | This week | 2026-03-11_-_Sales_team_apps_in_App_Factory |  |
+| 635 | 11 Mar | Set up AWS infrastructure walkthrough for Juliet (BenVH packaging process) | Richard / BenVH | Next week | 2026-03-11_-_Sales_team_apps_in_App_Factory |  |
+| 636 | 11 Mar | Schedule cross-team Slidey collaboration meeting | Richard | Next Tuesday | 2026-03-11_-_Sales_team_apps_in_App_Factory |  |
+| 637 | 11 Mar | Share PowerPoint generator GitHub repo with Richard | Juliet | This week | 2026-03-11_-_Sales_team_apps_in_App_Factory |  |
+| 638 | 11 Mar | Tidy Salesforce integration design document for Gainsight meeting | Richard | 11 Mar | 2026-03-11_-_Salesforce_Integration_Design |  |
+| 639 | 11 Mar | Check with Courtney and Kevin on specific Salesforce data needs | Richard | Before tomorrow | 2026-03-11_-_Salesforce_Integration_Design |  |
+| 640 | 11 Mar | Follow up with Rhett on ticket/User Voice analysis to avoid duplication | Richard | This week | 2026-03-11_-_Salesforce_Integration_Design |  |
+| 641 | 11 Mar | Write up inter-app communication requirements (CLARA to Slidey flow) | Azmain | This week | 2026-03-11_-_App_Factory_Discussion |  |
+| 642 | 11 Mar | Complete App Factory MCP server for Martin integration | BenVH | End of week (14 Mar) | 2026-03-11_-_App_Factory_Discussion |  |
+| 643 | 11 Mar | Make per-app AI workers easy to migrate to centralized App Factory MCP | BenVH | Ongoing | 2026-03-11_-_App_Factory_Discussion |  |
+| 644 | 11 Mar | Work on Slidey changes and deploy locally | Richard | Tonight (11 Mar) | 2026-03-11_-_App_Factory_Discussion |  |
+| 645 | 11 Mar | Schedule Wednesday meeting for App Factory launch with senior stakeholders | Richard | 12 Mar | 2026-03-11_-_App_Factory_Discussion |  |
+| 646 | 11 Mar | Reach out to George and other CS contacts for Wednesday meeting | Azmain | 12 Mar | 2026-03-11_-_App_Factory_Discussion |  |
+| 647 | 11 Mar | Find Wednesday time slot and send calendar invite for cross-OU meeting | Richard | 12 Mar | 2026-03-11_-_Chat_with_Idrees |  |
+| 648 | 11 Mar | Work on narrative/messaging for cross-OU meeting with Idrees | Richard | Before Wednesday | 2026-03-11_-_Chat_with_Idrees |  |
+| 649 | 11 Mar | Pull Salesforce tickets and qualitative data for AON and send to Idrees | Richard/Azmain | Before Rob's AON meeting | 2026-03-11_-_Chat_with_Idrees |  |
+| 650 | 11 Mar | Loop DIA, MENA, and Irina into cross-OU correspondence | Richard | Ongoing | 2026-03-11_-_Chat_with_Idrees |  |
+| 651 | 11 Mar | Schedule follow-up meeting with Gina Greer (banking) | Richard | Week of 23 Mar | 2026-03-11_-_Chat_with_Idrees |  |

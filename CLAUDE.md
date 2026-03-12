@@ -782,7 +782,37 @@ These are the through-lines to watch across transcripts:
 | 7 | Customer Success Agent | WS3 |
 | 8 | Cross OU Collaboration | Banking, AM, Life outreach |
 | 9 | Program Management | Governance, steering, portfolio reviews |
-| 10 | TSR Enhancements | TSR automation track |
+| 9 | TSR Enhancements | TSR automation track |
+| 10 | App Factory | BenVH's automated deployment platform for AI apps |
+
+---
+
+## Cowork Tasks
+
+The `cowork/` directory contains task definitions for Claude Desktop's Cowork tab. These let Claude act as a programme analyst colleague.
+
+### Advisory (conversational — Claude responds in text)
+| Task file | Purpose |
+|-----------|---------|
+| `meeting-prep.md` | Prepare for a meeting: talking points, risk flags, overdue commitments, stakeholder dynamics |
+| `programme-advice.md` | Strategic advice: what to escalate, where to focus, evidence-based recommendations |
+| `review-and-challenge.md` | Critical review: find gaps, inconsistencies, political risks, decision-execution gaps |
+| `stakeholder-briefing.md` | Pre-meeting person briefing: sentiment arc, commitments, influence, approach tips |
+
+### Operational (conversational — structured intelligence)
+| Task file | Purpose |
+|-----------|---------|
+| `weekly-pulse.md` | Monday morning ritual: what's urgent, what to watch, what to follow up |
+| `catch-up.md` | Structured debrief after absence: what changed since date X |
+| `status-draft.md` | Draft audience-tailored emails, Slack messages, or speaking notes |
+| `trend-analysis.md` | Compare time periods across any dimension (risk, sentiment, topics, influence) |
+
+### Reports (generates files)
+| Task file | Purpose |
+|-----------|---------|
+| `generate-report.md` | Unified report generator: executive debrief (PPTX), stakeholder dossier (XLSX), risk dashboard (XLSX), or custom |
+
+All tasks read from markdown files in `analysis/` and `context/` — no database access needed. Report outputs are saved to the project root.
 
 ---
 

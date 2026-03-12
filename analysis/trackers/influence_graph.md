@@ -63,3 +63,15 @@
 | 2026-03-04 | Data Credibility Team | Stacy, Natalia, Azmain | Migration scorecard accuracy | Strong -- Stacy and Natalia push for honesty |
 | 2026-03-06 | Builders Under Threat | BenVH, Azmain, Richard | Protection from Nikhil/Rhett credit-taking | Strong emotionally but all three considering exit |
 | 2026-03-06 | Gainsight Bridge | Catherine, Richard, Azmain, BenVH, Chris | Enterprise integration alignment | Forming -- Catherine as new ally transforms dynamic |
+| 2026-03-11 | Richard | Protective/Gatekeeping | → | BenVH | App Factory ownership | Shielding BenVH from Nikhil; planning direct confrontation and escalation to Ben Brooks | Strong | High |
+| 2026-03-11 | BenVH | Technical authority | → | Architecture | App Factory MCP server | Unilaterally pivoted App Factory to MCP server architecture; team followed his technical direction | Strong | High |
+| 2026-03-11 | Catherine | Validation | → | Richard | App Factory integration approach | Endorsed multi-source analytics platform; called it breaking down silos. Key ally conversion. | Strong | High |
+| 2026-03-11 | Richard | Proposal_adopted | → | Catherine | Salesforce design | One-way integration, Cases/CaseFeed only, App Factory as middleware — all accepted | Strong | High |
+| 2026-03-11 | BenVH | Blocked | → | Nikhil | App Factory access | Explicitly cutting Nikhil out of deployment access and not sharing MCP server direction | Strong | High |
+| 2026-03-11 | Richard | Bridging | → | Juliet | AWS infrastructure | Connecting Juliet to App Factory deployment process and Slidey collaboration | Medium | High |
+| 2026-03-11 | BenVH | Technical authority | → | Azmain | App Factory MCP architecture | Azmain immediately grasped implications and contributed inter-app communication insight; deferred to BenVH on architecture | Strong | High |
+| 2026-03-11 | Azmain | Proposal_adopted | → | BenVH | Inter-app communication | CLARA-to-Slidey flow via App Factory; BenVH asked him to write it up — most commercially relevant idea in the conversation | Strong | High |
+| 2026-03-11 | Richard | Strategic framing | → | Idrees | Cross-OU coalition | Deliberately timed Wednesday meeting for ISLTR presence; building cross-OU visibility to strengthen Diya business case | Strong | High |
+| 2026-03-11 | Idrees | Proposal_adopted | → | Richard | Retention dashboard + ROB AI | Idrees positioned segment-agnostic tools as the centrepiece; Richard adopted the framing for the Wednesday agenda | Strong | High |
+| 2026-03-11 | Idrees | Bridging | → | DIA/George Dyke | Cross-OU retention | Looped DIA and George into retention dashboard thread today; showing cross-OU consistency | Medium | High |
+| 2026-03-11 | Natalie Bath | Endorsement | → | Idrees | Agent demo | Saw MENA's agent at Miami sales connect; asked Idrees to run AON agent view — first signal of sales-side interest | Medium | Medium |

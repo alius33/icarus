@@ -1,0 +1,192 @@
+Azmain Hossain  0:30  
+What's What's this? I saw Nichols in this. Oh, and Elliot's Okay. Elliot's gonna be able to help us out. You might be on mute, man.
+
+Richard Dosoo  0:48  
+Sorry, yeah, this one is basically Martin and nickel things. Quite is shit. We were supposed to have a call, actually, Bonn, but I think I've said it a lot afterwards. Actually, we've got a call with Ben later on to talk about it, but essentially, just before everyone else joins, I spoke to Ben. He was like, Nichols, been good. But let's just fold it into Martin's work. Martin taking around a bit from there. So with this isn't
+
+Azmain Hossain  1:20  
+the cursor for pipeline. This is the internal app factory building.
+
+Richard Dosoo  1:25  
+No, no, but this is what, what Ben was saying was, is there's a dependency between the two. So he was like, just easier to let me just run both,
+
+Azmain Hossain  1:36  
+yeah, because the way, the way that I've got it structured, is that both, both should be in one, like, obviously Martin's doing the the dashboard stuff, but they're both stem from the same requirements. So they should be part of one, one line. Yeah.
+
+Richard Dosoo  2:04  
+Yeah, this is it, but it was more about, like, ownership and everything else as well.
+
+Richard Dosoo  2:16  
+But so that, that's the call we got to speak to later on with we've been about just to align on resourcing and stuff so you can update your plans with him. And the purpose of this was for Martin and nickel to for nickel to see what Martin has done, because he hasn't seen it. And then we can fold the two designs in together.
+
+Unknown Speaker  2:36  
+Yeah, yeah, that makes sense. Yeah.
+
+Richard Dosoo  3:24  
+Hmm, Azmain, do me a favour if I send you a fuck. Just let me know if you can open it. Because I can't seem to. I don't know why. Every time I think that my machine needs rebooting, I can't open up these HTML files that are like PowerPoint presentations, and navigate through them that like, Oh no, here we go. That was why. Let me just show you this. Hey, Christopher, how are you
+
+Chris M  3:52  
+good? Apologies about that.
+
+Azmain Hossain  4:02  
+Hello, Hey, Nicole, hi everybody.
+
+Unknown Speaker  4:08  
+Hey, sorry guys. We were on our refinement call.
+
+Unknown Speaker  4:11  
+Hi guys.
+
+Richard Dosoo  4:13  
+I think Martin is also running a few minutes behind. He's also coming off my call, probably canopia, so we just give them a couple of minutes. But just for context setting Nicole, we wanted Martin to walk you through what he done in building fire, which is that the pipeline client demo use case that was solving for because it has so different there's a dotted line between what he's doing and the work that you've already done. So that was the purpose of this call. Elliot. The reason why you're on the call is Martin had mentioned that some of the work that you're already doing around an agent to leverage the IRP navigator and to help mapping out customer workflows also was related to some of the work that Martin was doing. So we wanted to. You collectively talk through that and see where the opportunities were to converge or way diverge. Yeah, sounds good. Azmain, do you want to take the meeting or it'll be good just to start?
+
+Azmain Hossain  5:14  
+No, no, start. You can start. I'm taking notes.
+
+Richard Dosoo  5:18  
+Okay, cool, Martin, is it worth you kicking off with the your guild locally to show us. We just to give nickel and the rest of the team the overview, the background of what you're doing and why, so they can see what where the overlay is with the work that Nicole's already done.
+
+Unknown Speaker  5:34  
+Yeah, sure. Let me share.
+
+Martin Davies  5:42  
+Okay, so we are just an index page that gives you three options which relates back to the building five project plan. So we have, like, data flows in, data flows out. And the part I'm currently working on is the dashboard builder. So it's build on top. We'll come back to this later, because I think Elliot, where you come in, is probably more around these workflows. But as I've started on the dashboard builder, I'll go into this. So the idea here is that we basically take the risk modeller API's, we break them down into the different components of what they're actually showing statistically, and we have a toggle at the top that lets you jump between like visual builder or AI assistant. At the moment, this is just some JavaScript hacked in as an agent, but the idea is, you can come in here, you can tell the dashboard what's actually put together. And as you're doing this, it will start to actually build things out. The dashboard builder itself is all drag, drop enabled. You can resize everything you can I'll split I'll go back to the visual builder for here. So just sticking with this for a second, you can see, down the left, you've got all your different pre configured components, and you can just click, you can come in, drag them, do whatever you want to do. And then the idea is that each component then has three options, so you have data which is just a tabular like, to show raw data visual, and then custom, which, again, is where the AI side of things come in. So instead, you can, like, show us horizontal, and it will go away, interpret that and make the relevant change. Each of these components then have all it can be customised completely. So if you don't like the title, for example, you can just come in, change it. Or if you don't want to show it all, you've got more options on the right, so you can see how quickly you can build up. We can then tailor this more with like Dart mode. For example, we have the ability to bring in like company logos. Let me do that again. I'll go this way so you can see quickly how well you can see how quickly you can then go
+
+Martin Davies  8:28  
+pass it that stops working, so should be able to come in, okay, oh, that's background, sorry. Okay, so you can quickly come in, normally, quickly anyway, and just add some branding to the dashboard. And very easily, the whole time, you've got this as well. You've got Preview button over here, so you can actually open the dashboard as it would appear. And we have the ability to also say as well. We have a lot of options in here, so everything down to like your font, your corner radius, on your components, etc. And we also have the ability to save or open previous ones. So previous one that this is all based off is the dashboard that I originally built that looks like this. Why is this API not loading? Let's do No, it's not running. Is it? That's why? Okay, yeah. But normally you would have, in fact, let me just get rid of that. Get rid of that for a moment. I just don't have the dev server on it. But as a no, okay, yeah, but it gives you an idea of exactly what you can do, how much flexibility you've got. How it's utilising the different components, APIs, and also the flexibility of using AI to then tailor even further. So if you don't have you know, if you're not seeing what you want to see here, then you can just prompt it to tailor it slightly.
+
+Speaker 1  10:16  
+Oh, man, this is amazing. So how is this thing working? So do we have separate agents to do this? Or right now, we are working off of individual component having kind of an LLM API running in the background and figuring it out what needs
+
+Martin Davies  10:41  
+to drive. So right now, each component is just just some sample data. The one that's stopping it working is actually, I think I need to start the dev server, but yeah, so the idea would be that we'll just wire up all of the different API's, and then, yeah, without just putting agents up behind that, that will then interpret whatever the user wants, if it's not one of the standard formats.
+
+Richard Dosoo  11:12  
+And this is Nickel, where the where you can see right, where the crossover is, not only with what you've done, but also with what's in Navigator as well, because if this is reading navigator Dennis, you've got that dynamic link, or it's reading the API's the specs, and that's part of the stock, that's part of this build process that touches on, I guess, like the work that Elliot is doing is tangential to this, and that was the reason why we wanted to get everyone together to see what's the workflow or use case that Elliott's solving for, and how much of that touches this, and how much of it does and and what does that mean in terms of what data needs to come to be part of this workflow?
+
+Speaker 1  11:57  
+So makes sense? Yeah, I think, yeah. The way I see the MCP servers helping out is especially the API integration, right? If you want to change API on the fly, the MCP server should have good knowledge of what API to plug in, or
+
+Richard Dosoo  12:19  
+even more than that, Nicole, right? If the MCP server can understand the actual data and the context so it knows, this is my list of portfolios. These are the IDs of them, then the agent actually we do stuff, right? Because it understands metadata about the exposure, it understands enough metadata about the modelling information and understand enough metadata about the losses that are generated to know how to do stuff with it. So then Martin's dashboard not only can interact with, interact the data, but can interact with like workflow. It can actually do stuff is much more context aware, right? If we can bring that data aspect into whatever agent Yeah.
+
+Chris M  13:03  
+I played with the the MCP server. I don't know if I showed you, did I show you?
+
+Unknown Speaker  13:09  
+We spoke about it, right? Yeah.
+
+Chris M  13:11  
+So like just literally profiling the EDMS and then telling it to run on one portfolio in a EDM, it was able to go through and just from the context of the underlying open API, it was able to do everything and learn on the fly. So it has everything, just from the context of how everything links together to do that. And if you sped it up and it gave it essentially knowledge in some kind of database prior, it then would obviously be faster, but,
+
+Richard Dosoo  13:43  
+but that was a lot of process there. That's it, Chris, if we can imagine, right, that you log into this thing, the first thing it does is call those APIs to prime the agent with the metadata that you need. And that's the experience, right? That's, that's
+
+Richard Dosoo  14:07  
+story even didn't mean to jump around there I was just getting pinged by about five different people at once. But the I guess, directionally, does that make sense that to start including in either Elliot's work or this the actual data into the agent that can help it make can make it more contextual.
+
+Speaker 1  14:31  
+Yeah, so how, how do we imagine this working in case of client? So maybe the big picture I'm trying to understand so a client comes in this dashboard builder shows them the possibilities of using our MCP server to identify their workflow, right and kind of that goes hand in hand with. What Elliot is trying to build, profiling the client, profiling the workflow based off of blueprints. But then,
+
+Richard Dosoo  15:10  
+I guess it's two things though, Nicole, right? One thing is, Martin is building this out. So when we meet with customers like amalin, all the naysayers, the dissenters, right? That are saying, Oh, it's taking me 18 months to build out a report. Mine can say it doesn't take 18 months. It takes five minutes. So that's the goal number one. Mine could say that, and we're not, we're not telling you to use our tooling. We're just showing you that you can do it in five minutes, taking this approach leverage. So that's, that's goal number one. But goal number two right is, actually, do you see the call we just came off where we were talking about AIG? Right now, AIG, unbeknownst to everyone else on that call, has made significant investments. They've signed a strategic deal with anthropic and Palantir. They using MCP server to drive the entire underwriting agenda. I'll send you the briefing document that we created on this they're not interested in just coming in and looking at our APIs. They would have spent so much money on strategic contracts with anthropic and Palantir, for crying out loud, that all the people in the world that you can sign a contract with just so they can read a flipping soap an API document, and that's not what they do. They want to take their underwriting agenda to their next level, right, right? How does that happen? It happens by using MCP. It happens by context aware, from context aware MCP, using the data that's in the platform. That's how it happens, and that's the conversation that I'm saying you should have with them as part of that next part of the project, rather than just the Oh, yeah. I mean, like, that's, that's right. That's how you turn next, the conversation with a client, not going in there with something that is relevant. Two years ago today, Yeah,
+
+Chris M  17:00  
+makes sense. I think, I think the idea of the profiling agent is the key there, because essentially, you have the agent go through and look at all the correlations the right word, but if it profiles all the analyses that the client has run, looks at the output profiles, looks at how they're linked to the specific clients that they ran, and then the model profiles, and just starts building a distribution of how model client ran. It essentially generates the risk modeller and backs out how that client was working, and it looks like the most likely model profile, the most likely output given a model, the most likely event rates, and then you could essentially start then, without even having to put a blueprint in, generate the most likely outcome that they should run given an input, and then start going from there and that that could essentially just Run quickly and have preemptive, you know, settings already there.
+
+Richard Dosoo  18:03  
+You could get super cute with a lot of this stuff, right? It could be you just ask questions about the portfolio, and it's telling you you can visualise it. You could ask like, this is what. I don't know. If you guys ever saw Genie, right? Databridge, did you as an Chris? I know you saw it because we worked earlier and Martin, have you guys ever seen no no
+
+Richard Dosoo  18:28  
+genie is like a component within Databricks, within risk data lake, and we're not really exposing it to people right now, because we don't know if Databricks is going to be the or the version of Databricks that we have is going to end up in the product long term. But they built an API. They built an AI layer on top of their risk catalogue, and that layer was basically generating dynamic SQL statements based off the schema definition. And everyone was always asking the question, but does it understand my data? Like, could I ask it tell me the biggest driver of loss right within this portfolio, and does it know enough about the structure of the data and the way the data is outlined to be able to execute that kind of query? And that's, that's, that's, that's what you get, right? If you have an agent that understands the A buyers, if it understands the schema and it understands the metadata that it knows where to search to find those action.
+
+Speaker 1  19:22  
+Yeah, it needs to know what is a loss for this customer. All of that convinced,
+
+Richard Dosoo  19:29  
+but that's it, right? The API's tell you what table the losses in. We just extract the metadata about the losses and bring them into the agent, not the detailed losses itself, just the information about the loss
+
+Speaker 1  19:44  
+that yeah, in case of AIG, or let's say, in case of AIG, if they already made the contracts with anthropic and other AI providers. Yeah, so I mean, wasn't one of the expectation would be that, do you have an MCP server? I can plug and play. That's one. And if I don't know if this MCP server is productionized, but once it is, it's going to be easy for them to just put it with the anthropic team, anthropic cloud model, and figure out some of these workflows. Then, then what? What happens after that? Right? So are they just going to use anthropic as their entry point to IRP, or the aim is for them to I'm just asking AIG, because that's No no, it's
+
+Richard Dosoo  20:41  
+all big nickel. These are all good questions. The problem is we've not asked the customer yet. Okay, we know what they've we know what's publicly available and what they've published out in the public domain, but not in a single meeting that we've had with AIG. Have we asked any of these questions? And it's really sad,
+
+Speaker 1  20:59  
+yes, because that kind of gives us two two things, right? So one, of course, the MCP server becomes priority to deploy and make it stable. That's one. And then when, when they say, want to take it one step further, then this dashboard comes into picture, right? Hey, we can, you can integrate this MCP server in so and so way, and build out your own dashboard, or probably a pipeline.
+
+Richard Dosoo  21:26  
+But this, this is it, Nicole, like we, it's not even like, we don't even have to show them, like the production implementation. We just have to show them, yeah, theoretically, about how their workflows can get transformed. Because that's, that's upside, right? They can't do any of that today, that's, that's how you transform the conversation with that customer, right, to be much more about value creation, rather than just, oh, I've got six month project. I need to do a Buy integration. That's, and that's, that's the point, right? How do you change, how do you drive that conversation to be more value creation, rather than just what we're going to spend six months doing what we've done for the past 10 years.
+
+Speaker 1  22:04  
+Yes, yeah, just demoing the tools is going to be very helpful for them to understand that you don't need six months to do these things.
+
+Richard Dosoo  22:12  
+Yep. And anyway, so that's, that's the AIG we Nick. We'll follow up on the AIG conversation because it needs like, proper, like, and it's not just me, right saying it, we need to bring everyone else along with us, but in terms of what Martin is doing on this project, and what the work you've already done and the work that Elliot's already done, I think we should try and kill two birds with one stone, right? We should satisfy the requirement that Martin has about showing the building five so we can go to clients like amain, we can demo exceedance and say it doesn't take six months to build dashboards or integration anymore. You can do it in minutes. But we should also what will really resonate is if we can plug in the pieces I just mentioned that maybe Elliot has looked into, or Chris has looked into about making the agent context aware, about your actual data. Actual data. That's when this that really makes takes this to the next level. Yeah.
+
+Unknown Speaker  23:14  
+Yeah, that makes sense.
+
+Richard Dosoo  23:18  
+Martin, sorry, I know I'm adding loads of scope, but okay, more I know we've we probably were going through things quite quickly. Were you able to follow much of that? Did it make sense?
+
+Speaker 2  23:34  
+Yeah, that makes, that makes perfect sense. Don't worry, I can see how what I've done, and I'm doing it, can definitely provide value. Yeah, I'm kind of trying to build, like, you know, this agent that's super context aware, so it can, like, reason about the data you have. Yeah, like, it's just about fitting the pieces together, but I understand where you're coming from, definitely
+
+Richard Dosoo  24:08  
+cool. So Martin in terms of next steps, right? And nickel as well. Obviously, the two projects that you're working on at the moment are separated, but there's some crossover between them, right? So that first thing nickel was to show you what Martin has done, and then talk about how we bring the two pieces together. And now, how do we bring the third piece that Elliott has done also into the into the mix, right? I don't think we can answer that in the next four minutes, but this was the first call to get that alignment, and then Azmain can work with you and Martin to bring the two project plans together and figure out how best to basically get it done. We've got some obviously, what Martin is working on is going to be demonstrated at exceedance. So there's some timelines that are driving a lot of that that we need to back in. To and Azmain, I'm going to get those timelines from today.
+
+Speaker 1  25:08  
+Yeah, that sounds good. And if you need any help from me or Chris, let us know.
+
+Richard Dosoo  25:15  
+And I guess Elliot, how well maybe Nick, I should ask you, how can we get Elliot to work through what he's already done, or give Martin support. Can they just work together on this? Or do we need to? Is there a resource and conversation we need to have with someone else because of what Elliot's working
+
+Speaker 1  25:31  
+so there are a few things I so Elliot, as I understand, you have one month for the rotation.
+
+Speaker 2  25:39  
+I think it's less at the moment, but I'm in conversation with the my grad manager to possibly extend it. But actually I think she might come to you later today, Niko, speaking about that.
+
+Speaker 1  25:52  
+Yeah, sure, I support that. So if Yeah, so I'm assuming that's out of the question. We can do that. Let let me think it through, Richard, because I do see the point how we can ingest these two things and demonstrate to the customer what I'm trying to figure out, how to put it in a proposal, right? Like how to put in what Martin has built in, having these different agents that profiles and understands the workflow. Might need some more details, like, hey, you know, is the workflow, for example, is the customer going to say, Hey, I just want to make these five API calls and I'm done. You know, that's a very simple workflow. Or are we saying that someone from solution architecture team, right? They come in and they say, Hey, these are the blueprints you're going to get. And this is where what Elliot is focusing on, right? You have a set of blueprints. How do you convert those blueprints into a working workflow for the customer?
+
+Richard Dosoo  27:01  
+No, I think it's that, it's that latter, right? And then Martin is just the mechanism that you use to showcase it all coming together,
+
+Speaker 1  27:10  
+yeah, yeah. I think we may need to plan out on that. And for capacity, if Elliot time get extended, then, yeah, he can, he can support Martin on that that work? Yeah.
+
+Speaker 1  27:29  
+Okay. I have some, I have some things to think, think through. This has been very helpful, Martin. And do you, can you share the GitHub repo, Martin, it will help me understand how you're building it, and you know how to ingest some of these things.
+
+Martin Davies  27:44  
+Yeah, it's not ink. Yeah. Do we have, like, what was the Do we have a repository, or is it like a naming convention I need to follow?
+
+Speaker 1  27:55  
+So right now, we just following anything start with Ins. So that's insurance, and if you have built in five is a good name. So you can just do that.
+
+Richard Dosoo  28:06  
+I think Martin, I might have already created a building five repo. Let me see. But I think I put other stuff in it. So if the structure is crap, then you can just, you can build another one, or start again, or clear the stuff out. Let me see if I've got it here. Actually, I can send it in this chat.
+
+Unknown Speaker  28:24  
+Okay, thanks. And Richard, that's on Ma,
+
+Richard Dosoo  28:29  
+yeah, that's one me. Okay, that's on me. If you give me a second, I'll just bring up now. Yeah, here we go, building five. Let me send the link and what? So, mine, sorry, go ahead, mine, this was the chat so, because then I've actually maybe just built, do another one Martin, actually do a building five prod, and then, because this has just got that old chat interface.
+
+Martin Davies  29:04  
+Okay, yeah, I'll give it a different name, maybe not prod, but yeah, I'll think
+
+Azmain Hossain  29:12  
+cool and Martin. What I wanted to say is, obviously things have kind of diverged since that. Do you remember that long building five, like Project doc thing I sent you? Yeah, once we've kind of chatted with with Ben as well, I want to kind of work with you and Ben to make a new version of that, because the first one was like out of my head. But now that we've got things actually moving something that's that's more relevant, more aligned? Yeah, that's fine, sure, yeah. So we'll have the call later today, and then I'll put in some time with the both of you and rich as well.
+
+Unknown Speaker  29:52  
+Yeah, hello.
+
+Azmain Hossain  29:57  
+Yeah. My mic start. So I don't know if mine died or yours.
+
+Richard Dosoo  30:01  
+Guys. No, no, all good. Thanks a lot. Azmain and thanks Elliot, Chris Nicole and Martin. Thanks guys, this was super helpful and looking forward to what comes next. Thanks. Bye. Right? Thanks, you. Well. Go.
+

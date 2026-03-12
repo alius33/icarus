@@ -12,6 +12,10 @@ class TranscriptBase(BaseModel):
     has_summary: bool
     primary_project_id: int | None = None
     primary_project_name: str | None = None
+    secondary_project_id: int | None = None
+    secondary_project_name: str | None = None
+    tertiary_project_id: int | None = None
+    tertiary_project_name: str | None = None
 
 
 class TranscriptDetail(TranscriptBase):

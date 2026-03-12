@@ -1,6 +1,6 @@
 # Workstream Status Tracker
 
-Last updated: 2026-03-10 (all transcripts through 10 March processed)
+Last updated: 2026-03-11 (all transcripts through 11 March processed)
 
 ---
 
@@ -64,8 +64,8 @@ Last updated: 2026-03-10 (all transcripts through 10 March processed)
 - Power BI migration dashboard (Andy Frappe ask)
 - Parent/subsidiary account rollup
 - Reports section (modelled on Salesforce)
-- Gainsight integration (meeting scheduled, earliest March 2026)
-- Salesforce programmatic access (being pursued in same meeting)
+- Gainsight integration (meeting scheduled, Gainsight hard launch March 30 confirmed by Catherine)
+- Salesforce integration — one-way read decided (11 Mar). Cases and Case Feed only (phase 1). Four consumers: Bernard (sentiment), Courtney (HD), Kevin (tickets), CLARA (blockers). App Factory MCP server as middleware.
 
 ### Key Risks
 - Azmain = single point of failure for features (partially mitigated by Nikhil/Chris onboarding)
@@ -149,3 +149,4 @@ Last updated: 2026-03-10 (all transcripts through 10 March processed)
 - **Stakeholder cascade defined:** Tech consulting (Bala/Lonnie/Alicia) → Demo team (Bibo/Gibson) → Sales (Flemington) → Exceedance content factory
 - **Product positioning question opened:** Is this a Moody's product feature or a customer self-service tool?
 - Martin's 12-week clock ticking but output justifies the investment many times over
+- **11 Mar:** Nikhil saw the demo for the first time — genuinely impressed. Three-pronged convergence plan: Martin's dashboard + Nikhil's MCP work + Elliot's blueprint profiling agent. Azmain to create combined project plan. Elliot's grad rotation may be extended to support Martin. AIG intelligence revealed: strategic deals with Anthropic and Palantir, using MCP for underwriting — elevates Build in Five from demo tool to strategic client engagement vehicle. Chris Malhauser already has EDMS MCP profiling working. Martin to create new GitHub repo (ins-build-in-five naming).

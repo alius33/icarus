@@ -1,0 +1,126 @@
+Richard Dosoo  0:00  
+I'll see myself out. It's cool. I'll be quick. Idris, we wanted to connect with you to talk about, like, you know, we've got this cross ou thing happening in different places, right? Which is really cool. One of the things that we'd like want to do on our side is, like, we want to not generate a bit visibility, but just like, we want to basically schedule a meeting next week with yourself, with some of the guys from asset management, maybe some of the guys from life, and you go over some of the things that we've been doing in this space. And I wanted to know if you would be up for showing your account planning dashboard in that meeting. We're going to show the infrastructure stuff that we've done. The reason why I wanted to target it for next week is just by coincidence. The isltr in town next week. So we could get some
+
+Idrees Deen  0:52  
+of them. Which team is that?
+
+Richard Dosoo  0:55  
+The insurance senior leadership team, so Colin, they've got workshops next week with clients, but if I could get one of them to come in a meeting, then that shows like The OUs working together, doing cool shit, and that may investment cases, right? So like, because
+
+Idrees Deen  1:11  
+ultimately, like this agent that we're doing for Rob and SLT is going to be segment agnostic, right? So all of your insurance data will feed into that as well?
+
+Richard Dosoo  1:21  
+Yeah, no, again. And this is exactly what I want us to get together, right? So we can let me look for some times that work Idris with us, and you next week, and then, yeah, I'm going to speak
+
+Idrees Deen  1:35  
+to is it earlier in the week or later in the week, just because next week I'm like, kind of semi off just because it eats next Friday. Yeah, exactly.
+
+Richard Dosoo  1:44  
+I was gonna try and try and get it done for Wednesday or Tuesday, because
+
+Idrees Deen  1:47  
+Wednesday would work better for me, if possible. Yeah, okay, cool.
+
+Richard Dosoo  1:51  
+Let me, let me shoot for Wednesday. I'll get a slot for Wednesday. Obviously. I don't know if the SLT will be available on that day, but we'll figure out if they're there. Cool. If not, we'll run away
+
+Idrees Deen  2:01  
+on that day. Okay? I mean, if you find another slot, just let me know.
+
+Richard Dosoo  2:06  
+No, no, bro, eat man. And also, definitely not Friday,
+
+Idrees Deen  2:09  
+definitely a Friday is not happening for me, but, like, maybe I could figure it out Thursday, that's fine, as long as it's not too late.
+
+Richard Dosoo  2:18  
+No, I love them. Don't worry, bro. They're priorities, man, so I'll work around the schedule for that. And then even when is, when is is it going to be this week or next week? Azmain, who might know when's later, I'm not going to be is it this week? It's next week, right?
+
+Richard Dosoo  2:32  
+That's when. I mean, it's the 23rd tonight, so in four days,
+
+Richard Dosoo  2:38  
+Oh, it's this week. Okay, cool. Yeah, alright. So yeah, this you may be clear of that
+
+Idrees Deen  2:42  
+gonna be Sunday, 27th night drama done,
+
+Richard Dosoo  2:45  
+yeah, yeah, yeah. So I'll make sure it's not Monday morning. It won't be Monday. It'll be Wednesday. Yeah, it'll be Wednesday. Wednesday is the day we have to do it all.
+
+Idrees Deen  2:55  
+Right, let's go and like, just to be clear, right? There's a couple moving pieces here, right? So, I mean, look like DIA is managing customer engagement overall, right? So similar to us, like we have Mena, right? And there's different pillars, right? So there's advisory Customer Success go to market, right products. So like, are we trying to hit on, like, something specifically or just like overall synchronisation, and trying to understand exactly what you're trying to achieve here. Yeah.
+
+Richard Dosoo  3:27  
+So the two, all of the people coming are going to be within customer success. So you've got customer success from insurance. So that's a slot. You got George as well, because he's Customer Success insurance, Azmain. What was that Scottish view that you brought to that meeting last time? Was he from the Life team? Sean, no, he's in casualty. Now. Okay, well, it's still insurance, right? Just another part of so cool. So we got insurance representation. We're going to have asset management, because did you remember that Amanda girl that filled out a customer? So we're going to have them, plus some of the tech guys.
+
+Idrees Deen  4:03  
+I think Richard, what we should put on the agenda, from like a unified sync standpoint, is so I actually was working on the Moody's segment agnostic retention dashboard, so I actually looped DIA and George dyke into that thread today, so we've made a lot of progress and established the flow. So maybe, you know, we can spend some time on that, and then also the ROB AI app for senior leadership to get a unified view of everything that's going on. And then that will kind of like, help dia give pressure to Charlotte to help move some of your stuff into Gainsight, or whatever you guys need to do, right? I think it just shows consistency across OUs. I think that would be a smart play.
+
+Richard Dosoo  4:50  
+Yeah, no. 100% and Idris, we can work on the narrative, right? So I'll work on the messaging, and then that way you can when you speak to deer and George, you. Can be like, hey, Richard's going to set up a meeting next week.
+
+Idrees Deen  5:03  
+I'm going to go over this. I just like FYI them that this is happening because DL is always asking about the Moody's wide retention dashboards and, like, making sure we don't have like, 10 different dashboards for different things, right? So I just lose her in Georgia and as an FYI, just to show that we're making progress.
+
+Richard Dosoo  5:20  
+Yeah, no. 100% so cool. So agenda for next week will be customer success teams update on some of the initiatives that are happening within the OEMs that can be beneficial. The other one, customer retention dashboard, Rob AI application factory that the consultant guys are working.
+
+Idrees Deen  5:37  
+I just have a question for you, just because it came up, right? So let's just say, and I'm not sure if this is this is more of George question to answer, right? So let's say, God forbid, like a on, you know, notifies you guys that, hey, they want to cancel a million dollar portion of their business. Let's say, hypothetically, right, that will go to procurement or the RM, or whatever. Okay, what do you guys do next? From a workflow standpoint, like, like, when? When do you guys get involved? Like, both from an advisory standpoint as well as a CSM standpoint, just trying
+
+Richard Dosoo  6:13  
+to, do you want to know how it works or how it should happen?
+
+Idrees Deen  6:16  
+No, just in late terms, like, yeah, I want to know. I already know what you need to do in the future? I'm saying, like right now, what do you do?
+
+Richard Dosoo  6:24  
+Well, but this is it, right? The account managers, they don't manage in the account. They're just, excuse my language. They're just thinking around, bro, there's no so that's the problem. Cancellations come and hit
+
+Richard Dosoo  6:36  
+these guys by surprise. Did you talk to the client? Did you make sure they were getting the value? Did you tie it back to the investment? Case, they're not doing any of that. It's not data driven. They're just managing our vibes. And that's what George is trying to change, right? Because with this strategic accounts, how are you going to let AON drop like that? Why are you talking about so that's that's the customer success management, the SEC even. That's why DS higher in that MD is to be segment agnostic, right? So someone's picking that up across all the products, the customer licences, because I
+
+Idrees Deen  7:05  
+don't know if you guys know, but Rob fulber is actually meeting with AON next week.
+
+Richard Dosoo  7:11  
+See, that's why he's probably coming London, right? Because, but again, this is the thing, right? That this is where, like, if you ask this insurance or ucsm, ask them, right? What's the this the NPS
+
+Idrees Deen  7:26  
+he's meeting with, he's meeting with Dan dick, which is the Global Head of cat catastrophe risk management at Aon, yeah.
+
+Richard Dosoo  7:37  
+So he's going to try and drive an IRP sale, and he's going to do what I've done before, which is talk about the Moody's broad offering and give confidence right about what we're doing on that proper cat side, and say we're a partner for you, because we can give you all this other
+
+Idrees Deen  7:51  
+might also be good for us for next week as well. So, and I was meaning to send you an email I just got wind of this. So you know, Natalie bath to WHO reports directly to Helen? I think Helen Ryder, yeah. So anyway, because of this sales connect happening in Miami, Natalie saw Menna presenting about this agent that I showed you earlier today, Richard and she sent, and then MENA introduced her to me. And then she said, Hey, Rob's meeting with AON next week. Can you run, run an agent View and Show me what it pulls for a on, yeah. So this is also, like a cross ou type thing, right? So, like, if you guys have any, like, raw data or anything for I know, I'm sorry I'm distracting you from the initial time. If you have anything in, like your little CRM tool or whatever that you built for any notes or anything on a on if you can send me a teams message or, like a Word file, or I'll plug it into the agent, and then I'll also loop you guys in when I respond back to Natalie, who's putting the material together for Rob and and then I'll can loop dia in as well. So then that shows that we're working together.
+
+Richard Dosoo  9:11  
+Yeah, 100% we'll get the Salesforce, all of the tickets for Aeon, and we'll
+
+Idrees Deen  9:16  
+do some I can already access that I'm looking more so like anything qualitative that you guys might have.
+
+Richard Dosoo  9:25  
+Okay, no, that's cool. We can definitely like, we go in par and have a look. We can go in other sources and get and get some insights for you as well.
+
+Idrees Deen  9:34  
+Yeah, okay, I think we're on the same page. Good. This is good.
+
+Richard Dosoo  9:37  
+Cool. No. Idris, thank you for jumping on. I'm going to look for a time next week, and I'm going to send out a message in that I'll work with you on the on the narrative, and then we'll get a message out in that agentic tooling group. And then I'll, once we've done that, then we can look in DIA and others and say, Hey guys, we're meeting next week to discuss this on Wednesday, and understand you guys going to be London. It'll be cool. If one of you guys could jump in, I will send that message tomorrow, once we've got the narrative about, yeah, cool. All right, Idris, thank you for jumping on and then we'll definitely connect more over the next day or so, just to show it from source square for next week.
+
+Idrees Deen  10:16  
+Thanks so much. And if you're doing any like back and forth with Mena, I mean, with dia or whatever, if you could just, like, copy MENA myself and Irina in it, just to show that we're working together, it'd be helpful.
+
+Richard Dosoo  10:30  
+Yeah, 100% the I've got, I need to follow up with Gina and get that other meeting set up. So not next week, because everyone's going to be
+
+Idrees Deen  10:40  
+busy the week after. Yeah, that's fine. Okay, thanks guys, cool.
+
+Richard Dosoo  10:44  
+Cheers. Thank you. Thanks. Thanks, bud. Bye.
+

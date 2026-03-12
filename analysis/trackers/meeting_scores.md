@@ -80,3 +80,9 @@
 | 2026-03-09 | Advisory call | Status | 5.5 | 4 | 6 | 7 | 6 | N/A | Arno, Eddie, Diana, Azmain, Prashant, Philip, Jack, Jacob, Camila, Courtney | Medium |
 | 2026-03-09 | Sales dashboard call with Juliet | Discovery | 6.8 | 6 | 7 | 7 | 7 | N/A | Richard, Azmain, Juliet Valencia | Short |
 | 2026-03-09 | Bug fixes chat with Chris M | Technical | 7.5 | 8 | 8 | 7 | 7 | N/A | Azmain, Chris | Medium |
+| 2026-03-11 | App Factory Standup | Standup/Rant | 5.5 | 4 | 5 | 6 | 5 | 7 | BenVH, Azmain, Richard | Medium |
+| 2026-03-11 | Build in 5 Standup | Demo/Planning | 7.5 | 7 | 7 | 8 | 8 | 7 | Richard, Azmain, Martin, Nikhil, Chris, Elliot | Medium |
+| 2026-03-11 | Sales team apps in App Factory | Enablement | 7.0 | 7 | 7 | 7 | 7 | 7 | Richard, Juliet, Azmain | Short |
+| 2026-03-11 | Salesforce Integration Design | Design/Planning | 8.0 | 8 | 8 | 8 | 8 | 8 | Azmain, BenVH, Richard, Catherine | Medium |
+| 2026-03-11 | App Factory Discussion | Architecture/Strategy | 7.8 | 7 | 7 | 8 | 8 | 8 | Richard, BenVH, Azmain | Medium |
+| 2026-03-11 | Chat with Idrees | Coalition/Planning | 7.5 | 7 | 7 | 8 | 8 | 7 | Richard, Idrees, Azmain | Short |

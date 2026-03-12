@@ -10,6 +10,10 @@ export interface TranscriptBase {
   has_summary: boolean;
   primary_project_id: number | null;
   primary_project_name: string | null;
+  secondary_project_id: number | null;
+  secondary_project_name: string | null;
+  tertiary_project_id: number | null;
+  tertiary_project_name: string | null;
 }
 
 export interface TranscriptDetail extends TranscriptBase {

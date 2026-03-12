@@ -44,3 +44,6 @@
 | 2026-03-06 | Richard's timeline for potential New York relocation | Richard (private) | 2026-03-06 | 1 | CRITICAL |
 | 2026-03-06 | How will 12-week plan be adjusted for Gainsight integration scope? | Richard | 2026-03-06 | 1 | HIGH |
 | 2026-03-06 | Gainsight API capabilities and authentication model | Rajesh (Gainsight team) | 2026-03-06 | 1 | MEDIUM |
+
+| 2026-03-11 | Boundary violation | Nikhil | BenVH explicitly told Nikhil App Factory is not CAT team purview | 2026-03-11 | Nikhil messaged Richard about centralised logging for App Factory immediately after being told no | 2026-03-11 | HIGH | Richard planning direct confrontation | High |
+| 2026-03-11 | Scope | Nikhil | Nikhil supposed to be 10% of his time on App Factory | 2026-02-23 | BenVH says Nikhil is definitely not doing 10%, fighting him every single day | 2026-03-11 | HIGH | Redirect planned | High |

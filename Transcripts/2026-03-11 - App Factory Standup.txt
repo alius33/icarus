@@ -1,0 +1,219 @@
+BenVH  0:00  
+And there, there's something else that I don't necessarily want to keep harping on in general, but it's something that, frankly, is starting to irritate me a lot, and I really wanted to get that done, because Richard and I had a great conversation with the Asia team yesterday,
+
+Azmain Hossain  0:17  
+and Singapore and Japan people
+
+Speaker 1  0:21  
+and Australia, bro. Oh,
+
+Azmain Hossain  0:23  
+okay, okay, we got
+
+BenVH  0:24  
+the altars. I mean, if you want, I can move out to Australia. I can do it.
+
+Speaker 1  0:29  
+Get the whole I hope Ben picked it up. I was in
+
+BenVH  0:32  
+my head. I was like, I will. I will, Richard, I I'm hesitant on moving to Europe right now, but I will, 1,000% move to Australia.
+
+Richard Dosoo  0:42  
+There's things over there that will like, yeah, let me not divert the pool, so I'm gonna get in trouble. But yeah, there's, there's, there's, there's a lot of things in Australia, the animals over there that's definitely they pissed someone off, because there's too many things over there that can kill you, and they're small. So big things that can also kill you. So I'm just like,
+
+Azmain Hossain  1:08  
+I'll never move to Australia, because Australia is basically British Republicans. They are super far away, but they love the royal family, and they're Uber racist. So No,
+
+Richard Dosoo  1:19  
+the thing is, they're the prisoners in it. Yeah, that's the same. That's why they speak funny, because they're all drunk prisoners. Yeah, that we sent over their penal colony that they weren't allowed and then, and they don't fix their lips now, and come and be thinking about, Oh, yeah, we're good at sport. It's like, yeah, because you're all in the jail yard running around. You're not no fucking job.
+
+Azmain Hossain  1:40  
+So excuse my language, but they got massive Stockholm syndrome because they love the authorities. Now it's weird. Yeah. Anyway, yeah, yeah, so you kick
+
+BenVH  1:55  
+off the Yeah. So appreciate it. So the things that I'm that need to be accomplished are and not like, I don't want to knock them off on my one by one, but like, I just wanted to lay them out, and then we can address them accordingly. So the first thing is for authentication, for sidely, I need to work with you, Richard, to get Azure, because, to be completely honest, I forgot how to assume a role or whatever. And yeah,
+
+Speaker 1  2:22  
+we'll do that. We'll do that now,
+
+BenVH  2:24  
+yeah, and then the next star. So like we're talking about it and stuff, and then leveraging Martin's app and stuff like that. So and basically, if other people are going to start consuming app factory, meaning, like not just loading apps, but like, actually spinning up infrastructure, then I need to package it up in a certain way. And so I was thinking about that last night, and I think I'm or what I'm going to do is turn app factory core into an MCP server, so apps like Martin's or anything that needs workflows, or anything dynamic or spin up agents, or anything along those lines. Can just be using the app factory, MPC, MCP server, and that way it can support a wide variety of things, and then we can build off of apps from there. But it's the core of the app factory is just going to be this MPC server, if that makes sense.
+
+Richard Dosoo  3:17  
+But if that would, it would. So will that MCP server? Sorry, I'm asked a stupid question, but that MCP server, like, obviously understand our AWS environment and then basically create a VPC and all those things like that. They will, it will essentially your that's the abstraction layer the MCP over the AWS infrastructure. Is that essentially what it's doing?
+
+BenVH  3:39  
+Basically, yeah. Basically, yeah. So, for example, if you need a AI agent or whatever for a web app or anything along those lines, you can just call the MPC server, and it will do everything for us. If we want a to spin up a new application, we can actually connect the MPC server to cursor or whatever and say, Hey, create a new app, factory app, and it'll spin it up, and it'll take all the cursor rules and everything that you put together, and that way people can just start off from there. And like, to be completely frank, I think it would be in I think it's a better way of handling things than actually having, like, I mean, not to be extremely pointed in this, but like to have a UI that people go to, that we handle the the project and everything along those lines. Like, I think that's just kind of, frankly over complicating it and adding adding skills and stuff that aren't needed. If we're going to be able to, you know, push this out accordingly, we just need an MPC server to be able to control all this stuff and be able to to handle everything, if that makes sense. So that is basically what I'm working on, on that one and like, and this is me being rather pointed, and I don't necessarily want to harp on this, but Richard, after our conversation yesterday with Nikhil, and you can tell me if I'm wrong. I'm pretty certain I put my foot down in regards to the deployment aspect of things. Yeah, he are 30 minutes after he asked me to deploy, and then he just scheduled a meeting to do another deployment on this. So to be completely frank, I'm tired of fighting him on this. I think personally, I would like to see his time allocated somewhere else away from what I'm working on. And, like, I think, don't get me wrong, I love the work that he's done on on this, but since we're moving to an MTP server, the UI that he's done is, frankly, not necessarily, like I don't I think it's nice to have, but it's not necessary. And with the way the Singapore team and Australia team and stuff like that, they were responding, they want this quick. So MVC server is the best way to doing this. And his I just, I don't I'm fighting a lot like literally every day. I know it's supposed to be 10% of his time, but he is definitely not doing 10% of his time. And it's gotten to the point that every day I am fighting him to because to be completely transparent with you. And this is just, this is me needing to rant a little bit. So I apologise, but he only wants to deploy the application so he can share it out to Rhett and everyone along those lines to get traction on it, so he can get visibility. That is the only reason why he's pushing this, because I asked him very cleanly and very plainly that I'm more concerned about getting the project like, if he's making an UI like a base 44 replit That needs to create a create repos that align with our code. That is all I asked of him. And now he's asked wanting to do the deployment and everything along those lines. And then now, I'll be honest, and we had a call for the cat team. He's trying to introduce, he attempted to introduced tasks for app factory for that. And I'm like, No, this is not a purview of the cat team in any way, shape or form. This is mine. So I put my foot down on that, but when did,
+
+Richard Dosoo  7:04  
+what was he trying to put because that's like, he doesn't run that programme, but that Azmain First, yeah.
+
+BenVH  7:10  
+So, so basically, he was like, Oh, Ben, like, we can use Central, centralised logging for the app factory, and we can do that alongside this. And like, no, the app factory is not a purview of the the cat team and I also rep. I also referenced again the conversation yesterday where Azmain You don't need to, oh, wait, no, that was sorry. Never mind. I thought Azmain Just just wrote in the technical thing. But anyway, what you call it, So, long story short, like I nipped it in the butt. But I'll be completely transparent with you, I am no longer I'm just not responding, and I'm no longer accepting meeting requests on that, just because I need to focus on getting this MPC server and everything up to date. I'll work with Martin. Martin can leverage the MPC server to get his application up and running and everything along those lines, like, and frankly, all the applications will be able to reference our MPC server moving forward. And that way, all the individual skills and everything like that, like, it'll just, it'll be smooth sailing, and we can actually compartmentalise this and package this and then deploy the app factory anywhere. And the theory is that moving forward, any ou leveraging the app factory can actually pull down changes that we make from the like the initial core of the app factory. So it is now a standalone product inside of Moody's, if that makes sense.
+
+Richard Dosoo  8:33  
+Yeah, it's like, it's basically like maps, but for internal productivity teams, that's
+
+BenVH  8:38  
+it exactly. That's why, No, exactly so.
+
+Richard Dosoo  8:42  
+And this is what the fucking little thing is now coming to me saying, I think this will be useful for app factory. What do you think centralised login, single JSON, standard client identity, is it?
+
+BenVH  8:53  
+Yeah, no, he straight up. See, this is my issue, and I'm alright. See, this is now this. That was the message that popped up. This is the thing that really pissed me off, and I'm sorry, but this is my rant. Now I put my foot down. I have keep putting my foot down without straight up telling him, dude, stop. I'm trying to be politically okay, because he we're co workers, you know, I know like, I like the work that he's doing, but at the same time, he's overstepping, and I think he keeps pushing it, so I think it's just time like I'm not I'm no longer going to respond to his messages or anything along those lines, unless it's cat
+
+Speaker 1  9:36  
+accelerate related. Stress you out, bro, I'll have a chat with you because
+
+Richard Dosoo  9:47  
+the, the, yeah, it's like, the it's cool, like the this is, you know, as I said, I've already, I think I told you about this bed, but I raised this a bit. I raised. It with Ben Exactly. What a point that you made last night. He's doing some shady manoeuvres. He's only been here six weeks. I'm like, trying to, trying to take liberties and take credit for Ben's work and go into Rhett and being like, I'm renaming the product. I was like, because I said he's lucky he wasn't me, because I would have fucking slapped his teeth out. Like, what are you talking about? That was the conversation I had with Ben last week. I'm like, Wait, how does this like, What are you talking about? I was like, best case, wildly ignorant and naive. Best case. Worst case.
+
+Azmain Hossain  10:33  
+He's one of those just steel so and so.
+
+BenVH  10:37  
+I'll be, I'll be completely transparent with you the fact that he, even, he just reached out to you about centralised logging aspect of things. I in the in our in our stand up, he referenced it for the app factory. And I, 100% responded, the cat factory, or the cat factory, the app factory is not purview of the cat,
+
+Speaker 1  10:58  
+of the cat team at all.
+
+BenVH  11:00  
+And so the fact that he just referenced, referenced, reached out to you about that he's trying to go around me, so I'm like, I'm in. I mean, frankly, that's one of the reasons why I'm trying to not give him the ability to deploy in the app any of the stuff that he does in the app factory, because he's just going to try to, anyways, but the
+
+Richard Dosoo  11:23  
+bigger issue here, right is this, and that's what I said to Ben last week. We need to get we need to get ahead of this, right? This is where I've like in the past, I kind of like, not been as good at this, but we need to get ahead of it. So we need, like, well, we've done a really good job in talking to other people outside the team. About this is, we need to get you in front of internal, like the advisory team, so everyone knows you're at factory owner. You're the person. If people want to know about it, they come to you. There's no like side thing about, oh, we could do this. We could do that, like, but, you know, I mean, like, that's, that's what we need to do, right? So we need to set up a meeting, like, I own Lunch and Learn Town Hall, the way, I'm actually thinking about doing it, to be honest, because part of it all this shit, right? All this bollocks, sorry guys. I mean, incredibly unprofessional. But I'm here now, so I'm gonna do it.
+
+BenVH  12:18  
+No, no, please. I started it, so I apologise.
+
+Richard Dosoo  12:23  
+Like someone else's disrespect here is not an invitation for you to have to prove yourself. You don't prove yourself already, but no, like you don't need to prove yourself to these jokers. You if you're going to prove yourself, we fuck these guys, you're going to go above and around them to more senior manager and stakeholder. We're gonna have men are in banking. We're gonna have Diya on our side. We're gonna have SLT next week in London. Days, man, not gonna know your name, not these fucking pricks here that do this bullshit over there. So that's how we go about this shit. And we really finish it. So people want to fix their lips to come with any bullshit again. And we will get We'll first. We're going to do this. I was going to say to you, Brad, but I know you need the time to prep for it. We need a call. Yeah, with the guys in that customer success, agentic tooling for customer success in that meeting, right? Well, I'm going to invite the guys I know from asset management. We're going to invite Jack and the guys we met from life. We're going to say to the Asia. Pac mandem, you okay? The Time Zone might not work for you. So we're going to record it. I'm going to invite my boys from Dubai also, who are going to join and we're going to invite a guy called Dennis Clement here, who's the fucking MD of digital content innovation strategy. And you're going to present that factory to these people. I'm not even going to invite fucking the guys
+
+Azmain Hossain  13:37  
+from Yeah, that's perfect, rich even, even today, in the office, like Bernard was like, oh my god, you guys have this app factory. Who built this? I'm like, Ben Van Houten. It's like, who like Ben?
+
+BenVH  13:50  
+I I very much like, I just want to say, I very much appreciate it that you guys are going to the bat for me. Like this, um, I at this point,
+
+Richard Dosoo  14:01  
+you don't have to say thank you for that, man, you done the work. You deserve it. People should be backing on you like it's such a sad state of affairs that people come and do this shit, right? But that that that we have this attitude within the team with these guys, that this kind of behaviour is fucking and said, right? I'm gonna talk to Ben about and be like, Listen, I don't know who your management team is telling them that it's a fucking good idea, but I'd advise you to tell them to stop me, like, because I think you right, Rich. No, it doesn't. Reports the rabble and rabble reports into rep. This rolls down you.
+
+BenVH  14:36  
+So I will, I will say this. I mean, it may be it just, you can tell me if this is the correct way of going about it, but like, I honestly think, Hey, this is great. Like, great work. Thank you everyone type of thing. But like, we have the excuse that the governance and stuff like that is coming down the pipeline, so we actually have to slow down if we can say, hey, thanks. But we don't need this many resources. Is right now. And just, I mean, he's supposed to be only dedicating 10% of his time. And to be really honest,
+
+Richard Dosoo  15:06  
+there's another project that I'm trying to push him on to to get him out of the way of this, you know, the, the the Salesforce integration,
+
+BenVH  15:15  
+yeah, or Brad factory.
+
+Richard Dosoo  15:18  
+Well, it's, it'll be for apps. It won't. It will be for Clara. But yes, we do need to build something
+
+BenVH  15:24  
+so, so I'll, like, that's something that I will introduce into the MPC server. Yeah, and like, so like, I'll be, I'll be completely transparent if, even if I have to work overtime on that, I would prefer to have him not interact with any app factory app.
+
+Richard Dosoo  15:41  
+Personally, yeah, that's cool. So now this is fine. And even, to be honest, you saw the AI. You weren't on the call earlier, but I've tried to get him on a different project for AIG, so I can, that's actually quite a nice thing, because I can be like, Oh, bro, I can. I can give him the bullshit and be like, AIG, man, so important. We need you to go over there and do that, and he just leaves you alone. And then we just use Chris and anyone else and Martin to work on this stuff.
+
+BenVH  16:04  
+Yeah, I think Chris and Martin, like, I mean, Martin's already proven himself, and he's already, I mean, he's focused on his app and making it the way it works, and I can integrate with what he's done, and that'll be a huge win on the sales side. But, yeah, like, I just personally, as far as that goes, I just, it's literally every single day, it's, I'm pushing them off, and I I'm sorry. It's just it's taking too much of my time, and to be completely transparent, it's taking too much of my mental acuity, because I'm thinking about this out, and when I'm off of work, no, 100%
+
+Richard Dosoo  16:37  
+listen, I'm gonna do this year, so I'm gonna have a call with him. Maybe, like, seems to be a little bit of tension in the system here. But I want to just walk through the, again, the accountability and responsibilities of the things that we work on. Accelerate infrastructure, but our factory bet, tech consultant resourcing, you, tech stack for tech authority project, cat, accelerate. Fine, you do that, but the infrastructure's been like, and I'm going to basically have that conversation to be like, just want to reinforce that so he knows, like, the you know, who's accountable and responsible for what, and who's informed, right? And that's it. That's, that's something I play. And then I gotta, and then, and then that will turn into, what will we do next? Yeah, because what's happening, basically, it's the same shit as me that you're saying earlier with Juliet. These people want to push your limits. They can't respect the boundaries, right? They want to put your limit. And they push him
+
+Azmain Hossain  17:43  
+more malicious. Man, this is, like, probably malicious, like coming in and just like trying to steamroll somebody who's just got their head down and working. I mean, I don't know if that's what hired him, but it seems like the kind of person Rhett would hire
+
+Richard Dosoo  18:02  
+the artwork. Honest, I hired him. I made the decision to hire him, but when we interviewed him, he came across very personable and not like that, right? He asked him really good questions and stuff, but he's clearly like that. That's cool, that he's shown what he's like, right? And, okay, listen, I get that. He's come in. He's trying to make a name for himself or whatever. Now you've got to make me put a boundary down. I was happy to be like collaborative and stuff, but now you making me put a boundary down, and I'm going to have to enforce that boundary, because you've shown here that you can't respect people's boundaries that I've set. You keep going across them and and if you like, and you seem to have a problem with, with with that understanding, and it seems to be persistent, repeating pattern of behaviour. So now I need to sit down and talk about it, and ask them, do we need to have a follow up? That's, that's the thing, right? If, if, like, Ben has had this conversation loads of times. I've had the conversation last week put the Tech Tech out. I was like, have you reviewed this with benian? Oh, no, I haven't. I'm like, dude, like, you know you're this is not, uh, this isn't uh, this isn't, this is intentional. So then if you're going to bring that energy, then I have to confront you directly on it. Yeah. Do you see what I mean? Like you're forcing me to confront you directly on this now and tell you because it can't carry on. Yeah?
+
+BenVH  19:22  
+Yeah. So I appreciate it. I again like, I feel like I keep bringing this up, and I'm now in a off channel. I mean, Nikhil may put a meeting with me and him for quite literally, at Factory deployment at three. I just straight up cancelled it, and now Nikhil and Rhett and I are in our own slide channel, so I'm pushing that and moving it towards
+
+Richard Dosoo  19:49  
+the main channel that factory comes on the generali programme. Yeah, no one makes that decision without me or has main money. So. They will pull up, pull them in. They'd be like, you understand, Richard run that programme. So if someone is right, is asking for even picking up shit on Clara and doing stuff on that Brother, you're fucking dickhead. What are you doing? So no, this just got to stop.
+
+Azmain Hossain  20:14  
+And got to stop. Just on that note, like my little two senses, I need to do more to get people I know I'm, like, the most junior person, and I can see people's kind of confusion of like, Wait, well, I thought you were just a guy doing, like, programming. But I need to be more assertive and kind of tell people, no, I'm running this. And then whatever questions are raised, we can answer then, because I'm I'm just expecting people, because I'll tell you right now, man, like working with RMS, people have noticed this. They're weirdly conscious of rank, which, like legacy Moody's, people don't really give a shit. But the question is going to come up of, why somebody so Junior running all of this?
+
+Richard Dosoo  20:59  
+No, fuck all that shit, and I'm not having that doesn't matter. I'm not having that shit because it doesn't matter you're running the thing. Your decision was made for you to run it. Anyone that doesn't like it can fucking suck. I'm not, no, I'm not into that shit about what if they got a problem with it, then they come see me and they can come see me in person. What the fuck are they talking about?
+
+BenVH  21:18  
+No, I'm just like, alright, so all that being said, Sorry, I just, I want to make sure, because I do want to get the Azure stuff done for the slide. But no, this, this, it gets my blood boiling. So it's, I just, I need to, but like to be completely transparent. In my personal opinion, this isn't going to go away unless we can just strategically and carefully move Nikhil to focus on a different project, away from app factory, not even connected to any applications in the app factory as well, because if he has any tie to the app factory, he will attempt to go.
+
+Richard Dosoo  21:58  
+I'll be honest, bro. I'm even why are we even stressing about this? I'm gonna pick my phone up and call Ben and be like, Ben, we got a problem. I need you to go sort it out. Yeah, pissing off the man, then go and fix this fucking problem. Go and have a work and, by the way, go and tell your boy if he's telling him to do this shit, it better not fucking happen again.
+
+BenVH  22:20  
+Yeah, I honestly think Rhett is, I think he's just oblivious to, like, I mean, I want to play devil's advocate in this sense, purely because, like, if, if I'm understanding the situation correctly, Nikhil has come to Rhett multiple times. I don't think Rhett has actively pursued Nikhil. So Rhett thinks that Nikhil is the one, so to speak. And like, I've only literally had 110 10 minute meeting with with Rhett since he's been back. So, like,
+
+Richard Dosoo  22:53  
+this is what I'm telling you, right? This, this, Listen, man, there's a reason. There's a reason why these people are coalescing and shit like that. There's a reason.
+
+BenVH  23:04  
+Yeah, okay, so for the app registration, yeah.
+
+Richard Dosoo  23:10  
+So first what I need to do is, when I log in, then I need to go and change my privilege
+
+BenVH  23:16  
+management thing. That's right, okay, that's what this was. I forgot the name of it, yeah.
+
+Richard Dosoo  23:20  
+And then I need to go in here and activate this. And then you put in some bullshit excuse.
+
+Azmain Hossain  23:25  
+Yeah, okay, can't you extend the all the max you can do is eight hours.
+
+BenVH  23:30  
+Yes, welcome to Azure being enterprisey.
+
+Azmain Hossain  23:37  
+Yeah, because that's exactly what giant companies need. Time limited, yeah.
+
+BenVH  23:43  
+But yeah. So as far as the like, so I will say, as far as the app factory, empty MPC server, I will have that, or MCP server, I will have that, hopefully wrapped up here at the end of the week, be able to do a bunch of stuff. We can work with Martin to get that integrated into his app. But personally, I mean, you can tell me if this is taking it too far or not, but I think if we can control the narrative of the MC MCP server, because people who are trying to take this over won't, if we can just not tell them the direction that it's taking, they're going to just run out of the road.
+
+Richard Dosoo  24:19  
+I think it's the thing is, I don't want to skirt around the issue, right? Because then people will get some excuse that they can continue to behave that way, and they'll be like, Oh, well, I wasn't. I didn't quite understand. I want to be completely direct and be like, Listen, your repeated attempts to try and steamroll, take ownership in false direction. Nobody fucking likes that. Nobody fucking likes it. To be honest, it's getting quite fucking annoying. And if that's the way that you like to work, I want to know that now, because we're literally going to tell you to step to the side and focus on pieces over there. If that's the way that you if you can't work collaboratively, yeah, and you need to. Keep trying to enforce your expand your remit in your role, then I'm just not going to work with you. That's That's how, that's what I'm going to say. I'm going to go listen, if this, if that, if you can't work collaboratively in the space with guys without trying to take ownership and influence direction when you've been told, no cool, no problem. Work with your team right now. Work a good team, though. That's it. Yeah, that's it.
+
+Azmain Hossain  25:26  
+We listen. I don't know how much, I mean, Ben's already said he doesn't, he doesn't need this stuff. He doesn't need like Nichols help, or anything like that. I don't know how much help Martin needs,
+
+BenVH  25:38  
+but I don't think, I don't think Martin needs help from from, from what I've been able to see.
+
+Azmain Hossain  25:44  
+Frankly, I don't think Martin needs help. And even if he does, like Chris malhauser is available because he's he's just like, he is really good to work with. He's just punched through all these, all these bug fixes on Clara, he can 100% and we are literally less than 30 days away from me getting two grads full time to help out. And okay, it'll take maybe, you know, a week to get them up to speed, but then they're just going to go and we can just move them around between projects. Ben, if you need some help, you can just get one of the grads for like, two weeks and get the help somebody
+
+BenVH  26:20  
+moving moving forward. I don't, I don't need any, any help. I just need to be able to coordinate with Martin, because he will be, his application will be the initial proof of concept. Yeah, I'm no longer doing the to be completely transparent. I'm putting the app that Nikhil just built on the back burner. Because I don't, I just don't think it's, it's necessary at this point in time, the MPC, MCP server is the critical aspect of it, so everything else can just go through. Me. That's good. Okay, so in the app. So can you go to IRP tracker, because we're using that right now, because we don't have the app factory, but can you go to the authentication, I believe authentication.
+
+Azmain Hossain  27:08  
+Oh, rich, we've got that, like, really short meeting. Draft is Clara, yeah, it's Catherine, again, if you can add, sorry,
+
+BenVH  27:22  
+you're fine. Um, can you? Can you add so single page application, and this like it's the same things, Dev, dot, app factory, blah, blah, blah, blah, blah, and then just do slash, slightly slidey,
+
+Speaker 1  27:40  
+but it's HTTP, you know, HTTPS?
+
+BenVH  27:43  
+Um, no, it's HTTPS. Oh no, it was just a space in front that was the problem. And then you can do, you do the staging and production as
+
+BenVH  28:02  
+well. I Oh yeah, okay, sorry. Their UI sucks. I couldn't see that. And you don't need anything for for that, just delete and delete. There you go. Perfect. That's all we need.
+
+Richard Dosoo  28:17  
+Okay, cool. Well, Ben, let's I'm going to jump to this meeting now, but let's catch up in 15 minutes.
+
+BenVH  28:23  
+Okay, that's fine,
+
+Speaker 1  28:25  
+all right, I'll speak to you in a bit. Thanks.
+

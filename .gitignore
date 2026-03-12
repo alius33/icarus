@@ -33,3 +33,6 @@ pgdata/
 # Temp
 _plan_draft.txt
 nul
+
+# Generated reports
+reports/

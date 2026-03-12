@@ -331,11 +331,22 @@ export const api = {
     ),
 
   // Upload transcripts
-  uploadTranscripts: async (files: File[], projectIds?: (number | null)[]) => {
+  uploadTranscripts: async (
+    files: File[],
+    projectIds?: (number | null)[],
+    secondaryProjectIds?: (number | null)[],
+    tertiaryProjectIds?: (number | null)[],
+  ) => {
     const formData = new FormData();
     files.forEach((f) => formData.append("files", f));
     if (projectIds) {
       formData.append("project_ids", JSON.stringify(projectIds));
+    }
+    if (secondaryProjectIds) {
+      formData.append("secondary_project_ids", JSON.stringify(secondaryProjectIds));
+    }
+    if (tertiaryProjectIds) {
+      formData.append("tertiary_project_ids", JSON.stringify(tertiaryProjectIds));
     }
     const res = await fetch(`${getApiBase()}/api/transcripts/upload`, {
       method: "POST",

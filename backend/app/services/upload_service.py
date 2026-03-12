@@ -149,6 +149,8 @@ async def process_uploaded_transcript(
     content_bytes: bytes,
     db: AsyncSession,
     primary_project_id: int | None = None,
+    secondary_project_id: int | None = None,
+    tertiary_project_id: int | None = None,
 ) -> dict:
     """Process a single uploaded transcript file.
 
@@ -187,9 +189,18 @@ async def process_uploaded_transcript(
 
     if existing:
         if existing.file_hash == file_hash:
-            # Even if content unchanged, update project if provided
+            # Even if content unchanged, update projects if provided
+            changed = False
             if primary_project_id is not None and existing.primary_project_id != primary_project_id:
                 existing.primary_project_id = primary_project_id
+                changed = True
+            if secondary_project_id is not None and existing.secondary_project_id != secondary_project_id:
+                existing.secondary_project_id = secondary_project_id
+                changed = True
+            if tertiary_project_id is not None and existing.tertiary_project_id != tertiary_project_id:
+                existing.tertiary_project_id = tertiary_project_id
+                changed = True
+            if changed:
                 await db.flush()
                 await db.commit()
             return {
@@ -209,6 +220,10 @@ async def process_uploaded_transcript(
         existing.updated_at = datetime.utcnow()
         if primary_project_id is not None:
             existing.primary_project_id = primary_project_id
+        if secondary_project_id is not None:
+            existing.secondary_project_id = secondary_project_id
+        if tertiary_project_id is not None:
+            existing.tertiary_project_id = tertiary_project_id
         await db.flush()
 
         # Rebuild mentions for this transcript
@@ -233,6 +248,8 @@ async def process_uploaded_transcript(
             word_count=word_count,
             participants=participants,
             primary_project_id=primary_project_id,
+            secondary_project_id=secondary_project_id,
+            tertiary_project_id=tertiary_project_id,
             source_file=f"Transcripts/{filename}",
             file_hash=file_hash,
         )

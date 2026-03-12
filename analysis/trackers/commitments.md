@@ -70,3 +70,18 @@
 | 2026-03-09 | Juliet Valencia | Connect Richard/Azmain with SPM team for data access | Next week | Dan confirms data source | Conditional | Sales dashboard call with Juliet | High |
 | 2026-03-09 | Richard | Share skills repo and prompt library with Juliet | End of week | None | Open | Sales dashboard call with Juliet | Medium |
 | 2026-03-09 | Chris | Push date input fix through full pipeline | This week | Tests pass | Conditional | Bug fixes chat with Chris M | High |
+| 2026-03-11 | BenVH | Complete App Factory MCP server by end of week | 2026-03-14 | None | Open | App Factory Standup | High |
+| 2026-03-11 | Richard | Have direct confrontation with Nikhil about boundaries | This week | None | Open | App Factory Standup | High |
+| 2026-03-11 | Richard | Escalate Nikhil behaviour to Ben Brooks | This week | None | Open | App Factory Standup | High |
+| 2026-03-11 | Richard | Set up Slidey cross-team meeting | Next Tuesday | None | Open | Sales team apps in App Factory | High |
+| 2026-03-11 | Richard | Tidy Salesforce integration design doc for tomorrow | 2026-03-11 | None | Open | Salesforce Integration Design | High |
+| 2026-03-11 | Catherine | Share Salesforce design with wider team for tomorrow meeting | 2026-03-11 | None | Open | Salesforce Integration Design | High |
+| 2026-03-11 | Juliet | Share PowerPoint generator GitHub repo | This week | None | Open | Sales team apps in App Factory | Medium |
+| 2026-03-11 | Azmain | Write up inter-app communication requirements (CLARA → Slidey) | This week | None | Open | App Factory Discussion | High |
+| 2026-03-11 | BenVH | Complete App Factory MCP server for Martin integration | 2026-03-14 | None | Open | App Factory Discussion | High |
+| 2026-03-11 | Richard | Work on Slidey changes and deploy locally | Tonight (11 Mar) | None | Open | App Factory Discussion | High |
+| 2026-03-11 | Richard | Schedule Wednesday meeting for App Factory / cross-OU showcase | 2026-03-12 | None | Open | App Factory Discussion / Chat with Idrees | High |
+| 2026-03-11 | Richard | Work on narrative/messaging with Idrees for Wednesday meeting | Before Wednesday | None | Open | Chat with Idrees | High |
+| 2026-03-11 | Richard/Azmain | Pull Salesforce tickets + qualitative data for AON and send to Idrees | Before Rob's AON meeting | None | Open | Chat with Idrees | High |
+| 2026-03-11 | Richard | Loop DIA, MENA, and Irina into all cross-OU correspondence | Ongoing | None | Open | Chat with Idrees | Medium |
+| 2026-03-11 | Idrees | Loop DIA and George Dyke into retention dashboard thread | Today (11 Mar) | None | Open | Chat with Idrees | High |

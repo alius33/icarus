@@ -1,6 +1,6 @@
 # Stakeholder Map
 
-Last updated: 2026-03-11 (all transcripts through 10 March processed, plus 9 March advisory/sales/bug fix calls)
+Last updated: 2026-03-12 (all transcripts through 11 March processed, including App Factory Discussion and Chat with Idrees)
 
 ## Tier 1 — Decision Makers & Sponsors
 
@@ -78,6 +78,7 @@ Last updated: 2026-03-11 (all transcripts through 10 March processed, plus 9 Mar
 - **Risk:** Single point of failure for infrastructure. If he's unavailable, nothing deploys.
 - **Asset:** Has a personal patented CICD orchestration project (Phantom Agent). Thinking about how to make deployment "idiot proof."
 - **March signals (CONCERNING):** Admitted his recent absence was not illness but being worn down by Nikhil taking credit for his App Factory work, renaming it, and presenting his architecture as his own. Morale/retention risk. Also flagged on 3 Mar that four other apps are in the App Factory pipeline — he's under-resourced.
+- **11 Mar (CRITICAL):** Conflict with Nikhil at peak. BenVH cancelled Nikhil's meetings, stopped responding to his messages, described daily boundary violations as "getting my blood boiling" and "taking too much of my mental acuity." Pivoted entire App Factory to MCP server architecture — both technically correct and strategically designed to make Nikhil's UI work irrelevant. Channelling anger productively but retention risk acute. Asia-Pac teams (Singapore, Japan, Australia) interested in App Factory — adds pressure and validation simultaneously.
 
 ### Martin Davies — Developer (12-week assignment)
 - **Focus:** Build in Five workstream
@@ -89,7 +90,7 @@ Last updated: 2026-03-11 (all transcripts through 10 March processed, plus 9 Mar
 |--------|--------|--------|
 | Kevin Pern | CS Agent (Copilot Studio) | Working alone, no programme oversight |
 | Cihan / Lonny | MCP server (Product) | Early-stage collaboration |
-| Nikhil | Tech consulting lead (new) | 50% App Factory / 50% CLARA. BenVH alleges he is taking credit for App Factory work. Territorial. |
+| Nikhil | Tech consulting lead (new) | 50% App Factory / 50% CLARA. BenVH alleges daily boundary violations: scheduling deploys after being told no, introducing App Factory tasks to CAT team, going around BenVH to Richard. Richard planning direct confrontation and Ben Brooks escalation. To be redirected to Salesforce integration or AIG. Genuinely impressed by Martin's Build in Five demo (11 Mar) — unaware of plans to remove him. |
 | Bala | Banking/edfx (new) | Just joined |
 | Rhett | Consulting/tech | Learning to push code |
 | Courtney | HD model analysis | Rich data on adoption barriers, exploring integration |
@@ -105,9 +106,9 @@ Last updated: 2026-03-11 (all transcripts through 10 March processed, plus 9 Mar
 | Vlad | PM | Week 3: Practical, willing to help populate data in CLARA. Has 3 accounts ready as quick wins. Wants clear scope and timelines. |
 | Diana | PM → Azmain's new manager (4 Mar) | Now Azmain's reporting line. Supportive of Friday development. Planning to present Friday vision to Ben/Charlotte. |
 | Martin Davies | Build in Five (WS6) | Exceptional output. Dashboard builder dramatically exceeded expectations (10 Mar). Richard compared to Databricks Genie. Live RM API integration working. Demo shifted to May. 12-week clock ticking but output justifies investment. |
-| Catherine | Data alignment + Gainsight governance | March: Offered to help with governance and App Factory decision tree. Key new ally. |
+| Catherine | Data alignment + Gainsight governance | March: Offered to help with governance and App Factory decision tree. Key new ally. 11 Mar: Joined Salesforce integration design session. Enthusiastic about App Factory approach ("breaks down siloed walls"). Confirmed Gainsight hard launch March 30. Raised NPS data as potential addition. Strongest engagement yet. |
 | Dan Flemington | Sales | March: New stakeholder with existing tools. Julia Valencia identified for Salesforce access. In Vienna at event (w/c 9 Mar). |
-| Juliet Valencia | Sales analytics / Power BI dashboards | New 9 Mar. Manages Sales Hub dashboards. Clarified data ownership: Dan's data likely from SPM team (Tableau), not her. Uses Cursor for dashboards. Cooperative, good data governance instincts. Will connect team with SPM contacts. |
+| Juliet Valencia | Sales analytics / Power BI dashboards | New 9 Mar. Manages Sales Hub dashboards. Clarified data ownership: Dan's data likely from SPM team (Tableau), not her. Uses Cursor for dashboards. Cooperative, good data governance instincts. Will connect team with SPM contacts. 11 Mar: Struggling with Azure/Power Automate/Copilot Studio integration (same wall insurance team hit). Has confidential data (commission targets) — chose own AWS infra over shared hosting. Also built Moody's branded PowerPoint generator independently — Slidey convergence opportunity. |
 | Arno | Advisory team project lead | New 9 Mar. Leads weekly advisory project status call under Charlotte's org. Manages ILS, climate, banking advisory staffing. Diana brought Azmain to observe. |
 | Gina Greer | Banking customer engagement (central) | New 10 Mar. Mapping banking AI initiatives. Same stage as insurance Nov 2025. Potential cross-OU ally. |
 | Olivier | Banking AI enablement lead | New 10 Mar. Thoughtful about tool selection. Working with Nick Louder/Kentucky teams. Deployment gap concern. |
@@ -116,6 +117,9 @@ Last updated: 2026-03-11 (all transcripts through 10 March processed, plus 9 Mar
 | Mike Bibo | Risk Modeller demo team lead | Identified 10 Mar as critical for Build in Five. Demos RM to customers. |
 | Sam Gibson | Risk Modeller demo team (UK) | Identified 10 Mar. Under Bibo. |
 | Prashant | Developer (planned) | To be allocated to help Azmain with Friday development. |
+| Natalie Bath | Sales / reports to Helen Ryder | New 11 Mar. Saw MENA's agent demo at Miami sales connect. Asked Idrees to run agent view on AON data for Rob Fulber's meeting. Cross-OU interest signal from sales side. |
+| Rob Fulber | Senior leader | Meeting Dan Dick (Global Head Cat Risk, AON) next week in London. Cross-OU account intelligence opportunity. |
+| DIA | Cross-OU coordination | Manages customer engagement across segments. Interested in Moody's-wide retention dashboards. Idrees looped her into retention dashboard thread (11 Mar). Key person for cross-OU pressure on Charlotte. |
 
 ## Dynamics to Watch
 
@@ -127,8 +131,12 @@ Last updated: 2026-03-11 (all transcripts through 10 March processed, plus 9 Mar
 6. **Deployment fragility** — Week 3 theme. Richard and Azmain shifted from "move fast" to "don't break things." No tested rollback procedure. Schema changes now require BenVH approval before execution.
 7. **Corporate tooling crisis** — Cursor tokens exhausted for both Azmain and Ben by 23 Jan. Richard personally paying for Claude Code as workaround. Developer laptops only just approved.
 8. **Richard flight risk (NEW - March)** — Interviewing in New York. If he leaves, the programme loses its strategic leader. Nobody else manages Diya or bridges the technical and business sides.
-9. **BenVH/Nikhil conflict (NEW - March)** — BenVH worn down by Nikhil taking credit for his work. Morale risk for the only person who can deploy.
-10. **Friday as scope creep risk (NEW - March)** — Azmain building a PM app on the side while already stretched thin on CLARA and five other workstreams.
-11. **Security/compliance exposure (NEW - March)** — Personal Claude accounts used for Moody's work. Audit found it. Team spending personal money on tooling.
-12. **Cross-OU expansion pressure (NEW - 10 March)** — Banking (Gina/Olivier) and Life (Jack/Christian) both want collaboration. Validates approach but risks further stretching an overloaded team.
-13. **Bedrock cost trajectory (NEW - 10 March)** — $1,163 in two weeks, on pace for $10K/month. No cost attribution. Tags broken. New frontier of the same budget problem.
+9. **BenVH/Nikhil conflict (ESCALATING - 11 March)** — Now at crisis point. BenVH cancelled Nikhil's meetings, stopped responding. Richard planning direct confrontation and Ben Brooks escalation. Nikhil to be redirected to Salesforce/AIG.
+10. **Friday as scope creep risk (March)** — Azmain building a PM app on the side while already stretched thin on CLARA and five other workstreams.
+11. **Security/compliance exposure (March)** — Personal Claude accounts used for Moody's work. Audit found it. Team spending personal money on tooling.
+12. **Cross-OU expansion pressure (10 March)** — Banking (Gina/Olivier) and Life (Jack/Christian) both want collaboration. Validates approach but risks further stretching an overloaded team.
+13. **Bedrock cost trajectory (10 March)** — $1,163 in two weeks, on pace for $10K/month. No cost attribution. Tags broken. New frontier of the same budget problem.
+14. **App Factory MCP server pivot (NEW - 11 March)** — BenVH redefining App Factory as a middleware MCP server. Architecturally sound and addresses Asia-Pac demand, but adds more to BenVH's workload while he's already in crisis.
+15. **Salesforce integration design crystallising (NEW - 11 March)** — One-way read, Cases/CaseFeed only, four consumer groups (Bernard, Courtney, Kevin, CLARA). Catherine fully engaged. Tomorrow's Gainsight meeting is the next milestone.
+16. **Slidey convergence (NEW - 11 March)** — Multiple teams (Richard, Juliet, Richard's manager) building PowerPoint generators independently. Cross-team meeting planned for next Tuesday. Could become App Factory's most widely adopted tool.
+17. **Gainsight March 30 hard launch (NEW - 11 March)** — Confirmed by Catherine. No IRP data expected at launch, but "does Clara sync?" questions will start immediately after.

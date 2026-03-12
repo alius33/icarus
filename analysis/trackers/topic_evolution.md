@@ -68,3 +68,14 @@
 | 2026-03-09 | CLARA deployment maturity | Technical | Medium | 2026-01-19 | 8+ | Stable | Cat Accelerate "wild west" comparison | Medium |
 | 2026-03-09 | Databricks Risk Data Lake deprecation | Technical | Low | 2026-03-09 | 1 | New | N/A | Medium |
 | 2026-03-09 | Advisory project portfolio visibility | Governance | Low | 2026-03-09 | 1 | New | Diana: "this is a shit show" | Medium |
+| 2026-03-11 | App Factory MCP server pivot | Architecture | Very High | 2026-03-11 | 1 | New/Rising | BenVH: entire App Factory core becoming an MCP server; any app can consume it | High |
+| 2026-03-11 | Nikhil boundary conflict | Personnel | Very High | 2026-03-03 | 6+ | Escalating | Daily boundary violations now; Richard planning confrontation and Ben Brooks escalation | High |
+| 2026-03-11 | Salesforce integration design | Integration | High | 2026-03-06 | 3 | Rising | One-way decision made; Cases/CaseFeed objects scoped; four consumer groups identified | High |
+| 2026-03-11 | Slidey (PowerPoint generation) | Product | Medium | 2026-03-11 | 1 | New/Rising | Multiple teams building same tool independently; cross-team meeting planned | Medium |
+| 2026-03-11 | Gainsight March 30 launch | Integration | Medium | 2026-03-11 | 1 | New/Rising | Hard launch confirmed; creates Clara sync pressure even though no IRP data expected | Medium |
+| 2026-03-11 | AIG strategic intelligence | Client | High | 2026-03-11 | 1 | New | AIG signed strategic deals with Anthropic and Palantir; using MCP for underwriting | High |
+| 2026-03-11 | App Factory inter-app communication | Architecture | High | 2026-03-11 | 1 | New/Rising | CLARA-to-Slidey flow via App Factory MCP; Azmain insight, BenVH requested writeup | High |
+| 2026-03-11 | SharePoint knowledge cataloguing | Data/Strategy | Medium | 2026-03-11 | 1 | New | Richard proposed profiling 10 years of consulting docs; vector DB + MCP + Purview tagging. Azmain flagged cost concern | Medium |
+| 2026-03-11 | Cross-OU showcase meeting planning | Governance | High | 2026-03-11 | 1 | New | Wednesday meeting with ISLTR, banking (Idrees), asset management. Retention dashboard + ROB AI + App Factory | High |
+| 2026-03-11 | AON account intelligence | Client | Medium | 2026-03-11 | 1 | New | Natalie Bath requested agent view on AON; Rob Fulber meeting Dan Dick next week. Cross-OU visibility opportunity | Medium |
+| 2026-03-11 | Segment-agnostic retention dashboard | Product | Medium | 2026-03-11 | 1 | New | Idrees building Moody's-wide retention dashboard; looped DIA and George Dyke in today | Medium |

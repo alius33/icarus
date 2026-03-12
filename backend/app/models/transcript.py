@@ -24,12 +24,26 @@ class Transcript(Base):
         nullable=True,
         index=True,
     )
+    secondary_project_id = Column(
+        Integer,
+        ForeignKey("projects.id", ondelete="SET NULL"),
+        nullable=True,
+        index=True,
+    )
+    tertiary_project_id = Column(
+        Integer,
+        ForeignKey("projects.id", ondelete="SET NULL"),
+        nullable=True,
+        index=True,
+    )
     source_file = Column(String, nullable=False)
     file_hash = Column(String, nullable=False)
     imported_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     primary_project = relationship("Project", foreign_keys=[primary_project_id])
+    secondary_project = relationship("Project", foreign_keys=[secondary_project_id])
+    tertiary_project = relationship("Project", foreign_keys=[tertiary_project_id])
     summary = relationship("Summary", back_populates="transcript", uselist=False)
     mentions = relationship("TranscriptMention", back_populates="transcript")
 

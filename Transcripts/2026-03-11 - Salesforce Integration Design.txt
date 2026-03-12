@@ -1,0 +1,159 @@
+Speaker 1  0:00  
+Uh, like, they'll be part of the MCP certain stuff. So yeah, we can have a more broader discussion on how we want to put that together. But yeah,
+
+Azmain Hossain  0:11  
+I don't. I hear the words you're saying, but it's not clicking in my brain of how it's gonna work. So yes,
+
+Speaker 1  0:20  
+yeah, and we can, well, let's you and I take a time and we can talk it out, yeah?
+
+Azmain Hossain  0:25  
+And you can, you can just run me through it, because so, I mean, obviously Clara needs Salesforce integration, but then the Friday App also needs it, yeah? Because, you know, everybody freaking loves Salesforce. That's the source of truth, so we have to keep constantly 100% at least, at least read access to it.
+
+Unknown Speaker  0:48  
+Yeah, yeah.
+
+Richard Dosoo  0:51  
+But, and that was exactly why I first did just that software that was in Clara then was like, actually, it needs to be a first class citizen in the app factory, yeah. And you can see here, one option was a service, and then the other option is client, a Clara back end of MCP server that connects to the Salesforce MCP server. So I think that's, that's the option, basically, that we're going to go
+
+Unknown Speaker  1:19  
+for, yeah. Now that's that.
+
+Azmain Hossain  1:22  
+So instead of a Salesforce MCP server, it's just going to be rolled into the app factory MCP server. And then do we need a MCP client for each so like, if another app comes up and that needs Salesforce, like Friday, will there be an MCP client for that to read off?
+
+Speaker 1  1:43  
+So if it helps, an MP MC MCP client is basically anything that consumes a MP MCP server. Yeah, so like and like to be completely transparent. It's just a fancy way of saying an API. So it's any any application running there, like the app or like Clara or whatever, they'll just be consuming the MCP server, and that can be either via API or AI or whatever. But yeah, I'll have a, essentially a middleware. So that way, if we do connect Salesforce and everything along those lines, that will go through the to my MCP server, and then that can be leveraged across any application, if that makes sense. Yeah, yeah. So like the app factory is essentially the man in the middle in that, in that situation, yeah,
+
+Azmain Hossain  2:41  
+Hey, Catherine, sorry, we kind of got into the discussion a little bit.
+
+Speaker 2  2:45  
+No, that's fine. I'm sorry. I am a few minutes late.
+
+Richard Dosoo  2:49  
+No, all good, Catherine, we the reason I wanted us to get together is we're we need to start breaking out our tasks. Essentially, we need to align on the design so we can start working on that, on the actual task, to get this thing up and running, like the dev tasks, the estimates, and I'm planning that out. And the key real decision points for us are a couple of things. So let me bring this up. I guess I know you had a you had a chance to look through the document, right? Yeah. Cool. So for us, there's a couple of things that came out of it, and the key things really were the integration between our environment and Salesforce. We my initial assumption was that it was going to be only be one way, so that would be data flowing into our application from Salesforce. There was no need for bi directional flow, ie, for us to go back and update Salesforce if there's any updates in cloud. And that's a question, right? And Azmain for you as well. I think the use cases that we're working on now, the predominant ones are just read only data from Salesforce, right? There isn't that much requirement to push anything back into Salesforce from Clara is, that is my understanding,
+
+Azmain Hossain  4:06  
+yeah, because I feel like, firstly, I I have no idea what the structure data structure is in Salesforce. It's a, it becomes a huge can of worms. If we start trying to push stuff, pulling data in, we can, we can organise the data however. We need to for our apps to read it. That's fine, so let it's good to start
+
+Speaker 2  4:30  
+with that. What are the use cases that you have scoped out? It would be helpful to see a list of that. So then I know was that,
+
+Richard Dosoo  4:43  
+can you see this slide? This were the these were the high level ones. So, account, contact, case blockers, success criteria,
+
+Speaker 2  4:57  
+maybe not necessarily. So. The objects make sense. It's what are, what are we actually building? Is it this just a platform for people to be creating their own apps from? Are there specific apps that you're creating that's, I don't fully understand, what we have scoped and therefore, what information do we need to bring in?
+
+Azmain Hossain  5:21  
+So yeah, so initially my focus was just bringing in the stuff that Clara needs. So, parent account, child account, you know, who owns which account. Cases that are raised in Salesforce come in as blockers, or, you know, we can just create a new object called cases, and they come in there, just this basic stuff so that we can stop answering the question of, does this sync with Salesforce? It's like, Yes, this is synced with Salesforce. Whatever is in there, is in here. And then what the what the Salesforce integration layer will do is that any further apps we don't know what will be created in the future that needs Salesforce data. For example, Idris in banking built a dashboard for IRENA to check revenue and ARR numbers, if I don't know. Dia wants something like that, and somebody in her team builds that they will need the Salesforce layer to pull out the contract amounts and stuff like that, even
+
+Richard Dosoo  6:27  
+before, even before we get to those guys, there's two other use cases that are front and centre that we've had to solve for. One was the customer sentiment analysis based off tickets that are in Salesforce. So that that's one of the original scoping items of the project. This comes under this this, this pillar too, right? And that work, though, is Bernard goes into copilot studio, or cursor, who can persuade him to ditch copilot studio. He wants to be able to run some prompts and understand the customer sentiment based off Real Time Ticket information. And you can reason you can't do that again site is because that information isn't as up to date in there, right? So that's, that's, that's, that's him. That one has got to be top of mind, because that's one of the key drivers of the project. The second one is Courtney spillers. Do you know who Courtney spillers? Yeah, yeah. So Courtney's done some analysis already, and she was asked on on HD adoption and tickets information to try and look at and look at the common blockers that are preventing HD adoption. And she surfaced, and that up in a in a report. And the question was, should she put that in Clara? Should she do that somewhere else? And we were saying, Okay, how often does this need to be run. Are you going to do the an extract outside of Salesforce every time run your analysis and then pump it into a dashboard? Wouldn't it be better if that dashboarding and analysis experience just fed through into Clara and the dashboard was visible for the Ben, whoever's responsible for HD adoption, and they have that metrics real time. So that's the second one. Then the third one is Kevin Pern. Who Kevin, actually, you mentioned this when we were on a call with him previously. He needs access to ticket information, but he also needs access, I think, to user voice information as well. I need to confirm anything that, but that, those are the three people that we have to solve for straight away, and obviously Azmain For blockers and Clara and any other blocker intelligence that we need. So we need to pull that information from Salesforce to solve for Bernard, to solve for Courtney and to solve for Kip.
+
+Speaker 2  8:34  
+Okay, you do know that Rhett was working on ticket and user voice analysis?
+
+Richard Dosoo  8:41  
+Yeah, he's doing that on his own. Unrelated. I'm tired to this, to be honest. I need to follow up with him on that. Yeah, I
+
+Speaker 2  8:48  
+just want to make sure we don't duplicate work there. Okay, this high level information is very helpful. We shouldn't need anything that's related to IRP, we shouldn't need out of Salesforce in terms of like success criteria, all that information, because we stopped using Salesforce for that and the ticket information makes sense.
+
+Richard Dosoo  9:16  
+So what that information right now is coming out of golden source. So are you saying that for a new client that comes in, is that information going into Gainsight directly, or are you going to put it in Clara directly? What's the plan, if it's
+
+Speaker 2  9:32  
+related to IRP adoption, that would go right now, go directly into Clara? The idea was that Clara for IRP adoption or IRP migration, that would not be forever, because, like all ongoing adoption activity for CSMs, would happen and gain site, and some of that we might want to just save for a conversation tomorrow. Um. Um, it sounds like the philosophy, if I'm getting this right, is that Clara should be able to extract information from various sources for us to then be able to do unique intelligence and analysis on it is, am I interpreting that correctly?
+
+Richard Dosoo  10:20  
+Yeah, I just want to be, I want to add the nuance, because it's important. Like Clara is built on a on our application factory, and we, and that application factory supports Clara, supports Bernard, supports Courtney, it supports Kevin, right? So rather than us building out point to point integrations for Kevin, for Clara, for Courtney, for Bernard, we're going to build out one integration into our platform so everyone else is a beneficiary of it, including Clara, and that's the approach that we're taking, that we're going to have an integration approach which is built out in our application factory, so we can Use that same interface to support blocker analysis and Clara customer sentiment analysis from burn up HD analysis in Clara for Courtney or something else, right? So that's why we're taking this approach.
+
+Speaker 2  11:14  
+Okay? No, that makes so much sense. I the reason why I'm asking is I want to make sure we have a philosophy on where people do the activities, and then where do you know, where are we doing analysis? Because we do have to have alignment with the rest of the wider CSMs and the overall environment of doing our work in Gainsight, just as sales does their work within Salesforce, but I think there's it makes a lot of sense to be able to take that information out and use way more powerful analytics, using your that factory that you create to do these unique analyses. Is that, am I interpreting this correctly?
+
+Richard Dosoo  11:58  
+Like, as I said the number one, like driver for even this whole programme was customer success. People couldn't get the information ourselves. Was today couldn't get the real time information out of gain. So we needed to provide a mechanism to do it. That's, that's, that's, that's requirement 101, for this whole Gen AI programme was solving for Bernard and Kevin, and essentially that that's what we're trying to deliver here with ticket integration with the blocker information. And obviously, then Clara's evolved along that journey, and it needs also data from Salesforce to help drive insights around the blockers related to IRP adoption, so that those are the two and Courtney as well for HD. So those are the three group, four groups of people that we're trying to solve for. And my understanding is that Ken can't do that today in Gainesville.
+
+Speaker 2  12:51  
+No, that's correct, yeah, or at least Yeah. I like, I really like the flexibility that we can have within the app factory of pick and choose our data sources, and be able to do the analysis from there. I think it, it essentially breaks down the siloed walls, and that's going to be huge.
+
+Richard Dosoo  13:12  
+Yeah, I think, and this is we're going in tomorrow, that then now means that we know it's one way. So that's the first thing, right? We don't have to muddy the waters with any bi directional integration. We know that the key data objects that we need are cases. That's it really right? Case feed. Maybe that's it. Case on case feed, right? Those are the two things that we need. I'll check this with Courtney and Kevin. I'll drop them a note. We don't need accounts. Yep, we don't need if a new account is created, it will go directly into Gainsight, and then someone will manually enter it in Clara. Or do we need to think about a pull from a trigger from Gainsight? If new accounts are like if someone sells a new client?
+
+Speaker 2  14:01  
+RP, yeah, we should think about that. So Azmain Set up a place where you can add in a new client and someone could approve it. But if there's a sink down of information, we probably want to have that automatically created. Okay?
+
+Richard Dosoo  14:23  
+So will the guys on the field tomorrow? Will they be able to speak to Gainsight APIs on how we could get access to
+
+Speaker 2  14:32  
+Yeah, yeah. So I think, because I think we want to, they would like to use this as a way to test out, because what you're building is essentially all essentially will be a use case that will have across all Moody's teams, like people need to be able to build their own tools and iterate and pull in information from all different sources. So they'd love to use this as, I don't know test is the right word, but what. Work out what an integration would look like so that we can scale, say, like, across all the app factory. So yeah, they can talk through that.
+
+Richard Dosoo  15:13  
+Yes. So no, that's cool. So going into tomorrow, then we can, I can send this over as a primer to the guys. I'll update this so it says, like, it's more specific about exactly what we need, but we can say the question going forward is we want to focus phase one on blockers, action plans, case fee, right? That's something we need to we need, but the other information that comes from gain side, we want to follow on in the second phase, where we are pull that information from gain side, and then Azmain, we'll need to look at the data model and see, is there anything that we have that we want to push back?
+
+Azmain Hossain  15:56  
+I mean, if they will let us. But the the one question I had, and Catherine, you'll be the best person to answer it. When is Gainsight going live? Because I keep hearing so many different dates.
+
+Unknown Speaker  16:10  
+March 30, okay?
+
+Azmain Hossain  16:13  
+And this is like, not soft launch, but hard launch users.
+
+Speaker 2  16:17  
+Yep, it's definitely happening. Yeah, okay, okay. Yeah, so Richard actually did send the slides over to the team earlier today, so they have a little bit of background. But if you make updates, feel free to I didn't send them your copy. So if you just want to reply all to everyone on the the invite with anything you want to share before it's totally fine.
+
+Unknown Speaker  16:50  
+Think all three of you are muted in case you were trying to say something.
+
+Richard Dosoo  16:53  
+Sorry, guys, that that's me. That's okay.
+
+Azmain Hossain  17:00  
+Sorry. I'm just thinking it doesn't give us a lot of time. If March 30 is it's gonna, it's gonna be here before we know it.
+
+Speaker 2  17:13  
+Yeah, I don't know if there's anything that you guys need to do for the launch, though.
+
+Azmain Hossain  17:18  
+It's, I mean, like you said, they would, obviously, this gives them a test case to test the Gainsight API. Plugging it into Clara is a is a good kind of smoke test. It's just, I'm just aware of the moment Gainsight goes live. The question is going to be, Oh, does Clara sync with Gainsight, because Gainsight is the source of truth, and then it becomes a mad scramble to get it there. And, yeah, I just want to avoid that.
+
+Speaker 2  17:50  
+Yeah, there. No one's expecting any IRP adoption information, any of that to be in Gainsight for the initial launch work. Okay, yeah, okay, that's really, yeah, yeah, no, that's, it's for the day to day CSM activities. Essentially, we're aligning to what the Life team has historically been doing.
+
+Azmain Hossain  18:14  
+Yeah, yeah.
+
+Richard Dosoo  18:18  
+Cool. All right, so let's do this. Then, in terms of next steps, I'm going to tidy this off Azmain. I'm that's my job today. After I finish some stuff for Ben the other Ben, Ben, we need to just talk through this. Maybe I might connect with you in about an hour. I just want to tighten up the MCP approach to make sure it's aligned to our latest thinking. And then Catherine, I over to you so you can share with a wider team for tomorrow.
+
+Speaker 2  18:44  
+School. Sure, perfect. That sounds good. I really appreciate prepping this information. I think it'll help us go faster tomorrow. Yeah, no. 100% Oh, one thing I wanted to comment, MPs information. Have you guys talked to the voice? Guys talked to the voice of the customer team on the surveys that they run?
+
+Richard Dosoo  19:08  
+We have not, because, I'll be honest, no one like, we haven't been told to put NPS data and Clara like to pull it from anywhere. Stacey like, I guess when we did, when we were doing implementations. In the old days, Stacey used to run surveys on the implementation projects and get feedback on who's to capture that. But we're not really doing that anymore, right? Because our partners are doing, yeah.
+
+Speaker 2  19:33  
+So because you know how NPS is on our company scorecard, so there's a team that runs the overall MPs programme. They also do other surveys too, and for the most part, those that MPs information is fed into Gainsight, but I don't know if we need like we can eliminate a step, and that information can be brought directly into into the App Exchange, but something to keep. Didn't mind, or something that jumped out at me. Of I wasn't sure if you guys are
+
+Richard Dosoo  20:08  
+aware, and we again like but I don't think Ben is what and what he should probably have NPS as part of his OKRs. But he hasn't asked us to track it, but I'm sure someone will ask so we definitely has made this is one we can when we next have our catch up with them, we can say to him, how do you want to track this metric? Like, is it do you want to have it? Like, where do you want it? How often do you want to report on it? Yeah, yeah.
+
+Speaker 2  20:37  
+Is like, CSM scorecard metric, and we do, like, they already have reporting in place for a lot of that, but for the sake of putting together any type of, like, sentiment analysis that could be helpful to have,
+
+Richard Dosoo  20:54  
+yeah, no. 100% I think it's I know Bernard has done a deep dive on this, on some of his customers on the life side. So maybe I can also follow up with him as well tomorrow and see how that would be useful for him, and then we can bring the requirements together.
+
+Unknown Speaker  21:12  
+Yeah, sure. Okay, sounds good. Awesome.
+
+Speaker 3  21:15  
+All right, guys, I know we've run over I need to go and get something to eat. Yeah?
+
+Speaker 2  21:19  
+Yeah. Thank you so much, everyone. You.
+

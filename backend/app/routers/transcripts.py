@@ -19,9 +19,27 @@ from app.services.upload_service import process_uploaded_transcript
 router = APIRouter(tags=["transcripts"])
 
 
+async def _resolve_project_names(
+    db: AsyncSession, transcripts: list
+) -> dict[int, str]:
+    """Fetch project names for all project IDs referenced by transcripts."""
+    project_ids_set: set[int] = set()
+    for t in transcripts:
+        for pid in (t.primary_project_id, t.secondary_project_id, t.tertiary_project_id):
+            if pid:
+                project_ids_set.add(pid)
+    if not project_ids_set:
+        return {}
+    p_result = await db.execute(
+        select(Project.id, Project.name).where(Project.id.in_(project_ids_set))
+    )
+    return dict(p_result.all())
+
+
 def _transcript_base(
-    t: Transcript, has_summary: bool, project_name: str | None = None
+    t: Transcript, has_summary: bool, project_names: dict[int, str] | None = None
 ) -> TranscriptBase:
+    pn = project_names or {}
     return TranscriptBase(
         id=t.id,
         file_name=t.filename,
@@ -31,7 +49,11 @@ def _transcript_base(
         word_count=t.word_count or 0,
         has_summary=has_summary,
         primary_project_id=t.primary_project_id,
-        primary_project_name=project_name,
+        primary_project_name=pn.get(t.primary_project_id) if t.primary_project_id else None,
+        secondary_project_id=t.secondary_project_id,
+        secondary_project_name=pn.get(t.secondary_project_id) if t.secondary_project_id else None,
+        tertiary_project_id=t.tertiary_project_id,
+        tertiary_project_name=pn.get(t.tertiary_project_id) if t.tertiary_project_id else None,
     )
 
 
@@ -76,20 +98,14 @@ async def list_transcripts(
     )
     summary_transcript_ids = {row[0] for row in summary_result.all()}
 
-    # Fetch project names for transcripts with primary_project_id
-    project_ids_set = {t.primary_project_id for t in transcripts if t.primary_project_id}
-    project_names: dict[int, str] = {}
-    if project_ids_set:
-        p_result = await db.execute(
-            select(Project.id, Project.name).where(Project.id.in_(project_ids_set))
-        )
-        project_names = dict(p_result.all())
+    # Fetch all project names referenced
+    project_names = await _resolve_project_names(db, transcripts)
 
     pages = math.ceil(total / limit) if limit else 1
 
     return TranscriptList(
         items=[
-            _transcript_base(t, t.id in summary_transcript_ids, project_names.get(t.primary_project_id))
+            _transcript_base(t, t.id in summary_transcript_ids, project_names)
             for t in transcripts
         ],
         total=total,
@@ -119,13 +135,8 @@ async def get_transcript(
 
     summary_schema = _summary_base(summary, transcript.title) if summary else None
 
-    # Get project name if set
-    project_name = None
-    if transcript.primary_project_id:
-        p_result = await db.execute(
-            select(Project.name).where(Project.id == transcript.primary_project_id)
-        )
-        project_name = p_result.scalar_one_or_none()
+    # Get project names
+    project_names = await _resolve_project_names(db, [transcript])
 
     return TranscriptDetail(
         id=transcript.id,
@@ -136,7 +147,11 @@ async def get_transcript(
         word_count=transcript.word_count or 0,
         has_summary=summary is not None,
         primary_project_id=transcript.primary_project_id,
-        primary_project_name=project_name,
+        primary_project_name=project_names.get(transcript.primary_project_id) if transcript.primary_project_id else None,
+        secondary_project_id=transcript.secondary_project_id,
+        secondary_project_name=project_names.get(transcript.secondary_project_id) if transcript.secondary_project_id else None,
+        tertiary_project_id=transcript.tertiary_project_id,
+        tertiary_project_name=project_names.get(transcript.tertiary_project_id) if transcript.tertiary_project_id else None,
         raw_text=transcript.content,
         participants=transcript.participants or [],
         summary=summary_schema,
@@ -175,13 +190,36 @@ async def get_transcript_summary(
     )
 
 
+async def _ensure_project_link(
+    db: AsyncSession, project_id: int, entity_type: str, entity_id: int
+) -> bool:
+    """Create a ProjectLink if it doesn't already exist. Returns True if created."""
+    existing = await db.execute(
+        select(ProjectLink).where(
+            ProjectLink.project_id == project_id,
+            ProjectLink.entity_type == entity_type,
+            ProjectLink.entity_id == entity_id,
+        )
+    )
+    if existing.scalar_one_or_none():
+        return False
+    db.add(ProjectLink(
+        project_id=project_id,
+        entity_type=entity_type,
+        entity_id=entity_id,
+    ))
+    return True
+
+
 @router.patch("/transcripts/{transcript_id}", response_model=TranscriptBase)
 async def update_transcript(
     transcript_id: int,
-    primary_project_id: int | None = None,
+    primary_project_id: int | None = Query(None),
+    secondary_project_id: int | None = Query(None),
+    tertiary_project_id: int | None = Query(None),
     db: AsyncSession = Depends(get_db),
 ):
-    """Update transcript fields (currently supports primary_project_id)."""
+    """Update transcript project assignments."""
     result = await db.execute(
         select(Transcript).where(Transcript.id == transcript_id)
     )
@@ -189,29 +227,21 @@ async def update_transcript(
     if not transcript:
         raise NotFoundError("Transcript", transcript_id)
 
-    if primary_project_id is not None:
-        # Verify project exists
-        p_result = await db.execute(
-            select(Project).where(Project.id == primary_project_id)
-        )
-        if not p_result.scalar_one_or_none():
-            raise NotFoundError("Project", primary_project_id)
-        transcript.primary_project_id = primary_project_id
-
-        # Also create ProjectLink if not exists
-        existing_link = await db.execute(
-            select(ProjectLink).where(
-                ProjectLink.project_id == primary_project_id,
-                ProjectLink.entity_type == "transcript",
-                ProjectLink.entity_id == transcript_id,
+    # Update each project field if provided, and create ProjectLinks
+    for field, pid in [
+        ("primary_project_id", primary_project_id),
+        ("secondary_project_id", secondary_project_id),
+        ("tertiary_project_id", tertiary_project_id),
+    ]:
+        if pid is not None:
+            # Verify project exists
+            p_result = await db.execute(
+                select(Project).where(Project.id == pid)
             )
-        )
-        if not existing_link.scalar_one_or_none():
-            db.add(ProjectLink(
-                project_id=primary_project_id,
-                entity_type="transcript",
-                entity_id=transcript_id,
-            ))
+            if not p_result.scalar_one_or_none():
+                raise NotFoundError("Project", pid)
+            setattr(transcript, field, pid)
+            await _ensure_project_link(db, pid, "transcript", transcript_id)
 
     await db.commit()
     await db.refresh(transcript)
@@ -222,15 +252,8 @@ async def update_transcript(
     )
     has_summary = summary_result.scalar_one_or_none() is not None
 
-    # Get project name
-    project_name = None
-    if transcript.primary_project_id:
-        pn_result = await db.execute(
-            select(Project.name).where(Project.id == transcript.primary_project_id)
-        )
-        project_name = pn_result.scalar_one_or_none()
-
-    return _transcript_base(transcript, has_summary, project_name)
+    project_names = await _resolve_project_names(db, [transcript])
+    return _transcript_base(transcript, has_summary, project_names)
 
 
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
@@ -240,6 +263,8 @@ MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
 async def upload_transcripts(
     files: list[UploadFile] = File(...),
     project_ids: str | None = Form(None),
+    secondary_project_ids: str | None = Form(None),
+    tertiary_project_ids: str | None = Form(None),
     db: AsyncSession = Depends(get_db),
 ):
     """Upload one or more .txt transcript files.
@@ -248,16 +273,22 @@ async def upload_transcripts(
     database (skip if unchanged, update if modified, insert if new), and
     rebuilds stakeholder mentions for each uploaded transcript.
 
-    Optionally accepts a JSON-encoded ``project_ids`` array (one entry per
-    file, in the same order) to set each transcript's primary project.
+    Optionally accepts JSON-encoded arrays (one entry per file, in the same
+    order) for ``project_ids`` (primary), ``secondary_project_ids``, and
+    ``tertiary_project_ids``.
     """
-    # Parse project_ids if provided
-    parsed_project_ids: list[int | None] = []
-    if project_ids:
+
+    def _parse_ids(raw: str | None) -> list[int | None]:
+        if not raw:
+            return []
         try:
-            parsed_project_ids = json.loads(project_ids)
+            return json.loads(raw)
         except (json.JSONDecodeError, TypeError):
-            parsed_project_ids = []
+            return []
+
+    parsed_primary = _parse_ids(project_ids)
+    parsed_secondary = _parse_ids(secondary_project_ids)
+    parsed_tertiary = _parse_ids(tertiary_project_ids)
 
     results = []
 
@@ -285,10 +316,10 @@ async def upload_transcripts(
             })
             continue
 
-        # Determine project for this file
-        file_project_id = None
-        if idx < len(parsed_project_ids) and parsed_project_ids[idx]:
-            file_project_id = parsed_project_ids[idx]
+        # Determine projects for this file
+        file_primary = parsed_primary[idx] if idx < len(parsed_primary) and parsed_primary[idx] else None
+        file_secondary = parsed_secondary[idx] if idx < len(parsed_secondary) and parsed_secondary[idx] else None
+        file_tertiary = parsed_tertiary[idx] if idx < len(parsed_tertiary) and parsed_tertiary[idx] else None
 
         # Process the transcript
         try:
@@ -296,24 +327,16 @@ async def upload_transcripts(
                 filename=upload_file.filename,
                 content_bytes=content_bytes,
                 db=db,
-                primary_project_id=file_project_id,
+                primary_project_id=file_primary,
+                secondary_project_id=file_secondary,
+                tertiary_project_id=file_tertiary,
             )
-            # Create ProjectLink if project was assigned and transcript was created/updated
-            if file_project_id and result.get("id") and result["status"] in ("inserted", "updated", "skipped"):
-                existing_link = await db.execute(
-                    select(ProjectLink).where(
-                        ProjectLink.project_id == file_project_id,
-                        ProjectLink.entity_type == "transcript",
-                        ProjectLink.entity_id == result["id"],
-                    )
-                )
-                if not existing_link.scalar_one_or_none():
-                    db.add(ProjectLink(
-                        project_id=file_project_id,
-                        entity_type="transcript",
-                        entity_id=result["id"],
-                    ))
-                    await db.commit()
+            # Create ProjectLinks for all assigned projects
+            if result.get("id") and result["status"] in ("inserted", "updated", "skipped"):
+                for pid in (file_primary, file_secondary, file_tertiary):
+                    if pid:
+                        await _ensure_project_link(db, pid, "transcript", result["id"])
+                await db.commit()
 
             results.append(result)
         except Exception as e:

@@ -49,6 +49,31 @@ When you want to understand one person's arc:
 2. **Agent B:** Build a timeline of their positions, concerns, and decisions
 3. **Output:** Update `context/stakeholders.md` with richer profile
 
+### Pattern 4: Advisory & Operational
+
+Conversational tasks where Claude acts as a programme analyst colleague. These respond in text, not files.
+
+| Task | Use when... |
+|------|-------------|
+| `meeting-prep.md` | You're about to go into a meeting and want context, talking points, and risk flags |
+| `programme-advice.md` | You need strategic advice: what to escalate, where to focus, whether to push for something |
+| `review-and-challenge.md` | You want a critical review of a plan, tracker, decision, or situation — gaps, inconsistencies, political risks |
+| `stakeholder-briefing.md` | You're about to meet someone and want their full arc: sentiment, commitments, influence, approach tips |
+| `weekly-pulse.md` | It's Monday morning — what do you need to know and do this week? |
+| `catch-up.md` | You've been away and need a structured debrief of what changed since a specific date |
+| `status-draft.md` | You need to draft an email, Slack message, or speaking notes tailored to a specific audience |
+| `trend-analysis.md` | You want to compare time periods or trace how risk/sentiment/topics have evolved |
+
+### Pattern 5: Report Generation
+
+Generate exportable reports (PowerPoint, Excel, Word, PDF) from programme data.
+
+| Task | What it produces |
+|------|-----------------|
+| `generate-report.md` | Unified report generator supporting 4 types: executive debrief (PPTX), stakeholder dossier (XLSX), risk dashboard (XLSX), or custom (any format) |
+
+Reports use the `/pptx`, `/xlsx`, `/docx`, and `/pdf` skills. Output is saved to the project root.
+
 ## File Locking Awareness
 
 Cowork agents should avoid editing the same file simultaneously. To prevent conflicts:

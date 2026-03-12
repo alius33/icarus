@@ -101,6 +101,7 @@ CUSTOM_PROJECTS = [
     {"name": "Cross OU Collaboration", "description": "Cross-operational unit collaboration — banking, life insurance, and asset management AI enablement", "is_custom": True, "status": "active", "color": "#10B981"},
     {"name": "Program Management", "description": "Programme governance, standups, infrastructure, budget, and strategic alignment", "is_custom": True, "status": "active", "color": "#6366F1"},
     {"name": "TSR Enhancements", "description": "TSR automation and AI enhancement work", "is_custom": True, "status": "active", "color": "#F59E0B"},
+    {"name": "App Factory", "description": "Automated environment and deployment platform for hosting AI apps. Led by BenVH. CI/CD pipeline, form-based app generation, multi-environment setup, Terraform infrastructure.", "is_custom": True, "status": "active", "color": "#8B5CF6"},
 ]
 
 
@@ -899,27 +900,37 @@ async def _ensure_project_attribution(
         if not primary_project_id:
             _log(f"    No project match for primary: '{primary_name}'", verbose)
 
-    # Set primary_project_id on transcript (only if not already set)
-    if primary_project_id:
-        t_result = await session.execute(
-            select(Transcript).where(Transcript.id == transcript_id)
-        )
-        transcript = t_result.scalar_one_or_none()
-        if transcript and not transcript.primary_project_id:
+    # Resolve secondary project IDs
+    secondary_project_ids: list[int] = []
+    for sec_name in secondary_names:
+        sec_id = resolve_project(sec_name)
+        if sec_id:
+            secondary_project_ids.append(sec_id)
+        else:
+            _log(f"    No project match for secondary: '{sec_name}'", verbose)
+
+    # Set project IDs on transcript (only if not already set)
+    t_result = await session.execute(
+        select(Transcript).where(Transcript.id == transcript_id)
+    )
+    transcript = t_result.scalar_one_or_none()
+    if transcript:
+        if primary_project_id and not transcript.primary_project_id:
             transcript.primary_project_id = primary_project_id
             stats["project_ids_set"] += 1
             _log(f"    Set primary_project_id={primary_project_id} on transcript {transcript_id}", verbose)
+        if len(secondary_project_ids) >= 1 and not transcript.secondary_project_id:
+            transcript.secondary_project_id = secondary_project_ids[0]
+            _log(f"    Set secondary_project_id={secondary_project_ids[0]} on transcript {transcript_id}", verbose)
+        if len(secondary_project_ids) >= 2 and not transcript.tertiary_project_id:
+            transcript.tertiary_project_id = secondary_project_ids[1]
+            _log(f"    Set tertiary_project_id={secondary_project_ids[1]} on transcript {transcript_id}", verbose)
 
     # Collect all project IDs (primary + secondary)
     all_project_ids: list[int] = []
     if primary_project_id:
         all_project_ids.append(primary_project_id)
-    for sec_name in secondary_names:
-        sec_id = resolve_project(sec_name)
-        if sec_id:
-            all_project_ids.append(sec_id)
-        else:
-            _log(f"    No project match for secondary: '{sec_name}'", verbose)
+    all_project_ids.extend(secondary_project_ids)
 
     key_points = _extract_key_points(summary_content)
 
@@ -1779,6 +1790,10 @@ _PROJECT_KEYWORDS: list[tuple[str, str]] = [
     ("governance", "program management"),
     ("steering", "program management"),
     ("tsr", "tsr"),
+    ("app factory", "app factory"),
+    ("phantom agent", "app factory"),
+    ("advisoryappfactory", "app factory"),
+    ("moplit", "app factory"),
 ]
 
 

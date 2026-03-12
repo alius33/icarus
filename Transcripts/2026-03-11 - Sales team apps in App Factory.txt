@@ -1,0 +1,147 @@
+Richard Dosoo  0:00  
+Yeah, sorry, I was on meetings, meeting, meetings today over on it. So apologise about that.
+
+Juliet  0:06  
+Okay, I just, I was telling Azmain Now I will turn five minutes late every time.
+
+Richard Dosoo  0:12  
+No, well, I need to set them up. Five minutes late. Sorry, I apologise. No haircut. Today has been busy, but the, the Juliet, I guess you know, the conversation that we were having about the infra, right? That Azure infrastructure like that was the exact same path that we went along. First, we got TSG to give us some Azure infrastructure. We tried to deploy an Azure app, a service. From there, I spent my whole weekend to know to just get nowhere, right? In fact, it was more than a weekend. It was Friday through to like a Monday. And at the end of that decision, we decided that the TSG environment was just not it didn't have the connectivity that we needed to deploy an application that had multiple tiers, like a front end a back end of the database. It just, it needed, you needed TSG to unlock certain connectivity for that to work. So we pivoted to using an AWS account, where we had more control over the connectivity between the different layers of the stack and the service. So you're in that similar spot right now, right that's, that's what you've been struggling hitting up against.
+
+Juliet  1:21  
+Yeah, so I've got, I've got a few projects. One of them has is lost my mind. I'm doing a boat, but I was first doing it in copilot. Copilot is in a different environment than the power automate. So then I stopped that, and I created the bot. The bot is connected to data bricks, so that's good for our data, but I need to connect it to SharePoint. And it says to connect it to SharePoint, to write on SharePoint, because it's a use case that we like, ticketing service, ticketing service, and he writes to SharePoint, but I need to have a link, and I'm not able to get a link, and I just got John Cushing to request an Azure something for me. Let me see what he requested as your licence, power, automate, premium. I don't even know if it's for that, but yeah, every time there's something that.
+
+Richard Dosoo  2:26  
+So you've also got copilot studio, the full licence, which, on paper, it does what you say on the tin, but when I used it, I couldn't get it to connect to SharePoint either. And then I was just like, what's the point of all this complex infrastructure, if I can't do something basic, like just putting something in a SharePoint repository, so what? So what does that leave you right? You've got two problems. Your first problem is, where do you host the app? The second problem is, how do you integrate it? We can help you with the first problem, no problem. So that one we can help you with, because we can show you how to do it on your own AWS account. Tell you how to raise the ticket, show you how to manage the infra. Or if you've got an app that is a priority in the short term, maybe we could host that for you while you're getting your other infrastructure set up. The second problem, the integration problem. That one, I can't, I don't have a solution for it right now, because we also have the same problem. But I do have a call with some teams on tomorrow to talk about Salesforce integration, and I can add this SharePoint piece to the list, and we can talk to Nick louder from the corporate TSG team about where we're struggling and how they can help us out.
+
+Juliet  3:39  
+So so far, you are still unable to write into SharePoint.
+
+Richard Dosoo  3:43  
+It's really, really, really silly, like with copilot studio, like you can pull from SharePoint, you can't write, right?
+
+Juliet  3:52  
+So I managed to write on SharePoint with power automate. So okay, power, power automate is writing on SharePoint, everything I need, but is the connection from the power automate to the copilot. But maybe I can connect that, that will be too much like the bot to power automate. I think it's just so many steps,
+
+Richard Dosoo  4:14  
+just so I understand your co your agent is capturing you're interacting with the agent, right? And it's the result of that conversation that you want to put into SharePoint, right? So, is it the issue that the agent can't talk to power automate? Is that the issue that you're having right now?
+
+Juliet  4:37  
+Yes, because they're in different environment, the only environment that power automate can talk to, SharePoint is on Moody's default environment, and copilot is on the sandbox. So I think they, I think that's where they're getting me a licence so that I can connect my power automate in. Sandbox, power, automate sandbox into my SharePoint. And hopefully that will, that will do one issue, but I think I need, I still need Azure or AWS, because I need to store data and the Python scripts all that, they need to be somewhere.
+
+Richard Dosoo  5:18  
+Well, I guess Juliet, what is there a reason why you use power automate? Is it because of the SharePoint integration? Like, if you had an API to access SharePoint, would you just not write the automation in cursor?
+
+Juliet  5:31  
+Yeah, yeah. Whatever is, is the I'm just trying to jump the wall, because every time I hit that wall, so I'm just trying different routes, whatever works. I first started because I was like, Oh, I have copilot full studio. Let me build something. But it's much more easier in cursor and with the scripts and all that. But I'm, I'm just trying to see how to do everything. Yeah.
+
+Richard Dosoo  5:57  
+So I would say, when you meet with the team just say to them, Look, power, auto, power, automate, copilot studio. It's great. They've got native connectors to Microsoft products, but they're quite complex, quite wildly. Applications to set up something quite straightforward. And with cursor, you're going to get going faster, right? Because you can just prompt it and get it to do that for you. So if they can give you SSO integration or an API key that you can use, you can just code that as an internal environment variable when your application can read it wherever it's deployed, right, whether it's deployed locally or whether it's deployed on the cloud.
+
+Juliet  6:38  
+And when you say, when you talk to the team who is the team so
+
+Richard Dosoo  6:45  
+have, I guess who from TSG, is giving you the the the new power ultimate. Licence Do you have
+
+Juliet  6:53  
+John Cushing? I don't even know if he's in TSG,
+
+Richard Dosoo  6:57  
+okay, well, I mean, as I said, we I know this. We haven't. We're going to hit this problem in a few weeks. So we'd love to work with you on it, because this is just a problem that's sitting down here in in the future for us. But we would, as I said, Azmain, you know, right, there's definitely going to be some requirement for the project folders and stuff for us to update SharePoint. So right now, our major use case is pulling data out, but I'm sure there's going to be a point where we're going to need to put something back in there. So if you start a thread with John Cushing, but Azmain and myself, we're happy to help drive the conversation. Like, if there's any technical aspects of how this could work, we could inform or provide best practice on because
+
+Juliet  7:41  
+we're gonna do, you know if John Cushing does that.
+
+Richard Dosoo  7:45  
+So I've not worked with John before, but I have worked with Mick louder before. He's the person that gave me access to copilot studio. He's the person that introduced me to the Microsoft team when I was having problems with copilot studio, like so he's the kind of go to person I reach out to you and I have these kind of questions about corporate, infrastructure
+
+Juliet  8:03  
+and I think someone mentioned him yesterday. Let me check, because John is very busy, so I had to send him like 10 messages so that he replies and tell me raise a ticket here, so I know where to raise a ticket but then, yeah, I guess he's the right. But let me find out, and I may ask, let me see who they told me to connect with. It's a question of knowing who to reach out.
+
+Richard Dosoo  8:30  
+But that's when Nick's really good, right? Because even if he's not the person, he seems to have the tentacles into all the different parts of the organisation where he can point you in the right direction.
+
+Juliet  8:40  
+No, that's what that's that's what I want. I'll have a look.
+
+Richard Dosoo  8:43  
+Yeah, but yeah, as I said, Julia, if the initial term, if you have an infrastructure if you want us to host something, we can talk about it. If you want us to show you how to do it, we can also talk about that as well.
+
+Juliet  8:56  
+You can show me how to do it, because I'm what I'm handling is confidential information, yeah, commission targets and all that so I'm a bit scared of hosting in your in your thing, yeah, so it would be better if I learn even if it takes a bit more time because we want to have a separate things just for confidence confidentiality 100%
+
+Richard Dosoo  9:23  
+let's do this. Then Julia, what kind of timeframes are you looking at? Like, if we set something up next week, would that work? Or like, is that okay? Cool. So yeah, my one of my colleagues, Ben, he we had the same request on three other teams so he's going to package up our stuff in a way that's easier to demo and show so maybe I'll look for some time next week where we can work that through. In the meanwhile, though, I'll send you a note, because you will need to raise a require a snow ticket for an AWS account, and whoever is the budget holder for your team needs to approve it. So you need to tell them, Okay, like you raise the ticket, they'll ask, Oh, how much? Is this going to cost? Blah, blah, blah, and then once you have all of that, then there's a enablement, right? We can show you how the environment works and what you need to do to spin up stuff in it.
+
+Juliet  10:09  
+Good, okay, and the meantime, I'll just work on other agents. And just great, yeah,
+
+Richard Dosoo  10:15  
+you also have, you got an Azure tenant already? Sorry, what do you have an Azure environment already?
+
+Juliet  10:23  
+Well, I have an account, but I don't know if I haven't. I don't think so, because the one I was trying to use didn't work. So I don't think is the, yeah, my environment is the me one.
+
+Richard Dosoo  10:35  
+No, no problem. So the basically, let me show you how this works. So let me bring this up. Basically, what you're going to need is like two different environments. One environment is this the Azure environment, where you're going to set up entra, what we're going to Ben is going to show you how to do it. And then this is where the AWS environment is going to sit, where your application is going to go. So if someone logs in on the internet, looks at it, then authenticates them to make sure that a Moody's employee using Okta. And then once that handshake is made, then it goes into the AWS environment. And then this is where your application will be deployed with your role based access permissions. So you're going to raise a ticket for this and another ticket for this, okay? And then we're going to give you scripts right that tell you how to define this, and then how to build this box that all of this stuff goes in. And then after that, we'll show you how to deploy your application in this box, okay, and, and that's, that's basically what we've already built this, and that's what I was saying, that you could, you could just bypass this and deploy your application in here, but because you've got quite sensitive data, 100% get that is why that's probably not a good idea. So we'll just invest the time in showing you how to do this stuff.
+
+Juliet  11:56  
+Or even if you have one, I do have one that could be in there, because it's, I did the Moody's power pump presentation. So people just put, oh, I want to create this slide, and it does it on the Moody's presentation.
+
+Richard Dosoo  12:13  
+Do you know? What do you know? I'm laughing about that, manager, I built the same thing, and I'm actually working on an update to it right now. And every time we have a meeting with customers that have colleagues this week, we end up talking about something else, and then we come back to this topic about PowerPoint generation. And everyone's always like, yeah, I need that, or I'm doing something like that. It would be great to see what you've done, and then we can show you what we've done as well, because we basically like we're in consulting, right? We build PowerPoint presentations all the time, and everyone is the feature in part in PowerPoint, it's not very good. So everyone wants to use anthropic models to build their PowerPoints, because it's much better, but you don't have the Moody's branding on it, right? So everyone has got the same problem we're now we've solved it, but I'm sure you also solve it, so be definitely good to follow
+
+Juliet  13:03  
+up. Let me send you my repo.
+
+Richard Dosoo  13:07  
+That would be awesome. I'm actually Azmain. This, we see this sliding conversation, right? It's got the Ben's thing is,
+
+Azmain Hossain  13:14  
+I told you, man, this is this of all the complicated, fancy stuff we do. It's so the app. We're calling it slidey. This will be the one that reaches the most people and gives the most value to people. Well, yeah, to be able to,
+
+Juliet  13:30  
+yeah, that's what I told. I told my manager, I need to release this quickly, because it's gonna help everyone and and no one has thought about this before.
+
+Speaker 1  13:40  
+So no, I think what I'll do, can you better? Can you hear me? Julia, yes,
+
+Richard Dosoo  13:48  
+yes, I can hear you. Yeah. Let's, let's definitely talk through it, because this is the exact kind of collaboration that I wanted us to talk about in that group, right where, because you're doing it, we're doing it. I'm sure the asset management team are also asking the same questions. The banking team the same because we all produce slides, right? So what should then, is really like corporate DCI team should give us the Claude interface into PowerPoint so you don't even have to go and build this stuff. But they refusing to do it. So while they're refusing to do it, we're all building our own little apps that do the same thing. That makes no sense, right? They should just enable claw for PowerPoint, pro for Excel, if they give us that we're all 10 x5 10x productive. So I'm gonna this is our app that basically is like a conversational agent. Let me show you on here, actually. Now I can't show you there, because that's not working, but it's a similar process, right? That you essentially just come in and you create a brief, you add the information, you generate your attachments, and then it goes through into a workflow and goes and generates the slides. And the slides are generated. You can see here they're in the Moody's format, so it just works, and all it's doing is it's calling a different model. Tool that is better at creating PowerPoints, giving it context, giving it instructions, gives it a set of brand templates, and then it comes back. So let's I'm going to do this Azmain. We we've got a call. Have you got a slightly call later on? I don't
+
+Azmain Hossain  15:17  
+think we do. We don't have one. We should set it's because you guys are all working on it. You and both ends are working on it.
+
+Richard Dosoo  15:27  
+Yeah, I'm about to push a whole bunch of changes, but Juliet, let's so let me do this. I'm going to send you the tickets so you can get your infrastructure set up so you what you have to raise if you've got a separate app that you want to deploy. Us to deploy. Let's connect on that next week only, because this week is starting to get a little bit tight. But I'm also going to put a note out to to have a separate meeting on this slidey, maybe next week, because, as I said, my manager is talking about this. I had other teams ask, you're doing it. Do you see what I mean like? So it really is showing a need, right, that the company needs to solve for, rather than all of us solving it in five different ways.
+
+Juliet  16:11  
+Yeah, let me. Let me share with you the repo on GitHub where I have everything and you can download it and try or I send you a
+
+Richard Dosoo  16:21  
+sample the it's cool. If you send me to the if you send me a sample, point me to the repo. I'll just build a local version and Docker container and get it up and running and have
+
+Juliet  16:31  
+it, yeah, maybe we can combine both. My needs was I gave them Moody's branding and Python ready to and make the slides and all that and but it looks less I like the way it looks yours.
+
+Richard Dosoo  16:47  
+Yeah, I'll be honest, my manager was like, rather than just creating PowerPoints, he wanted an idea collaboration tool so me and you could both collaborate on something, both provide our feedback, align on what we call a markdown file, and then send that into the general the PowerPoint generation pipeline,
+
+Juliet  17:05  
+because I think it will help massively. Everybody. Yeah, no.
+
+Richard Dosoo  17:08  
+100% so let's cool. Let me do this. I'll set that meeting up for next week. But let's definitely, let's definitely I'm even my managers, even messaging about me, messaging me about slide right now this minute, like literally, so it's timely. I'm going to get that close out for next week, Tuesday, and then it, yeah, it'll definitely be good to talk through with you on in more detail. Good. Okay. Thank you. No problem. Thanks. Julia Azmain, do you have a few minutes just to catch up. Hey, Azmain, can you hear me? Azmain, I think you might be on mute.
+
+Speaker 1  18:02  
+As Azmain, I think you might be on mute. Can you hear me? Bro?
+
+Azmain Hossain  18:33  
+Hey, man, can you hear me?
+
+Speaker 1  18:35  
+Hey, Azmain, can you hear me?
+
+Azmain Hossain  18:36  
+Yeah, my mic died. I'm having to use mics. Man, that that's why. Okay.
+

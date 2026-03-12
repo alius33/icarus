@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useRef, useEffect } from "react";
 import Link from "next/link";
-import { Upload, X, FileText, CheckCircle2, AlertCircle, Loader2, FolderOpen } from "lucide-react";
+import { Upload, X, FileText, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { api } from "@/lib/api";
 import type { ProjectBase } from "@/lib/types";
 
@@ -20,9 +20,15 @@ interface UploadResponse {
   results: UploadResult[];
 }
 
+interface FileProjectAssignment {
+  primary: number | null;
+  secondary: number | null;
+  tertiary: number | null;
+}
+
 export default function UploadPage() {
   const [files, setFiles] = useState<File[]>([]);
-  const [projectAssignments, setProjectAssignments] = useState<Record<string, number | null>>({});
+  const [assignments, setAssignments] = useState<Record<string, FileProjectAssignment>>({});
   const [projects, setProjects] = useState<ProjectBase[]>([]);
   const [uploading, setUploading] = useState(false);
   const [response, setResponse] = useState<UploadResponse | null>(null);
@@ -34,6 +40,19 @@ export default function UploadPage() {
   useEffect(() => {
     api.getProjects().then(setProjects).catch(() => {});
   }, []);
+
+  const getAssignment = (filename: string): FileProjectAssignment =>
+    assignments[filename] ?? { primary: null, secondary: null, tertiary: null };
+
+  const setAssignment = (filename: string, field: keyof FileProjectAssignment, value: number | null) => {
+    setAssignments((prev) => {
+      const current = prev[filename] ?? { primary: null, secondary: null, tertiary: null };
+      return {
+        ...prev,
+        [filename]: { ...current, [field]: value },
+      };
+    });
+  };
 
   const addFiles = useCallback((newFiles: FileList | File[]) => {
     const txtFiles = Array.from(newFiles).filter((f) =>
@@ -51,7 +70,7 @@ export default function UploadPage() {
 
   const removeFile = useCallback((name: string) => {
     setFiles((prev) => prev.filter((f) => f.name !== name));
-    setProjectAssignments((prev) => {
+    setAssignments((prev) => {
       const next = { ...prev };
       delete next[name];
       return next;
@@ -82,22 +101,33 @@ export default function UploadPage() {
     [addFiles]
   );
 
+  // Check all files have a primary project
+  const allHavePrimary = files.every((f) => {
+    const a = getAssignment(f.name);
+    return a.primary !== null;
+  });
+
   const handleUpload = async () => {
-    if (files.length === 0) return;
+    if (files.length === 0 || !allHavePrimary) return;
     setUploading(true);
     setError(null);
     setResponse(null);
 
     try {
-      const projectIds = files.map((f) => projectAssignments[f.name] || null);
-      const hasAnyProject = projectIds.some((id) => id !== null);
+      const primaryIds = files.map((f) => getAssignment(f.name).primary);
+      const secondaryIds = files.map((f) => getAssignment(f.name).secondary);
+      const tertiaryIds = files.map((f) => getAssignment(f.name).tertiary);
+      const hasSecondary = secondaryIds.some((id) => id !== null);
+      const hasTertiary = tertiaryIds.some((id) => id !== null);
       const result = await api.uploadTranscripts(
         files,
-        hasAnyProject ? projectIds : undefined,
+        primaryIds,
+        hasSecondary ? secondaryIds : undefined,
+        hasTertiary ? tertiaryIds : undefined,
       );
       setResponse(result);
       setFiles([]);
-      setProjectAssignments({});
+      setAssignments({});
     } catch (err) {
       setError(err instanceof Error ? err.message : "Upload failed");
     } finally {
@@ -136,6 +166,45 @@ export default function UploadPage() {
   };
 
   const sortedProjects = [...projects].sort((a, b) => a.name.localeCompare(b.name));
+
+  const ProjectSelect = ({
+    value,
+    onChange,
+    label,
+    required,
+    excludeIds,
+  }: {
+    value: number | null;
+    onChange: (v: number | null) => void;
+    label: string;
+    required?: boolean;
+    excludeIds?: (number | null)[];
+  }) => {
+    const filtered = excludeIds
+      ? sortedProjects.filter((p) => !excludeIds.includes(p.id))
+      : sortedProjects;
+    return (
+      <div className="flex items-center gap-2">
+        <span className="text-xs text-gray-400 w-20 flex-shrink-0">{label}{required && <span className="text-red-400">*</span>}</span>
+        <select
+          value={value ?? ""}
+          onChange={(e) => onChange(e.target.value ? Number(e.target.value) : null)}
+          className={`text-xs border rounded-md px-2 py-1.5 bg-gray-900 text-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none flex-1 min-w-[180px] ${
+            required && !value
+              ? "border-amber-500/50"
+              : "border-gray-600"
+          }`}
+        >
+          <option value="">{required ? "Select project..." : "None"}</option>
+          {filtered.map((p) => (
+            <option key={p.id} value={p.id}>
+              {p.name}
+            </option>
+          ))}
+        </select>
+      </div>
+    );
+  };
 
   return (
     <div className="space-y-6">
@@ -193,67 +262,69 @@ export default function UploadPage() {
 
       {/* File list with project assignment */}
       {files.length > 0 && (
-        <div className="rounded-lg border border-gray-200 bg-white shadow-sm">
-          <div className="flex items-center justify-between border-b border-gray-200 px-4 py-3">
-            <h3 className="text-sm font-semibold text-gray-900">
+        <div className="rounded-lg border border-gray-700 bg-gray-800 shadow-sm">
+          <div className="flex items-center justify-between border-b border-gray-700 px-4 py-3">
+            <h3 className="text-sm font-semibold text-gray-100">
               {files.length} file{files.length !== 1 ? "s" : ""} selected
             </h3>
             <button
-              onClick={() => { setFiles([]); setProjectAssignments({}); }}
-              className="text-xs text-gray-500 hover:text-gray-700"
+              onClick={() => { setFiles([]); setAssignments({}); }}
+              className="text-xs text-gray-400 hover:text-gray-200"
             >
               Clear all
             </button>
           </div>
-          <ul className="divide-y divide-gray-100">
-            {files.map((file) => (
-              <li
-                key={file.name}
-                className="flex items-center gap-3 px-4 py-2.5"
-              >
-                <FileText className="h-4 w-4 flex-shrink-0 text-gray-400" />
-                <div className="min-w-0 flex-1">
-                  <span className="text-sm text-gray-700 truncate block">
-                    {file.name}
-                  </span>
-                  <span className="text-xs text-gray-400">
-                    {(file.size / 1024).toFixed(0)} KB
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 flex-shrink-0">
-                  <FolderOpen className="h-3.5 w-3.5 text-gray-400" />
-                  <select
-                    value={projectAssignments[file.name] ?? ""}
-                    onChange={(e) => {
-                      const val = e.target.value ? Number(e.target.value) : null;
-                      setProjectAssignments((prev) => ({
-                        ...prev,
-                        [file.name]: val,
-                      }));
-                    }}
-                    className="text-xs border border-gray-200 rounded-md px-2 py-1 text-gray-700 bg-white focus:border-blue-400 focus:ring-1 focus:ring-blue-400 focus:outline-none min-w-[180px]"
-                  >
-                    <option value="">Select project...</option>
-                    {sortedProjects.map((p) => (
-                      <option key={p.id} value={p.id}>
-                        {p.name}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <button
-                  onClick={() => removeFile(file.name)}
-                  className="ml-1 text-gray-400 hover:text-red-500"
-                >
-                  <X className="h-4 w-4" />
-                </button>
-              </li>
-            ))}
+          <ul className="divide-y divide-gray-700">
+            {files.map((file) => {
+              const a = getAssignment(file.name);
+              return (
+                <li key={file.name} className="px-4 py-3">
+                  <div className="flex items-center gap-3 mb-3">
+                    <FileText className="h-4 w-4 flex-shrink-0 text-gray-400" />
+                    <div className="min-w-0 flex-1">
+                      <span className="text-sm text-gray-200 truncate block">
+                        {file.name}
+                      </span>
+                      <span className="text-xs text-gray-500">
+                        {(file.size / 1024).toFixed(0)} KB
+                      </span>
+                    </div>
+                    <button
+                      onClick={() => removeFile(file.name)}
+                      className="text-gray-500 hover:text-red-400"
+                    >
+                      <X className="h-4 w-4" />
+                    </button>
+                  </div>
+                  <div className="ml-7 space-y-2">
+                    <ProjectSelect
+                      value={a.primary}
+                      onChange={(v) => setAssignment(file.name, "primary", v)}
+                      label="Primary"
+                      required
+                      excludeIds={[a.secondary, a.tertiary]}
+                    />
+                    <ProjectSelect
+                      value={a.secondary}
+                      onChange={(v) => setAssignment(file.name, "secondary", v)}
+                      label="Secondary"
+                      excludeIds={[a.primary, a.tertiary]}
+                    />
+                    <ProjectSelect
+                      value={a.tertiary}
+                      onChange={(v) => setAssignment(file.name, "tertiary", v)}
+                      label="Third"
+                      excludeIds={[a.primary, a.secondary]}
+                    />
+                  </div>
+                </li>
+              );
+            })}
           </ul>
-          <div className="border-t border-gray-200 px-4 py-3">
+          <div className="border-t border-gray-700 px-4 py-3 flex items-center gap-3">
             <button
               onClick={handleUpload}
-              disabled={uploading}
+              disabled={uploading || !allHavePrimary}
               className="inline-flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               {uploading ? (
@@ -268,6 +339,11 @@ export default function UploadPage() {
                 </>
               )}
             </button>
+            {!allHavePrimary && (
+              <span className="text-xs text-amber-400">
+                All files need a primary project assigned
+              </span>
+            )}
           </div>
         </div>
       )}
