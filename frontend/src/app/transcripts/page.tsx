@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Pencil, Paperclip } from "lucide-react";
 import { api } from "@/lib/api";
 import { formatDate } from "@/lib/utils";
 
@@ -85,12 +86,25 @@ export default async function TranscriptListPage({
                     {t.date ? formatDate(t.date) : "—"}
                   </td>
                   <td className="px-6 py-4">
-                    <Link
-                      href={`/transcripts/${t.id}`}
-                      className="text-sm text-blue-600 hover:text-blue-800"
-                    >
-                      {t.title || t.file_name}
-                    </Link>
+                    <div className="flex items-center gap-2">
+                      <Link
+                        href={`/transcripts/${t.id}`}
+                        className="text-sm text-blue-600 hover:text-blue-800"
+                      >
+                        {t.title || t.file_name}
+                      </Link>
+                      {t.has_notes && (
+                        <span title="Has notes">
+                          <Pencil className="h-3.5 w-3.5 text-amber-500 flex-shrink-0" />
+                        </span>
+                      )}
+                      {t.attachments_count > 0 && (
+                        <span className="inline-flex items-center gap-0.5 text-gray-400" title={`${t.attachments_count} attachment${t.attachments_count !== 1 ? "s" : ""}`}>
+                          <Paperclip className="h-3.5 w-3.5" />
+                          <span className="text-xs">{t.attachments_count}</span>
+                        </span>
+                      )}
+                    </div>
                   </td>
                   <td className="px-6 py-4 text-sm text-gray-600">
                     {formatParticipants(undefined)}

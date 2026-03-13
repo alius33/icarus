@@ -29,7 +29,9 @@ from app.models.stakeholder import Stakeholder
 from app.models.summary import Summary
 from app.models.topic_signal import TopicSignal
 from app.models.transcript import Transcript
+from app.models.transcript_attachment import TranscriptAttachment
 from app.models.transcript_mention import TranscriptMention
+from app.models.transcript_note import TranscriptNote
 from app.models.weekly_report import WeeklyReport
 from app.models.workstream import Workstream, WorkstreamMilestone
 
@@ -44,4 +46,5 @@ __all__ = [
     "SentimentSignal", "Commitment", "CrossProjectLink",
     "TopicSignal", "InfluenceSignal", "Contradiction",
     "MeetingScore", "RiskEntry", "ProjectSummary",
+    "TranscriptNote", "TranscriptAttachment",
 ]

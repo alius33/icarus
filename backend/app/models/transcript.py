@@ -46,6 +46,8 @@ class Transcript(Base):
     tertiary_project = relationship("Project", foreign_keys=[tertiary_project_id])
     summary = relationship("Summary", back_populates="transcript", uselist=False)
     mentions = relationship("TranscriptMention", back_populates="transcript")
+    notes = relationship("TranscriptNote", back_populates="transcript", order_by="TranscriptNote.version.desc()")
+    attachments = relationship("TranscriptAttachment", back_populates="transcript")
 
     __table_args__ = (
         Index("idx_transcripts_date", "meeting_date"),

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { api } from "@/lib/api";
 import { formatDate } from "@/lib/utils";
+import TranscriptNotesSection from "@/components/transcripts/TranscriptNotesSection";
+import TranscriptAttachmentsSection from "@/components/transcripts/TranscriptAttachmentsSection";
 
 interface TranscriptDetailPageProps {
   params: Promise<{ id: string }>;
@@ -143,6 +145,12 @@ export default async function TranscriptDetailPage({
           </div>
         )}
       </div>
+
+      {/* Notes */}
+      <TranscriptNotesSection transcriptId={transcriptId} />
+
+      {/* Attachments */}
+      <TranscriptAttachmentsSection transcriptId={transcriptId} />
 
       {/* Transcript Content */}
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">

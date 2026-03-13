@@ -8,6 +8,8 @@ class Settings(BaseSettings):
     DATA_ROOT: str = "."
     SECRET_KEY: str = "change-me-in-production"
     AUTH_ENABLED: bool = False  # Set to True in production
+    MAX_ATTACHMENT_SIZE: int = 25 * 1024 * 1024  # 25 MB
+    MAX_ATTACHMENTS_PER_TRANSCRIPT: int = 10
 
     class Config:
         env_file = ".env"

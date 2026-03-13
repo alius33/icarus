@@ -19,20 +19,41 @@ This task detects new transcripts, creates individual call summaries, updates we
 
 If no new transcripts found, report this and all agents should stop.
 
+### Agent 1b: Load Transcript Context (Notes & Attachments)
+**Role:** Gather any analyst notes and attachment text for each new transcript.
+**Depends on:** Agent 1 completing detection.
+
+For each new transcript, check for supporting context:
+
+**If backend is running** (local dev with Docker):
+  `GET /api/transcripts/{id}/context`
+  Returns notes text + extracted attachment text.
+
+**If offline** (filesystem only):
+  Check `analysis/context_notes/{YYYY-MM-DD_-_Title}.md`
+  Contains analyst notes + extracted text from all attachments.
+
+If context exists, include it in the analysis prompt for that transcript:
+- Prepend analyst notes as "## Analyst Notes" section
+- Include each attachment's extracted text as "## Supporting Document: {filename}"
+- Reference these in the summary under "## Supporting Context Available"
+
 ### Agent 2: Summariser (Batch A)
 **Role:** Summarise the first half of new transcripts.
-**Depends on:** Agent 1 completing detection.
+**Depends on:** Agent 1 and 1b completing.
 
 For each assigned transcript:
 1. Read the full `.txt` file from `Transcripts/`
-2. Create `analysis/summaries/YYYY-MM-DD_-_Title.md` following the summary template in CLAUDE.md
-3. Be specific, track sentiment, note contradictions, distinguish decisions from discussions
+2. If context notes exist (from Agent 1b), include them as additional analysis context
+3. Create `analysis/summaries/YYYY-MM-DD_-_Title.md` following the summary template in CLAUDE.md
+4. Be specific, track sentiment, note contradictions, distinguish decisions from discussions
+5. If analyst notes or attachments were used, add a "## Supporting Context Available" section at the end
 
 ### Agent 3: Summariser (Batch B)
 **Role:** Summarise the second half of new transcripts.
 **Depends on:** Agent 1 completing detection.
 
-Same as Agent 2, for the remaining transcripts.
+Same as Agent 2 (including context notes from Agent 1b), for the remaining transcripts.
 
 ### Agent 4: Weekly Summary & Context Updater
 **Role:** Generate/update weekly summaries and context files.

@@ -32,6 +32,7 @@ from app.routers import (
     action_items,
     adoption,
     tasks,
+    transcript_extras,
     commitments,
     contradictions,
     cross_project_links,
@@ -113,6 +114,7 @@ app.include_router(contradictions.router, prefix="/api")
 app.include_router(meeting_scores.router, prefix="/api")
 app.include_router(risk_entries.router, prefix="/api")
 app.include_router(project_summaries.router, prefix="/api")
+app.include_router(transcript_extras.router, prefix="/api")
 
 
 @app.get("/")

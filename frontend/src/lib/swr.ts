@@ -5,6 +5,8 @@ import { api } from "./api";
 import type {
   DashboardData,
   TranscriptList,
+  TranscriptNoteCurrent,
+  TranscriptAttachment as TranscriptAttachmentType,
   WorkstreamBase,
   StakeholderBase,
   DecisionSchema,
@@ -286,6 +288,24 @@ export function useRiskEntries(severity?: string, config?: SWRConfiguration) {
   return useSWR<RiskEntrySchema[]>(
     severity ? ["risk-entries", severity] : "risk-entries",
     () => api.getRiskEntries(severity),
+    { ...defaultConfig, ...config },
+  );
+}
+
+// Transcript Notes
+export function useTranscriptNotes(id: number, config?: SWRConfiguration) {
+  return useSWR<TranscriptNoteCurrent | null>(
+    id ? ["transcript-notes", id] : null,
+    () => api.getTranscriptNotes(id),
+    { ...defaultConfig, ...config },
+  );
+}
+
+// Transcript Attachments
+export function useTranscriptAttachments(id: number, config?: SWRConfiguration) {
+  return useSWR<TranscriptAttachmentType[]>(
+    id ? ["transcript-attachments", id] : null,
+    () => api.getTranscriptAttachments(id),
     { ...defaultConfig, ...config },
   );
 }

@@ -12,6 +12,8 @@ from app.models.project import Project
 from app.models.project_link import ProjectLink
 from app.models.summary import Summary
 from app.models.transcript import Transcript
+from app.models.transcript_attachment import TranscriptAttachment
+from app.models.transcript_note import TranscriptNote
 from app.schemas.summary import SummaryBase, SummaryDetail
 from app.schemas.transcript import TranscriptBase, TranscriptDetail, TranscriptList
 from app.services.upload_service import process_uploaded_transcript
@@ -37,7 +39,11 @@ async def _resolve_project_names(
 
 
 def _transcript_base(
-    t: Transcript, has_summary: bool, project_names: dict[int, str] | None = None
+    t: Transcript,
+    has_summary: bool,
+    project_names: dict[int, str] | None = None,
+    has_notes: bool = False,
+    attachments_count: int = 0,
 ) -> TranscriptBase:
     pn = project_names or {}
     return TranscriptBase(
@@ -48,6 +54,8 @@ def _transcript_base(
         participant_count=len(t.participants) if t.participants else 0,
         word_count=t.word_count or 0,
         has_summary=has_summary,
+        has_notes=has_notes,
+        attachments_count=attachments_count,
         primary_project_id=t.primary_project_id,
         primary_project_name=pn.get(t.primary_project_id) if t.primary_project_id else None,
         secondary_project_id=t.secondary_project_id,
@@ -101,11 +109,36 @@ async def list_transcripts(
     # Fetch all project names referenced
     project_names = await _resolve_project_names(db, transcripts)
 
+    # Check which transcripts have notes
+    notes_result = await db.execute(
+        select(TranscriptNote.transcript_id)
+        .where(TranscriptNote.transcript_id.in_(transcript_ids))
+        .distinct()
+    )
+    notes_transcript_ids = {row[0] for row in notes_result.all()}
+
+    # Count attachments per transcript
+    att_result = await db.execute(
+        select(
+            TranscriptAttachment.transcript_id,
+            func.count(TranscriptAttachment.id),
+        )
+        .where(TranscriptAttachment.transcript_id.in_(transcript_ids))
+        .group_by(TranscriptAttachment.transcript_id)
+    )
+    att_counts = dict(att_result.all())
+
     pages = math.ceil(total / limit) if limit else 1
 
     return TranscriptList(
         items=[
-            _transcript_base(t, t.id in summary_transcript_ids, project_names)
+            _transcript_base(
+                t,
+                t.id in summary_transcript_ids,
+                project_names,
+                has_notes=t.id in notes_transcript_ids,
+                attachments_count=att_counts.get(t.id, 0),
+            )
             for t in transcripts
         ],
         total=total,
@@ -138,6 +171,22 @@ async def get_transcript(
     # Get project names
     project_names = await _resolve_project_names(db, [transcript])
 
+    # Check for notes
+    notes_result = await db.execute(
+        select(func.count(TranscriptNote.id)).where(
+            TranscriptNote.transcript_id == transcript_id
+        )
+    )
+    has_notes = (notes_result.scalar_one() or 0) > 0
+
+    # Count attachments
+    att_result = await db.execute(
+        select(func.count(TranscriptAttachment.id)).where(
+            TranscriptAttachment.transcript_id == transcript_id
+        )
+    )
+    attachments_count = att_result.scalar_one() or 0
+
     return TranscriptDetail(
         id=transcript.id,
         file_name=transcript.filename,
@@ -146,6 +195,8 @@ async def get_transcript(
         participant_count=len(transcript.participants) if transcript.participants else 0,
         word_count=transcript.word_count or 0,
         has_summary=summary is not None,
+        has_notes=has_notes,
+        attachments_count=attachments_count,
         primary_project_id=transcript.primary_project_id,
         primary_project_name=project_names.get(transcript.primary_project_id) if transcript.primary_project_id else None,
         secondary_project_id=transcript.secondary_project_id,

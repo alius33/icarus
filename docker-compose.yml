@@ -31,6 +31,8 @@ services:
     volumes:
       - .:/data:ro
       - ./Transcripts:/data/Transcripts
+      - ./Attachments:/data/Attachments
+      - ./analysis/context_notes:/data/analysis/context_notes
       - ./backend/app:/app/app
       - ./backend/scripts:/app/scripts
       - ./backend/alembic:/app/alembic

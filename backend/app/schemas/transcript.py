@@ -10,6 +10,8 @@ class TranscriptBase(BaseModel):
     participant_count: int
     word_count: int
     has_summary: bool
+    has_notes: bool = False
+    attachments_count: int = 0
     primary_project_id: int | None = None
     primary_project_name: str | None = None
     secondary_project_id: int | None = None

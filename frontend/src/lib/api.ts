@@ -3,6 +3,11 @@ import type {
   ProgrammeBrief,
   TranscriptList,
   TranscriptDetail,
+  TranscriptNoteCurrent,
+  TranscriptNoteHistory,
+  TranscriptAttachment as TranscriptAttachmentType,
+  TranscriptAttachmentDetail,
+  TranscriptContextData,
   SummaryBase,
   SummaryDetail,
   WeeklyReportBase,
@@ -502,4 +507,39 @@ export const api = {
   // Project Summaries
   getProjectSummaries: (projectId: number) =>
     fetchApi<ProjectSummarySchema[]>(`/api/projects/${projectId}/project-summaries`),
+
+  // Transcript Notes
+  getTranscriptNotes: (id: number) =>
+    fetchApi<TranscriptNoteCurrent | null>(`/api/transcripts/${id}/notes`),
+  getTranscriptNoteHistory: (id: number) =>
+    fetchApi<TranscriptNoteHistory>(`/api/transcripts/${id}/notes/history`),
+  updateTranscriptNote: (id: number, content: string) =>
+    mutateApi<TranscriptNoteCurrent>(`/api/transcripts/${id}/notes`, "PUT", { content }),
+
+  // Transcript Attachments
+  getTranscriptAttachments: (id: number) =>
+    fetchApi<TranscriptAttachmentType[]>(`/api/transcripts/${id}/attachments`),
+  getTranscriptAttachment: (id: number, attId: number) =>
+    fetchApi<TranscriptAttachmentDetail>(`/api/transcripts/${id}/attachments/${attId}`),
+  uploadTranscriptAttachments: async (id: number, files: File[]) => {
+    const formData = new FormData();
+    files.forEach((f) => formData.append("files", f));
+    const res = await fetch(`${getApiBase()}/api/transcripts/${id}/attachments`, {
+      method: "POST",
+      body: formData,
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Upload failed (${res.status}): ${text}`);
+    }
+    return res.json() as Promise<TranscriptAttachmentType[]>;
+  },
+  deleteTranscriptAttachment: (id: number, attId: number) =>
+    mutateApi<{ status: string }>(`/api/transcripts/${id}/attachments/${attId}`, "DELETE"),
+  getAttachmentDownloadUrl: (transcriptId: number, attId: number) =>
+    `${getApiBase()}/api/transcripts/${transcriptId}/attachments/${attId}/download`,
+
+  // Transcript Context (for analysis)
+  getTranscriptContext: (id: number) =>
+    fetchApi<TranscriptContextData>(`/api/transcripts/${id}/context`),
 };

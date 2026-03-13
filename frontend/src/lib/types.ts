@@ -8,6 +8,8 @@ export interface TranscriptBase {
   participant_count: number;
   word_count: number;
   has_summary: boolean;
+  has_notes: boolean;
+  attachments_count: number;
   primary_project_id: number | null;
   primary_project_name: string | null;
   secondary_project_id: number | null;
@@ -1180,6 +1182,46 @@ export interface ProjectSummarySchema {
   relevance: string | null;
   content: string;
   source_file: string | null;
+}
+
+// ── Transcript Notes & Attachments ──────────────────────────────────────────
+
+export interface TranscriptNoteBase {
+  id: number;
+  transcript_id: number;
+  content: string;
+  version: number;
+  created_at: string;
+}
+
+export interface TranscriptNoteCurrent {
+  content: string;
+  version: number;
+  created_at: string;
+  version_count: number;
+}
+
+export interface TranscriptNoteHistory {
+  versions: TranscriptNoteBase[];
+}
+
+export interface TranscriptAttachment {
+  id: number;
+  transcript_id: number;
+  original_filename: string;
+  file_type: string;
+  size_bytes: number;
+  has_extracted_text: boolean;
+  created_at: string;
+}
+
+export interface TranscriptAttachmentDetail extends TranscriptAttachment {
+  extracted_text: string | null;
+}
+
+export interface TranscriptContextData {
+  notes: string | null;
+  attachments: { filename: string; extracted_text: string | null }[];
 }
 
 export interface AnalysisInsights {
