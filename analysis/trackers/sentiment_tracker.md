@@ -92,3 +92,13 @@
 | 2026-03-11 | Nikhil | Impressed/Unaware | Baseline (unaware of resistance) | Build in Five demo | Build in 5 standup | Genuinely impressed by Martin work. Does not appear aware of plans to redirect him away from App Factory. | High |
 | 2026-03-11 | Catherine | Enthusiastic ally | Positive shift (UP) | App Factory approach | Salesforce Integration Design | Called the approach "breaking down siloed walls" — strongest endorsement yet. Now fully engaged. | High |
 | 2026-03-11 | Juliet Valencia | Pragmatic/Cooperative | Baseline | Infrastructure struggles | Sales team apps in App Factory | Hitting same walls as everyone. Self-reliant (chose own infra over shared hosting). Good data governance instincts. | Medium |
+| 2026-03-12 | Azmain Hossain | Furious / frustrated | Down | Catherine blindside + Gainsight integration | Post Gainsight team meeting debrief | N/A | High |
+| 2026-03-12 | Ben Brooks | Strategically aggressive | Stable | Gainsight integration waste of time | Post Gainsight team meeting debrief | N/A | High |
+| 2026-03-12 | BenVH | Angry but productive | Stable | Vendor lock-in frustration channelled into MCP server | Post Gainsight team meeting debrief | N/A | High |
+| 2026-03-12 | Richard Dosoo | Emotionally reactive | Down | Catherine prep failure, time wasted | Post Gainsight team meeting debrief | N/A | High |
+| 2026-03-12 | Natalia Plant | Governance-focused, calm | Stable | Establishing structure for Clara releases | Clara feedback cadence | N/A | High |
+| 2026-03-12 | Stacy | Pragmatic, relieved | Up | Clara stabilising, ISLT using tool directly | Clara feedback cadence | N/A | High |
+| 2026-03-12 | Natalia Orzechowska | Calm, reassuring | Stable | Gainsight POC timeline pressure defused | Post Gainsight call with Natalia | N/A | High |
+| 2026-03-12 | Azmain Hossain | Relieved / assertive | Up | Gainsight pressure removed; Catherine strategy discussed with Diana | Post Gainsight call + Diana 1-1 | N/A | High |
+| 2026-03-12 | Diana | Engaged, politically astute | Up | Programme scope understanding; advisory role on Catherine | Diana 1-1 | N/A | High |
+| 2026-03-12 | Catherine | Monitoring/controlling | Stable | Raising Clara issues, governance concerns, organising Gainsight meeting | Clara feedback cadence (discussed across multiple) | N/A | Medium |

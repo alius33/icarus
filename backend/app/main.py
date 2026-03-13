@@ -1,14 +1,33 @@
+import asyncio
 import logging
+from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.auth.router import router as auth_router
+from app.auto_import import auto_import_loop
 from app.config import settings
 from app.middleware.logging_middleware import LoggingMiddleware
 from app.middleware.rate_limiter import RateLimiterMiddleware
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(levelname)s %(message)s")
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Manage background tasks that run for the lifetime of the app."""
+    # Start the auto-import watcher
+    watcher_task = asyncio.create_task(auto_import_loop(check_interval=30))
+    yield
+    # Shutdown: cancel the watcher
+    watcher_task.cancel()
+    try:
+        await watcher_task
+    except asyncio.CancelledError:
+        pass
+
+
 from app.routers import (
     action_items,
     adoption,
@@ -44,7 +63,7 @@ from app.routers import (
     workstreams,
 )
 
-app = FastAPI(title="Icarus Dashboard API", version="0.1.0")
+app = FastAPI(title="Icarus Dashboard API", version="0.1.0", lifespan=lifespan)
 
 # Rate limiter runs first (outermost middleware)
 app.add_middleware(RateLimiterMiddleware)

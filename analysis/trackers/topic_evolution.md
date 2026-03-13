@@ -79,3 +79,9 @@
 | 2026-03-11 | Cross-OU showcase meeting planning | Governance | High | 2026-03-11 | 1 | New | Wednesday meeting with ISLTR, banking (Idrees), asset management. Retention dashboard + ROB AI + App Factory | High |
 | 2026-03-11 | AON account intelligence | Client | Medium | 2026-03-11 | 1 | New | Natalie Bath requested agent view on AON; Rob Fulber meeting Dan Dick next week. Cross-OU visibility opportunity | Medium |
 | 2026-03-11 | Segment-agnostic retention dashboard | Product | Medium | 2026-03-11 | 1 | New | Idrees building Moody's-wide retention dashboard; looped DIA and George Dyke in today | Medium |
+| 2026-03-12 | Gainsight-Clara integration | Integration | High | 2026-01-12 | 8 | Rising | N/A | High |
+| 2026-03-12 | Catherine COE political conflict | Political | High | 2026-03-06 | 5 | Rising | N/A | High |
+| 2026-03-12 | CLARA governance and release cadence | Process | High | 2026-03-04 | 4 | Rising | N/A | High |
+| 2026-03-12 | CLARA maintenance mode transition | Programme | Medium | 2026-03-12 | 1 | New | N/A | High |
+| 2026-03-12 | Adoption runbook (Rhett + PMs) | Feature | Medium | 2026-03-12 | 1 | New | N/A | Medium |
+| 2026-03-12 | Grad onboarding (April 7) | Resource | Medium | 2026-03-12 | 2 | New | N/A | High |

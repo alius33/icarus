@@ -1,0 +1,123 @@
+Speaker 1  0:00  
+Record this, if it's okay with everyone, I'm just going to start that now, because it'll take a
+
+Unknown Speaker  0:21  
+minute. Record recording started.
+
+Speaker 1  0:28  
+I'm gonna kick off, or at least intro, while we're waiting for a few few more people to join on, why we put this meeting together. So we have two main groups here, as well as some people from the overall customer engagement team. So we have a number of called stakeholders, and people that I've been working directly on Clara tool that we've introduced for our IRP adoption process, migrating all of our clients over to SAS. And then we have the Business Systems team. They're responsible for the insight Salesforce and overall enterprise tools so that we can all do our jobs effectively. And the team has seen Clara has a lot of visibility into what we've been trying to achieve in terms of tracking those types of information. And at the same time, we've been in the process of transitioning all CSM activities to gain site. So since there's overlap in terms of work, insight into customers, activities, overall health, bringing the two groups together to discuss potential migration, what that could look like. And I know there's some other questions from the Clara team on overall app factory that you're creating, and how we can integrate Salesforce and Gainsight data into that. So we might not be able to answer all questions in this session. We probably are going to need a number of follow ups. But with that, I'll hand it over to you, Tina, to talk a little bit about potential Clara integration, and then from there, if there's time, talk about larger integration processes.
+
+Unknown Speaker  2:15  
+That sound good? Yeah,
+
+Speaker 2  2:17  
+sure. Hi everybody. I'm Tina palumba. I am on the Business Systems team. For those of you that don't know me, I will just share my screen. I think I've shared this with Catherine. So we met with Catherine a few weeks ago, and she was just walking us through the tool Clara. And she mentioned that Clara is really a way to provide cross functional teams, not just CSMs, but implementation teams, product teams, visibility into IRP use cases and some of the adoption blockers and adoption items that come along with those use cases. And we had, you know, in walking through the functionality, there were some similarities that we noticed with Gainsight, and we know that there is a desire to move the CSMs onto Gainsight. And so we had proposed a workflow or an integration between Gainsight and Clara to support this IRP use case, cross functional workflow that was described to us, where a CSM would essentially create all IRP use cases in Gainsight, and then we would sync that over to Clara, along with some other objects like we had seen that there was a place to enter customer data and some contact data, and we just we want to be mindful of trying to balance the cross functional needs while making it very streamlined for the CSMs to have one space that they work in which it would primarily be gain site. So the proposal was, we can sync some of this information over to Clara, and then as new use cases get identified, the CSM Could, could enter those coordinate with, with whomever on the product team, enter those and then as that information, like blockers and adoption information, is identified either by the CSM or by the product and implementation teams. Those can be managed in the respective systems, whether it be Gainsight, because that's where the CSM is primarily. Merely working, or these product and implementation teams that may not necessarily be working in game site. And then it looked like there was some reporting that is really important for management, so that would continue to be serviced out of out of Clara. So this was really a proposal that we shared with Katherine as a means to really keep the process very streamlined and simplified for the CSMs, so they can do all of their day to day work with regards to customer engagements and Gainsight, because that's where we're tracking health. That's where we track all of the meetings they're entering their time and so that, that's sort of how we have laid this out. I don't know if there are any questions. If you guys have seen this, if not, I'm happy to share this. I see a question, but I don't know.
+
+Azmain Hossain  5:57  
+Hi, Christina. Just had a question. Yeah. So firstly, love the the idea that you have this is exactly what we had in mind, because Gainsight needs to be the source of truth. It's, it's where CSMs work. And what we were just hoping for is, is a read only access so that we can, we can just pull the relevant data into our little app. The question I had is, is there anything from our app that you would want feeding back into Gainsight, or that's completely up to you guys we're happy with just just read only access so that we can get Gainsight stuff. Yeah.
+
+Speaker 2  6:39  
+So my understanding is that there could be some IRP use cases that product and implementation teams may identify by having direct conversations with the customer. Maybe the CSM isn't necessarily involved in those discussions, there could be, like, a new blocker, for example, that an implementation team member may identify. So I guess as these use cases evolve in some of like, the related objects to that, I think that's the information we would like to bring back to game site, so that the CSMs continue to have full visibility into touch points for the customers that they're managing, but they may not be involved in those day to day. I don't know if there's other meeting activity that's happening in Clara. This was just like the one that we dove deep into initially. So I guess if there is other customer activities that are captured in Clara, I think the CSMs, I'm guessing Katherine would probably want to have some visibility into that information, and I see another hand. I'm sorry I can't see all the names.
+
+Richard Dosoo  8:10  
+Richard, no problem. Tina, can you hear me? Yes, I can. Thanks again for putting this together. To Azmain. Point, we had initially thought the integration would be one way that we'd just be surfacing relevant information around Salesforce tickets or blockers from gainsail from Salesforce, and pulling them into Clara to drive decision making. So that was our working assumption coming into this meeting. Are you suggesting that it has to be bi directional because the CSMs can't work in both systems? Is that, like a, I think
+
+Azmain Hossain  8:52  
+Rich, I think we would need it to be bi directional to avoid duplication of efforts, so that it needs to be real time. So you know when a when a CSM goes and puts in a blocker in in Gainsight, they can update Clara and see that in Clara, rather than being like, oh, man, I got to put this in to another system. Now,
+
+Speaker 3  9:16  
+sure. Okay, no, I guess where I was heading out is just where does the data ultimately need to reside, if? But we can support bidirectional integration, if that's what the business needs, and the CSMs will prefer to work in one application, and we're just moving the data from one system to another.
+
+Speaker 1  9:34  
+Yeah, I think the overall philosophy is we want to have one home for BSMS, where they're doing their work, planning, prioritising, and avoid having to go back and forth between applications as much as possible, while still being able to have the flexibility and the right information to be collected.
+
+Ben Brooks  9:58  
+Except what we need to. Keep in mind that the implementation is a cross functional team effort, so like, the whole adoption squad needs to be in the place that is the source of truth for that exactly.
+
+Speaker 1  10:10  
+That's how Tina has this put together. Yeah,
+
+Speaker 2  10:15  
+yeah. We realise that there could be folks that are meeting with the customer that aren't necessarily CSMs. And so I think if they're, you know, whatever, however that will be captured. That's the kind of information we want to share. Back to the CSM so they can see some of that, I think, today, and I was speaking about this with Adam yesterday. I think some of the gap might be, it's like everyone was using RMS Salesforce before, and I think now there's probably more tools in play when it comes to these customer touch points. So that's probably what some of them, some of these, I don't know if this is just recent, but maybe some new pain points is, is just not being able to have that visibility everyone having the same visibility to customer touch points. And so really, that was the what we are trying to solve for here in this flow, while at the same time just making it very standard for CSMs, because there is some other activities that they need to manage on the Gainsight side, I think, Kevin, do you
+
+Kevin Purn  11:28  
+do your question? Yeah, I'm just thinking about things that are in Clara, other than success criteria and blockers that they probably want to be able to pull out. There's areas for executive summaries and customer updates. I know those are things that we'd be tracking in Gainsight as well, and they might be overlapping with like things like time tracking or just engagement tracking. I want to make sure that, you know, CSMs are not being required to put it into two different systems. So if an update happens in Clara, in a customer update that should get populated over to Gainsight, or if our mandate is we need to put that in Gainsight, there should be a way to publish that to Clara for for those customer update sections as well.
+
+Speaker 2  12:19  
+Yes, if we can, and I think that that that is great. I mean, we want to identify, like, what is the full scope? Because Gainsight is supposed to be able to provide that 360 view to the to the CSM about the customer. This was, like, the one specific use case that we dove into. But if I know this tool is fairly new, I think in the insurance BU, so if we need to look at bringing more information from Clara to Gainsight, I think that's something that we can absolutely take a look at. I think initially, our thought is to start with a POC, just to make sure the systems can talk to each other, we're able to maybe support this use case, like send a use case over, have somebody add a blocker or something against that and then bring that back into Gainsight, but we can absolutely look at the whole scope to make sure that we're very complete in delivering a solution that works for everybody,
+
+Speaker 1  13:35  
+even like the exact summary in the meetings. Because you'll definitely have to have that or put that in Gainsight. Kevin, that would be maybe even a smaller, easy place to start with, pushing that down to Clara,
+
+Azmain Hossain  13:51  
+yeah, I think that's that's a very good use case. Catherine, so Christina, just for your information, one of the things that we've automated is we have weekly calls where, you know, CSMs give updates on, on, on their, on all their accounts, and we just, we transcribe the call, capture all the notes, automatically, put it in as a update within Clara, so it just saves CSMs having to go in and type out these huge updates. They can free flow, talk, discuss things, and the whole thing is captured. So something like that, I think is a good test case for let's push it to Gainsight for the same customer and see if it shows up.
+
+Speaker 2  14:34  
+Yep. And Nadeem, I think I saw you on the call. I think this is something we can we can definitely take a look at as part of the POC, at least,
+
+Speaker 5  14:46  
+of course, yeah, that's, I made a note of that. So when we have a follow up call, we can discuss these elaborate points. You.
+
+Speaker 3  15:00  
+And Tina from the Gainsight team, can anyone shed a light on how the integration is going to work? What kind of interfaces can you get to us, or do we need to expose to you to enable the workflow that you've outlined?
+
+Speaker 2  15:16  
+Yeah, we actually have Rajesh, who is our solution architect, on the call. So Rajesh, I'm going to let you take that one Sure.
+
+Speaker 6  15:29  
+Hi everyone. So on a high level, without knowing the full details on how, what data elements that we need to kind of exchange between these two applications, we put on a high level picture or thought process, at least, based on our understanding. And again, this can be amended. This is not set in stone. So on a high level, if you see that we have the Salesforce data where we actually kind of capture all the accounts, contacts as a source of all the data elements, whatever we are talking about. All those are originated in Salesforce, and those are being integrated to Gainsight. And Gainsight actually kind of customer success tool where, actually, kind of they, they get all the data from related to an account, orders, cases, activities and all, and also some additional usage related details are the survey responses. They are all flowing into the gain site, okay? And we are implementing Databricks solution for reporting analytics, where currently Salesforce data is flowing in there, and we are actually in the process of implementing it, extending it to gain side data, also pulling into that reporting aspect. Okay, so the gain side to the Databricks is not taking place, but that's that's something in plan for our future implementation now coming to the Clara here, I know the there are different data exchange methods, or the integration methods that are available from, from and to the insight we need to kind of really see what data you are looking for, what whether they are available in The real time, or maybe some other mechanism that we need to see. But at least on a high level, the proven method that we saw is a batch exchange mode, where actually the gain side data can be exported into a three bucket, and that can be an exchange point if it is not real time need, but if something is real time, need, maybe Gainsight also kind of provides some kind of API mechanisms where you can actually kind of interact again. There might be some limitations, and all we need to kind of go through the details of those points. And yes, you know we can, we can select the tools and how we want to kind of implement those real time integrations here. Okay, there is something we need to do, the POC and all, but, yeah, this is on a high level that what we think maybe, let us say the batch time is batch mode is kind of maybe the customers you don't get, you don't need to get the customers in the real time. Customer creation and contact creation can be a batch mode, but adoptions are, you know, use cases, or maybe blockers can be a real time. So those are the thought process that we have. Maybe we can. We can think through and do a POC on the connectivity and what is feasible what is not feasible by going through the details on the data items, data points.
+
+Speaker 3  18:53  
+Okay, thanks, Rajesh, would you be able to share some documentation about your APIs and how we can access them, whether it's a key or whether it's SSO, what the method is for us to authenticate because that will help us also determine what integration we need to surface on our side.
+
+Speaker 6  19:13  
+Yeah, so we can, we can set up more detailed sessions. Shashank is our technical lead on the gainset application, he we can work through on the details on the POC setup and all that, at least from the connectivity or integration point. But again, we need to kind of talk through what items at what level, what details we want to kind of exchange, maybe those, those still up for discussion, okay,
+
+Azmain Hossain  19:54  
+yeah, sorry I was while on mute. What I was going to say is. I Yeah. I love the idea of, yeah, let's have a look at the documentation. Because, I mean, Clara is completely in house. We can do whatever we need to with it. So yeah, we can. We can move things around as needed to work with Gainsight, whether that's pulling data, pushing data, whatever it be, yeah, which whatever makes the CSMs life easier to manage their accounts, and makes senior leadership's life easier to output, to keep track of all the implementations, shit
+
+Unknown Speaker  20:39  
+and Tina, I know this is right off the top of
+
+Speaker 6  20:46  
+what what we are doing, so maybe that we need to kind of work through some kind of timeline or these activities and make sure that they are prioritised for the team. So that is something that we need to kind of create a work plan or something on this one?
+
+Ben Brooks  21:06  
+Yeah, we do this with all of our customers. It would be great to write down a charter for what we need to achieve, what the success looks like, what different stakeholders are doing, what all that kind of stuff. Because if we agree that up front, the designs will be easier. The process will be easier. Nobody will get surprises halfway through.
+
+Speaker 3  21:25  
+Yeah, I guess moving on from that direction, what time frames are we looking for, for any POC and any implementation? One, I guess that's the gain side team,
+
+Speaker 2  21:39  
+yeah, I know the team is looking to move the CSMs over very, very soon, I will loop back with our project manager to see if he can just coordinate a session so we can put some we may need to. We'll probably do a regroup internally to put some rough dates on the on a calendar, and then come back and share that with you. Know, it
+
+Speaker 3  22:06  
+doesn't have to be to the day or week, just, is this something that you guys are looking at in the next fortnight, in the next month, in the next quarter? Yeah.
+
+Speaker 2  22:15  
+I mean, I think we would look at doing this as soon as possible. Okay, I know the team is very focused on trying to onboard right now, the CSMs onto Gainsight. We're also trying to sunset RMS Salesforce, so those two are high priority, but I think we can look at seeing how we can fit in a POC and at least try to wrap that up as part of, like just delivering this project, which is really scoped for, I think, by June sunsetting our so I'm sure we can fit this POC somewhere in there. I really just have to take it back to the project manager and see what we can do. Oh, okay,
+
+Azmain Hossain  23:04  
+so back of what Ben said, it's kind of a skeleton charter. I'm going to create kind of a v1 and if I send it to yourself, Christina, who else should I send it to? From your side?
+
+Speaker 2  23:21  
+I think just keep Natalia looped in as well, please. Yeah, and we'll circulate with our team.
+
+Speaker 1  23:36  
+Will do we only have five minutes left? Richard Azmain, do you have questions related to sfdc that? Excuse me, we should set up other time to discuss as well, or focus on this for now, just what would be most helpful
+
+Speaker 3  23:55  
+for you? Yeah, I think the first thing is, if you could share the some API documentation, because we've got some requirements that we need to pull data out of Salesforce and vis a vis Clara and gainslide as well. And then if Kathleen, if you could help coordinate or follow up the sessions with the relevant people from the gainslive team, so we could start talking about connectivity and us getting a look at what those API workflows look like, because that's going to help us inform what our estimates and timeframes to support in POC work would Be. Okay.
+
+Speaker 2  24:40  
+And I don't know if you guys have this jack, I can share that after the call in the meantime, yeah, that would be,
+
+Speaker 6  24:58  
+we will share the 10. Documentation, the APA related documentation that's available from the gain site. Yeah,
+
+Unknown Speaker  25:15  
+anything else from anyone on the call? No,
+
+Speaker 7  25:26  
+okay, all right, thanks everyone. Thank you. Thank you. Thanks everybody. Bye.
+

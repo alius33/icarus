@@ -85,3 +85,10 @@
 | 2026-03-11 | Richard/Azmain | Pull Salesforce tickets + qualitative data for AON and send to Idrees | Before Rob's AON meeting | None | Open | Chat with Idrees | High |
 | 2026-03-11 | Richard | Loop DIA, MENA, and Irina into all cross-OU correspondence | Ongoing | None | Open | Chat with Idrees | Medium |
 | 2026-03-11 | Idrees | Loop DIA and George Dyke into retention dashboard thread | Today (11 Mar) | None | Open | Chat with Idrees | High |
+| 2026-03-12 | Azmain | Create v1 Gainsight integration charter | Next week | None | Open | Integration meeting with Gainsight team | High |
+| 2026-03-12 | Rajesh/Shashank | Share Gainsight API documentation | ASAP | None | Open | Integration meeting with Gainsight team | High |
+| 2026-03-12 | Tina Palumbo | Provide rough POC timeline after internal regroup | Next week | None | Open | Integration meeting with Gainsight team | Medium |
+| 2026-03-12 | Natalia Plant | Set up Tuesday fortnightly prioritisation review | This week | None | Open | Clara feedback cadence | High |
+| 2026-03-12 | Diana | Discuss Catherine situation with Natalia Orzechowska | Next week | None | Open | Diana 1-1 | High |
+| 2026-03-12 | Diana | Invite Azmain to IRP weekly call | This week | None | Open | Diana 1-1 | High |
+| 2026-03-12 | Richard | Discuss Catherine's behaviour with Diya in London | Next week | Diya in London | Open | Post Gainsight debrief | High |

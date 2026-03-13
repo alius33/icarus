@@ -1,0 +1,51 @@
+Azmain Hossain  0:00  
+Hey, hi, Natalia,
+
+Natalia  0:03  
+I just thought I'll call you, and then eventually you're calling me, because we don't have to panic. Everything is fine. Listen. Gainsight team will not be doing that. POC now anyway, they have this very hard deadline of 30th of March to have the RMS and cape and predicate people onboarded on on gain side. And they will not really be doing anything extra on top of what was already agreed. And this POC is an extra. So what we merely agreed on is the fact that we do want to make a POC and see how it will be working. But we didn't discuss the timeline. There is no expectation for when it's actually happened. I just had a conversation with Catherine to ensure that we didn't really had any timeline conversation. And indeed, so, so we're good. We're really good. We're not building anything now. And also, you know when we will be prioritising the work related to gain side as part of our governance, this will be part of prioritisation, right? So no need to to get, to get anyhow, afraid of timelines. No worries. I think we could say that, you know, when we have the two juniors on board, we can look into that. So basically, sometime from, I don't know, meet up real or whatever. So we're fine. First, we need to have gain side working for those new groups. And, you know, end of March is, is just a production. Go to go live date, but then we probably need to have some, you know, test runs or whatever for a month or so. So I'm not worried here. But the thing that, yeah, but the thing that the central team is actually talking to us about some sort of communication integration, etc, this is already huge, because before, like, you know, few months before then we're not really willing to do anything with us. So this
+
+Azmain Hossain  2:08  
+is to go away. So this is yeah, yeah. This is progress. It just kind of Yeah. Came at a time because my thinking, or my assumption was March 30, Gainsight is like
+
+Natalia  2:23  
+fully lost. That's not happening before my March 13, 13th, that's definitely not, yeah.
+
+Azmain Hossain  2:33  
+Okay, no, good. That really helps. Thank you. Thank you. Yeah, all right, good. I'm working 25% of this person's time, 50% here, and trying to ensure I'm not putting extra things on anybody. Everybody has a day job to do. This is kind of an extra thing that they're helping out with, and I'm grateful. So, yeah, just didn't want anything unexpected coming in. And this kind of scared me. It's not with all the complicated arrows and stuff. And I was like, Oh, my god, somebody has to understand this and work with it.
+
+Natalia  3:08  
+Don't worry. It's it's more. I think it was more for them. They recognise what we use Clara for. So they because, you know, at some point there was a concern, aren't we not overwriting Gainsight with what we're building in Clara. And then we had to explain that, not really, because Clara, Gainsight is really for everything that CSM is doing throughout the whole lifetime of our customers, right? While, while Clara is more for us of a programme tool where we want to track additional aspects that are not tracked anywhere else, right? We're talking, for example, adoption, charters, etc,
+
+Azmain Hossain  3:49  
+yeah, for other cross functional teams that don't use Gainsight to also use a platform, yeah,
+
+Natalia  3:54  
+exactly, exactly. And this actually was the was the fact that they recognise now where, where Clara sits next to Gainsight? And obviously it was also confirmed that Gainsight will be used by by CSM for Bau topics, etc. So yeah, I think this was actually a good call.
+
+Azmain Hossain  4:19  
+Yeah. Yeah, okay, yeah, no, that really helps. Thank you so much. All right, well,
+
+Natalia  4:26  
+then I'm glad that I joined the call, because I was like, actually, okay, I'll just join, just in case. So it's good, because otherwise I would be like, Why are we so, you know, agitated because, yeah, Catherine was also, oh, why Ben was joining? He was invited, but I guess we didn't really expect him to join, knowing that he's very Gainsight sceptic,
+
+Azmain Hossain  4:48  
+yes, yeah, yeah, but no, which I mean,
+
+Natalia  4:53  
+fair enough, he doesn't care about Gainsight, but Gainsight is not for him. He's not a target group of Gainsight.
+
+Azmain Hossain  4:59  
+I think. Think so I know exactly well. I know a large part of where Ben's scepticism coming from, and it's coming from Bernard, because Bernard has been making a lot of noise to Richard about how terrible Gainsight is. He's like, I've been using it on the life side for three years. I can't even get parent level reporting. All the information super out of date. CSMs don't want to use it. Vlad has to go into it manually. So Richard, having never used Gainsight, has a very negative view of it, and that's obviously flowed up to Ben.
+
+Natalia  5:32  
+I mean, obviously, if Bernard is the only reviewer, then this is what happens. I completely get it. But then again, let me put it this way. It's a, it's a, it's an argument that really sucks big time, but it's a corporate tool, and we have to use it exactly we as in CSMs, we have, they have to use it. So unless someone tells me we're not, we're stopping the use of Gainsight at all, we have to use it, and we have to face it, and if we are able to communicate between Clara and gain side, and with that, bring some information this way or another, that's even better,
+
+Azmain Hossain  6:10  
+yeah, yeah. It was always Yeah. It was always in the plan. It's yeah, it's just now, now we can start, like Ben said, I'm going to start working on a charter, just we want to get everything nailed down, not another just run and catch up, and we're
+
+Natalia  6:27  
+not doing any POC before the end of March, for sure. Yeah, yeah. Awesome. Okay, cool. Cool.
+
+Azmain Hossain  6:33  
+Thank you all right. Bye. You.
+

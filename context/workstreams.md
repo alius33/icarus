@@ -1,6 +1,6 @@
 # Workstream Status Tracker
 
-Last updated: 2026-03-11 (all transcripts through 11 March processed)
+Last updated: 2026-03-12 (all transcripts through 12 March processed)
 
 ---
 
@@ -55,6 +55,7 @@ Last updated: 2026-03-11 (all transcripts through 11 March processed)
 - Data quality is the primary challenge (not features)
 - **Week 3 additions:** Data input hub live (CSMs/PMs fill data in-app). Portfolio Review process designed. Adoption charter (WS4) formally folded in. 155 active accounts loaded from December golden source. Dashboard colour/RAG confusion identified and queued for fix. No data export by design (forces platform usage).
 - **March additions:** Nikhil (50% CLARA / 50% App Factory) and Chris onboarded — Chris on bug fixes and security audit findings, Nikhil on scorecard tab and migration burndown. Bedrock API key now functional. Two-week structured release cycle replaces ad-hoc deploys. Template/flat-pack approach proposed for cross-OU scaling (Life team shown demo). Adoption charter data flow starts one-directional (bi-directional too complex due to customer-annotated Excel with diagrams). Gainsight architecture alignment meeting scheduled with Tina Palumbo, Nadim, Rajesh. Also pushing for Salesforce programmatic access.
+- **12 Mar additions:** CLARA officially entering maintenance mode. Natalia Plant established fortnightly release governance with Tuesday prioritisation reviews. Two grads arriving April 7 (London + New York) for 100% CLARA maintenance. Ben Brooks restricted to sandbox. Analytics tab being removed from management dashboard. Scorecard tab and management dashboard moved higher in navigation for ISLT on Monday. Use case completion check added (software status must be "in production" first). Gainsight integration meeting held — bi-directional POC proposed but no timeline pressure (earliest May). Catherine's COE overlap with AI programme causing significant political friction.
 
 ### Feature Backlog
 - Scorecard tab and migration burndown (in active development — Nikhil)

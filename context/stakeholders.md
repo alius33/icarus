@@ -1,6 +1,6 @@
 # Stakeholder Map
 
-Last updated: 2026-03-12 (all transcripts through 11 March processed, including App Factory Discussion and Chat with Idrees)
+Last updated: 2026-03-12 (all transcripts through 12 March processed, including Gainsight integration meeting, debrief, Clara cadence, Diana 1-1)
 
 ## Tier 1 — Decision Makers & Sponsors
 
@@ -104,9 +104,9 @@ Last updated: 2026-03-12 (all transcripts through 11 March processed, including 
 | Alexandra | Life team | Week 3: Wants broader framing ("successful cloud migration" not just IRP). Raised valid hallucination concern for Monday presentation. Working on partner tracking. |
 | Steve Gentilli | Adoption charter (WS4) | Week 3: Enthusiastic about folding Excel tracker into CLARA. Has database/systems experience, wants to help with data modelling. Strong ally for WS4. |
 | Vlad | PM | Week 3: Practical, willing to help populate data in CLARA. Has 3 accounts ready as quick wins. Wants clear scope and timelines. |
-| Diana | PM → Azmain's new manager (4 Mar) | Now Azmain's reporting line. Supportive of Friday development. Planning to present Friday vision to Ben/Charlotte. |
+| Diana | PM → Azmain's new manager (4 Mar) | Now Azmain's reporting line. Supportive of Friday development. Planning to present Friday vision to Ben/Charlotte. **12 Mar: First extended 1-1 with Azmain. Shared Catherine's COE objectives, confirmed the political threat, committed to discuss with Natalia Orzechowska. Shared IRP reporting slides and adoption runbook context. Invited Azmain to IRP weekly call. Growing into a key political ally and advisor. Weekly 1-hour 1-1 established.** |
 | Martin Davies | Build in Five (WS6) | Exceptional output. Dashboard builder dramatically exceeded expectations (10 Mar). Richard compared to Databricks Genie. Live RM API integration working. Demo shifted to May. 12-week clock ticking but output justifies investment. |
-| Catherine | Data alignment + Gainsight governance | March: Offered to help with governance and App Factory decision tree. Key new ally. 11 Mar: Joined Salesforce integration design session. Enthusiastic about App Factory approach ("breaks down siloed walls"). Confirmed Gainsight hard launch March 30. Raised NPS data as potential addition. Strongest engagement yet. |
+| Catherine | Data alignment + Gainsight governance + COE lead | March: Offered to help with governance and App Factory decision tree. 11 Mar: Joined Salesforce integration design session. Enthusiastic about App Factory approach. Confirmed Gainsight hard launch March 30. **12 Mar (CRITICAL): Organised Gainsight integration meeting without consulting Clara team — team describes this as a "blindside." Ben Brooks, Richard, Azmain, BenVH all furious. Catherine's COE (digital engagement, enablement, Gainsight/SFDC retirement) overlaps with AI programme. Diana warned Azmain she may try to absorb the programme. Multiple interventions planned: Diana to Natalia, Richard to Diya. Azmain: "If she's placed in charge, I leave." Status shifted from perceived ally to confirmed political threat.** |
 | Dan Flemington | Sales | March: New stakeholder with existing tools. Julia Valencia identified for Salesforce access. In Vienna at event (w/c 9 Mar). |
 | Juliet Valencia | Sales analytics / Power BI dashboards | New 9 Mar. Manages Sales Hub dashboards. Clarified data ownership: Dan's data likely from SPM team (Tableau), not her. Uses Cursor for dashboards. Cooperative, good data governance instincts. Will connect team with SPM contacts. 11 Mar: Struggling with Azure/Power Automate/Copilot Studio integration (same wall insurance team hit). Has confidential data (commission targets) — chose own AWS infra over shared hosting. Also built Moody's branded PowerPoint generator independently — Slidey convergence opportunity. |
 | Arno | Advisory team project lead | New 9 Mar. Leads weekly advisory project status call under Charlotte's org. Manages ILS, climate, banking advisory staffing. Diana brought Azmain to observe. |
@@ -118,6 +118,9 @@ Last updated: 2026-03-12 (all transcripts through 11 March processed, including 
 | Sam Gibson | Risk Modeller demo team (UK) | Identified 10 Mar. Under Bibo. |
 | Prashant | Developer (planned) | To be allocated to help Azmain with Friday development. |
 | Natalie Bath | Sales / reports to Helen Ryder | New 11 Mar. Saw MENA's agent demo at Miami sales connect. Asked Idrees to run agent view on AON data for Rob Fulber's meeting. Cross-OU interest signal from sales side. |
+| Tina Palumbo | Gainsight Business Systems team | New 12 Mar. Presented bi-directional Clara-Gainsight integration proposal. Cooperative and solutions-oriented. Wants POC to validate connectivity. No fixed timeline — March 30 onboarding deadline takes priority. |
+| Rajesh | Gainsight solution architect | New 12 Mar. Explained batch (S3) and real-time API options for integration. Pragmatic. Will share API documentation. |
+| Nadeem | Gainsight project manager | New 12 Mar. Coordinating follow-up sessions for Clara-Gainsight POC. |
 | Rob Fulber | Senior leader | Meeting Dan Dick (Global Head Cat Risk, AON) next week in London. Cross-OU account intelligence opportunity. |
 | DIA | Cross-OU coordination | Manages customer engagement across segments. Interested in Moody's-wide retention dashboards. Idrees looped her into retention dashboard thread (11 Mar). Key person for cross-OU pressure on Charlotte. |
 
@@ -140,3 +143,6 @@ Last updated: 2026-03-12 (all transcripts through 11 March processed, including 
 15. **Salesforce integration design crystallising (NEW - 11 March)** — One-way read, Cases/CaseFeed only, four consumer groups (Bernard, Courtney, Kevin, CLARA). Catherine fully engaged. Tomorrow's Gainsight meeting is the next milestone.
 16. **Slidey convergence (NEW - 11 March)** — Multiple teams (Richard, Juliet, Richard's manager) building PowerPoint generators independently. Cross-team meeting planned for next Tuesday. Could become App Factory's most widely adopted tool.
 17. **Gainsight March 30 hard launch (NEW - 11 March)** — Confirmed by Catherine. No IRP data expected at launch, but "does Clara sync?" questions will start immediately after.
+18. **Catherine COE political threat (NEW - 12 March)** — Catherine's Centre of Excellence mandate (digital engagement, enablement, Gainsight/SFDC retirement) overlaps directly with AI programme. Organised Gainsight meeting as blindside. Full team (Azmain, Richard, Ben Brooks, BenVH) furious. Diana advising tactically. Multiple interventions planned: Diana→Natalia, Richard→Diya.
+19. **CLARA entering maintenance mode (NEW - 12 March)** — Natalia Plant established fortnightly release governance. Two grads arriving April 7 for dedicated maintenance. Ben Brooks restricted to sandbox. This is a programme maturation signal.
+20. **Adoption runbook collaboration (NEW - 12 March)** — Rhett built digital runbook, Diana's PM team built Excel version. Agreed to merge efforts. Over 50% of adoption governance owners already AI-enabled through Clara. Potential overlap with George's account planning.

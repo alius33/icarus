@@ -17,7 +17,7 @@ async def _run_import():
         proc = await asyncio.create_subprocess_exec(
             "python", "-m", "scripts.import_data",
             "--data-root", settings.DATA_ROOT,
-            "--db-url", settings.SYNC_DATABASE_URL,
+            "--db-url", settings.DATABASE_URL,
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE,
         )

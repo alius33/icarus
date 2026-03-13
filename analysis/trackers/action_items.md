@@ -1013,3 +1013,23 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 649 | 11 Mar | Pull Salesforce tickets and qualitative data for AON and send to Idrees | Richard/Azmain | Before Rob's AON meeting | 2026-03-11_-_Chat_with_Idrees |  |
 | 650 | 11 Mar | Loop DIA, MENA, and Irina into cross-OU correspondence | Richard | Ongoing | 2026-03-11_-_Chat_with_Idrees |  |
 | 651 | 11 Mar | Schedule follow-up meeting with Gina Greer (banking) | Richard | Week of 23 Mar | 2026-03-11_-_Chat_with_Idrees |  |
+| 652 | 12 Mar | Create v1 Gainsight integration charter | Azmain | Next week | 2026-03-12_-_Integration_meeting_with_gainsight_team |  |
+| 653 | 12 Mar | Share Gainsight API documentation with Clara team | Rajesh/Shashank | ASAP | 2026-03-12_-_Integration_meeting_with_gainsight_team |  |
+| 654 | 12 Mar | Coordinate follow-up technical sessions with Gainsight team | Catherine | TBD | 2026-03-12_-_Integration_meeting_with_gainsight_team |  |
+| 655 | 12 Mar | Provide rough POC timeline after internal regroup | Tina/Nadeem | Next week | 2026-03-12_-_Integration_meeting_with_gainsight_team |  |
+| 656 | 12 Mar | Discuss Catherine COE overlap and behaviour with Diya in London | Richard | Next week | 2026-03-12_-_Post_gainsight_team_meeting_debrief |  |
+| 657 | 12 Mar | Share Catherine COE slide with Richard and Ben Brooks | Azmain | 12 Mar | 2026-03-12_-_Post_gainsight_team_meeting_debrief |  |
+| 658 | 12 Mar | Give Catherine/Stacy/Natalia access to feedback request list | Azmain | Before Tuesday | 2026-03-12_-_Clara_feedback_cadence |  |
+| 659 | 12 Mar | Get Chris's feedback Excel with status of all items | Azmain | Before Tuesday | 2026-03-12_-_Clara_feedback_cadence |  |
+| 660 | 12 Mar | Add priority field to feedback form | Azmain | Before Tuesday | 2026-03-12_-_Clara_feedback_cadence |  |
+| 661 | 12 Mar | Set up Tuesday prioritisation review meeting (recurring, fortnightly) | Natalia Plant | This week | 2026-03-12_-_Clara_feedback_cadence |  |
+| 662 | 12 Mar | Move management dashboard and portfolio review higher in sidebar | Azmain | Before Monday ISLT | 2026-03-12_-_Clara_feedback_cadence |  |
+| 663 | 12 Mar | Remove analytics tab from management dashboard | Azmain | 27 Mar release | 2026-03-12_-_Clara_feedback_cadence |  |
+| 664 | 12 Mar | Implement use case completion check (block if software status not complete) | Chris | 27 Mar release | 2026-03-12_-_Clara_feedback_cadence |  |
+| 665 | 12 Mar | Fix back-button scroll position loss in Clara | Azmain | TBD | 2026-03-12_-_Clara_feedback_cadence |  |
+| 666 | 12 Mar | Send Diana programme debrief deck and Diya deliverables deck | Azmain | 12 Mar | 2026-03-12_-_Diana_1-1 |  |
+| 667 | 12 Mar | Invite Azmain to IRP weekly call (Vlad, Christian, Snare, Prashant) | Diana | This week | 2026-03-12_-_Diana_1-1 |  |
+| 668 | 12 Mar | Discuss Catherine situation with Natalia Orzechowska | Diana | Next week | 2026-03-12_-_Diana_1-1 |  |
+| 669 | 12 Mar | Contact Alexandra for latest partner data update | Azmain | TBD | 2026-03-12_-_Diana_1-1 |  |
+| 670 | 12 Mar | Follow up with Rhett on adoption runbook maintenance plan | Diana | Next week | 2026-03-12_-_Diana_1-1 |  |
+| 671 | 12 Mar | Focus on CS Agent (WS3) and IRP Navigator (WS5) status — both red | Azmain | Next 1-2 weeks | 2026-03-12_-_Diana_1-1 |  |

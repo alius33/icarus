@@ -1,6 +1,6 @@
 # Open Threads & Unresolved Questions
 
-Last updated: 2026-03-10 (all transcripts through 10 March processed)
+Last updated: 2026-03-12 (all transcripts through 12 March processed)
 
 Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially addressed, needs follow-up), or **CLOSED** (resolved — move to bottom with resolution date).
 
@@ -8,12 +8,12 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 
 ## OPEN
 
-### 1. Gainsight Integration Timeline
+### 1. Gainsight Integration Timeline — MEETING HELD, CHARTER PHASE
 - **First raised:** 12 Jan
-- **Updated:** 6 Mar — Meeting with Gainsight team (Tina Palumbo, Nadim, Rajesh) scheduled for next Thursday. Catherine offered to help with governance and decision tree for App Factory intake. Team also pushing for Salesforce programmatic access in same meeting. Azmain using Gainsight governance as legitimate reason to slow down pace.
-- **Context:** Natalia Plant's team owns Gainsight. API access blocked pending security review. March 2026 was mentioned as earliest.
-- **Question:** Will the Thursday meeting produce an integration plan? Will Salesforce programmatic access be granted?
-- **Why it matters:** Gainsight is the intended long-term customer health platform. CLARA and Gainsight overlap in scope — without integration, there's double-entry risk.
+- **Updated:** 12 Mar — Meeting held between Clara team and Gainsight Business Systems team (Tina Palumbo, Rajesh, Nadeem). Bi-directional integration proposed by Gainsight team. Ben Brooks demanded formal charter before any development. Team privately agreed strategy: demanding requirements to slow integration. Natalia Orzechowska confirmed no POC before end of March; earliest May. Gainsight team focused on March 30 onboarding deadline for RMS/Cape/Predicate.
+- **Context:** Catherine organised the meeting without consulting Clara team — described as a "blindside" by the entire team. Prep materials sent to Catherine were not shared.
+- **Question:** Will the charter approach successfully control integration pace? Will Catherine's gatekeeping role persist or be addressed?
+- **Why it matters:** Gainsight integration is outside the 12-week Diya plan but the expectation is now set. Scope creep risk if not managed.
 
 ### 2. Sales Recon Pilot Results
 - **First raised:** 11 Feb
@@ -109,10 +109,11 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 - **Question:** Does anyone else know? Is there a knowledge transfer plan? Can the underlying issues (Rhett) be addressed?
 - **Why it matters:** Richard is the programme's strategic brain. His departure would leave a leadership vacuum at the worst possible time (Gainsight integration, Diya engagement, cross-OU expansion all in flight).
 
-### 17. BenVH / Nikhil Conflict
+### 17. BenVH / Nikhil Conflict — CRISIS LEVEL
 - **First raised:** 6 Mar
+- **Updated:** 12 Mar — BenVH still stopped responding to Nikhil. Making progress on MCP server using Bedrock AI agents. Channelling anger productively. Richard planning confrontation and Ben Brooks escalation this week.
 - **Context:** BenVH feels Nikhil is taking credit for his App Factory work, renaming it, and presenting his architecture as his own. BenVH's recent absence was not illness but being worn down. This is a serious morale/retention risk.
-- **Question:** Can this be mediated? Who manages Nikhil? Does Richard or Natalia know?
+- **Question:** Has Richard confronted Nikhil yet? Has Ben Brooks been briefed?
 - **Why it matters:** BenVH is the only person who can deploy. Losing him would be catastrophic for infrastructure.
 
 ### 18. Security Audit / Personal Claude Usage
@@ -150,6 +151,24 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 - **Context:** $1,163 in first two weeks of March on a single shared Bedrock key. No per-project or per-user cost attribution. Tags not configured. On pace for $10K/month.
 - **Question:** Can cost tags be fixed this week? Who approves the Bedrock budget? Is there a per-project allocation model?
 - **Why it matters:** The Bedrock migration was supposed to solve the personal-account compliance problem, but it introduced a new problem: invisible cost scaling with zero accountability.
+
+### 24. Catherine COE Political Threat to AI Programme
+- **First raised:** 12 Mar (Diana 1-1 and Post Gainsight debrief)
+- **Context:** Catherine's Centre of Excellence mandate (digital engagement, enablement, Gainsight/SFDC retirement) overlaps directly with the AI programme. She organised the Gainsight integration meeting without consulting the Clara team. Ben Brooks, Richard, Azmain, and BenVH unanimously view her as a threat. Diana revealed Catherine's objectives were approved by Natalia Orzechowska and signed off by Diya. Diana suspects Josh Ellingson may be Catherine's senior backer.
+- **Question:** Can the "AI enablement ≠ digital enablement" framing hold politically? Will Natalia Orzechowska adjust Catherine's scope? Will Richard's direct approach with Diya work?
+- **Why it matters:** If Catherine's COE absorbs the AI programme, Azmain stated he will leave. The entire programme's delivery capability depends on keeping the current team intact and autonomous.
+
+### 25. CLARA Governance and Release Cadence
+- **First raised:** 12 Mar (Clara feedback cadence meeting)
+- **Context:** Natalia Plant established fortnightly release cycle with Tuesday governance reviews. Chris handling feedback systematically. Two grads arriving April 7 for dedicated maintenance. Ben Brooks restricted to sandbox.
+- **Question:** Will Ben Brooks respect the sandbox restriction? Can governance hold when ISLT is using Clara live from Monday?
+- **Why it matters:** CLARA's transition from build mode to maintenance mode is critical for programme credibility. Uncontrolled changes risk data corruption ahead of senior leadership usage.
+
+### 26. Adoption Runbook Collaboration (Rhett + PMs)
+- **First raised:** 12 Mar (Diana 1-1)
+- **Context:** Rhett built a digital adoption runbook (Cursor prototype). Diana's PM team (Vlad, Christian, Prashant) built an Excel-based PM task list. They agreed to collaborate. Rhett uncertain about long-term maintenance. Over 50% of adoption governance owners already use Clara.
+- **Question:** Will the runbook be absorbed into Clara or stay standalone? Does it overlap with George's account planning work?
+- **Why it matters:** Risk of fragmented tools if not consolidated. But also evidence of organic adoption of structured approaches across the programme.
 
 ---
 

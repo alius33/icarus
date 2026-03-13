@@ -1,0 +1,411 @@
+Diana  0:00  
+Yeah, yeah, let's go okay, yeah. First topic on my list is, yeah, project management tool, yeah. Where are you? Did you have chance to discuss with Natalia? I had a bit of discussion with her, so I was willing to get a line from. Where are we with this? Second topic is reporting on the RP implementation project. I'm in touch with red, and I was willing to share with you what he and Kate are kind of gathering as slides, information that they would like to monitor, and I would like to hear your opinion, because I am. I don't feel comfortable to report on all that. But in the third point, maybe it's quick and easy. You know that we have me, Vlad, Christian, snare and prashan, we have this IRP weekly call. If you're interested, maybe I can forward you the invite, because we use this to discuss best practices struggles. Now we use it also to review the RP, digital runbook that they prepared just to for you.
+
+Azmain Hossain  1:27  
+So firstly, yes, in terms of so if I start from the top, in terms of the tool, what I've done is I've done a little bit more work, but I've spoken to and, okay, said, basically gauged his interest and how much availability he has, and kind of explain what I would need from him. And it's, and it's really, yes, it's the high level thinking of best practice, okay, okay, project management, the operating process that we want to establish. So he told me about the call that you guys have, okay, if you could invite me, that would be, that would be amazing on a week to week, yes, I can, you know, it gives us, like, three, four weeks to just figure out how to do this. So we're not kind of, what's the word? You know, like with Clara, we were just like drowning because there was we didn't think it through. We just started building this time, I would prefer to think it and because we have a prototype now, it's not, it's not just an idea. There is a prototype, absolutely, and we can in those calls, we can be like, Okay, so in the tool for this project, how would we manage it? And then we talk about it, yeah. And then things come up of like, oh, I want to be able to assign tasks to somebody. And then they get an email saying, Sneha has assigned a task to you. This kind of little notifications and stuff like that. We can discuss and we can build out.
+
+Diana  3:05  
+Okay, yeah, I will invite you that's optional. And yeah, our agenda is very fluid. Not we have every week an agenda depending on what is important, but you will receive the agenda in advance and decide if you don't need to attend. But I think it anyway. One of the key focus is
+
+Azmain Hossain  3:26  
+going to attend, because obviously, yeah, it helps, it helps build the team now. But it also means exactly yeah, IRP projects, I know the operating process,
+
+Diana  3:37  
+exactly yeah. This is what we are doing. Yeah, doing we are now discussing, gathering our experience to make our mind how we will tackle different tasks, from perspective of project management, what are our roles and responsibilities and yeah, the idea is also we to use our experience and contribute to what red and the team started to do to collaborate with them in digitalizing this methodology for RP adoption.
+
+Azmain Hossain  4:10  
+Okay, I need you to explain a little bit later. Yeah, yeah, we'll so Okay, point one was what's going on with the tool. So, yeah, I still need to speak on Natalia. Yeah, I haven't had time, but I was like, let's figure out the resources first, yeah, before, before we go.
+
+Diana  4:30  
+Yeah, I am okay if Prasanna is able to support, but please discuss with Natalia, because I had a chance to talk briefly with her, and my feeling is that she has some some other thoughts, like whether we should, yeah, what should be our primary tool for project management? Because if we. We use it for, yeah, it should not be only Rp. We should be like I told you. We need to give opportunity also to Marlene Natalia, also to track axis projects.
+
+Azmain Hossain  5:15  
+I completely understand from a high level view. Why? Of course, that makes sense. But when I speak to her, what I will say is, the moment you start expanding the scope, it it multiplies the effort Exactly. And right now, resource is the biggest constraint that we have. It's not ideas, it's not technology, it's sheer hands on keyboards. That is our that is our problem.
+
+Diana  5:48  
+Yeah, I would like, yeah, just I will share with you my preference, and I will have the opportunity next week to start to talk to her. But I would like, if we invest in this project management tool, our focus to be now fulfilling the needs for RP projects, where Red Kate Ben need visibility on the implementation projects. But this probably could be used, let's I don't like this, because it could become that it won't be a temporary solution, but let's say, let's save it as a temporary solution before we decide for our engagement and enablement solution, what can become a universal tool. Because, yeah, other project managers,
+
+Azmain Hossain  6:38  
+I really think, as as an engagement and enablement team, being able to not just within our team of obviously, Arlene and Natalia boyco, them bringing in, but being able to deliver a tool that other people can use, not necessarily just project managers, but that anybody can use. You know, like Microsoft Project, anybody can use it. You don't have to be a project manager. Yeah. So, yeah, giving, giving people a tool that's, you know, fully integrated with, with teams and email and SharePoint that anybody can use you just, it's like, you know, Microsoft Planner. You, you Exactly, yeah, and it's your username, it's your account. You create projects, whatever you need to that. That's what I want to do. I want to create Microsoft Planner. But good, yeah, that could be one of the makes sense, yeah, that we offer as a team. It could be a big win of being like, look at how much we can enable now with with, with our Yeah, first offering,
+
+Diana  7:42  
+yeah, okay, yeah, but yeah, let I'm, by the way, I'm in the office next week on Wednesday, yeah,
+
+Azmain Hossain  7:54  
+where we're trying to, I know, like Rob fober and like all the senior people are coming in, we are trying to get a meeting with as many senior people as we can. Richard and Ben are working on it, because we have something that is that we believe, okay, it's not just for advisory or for insurance. It's what we've built. Is, this is not Clara, this is the, this is something, yeah, that can work for every operational unit. We just have, okay, package it up and they can run their own versions of it. But that's one of the things that I'm going to show you in the slideshow. Great, good. Then the final thing I wanted to ask is, what is so firstly, I don't know. I haven't had very much interaction with Rhett, so I don't know what's the thing that he looks after, and what is this digital playbook? Yeah, that you mentioned, if you could give me a bit more.
+
+Diana  8:52  
+Okay, yeah, absolutely. So, in fact, how was before the team organised? Is that below Ben, which is if under Ben umbrella, everything that they called is advisory team. But in fact, the advisory team below Ben has two streams, people who are reporting to Charlotte are more, are really more advisory oriented. And people who are under red and Kate, they're technical people in there, yeah, they know, yeah, cat, accelerate, API's, etc, all technical knowledge that comes with the implementation of IRP is below rep and gate. And you know, for this IRP implementation project, sometimes a client need more advisory or more API safeguarding support, yeah, yeah. And usually the implementation project. It were a mix of both teams. But my understanding, which might not be absolutely accurate, is that going forward, we will not offer advisory anymore, but only consult more, consulting which is not ideal, because some of the clients, what I observe, at least from my experience, they have already their third party vendors who are supporting them for the implementation, and they need more support on the model validation, where advisory team can come or analytical services from India. Yeah. So at the moment, Charlotte and advisory team, their big effort is around cat bond projects, and they're like functional people. They know how to use the RP tool, and they're operating with it on behalf of the clients. Let's say, to make it simple, while Kate, Kate and red people who are, they're really developers. They know how to integrate our solution with client. Yeah, and most of the cat accelerate projects. RP, cat accelerate projects fail within red. Red's team, all safeguarding projects are also there, and now also partner enablement will be part of, mainly of his, the team that he's overlooking.
+
+Azmain Hossain  11:39  
+So see, my understanding was completely different, obviously, from Alexander and from Liz McLaughlin. What I understood is that more and more of the technical work we are offloading to EY, to imagine era and stuff partners, yeah, yeah, yeah. I thought that meant that we would do more advisory work. It would, but from what you're saying, it's the opposite.
+
+Diana  12:06  
+I'm always confused. Yeah,
+
+Azmain Hossain  12:08  
+okay, okay, then I'll speak to I'll speak to Ben Brooks about this, because I need to understand, like, because there are so many things that are happening, I need to understand what's going on with this, so that I can drive the direction of this, AI stuff like, who is going to have less work? Who is going to have more work? Because one of the things I heard is we're going to stop doing cat accelerate. We don't do custom stuff. Partners don't do that. Yeah? So if partners do that, then what's like that part of red's team gonna do
+
+Diana  12:43  
+exactly so with shareholder team, advisory team, it's clear they are doing card bond iOS projects and they're providing some support. So with them, I'm supporting them, and we are running a pro but with the rest, where they have to support equally clients and partner. It's a bit messy, and I don't know, so that's why we stopped the weekly advisory project review call, because it was, in fact, it was useless and red and Kate, I will share with you they come with the suggestions. In fact, we to report on we to have a different agenda for this call. This is work in progress, and they would like to capture on all the implementation projects. So we need the definition. What means implementation project is this we consider this scope of work that we have adoption charter and adoption score defined. So this is a bit vague.
+
+Azmain Hossain  13:44  
+Yes, we need definition. And one thing that I would say I can't push back, but I think you're in agreement with here, the One Minute Manager system is terrible. Implementation projects cannot be summarised down in 60 seconds, and asking for that is an exercise in stupidity, because yeah, always spend, end up spending five minutes. So why even call it, yeah? Let's just call it an like implementation project summary or implemented update, like we do with any other problem, why put a stupid constraint of because I know from making those slides, you end up removing detail, but then putting it on your notepad or another screen to say it in the call. But that means when those when those slides are saved or archived for future use or sent to somebody that that detail gets lost. Why are we doing? Yes, we should encourage project manager or anybody, put as much detail into those into those slides. Just organise it well, because these slides are not just for the call. They're for history. We're preserving these so that we can go back and this. Comes much more useful, not useful. This becomes much more important, because one of the things that we're building is a tool that will go and read and understand 10 years worth of projects. So that's why I do the details.
+
+Diana  15:19  
+So, yeah, i That's why I'm very much into supporting you in that idea. We to have a project management component or tool where we properly track projects, and we use that tool for this, yeah, yeah, yeah, project management, we get Yeah,
+
+Azmain Hossain  15:41  
+these arbitrary Yeah, like, yeah, restrictions, exactly.
+
+Diana  15:48  
+The other thing that they would like to monitor is implementation readiness workshop, which is okay. What is this? I suppose this is when the adoption chart. I assume they mentioned the adoption charter is signed, and then and where or how close we are to the adoption charter signature, and what was the scope. I don't know what is this. In fact, I need a clarification after that this partner safeguarding I am not involved at all, so I have no idea. In fact,
+
+Azmain Hossain  16:26  
+this is imagineera. Ey,
+
+Diana  16:29  
+exactly. Yeah. Kate added here some slide how they imagine what they would like to track, yeah, partners, and it seems we have already contracts with the partners where we are providing them some kind of a training. We have this in RFA 17 world. Yeah, partners. We are upskilling
+
+Azmain Hossain  16:47  
+partner safeguarding. It's like safeguarding the partner, because the partner is working on a project with the customer. So you're not safeguarding the partner. You're just working with them, yeah.
+
+Diana  17:05  
+But also, for example, I don't know why they put here as imagineeria as a safeguarding while in, for example, in TVA projects, what I saw in the contract is that we are subcontracting TVA. Via to deliver the implementation project. And in this case, I think we are still owning the responsibility.
+
+Azmain Hossain  17:33  
+Yeah, that's what Sneha told me, that yeah, they're they're doing, yeah.
+
+Diana  17:37  
+But here, this is very Yeah. I don't know why we have, yeah. And as you can see, we have different Eva, genera, safeguarding customs, slap clean project for Twitter. I don't understand what's this, but
+
+Azmain Hossain  17:56  
+I understand what they want. It's not very well organised, but I understand Yeah, they need Yeah. This is the same thing that Alexander has asked me, because he needs to see it from the partnership side of Yeah, what are the customer projects that a partner is is working on? I just didn't know that it was Rhett's team doing the enablement and the and the safety.
+
+Diana  18:19  
+In fact, yeah, it Yeah, exactly. Most of the resources are coming from his team. Okay, yeah. And yeah, I'm learning also, because I started to talk to it and we started to discover things that are we have both interests, yeah, and after that, they have this partner enablement, but I don't know what? Yeah, probably whether these partners are certified or have licences. This is not all. I'm not sure
+
+Azmain Hossain  18:50  
+all that's in Clara. Alexandra already given me the information. It's in the Okay, this is already in Clara. The next thing you were there, like, we want a partner enablement dashboard that's already there. It exists. Updates, okay,
+
+Diana  19:06  
+okay, so this is, in fact, the partner readiness. Yeah, that is from Alexander. Okay. And do we have this detail? What are their region?
+
+Azmain Hossain  19:18  
+I don't have the latest so that I can reach out to Alexandra and ask for the latest because what we need is, is to establish a cadence where, like, on a two week or a monthly basis, someone in the partnerships team gives us an Excel file with the or they go into Clara and they update it there. Of like, EY has moved from this stage to this stage. Yeah.
+
+Diana  19:41  
+Okay, so, but big part of this, I I see already in Clara, what they, in fact, are, are looking as visibility after that, these deployment projects, I don't know what it is. Yeah.
+
+Azmain Hossain  19:55  
+I Okay, yeah. I. What they call deployed on deployment projects. Oh, it's just completely empty. Okay, yeah, I don't, yeah, I'm just like, they're assuming we know a lot of information when we don't. So we have to ask some questions so that are a bit basic. I will
+
+Diana  20:19  
+have a meeting next week, probably with red and one of the points is to go through these slides.
+
+Azmain Hossain  20:26  
+Is their idea. They looked at the cat bond issuance dashboard and thought, Yes, this is an understandable and easy to view
+
+Diana  20:33  
+thing, but this is that they made for 15 minutes,
+
+Azmain Hossain  20:37  
+I know, like the lack of the lack of imagination in smart people confuses me. Yeah, but I understand, I understand their ask. And then the final one was client satisfaction, which,
+
+Diana  20:58  
+yeah, client satisfaction, I think, yeah, this, this is also something that will come from uh, Stacey and, but we don't have it on regular basis. Oh, yeah, so this is what they're looking for. And, but, yeah, I have a lot of questions, in fact. But again, from what I see, the best place is we to to have this project management closely related with Clara, where RP clients sit, and where we have already information on the partners that are for, yeah, okay, that's why I think, when we are me and you are talking to Natalia, I think our pitch should be, We need the tool to monitor projects that RP, RP engagements are dependent on, yeah, yeah.
+
+Azmain Hossain  21:48  
+Like, this deck is perfect. If you, if you send me this deck, yeah, I can. I'll make a deck where it's like, this is the
+
+Diana  21:56  
+access to default, yeah. Oh my god.
+
+Azmain Hossain  22:00  
+I hate going into that, into that SharePoint. It's a mess. They it's not organised, and it's so confusing. So yeah, thank you. Yeah.
+
+Diana  22:10  
+And yeah, it is on the Yeah. In fact, yeah, Cade. And let us assume this has not been yet officially shared with me. I will check with red if they are ready, but it's work in progress. So yeah, I I knew that red asked K to put something as an idea. I'm not sure if he reviewed that, but I'm catching up with him next week. So yeah, I will raise some question. So this is one thing that I am discussing with red. The other thing that you were interested and I mentioned the so called Digital run book, and what it, in fact, is it he built a prototype? In fact, let me he built a prototype using a cursor, let's say Celtic onto to position it. It is a website that describes the RP lifecycle journey in a digital way. So the mental In fact, you know that we run the data, run this RPG, adoption, governance, where different, there are different streams they are deciding on the new working approach, on the strategy, okay, yeah. Yeah. Also, maybe one other thing that
+
+Diana  23:49  
+I'm talking about this be business unit implementation for IRB, programme level, government workstream with owners. So we have this and I support, yeah. So, here we have this programme that is ongoing. This is the, these are the slides from January.
+
+Azmain Hossain  24:10  
+Okay, oh, my god, some sorry, something just clicked in my head. Yeah? Steve Gentilly, sorry, yeah, okay, yeah, so. But in fact, deal with so much politics now, absolutely, because everything that I'm doing is threatening someone's job. And this is one thing when we've gone through this, I wanted to talk to you about and ask your advice on a very specific thing, but I didn't know that this. So this happens every month.
+
+Diana  24:43  
+Yeah, this happens every month. And as you can see, we have these people doing some work, deciding on some deliverables, etc, they have but very little from this is socialised. I'm getting this. Lights when I request Natalia to share with me, because I would like to understand, in fact, how our vision for this RPA adoption is moving, and it seems red is not directly involved. At least I don't see his name, but when he came back from sick leave, he and different ideas were flying. He decided, okay, but guys, you're you're building a framework, but there is nothing that is consolidated. That's why he came with this idea, let, let digitalize the process. Okay? And he started to put this to the so called adoption runbook in parallel, because we mean PMS were trying to together our experience in an Excel me prashan Vlad, we started to collect our yes task for PMS from sales handover to closure of the project and and a week ago, I met with Rhett and said, Rhett, it seems we are working on similar things that seem to have quite a lot of synergy. I shared him. With him our Excel he shared with me his adoption run book. And we decided, Okay, let's try to collaborate. And at the moment where we are is that we agreed me and the PMs to share some feedback on what he started to build here as description, lifecycle, etc.
+
+Azmain Hossain  26:37  
+This is perfect. This is wonderful, yeah, because this is what I built for Skyfall. And then when I moved to IO exactly, I kept on asking Stacy, I'm like, There's no playbook of how things go from same contract signature to completion. Exactly, no. So thank you.
+
+Diana  26:54  
+Thank you me and PMS. Yeah, me and PMS started something similar, but in Excel. But anyway, this is better, and we are using it as a base. Just what we agreed with rate is that we will come with pm suggestions, what additional activities can be added, etc, and this is what we are doing now. But Ray told me that he doesn't know what will be the destiny of the Hebrew needs to discuss with Ben, I don't know, with who, in order, they to decide whether he will continue investing in that and how this will be maintained, because his idea is, in fact, he to build the skeleton, but after we to have Different roles and people to be able to populate their sections, right? Not here to build from A to Z, all the process. Okay, okay, yeah, yeah, that, of course, makes sense, right? Yeah, yeah. So at the moment, I will share, yeah, later today, our feedback, mainly on the life cycle section, step by step, where we consider that Pm is needed, what additional tasks are needed. We went through this tool with the PMs, and next week, when I talk again to red, I hope we will have better idea, in fact, what we can do, I think I'm not able to edit, but it seems, yeah, this is the idea, if you're administrator, to be able to edit here the page, yeah, yeah.
+
+Azmain Hossain  28:31  
+No, this is, this is wonderful. Somebody's working, yeah. Can you know what? I don't, I don't, I don't want to get involved, because I've, yeah, so much other stuff going on, and red knows what he's doing, so yeah, if no, this is what
+
+Diana  28:52  
+he was, excellent, exactly. I think it's better just to sit with red, because especially this is within the interest that of his group, the people who are reporting to him. This is really, this is how I see it. Majority of the work on the projects will come from his team and, yeah, also enablement of the partners. So it's nice that he started to build that in a consolidated framework. Because, yeah, from from this programme, we receive some piece of documents, but there is no
+
+Azmain Hossain  29:33  
+so the workflow. The strange thing is, I'm just, I'm looking at the owners on the right. More than 50% have reached out to me and rich to AI enable them. So this is Steve Gentilly. He was blueprints in Clara, yeah, we had a call with Courtney, because she wants to, she needs to get. HD model analysis from Clara. Liz Couchman, we're talking about adoption charters in Clara. George dyke, we're talking about account planning in Clara, Alexandre, we're talking about partners in Clara. So yeah, and obviously Stacey's involved, so it's really just Christine, yeah, but who? Yeah, who are running, who didn't come, yeah?
+
+Diana  30:24  
+But what I think, yeah, I think this internal rollout enable Yeah. So what red started to build, in fact, is combination of what George and stays in it. Okay, okay, yeah, but I'm not sure he was also unsure, in fact, how to
+
+Azmain Hossain  30:52  
+George know about this run book.
+
+Diana  30:56  
+I'm not from what I suppose so because it this room, book has been presented to the leadership.
+
+Azmain Hossain  31:05  
+Okay, then everybody knows, okay, yeah, this is how I'm with George easier, because we're talking with him to build account planning, and he's going to give us a resource so we can talk about how, how much of that work is going to be done by the runbook, or maybe all of it can be pushed into runbook, where it becomes a runbook and account planning. But I don't know it's something. It's something I can ask him,
+
+Diana  31:33  
+oh, yeah, this for this account planning. I also heard the conversation between the CSMs. In fact, they're kind of unclear. In fact, within whom, who will be owning the account book. Is it segments CSMs or CSMs itself? And when we are talking about account planning, is it account strategizing, the account, or just strategizing the renewal, ensuring renewables in order we to have a client retention to ensure so, there, there, yeah, so I don't know what is your discussion
+
+Azmain Hossain  32:18  
+with One? I would say it's up to George and Josh to Yeah, to decide that. And two, whatever they decide, is dependent on the new CSM managing director that they're hiring for. Yeah, so obviously George and Josh can decide on this whole framework, and then the new MD comes in and he's like, this doesn't make sense. And, yeah, you have to engineer everything. So I think they are. They're conscious of that. That's why they're not pushing as hard on it they want to see. So yeah, I Yeah. I think we just take our direction from them. If they want to slow that down, we slow it down.
+
+Diana  33:00  
+Yeah, absolutely, yeah. Okay.
+
+Azmain Hossain  33:03  
+So, yeah, that was really good. Thank you. I so I know we've only got 15 minutes, and this is where,
+
+Diana  33:09  
+yep, I have nothing else to share with you. Yeah, this is So,
+
+Azmain Hossain  33:14  
+this is where I want to ask your advice. And I'll kind of give you a little bit of a background and get your opinion, just, just honestly, between, between the two of us. Me, seeking advice, I'm having a problem. Well, not me. Me, Richard, everyone working on the on the AI stuff is having a problem with Catherine, where she firstly Sorry, I'm trying to make it I'm trying to say this in a professional way.
+
+Diana  33:48  
+But yeah, you're in a safe environment.
+
+Azmain Hossain  33:51  
+Got it? Yeah? Okay, so without the politically correct speech, it feels like she has lost her primary task in her job, and now she is trying to, one, be malicious about Clara features, and two, inserting herself in areas for no Need whatsoever. So the first thing about Clara is almost every two days she finds some stupid little issue, and she asks me to fix it. And fixing them is hours and hours worth of work, like we the, yeah, I could give a lot of examples, but it's it's things that are not important, because if they were important, the CSMs would have raised it, or Ben would have raised it, or Natalia would have raised it. These are not things that are important. But Catherine. Keeps finding stuff where she's like, oh, there's a Status section and a software section. What if we merge the two? Wouldn't that be nice? And I'm like, Lady, do you understand anything about software development? Merging two sections on a live programme that has active users and three different environments. It takes hours a to make the change. Then first deploy it in development, test it. Then default deploy it to pre production. Test it. Then deploy it to production. Test it. And it's killing me. It's it's killing like half my day doing this stuff. And every time I ask her for priority, she's like, this is a priority. The CSM teams have complained. The CSM have complained to me. And I'm like, firstly, I am talking to George and Josh. Like, every day they lead the CSMs. If the CSMs are complaining, why were they complaining to you? You're not a CSM. Why are you involved in this? Why are their managers not coming to me and they can message me about anything? Josh messages me or George messages me when they find some things and I fix it. So why are they complaining to you? So first, I don't believe you. And secondly, actually you're not, you're not in the IRP chat. It's gotten to the point where Ben Brooks is getting annoyed with her. I'm going to add you to this to this chat. So for example, yesterday, she was like, oh, when you updated the when you brought in the Salesforce data, you didn't bring in use case descriptions. And CSMs are complaining that they already put this into Salesforce. Why should they have to put it in again? And Ben Brooks actively pushed back. He was like, why do we need this? Like, nobody looks at that field. Nobody cares about that field. Why do we need this change? Because I explained. I'm like, this is a huge change you're talking about, like, I don't know how many use cases. There are 400 use cases with active users, and you want me to delete everything that's there and put in new data? That's a huge data change. And then she started pushing back on George, on Ben. And when Ben was like, why do we need this? She's like, Oh, then we have to discuss with the CSMs. I'm like, one Ben is the manager of the manager of the CSMs. You are in no way involved. Why are you telling Ben Brooks to go and do something that just seems stupid? So this is the kind of stuff that she's doing. And Ben is spoken to me about this, and he's like, I'm gonna bring this up in Natalia. But I didn't know whether, I don't know what Ben is gonna say. Obviously, he has to keep it professional and stuff like that. But yeah, I'm I'm just getting really frustrated. I'm just like, you have nothing better to do then. Literally, she was like, I sent you an Excel on January 7, and you did everything except one line. Could you please do that now? I'm like, if I didn't do it and it hasn't come up in the last three months, why are you asking me to do it now?
+
+Diana  38:21  
+And is she supposed to use Clara at all?
+
+Azmain Hossain  38:26  
+No, I don't know what her job is. I swear to god, me,
+
+Diana  38:30  
+this is her job. That's why I'm put I'm sharing this slide video. These are her tasks, her COE Her focus is customer engagement and enablement. First objective is digital engagement. Establish foundational programme activities. Utilise team SME to develop target client initiative, introduce AI to drive engagement and usage.
+
+Azmain Hossain  39:00  
+Deanna, this is literally what I'm doing, the digital enablers, that's policy, the strategic and tier engagement. That's me, the foundational tool, that's me. So can we fire her and give her, give her money to me and put me in that position? Because what the hell it's, it's, it's, it's, it's pissing everyone off. Why she's sticking her nose in and now the Clara stuff was annoying me. Fine. Now she's getting to a point where she's pissing off Richard and Ben Brooks, and I'll explain to you why. Two of the things that we know we will have to tackle coming up is Gainsight and Salesforce,
+
+Diana  39:43  
+we have that which is also part of her responsibilities.
+
+Azmain Hossain  39:47  
+Yeah, could you so what? What is her responsibilities?
+
+Diana  39:52  
+Implement standard gain side process across all insurance, CS teams, retire RMS, sfdc, improve accessor. Ability visibility, but yeah, key is that,
+
+Azmain Hossain  40:04  
+yes, that's great, and Gainsight has a very wide scope, so i in i never believe that she doesn't have enough work to do. But one thing that we were very careful of is we stayed away from the Gainsight team. We didn't talk to them because they can kill us. They have such a big pull, and so much money has been spent on them. If they start making noise and saying, Tell them to stop using Clara, because Gainsight is coming. It's going to make things very difficult for us. So we were avoiding them until, yeah. But she Yeah, yeah, without talking to anybody, without a discussion, without a message, set up a call with the Gainsight team for integration, and I'm like,
+
+Diana  40:55  
+Yeah, because this is her target. Yes, this is what this
+
+Azmain Hossain  40:59  
+I understand. But there is a way to do things like talk to the people leading the programme before you try and merge two programmes together. Like, yeah, she didn't talk to us, and it completely blindsided us, and now we are really worried because, yeah, we don't know what the Gainsight team will say, but this is another thing where she's just like a bull in a china shop, where she's just running around, smashing into everything, trying to get herself involved. And it's just like you don't need to be involved in this, we will reach out to them. So that's one thing. And the other thing is, she's done the exact same thing with the Salesforce team, where we were not going to talk to the Salesforce team. You know, Salesforce is very protected. We tried, by the way, at the very beginning we were very enthusiastic and open, and we went to Gainsight, and Natalia plant was like, go away. What you're building is terrible. Because it was, yeah, on January 12, when we showed her, it was terrible. So she was like, go away. Salesforce team was like, Absolutely not. You cannot touch Salesforce. So we're like, Okay, we will work on our own little silo for our for the IRP stuff. Now, before we're ready, she's putting us in touch with all of this. And the reason this is really frustrating is we have a very tight 12 week green light from DIA and we have very actionable objectives that we need to achieve with very limited resources, Catherine coming in and pushing Gainsight in Salesforce takes so much time away from us that now we are at risk of meeting the objectives that we have for dia This is, I mean, I don't know when her implement standard Gainsight process deliverable is, but I'm fairly sure it's not in the next 12 weeks. So there was absolutely no need for her to do this. And if there was, she should have come and spoken to us first. Hey, Azmain, Richard, the Gainsight team have reached out to me. They want to understand what Clara is doing. Can I set up a call? Then we will talk to her about it. Don't blindside us with stuff that you don't understand. And on top of that, then she was like, Oh, can we have a call to do it? We built this comprehensive presentation and sent it to her. She didn't read it. She came to the call and start. We spent 50, sorry, it was a half an hour call. We spent 20 minutes or 30 minutes of 30 minutes just explaining to her the technical stuff. And even then she started asking questions like, Oh, why do you need the owner from Salesforce? Because we want to know who the owner of the Salesforce record is. Oh, why do you need issues? Because they will be tracked to blockers. Because when cases are created, they come into Salesforce. It would be really great to have them in Clara, these kind of questions where it's like, why are we explaining things to you? You're not the person. It's basically, she's gatekeeping. She's like, I'm the person, and you have to talk to me to get to them. And it's like, no, we don't. We have very senior people with high visibility on this, we will go and talk to whoever. Ben Brooks does not need Catherine's permission to go and talk to people. Same with Richard, but she's inserting herself in this. And obviously this her kind of deliverables gives her that little in. That's her little gap in the door to come in and insert herself, but it's making life difficult for us because she doesn't understand everything else that we're doing.
+
+Diana  44:49  
+So, okay, okay, okay, no, yeah,
+
+Azmain Hossain  44:54  
+but now you know the situation, yeah, yeah.
+
+Diana  44:57  
+And thank you for sharing even previous time we. And we discuss, I get very well the message I hinted to Natalia last time, when I was in the office that we might need to think about that, but she has been busy with other things as well. We didn't discuss next week, I will have an opportunity again talk to her, and I will take the point. But what I would like we to think, if you have still 610, minutes, I don't have many according to so the situation is quite political. Catherine has Yeah, support from above. Let's say
+
+Azmain Hossain  45:41  
+who is the support from above? Can I know?
+
+Diana  45:44  
+I don't, this is my perception. I will. I don't want me to let, let's consider that. She, although she's not as senior as Ben Richard. She, yeah, because she would like to position to keep her job, but she's also very determined, or not doing it in a proper way, not doing it diligently and properly, because she has somebody in her back. I don't know who really, but this is how I feel the things, who is protecting her or she's still serving somebody's interests within the is
+
+Azmain Hossain  46:31  
+it? Josh Alanson,
+
+Diana  46:35  
+give me a second. My daughter has forgotten her key, and I have to open the door.
+
+Azmain Hossain  46:40  
+It's fine. I
+
+Diana  47:28  
+Okay, I'm back. Sorry. No, no, no problem, yeah, yeah, yeah, but yeah, let's my assumption is that she relies quite much on Josh, but keep it just worked. It's I have nothing as evidence, but oh my god, I did.
+
+Azmain Hossain  47:44  
+Firstly, I'm in a group chat on WhatsApp with Ben Brooks and stuff. You will not believe the shit that he says about Josh ellenson. It's fine. I know. I know all the politics. Yeah.
+
+Diana  47:56  
+Okay, so yeah, but I believe she feels quite she is still very much supported by him, and there is quite a lot of politics between Josh Ben and Alexander, but Josh still has quite a loud voice. So we need to be to approach this war, let's say tactically, and now, Natalia has given to Catherine this kind of Centre of Excellence, which, in fact, especially the first pillar, feels exactly In what you're and Richard and Ben are doing, yeah. How you imagine Catherine can help you without, in fact, bothering you? What we can
+
+Azmain Hossain  48:56  
+suggest assessment is she can't because she can't. She can't because one I'm I'm the one leading the programme, if she wanted to be involved, she
+
+Diana  49:09  
+Okay, usually, but then exactly what I'm thinking, you're leading the programme anyway. So in fact, she will need to delegate this to you, you will. She need to trust you. Instead of checking and monitoring closely. It's better. She to step back and rely on you, on the progress of this digital enablement, and after that, this is this is my I'm brainstorming with you, and in fact, what you're producing, she need to align with the foundational tools and how strategically and wiser we are will be enough ready to retire sfdc, etc, but without, in fact, compromising the objectives that we have. From there on, the customer success, because first is custom. We first of all, we have to be customer focused. So we should not put on the risk our clients digital enablement. Objective is to secure our customer success and customer retention. So this is the priority you're owning now the digital enablement with Ben So Catherine will need to align anything else that goes with the retirement of sfdc gain side according to to what you're doing with digital enablement in securing the customer success focus. Okay, so look the
+
+Azmain Hossain  50:50  
+question asked of, how can Katherine help without disrupting things? And the reason I said she can't is because Catherine is the kind of person A she's senior, and I've spoken to people who have been in RMS for a long time, and they basically, obviously people can't speak straight. They said, Look, some people get promoted because of capability, and some get promoted because of popularity. And Catherine is the second and, oh my gosh, in this thing that we're doing, popularity doesn't it doesn't do anything. What you need is capable, yeah? But, and, okay, like, let me, let me share my screen. Yeah, okay. Where is everything gone? Oh, my God.
+
+Diana  51:50  
+But no worries. I can, I can speak. Oh, lovely.
+
+Azmain Hossain  51:55  
+This is what I'm looking at right now. We've got Clara, Clara training and enable. Yeah, we have CS agent. That's a project we've got Friday. We have
+
+Diana  52:05  
+CS agent. Is for what customers
+
+Azmain Hossain  52:08  
+Kevin Pern came up with. We haven't caught up with him. That's why it's in red. Yeah, we need to check in with him. We've got building five, which is for pre sales. We have cross ou collaboration. So this is where we're working with banking, asset management, life insurance, the programme management is just the programme management. There's so Richard brought in Idris Abram from the team to discuss cat bond, TSR, automation, yeah, yeah. And then we have app factory, and this is just right now. So that's nine separate things, and like, I'll send you this deck and you can go through it. This is what I created for you. I'm dealing with all of this, and the one prerequisite to doing any of this or understanding any of this, not just, you know, as a manager that I give a presentation to, but to actively work on this, you need to have technical knowledge. The stuff that we're doing is incredibly complex, and we're moving at light speed. We don't have time to bring someone up to speed. We don't have time to have someone interrupt us or insert themselves and make life harder. And we absolutely do not have time for the way that capital does things, which is, before we make a decision, let's have three calls. No, we make a decision, we run with it, we build it, and then we deal with it. That's the way that we're doing it. So yeah, and I am trying, well, not trying. I believe I've gotten to a point where everybody trusts me technical people. Because the biggest thing with technical projects is the technical people look to the project manager or the programme manager for air cover, for to be an umbrella to to shield them from politics and stuff like that. And I've proven myself to them, and they have a very negative view of Catherine, because all they see her doing is just making extra work for us for no reason. So her getting involved at this point makes no sense at the programme level, at the level where it is her remit, within her COE of Gainsight, adoption, RMS, sfdc, sunset, those two. Okay, now that I know that I will make more of an effort to work with her on that, yes, Salesforce, like moody Salesforce, and integration with moody Salesforce is not in anywhere in her remit. Why is she sticking her nose in this? This is very political stuff, but I don't know. Deanna, I don't know. I'm going to find out, by the way, I'm going to talk to people, I'm going to find out who's the senior person, because I'm fairly sure I have more senior friends than she does. So let's go. I don't care. This is, this is something that, if we do it right, the you know, Rob former talks about 5x in just one of these apps. By the way, this is this is app factory. This is the one that we want to present to senior leadership. We've actually run the metrics because this is the thing that we've given to asset management and to banking. So Irina and MENA know about this. From banking side, the return on investment is 30 times, 37x the amount of time it would take for IRENA to get a full dashboard overview of all of the accounts that she has within banking and all of the, you know, slicing and dicing and stuff like that, the amount of time it used to take, and the amount of time it takes now, because we put they built an app like Clara, not an app. They built a dashboard, and we put it in app factory, the time from IRENA asking a question to getting the answer and action, it is 37 times faster.
+
+Diana  56:18  
+Yeah, the the
+
+Azmain Hossain  56:19  
+level of productivity and usefulness that we can deliver means that I am not going to risk that for to stroke someone's ego. And this is the this is the agreement that I've gotten from Ben as well, from Ben Brooks, yeah, like, please protect me from this kind of people. And by the way, it's not Catherine. There's a guy in the tech team doing the same thing. That's just Yeah, and it's getting political,
+
+Diana  56:49  
+yeah, yeah, yeah. Oh, there will be always people like that, yeah, in any organisation, it's inevitably we reach that stage. Look, I will discuss with Natalia, because I can, yeah, talk to her very openly. I will not mention all the details, but just just a high level that, according to me, you're holding this now. We are in the discussion with these objectives. So within what you're doing, quite a lot from this digital enablement programme fails into you, but I will use this when we I'm discussing your objectives with Natalia. But also request, in fact, Catherine, to have your full trust. In fact, she to use your input.
+
+Azmain Hossain  57:44  
+Talia says that Catherine should be like of course, he has my full trust, and then she'll just do her usual stuff, whatever I'm going to manage that. But what, what I think will be helpful, obviously, because the that slide you showed me
+
+Diana  58:01  
+this, would you like me to talk to Catherine? No, I can try
+
+Azmain Hossain  58:05  
+No no, because she's she's very good at being slippery. So it's, yeah, you don't catch a slippery fish by holding it. You catch it with a net. Yeah?
+
+Diana  58:17  
+With a net, yeah. That's why I think we need to sell her something that she says, okay, yeah, I like it. Let's do it like that. Like, okay. And the only way I see it is she really to open the door. You do
+
+Azmain Hossain  58:32  
+like, she's gonna be like, okay, then technically, I am leading the AI programme, and she's gonna try and take it. And she's
+
+Diana  58:42  
+because she's leading the programme. She Oh,
+
+Azmain Hossain  58:45  
+if everything that Azmain is programme managing is just digital enablement, and that's part of my Coe, then I should be the one leading it. And then Natalia has to say yes, because it's like, how can she say no? It makes complete sense.
+
+Diana  59:01  
+Yeah, this isn't real, really problematic because, yeah, everything that you're delivering, I don't, she's benefiting.
+
+Azmain Hossain  59:10  
+I don't understand why a person with no technical knowledge was given the remit of digital enablement. I don't, I don't understand. But anyway, whatever, like I can, I can absolutely say it's anything that is within her remit. I will work with her on it, and I will be supportive anything that's not. I will raise questions of raise questions not in her remit. Why is she doing this, yeah.
+
+Diana  59:43  
+But again, we have to be careful, because, yeah, this is what Natalia approved as objectives for Catherine, and this is what she shared with dear Yeah, yeah, exactly, yeah. And in fact, how it sees is that she needs to monitor what you're doing in. And navigate, but I think her navigation should not jeopardise the other objectives that we have from Jia and you're now working versus other more strategic and important objectives, and in order, for the sake of our whole progress, the best will be just to align, in fact, what you're doing in digital enablement,
+
+Azmain Hossain  1:00:30  
+which I think the best thing is to define digital enablement as non AI enablement. AI enablement should be a different bucket than digital enablement. Digital enablement is one thing. What we're doing is a completely it's not even a difference between different league, it's a different sport, it's football and basketball. So she can work on digital enablement, because there is a lot of enablement that she can do, but she doesn't have to stick her nose into into the AI stuff. And I'll be, I'll be completely frank with you if it ends up being a case where it's like, Azmain, you're too Junior. Katherine, this is in Catherine's remit. She will run the programme, and you will report to her. I'm just going to leave, if I, if I leave the AI stuff, everything falls apart, by the way. Nobody Yeah, build Clara. Nobody can build Friday. Nobody can build half the stuff, and nobody understands half the stuff. So yeah, if it comes down to that, we'll deal with it. But again, this is, like, I have very frank conversation with Ben Brooks, and I've, I've told him that, and he's agreed. He's like, Yeah, if you like, if I get hit by a bus, the whole thing stops.
+
+Diana  1:01:54  
+Yeah, absolutely, yeah, no. Everyone knows that and feels it. Yeah. It's just, it just gotten having this label. Yeah, okay, we have to no work. So, yeah, we have to manage it.
+
+Azmain Hossain  1:02:11  
+That's my two cents. Anything that's within her rebate. I'm happy to work with her, but she cannot. Yeah, I would prefer that she not take over responsibility for all of these from me, even if it's like, oh, now you have to give her a weekly briefing or something like that. If it Yeah, if it comes down to that, then I'll, I'll deal with it. But right now, things are working, and no, this is good to know. I'm just like, What does dia care about more job description or money coming in the door? Because the things I'm doing brings money in through the door,
+
+Diana  1:03:02  
+absolutely, yeah, but I don't know really what GA is thinking. Look, what I really believe will help is Ben's voice. Yeah, I will raise my voice as well because
+
+Azmain Hossain  1:03:16  
+I spoke Yeah, and now I'm speaking to you. Yeah, you guys are my
+
+Diana  1:03:21  
+exactly, but Ben, definitely, it is quite a lot in Ben's interest to ensure that you have the comfort to continue supporting this. And this is a bigger initiative than than just for IRP and insurance.
+
+Azmain Hossain  1:03:37  
+So big target on his back. I mean, yeah, he's, he's showing this to Andy Fred and being like, yeah, look at the
+
+Diana  1:03:45  
+Natalia knows that. No, yeah. So I believe she will listen to to him. What I will try to help Natalia is give her some ideas, but we brainstorm together, in fact, how we can make Katherine comfortable to focus on other things rather than, yeah, messing around.
+
+Azmain Hossain  1:04:06  
+This is literally what because on the tech side, because one guy will not stop sticking his nose in. So we're like, Okay, we're gonna put you on AIG, and we're gonna put you on this file,
+
+Diana  1:04:16  
+yeah, and she has a lot of other things to DOE,
+
+Azmain Hossain  1:04:21  
+like, please do other work. Stop finding yes to annoy us.
+
+Diana  1:04:26  
+Yeah, yeah, that's what yeah. I will do. I will discuss with Natalia, and I can be very direct and strange as well.
+
+Azmain Hossain  1:04:35  
+Shows of experience managing people exactly like that. This is kind of yeah, my first experiences. So you guys, once you brainstorm, you'll come up with an idea. But yeah, my thing was to raise it with you. So thank you so much.
+
+Diana  1:04:49  
+You're welcome, and we'll keep in touch. Are you in the office next Wednesday?
+
+Azmain Hossain  1:04:53  
+Yeah, I'll be in the office next Wednesday. Okay.
+
+Diana  1:04:55  
+No, no, no that you have to come but I just, I'm checking No.
+
+Azmain Hossain  1:05:00  
+No, I have to be around the meeting, because we're getting, I mean, right now we have so we spoke to Dan Flemington as well. So we're trying to get done, okay, in there. Basically, we want to get as many cross ou people in there, and bring someone senior in and be like, Huh, look at the cool work. Please give us a dedicated team. We're dying, yeah, because that, that's what we're going to ask dia for after the 12 to 16 weeks, is, can we please have a dedicated team look how much we can deliver in in one or two quarters?
+
+Diana  1:05:35  
+Can we have, again, a look at this presentation that you shared with me, and you told me that you will see, is this a presentation that Natalia is aware of?
+
+Azmain Hossain  1:05:45  
+No, it is a programme debrief for Diana.
+
+Diana  1:05:48  
+This is just for me, because
+
+Azmain Hossain  1:05:51  
+I was like, I need to give you an understanding of what all of these things are.
+
+Diana  1:05:56  
+Oh my gosh. You built this. Oh for me, yeah, in order to oh my gosh, that's super nice.
+
+Azmain Hossain  1:06:04  
+Firstly, I didn't know this. I just asked Claude, yeah, but I made sure that it looked nice and stuff like that. So I send you this, so you have an idea of everything that's included in the programme. Okay? And the other thing that I send you is this, and this is our deliverables to dia. So these three buckets, the first one is obviously Clara, but the other two is what we're working on right now. And this is where you raised Customer Success agent. It's currently in red because we just haven't had time. So we have 10 weeks to figure out what does Kevin porn want and to build it where we've made the most progress is built in five and the app factory pipeline. So okay, this is green. This is green. This is red. Both of these are red, Customer Success agent and IRP navigator and analyzer. So, yeah, that's I need to focus on that this week and next week. Figure, okay, what to do. But again, this is, this is the deliverables to the to dia, but then the actual projects is, like, there's, there's, like, nine of them. So I also have to,
+
+Diana  1:07:17  
+Okay, keep okay on that. Gotcha, yeah, okay, makes sense.
+
+Azmain Hossain  1:07:22  
+I'll send both of these to you after you look through them. Ask me any questions, and we can just have another
+
+Diana  1:07:27  
+Yeah, like tomorrow, we'll do have time, yeah, just to answer stuff. Any any idea when you will have chance to talk to Natalia. Just, do you have any planet meetings with her or I?
+
+Azmain Hossain  1:07:40  
+So I think, I think Ben Brooks mentioned something to her, because she put in a call for today with me, Catherine and Stacy called Clara features. And I think she's gonna be like, Guys, please stop throwing features that Azmain at random thing like, write them down, prioritise them, figure out what. Okay, what's the like? Why are we doing this? Not just because, oh, I had an idea. What's the actual use of it? Let's do it. Let's do some governance. We can't keep just messaging Azmain and being like, build this and build this and build this. Let's do it structurally, and then maybe I look at it once a week. And then I get someone to do it, because we're trying to get more people in, and I can, I can put in my two cents of like, look, from April 7, we're going to have two graduates who join us for three month rotation. So I've been interviewing them. I found one guy in London, one guy in New York, they're going to join us. I have the approval from from the graduate, the person who manages all the graduates, yeah, like from April 7, we can have one person working full time on Clara where, yes, you know, everyday maintenance, but break fixes, feature builds, yeah. But until then, can we please hold off ad hoc feature request absolutely for the next 20 days.
+
+Diana  1:09:04  
+Okay, keep me posted how the meeting went. Yeah, is going on? Yeah, I'll let you know. Yeah. Okay, good, okay, yeah, no, need you to Yeah. No, no worries. That's why I put one hour for us, because I knew that there are a lot of things going that I am aware and I was willing to share with you, and same for you, I think we need definitely one,
+
+Azmain Hossain  1:09:34  
+yeah, okay, I think, like a, literally, like this a weekly call one one hour because there was, there is so much movement from seven days. Yeah, it gives for me to debrief you. You to debrief me so that we can be aligned.
+
+Diana  1:09:53  
+Okay, good, awesome.
+
+Azmain Hossain  1:09:56  
+Well, thank you so much for your time. Diana,
+
+Diana  1:09:58  
+thank you. We'll keep. That, yeah, something changes
+
+Azmain Hossain  1:10:04  
+with anything about two decks. Yeah, awesome. Take care. Bye, bye.
+

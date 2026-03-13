@@ -1,0 +1,153 @@
+Azmain Hossain  0:05  
+Hey guys. Well, that was fun. I literally, during the meeting, I sent a media message to Natalia, just saying, Hey Ben.
+
+Richard Dosoo  0:18  
+Hey school. Ben is going to be our therapist for the session. It's already in for paid him. So no, no.
+
+Ben Brooks  0:26  
+Wanna go pay me in slidey build? Yeah,
+
+Richard Dosoo  0:32  
+exactly. I spent time in the night, time in the middle of the night, creating slides for that stupid woman to not even get when I could have been doing sliding build. I'm really like, I'm sorry. Like, I'm being a bit more emotional.
+
+BenVH  0:46  
+Ben's hourly rate for a therapist session is about 300 an hour, so we gotta make sure it's Richard.
+
+Azmain Hossain  0:55  
+Come on, man, last 10 days you gotta, you gotta be all Zed. What I was gonna say is I sent Natalia a message during the call, just saying, Look, Catherine completely blindsided us with this meeting. We don't have the manpower to do all this work.
+
+Richard Dosoo  1:10  
+Forget the manpower we she blindsided us. We put in a prep meeting to make sure we were aligned. She couldn't even be bothered to send over the slides they just went into so we weren't can be completely wet. Like what should I'm struggling to understand what she's trying to achieve with this.
+
+BenVH  1:26  
+So if I can give my two cents, because, to be completely honest, I've seen the Salesforce gain site conversation about at least four different times at Microsoft, GitHub, name, Bank of America. It doesn't really matter. Name, name name them. Ultimately, the sense that I got, and please let me know if I'm putting my foot in my mouth, is we just signed over. We're moving from Salesforce to Gainsight. It was a huge initiative. Money was spent everything along those lines. They just want to make sure the tools used, which is fantastic that being said, we built Clara out of necessity for how our business actually operates. No third party tool will actually ever accommodate what we personally need. And as I mentioned previously, Clara, in my opinion, I don't want to store really any data in there, so I don't care if we update gain side or Salesforce to be completely transparent with you like and I think this is where the rub hits, because they're going to want CSMs to use Gainsight UI, to be completely honest, I believe that it would be smarter as an investment for Moody's, at least for our organisation to have all CSMs still use Clara and we just update Gainsight and or maybe let the CSMs choose. But ultimately, what will happen, and this is just large scale enterprises, is that in three to five years, when the Gainsight contract ends, and we found out that Gainsight couldn't deliver on X, Y and Z, we're going to move back to either Salesforce or whatever the next shiny tool is, and at that point in time, we can just integrate Clara with it. So Clara can be the one stop, vendor agnostic, place where all of our CSMs can go, and we can just focus on the UI to make sure that the UI is what our CSMs need,
+
+Richard Dosoo  3:13  
+but that this is the thing. But they don't want that though, right? I know
+
+Ben Brooks  3:17  
+that's the biggest thing. That's why we need them to force them to write down what we're actually going to get here and who's involved in making it happen. And then when the you know, there's some fucking bullshit three month Change Management Programme on systems with no access, we'll say that doesn't work for the business. Fuck off and try again. And we can just send them around the houses repeatedly without spending any time on it, because I'm with you. Ben, like, this is an epic waste of time. I don't know why we would buy a system to do this kind of shit anymore, and somebody needs to wake up to that. The fact that that train's been rolling for the last two years is really nothing to do with what we need to do at this point. So I think, I think we should push back hard. I sent a note to Natalia at the same time that just said, there's a giant pain in the ass. There's really no point in doing this.
+
+BenVH  4:02  
+I mean, and then you hit her on the head, like it's, it's been going on for X amount of time. They truly just want, like, they're up, I'll be completely honest, at least, from what I've heard from that meeting, they're upset that they have their no users are going to go to the Gainsight UI, you know, like, we can store the data in Gainsight. We can do that. Like, that's an easy lift, and to be completely honest, it's going to be easier and easier as we make our solution more and more agnostic. So like, yeah. Like, let them spin their wheels and do that. Like, I'm 100% for like, because what's going to eventually happen? Because, again, I've seen this, and I've worked with CSMs a lot in the past, is like, Gainsight will say that they can deliver something, but they themselves are a large scale organisation, but they have to support multiple clients, they're not going to be able to deliver it. And at the meantime, we can just, oh yeah, well, we built into Clara. Oh yeah. Well, we just built into Clara, you know, and let them spin their wheels as like, and. I mean, it's annoying for us, don't get me wrong, like, but all as long as we get the API keys, and you know what, let it be like, let's write to it. Let's read to it like, I will gladly help you. All right, in API, like API integration for Clara to get into Gainsight,
+
+Ben Brooks  5:18  
+but that's the other way to handle it, is to take a very passive, aggressive approach to it. Send them our API spec and say, here's what we need to write. If you, if your thing is the system of truth, give us the spec where to write it, and we'll write it there.
+
+Richard Dosoo  5:31  
+Yeah, this is it. I think Ben like, yeah,
+
+Ben Brooks  5:35  
+that's basically, these are our business requirements. If you can't meet them, fuck off, guys. But I think we're same page, on in the call, because I'm
+
+Azmain Hossain  5:45  
+going to start writing that because, like you said, we needed to be ironclad and nail them down. So yeah,
+
+Ben Brooks  5:52  
+totally we should. We should just put a load of demands in that we need. There will be no the team is not getting pulled away from driving migrations. That's End of argument. So if this slows down in the background because it's stupid, then fine, cool. I gotta jump. Thanks guys. See you soon.
+
+BenVH  6:10  
+Sorry, I went on a rant, but I've seen
+
+Richard Dosoo  6:14  
+this cool grass.
+
+Azmain Hossain  6:16  
+It's all good. Yeah, it's, it's glad. I'm glad Natalia is kind of getting the thing. I just sent her a long message, oh, basically, I'll just share, share my screen. You guys. No, you should.
+
+Richard Dosoo  6:30  
+You should tell her, because when I come in from the back and also put my foot on this girl's neck here, I don't want anyone to be like, Oh, Richard is being
+
+Azmain Hossain  6:38  
+extra let's see. By I literally said, Catherine blindsided us with this meeting. We are in no way prepared to do all this work. We don't have the manpower, and this will need experienced people, so the grads can't do this. She's like, I thought Catherine had a conversation with Richard. I'm like, literally, I knew about the call, but we spent a lot of time creating a deck about information, sent it to Catherine. Had a prep call, asked her multiple times to send it, clearly she didn't, but the main Gainsight has a team, lots of people do the work we don't. It would have been helpful if she came to us first, or even asked, like, if we can do this, because we have deliverables for dia in the next 10 to 14 weeks, and finding resources for that has been difficult enough, and now there's this big piece of work.
+
+Richard Dosoo  7:26  
+It's key that even, like you put it very eloquently, but I'm like, this is that was a snake manoeuvre that she's done. Yeah, that's, that's like, it's because
+
+BenVH  7:40  
+Hang on, do I but they're just, but ultimately, it's just, I'll be completely honest, it's whoever was running the Gainsight deal. It like is butt hurt that we're not going to be using Gainsight. So I think Ben is correct. Like, we say, Hey, if you want us to use Gainsight, we built Clara for X, Y and Z. Like, here's all the information that we're collecting from Gainsight, or, sorry, come from Clara. Like, where do we update it? In Gainsight? Put this Where do well in Gainsight, and no, you will retire. No, I don't borrow. I No, I don't want us to retire. Clara, to be completely honest. Azmain, like, what will happen this? Every three years? It's the same thing. Gainsight is going to cost too much, whatever I've seen. Literally, the migration from off of Gainsight back to Salesforce. Literally, they team. Sorry. I get really, really, really angry about vendor lock in with large scale corporations because no one thinks ahead. So. The biggest thing is, honestly, I think we just say, Hey, this is what Clara supports. Where do we write this in Gainsight or whatever, and how do we pull this so that Gainsight remains source of truth? Which is fine, we don't have to say anything but the UI or anything, and we just keep working on it. Because, frankly, Clara UI is the UI that was made by the team that is like, ultimately, there's not going to ever be anything in a Gainsight UI or Salesforce or UI or anything that a CSM is actually going to be using and make sense to them. We are literally doing that in house, and we have been, we've thought about, we've interacted with the teams, the stakeholders, everything along those lines. Gainsight will never do that. They have teams of development and stuff, but they also have to do they're a large scale Corporation. They have to handle multiple accounts, so they're never going to make a UI that matches us, period.
+
+Azmain Hossain  9:21  
+Yeah, I literally went on a call today and, like, I think Ben spoke to Natalia. Natalia put in a two week release cycle for Clara, and it was literally Stacy and Katherine being like, every time I go on the app and look around, I find new things to change. I'm like, so you want us to spend money manpower on making all these fucking changes, and then you're like, oh, but we're gonna use Gainsight. So why are we doing this?
+
+BenVH  9:48  
+Well, they, I mean, I'll be honest, if they have any allegiance to Gainsight, that's why they're poking holes in it, because they don't want it to be good. That's, that's what it is.
+
+Azmain Hossain  9:59  
+I. So like, show you guys where, where.
+
+BenVH  10:04  
+Sorry, I apologise. If I'm I'm speaking out of turn. But
+
+Richard Dosoo  10:09  
+it's all good. There's just not frustration right from Catherine snake manoeuvres and like,
+
+Azmain Hossain  10:15  
+let me show you guys where Catherine is deriving her authority from. Because I asked, I asked Diana about this. And this is So Catherine is running her own Centre of Excellence, fucking one person. It's this digital engagement programme, which is literally what we're doing with the AI thing. That's why
+
+Richard Dosoo  10:38  
+there's certainly a manager. But let me try and go around and cut this shit out of like, bro, I'm on fucking Air Force One black Air Force One engine. Now I feel like this girl, so send me this. Yeah, I'm not sending it to manager, but Diaz coming to London next week, and I'm gonna go and have a chat with her about something. I'll be like, listen,
+
+Azmain Hossain  10:56  
+I mean, it's literally digital engagement, because Diana, literally, this was my first one to one with her. She warned me. She's like, Look, if she's doing this, sooner or later, she's going to be like, Why is Azmain managing it? Doesn't all everything he's doing fall under digital engagement, so I should be running it. And I was like, okay, certainly this letter builds.
+
+Richard Dosoo  11:20  
+I've got time with dia, and they call it next week. So send me this yet, bro, and then I'm gonna stop, like, Bro, that's send this to me and Ben, manager, Ben, and let's
+
+Azmain Hossain  11:32  
+send it to you, man. And you can, you can send it to Ben,
+
+BenVH  11:37  
+yeah, but I mean, I will agree with y'all, like, as soon as I got on call with that, I'm like, Oh, this is a blind side. So it
+
+Richard Dosoo  11:49  
+was, why did we send her slide? Right? Yeah, and then you didn't send us the slides that they're working on. That was just a waste of time. I could have been doing other things. Yeah, I can't, it's,
+
+BenVH  12:02  
+it's, it's, this is just the honest, ironically, this is just the politics that, frankly, we're even experiencing at that factory level. It's just people trying to, like, you know, if someone's doing one thing, but another thing is getting traction, they get worried, and they try to make, you know, it's, it's all a thing. Yeah, this is ultimately why we need Clara. Because, I mean, if fast iteration and making a UI that is completely from the source of the people who are using
+
+Richard Dosoo  12:35  
+it, this is the thing, yeah, we like anyway, let me not get Sorry, guys. I'll get around here.
+
+Azmain Hossain  12:40  
+No. Richard, the Yeah, if you, if you and Ben, kind of talk about this, and then go talk to dia. Because, like, everyone is like, when I spoke to Deanna, she was like, Oh, well, this is the remit that Catherine, that Natalia proposed for Catherine, and dia signed off on it. So, you know, if she asked for stuff, she has to follow she, has to be given stuff. And I was like, Okay, I didn't
+
+Richard Dosoo  13:05  
+say I'm gonna quote. She's not gonna because I'm gonna be like, how can you be responsible for digital programme? But you don't understand technology and waste people's time.
+
+Azmain Hossain  13:13  
+That is literally my question to Anna. I'm like, How did Natalia give digital enablement all and the other two buckets as well, to a person who doesn't have any technical ability or knowledge. And Diana's answer was, apparently, Catherine has powerful friends, like senior people who are friends, of course, like, okay,
+
+BenVH  13:33  
+of course, that's, that's how that always works.
+
+Richard Dosoo  13:37  
+As I said, I'm gonna listen. It's all good for us right now. Ben's point very key. Thank you for keeping us on track. We can push any data they want. We want to a person who can pull data so we can satisfy our reporting needs. If CSMs are like, Oh, we only want to go engage the cross functional teams will use Clara because we're not going to use gate inside. You're not going to give us everything you want, and that's it. And ad factory will be the integration, and they love in direction between the two
+
+Azmain Hossain  14:02  
+they can, if they can get Clara data into Gainsight, I will be shocked, shocked, I tell you, because I've seen Gainsight. Bernard has told me everything he showed me multiple times. It is dog shit. The level of complexity and data models that we have in Clara for them to, like, copy that over. Good luck.
+
+Richard Dosoo  14:25  
+And even, even Gainsight, like, go ask Bernard to run a report out of game site for you can't do it. Yeah, can't do it. That's why we've got the whole platform. Intelligence initiative is because you can't get that information out of Salesforce. You can't get out I think, what are they talking about?
+
+BenVH  14:41  
+I mean, it's, it's, literally, it's, it's, what do they call it? Designed by committee over there, like it's, again, this is it. I see it countless times over and over and over again. It's so like, it's, it's, I honestly think it's perfectly fine. We'll just say, hey, here's all the data that we have with Clara. Where do we put it? With Gainsight? Give us an API and. Do it. We're not entering in anything manually or anything like that, and gains that can be the source of truth, and that's great. And then in three years, when Salesforce ultimately comes back and offers you a lower price, and you want to migrate all of your customers and your CSMs have to reuse, relearn the UI again, they can just freaking stay with Clara, because ultimately, ultimately, all of these tools come and go all the freaking time. I mean, was it like Trello Monday? Freaking what list 1000s of them, and it's literally the only reason why they are pushing it now is because they just have a brand new contract and they didn't like the price of Salesforce. That's literally, that's, that's how this entire thing came came about. I wasn't even in the callback guarantee you. Salesforce was costing too much. It wasn't delivering what they wanted. So Gainsight says, Oh, we can deliver that. Here's a cost that you want it, and then it repeats the next three years. That's that's really it. So, like, there's no point, there's zero point. Just give us an integration layer, let app factory handle all the crap, and let Clara just be a UI.
+
+Richard Dosoo  16:06  
+That's fine. Yeah, that's it. That's a UI and reporting framework. That's all exactly
+
+BenVH  16:13  
+and then guess what? In three years, our CSMs who let like, I'll be honest, I've worked with CSMs who've been in a company for five years, and they've seen the switch back and forth, and they're like, I have to learn something new again. Oh, I have to learn something new again. Like, that's the thing I actually really enjoyed during that conversation, is like, well, we don't want to the CSMs to, like, keep learning something new. And I'm like, then why are you introducing something new?
+
+Azmain Hossain  16:39  
+Like, ultimately, because those B to B sales douchebags on LinkedIn need something to post about exactly, exactly.
+
+BenVH  16:48  
+So anyways, I apologise that was that's like, whenever I hear vendor agnosticism and stuff I get I get super cranky because, like, there's no point to it at all, because the sales cycles are exactly the same every single time. But, yeah, anyways. So the good news is, though, not to deviate from this, and I apologise, but I made some really good progress last night on the MCP stuff. Should hopefully have something I'm hoping at the end, like by the end of the week, so as long as I can keep knocking people away and just go heads down and build this thing, then we should be good. But it's it's really good. And then Azmain Just so as a heads up. So instead of building the LLM orchestration layer, I'm just going to leverage the AWS bedrock AI agents. So it's going to be the same thing. It's just the app factory.org app factory uses that tool. And you know, if later on, we find another tool that can handle orchestration things better, then we'll move off of that. But right now, it'll just help with iteration.
+
+Azmain Hossain  17:53  
+So awesome. Sorry, guys, Natalia is asking if I can go on a call. Let's see what that's about.
+
+Richard Dosoo  18:00  
+No worries, guys. I'm, I've got a jump on the call in a minute that I'm, I'm going to, I'm going to the masjid. So I'm going to be, I'm not going to be online after about 530 basically, but I'll bet we can when I when I get home later on from I'll text you anyway, just to I think we're good, in good shape, but I just wanted to follow up on a few bits, just prep for next week. You.
+

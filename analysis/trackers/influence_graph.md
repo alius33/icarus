@@ -75,3 +75,10 @@
 | 2026-03-11 | Idrees | Proposal_adopted | → | Richard | Retention dashboard + ROB AI | Idrees positioned segment-agnostic tools as the centrepiece; Richard adopted the framing for the Wednesday agenda | Strong | High |
 | 2026-03-11 | Idrees | Bridging | → | DIA/George Dyke | Cross-OU retention | Looped DIA and George into retention dashboard thread today; showing cross-OU consistency | Medium | High |
 | 2026-03-11 | Natalie Bath | Endorsement | → | Idrees | Agent demo | Saw MENA's agent at Miami sales connect; asked Idrees to run AON agent view — first signal of sales-side interest | Medium | Medium |
+| 2026-03-12 | Catherine | Gatekeeping | → | Azmain/Richard | Gainsight/Salesforce access | Organised Gainsight meeting without consulting Clara team; positioned herself as intermediary | Strong | High |
+| 2026-03-12 | Catherine | Blocked | ← | Ben Brooks | Clara feature requests | Ben pushed back on Catherine requesting use case description import; questioned necessity | Medium | High |
+| 2026-03-12 | Natalia Plant | Final_say | → | Azmain/Stacy/Catherine | Clara release cadence | Established fortnightly cycle, Tuesday review governance, overriding ad-hoc requests | Strong | High |
+| 2026-03-12 | Diana | Bridging | → | Azmain | Catherine political situation | Shared Catherine COE objectives, advised tactical approach, committed to discuss with Natalia | Strong | High |
+| 2026-03-12 | Natalia Orzechowska | Deferred_to | → | Azmain | Gainsight POC timeline | Reassured no POC needed before end of March; defused integration pressure | Strong | High |
+| 2026-03-12 | Tina Palumbo | Proposal_adopted | → | Both teams | Bi-directional integration model | Presented Gainsight-Clara integration proposal that set the agenda for future work | Medium | High |
+| 2026-03-12 | Ben Brooks | Final_say | → | Team | Clara not compromised for Gainsight | Declared team will not be pulled from migrations; set strategic direction for charter approach | Strong | High |

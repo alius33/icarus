@@ -86,3 +86,8 @@
 | 2026-03-11 | Salesforce Integration Design | Design/Planning | 8.0 | 8 | 8 | 8 | 8 | 8 | Azmain, BenVH, Richard, Catherine | Medium |
 | 2026-03-11 | App Factory Discussion | Architecture/Strategy | 7.8 | 7 | 7 | 8 | 8 | 8 | Richard, BenVH, Azmain | Medium |
 | 2026-03-11 | Chat with Idrees | Coalition/Planning | 7.5 | 7 | 7 | 8 | 8 | 7 | Richard, Idrees, Azmain | Short |
+| 2026-03-12 | Integration meeting with Gainsight team | Cross-team | 6.5 | 5 | 6 | 7 | 7 | N/A | Catherine, Tina, Rajesh, Nadeem, Azmain, Richard, Ben Brooks, BenVH, Kevin Pern | Medium |
+| 2026-03-12 | Post Gainsight team meeting debrief | Strategy | 8.0 | 9 | 7 | 8 | 8 | N/A | Azmain, Richard, Ben Brooks, BenVH | Medium |
+| 2026-03-12 | Clara feedback cadence | Governance | 8.5 | 8 | 9 | 8 | 9 | N/A | Azmain, Natalia Plant, Stacy, Catherine | Medium |
+| 2026-03-12 | Post Gainsight call with Natalia | Debrief | 8.0 | N/A | 8 | 8 | 8 | N/A | Azmain, Natalia Orzechowska | Short |
+| 2026-03-12 | Diana 1-1 | Strategic | 8.5 | 7 | 8 | 9 | 9 | N/A | Azmain, Diana | Long |
