@@ -91,7 +91,7 @@ export default function BreadcrumbBar() {
   if (items.length === 0) return null;
 
   return (
-    <div className="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-8 py-2.5">
+    <div className="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 md:px-8 py-2.5 overflow-hidden">
       <Breadcrumbs items={items} />
     </div>
   );
