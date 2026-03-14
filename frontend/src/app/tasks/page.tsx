@@ -4,6 +4,7 @@ import { Suspense, useEffect, useState, useCallback } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { TaskSchema, TaskBoardResponse, TaskTimelineResponse, TaskViewMode } from "@/lib/types";
 import { api } from "@/lib/api";
+import { useIsMobile } from "@/lib/hooks/useIsMobile";
 import TaskBoard from "@/components/tasks/TaskBoard";
 import TaskList from "@/components/tasks/TaskList";
 import TaskTimeline from "@/components/tasks/TaskTimeline";
@@ -24,7 +25,8 @@ function TasksContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const view = (searchParams.get("view") as TaskViewMode) || "board";
+  const { isMobile } = useIsMobile();
+  const view = (searchParams.get("view") as TaskViewMode) || (isMobile ? "list" : "board");
 
   const [filters, setFilters] = useState({
     status: searchParams.get("status") || "",

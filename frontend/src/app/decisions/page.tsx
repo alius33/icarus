@@ -4,6 +4,7 @@ import { Suspense, useEffect, useState, useCallback } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { DecisionSchema, DecisionBoardResponse, DecisionTimelineResponse, DecisionViewMode } from "@/lib/types";
 import { api } from "@/lib/api";
+import { useIsMobile } from "@/lib/hooks/useIsMobile";
 import DecisionBoard from "@/components/decisions/DecisionBoard";
 import DecisionList from "@/components/decisions/DecisionList";
 import DecisionTimeline from "@/components/decisions/DecisionTimeline";
@@ -24,7 +25,8 @@ function DecisionsContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const view = (searchParams.get("view") as DecisionViewMode) || "board";
+  const { isMobile } = useIsMobile();
+  const view = (searchParams.get("view") as DecisionViewMode) || (isMobile ? "list" : "board");
 
   const [filters, setFilters] = useState({
     execution_status: searchParams.get("execution_status") || "",

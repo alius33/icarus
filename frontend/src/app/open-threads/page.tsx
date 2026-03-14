@@ -4,6 +4,7 @@ import { Suspense, useEffect, useState, useCallback } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { OpenThreadSchema, ThreadBoardResponse, ThreadViewMode } from "@/lib/types";
 import { api } from "@/lib/api";
+import { useIsMobile } from "@/lib/hooks/useIsMobile";
 import ThreadBoard from "@/components/threads/ThreadBoard";
 import ThreadList from "@/components/threads/ThreadList";
 import ThreadDetailPanel from "@/components/threads/ThreadDetailPanel";
@@ -23,7 +24,8 @@ function ThreadsContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const view = (searchParams.get("view") as ThreadViewMode) || "board";
+  const { isMobile } = useIsMobile();
+  const view = (searchParams.get("view") as ThreadViewMode) || (isMobile ? "list" : "board");
 
   const [filters, setFilters] = useState({
     status: searchParams.get("status") || "",

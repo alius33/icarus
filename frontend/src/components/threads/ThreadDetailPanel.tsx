@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
   OpenThreadSchema,
   OpenThreadUpdate,
@@ -90,11 +90,24 @@ export default function ThreadDetailPanel({ thread, onClose, onUpdated }: Thread
     }
   }
 
+  // Escape key to close
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === "Escape") onClose();
+  }, [onClose]);
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [handleKeyDown]);
+
   return (
     <div className="fixed inset-0 z-40">
       {/* Backdrop — click to close */}
       <div className="absolute inset-0 bg-black/20" onClick={onClose} />
-      <div className="absolute inset-y-0 right-0 w-full max-w-md bg-white dark:bg-gray-900 shadow-2xl border-l border-gray-200 dark:border-gray-700 flex flex-col">
+      <div className="absolute bg-white dark:bg-gray-900 shadow-2xl flex flex-col md:inset-y-0 md:right-0 md:w-full md:max-w-md md:border-l md:border-gray-200 dark:md:border-gray-700 max-md:inset-x-0 max-md:bottom-0 max-md:top-[10vh] max-md:rounded-t-2xl max-md:border-t max-md:border-gray-200 dark:max-md:border-gray-700">
+      {/* Mobile drag handle */}
+      <div className="md:hidden flex justify-center pt-2 pb-1">
+        <div className="w-10 h-1 bg-gray-300 dark:bg-gray-600 rounded-full" />
+      </div>
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-700">
         <span className="text-base font-medium text-gray-500 dark:text-gray-400">Thread Detail</span>
