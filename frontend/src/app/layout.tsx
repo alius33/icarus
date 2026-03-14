@@ -23,6 +23,15 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Icarus Dashboard",
   description: "Programme intelligence dashboard for the Icarus project",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Icarus",
+  },
+  icons: {
+    apple: "/icon-192.png",
+  },
 };
 
 export const viewport: Viewport = {
