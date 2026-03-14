@@ -1,5 +1,2 @@
-[build]
-buildCommand = "npm ci && npm run build"
-
 [deploy]
-startCommand = "node .next/standalone/server.js"
+startCommand = "node server.js"
