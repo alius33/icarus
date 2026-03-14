@@ -61,10 +61,10 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 
 ### 9. Single Points of Failure Mitigation — ESCALATED
 - **First raised:** Implicit throughout, explicit by late Feb
-- **Updated:** 6 Mar — **CRITICAL**: Richard is interviewing for jobs in New York (partly because he dislikes working with Rhett). BenVH admitted his recent absence wasn't illness but being worn down by Nikhil taking credit for App Factory work. Both key people showing signs of disengagement/departure.
+- **Updated:** 6 Mar — **CRITICAL**: Richard flight risk resolved (committed to programme). BenVH admitted his recent absence wasn't illness but being worn down by Nikhil taking credit for App Factory work. BenVH Nikhil conflict being actively addressed.
 - **Context:** BenVH is the only person who can deploy. Azmain is the only person building CLARA features. Richard carries irreplaceable institutional knowledge.
-- **Question:** What's the retention/mitigation plan? Is anyone documenting Richard's knowledge? Can BenVH/Nikhil conflict be resolved?
-- **Why it matters:** If Richard leaves, the programme loses its strategic brain. If BenVH leaves, nothing deploys. Both are now flight risks.
+- **Question:** Can BenVH/Nikhil conflict be resolved? Is knowledge documentation progressing?
+- **Why it matters:** If BenVH leaves, nothing deploys. Knowledge concentration remains a structural risk even with Richard stable.
 
 ### 10. Build in Five Scope — MAJOR PROGRESS
 - **First raised:** 5 Feb (Martin and Azmain both unclear), demo target shifted
@@ -103,11 +103,11 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 - **Question:** What is the mitigation strategy for hallucination in customer-facing or executive-facing demos?
 - **Why it matters:** One incorrect figure in front of Andy Frappe or Colin Holmes could damage programme credibility.
 
-### 16. Richard Departure Risk
+### 16. Richard Departure Risk -- RESOLVED
 - **First raised:** 6 Mar (Azmain revealed to BenVH)
-- **Context:** Richard is interviewing for positions in New York. Partly motivated by disliking working with Rhett. Richard carries irreplaceable institutional knowledge — programme strategy, stakeholder relationships, Diya management approach.
-- **Question:** Does anyone else know? Is there a knowledge transfer plan? Can the underlying issues (Rhett) be addressed?
-- **Why it matters:** Richard is the programme's strategic brain. His departure would leave a leadership vacuum at the worst possible time (Gainsight integration, Diya engagement, cross-OU expansion all in flight).
+- **Context:** Was briefly considering other roles in early March. Resolved mid-March -- Richard committed to programme. Carries important institutional knowledge — programme strategy, stakeholder relationships, Diya management approach.
+- **Question:** RESOLVED. Knowledge documentation should continue as good practice.
+- **Why it matters:** Resolved. Richard committed to programme. Knowledge documentation continues.
 
 ### 17. BenVH / Nikhil Conflict — CRISIS LEVEL
 - **First raised:** 6 Mar
@@ -169,6 +169,24 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 - **Context:** Rhett built a digital adoption runbook (Cursor prototype). Diana's PM team (Vlad, Christian, Prashant) built an Excel-based PM task list. They agreed to collaborate. Rhett uncertain about long-term maintenance. Over 50% of adoption governance owners already use Clara.
 - **Question:** Will the runbook be absorbed into Clara or stay standalone? Does it overlap with George's account planning work?
 - **Why it matters:** Risk of fragmented tools if not consolidated. But also evidence of organic adoption of structured approaches across the programme.
+
+### 27. CLARA Visibility Expansion to Product & Tech Teams
+- **First raised:** 13 Mar (CLARA Demo to Product & Tech teams)
+- **Context:** Cihan (MD Product & Technology) brought his entire team to see CLARA. Azmain imported ~4,000-5,000 users under Andy Frappe as viewers with SSO. Cihan personally endorses CLARA as a daily tool. Product teams (Ollie, Julie) asked how to contribute. Call chat remains as living feedback channel.
+- **Question:** Will product/tech engagement translate into better data quality and cross-functional collaboration? How will the team handle support requests from a much larger user base?
+- **Why it matters:** Biggest audience expansion since launch. If product managers start contributing adoption-relevant intel to CLARA, it becomes significantly more valuable. But support burden could overwhelm the small team.
+
+### 28. Customer & Model Success Team Dashboard Needs
+- **First raised:** 13 Mar (Review AI Powered Dashboards)
+- **Context:** Lucia's team facing wave of dashboard requests. Cape team needs Tableau replacement by September 2026. Team uses R/Streamlit but has no hosting solution. App Factory is the proposed solution. Lucia and Joel offered to test Salesforce integration.
+- **Question:** How many dashboards are needed? Can App Factory scale to support another team's apps alongside CLARA?
+- **Why it matters:** First concrete external demand for App Factory beyond the core team. If successful, validates the platform model. If delayed, team may build their own solution.
+
+### 29. Cross-OU AI Training Methodology
+- **First raised:** 13 Mar (How Credit team in Banking does AI training)
+- **Context:** Banking Credit team has a mature agent day framework: 4-tier model, pre-work, transit teachers, individual projects, bi-weekly follow-ups. Insurance team acknowledged their November training was too generic. Richard committed to homework on skills repo and governance before formalising collaboration.
+- **Question:** Will the insurance team adopt Banking's agent day model? Who will coordinate the cross-OU skills sharing? Can the quarterly cadence be maintained?
+- **Why it matters:** WS1 (Training & Enablement) has been stalled since January. Banking has a proven framework that could be adopted. If skills sharing works cross-OU, it multiplies the value of every agent built.
 
 ---
 

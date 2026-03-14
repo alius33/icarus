@@ -77,7 +77,7 @@
 | 2026-03-05 | Chris | Methodical, fitting in | Stable | Bug triage learning | Clara Standup | N/A | High |
 | 2026-03-06 | BenVH | Emotionally fragile | Critical decline | Nikhil trauma trigger | Chat with BenVH | "I wasn't even really sick" | High |
 | 2026-03-06 | Azmain Hossain | Protective, also looking | Mixed | Career frustrations | Chat with BenVH | N/A | High |
-| 2026-03-06 | Richard Dosoo | Flight risk confirmed | Critical decline | Interviewing in New York | Chat with BenVH (revealed) | N/A | High |
+| 2026-03-06 | Richard Dosoo | Briefly considering options | Stable | Personal considerations (resolved mid-March) | Chat with BenVH (revealed) | N/A | Low |
 | 2026-03-06 | Chris | Adapting well | Stable | Bug work as onboarding | Chat with Chris | N/A | Medium |
 | 2026-03-06 | Catherine | Critical new ally | Major positive shift | Governance volunteer | Pre Gainsight Team Meeting | "You're speaking my love language" | High |
 | 2026-03-06 | Azmain Hossain | Strategically using governance | Mixed | Welcomed slowdown | Pre Gainsight Team Meeting | "We're exhausted" | High |
@@ -102,3 +102,9 @@
 | 2026-03-12 | Azmain Hossain | Relieved / assertive | Up | Gainsight pressure removed; Catherine strategy discussed with Diana | Post Gainsight call + Diana 1-1 | N/A | High |
 | 2026-03-12 | Diana | Engaged, politically astute | Up | Programme scope understanding; advisory role on Catherine | Diana 1-1 | N/A | High |
 | 2026-03-12 | Catherine | Monitoring/controlling | Stable | Raising Clara issues, governance concerns, organising Gainsight meeting | Clara feedback cadence (discussed across multiple) | N/A | Medium |
+| 2026-03-13 | Cihan | Full champion | Major positive shift | CLARA as strategic enabler for customer obsession | CLARA Demo to Product & Tech teams | "An amazing source to actually get all of the information you need" | High |
+| 2026-03-13 | Nils | Collaborative, generous | Baseline | Cross-OU AI training methodology sharing | How Credit team in Banking does AI training | N/A | High |
+| 2026-03-13 | Wasim | Pragmatic, adoption-focused | Baseline | Agent day design and knowledge sharing | How Credit team in Banking does AI training | N/A | High |
+| 2026-03-13 | Lucia | Engaged, proactive | Baseline | Dashboard needs and App Factory interest | Review AI Powered Dashboards | N/A | High |
+| 2026-03-13 | Ben Brooks | Strategically measured | Stable | CLARA as cross-functional collaboration tool | CLARA Demo to Product & Tech teams | N/A | High |
+| 2026-03-13 | Azmain Hossain | Confident, candid | Up | Large audience demo; token cost transparency | CLARA Demo to Product & Tech teams | "I honestly believe because of Clara, we've done more than half of our yearly target" | High |

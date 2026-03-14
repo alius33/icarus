@@ -1,6 +1,6 @@
 # Workstream Status Tracker
 
-Last updated: 2026-03-12 (all transcripts through 12 March processed)
+Last updated: 2026-03-13 (all transcripts through 13 March processed)
 
 ---
 
@@ -14,7 +14,8 @@ Last updated: 2026-03-12 (all transcripts through 12 March processed)
 - **Week 3 (19 Jan):** George Dyke onboarded to Cursor by Richard in a multi-hour hands-on session — informal training that demonstrates the spec-driven development approach. This is ad hoc, not structured enablement.
 - **Azmain flagged to Natalia (20 Feb):** Identified as "biggest/quickest win" but no time allocated
 - **March update:** Two grads arriving April 7 may provide capacity. Pietro and Stephanie still engaged on framework but no execution resources assigned.
-- **Next step needed:** Someone other than Azmain to own execution, or Azmain's workload must be redistributed. Grads could potentially own this.
+- **13 Mar (BREAKTHROUGH):** Banking Credit team shared their mature agent day framework — 4-tier model (awareness → autonomous), pre-work methodology, transit teachers (non-coders teaching AI skills), individual projects, bi-weekly follow-ups. Insurance team acknowledged their November training was too generic. Quarterly cross-OU touchpoint agreed. Richard committed to homework on skills repo and governance model before formalising collaboration. This is the first concrete methodology the insurance team can adopt for WS1 execution.
+- **Next step needed:** Someone other than Azmain to own execution, or Azmain's workload must be redistributed. Grads could potentially own this. Banking's agent day model provides a ready-made framework to adopt.
 
 ---
 
@@ -56,6 +57,7 @@ Last updated: 2026-03-12 (all transcripts through 12 March processed)
 - **Week 3 additions:** Data input hub live (CSMs/PMs fill data in-app). Portfolio Review process designed. Adoption charter (WS4) formally folded in. 155 active accounts loaded from December golden source. Dashboard colour/RAG confusion identified and queued for fix. No data export by design (forces platform usage).
 - **March additions:** Nikhil (50% CLARA / 50% App Factory) and Chris onboarded — Chris on bug fixes and security audit findings, Nikhil on scorecard tab and migration burndown. Bedrock API key now functional. Two-week structured release cycle replaces ad-hoc deploys. Template/flat-pack approach proposed for cross-OU scaling (Life team shown demo). Adoption charter data flow starts one-directional (bi-directional too complex due to customer-annotated Excel with diagrams). Gainsight architecture alignment meeting scheduled with Tina Palumbo, Nadim, Rajesh. Also pushing for Salesforce programmatic access.
 - **12 Mar additions:** CLARA officially entering maintenance mode. Natalia Plant established fortnightly release governance with Tuesday prioritisation reviews. Two grads arriving April 7 (London + New York) for 100% CLARA maintenance. Ben Brooks restricted to sandbox. Analytics tab being removed from management dashboard. Scorecard tab and management dashboard moved higher in navigation for ISLT on Monday. Use case completion check added (software status must be "in production" first). Gainsight integration meeting held — bi-directional POC proposed but no timeline pressure (earliest May). Catherine's COE overlap with AI programme causing significant political friction.
+- **13 Mar additions:** CLARA demoed to Cihan's entire product & technology team — biggest audience expansion since launch. Cihan personally endorsed CLARA as a daily tool. Azmain imported ~4,000-5,000 users under Andy Frappe hierarchy as SSO viewers. Product teams (Ollie, Julie) asked how to contribute. Call chat established as living feedback channel. Ben Brooks positioned CLARA's structured data as enabling product prioritisation via blocker theme analysis. Julie asked about CLARA vs Gainsight — distinguished as structured adoption data vs CRM health scoring.
 
 ### Feature Backlog
 - Scorecard tab and migration burndown (in active development — Nikhil)
@@ -70,8 +72,8 @@ Last updated: 2026-03-12 (all transcripts through 12 March processed)
 
 ### Key Risks
 - Azmain = single point of failure for features (partially mitigated by Nikhil/Chris onboarding)
-- BenVH = single point of failure for infrastructure — **now a flight risk** (worn down by Nikhil taking credit for App Factory work)
-- Richard = irreplaceable programme strategist — **interviewing for jobs in New York**
+- BenVH = single point of failure for infrastructure — burnout risk from Nikhil conflict (being addressed)
+- Richard = key programme strategist — stable and committed
 - Scope creep from multiple new integration requirements (User Voice, HD models, Gainsight, Salesforce, cross-OU templates)
 - Token/budget constraints ($750 in 3 days, corporate budget $20K). Bedrock now working but personal Claude usage flagged by security audit.
 - **Deployment fragility** — no tested rollback procedure. Team admitted attempting rollback could leave system completely unusable. Schema changes now require BenVH approval before execution.

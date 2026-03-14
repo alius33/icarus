@@ -91,3 +91,6 @@
 | 2026-03-12 | Clara feedback cadence | Governance | 8.5 | 8 | 9 | 8 | 9 | N/A | Azmain, Natalia Plant, Stacy, Catherine | Medium |
 | 2026-03-12 | Post Gainsight call with Natalia | Debrief | 8.0 | N/A | 8 | 8 | 8 | N/A | Azmain, Natalia Orzechowska | Short |
 | 2026-03-12 | Diana 1-1 | Strategic | 8.5 | 7 | 8 | 9 | 9 | N/A | Azmain, Diana | Long |
+| 2026-03-13 | How Credit team in Banking does AI training | Knowledge share | 8.0 | 7 | 8 | 9 | 8 | N/A | Richard, Nils, Wasim, Georgie, Bridget | Medium |
+| 2026-03-13 | Review AI Powered Dashboards | Demo/Discovery | 7.5 | 7 | 8 | 7 | 8 | N/A | Richard, Azmain, BenVH, Lucia, Joel, Bernard | Medium |
+| 2026-03-13 | CLARA Demo to Product & Tech teams | Demo/Evangelism | 8.5 | 7 | 8 | 9 | 9 | N/A | Cihan, Ben Brooks, Natalia, Azmain, Ollie, Julie, wider team | Long |

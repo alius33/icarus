@@ -1,0 +1,138 @@
+Richard Dosoo  0:00  
+Um, is there anyone else from from your team, like Caroline or Josh? Right? I'm sorry not Josh. Is there anyone else in Courtney's team that wants us to wait before we start?
+
+Speaker 1  0:11  
+Or, I think it's just as for today, and then I'm going to distribute notes around our team so that everyone kind of is up to date. But yeah, just, just as for today. So feel free to jump in cool.
+
+Richard Dosoo  0:24  
+So let me hit the record button first, because that will help, and then yeah, just a background like we've, we've been creating dashboards to support dia Ben Brooks, my MD Courtney and others about managing the IRP portfolio. So it's like, oh, has a customer adopted IRP yet? Where are they in their journey? What blockers do they have? And it started off as a small dashboarding initiative, and now it's moved on to like a fully fledged application. But there's a lot of learning that we've gone through along that way that can be helpful for you guys. And then we've also Ben, who's on the call as well, has come up with an approach to make sure our apps are more consistent, so they can all be hosted on the same infrastructure. So that's something that we were thinking that might be helpful for you guys, that either you join the pipeline, it is probably going to be easier for you to join the pipeline, to be honest. But that was the other piece I wanted to cover. So let me hit record, and then, obviously, lastly, Bernard is here, last but not least. So Bernard is here as well, and he's done a lot of work looking at cases, which is above a dashboard slash integration that we're going to need to build. So I don't know if there's any crossover
+
+Unknown Speaker  1:38  
+there. Sorry. Say that last piece one more time. Yeah.
+
+Richard Dosoo  1:41  
+So we're also looking into analysing customer sentiment.
+
+Richard Dosoo  1:55  
+Sorry, I went on mute and any impediments to adoption, essentially scraping Salesforce tickets to help figure out trends and analyses and sentiment. And Bernard has already done a whole bunch of work in that space, and that's why we'll see. I didn't know if the ask that you guys had was adjacent to the work that Courtney's looking at about blockers for customers, HD, adoption. I think you won't be on the
+
+Speaker 2  2:23  
+no go ahead. It is more in line with the work I've been doing with Matt Allen about the kind of management and like resource allocation for the support teams, pretty much, oh, okay, but it's like similar it's kind of along a similar track of we will be either using Salesforce APIs or potentially scraping Salesforce for live tracking data for cases. So again, it would be interesting to know how, how you guys are doing that, but I guess you guys are not needing, like
+
+Richard Dosoo  3:14  
+live data massively. So Joe, we definitely need to follow up. And I'm going to put a separate session in because I've been talking to Matt before you went out on paternity leave about one the other part of the project that we weren't going to talk about on this call is how we resolve cases using navigator and plugging it into essential workflow and Salesforce. Yeah, yeah. So I would I that's all my list of stuff, but I didn't know, like, given Matt was going out right I haven't spoken to anyone else about it, but it sounds like you're the right person I should be speaking to about so
+
+Speaker 2  3:49  
+I will warn you now I have little involvement with IRP Navigator, and I am currently, while Matt was away, I've been working with Pat in for a team. So that's why I've that's why I'm on this project at the moment.
+
+Richard Dosoo  4:09  
+No, I make makes sense. Well, let's definitely let me put a let me make sure I follow up anyway next week, just so we can sync on that. But for the purpose of this call, let's start with the dashboard in Azmain, would you mind bringing up Clara, I know you went through a demo today on it, but I guess even just the blockers and dashboard is probably
+
+Unknown Speaker  4:34  
+lucky share my screen. I
+
+Azmain Hossain  4:47  
+Yeah, are you guys able to see yep, yep, rich, you're back on mute. I don't know why you keep going on mute by accident. I think so.
+
+Richard Dosoo  5:00  
+Guys, can you hear me now? Yeah, yeah. So I guess this is the real this was the reason, actually, why I wanted us to get together. So just context, we have CSMs enter if there's a blocker for a customer, moving on to IRP, and they entered notes, and those notes are free form, and sometimes they're tagged, and sometimes they're useful, sometimes they're not. And our managers wanted a view of what these blockers are, and they wanted to see if there was any themes across those blockers, and they wanted us to share that in a weekly report, and they want us to show product management so they can make decisions about product roadmaps based off these blockers, right? That's, that's, that's the background. So what we had to do was, you've got Clara, which is our application that tracks IRP adoption, and we had to build in a widget in here that displayed not only the data, but also had an integration with an LLM to do that, to analyse the data and come up with those themes across that disparate set of tickets that have been raised, or disparate set of text that's been issued. Now, we've done this workflow that we've implemented. We've done this across data that CSMs have manually entered, but we need to expand it to go over Salesforce tickets related to HD of modelling, or, you know, API integration, we need to do the same exercise. The workflow is the same. It's just the data is different. And then obviously we need to visualise the response of that information right here. So there's two, two things that have come into play here. One is, we've got an ability to show, create a dashboard, post it somewhere, show it to management as a report. That dashboard can be augmented with an LLM to generate additional insights. And we can also visualise those results here as well. And as I said, we've done that. We've done that for blockers. We're going to do it for Salesforce tickets. We're going to also do it for user voice interactions as well. And then we also need to do something to analyse customer sentiment across like Salesforce tickets. And the process is going to be pretty largely the same. It's just the interface is going to be different. It's going to be like a prompt that you you write in here in a chat interface, and it maybe gives you back a PDF report on the customer sentiment. So I guess that's at a high level, guys, what we've done. So we wanted to show you how we did this, right? We use cursor. Have you guys used cursor much before to build out tools or dashboard
+
+Speaker 1  7:44  
+I know, I think we've had a couple folks in the team use cursor for dashboarding. We've used it across the board for like, low code solutions. But with the dashboarding, the one thing we're running into is how to host the data to make it a little bit more widely shareable. So that's kind of if you have any guidance, or have run into that already, we're our all ears.
+
+Richard Dosoo  8:09  
+We have yes, no, this is it, Azmain, I'll let you chime in. So go ahead. Ben as well. Chime in. I can bring up the Art Factory slides if they're helpful. Or Azmain, why don't you? Why don't you walk us through?
+
+Azmain Hossain  8:22  
+Yeah, so the long story short is what Ben Van Houten has designed is an app factory, which essentially means that within within a very protected, Moody's safe AWS environment, you're able to deploy your apps, whether that be a simple app, like like a dashboard that just reads from Excel, or you need a more sophisticated app that needs a database and all the connections and stuff we're working on it currently kind of smoothing out the rough edges, putting putting One of our first apps on there, other than Clara, but the plan is to have that kind of operationalized so that other teams can also use it and and host their apps there Ben, you can go into a little bit more detail if you want. You might be talking on mute,
+
+BenVH  9:25  
+Yep, yeah, the I didn't hit the okay for the recording thing, so I was just talking on mute, yeah. I mean, there's a fair amount to about the app factory, but basically, Azmain kind of hit on the head. It was just purely designed because we're iterating fast with all the AI evangelism going on with people building up internal applications and things along those lines. Obviously, like Azmain said, like Clara was the flagship of this. So basically the goal. Goal of the app factory was to basically give in tune these internal apps that are being developed a place to live and safely and kind of adhere to a single standard and basically kind of grow from there. The app factory itself has actually grown a lot because of the traction that it's gotten, but basically the app factory itself is an internal platform where now these applications will be able to communicate to do things like spin up LM workers and things along those lines. So all these, all these applications that primarily are developed by maybe non technical people. They don't necessarily need to know too much of anything. They just reach out and ask the app factory to do X, Y and Z, and then they can provision accordingly. And then on top of that, the app factory, like is, you know, helps with the standardisation of projects. So we typically like to have all the applications in the similar format, so there's cursor roles and things along those lines. There's a skeleton application that the app factory can migrate your code to if needed. And then on top of that, we there's a few additional things coming down the pipeline for the app factory, but it goes anywhere from you know securing the default is securing basic authentication that adheres to moody standards, so interacts with our ad, where I'm in discussion With the security team to get this the VPN, or the domain behind the VPN. So you can only access it, quite literally, if you're on the Moody's VPN, which should be hopefully here in the next week or so. And then on top of that, it's, you know, things, a wide variety of things, just from like interact, interact connectivity. So let's say application one is needing, you know, wanting to leverage information from application to things along the lines of having a central point where these applications can communicate and access through like other internal tooling stuff for maybe like a Salesforce or a gain site or any other tools or authentication that, like a maps, IDP type of stuff. So we can actually leverage additional tooling, like SharePoint and stuff like that. So basically, that factory is a central application layer that allows all these additional applications that are actively being developed to leverage and can be controlled in one place. That makes sense?
+
+Speaker 1  12:49  
+Yeah, no, that sounds amazing. Is your goal to kind of create a path for various data accesses. So, like, if someone's looking for Salesforce data, would they need to set up the backend connection through either an API call or something like that, or would the app factory kind of be the mechanism for getting that data?
+
+BenVH  13:10  
+So the app factory would be the central node for that. So my ultimate goal like to be completely transparent. I'm a tech guy, and I know that a lot of these applications are being developed by non technical people, and the primary issue that you're going to run into time and time again, and I feel like we actually just had this conversation. I feel like this, the conversations today really lean into this is like, how do you standardise that? How do you how do you teach people who don't know, Git in their day to day job to handle Git, you know, and how do you get them to fix bugs? And how do you do all these things? So having them also maintain, you know, an application layer is just asking a little bit too much. So having basically the app factory be the central node, and all they have to do is say, okay, type in the cursor, because the app factor is an MCP server. So there'll be tools and stuff. Be like, Hey, what skills do I have access to? What integrations do I have access to? So so on and so forth. And then it can branch from there. So any application can just say, hey, I want to develop a feature that introduces, I don't know, the Salesforce data or Gainsight data or whatever, and then the application just gets it, delivered it, the app factory will spin things up accordingly to the pass tokens and securely and everything like that. So basically, the goal is to make it so that the least amount of damage is possible.
+
+Speaker 1  14:46  
+That sounds like a great idea. So is the goal here? Then that this would be a platform where an end user could come in and say, like, if they wanted to create a Salesforce report around cases, they would just plain text, summarise their. Your idea and then have the app factory do that step as well. Or is that no
+
+BenVH  15:09  
+different from your plan? No, well, the funny part is, is that is actually it, I will be transparent with you, it's it wasn't my primary goal of it, but it is just a benefit of the app factory in itself because of the way we were designing it. So like, if someone had a like, if someone made an application that they wanted to interact with Salesforce data and stuff like that, then that's possible. But if they want to, you know, go into a cursor and leverage the like MCP service, or they want to talk to a chatbot or something like that, that has access to the app factory MCP service, then they could literally say, hey, query this. So that is, while it's not the primary goal, it is just by design a benefit, if that makes sense,
+
+Speaker 1  15:53  
+yeah, no, that's awesome. Before I get too excited. Do you have a anticipated release date for rolling this out.
+
+BenVH  16:05  
+So basically, the I mean, as as Richard and Azmain alluded to, is, like, we've been heads down at this for a while. I'm, I'm hoping to have the initial and, I mean, I'm, I'm finalising things now. I'm hoping to have the initial version of the NCP service out, but the Salesforce integration and all these other things. Like, I don't, personally even have access to gain access to the Salesforce, so I can't build anything. So it's, it's leaning on, just like, what I have access to. So like, right now, I would say we're, we're phase one, but we're quickly iterating. So, yeah,
+
+Richard Dosoo  16:43  
+this year is like, there's a whole step. I don't know if you know this, the central kind of products team and the central applications team, they're the people that have the keys right for us to get programmatic access to Salesforce or so on. And they've been quite reticent. Let me be politically correct about handing over those keys. So I think to get up and running, we'll just do some manual exports, so at least you can show an analytic and a widget and a dashboard, and then what we'll do is as and when we get those keys, which you should get over the next couple of weeks, then you're just downstream of the app factory integration that that Ben is doing, right? And then you're, you're just one of the list of people that needs the Salesforce adapter, and then you'll just consume that. Ben will expose that via an MCP, and you'll just consume it, right? But I think even in the interim, but even separate from the integration, but like hosting your app somewhere, like how many apps, or how many dashboards or apps that you guys have?
+
+Speaker 1  17:48  
+Well, right now, it's more of there's been a wave of requests coming across our desk, so some of them have been handled via Power BI. But with the volume, we're trying to look for another solution so that it can all be centralised, but
+
+Richard Dosoo  18:04  
+maybe, I guess, drilling into that right, like you might, maybe that's a good segue, because, don't get me wrong, there's 100% like a path right for you to create your own react application with whatever dashboards you want in that You build them on in cursor, that's cool. Can do that? You build it. We can send you a rules file. That means that you're building the apps in a consistent way, that makes it easier to deploy. But there's a bigger question, right, which is like, you know, how many, how many dashboards do you need? How common are those dashboards? How common is the data? Is it one app with loads of pages, are they all separate apps like that's that, because that's going to then give an idea about whether we package all of them up into one application, and Ben deploys it once and he puts access controls and permissions on it, or whether they've really individual applications that are completely separate and divergent, and they all need their own like area, and then then that leads to the conversation that, do you need something more sophisticated, right to handle this complex breadth of need, or is it just a dashboard, a single page application that you just posted? Sorry, that might be enough. But does that make sense?
+
+Speaker 1  19:17  
+No, it definitely does. And I think we've gotten a variety of use cases coming up. I can give you an example is the cape team was notified that Tableau was going to be sunsetted in this, I think, September of this year. And so they're looking for a solution to create their dashboards for the customer side. And they have, even just on their team, they have a lot of regular dashboards where only the back end data is updating, but the dashboard itself stays pretty much the same, and then they have a lot of ad hoc work as well. So I guess right now we're in that very beginning stage where we're just trying to get a grasp on what everyone needs and what the available solutions might be. So it's all very like. Rough planning, I think, right now.
+
+Richard Dosoo  20:01  
+And maybe Ben, this is one, right? So maybe one entry point into that factory is an app that we develop, right? But Ben, could another entry point be like a Power BI connector to a database, or you can't do that because the database is behind a bastion.
+
+BenVH  20:20  
+Um, well, I mean, so okay, I'm just running my head around it, but ultimately, I mean, anyone can have access to the MCP servers. The way I'm authenticating everything is that each app is generated a authentication token, and that's how it's gaining access into the NPC. So, like, we can just give you a access token, and then if I can connect the app factory to the Power BI, then, yeah, it's just one central location, and you can query that accordingly. I mean, it shouldn't necessarily be a problem. Like, as as far as the Bastion is concerned, like, once you're into the like, once you're authenticated and talking to the MCP service, you're able to whatever it has access to, you can you can gain into, if that makes sense,
+
+Speaker 1  21:14  
+yeah, I don't. I don't think there's any desire to necessarily use Power BI moving forward. It's just one of the available solutions right now. I think a much nicer solution would be to use, like our team uses a lot of our so within that, there's, like the streamlet package and a couple other dashboarding packages that we could pull in and create the dashboards through that. Where I think that would be nicer, more customizable, in terms of hosting and all that. The one thing I also wanted to say is I don't know if it's helpful at all, but Joel and I both have Salesforce access, so if you needed any like, user feedback on using Salesforce within your platform, I'm sure we'd both be happy to kind of take a trial run and give you any thing that we run into, but I don't know if that's helpful.
+
+Richard Dosoo  22:02  
+No, no, it definitely. I'm sure like that would be helpful, and especially with the work stream that Bernard is going to be going to be running like right now, he's doing a lot of that on his own, so I'm sure he'd appreciate help when we get to that stage and we need to do testing of integrating those customer sentiment reports. Okay, awesome.
+
+Speaker 1  22:21  
+Do you have any, like, Confluence centralised pages, or any documentation around the app factory?
+
+Richard Dosoo  22:29  
+I Yeah. I mean, we've got so we've been this broadly, just goes over the concepts that we've just discussed. We can create a confluence page. We've just been doing a lot of like sharing slides, plus, like code artefacts and stuff. But we could put a confluence page out there as well.
+
+Speaker 1  22:51  
+No pressure to create it if you don't have it already. I was just thinking Carlin, I think would be really interested in taking a look. So I can kind of walk her through it. But if you have any resources, I can also point here to those,
+
+BenVH  23:02  
+yes, I'll share, and I can, I'll make it a note, because, like, that's the additional documentation I'm working on. The MCP service is just right now. It's very heads down. And as you can imagine, a lot of people want their apps on it. So it's like, trying to find a middle ground of, like, hold
+
+Speaker 1  23:19  
+on, yeah, definitely, yeah.
+
+Richard Dosoo  23:24  
+I'll share this. Awesome. I'll share this. And any decks we have about Clara Azmain has got really good one that is really good a product team, so we can share that. And as I said, this just tells you what we've done and how we've done it. And then maybe, I think in terms of next steps, what we probably should do is, do you have a like the dashboards that, or do you have an example dashboard already that even a requirement of what you need? So we can start thinking.
+
+Speaker 1  23:57  
+I can give you a very elementary example of one that we just helped with the data processing. It was for an executive report for Diana, and they are not working directly with Salesforce, but what their process every month is that they collect a series of files from the wider team. They do a cleaning and aggregation process on those files, and then they make a dashboard, I believe so let me triple
+
+Azmain Hossain  24:30  
+check wait. I was one with her yesterday, and she was running me through this. Don't worry, Lucia, I've got a I've been building on the side, a complete project management software to run awesome. So we're gonna, we're gonna get some resources from Diana's team and start working on that. And she was talking about folding in this, this workflow, because she was like, it's so much time for. People in her team to gather all these files and create a dashboard manually.
+
+Speaker 1  25:04  
+Yeah, the step we've at least done is, once they have the files in one folder, we run the cleaning for them within an R package. But yeah, if you want to pair on that at all, I'm happy to or be helpful as whatever way I can.
+
+Azmain Hossain  25:18  
+I mean, this is, this is great to hear. I mean, you might, I might go radio silent for a little bit because I'm running across so many things, but thank you for that. I'm gonna, I'm making a note, and I can reach out to you maybe in like one or two weeks. Awesome.
+
+Speaker 1  25:33  
+Yeah, that sounds great. Yeah. I think I really appreciate you guys taking the time today to walk us through everything, and it's very exciting. This is such an awesome step for the team. I think with the way that the dashboarding projects that we've been kind of involved in have been moving, I don't think there's a huge time crunch. So I'll circle back with Carlin and see what Courtney's priorities are right now in terms of the dashboards you'd like to build and then follow up with you guys. But if there's anything that we can help with in terms of testing, we're more than happy to otherwise, just let you work. Keep on working on it, because seems like it's gonna be really cool once it's finished and put together.
+
+Richard Dosoo  26:19  
+No thank you. Really appreciate that. I'll send over the slides from today, and I think even, yeah, as I said, Azmain is going to get a bit more air cover in a couple of weeks. But even if you just, like, in the team spread, just post some stuff in there, like, of what you know already, and that will help us be prepared for when we're ready to ramp up.
+
+Speaker 1  26:37  
+Okay, I have been putting together my notes in a confluence page, so I'll just share that in the chat if you would like to take a look. But Awesome, yeah. Thank you so
+
+Richard Dosoo  26:47  
+much for your time. Thank you guys speak soon.
+
+Azmain Hossain  26:49  
+Thank you guys. Have a good weekend. Thank you. Thank you.
+

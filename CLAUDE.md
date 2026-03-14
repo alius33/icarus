@@ -297,10 +297,10 @@ A sophisticated 13-module engine for identifying speakers in transcripts:
 **Usage:**
 ```bash
 # Preview speaker identification
-cd backend && python -m scripts.speaker_id.identify Transcripts/<filename>.txt
+cd backend && python -m scripts.speaker_id --file Transcripts/<filename>.txt
 
 # Apply identified speakers
-cd backend && python -m scripts.speaker_id.identify Transcripts/<filename>.txt --apply
+cd backend && python -m scripts.speaker_id --file Transcripts/<filename>.txt --apply
 ```
 
 ### Database Migrations (15 versions in `backend/alembic/versions/`)
@@ -583,11 +583,11 @@ Read these files to understand the current programme state before analysing:
 
 Run speaker identification on each new transcript before detailed analysis:
 ```bash
-cd backend && python -m scripts.speaker_id.identify Transcripts/<filename>.txt
+cd backend && python -m scripts.speaker_id --file Transcripts/<filename>.txt
 ```
 Review the output and apply fixes if needed:
 ```bash
-cd backend && python -m scripts.speaker_id.identify Transcripts/<filename>.txt --apply
+cd backend && python -m scripts.speaker_id --file Transcripts/<filename>.txt --apply
 ```
 This ensures speaker labels are correct before analysis begins.
 

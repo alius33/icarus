@@ -1,6 +1,6 @@
 # Stakeholder Map
 
-Last updated: 2026-03-12 (all transcripts through 12 March processed, including Gainsight integration meeting, debrief, Clara cadence, Diana 1-1)
+Last updated: 2026-03-13 (all transcripts through 13 March processed, including CLARA demo to product/tech, Banking Credit AI training, Customer & Model Success dashboards)
 
 ## Tier 1 — Decision Makers & Sponsors
 
@@ -61,8 +61,8 @@ Last updated: 2026-03-12 (all transcripts through 12 March processed, including 
 - **Role:** Technical bridge between Ben's vision and Azmain's execution. Manages up to Diya, across to Sales Recon, down to dev team.
 - **Style:** Strategic framing. Repackages messages for different audiences (note: tells Diya a different origin story than the actual one — confirmed 20 Jan).
 - **Week 3 signals:** Patient and instructive with Azmain during debugging (19 Jan). Personally paid for Azmain's Claude Code Max subscription (23 Jan). Shifted from "move fast" to "don't break things."
-- **March signals (CRITICAL):** Interviewing for jobs in New York. Partly motivated by disliking working with Rhett. Described as exhausted on 5 Mar standup. Wasted a day integrating Rhett's uncoordinated adoption charter work.
-- **Risk:** FLIGHT RISK. Carries irreplaceable institutional knowledge — programme strategy, stakeholder relationships, Diya management. His departure would be the single biggest threat to the programme.
+- **March signals:** Was briefly considering other roles in early March but has since committed to the programme. Energy high from mid-March onwards -- driving cross-OU expansion, Build in Five cascade, and Idris onboarding.
+- **Risk:** Carries significant institutional knowledge — programme strategy, stakeholder relationships, Diya management. Knowledge documentation should continue as good practice.
 
 ## Tier 3 — Technical & Delivery
 
@@ -70,8 +70,8 @@ Last updated: 2026-03-12 (all transcripts through 12 March processed, including 
 - **Engagement level:** 100% consumed by CLARA + now building Friday on the side
 - **Key tension:** Formally raised with Natalia (20 Feb) that the other five workstreams have had zero progress. Recognised this as early as 21 Jan.
 - **Growth arc:** Learning Git, CI/CD, AWS in real-time on the job. Richard positioning this as a career growth vehicle.
-- **March signals:** Now reports to Diana (not Stacy). Building Friday PM app as side project — burned $500 Cursor in one day on it. Using Claude Code in cloud environment. Aware of Richard's departure plans and BenVH's Nikhil frustrations (he's the one who revealed both).
-- **Risk:** Single point of failure for CLARA features. Bandwidth now split across CLARA + Friday + programme management. If Richard leaves, Azmain loses his primary mentor and strategic guide.
+- **March signals:** Now reports to Diana (not Stacy). Building Friday PM app as side project — burned $500 Cursor in one day on it. Using Claude Code in cloud environment. Aware of BenVH's Nikhil frustrations.
+- **Risk:** Single point of failure for CLARA features. Bandwidth now split across CLARA + Friday + programme management. Richard is his primary mentor and strategic guide.
 
 ### BenVH (Van Houten) — Infrastructure
 - **Role:** AWS deployment, CI/CD, security. The only person who can deploy.
@@ -89,7 +89,7 @@ Last updated: 2026-03-12 (all transcripts through 12 March processed, including 
 | Person | Domain | Status |
 |--------|--------|--------|
 | Kevin Pern | CS Agent (Copilot Studio) | Working alone, no programme oversight |
-| Cihan / Lonny | MCP server (Product) | Early-stage collaboration |
+| Cihan | MD Product & Technology | **13 Mar: Brought entire product/tech team to see CLARA. Full personal endorsement — uses CLARA as a daily tool. Encouraged feedback and adoption. Drove ~4,000-5,000 SSO viewer import. Asked how product teams can contribute. Most senior product-side champion since Andy Frappe.** |
 | Nikhil | Tech consulting lead (new) | 50% App Factory / 50% CLARA. BenVH alleges daily boundary violations: scheduling deploys after being told no, introducing App Factory tasks to CAT team, going around BenVH to Richard. Richard planning direct confrontation and Ben Brooks escalation. To be redirected to Salesforce integration or AIG. Genuinely impressed by Martin's Build in Five demo (11 Mar) — unaware of plans to remove him. |
 | Bala | Banking/edfx (new) | Just joined |
 | Rhett | Consulting/tech | Learning to push code |
@@ -122,6 +122,13 @@ Last updated: 2026-03-12 (all transcripts through 12 March processed, including 
 | Rajesh | Gainsight solution architect | New 12 Mar. Explained batch (S3) and real-time API options for integration. Pragmatic. Will share API documentation. |
 | Nadeem | Gainsight project manager | New 12 Mar. Coordinating follow-up sessions for Clara-Gainsight POC. |
 | Rob Fulber | Senior leader | Meeting Dan Dick (Global Head Cat Risk, AON) next week in London. Cross-OU account intelligence opportunity. |
+| Nils | Banking Credit team — AI training lead | New 13 Mar. Runs agent day framework: 4-tier model, pre-work methodology, transit teachers, bi-weekly follow-ups. Offered to share slide deck and materials. Quarterly cross-OU cadence agreed. |
+| Wasim | Banking Credit team | New 13 Mar. Non-coder success story — built functioning agent via natural language. Validates accessibility of AI enablement approach. |
+| Georgie | Banking Credit team | New 13 Mar. Presented agent examples including document summarisation and compliance screening. |
+| Lucia | Customer & Model Success team lead | New 13 Mar. Facing wave of dashboard requests. Tableau sunsetting by Sep 2026 creates urgency. Immediately saw value in App Factory. Offered Salesforce integration testing help. Maintaining Confluence documentation. |
+| Joel | Customer & Model Success team | New 13 Mar. R/Streamlit developer. Keen to explore App Factory for hosting team's apps. |
+| Ollie | Product team | New 13 Mar. Asked how to contribute to CLARA during product/tech demo. |
+| Julie | Product team | New 13 Mar. Asked about the difference between CLARA and Gainsight during product/tech demo. |
 | DIA | Cross-OU coordination | Manages customer engagement across segments. Interested in Moody's-wide retention dashboards. Idrees looped her into retention dashboard thread (11 Mar). Key person for cross-OU pressure on Charlotte. |
 
 ## Dynamics to Watch
@@ -133,7 +140,7 @@ Last updated: 2026-03-12 (all transcripts through 12 March processed, including 
 5. **BenVH as bottleneck** — Only deployer. Infrastructure decisions (CDK vs CloudFormation) affect who else can deploy. Week 3: absent for HighRox race, causing real delays. His Alembic migration broke use case creation by 23 Jan.
 6. **Deployment fragility** — Week 3 theme. Richard and Azmain shifted from "move fast" to "don't break things." No tested rollback procedure. Schema changes now require BenVH approval before execution.
 7. **Corporate tooling crisis** — Cursor tokens exhausted for both Azmain and Ben by 23 Jan. Richard personally paying for Claude Code as workaround. Developer laptops only just approved.
-8. **Richard flight risk (NEW - March)** — Interviewing in New York. If he leaves, the programme loses its strategic leader. Nobody else manages Diya or bridges the technical and business sides.
+8. **Richard knowledge concentration** — Richard carries significant institutional knowledge. Knowledge sharing with Diana and the broader team should continue. Flight risk resolved as of mid-March.
 9. **BenVH/Nikhil conflict (ESCALATING - 11 March)** — Now at crisis point. BenVH cancelled Nikhil's meetings, stopped responding. Richard planning direct confrontation and Ben Brooks escalation. Nikhil to be redirected to Salesforce/AIG.
 10. **Friday as scope creep risk (March)** — Azmain building a PM app on the side while already stretched thin on CLARA and five other workstreams.
 11. **Security/compliance exposure (March)** — Personal Claude accounts used for Moody's work. Audit found it. Team spending personal money on tooling.

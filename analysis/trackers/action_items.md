@@ -1033,3 +1033,16 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 669 | 12 Mar | Contact Alexandra for latest partner data update | Azmain | TBD | 2026-03-12_-_Diana_1-1 |  |
 | 670 | 12 Mar | Follow up with Rhett on adoption runbook maintenance plan | Diana | Next week | 2026-03-12_-_Diana_1-1 |  |
 | 671 | 12 Mar | Focus on CS Agent (WS3) and IRP Navigator (WS5) status — both red | Azmain | Next 1-2 weeks | 2026-03-12_-_Diana_1-1 |  |
+| 672 | 13 Mar | Share agent day slide deck and materials with insurance team | Nils | Next week | 2026-03-13_-_How_Credit_team_in_Banking_does_AI_training |  |
+| 673 | 13 Mar | Internal homework: build skills repo, governance model, identify coordinator | Richard | Before next cross-OU session | 2026-03-13_-_How_Credit_team_in_Banking_does_AI_training |  |
+| 674 | 13 Mar | Set up quarterly cross-OU meetup cadence with Banking Credit team | Richard | TBD | 2026-03-13_-_How_Credit_team_in_Banking_does_AI_training |  |
+| 675 | 13 Mar | Arrange in-person lunch at Minster Court for deeper collaboration | Richard/Nils | TBD | 2026-03-13_-_How_Credit_team_in_Banking_does_AI_training |  |
+| 676 | 13 Mar | Share CLARA presentation slides and App Factory overview with Lucia team | Richard | Next week | 2026-03-13_-_Review_AI_Powered_Dashboards |  |
+| 677 | 13 Mar | Gather dashboard requirements from Carlin and Courtney priorities | Lucia | 2 weeks | 2026-03-13_-_Review_AI_Powered_Dashboards |  |
+| 678 | 13 Mar | Follow up with Lucia team on dashboarding collaboration | Azmain | 1-2 weeks | 2026-03-13_-_Review_AI_Powered_Dashboards |  |
+| 679 | 13 Mar | Create App Factory documentation/Confluence page | BenVH | TBD | 2026-03-13_-_Review_AI_Powered_Dashboards |  |
+| 680 | 13 Mar | Send standardised Cursor rules file for consistent app development | Richard | TBD | 2026-03-13_-_Review_AI_Powered_Dashboards |  |
+| 681 | 13 Mar | Share CLARA demo slides and presentation deck in call chat | Azmain | Immediate | 2026-03-13_-_CLARA_Demo_to_Product_and_Tech_teams |  |
+| 682 | 13 Mar | Set up feedback submission channel/process for product & tech teams | Azmain | This week | 2026-03-13_-_CLARA_Demo_to_Product_and_Tech_teams |  |
+| 683 | 13 Mar | HD model adoption data deep-dive at Monday programme review | Natalia/Ben | Monday 17 Mar | 2026-03-13_-_CLARA_Demo_to_Product_and_Tech_teams |  |
+| 684 | 13 Mar | Rewrite blocker descriptions with better structure for thematic analysis | CSMs/Natalia | Ongoing | 2026-03-13_-_CLARA_Demo_to_Product_and_Tech_teams |  |

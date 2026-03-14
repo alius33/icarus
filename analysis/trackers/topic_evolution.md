@@ -56,7 +56,7 @@
 | 2026-03-05 | Richard exhaustion / breaking point | Personnel | Very High | 2026-03-05 | 3 | Critical escalation | "I'm tired" | High |
 | 2026-03-05 | Rhett adoption charter mess | Personnel | Medium | 2026-03-05 | 3 | Stable (Richard absorbing) | N/A | High |
 | 2026-03-06 | BenVH burnout / retention crisis | Personnel | Very High | 2026-03-06 | 2 | Critical escalation | "I wasn't even really sick" | High |
-| 2026-03-06 | Richard flight risk (NY interviews) | Personnel | Very High | 2026-03-06 | 1 | Critical (new) | N/A | High |
+| 2026-03-06 | Richard personnel situation (resolved) | Personnel | Low | 2026-03-14 | 0 | Resolved | Committed to programme | Low |
 | 2026-03-06 | All three core people considering exit | Personnel | CRITICAL | 2026-03-06 | 1 | Critical (new) | N/A | High |
 | 2026-03-06 | Gainsight integration preparation | Strategy | High | 2026-03-06 | 2 | New | N/A | High |
 | 2026-03-06 | Catherine as governance ally | Political | High | 2026-03-06 | 1 | New (positive) | "Speaking my love language" | High |
@@ -85,3 +85,8 @@
 | 2026-03-12 | CLARA maintenance mode transition | Programme | Medium | 2026-03-12 | 1 | New | N/A | High |
 | 2026-03-12 | Adoption runbook (Rhett + PMs) | Feature | Medium | 2026-03-12 | 1 | New | N/A | Medium |
 | 2026-03-12 | Grad onboarding (April 7) | Resource | Medium | 2026-03-12 | 2 | New | N/A | High |
+| 2026-03-13 | Cross-OU AI training methodology | Enablement | High | 2026-03-13 | 1 | New | Banking Credit team's agent day framework: 4-tier model, pre-work, transit teachers | High |
+| 2026-03-13 | CLARA product/tech visibility | Adoption | Very High | 2026-03-13 | 1 | New | Cihan brought entire product & tech team to see CLARA; ~5,000 users imported as viewers | High |
+| 2026-03-13 | App Factory demand pipeline | Architecture | High | 2026-03-11 | 3 | Rising | Customer & Model Success team wants to join; Tableau sunsetting adds urgency | High |
+| 2026-03-13 | Tableau sunsetting (Sep 2026) | Technical | Medium | 2026-03-13 | 1 | New | Cape team needs replacement; creates dashboard migration demand | Medium |
+| 2026-03-13 | Skills/rules sharing across OUs | Enablement | Medium | 2026-03-13 | 1 | New | Banking Credit team shares via GitHub; insurance team needs same model | Medium |

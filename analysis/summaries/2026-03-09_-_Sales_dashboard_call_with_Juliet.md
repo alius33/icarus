@@ -39,7 +39,7 @@
 
 ## Stakeholder Signals
 - **Juliet Valencia** — Cooperative, knowledgeable about data governance. Clear about boundaries (won't share data she doesn't own). Already a Cursor user, interested in learning more. Good potential ally for the Salesforce data access push
-- **Richard Dosoo** — Despite health issues and flight risk, still strategically driving cross-OU expansion. His framing of every new engagement as building the business case for a dedicated team shows long-term commitment — or legacy-building before departure
+- **Richard Dosoo** — Strategically driving cross-OU expansion. His framing of every new engagement as building the business case for a dedicated team shows long-term commitment to the programme
 - **Azmain** — Self-aware about being overwhelmed. Actively creating space by delegating to Chris. Using Friday to organise project portfolio. Recognises the "octopus legs" growth pattern
 
 ## Open Questions Raised

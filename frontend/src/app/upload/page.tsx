@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useRef, useEffect } from "react";
 import Link from "next/link";
-import { Upload, X, FileText, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { Upload, X, FileText, CheckCircle2, AlertCircle, Loader2, ChevronDown, ChevronRight, Paperclip } from "lucide-react";
 import { api } from "@/lib/api";
 import type { ProjectBase } from "@/lib/types";
 
@@ -26,6 +26,26 @@ interface FileProjectAssignment {
   tertiary: number | null;
 }
 
+const MAX_ATTACHMENT_SIZE = 25 * 1024 * 1024; // 25 MB
+const ACCEPTED_ATTACHMENT_EXTS = [".pdf", ".pptx", ".docx"];
+const MAX_ATTACHMENTS_PER_TRANSCRIPT = 10;
+
+function validateAttachmentFile(file: File): string | null {
+  const ext = "." + (file.name.split(".").pop()?.toLowerCase() || "");
+  if (!ACCEPTED_ATTACHMENT_EXTS.includes(ext)) {
+    return `${file.name}: only PDF, PPTX, and DOCX files are accepted.`;
+  }
+  if (file.size > MAX_ATTACHMENT_SIZE) {
+    return `${file.name} is too large (${(file.size / (1024 * 1024)).toFixed(1)} MB). Max is 25 MB.`;
+  }
+  return null;
+}
+
+function formatFileSize(bytes: number): string {
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
+
 export default function UploadPage() {
   const [files, setFiles] = useState<File[]>([]);
   const [assignments, setAssignments] = useState<Record<string, FileProjectAssignment>>({});
@@ -35,6 +55,13 @@ export default function UploadPage() {
   const [error, setError] = useState<string | null>(null);
   const [dragActive, setDragActive] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Context state (per-file)
+  const [notes, setNotes] = useState<Record<string, string>>({});
+  const [contextAttachments, setContextAttachments] = useState<Record<string, File[]>>({});
+  const [contextExpanded, setContextExpanded] = useState<Record<string, boolean>>({});
+  const [uploadPhase, setUploadPhase] = useState<"idle" | "uploading" | "notes" | "attachments">("idle");
+  const [contextResults, setContextResults] = useState<Record<string, { notes?: boolean; attachments?: boolean }>>({});
 
   // Fetch projects on mount
   useEffect(() => {
@@ -68,12 +95,43 @@ export default function UploadPage() {
     setError(null);
   }, []);
 
+  const clearAll = useCallback(() => {
+    setFiles([]);
+    setAssignments({});
+    setNotes({});
+    setContextAttachments({});
+    setContextExpanded({});
+  }, []);
+
   const removeFile = useCallback((name: string) => {
     setFiles((prev) => prev.filter((f) => f.name !== name));
-    setAssignments((prev) => {
-      const next = { ...prev };
-      delete next[name];
-      return next;
+    setAssignments((prev) => { const next = { ...prev }; delete next[name]; return next; });
+    setNotes((prev) => { const next = { ...prev }; delete next[name]; return next; });
+    setContextAttachments((prev) => { const next = { ...prev }; delete next[name]; return next; });
+    setContextExpanded((prev) => { const next = { ...prev }; delete next[name]; return next; });
+  }, []);
+
+  const toggleContext = useCallback((filename: string) => {
+    setContextExpanded((prev) => ({ ...prev, [filename]: !prev[filename] }));
+  }, []);
+
+  const setNote = useCallback((filename: string, text: string) => {
+    setNotes((prev) => ({ ...prev, [filename]: text }));
+  }, []);
+
+  const addContextFiles = useCallback((filename: string, newFiles: File[]) => {
+    setContextAttachments((prev) => {
+      const existing = prev[filename] || [];
+      const existingKeys = new Set(existing.map((f) => `${f.name}:${f.size}`));
+      const unique = newFiles.filter((f) => !existingKeys.has(`${f.name}:${f.size}`));
+      return { ...prev, [filename]: [...existing, ...unique] };
+    });
+  }, []);
+
+  const removeContextFile = useCallback((filename: string, attIndex: number) => {
+    setContextAttachments((prev) => {
+      const current = prev[filename] || [];
+      return { ...prev, [filename]: current.filter((_, i) => i !== attIndex) };
     });
   }, []);
 
@@ -107,13 +165,32 @@ export default function UploadPage() {
     return a.primary !== null;
   });
 
+  // Tracks transcript IDs from the last upload (for retry)
+  const [uploadedIdMap, setUploadedIdMap] = useState<Map<string, number>>(new Map());
+
+  // Retry helper: attempt an async call up to `attempts` times
+  const withRetry = async <T,>(fn: () => Promise<T>, attempts = 3, delayMs = 500): Promise<T> => {
+    for (let i = 0; i < attempts; i++) {
+      try {
+        return await fn();
+      } catch (err) {
+        if (i === attempts - 1) throw err;
+        await new Promise((r) => setTimeout(r, delayMs * (i + 1)));
+      }
+    }
+    throw new Error("Retry exhausted");
+  };
+
   const handleUpload = async () => {
     if (files.length === 0 || !allHavePrimary) return;
     setUploading(true);
+    setUploadPhase("uploading");
     setError(null);
     setResponse(null);
+    setContextResults({});
 
     try {
+      // Phase 1: Upload transcript files
       const primaryIds = files.map((f) => getAssignment(f.name).primary);
       const secondaryIds = files.map((f) => getAssignment(f.name).secondary);
       const tertiaryIds = files.map((f) => getAssignment(f.name).tertiary);
@@ -125,14 +202,132 @@ export default function UploadPage() {
         hasSecondary ? secondaryIds : undefined,
         hasTertiary ? tertiaryIds : undefined,
       );
+
+      // Build filename -> transcript ID map for successful uploads
+      const idMap = new Map<string, number>();
+      for (const r of result.results) {
+        if (r.id && (r.status === "inserted" || r.status === "updated")) {
+          idMap.set(r.filename, r.id);
+        }
+      }
+      setUploadedIdMap(idMap);
+
+      // Save context with retry
+      const ctxErrors: string[] = [];
+      const ctxResults: Record<string, { notes?: boolean; attachments?: boolean }> = {};
+
+      // Phase 2: Save context notes (with retry)
+      const filesWithNotes = files.filter(
+        (f) => notes[f.name]?.trim() && idMap.has(f.name)
+      );
+      if (filesWithNotes.length > 0) {
+        setUploadPhase("notes");
+        for (const f of filesWithNotes) {
+          try {
+            await withRetry(() =>
+              api.updateTranscriptNote(idMap.get(f.name)!, notes[f.name].trim())
+            );
+            ctxResults[f.name] = { ...ctxResults[f.name], notes: true };
+          } catch (err) {
+            ctxErrors.push(`Notes for ${f.name}: ${err instanceof Error ? err.message : "failed"}`);
+          }
+        }
+      }
+
+      // Phase 3: Upload attachments (with retry)
+      const filesWithAttachments = files.filter(
+        (f) => (contextAttachments[f.name]?.length ?? 0) > 0 && idMap.has(f.name)
+      );
+      if (filesWithAttachments.length > 0) {
+        setUploadPhase("attachments");
+        for (const f of filesWithAttachments) {
+          try {
+            await withRetry(() =>
+              api.uploadTranscriptAttachments(idMap.get(f.name)!, contextAttachments[f.name])
+            );
+            ctxResults[f.name] = { ...ctxResults[f.name], attachments: true };
+          } catch (err) {
+            ctxErrors.push(`Attachments for ${f.name}: ${err instanceof Error ? err.message : "failed"}`);
+          }
+        }
+      }
+
       setResponse(result);
-      setFiles([]);
-      setAssignments({});
+      setContextResults(ctxResults);
+
+      if (ctxErrors.length > 0) {
+        // DO NOT clear form — preserve notes/attachments so user can retry
+        setError("Transcripts uploaded, but some context failed:\n" + ctxErrors.join("\n"));
+      } else {
+        // Only clear when everything succeeded
+        clearAll();
+        setUploadedIdMap(new Map());
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Upload failed");
     } finally {
       setUploading(false);
+      setUploadPhase("idle");
     }
+  };
+
+  // Retry failed context for already-uploaded transcripts
+  const handleRetryContext = async () => {
+    if (uploadedIdMap.size === 0) return;
+    setUploading(true);
+    setError(null);
+
+    const ctxErrors: string[] = [];
+    const ctxResults: Record<string, { notes?: boolean; attachments?: boolean }> = { ...contextResults };
+
+    // Retry notes that haven't succeeded yet
+    const filesNeedingNotes = files.filter(
+      (f) => notes[f.name]?.trim() && uploadedIdMap.has(f.name) && !contextResults[f.name]?.notes
+    );
+    if (filesNeedingNotes.length > 0) {
+      setUploadPhase("notes");
+      for (const f of filesNeedingNotes) {
+        try {
+          await withRetry(() =>
+            api.updateTranscriptNote(uploadedIdMap.get(f.name)!, notes[f.name].trim())
+          );
+          ctxResults[f.name] = { ...ctxResults[f.name], notes: true };
+        } catch (err) {
+          ctxErrors.push(`Notes for ${f.name}: ${err instanceof Error ? err.message : "failed"}`);
+        }
+      }
+    }
+
+    // Retry attachments that haven't succeeded yet
+    const filesNeedingAttachments = files.filter(
+      (f) => (contextAttachments[f.name]?.length ?? 0) > 0 && uploadedIdMap.has(f.name) && !contextResults[f.name]?.attachments
+    );
+    if (filesNeedingAttachments.length > 0) {
+      setUploadPhase("attachments");
+      for (const f of filesNeedingAttachments) {
+        try {
+          await withRetry(() =>
+            api.uploadTranscriptAttachments(uploadedIdMap.get(f.name)!, contextAttachments[f.name])
+          );
+          ctxResults[f.name] = { ...ctxResults[f.name], attachments: true };
+        } catch (err) {
+          ctxErrors.push(`Attachments for ${f.name}: ${err instanceof Error ? err.message : "failed"}`);
+        }
+      }
+    }
+
+    setContextResults(ctxResults);
+
+    if (ctxErrors.length > 0) {
+      setError("Some context still failed:\n" + ctxErrors.join("\n"));
+    } else {
+      setError(null);
+      clearAll();
+      setUploadedIdMap(new Map());
+    }
+
+    setUploading(false);
+    setUploadPhase("idle");
   };
 
   const statusIcon = (status: string) => {
@@ -260,7 +455,7 @@ export default function UploadPage() {
         />
       </div>
 
-      {/* File list with project assignment */}
+      {/* File list with project assignment + context */}
       {files.length > 0 && (
         <div className="rounded-lg border border-gray-700 bg-gray-800 shadow-sm">
           <div className="flex items-center justify-between border-b border-gray-700 px-4 py-3">
@@ -268,7 +463,7 @@ export default function UploadPage() {
               {files.length} file{files.length !== 1 ? "s" : ""} selected
             </h3>
             <button
-              onClick={() => { setFiles([]); setAssignments({}); }}
+              onClick={clearAll}
               className="text-xs text-gray-400 hover:text-gray-200"
             >
               Clear all
@@ -277,6 +472,11 @@ export default function UploadPage() {
           <ul className="divide-y divide-gray-700">
             {files.map((file) => {
               const a = getAssignment(file.name);
+              const isExpanded = contextExpanded[file.name] ?? false;
+              const noteText = notes[file.name] || "";
+              const atts = contextAttachments[file.name] || [];
+              const hasContext = noteText.trim().length > 0 || atts.length > 0;
+
               return (
                 <li key={file.name} className="px-4 py-3">
                   <div className="flex items-center gap-3 mb-3">
@@ -286,7 +486,7 @@ export default function UploadPage() {
                         {file.name}
                       </span>
                       <span className="text-xs text-gray-500">
-                        {(file.size / 1024).toFixed(0)} KB
+                        {formatFileSize(file.size)}
                       </span>
                     </div>
                     <button
@@ -317,6 +517,124 @@ export default function UploadPage() {
                       excludeIds={[a.primary, a.secondary]}
                     />
                   </div>
+
+                  {/* Context toggle */}
+                  <div className="ml-7 mt-2">
+                    <button
+                      onClick={() => toggleContext(file.name)}
+                      className="inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-gray-200 transition-colors"
+                    >
+                      {isExpanded ? (
+                        <ChevronDown className="h-3.5 w-3.5" />
+                      ) : (
+                        <ChevronRight className="h-3.5 w-3.5" />
+                      )}
+                      <Paperclip className="h-3 w-3" />
+                      Add context
+                      {!isExpanded && hasContext && (
+                        <span className="text-blue-400 ml-1">
+                          {[
+                            noteText.trim() ? "notes" : null,
+                            atts.length > 0 ? `${atts.length} file${atts.length !== 1 ? "s" : ""}` : null,
+                          ].filter(Boolean).join(" + ")}
+                        </span>
+                      )}
+                    </button>
+
+                    {isExpanded && (
+                      <div className="mt-2 space-y-3 pl-3 border-l-2 border-gray-700 ml-1">
+                        {/* Notes textarea */}
+                        <div>
+                          <label className="text-xs text-gray-400 block mb-1">
+                            Context notes
+                          </label>
+                          <textarea
+                            value={noteText}
+                            onChange={(e) => setNote(file.name, e.target.value)}
+                            rows={3}
+                            placeholder="Meeting agenda, key topics to watch, pre-read notes..."
+                            className="w-full rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-sm text-gray-200 placeholder:text-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none resize-y"
+                          />
+                        </div>
+
+                        {/* Attachment picker */}
+                        <div>
+                          <label className="text-xs text-gray-400 block mb-1">
+                            Supporting documents
+                            <span className="text-gray-500 ml-1">(PDF, PPTX, DOCX, max 25 MB)</span>
+                          </label>
+                          <div className="flex items-center gap-2 mb-2">
+                            <button
+                              onClick={() => {
+                                const input = document.createElement("input");
+                                input.type = "file";
+                                input.accept = ".pdf,.pptx,.docx";
+                                input.multiple = true;
+                                input.onchange = () => {
+                                  if (!input.files) return;
+                                  const fileArray = Array.from(input.files);
+                                  for (const f of fileArray) {
+                                    const validationError = validateAttachmentFile(f);
+                                    if (validationError) {
+                                      setError(validationError);
+                                      return;
+                                    }
+                                  }
+                                  const currentCount = atts.length;
+                                  if (currentCount + fileArray.length > MAX_ATTACHMENTS_PER_TRANSCRIPT) {
+                                    setError(`Maximum ${MAX_ATTACHMENTS_PER_TRANSCRIPT} attachments per transcript.`);
+                                    return;
+                                  }
+                                  setError(null);
+                                  addContextFiles(file.name, fileArray);
+                                };
+                                input.click();
+                              }}
+                              disabled={atts.length >= MAX_ATTACHMENTS_PER_TRANSCRIPT}
+                              className="inline-flex items-center gap-1 rounded-md border border-gray-600 bg-gray-800 px-2.5 py-1.5 text-xs text-gray-300 hover:bg-gray-700 hover:text-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                            >
+                              <Paperclip className="h-3 w-3" />
+                              Choose files
+                            </button>
+                            <span className="text-xs text-gray-500">
+                              {atts.length}/{MAX_ATTACHMENTS_PER_TRANSCRIPT}
+                            </span>
+                          </div>
+
+                          {atts.length > 0 && (
+                            <ul className="space-y-1">
+                              {atts.map((att, attIdx) => (
+                                <li
+                                  key={`${att.name}-${att.size}-${attIdx}`}
+                                  className="flex items-center gap-2 text-xs text-gray-300 bg-gray-800/50 rounded px-2 py-1.5"
+                                >
+                                  <FileText
+                                    className={`h-3 w-3 flex-shrink-0 ${
+                                      att.name.endsWith(".pdf")
+                                        ? "text-red-500"
+                                        : att.name.endsWith(".pptx")
+                                        ? "text-orange-500"
+                                        : "text-blue-500"
+                                    }`}
+                                  />
+                                  <span className="truncate flex-1">{att.name}</span>
+                                  <span className="text-gray-500 flex-shrink-0">
+                                    {formatFileSize(att.size)}
+                                  </span>
+                                  <button
+                                    onClick={() => removeContextFile(file.name, attIdx)}
+                                    className="text-gray-500 hover:text-red-400 flex-shrink-0"
+                                  >
+                                    <X className="h-3 w-3" />
+                                  </button>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </li>
               );
             })}
@@ -330,7 +648,9 @@ export default function UploadPage() {
               {uploading ? (
                 <>
                   <Loader2 className="h-4 w-4 animate-spin" />
-                  Uploading...
+                  {uploadPhase === "uploading" && "Uploading transcripts..."}
+                  {uploadPhase === "notes" && "Saving notes..."}
+                  {uploadPhase === "attachments" && "Uploading attachments..."}
                 </>
               ) : (
                 <>
@@ -353,9 +673,24 @@ export default function UploadPage() {
         <div className="rounded-lg border border-red-200 bg-red-50 p-4">
           <div className="flex items-start gap-2">
             <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
-            <div>
-              <p className="text-sm font-medium text-red-800">Upload failed</p>
-              <p className="mt-1 text-sm text-red-700">{error}</p>
+            <div className="flex-1">
+              <p className="text-sm font-medium text-red-800">
+                {uploadedIdMap.size > 0 ? "Context save failed" : "Upload failed"}
+              </p>
+              <p className="mt-1 text-sm text-red-700 whitespace-pre-line">{error}</p>
+              {uploadedIdMap.size > 0 && (
+                <button
+                  onClick={handleRetryContext}
+                  disabled={uploading}
+                  className="mt-2 inline-flex items-center gap-2 rounded-md bg-red-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-red-700 disabled:opacity-50 transition-colors"
+                >
+                  {uploading ? (
+                    <><Loader2 className="h-3.5 w-3.5 animate-spin" /> Retrying...</>
+                  ) : (
+                    "Retry failed context"
+                  )}
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -371,41 +706,56 @@ export default function UploadPage() {
             </h3>
           </div>
           <ul className="divide-y divide-gray-100">
-            {response.results.map((r) => (
-              <li key={r.filename} className="flex items-center gap-3 px-4 py-3">
-                {statusIcon(r.status)}
-                <div className="min-w-0 flex-1">
-                  <p className="text-sm font-medium text-gray-900 truncate">
-                    {r.title || r.filename}
-                  </p>
-                  <p className="text-xs text-gray-500">{r.filename}</p>
-                  {r.error && (
-                    <p className="text-xs text-red-600 mt-0.5">{r.error}</p>
-                  )}
-                </div>
-                <span
-                  className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
-                    r.status === "inserted"
-                      ? "bg-green-50 text-green-700"
-                      : r.status === "updated"
-                      ? "bg-blue-50 text-blue-700"
-                      : r.status === "skipped"
-                      ? "bg-gray-100 text-gray-600"
-                      : "bg-red-50 text-red-700"
-                  }`}
-                >
-                  {statusLabel(r.status)}
-                </span>
-                {r.id && (
-                  <Link
-                    href={`/transcripts/${r.id}`}
-                    className="text-xs text-blue-600 hover:text-blue-800 hover:underline flex-shrink-0"
+            {response.results.map((r) => {
+              const ctx = contextResults[r.filename];
+              return (
+                <li key={r.filename} className="flex items-center gap-3 px-4 py-3">
+                  {statusIcon(r.status)}
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm font-medium text-gray-900 truncate">
+                      {r.title || r.filename}
+                    </p>
+                    <div className="flex items-center gap-2">
+                      <p className="text-xs text-gray-500">{r.filename}</p>
+                      {ctx?.notes && (
+                        <span className="inline-flex items-center rounded-full bg-purple-50 px-1.5 py-0.5 text-[10px] font-medium text-purple-700">
+                          notes
+                        </span>
+                      )}
+                      {ctx?.attachments && (
+                        <span className="inline-flex items-center rounded-full bg-indigo-50 px-1.5 py-0.5 text-[10px] font-medium text-indigo-700">
+                          attachments
+                        </span>
+                      )}
+                    </div>
+                    {r.error && (
+                      <p className="text-xs text-red-600 mt-0.5">{r.error}</p>
+                    )}
+                  </div>
+                  <span
+                    className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
+                      r.status === "inserted"
+                        ? "bg-green-50 text-green-700"
+                        : r.status === "updated"
+                        ? "bg-blue-50 text-blue-700"
+                        : r.status === "skipped"
+                        ? "bg-gray-100 text-gray-600"
+                        : "bg-red-50 text-red-700"
+                    }`}
                   >
-                    View
-                  </Link>
-                )}
-              </li>
-            ))}
+                    {statusLabel(r.status)}
+                  </span>
+                  {r.id && (
+                    <Link
+                      href={`/transcripts/${r.id}`}
+                      className="text-xs text-blue-600 hover:text-blue-800 hover:underline flex-shrink-0"
+                    >
+                      View
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
           </ul>
           <div className="border-t border-gray-200 px-4 py-3">
             <Link

@@ -578,7 +578,7 @@ sPeople.background = { color: C.offWhite };
 addNavyHeader(sPeople, "Key Stakeholders");
 
 const people = [
-  { name: "Richard Dosoo", role: "Programme / Operational Owner", note: "Strategic bridge between vision and execution. Manages Diya relationship. Flight risk (interviewing NYC)." },
+  { name: "Richard Dosoo", role: "Programme / Operational Owner", note: "Strategic bridge between vision and execution. Manages Diya relationship. Stable. Key strategic bridge between vision and execution." },
   { name: "Azmain Hossain", role: "PM & CLARA Developer", note: "Builds everything. Reports to Diana. Stretched across CLARA, Friday, and 5 other workstreams." },
   { name: "Ben Brooks", role: "Product Owner (de facto)", note: "Built CLARA v1. Pushes for speed. Shopping CLARA cross-OU. Exceedance panel planning." },
   { name: "BenVH (Van Houten)", role: "Infrastructure & Deployment", note: "Only person who can deploy. App Factory architect. Owns patented Phantom Agent. Burnout risk." },
@@ -676,7 +676,7 @@ sRisks.background = { color: C.offWhite };
 addNavyHeader(sRisks, "Top Risks & Watchlist");
 
 const risks = [
-  { sev: "CRITICAL", title: "Key personnel concentration", detail: "Richard (strategy), BenVH (infra), Azmain (features) carry the programme. Richard interviewing in NYC. BenVH emotionally depleted. No succession plan." },
+  { sev: "CRITICAL", title: "Key personnel concentration", detail: "BenVH (infra) and Azmain (features) are single points of failure. BenVH emotionally depleted from Nikhil conflict. Knowledge concentration risk -- documentation improving." },
   { sev: "HIGH", title: "AWS cost trajectory", detail: "Bedrock at $1,163 in two weeks, on pace for $10K/month. No per-project or per-user cost attribution. Tags not configured." },
   { sev: "HIGH", title: "Scope outpacing capacity", detail: "Salesforce, Gainsight, cross-OU, Asia-Pac all emerging simultaneously. Every new consumer adds load to a team that hasn't grown." },
   { sev: "HIGH", title: "Deployment fragility", detail: "No tested rollback procedure. BenVH is the only deployer. Schema changes have caused production breakage." },

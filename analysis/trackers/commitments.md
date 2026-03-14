@@ -92,3 +92,9 @@
 | 2026-03-12 | Diana | Discuss Catherine situation with Natalia Orzechowska | Next week | None | Open | Diana 1-1 | High |
 | 2026-03-12 | Diana | Invite Azmain to IRP weekly call | This week | None | Open | Diana 1-1 | High |
 | 2026-03-12 | Richard | Discuss Catherine's behaviour with Diya in London | Next week | Diya in London | Open | Post Gainsight debrief | High |
+| 2026-03-13 | Nils | Share agent day slide deck and materials with insurance team | Next week | None | Open | How Credit team in Banking does AI training | High |
+| 2026-03-13 | Richard | Internal homework: build skills repo, governance model, identify enablement coordinator | Before next cross-OU session | None | Open | How Credit team in Banking does AI training | High |
+| 2026-03-13 | Lucia | Gather dashboard requirements from Carlin and Courtney's priorities | 2 weeks | None | Open | Review AI Powered Dashboards | High |
+| 2026-03-13 | BenVH | Create App Factory documentation/Confluence page | TBD | MCP server released | Open | Review AI Powered Dashboards | Medium |
+| 2026-03-13 | Azmain | Follow up with Lucia's team on dashboarding needs | 1-2 weeks | None | Open | Review AI Powered Dashboards | High |
+| 2026-03-13 | Azmain | Share CLARA demo slides in call chat for product/tech teams | Immediate | None | Open | CLARA Demo to Product & Tech teams | High |

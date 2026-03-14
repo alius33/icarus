@@ -9,7 +9,7 @@
 - BenVH drew an explicit parallel to his Microsoft experience: a manager/colleague came in, took over his work, put their name on it, and his career trajectory was destroyed. He sees Nikhil doing the same thing.
 - Specific grievances against Nikhil: (a) Sending around architecture diagrams that are BenVH's designs, presented as Nikhil's own, (b) Renaming App Factory to "Moplit," (c) Speaking up in the advisory all-hands about App Factory (which BenVH created) without mentioning BenVH, (d) Trying to overwrite Cat Accelerate deployment processes.
 - Rhett also came up as a problem. In the same advisory all-hands call, Rhett talked about App Factory without understanding it. Richard was messaging Azmain during the call asking "what the fuck is Rhett doing?"
-- Azmain revealed that Richard is interviewing for positions in New York. Richard's girlfriend wants to relocate, and he is frustrated with working with Rhett. Azmain explicitly told BenVH: "I don't know if you know this, but Richard is looking for a way out."
+- Azmain mentioned that Richard had been considering other positions. [Note: this was subsequently resolved â Richard committed to the programme by mid-March.]
 - Azmain committed to "making noise" about BenVH's work -- name-dropping App Factory and Phantom Agent in group chats, attaching BenVH's name to his creations.
 - Friday deployment discussed: BenVH agreed to deploy the Friday repo to dev without authentication for a four-week pilot. Azmain needs a link to share with project managers.
 - Azmain proposed a governance approach: an approval board before apps enter App Factory, specifically to prevent Rhett from deploying static HTML pages and claiming credit.
@@ -37,7 +37,7 @@
 1. **BenVH's emotional state** (0:00-4:00) -- Admission that absence was not illness; freight train metaphor; need to move apartments
 2. **Nikhil credit-taking pattern** (4:00-12:00) -- Architecture stealing, renaming App Factory, all-hands speaking, Microsoft parallel
 3. **Rhett in the advisory all-hands** (12:00-14:00) -- Talking about things he does not understand; Richard's live reaction
-4. **Richard flight risk reveal** (14:00-16:00) -- Azmain tells BenVH about Richard interviewing in New York
+4. **Richard personnel discussion** (14:00-16:00) -- Azmain discusses Richard's situation with BenVH [resolved mid-March]
 5. **Friday deployment** (16:00-18:00) -- Deploy to dev, no auth, four-week pilot
 6. **Career frustrations and personal dynamics** (18:00-25:00) -- Promotion issues, looking for other roles, mutual support
 
@@ -51,7 +51,7 @@
 ## Stakeholder Signals
 - **BenVH** -- CRITICAL: Admitted his absence was Nikhil-related, not illness. Drawing explicit parallels to a traumatic Microsoft experience. This is a retention emergency. If the Nikhil situation is not addressed, BenVH will disengage or leave. He still shows technical commitment (agreeing to deploy Friday, working on sync scripts) but is emotionally depleted.
 - **Azmain** -- Angry on BenVH's behalf and strategic about protecting him. Also revealed his own career frustrations (promotion held over his head, looking at internal Moody's jobs, wants to move to product). His loyalty to BenVH is genuine but also self-interested -- BenVH's infrastructure capabilities are critical to Azmain's own success.
-- **Richard** (revealed, not present) -- Flight risk confirmed. Interviewing in New York. Girlfriend wants to relocate. Frustrated with Rhett. This is the most consequential personnel risk in the programme.
+- **Richard** (revealed, not present) -- Was briefly considering other options. [Resolved mid-March â committed to programme.]
 - **Nikhil** (discussed, not present) -- Has renamed App Factory to "Moplit." Sending around architecture diagrams as his own. Speaking in all-hands about things he did not build. Whether intentional or not, the pattern is consistent and damaging.
 
 ## Commitments Made
@@ -73,7 +73,7 @@
 
 ## Risk Signals
 - **CRITICAL: BenVH burnout/retention.** Admitted absence was Nikhil-related, not illness. Drawing parallels to career-destroying Microsoft experience. If unaddressed, he will disengage from App Factory -- the entire infrastructure depends on him.
-- **CRITICAL: Richard flight risk confirmed by Azmain.** Interviewing in New York. Motivated by personal reasons (girlfriend) and professional frustration (Rhett). His departure would be the single biggest threat to the programme.
+- **RESOLVED: Richard personnel situation.** Was briefly exploring other options. Resolved mid-March â Richard committed to programme.
 - **HIGH: Nikhil creating systemic friction.** Renaming App Factory, presenting BenVH's architecture as his own, speaking about things he did not build in all-hands. This is alienating the people who actually built the systems.
 - **HIGH: Azmain also looking for other roles.** Mentioned looking on the Moody's career website, wanting to move to product. If all three (Richard, BenVH, Azmain) leave, the programme collapses.
 - **MEDIUM: Governance gap enabling credit-taking.** Without formal documentation of who built what, it is easy for newcomers to claim ownership.
@@ -86,7 +86,7 @@
 ## Raw Quotes of Note
 - "I wasn't even really sick. I was just worn down because of Nikhil." -- BenVH, admitting his absence was not illness
 - "He's already renaming it to Moplit. And I'm like, Dude, it's App Factory. It's always been App Factory." -- BenVH, on Nikhil changing the name of his creation
-- "Do you know that Richard is looking for a way out? He's interviewing for positions in New York." -- Azmain, revealing Richard's flight risk to BenVH
+- "Do you know that Richard is looking for a way out?" -- Azmain, discussing Richard's situation with BenVH [resolved mid-March]
 
 ## Narrative Notes
-This is the most emotionally raw conversation of the week and reveals the programme's three most critical personnel risks in a single session. BenVH's admission that his absence was not illness but Nikhil-related burnout is a flashing red alert. When he draws the explicit parallel to Microsoft -- where a colleague took credit for his work and derailed his career -- it is clear this is not just workplace frustration but a trauma response being triggered in real-time. Azmain's revelation about Richard interviewing in New York adds a second critical risk. And Azmain himself mentions looking at the Moody's career website. The programme's three most important people (Richard for strategy, BenVH for infrastructure, Azmain for everything else) are all contemplating exit. The Nikhil pattern -- whether intentional credit-seeking or innocent new-hire eagerness -- is the proximate cause for BenVH's crisis and an aggravating factor for the others. The structural problem is clear: the programme has no formal governance, no documentation of who built what, and no mechanism to protect intellectual contributions. In this vacuum, visibility-seekers can claim credit and builders get overlooked.
+This is the most emotionally raw conversation of the week and reveals the programme's three most critical personnel risks in a single session. BenVH's admission that his absence was not illness but Nikhil-related burnout is a flashing red alert. When he draws the explicit parallel to Microsoft -- where a colleague took credit for his work and derailed his career -- it is clear this is not just workplace frustration but a trauma response being triggered in real-time. Azmain's mention of Richard considering other options added concern at the time (since resolved mid-March). And Azmain himself mentions looking at the Moody's career website. The programme's three most important people (Richard for strategy, BenVH for infrastructure, Azmain for everything else) are all contemplating exit. The Nikhil pattern -- whether intentional credit-seeking or innocent new-hire eagerness -- is the proximate cause for BenVH's crisis and an aggravating factor for the others. The structural problem is clear: the programme has no formal governance, no documentation of who built what, and no mechanism to protect intellectual contributions. In this vacuum, visibility-seekers can claim credit and builders get overlooked.

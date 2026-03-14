@@ -76,3 +76,7 @@ Decisions are listed chronologically. Each entry includes context and rationale 
 | 66 | 12 Mar | Weekly 1-hour 1-1 established between Azmain and Diana | Regular debrief cadence to stay aligned on programme, politics, Friday development | Azmain, Diana |
 | 67 | 12 Mar | Catherine situation to be raised with Natalia Orzechowska and Diya separately | Diana to discuss with Natalia; Richard to raise with Diya in London. Tactical approach: define AI enablement as separate from digital enablement. | Diana, Richard, Azmain |
 | 68 | 12 Mar | App Factory MCP server using AWS Bedrock AI agents for orchestration | BenVH pivoting from custom LLM orchestration to leveraging Bedrock agents for faster iteration | BenVH |
+| 69 | 13 Mar | Quarterly cross-OU AI enablement touchpoints with Banking Credit team | Insurance team to do homework on skills repo and governance model first, then establish quarterly knowledge-sharing cadence with Banking | Richard, Nils |
+| 70 | 13 Mar | Customer & Model Success team to join App Factory pipeline for dashboard hosting | Lucia's team facing wave of dashboard requests; Tableau sunsetted Sep 2026; App Factory is the hosting solution | Richard, BenVH, Lucia |
+| 71 | 13 Mar | All ~4,000-5,000 users under Andy Frappe imported as CLARA viewers | SSO-based read access for entire product and engineering organisation. Edit access restricted to designated users. | Azmain |
+| 72 | 13 Mar | CLARA call chat to remain as living channel for product/tech feedback | Keeps feedback loop open post-demo; Azmain to monitor | Azmain, Cihan |
