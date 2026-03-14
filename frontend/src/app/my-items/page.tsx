@@ -71,7 +71,7 @@ export default function MyItemsPage() {
   if (loading) {
     return (
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold text-gray-900">What Needs My Attention</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">What Needs My Attention</h2>
         <div className="animate-pulse space-y-4">
           <div className="h-10 bg-gray-100 rounded w-64" />
           <div className="h-32 bg-gray-100 rounded" />
@@ -84,7 +84,7 @@ export default function MyItemsPage() {
     <div className="space-y-6">
       <div className="flex items-start justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">
             What Needs My Attention
           </h2>
           <p className="mt-1 text-base text-gray-500">

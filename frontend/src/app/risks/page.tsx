@@ -185,7 +185,7 @@ export default function RiskRegisterPage() {
   if (loading) {
     return (
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold text-gray-900">Risk Register</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">Risk Register</h2>
         <p className="text-base text-gray-500">Loading risks...</p>
       </div>
     );
@@ -198,7 +198,7 @@ export default function RiskRegisterPage() {
           <Link href="/" className="text-gray-400 hover:text-gray-600 transition-colors">
             <ArrowLeft className="h-5 w-5" />
           </Link>
-          <h2 className="text-2xl font-bold text-gray-900">Risk Register</h2>
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">Risk Register</h2>
         </div>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
           <p className="text-base text-red-700">{error}</p>
@@ -219,7 +219,7 @@ export default function RiskRegisterPage() {
             <ArrowLeft className="h-5 w-5" />
           </Link>
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">Risk Register</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">Risk Register</h2>
             <p className="mt-1 text-base text-gray-500">
               {totalCount} open thread{totalCount !== 1 ? "s" : ""} across all
               severity levels

@@ -9,6 +9,7 @@ import {
   DragOverlay,
   closestCorners,
   PointerSensor,
+  TouchSensor,
   useSensor,
   useSensors,
   DragStartEvent,
@@ -47,7 +48,8 @@ function DroppableColumn({
     <div
       ref={setNodeRef}
       className={`
-        flex flex-col min-w-[280px] max-w-[320px] bg-gray-50 dark:bg-gray-800/50
+        flex flex-col min-w-[280px] max-w-[320px] max-md:min-w-0 max-md:max-w-none max-md:w-full
+        bg-gray-50 dark:bg-gray-800/50
         rounded-lg border border-gray-200 dark:border-gray-700
         ${isOver ? "ring-2 ring-blue-400" : ""}
       `}
@@ -95,7 +97,8 @@ export default function DecisionBoard({ data, onDecisionClick, onRefresh }: Deci
   }
 
   const sensors = useSensors(
-    useSensor(PointerSensor, { activationConstraint: { distance: 5 } })
+    useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
+    useSensor(TouchSensor, { activationConstraint: { delay: 250, tolerance: 5 } })
   );
 
   function toggleCollapse(status: string) {
@@ -185,7 +188,7 @@ export default function DecisionBoard({ data, onDecisionClick, onRefresh }: Deci
       onDragOver={handleDragOver}
       onDragEnd={handleDragEnd}
     >
-      <div className="flex gap-4 overflow-x-auto pb-4">
+      <div className="flex gap-4 overflow-x-auto pb-4 max-md:flex-col max-md:overflow-x-visible">
         {columns.map((column) => (
           <DroppableColumn
             key={column.status}

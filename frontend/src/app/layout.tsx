@@ -1,10 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Sidebar from "@/components/layout/Sidebar";
 import Header from "@/components/layout/Header";
 import BreadcrumbBar from "@/components/layout/BreadcrumbBar";
+import MobileBottomNav from "@/components/layout/MobileBottomNav";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { SidebarProvider } from "@/lib/hooks/useSidebarState";
+import { ToastProvider } from "@/lib/hooks/useToast";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,6 +23,25 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Icarus Dashboard",
   description: "Programme intelligence dashboard for the Icarus project",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Icarus",
+  },
+  icons: {
+    apple: "/icon-192.png",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#111827" },
+  ],
 };
 
 export default function RootLayout({
@@ -33,12 +55,19 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} font-[family-name:var(--font-geist-sans)] antialiased`}
       >
         <ThemeProvider>
-          <Sidebar />
-          <div className="ml-64 min-h-screen">
-            <Header />
-            <BreadcrumbBar />
-            <main className="p-8">{children}</main>
-          </div>
+          <ToastProvider>
+            <SidebarProvider>
+              <Sidebar />
+              <div className="min-h-screen md:ml-64">
+                <Header />
+                <BreadcrumbBar />
+                <main className="p-4 md:p-6 lg:p-8 pb-20 md:pb-8">
+                  {children}
+                </main>
+              </div>
+              <MobileBottomNav />
+            </SidebarProvider>
+          </ToastProvider>
         </ThemeProvider>
       </body>
     </html>

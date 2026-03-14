@@ -26,7 +26,7 @@ export default async function TranscriptListPage({
   if (error || !data) {
     return (
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold text-gray-900">Transcripts</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">Transcripts</h2>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
           <p className="text-base text-red-700">
             {error || "Unable to load transcripts. Please try again later."}
@@ -45,13 +45,45 @@ export default async function TranscriptListPage({
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-gray-900">Transcripts</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">Transcripts</h2>
         <span className="text-base text-gray-500">
           {data.total} total transcript{data.total !== 1 ? "s" : ""}
         </span>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+      {/* Mobile card view */}
+      <div className="space-y-2 md:hidden">
+        {data.items.length === 0 ? (
+          <div className="rounded-lg border-2 border-dashed border-gray-300 p-8 text-center">
+            <p className="text-base text-gray-500">No transcripts found.</p>
+          </div>
+        ) : (
+          data.items.map((t) => (
+            <Link
+              key={t.id}
+              href={`/transcripts/${t.id}`}
+              className="block rounded-lg border border-gray-200 bg-white p-3 active:bg-gray-50"
+            >
+              <div className="text-sm text-gray-400 mb-1">
+                {t.date ? formatDate(t.date) : "—"}
+              </div>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-base text-gray-900 line-clamp-2">
+                  {t.title || t.file_name}
+                </span>
+                {t.has_notes && <Pencil className="h-3.5 w-3.5 text-amber-500 shrink-0" />}
+                {t.attachments_count > 0 && <Paperclip className="h-3.5 w-3.5 text-gray-400 shrink-0" />}
+              </div>
+              <div className="text-sm text-gray-500">
+                {t.word_count.toLocaleString()} words
+              </div>
+            </Link>
+          ))
+        )}
+      </div>
+
+      {/* Desktop table */}
+      <div className="hidden md:block bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
         <table className="w-full">
           <thead>
             <tr className="border-b border-gray-200 bg-gray-50">

@@ -156,7 +156,7 @@ export default function InfluenceNetwork({
       </svg>
 
       {/* Legend */}
-      <div className="flex gap-4 px-4 py-2 border-t dark:border-gray-700 text-sm text-gray-500 dark:text-gray-400">
+      <div className="flex flex-wrap gap-3 md:gap-4 px-4 py-2 border-t dark:border-gray-700 text-sm text-gray-500 dark:text-gray-400">
         {Object.entries(EDGE_COLORS)
           .filter(([k]) => k !== "default")
           .map(([type, color]) => (

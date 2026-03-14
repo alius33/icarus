@@ -73,7 +73,7 @@ export default function TaskList({ tasks, onTaskClick, onStatusChange, onPriorit
   return (
     <div className="space-y-4">
       {/* Controls */}
-      <div className="flex items-center gap-3">
+      <div className="flex flex-wrap items-center gap-2 md:gap-3">
         <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Group by:</span>
         <select
           value={groupBy}
@@ -89,8 +89,72 @@ export default function TaskList({ tasks, onTaskClick, onStatusChange, onPriorit
         <span className="ml-auto text-sm text-gray-400">{tasks.length} tasks</span>
       </div>
 
-      {/* Table */}
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      {/* Mobile card view */}
+      <div className="space-y-2 md:hidden">
+        {groups.map((group) => (
+          <div key={group.label || "all"}>
+            {group.label && (
+              <button
+                className="flex items-center gap-2 text-base font-medium text-gray-700 dark:text-gray-300 py-1"
+                onClick={() => toggleGroup(group.label)}
+              >
+                {collapsedGroups.has(group.label) ? <ChevronRight className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                {group.label}
+                <span className="text-sm text-gray-400 font-normal">({group.tasks.length})</span>
+              </button>
+            )}
+            {!collapsedGroups.has(group.label) &&
+              group.tasks.map((task) => {
+                const statusCfg = STATUS_CONFIG[task.status as TaskStatus];
+                const priorityCfg = PRIORITY_CONFIG[task.priority as TaskPriority];
+                const overdue = isOverdue(task.due_date) && task.status !== "DONE" && task.status !== "CANCELLED";
+                return (
+                  <div
+                    key={task.id}
+                    className="rounded-lg border border-gray-200 dark:border-gray-700 p-3 active:bg-gray-50 dark:active:bg-gray-800 cursor-pointer"
+                    onClick={() => onTaskClick(task)}
+                  >
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className={`w-2 h-2 rounded-full shrink-0 ${priorityCfg?.dotColor ?? "bg-gray-300"}`} />
+                      <span className="text-gray-900 dark:text-gray-100 text-base line-clamp-2">{task.title}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
+                      <span>{task.assignee || "Unassigned"}</span>
+                      {task.due_date && (
+                        <>
+                          <span>&middot;</span>
+                          <span className={overdue ? "text-red-500 font-medium" : ""}>
+                            Due: {new Date(task.due_date).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}
+                          </span>
+                        </>
+                      )}
+                    </div>
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <span className={`text-sm font-medium px-2 py-0.5 rounded ${statusCfg?.bgColor ?? "bg-gray-100"} ${statusCfg?.color ?? "text-gray-600"}`}>
+                        {statusCfg?.label ?? task.status}
+                      </span>
+                      {task.project_name && (
+                        <span className="text-sm text-gray-400">{task.project_name}</span>
+                      )}
+                      {task.labels.slice(0, 2).map((label) => (
+                        <span key={label} className="text-sm px-1.5 py-0.5 rounded bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300">{label}</span>
+                      ))}
+                      {task.labels.length > 2 && <span className="text-sm text-gray-400">+{task.labels.length - 2}</span>}
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        ))}
+        {tasks.length === 0 && (
+          <div className="rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 p-8 text-center">
+            <p className="text-base text-gray-500">No tasks yet.</p>
+          </div>
+        )}
+      </div>
+
+      {/* Desktop table */}
+      <div className="hidden md:block border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
         <table className="w-full text-base">
           <thead className="bg-gray-50 dark:bg-gray-800">
             <tr>

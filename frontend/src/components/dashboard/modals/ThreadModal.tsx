@@ -109,7 +109,7 @@ export default function ThreadModal({
         placeholder="Impact if unresolved..."
         rows={2}
       />
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 fold:grid-cols-3 gap-3">
         <FormSelect
           label="Status"
           value={status}

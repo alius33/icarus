@@ -76,8 +76,8 @@ export default function GlossaryPage() {
   if (error) return (<div className="space-y-6"><h2 className="text-2xl font-bold text-gray-900">Glossary</h2><div className="rounded-lg border border-red-200 bg-red-50 p-6"><p className="text-base text-red-700">{error}</p></div></div>);
   if (!glossary || Object.keys(glossary).length === 0) return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-gray-900">Glossary</h2>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900">Glossary</h2>
         <button onClick={openCreate} className="px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">+ New Term</button>
       </div>
       <div className="text-center py-12"><p className="text-base text-gray-500">No glossary entries yet.</p></div>
@@ -88,14 +88,14 @@ export default function GlossaryPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-gray-900">Glossary</h2>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900">Glossary</h2>
         <button onClick={openCreate} className="px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">+ New Term</button>
       </div>
 
       <div className="flex gap-4 items-center">
         <input type="text" placeholder="Filter terms..." value={filter} onChange={(e) => setFilter(e.target.value)}
-          className="border rounded px-3 py-2 text-base text-gray-700 bg-white w-72 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500" />
+          className="border rounded px-3 py-2 text-base text-gray-700 bg-white w-full max-w-xs md:w-72 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500" />
         <span className="text-base text-gray-500">{totalEntries} term{totalEntries !== 1 ? "s" : ""}{filter.trim() ? " matching" : ""}</span>
       </div>
 
