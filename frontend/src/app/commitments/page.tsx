@@ -183,9 +183,9 @@ export default function CommitmentsPage() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-gray-900">Commitments</h2>
-        <div className="flex items-center gap-4">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900">Commitments</h2>
+        <div className="flex flex-wrap items-center gap-2 md:gap-4">
           <select
             value={personFilter}
             onChange={(e) => setPersonFilter(e.target.value)}
@@ -228,7 +228,27 @@ export default function CommitmentsPage() {
                 {items.length} item{items.length !== 1 ? "s" : ""}
               </span>
             </div>
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+            {/* Mobile cards */}
+            <div className="space-y-2 md:hidden">
+              {items.map((c) => (
+                <div
+                  key={c.id}
+                  className="rounded-lg border border-gray-200 p-3 active:bg-gray-50 cursor-pointer"
+                  onClick={() => openEdit(c)}
+                >
+                  <div className="text-base font-medium text-gray-900 mb-1">{c.person}</div>
+                  <p className="text-base text-gray-700 line-clamp-2">{c.commitment}</p>
+                  <div className="flex flex-wrap items-center gap-2 mt-2 text-sm text-gray-500">
+                    {c.date_made && <span>{formatDate(c.date_made)}</span>}
+                    {c.deadline_text && <span>&middot; {c.deadline_text}</span>}
+                  </div>
+                  {c.notes && <p className="mt-1 text-sm text-gray-400 line-clamp-1">{c.notes}</p>}
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop table */}
+            <div className="hidden md:block bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-gray-200 bg-gray-50">

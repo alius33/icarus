@@ -92,7 +92,7 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
   return (
     <div className="space-y-4">
       {/* Controls */}
-      <div className="flex items-center gap-3">
+      <div className="flex flex-wrap items-center gap-2 md:gap-3">
         <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Group by:</span>
         <select
           value={groupBy}
@@ -107,8 +107,68 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
         <span className="ml-auto text-sm text-gray-400">{threads.length} threads</span>
       </div>
 
-      {/* Table */}
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      {/* Mobile card view */}
+      <div className="space-y-2 md:hidden">
+        {groups.map((group) => (
+          <React.Fragment key={group.label || "all"}>
+            {group.label && (
+              <button
+                className="flex items-center gap-2 text-base font-medium text-gray-700 dark:text-gray-300 py-1"
+                onClick={() => toggleGroup(group.label)}
+              >
+                {collapsedGroups.has(group.label) ? <ChevronRight className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                {group.label}
+                <span className="text-sm text-gray-400 font-normal">({group.threads.length})</span>
+              </button>
+            )}
+            {!collapsedGroups.has(group.label) &&
+              group.threads.map((thread) => {
+                const statusCfg = THREAD_STATUS_CONFIG[thread.status as ThreadStatus];
+                const severityCfg = SEVERITY_CONFIG[thread.severity as ThreadSeverity];
+                return (
+                  <div
+                    key={thread.id}
+                    className="rounded-lg border border-gray-200 dark:border-gray-700 p-3 active:bg-gray-50 dark:active:bg-gray-800 cursor-pointer"
+                    onClick={() => onThreadClick(thread)}
+                  >
+                    <div className="flex items-center gap-2 mb-1">
+                      {severityCfg && <span className={`w-2 h-2 rounded-full shrink-0 ${severityCfg.dotColor}`} />}
+                      <span className="text-gray-900 dark:text-gray-100 text-base line-clamp-2">{thread.title}</span>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-2 mb-1">
+                      <span className={`text-sm font-medium px-2 py-0.5 rounded ${statusCfg?.bgColor ?? "bg-gray-100"} ${statusCfg?.color ?? "text-gray-600"}`}>
+                        {statusCfg?.label ?? thread.status}
+                      </span>
+                      {severityCfg && (
+                        <span className="text-sm text-gray-500">{severityCfg.label}</span>
+                      )}
+                      {thread.trend && (
+                        <span className={`text-sm font-medium px-2 py-0.5 rounded-full ${
+                          thread.trend === "escalating" ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" :
+                          thread.trend === "stable" ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400" :
+                          "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
+                        }`}>
+                          {trendLabel(thread.trend)}
+                        </span>
+                      )}
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      {thread.opened_date ? new Date(thread.opened_date).toLocaleDateString("en-GB", { day: "numeric", month: "short" }) : ""}
+                    </div>
+                  </div>
+                );
+              })}
+          </React.Fragment>
+        ))}
+        {threads.length === 0 && (
+          <div className="rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 p-8 text-center">
+            <p className="text-base text-gray-500">No threads yet.</p>
+          </div>
+        )}
+      </div>
+
+      {/* Desktop table */}
+      <div className="hidden md:block border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
         <table className="w-full text-base">
           <thead className="bg-gray-50 dark:bg-gray-800">
             <tr>

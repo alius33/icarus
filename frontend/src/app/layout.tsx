@@ -7,6 +7,7 @@ import BreadcrumbBar from "@/components/layout/BreadcrumbBar";
 import MobileBottomNav from "@/components/layout/MobileBottomNav";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { SidebarProvider } from "@/lib/hooks/useSidebarState";
+import { ToastProvider } from "@/lib/hooks/useToast";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -45,17 +46,19 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} font-[family-name:var(--font-geist-sans)] antialiased`}
       >
         <ThemeProvider>
-          <SidebarProvider>
-            <Sidebar />
-            <div className="min-h-screen md:ml-64">
-              <Header />
-              <BreadcrumbBar />
-              <main className="p-4 md:p-6 lg:p-8 pb-20 md:pb-8">
-                {children}
-              </main>
-            </div>
-            <MobileBottomNav />
-          </SidebarProvider>
+          <ToastProvider>
+            <SidebarProvider>
+              <Sidebar />
+              <div className="min-h-screen md:ml-64">
+                <Header />
+                <BreadcrumbBar />
+                <main className="p-4 md:p-6 lg:p-8 pb-20 md:pb-8">
+                  {children}
+                </main>
+              </div>
+              <MobileBottomNav />
+            </SidebarProvider>
+          </ToastProvider>
         </ThemeProvider>
       </body>
     </html>

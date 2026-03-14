@@ -68,7 +68,7 @@ export default function DecisionList({ decisions, onDecisionClick, onStatusChang
   return (
     <div className="space-y-4">
       {/* Controls */}
-      <div className="flex items-center gap-3">
+      <div className="flex flex-wrap items-center gap-2 md:gap-3">
         <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Group by:</span>
         <select
           value={groupBy}
@@ -82,8 +82,65 @@ export default function DecisionList({ decisions, onDecisionClick, onStatusChang
         <span className="ml-auto text-sm text-gray-400">{decisions.length} decisions</span>
       </div>
 
-      {/* Table */}
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      {/* Mobile card view */}
+      <div className="space-y-2 md:hidden">
+        {groups.map((group) => (
+          <React.Fragment key={group.label || "all"}>
+            {group.label && (
+              <button
+                className="flex items-center gap-2 text-base font-medium text-gray-700 dark:text-gray-300 py-1"
+                onClick={() => toggleGroup(group.label)}
+              >
+                {collapsedGroups.has(group.label) ? <ChevronRight className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                {group.label}
+                <span className="text-sm text-gray-400 font-normal">({group.decisions.length})</span>
+              </button>
+            )}
+            {!collapsedGroups.has(group.label) &&
+              group.decisions.map((decision) => {
+                const statusCfg = DECISION_STATUS_CONFIG[decision.execution_status as DecisionStatus];
+                return (
+                  <div
+                    key={decision.id}
+                    className="rounded-lg border border-gray-200 dark:border-gray-700 p-3 active:bg-gray-50 dark:active:bg-gray-800 cursor-pointer"
+                    onClick={() => onDecisionClick(decision)}
+                  >
+                    <div className="flex items-center gap-2 text-sm text-gray-400 mb-1">
+                      <span className="font-mono">#{decision.number}</span>
+                      <span>&middot;</span>
+                      <span>{decision.date ? new Date(decision.date).toLocaleDateString("en-GB", { day: "numeric", month: "short" }) : "\u2014"}</span>
+                    </div>
+                    <p className="text-gray-900 dark:text-gray-100 text-base line-clamp-2 mb-2">{decision.title}</p>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className={`text-sm font-medium px-2 py-0.5 rounded ${statusCfg?.bgColor ?? "bg-gray-100"} ${statusCfg?.color ?? "text-gray-600"}`}>
+                        {statusCfg?.label ?? decision.execution_status}
+                      </span>
+                      {decision.workstream && (
+                        <span className="text-sm text-gray-400">{decision.workstream}</span>
+                      )}
+                    </div>
+                    {decision.key_people.length > 0 && (
+                      <div className="flex flex-wrap gap-1 mt-2">
+                        {decision.key_people.slice(0, 3).map((person) => (
+                          <span key={person} className="px-1.5 py-0.5 text-sm rounded bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300">{person}</span>
+                        ))}
+                        {decision.key_people.length > 3 && <span className="text-sm text-gray-400">+{decision.key_people.length - 3}</span>}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+          </React.Fragment>
+        ))}
+        {decisions.length === 0 && (
+          <div className="rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 p-8 text-center">
+            <p className="text-base text-gray-500">No decisions yet.</p>
+          </div>
+        )}
+      </div>
+
+      {/* Desktop table */}
+      <div className="hidden md:block border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
         <table className="w-full text-base">
           <thead className="bg-gray-50 dark:bg-gray-800">
             <tr>
