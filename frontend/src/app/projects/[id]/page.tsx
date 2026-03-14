@@ -42,12 +42,12 @@ export default async function ProjectHubPage({
       <div className="space-y-6">
         <Link
           href="/projects"
-          className="text-sm text-blue-600 hover:text-blue-800"
+          className="text-base text-blue-600 hover:text-blue-800"
         >
           &larr; Back to Projects
         </Link>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
-          <p className="text-sm text-red-700">
+          <p className="text-base text-red-700">
             {error || "Unable to load project."}
           </p>
         </div>
@@ -70,7 +70,7 @@ export default async function ProjectHubPage({
       <div className="mb-4">
         <Link
           href="/projects"
-          className="text-sm text-blue-600 hover:text-blue-800"
+          className="text-base text-blue-600 hover:text-blue-800"
         >
           &larr; Back to Projects
         </Link>
@@ -82,7 +82,7 @@ export default async function ProjectHubPage({
           <div>
             <div className="mb-2 flex items-center gap-2">
               <span
-                className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${getStatusColor(project.status)}`}
+                className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-sm font-medium ${getStatusColor(project.status)}`}
               >
                 {project.status}
               </span>

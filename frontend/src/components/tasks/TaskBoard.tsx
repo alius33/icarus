@@ -58,8 +58,8 @@ function DroppableColumn({
         className="flex items-center gap-2 px-3 py-2.5 border-b border-gray-200 dark:border-gray-700"
       >
         {collapsed ? <ChevronRight className="h-4 w-4 text-gray-400" /> : <ChevronDown className="h-4 w-4 text-gray-400" />}
-        <span className={`text-sm font-semibold ${cfg.color}`}>{cfg.label}</span>
-        <span className="ml-auto text-xs text-gray-400 bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded-full">
+        <span className={`text-base font-semibold ${cfg.color}`}>{cfg.label}</span>
+        <span className="ml-auto text-sm text-gray-400 bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded-full">
           {column.count}
         </span>
       </button>
@@ -73,7 +73,7 @@ function DroppableColumn({
             ))}
           </SortableContext>
           {column.tasks.length === 0 && (
-            <p className="text-xs text-gray-400 text-center py-4">No tasks</p>
+            <p className="text-sm text-gray-400 text-center py-4">No tasks</p>
           )}
         </div>
       )}

@@ -45,7 +45,7 @@ export default async function TimelinePage() {
     <div className="space-y-6">
       <div>
         <h2 className="text-2xl font-bold text-gray-900">Timeline</h2>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-base text-gray-500">
           {timeline.total} events from{" "}
           {formatDate(timeline.from_date)} to {formatDate(timeline.to_date)}
         </p>
@@ -67,7 +67,7 @@ export default async function TimelinePage() {
                   />
 
                   {/* Date */}
-                  <div className="w-28 flex-shrink-0 pt-0.5 text-sm text-gray-500">
+                  <div className="w-28 flex-shrink-0 pt-0.5 text-base text-gray-500">
                     {formatDate(event.date)}
                   </div>
 
@@ -75,17 +75,17 @@ export default async function TimelinePage() {
                   <div className="flex-1 rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
                     <div className="flex items-center gap-2">
                       <span
-                        className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs font-medium ${config.color}`}
+                        className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-sm font-medium ${config.color}`}
                       >
                         {config.icon}
                         {event.type}
                       </span>
                     </div>
-                    <p className="mt-2 text-sm font-medium text-gray-900">
+                    <p className="mt-2 text-base font-medium text-gray-900">
                       {event.title}
                     </p>
                     {event.description && (
-                      <p className="mt-1 text-sm text-gray-600">
+                      <p className="mt-1 text-base text-gray-600">
                         {event.description}
                       </p>
                     )}

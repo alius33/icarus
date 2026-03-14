@@ -97,7 +97,7 @@ export default function ThreadDetailPanel({ thread, onClose, onUpdated }: Thread
       <div className="absolute inset-y-0 right-0 w-full max-w-md bg-white dark:bg-gray-900 shadow-2xl border-l border-gray-200 dark:border-gray-700 flex flex-col">
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-700">
-        <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Thread Detail</span>
+        <span className="text-base font-medium text-gray-500 dark:text-gray-400">Thread Detail</span>
         <button onClick={onClose} className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
           <X className="h-5 w-5" />
         </button>
@@ -107,7 +107,7 @@ export default function ThreadDetailPanel({ thread, onClose, onUpdated }: Thread
       <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
         {error && (
           <div className="rounded-md bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 px-3 py-2">
-            <p className="text-sm text-red-700 dark:text-red-400">{error}</p>
+            <p className="text-base text-red-700 dark:text-red-400">{error}</p>
           </div>
         )}
 
@@ -121,36 +121,36 @@ export default function ThreadDetailPanel({ thread, onClose, onUpdated }: Thread
 
         {/* Context / Description */}
         <div>
-          <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Context</label>
+          <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Context</label>
           <textarea
             value={description}
             onChange={(e) => { setDescription(e.target.value); markDirty(); }}
             rows={3}
-            className="w-full text-sm text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="w-full text-base text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
             placeholder="What is the context for this thread?"
           />
         </div>
 
         {/* Question */}
         <div>
-          <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Question</label>
+          <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Question</label>
           <textarea
             value={question}
             onChange={(e) => { setQuestion(e.target.value); markDirty(); }}
             rows={2}
-            className="w-full text-sm text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="w-full text-base text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
             placeholder="What is the open question?"
           />
         </div>
 
         {/* Why It Matters */}
         <div>
-          <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Why It Matters</label>
+          <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Why It Matters</label>
           <textarea
             value={whyItMatters}
             onChange={(e) => { setWhyItMatters(e.target.value); markDirty(); }}
             rows={2}
-            className="w-full text-sm text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="w-full text-base text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
             placeholder="Why does this matter to the programme?"
           />
         </div>
@@ -158,11 +158,11 @@ export default function ThreadDetailPanel({ thread, onClose, onUpdated }: Thread
         {/* Status + Severity */}
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Status</label>
+            <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Status</label>
             <select
               value={status}
               onChange={(e) => { setStatus(e.target.value); markDirty(); }}
-              className="w-full text-sm border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1.5 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+              className="w-full text-base border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1.5 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
             >
               {THREAD_STATUSES.map((s) => (
                 <option key={s} value={s}>{THREAD_STATUS_CONFIG[s].label}</option>
@@ -170,11 +170,11 @@ export default function ThreadDetailPanel({ thread, onClose, onUpdated }: Thread
             </select>
           </div>
           <div>
-            <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Severity</label>
+            <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Severity</label>
             <select
               value={severity}
               onChange={(e) => { setSeverity(e.target.value); markDirty(); }}
-              className="w-full text-sm border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1.5 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+              className="w-full text-base border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1.5 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
             >
               <option value="">None</option>
               {THREAD_SEVERITIES.map((s) => (
@@ -186,11 +186,11 @@ export default function ThreadDetailPanel({ thread, onClose, onUpdated }: Thread
 
         {/* Trend */}
         <div>
-          <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Trend</label>
+          <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Trend</label>
           <select
             value={trend}
             onChange={(e) => { setTrend(e.target.value); markDirty(); }}
-            className="w-full text-sm border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1.5 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+            className="w-full text-base border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1.5 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
           >
             <option value="">None</option>
             {TREND_OPTIONS.map((t) => (
@@ -203,29 +203,29 @@ export default function ThreadDetailPanel({ thread, onClose, onUpdated }: Thread
 
         {/* First Raised */}
         <div>
-          <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">First Raised</label>
+          <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">First Raised</label>
           <input
             type="date"
             value={firstRaised}
             onChange={(e) => { setFirstRaised(e.target.value); markDirty(); }}
-            className="w-full text-sm border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1.5 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+            className="w-full text-base border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1.5 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
           />
         </div>
 
         {/* Resolution */}
         <div>
-          <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Resolution</label>
+          <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Resolution</label>
           <textarea
             value={resolution}
             onChange={(e) => { setResolution(e.target.value); markDirty(); }}
             rows={3}
-            className="w-full text-sm text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="w-full text-base text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
             placeholder="How was this resolved?"
           />
         </div>
 
         {/* Metadata */}
-        <div className="pt-2 border-t border-gray-200 dark:border-gray-700 text-xs text-gray-400 space-y-1">
+        <div className="pt-2 border-t border-gray-200 dark:border-gray-700 text-sm text-gray-400 space-y-1">
           {thread.last_discussed && <p>Last discussed: {new Date(thread.last_discussed).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}</p>}
           {thread.owner && <p>Owner: {thread.owner}</p>}
           {thread.workstream && <p>Workstream: {thread.workstream}</p>}
@@ -238,7 +238,7 @@ export default function ThreadDetailPanel({ thread, onClose, onUpdated }: Thread
           <button
             onClick={handleDelete}
             disabled={deleting}
-            className="flex items-center gap-1 px-3 py-1.5 text-xs text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-md transition-colors disabled:opacity-50"
+            className="flex items-center gap-1 px-3 py-1.5 text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-md transition-colors disabled:opacity-50"
           >
             <Trash2 className="h-3.5 w-3.5" />
             {deleting ? "Deleting..." : "Delete"}
@@ -247,7 +247,7 @@ export default function ThreadDetailPanel({ thread, onClose, onUpdated }: Thread
         <button
           onClick={handleSave}
           disabled={saving || !dirty}
-          className="px-4 py-1.5 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50"
+          className="px-4 py-1.5 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50"
         >
           {saving ? "Saving..." : "Save"}
         </button>

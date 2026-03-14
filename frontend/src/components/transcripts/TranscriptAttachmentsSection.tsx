@@ -91,7 +91,7 @@ export default function TranscriptAttachmentsSection({ transcriptId }: Transcrip
         <div className="flex items-center gap-2">
           <h3 className="text-lg font-semibold text-gray-900">Attachments</h3>
           {attachments && attachments.length > 0 && (
-            <span className="text-xs text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">
+            <span className="text-sm text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">
               {attachments.length}
             </span>
           )}
@@ -99,7 +99,7 @@ export default function TranscriptAttachmentsSection({ transcriptId }: Transcrip
         <button
           onClick={() => fileInputRef.current?.click()}
           disabled={uploading || (attachments?.length || 0) >= 10}
-          className="inline-flex items-center gap-1 text-xs text-blue-600 hover:text-blue-800 disabled:text-gray-400 disabled:cursor-not-allowed transition-colors"
+          className="inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800 disabled:text-gray-400 disabled:cursor-not-allowed transition-colors"
         >
           {uploading ? (
             <>
@@ -129,7 +129,7 @@ export default function TranscriptAttachmentsSection({ transcriptId }: Transcrip
       {error && (
         <div className="flex items-start gap-2 mb-4 p-3 rounded-md bg-red-50 border border-red-200">
           <AlertCircle className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
-          <p className="text-xs text-red-700">{error}</p>
+          <p className="text-sm text-red-700">{error}</p>
           <button onClick={() => setError(null)} className="ml-auto text-red-400 hover:text-red-600">
             <span className="sr-only">Dismiss</span>&times;
           </button>
@@ -137,7 +137,7 @@ export default function TranscriptAttachmentsSection({ transcriptId }: Transcrip
       )}
 
       {(!attachments || attachments.length === 0) && !uploading && (
-        <p className="text-sm text-gray-400 italic">
+        <p className="text-base text-gray-400 italic">
           Attach supporting files (PDF, PPTX, DOCX) to include in analysis.
         </p>
       )}
@@ -149,19 +149,19 @@ export default function TranscriptAttachmentsSection({ transcriptId }: Transcrip
               <div className="flex items-center gap-3 px-3 py-2.5">
                 <FileText className={`h-4 w-4 flex-shrink-0 ${FILE_TYPE_ICONS[att.file_type] || "text-gray-400"}`} />
                 <div className="min-w-0 flex-1">
-                  <p className="text-sm font-medium text-gray-800 truncate">
+                  <p className="text-base font-medium text-gray-800 truncate">
                     {att.original_filename}
                   </p>
                   <div className="flex items-center gap-2 mt-0.5">
-                    <span className="text-xs text-gray-400 uppercase">{att.file_type}</span>
-                    <span className="text-xs text-gray-400">{formatSize(att.size_bytes)}</span>
+                    <span className="text-sm text-gray-400 uppercase">{att.file_type}</span>
+                    <span className="text-sm text-gray-400">{formatSize(att.size_bytes)}</span>
                     {att.created_at && (
-                      <span className="text-xs text-gray-400">{formatDate(att.created_at)}</span>
+                      <span className="text-sm text-gray-400">{formatDate(att.created_at)}</span>
                     )}
                     {att.has_extracted_text && (
                       <button
                         onClick={() => toggleText(att.id)}
-                        className="text-xs text-green-600 hover:text-green-800 flex items-center gap-0.5"
+                        className="text-sm text-green-600 hover:text-green-800 flex items-center gap-0.5"
                       >
                         {expandedText.has(att.id) ? (
                           <ChevronDown className="h-3 w-3" />
@@ -184,13 +184,13 @@ export default function TranscriptAttachmentsSection({ transcriptId }: Transcrip
                   <div className="flex items-center gap-1">
                     <button
                       onClick={() => handleDelete(att.id)}
-                      className="text-xs text-red-600 hover:text-red-800 font-medium"
+                      className="text-sm text-red-600 hover:text-red-800 font-medium"
                     >
                       Confirm
                     </button>
                     <button
                       onClick={() => setConfirmDelete(null)}
-                      className="text-xs text-gray-400 hover:text-gray-600"
+                      className="text-sm text-gray-400 hover:text-gray-600"
                     >
                       Cancel
                     </button>
@@ -230,7 +230,7 @@ function ExtractedTextPreview({ transcriptId, attachmentId }: { transcriptId: nu
   if (loading) {
     return (
       <div className="px-3 pb-3 border-t border-gray-100 pt-2">
-        <p className="text-xs text-gray-400">Loading extracted text...</p>
+        <p className="text-sm text-gray-400">Loading extracted text...</p>
       </div>
     );
   }
@@ -238,14 +238,14 @@ function ExtractedTextPreview({ transcriptId, attachmentId }: { transcriptId: nu
   if (!text) {
     return (
       <div className="px-3 pb-3 border-t border-gray-100 pt-2">
-        <p className="text-xs text-gray-400 italic">No text available</p>
+        <p className="text-sm text-gray-400 italic">No text available</p>
       </div>
     );
   }
 
   return (
     <div className="px-3 pb-3 border-t border-gray-100 pt-2">
-      <pre className="text-xs text-gray-600 whitespace-pre-wrap max-h-60 overflow-y-auto font-sans">
+      <pre className="text-sm text-gray-600 whitespace-pre-wrap max-h-60 overflow-y-auto font-sans">
         {text.length > 2000 ? text.substring(0, 2000) + "\n\n[... truncated]" : text}
       </pre>
     </div>

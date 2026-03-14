@@ -50,7 +50,7 @@ export default function NeedsAttention({ items, onItemClick }: Props) {
 
   return (
     <section>
-      <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+      <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
         <AlertTriangle className="h-3.5 w-3.5 text-amber-500" />
         Needs Attention
         <span className="ml-1 text-gray-400">({items.length})</span>
@@ -89,7 +89,7 @@ function FlatList({
 }) {
   return (
     <section>
-      <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+      <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
         <AlertTriangle className="h-3.5 w-3.5 text-amber-500" />
         Needs Attention
         <span className="ml-1 text-gray-400">({items.length})</span>
@@ -121,7 +121,7 @@ function AttentionRow({
     >
       <AttentionIcon reason={item.reason} />
       <div className="flex-1 min-w-0">
-        <p className="text-sm text-gray-900">
+        <p className="text-base text-gray-900">
           <span className="font-medium">{item.title}</span>
           {item.owner && (
             <span className="text-gray-500"> — {item.owner}</span>
@@ -129,15 +129,15 @@ function AttentionRow({
         </p>
         <div className="flex items-center gap-2 mt-0.5">
           {item.reason === "overdue" && item.days_overdue != null && (
-            <span className="text-xs text-red-600 font-medium">
+            <span className="text-sm text-red-600 font-medium">
               {item.days_overdue} day{item.days_overdue !== 1 ? "s" : ""} overdue
             </span>
           )}
           {item.reason === "stale" && (
-            <span className="text-xs text-amber-600 font-medium">Stale</span>
+            <span className="text-sm text-amber-600 font-medium">Stale</span>
           )}
           {item.reason === "unresolved" && (
-            <span className="text-xs text-amber-600 font-medium">
+            <span className="text-sm text-amber-600 font-medium">
               Open thread
             </span>
           )}

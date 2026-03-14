@@ -54,7 +54,7 @@ export default function MeetingRadar({ meeting }: MeetingRadarProps) {
   return (
     <div className="border rounded-lg p-4 bg-white dark:bg-gray-800 dark:border-gray-700">
       <div className="flex items-center justify-between mb-2">
-        <h3 className="text-sm font-semibold">
+        <h3 className="text-base font-semibold">
           {meeting.meeting_title || "Meeting"} Breakdown
         </h3>
         <div className="flex items-center gap-2">
@@ -64,12 +64,12 @@ export default function MeetingRadar({ meeting }: MeetingRadarProps) {
           >
             {meeting.overall_score}
           </span>
-          <span className="text-xs text-gray-400">/ 100</span>
+          <span className="text-sm text-gray-400">/ 100</span>
         </div>
       </div>
 
       {meeting.date && (
-        <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
           {meeting.date}
           {meeting.meeting_type && (
             <span className="ml-2 px-2 py-0.5 bg-gray-100 dark:bg-gray-700 rounded-full">
@@ -97,7 +97,7 @@ export default function MeetingRadar({ meeting }: MeetingRadarProps) {
               if (!active || !payload?.length) return null;
               const item = payload[0].payload;
               return (
-                <div className="bg-white dark:bg-gray-800 border dark:border-gray-700 rounded-lg shadow-lg p-2 text-sm">
+                <div className="bg-white dark:bg-gray-800 border dark:border-gray-700 rounded-lg shadow-lg p-2 text-base">
                   <p className="font-medium">{item.dimension}</p>
                   <p className="text-blue-600">{item.value} / 100</p>
                 </div>
@@ -116,7 +116,7 @@ export default function MeetingRadar({ meeting }: MeetingRadarProps) {
       </ResponsiveContainer>
 
       {meeting.recommendations && (
-        <div className="mt-3 p-2 bg-amber-50 dark:bg-amber-900/10 rounded text-xs text-amber-800 dark:text-amber-300">
+        <div className="mt-3 p-2 bg-amber-50 dark:bg-amber-900/10 rounded text-sm text-amber-800 dark:text-amber-300">
           <span className="font-medium">Recommendations: </span>
           {meeting.recommendations}
         </div>

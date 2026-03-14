@@ -380,11 +380,11 @@ export default function UploadPage() {
       : sortedProjects;
     return (
       <div className="flex items-center gap-2">
-        <span className="text-xs text-gray-400 w-20 flex-shrink-0">{label}{required && <span className="text-red-400">*</span>}</span>
+        <span className="text-sm text-gray-400 w-20 flex-shrink-0">{label}{required && <span className="text-red-400">*</span>}</span>
         <select
           value={value ?? ""}
           onChange={(e) => onChange(e.target.value ? Number(e.target.value) : null)}
-          className={`text-xs border rounded-md px-2 py-1.5 bg-gray-900 text-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none flex-1 min-w-[180px] ${
+          className={`text-sm border rounded-md px-2 py-1.5 bg-gray-900 text-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none flex-1 min-w-[180px] ${
             required && !value
               ? "border-amber-500/50"
               : "border-gray-600"
@@ -407,10 +407,10 @@ export default function UploadPage() {
         <h2 className="text-2xl font-bold text-gray-900">
           Upload Transcripts
         </h2>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-base text-gray-500">
           Upload <code>.txt</code> transcript files. Filenames should follow the
           pattern{" "}
-          <code className="text-xs bg-gray-100 px-1 py-0.5 rounded">
+          <code className="text-sm bg-gray-100 px-1 py-0.5 rounded">
             YYYY-MM-DD_-_Title.txt
           </code>{" "}
           for automatic date and title extraction.
@@ -434,12 +434,12 @@ export default function UploadPage() {
             dragActive ? "text-blue-500" : "text-gray-400"
           }`}
         />
-        <p className="text-sm font-medium text-gray-700">
+        <p className="text-base font-medium text-gray-700">
           {dragActive
             ? "Drop files here"
             : "Drag & drop transcript files, or click to browse"}
         </p>
-        <p className="mt-1 text-xs text-gray-500">
+        <p className="mt-1 text-sm text-gray-500">
           Accepts .txt files up to 10 MB each
         </p>
         <input
@@ -459,12 +459,12 @@ export default function UploadPage() {
       {files.length > 0 && (
         <div className="rounded-lg border border-gray-700 bg-gray-800 shadow-sm">
           <div className="flex items-center justify-between border-b border-gray-700 px-4 py-3">
-            <h3 className="text-sm font-semibold text-gray-100">
+            <h3 className="text-base font-semibold text-gray-100">
               {files.length} file{files.length !== 1 ? "s" : ""} selected
             </h3>
             <button
               onClick={clearAll}
-              className="text-xs text-gray-400 hover:text-gray-200"
+              className="text-sm text-gray-400 hover:text-gray-200"
             >
               Clear all
             </button>
@@ -482,10 +482,10 @@ export default function UploadPage() {
                   <div className="flex items-center gap-3 mb-3">
                     <FileText className="h-4 w-4 flex-shrink-0 text-gray-400" />
                     <div className="min-w-0 flex-1">
-                      <span className="text-sm text-gray-200 truncate block">
+                      <span className="text-base text-gray-200 truncate block">
                         {file.name}
                       </span>
-                      <span className="text-xs text-gray-500">
+                      <span className="text-sm text-gray-500">
                         {formatFileSize(file.size)}
                       </span>
                     </div>
@@ -522,7 +522,7 @@ export default function UploadPage() {
                   <div className="ml-7 mt-2">
                     <button
                       onClick={() => toggleContext(file.name)}
-                      className="inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-gray-200 transition-colors"
+                      className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-gray-200 transition-colors"
                     >
                       {isExpanded ? (
                         <ChevronDown className="h-3.5 w-3.5" />
@@ -545,7 +545,7 @@ export default function UploadPage() {
                       <div className="mt-2 space-y-3 pl-3 border-l-2 border-gray-700 ml-1">
                         {/* Notes textarea */}
                         <div>
-                          <label className="text-xs text-gray-400 block mb-1">
+                          <label className="text-sm text-gray-400 block mb-1">
                             Context notes
                           </label>
                           <textarea
@@ -553,13 +553,13 @@ export default function UploadPage() {
                             onChange={(e) => setNote(file.name, e.target.value)}
                             rows={3}
                             placeholder="Meeting agenda, key topics to watch, pre-read notes..."
-                            className="w-full rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-sm text-gray-200 placeholder:text-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none resize-y"
+                            className="w-full rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-base text-gray-200 placeholder:text-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none resize-y"
                           />
                         </div>
 
                         {/* Attachment picker */}
                         <div>
-                          <label className="text-xs text-gray-400 block mb-1">
+                          <label className="text-sm text-gray-400 block mb-1">
                             Supporting documents
                             <span className="text-gray-500 ml-1">(PDF, PPTX, DOCX, max 25 MB)</span>
                           </label>
@@ -591,12 +591,12 @@ export default function UploadPage() {
                                 input.click();
                               }}
                               disabled={atts.length >= MAX_ATTACHMENTS_PER_TRANSCRIPT}
-                              className="inline-flex items-center gap-1 rounded-md border border-gray-600 bg-gray-800 px-2.5 py-1.5 text-xs text-gray-300 hover:bg-gray-700 hover:text-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                              className="inline-flex items-center gap-1 rounded-md border border-gray-600 bg-gray-800 px-2.5 py-1.5 text-sm text-gray-300 hover:bg-gray-700 hover:text-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                             >
                               <Paperclip className="h-3 w-3" />
                               Choose files
                             </button>
-                            <span className="text-xs text-gray-500">
+                            <span className="text-sm text-gray-500">
                               {atts.length}/{MAX_ATTACHMENTS_PER_TRANSCRIPT}
                             </span>
                           </div>
@@ -606,7 +606,7 @@ export default function UploadPage() {
                               {atts.map((att, attIdx) => (
                                 <li
                                   key={`${att.name}-${att.size}-${attIdx}`}
-                                  className="flex items-center gap-2 text-xs text-gray-300 bg-gray-800/50 rounded px-2 py-1.5"
+                                  className="flex items-center gap-2 text-sm text-gray-300 bg-gray-800/50 rounded px-2 py-1.5"
                                 >
                                   <FileText
                                     className={`h-3 w-3 flex-shrink-0 ${
@@ -643,7 +643,7 @@ export default function UploadPage() {
             <button
               onClick={handleUpload}
               disabled={uploading || !allHavePrimary}
-              className="inline-flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="inline-flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               {uploading ? (
                 <>
@@ -660,7 +660,7 @@ export default function UploadPage() {
               )}
             </button>
             {!allHavePrimary && (
-              <span className="text-xs text-amber-400">
+              <span className="text-sm text-amber-400">
                 All files need a primary project assigned
               </span>
             )}
@@ -674,15 +674,15 @@ export default function UploadPage() {
           <div className="flex items-start gap-2">
             <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
             <div className="flex-1">
-              <p className="text-sm font-medium text-red-800">
+              <p className="text-base font-medium text-red-800">
                 {uploadedIdMap.size > 0 ? "Context save failed" : "Upload failed"}
               </p>
-              <p className="mt-1 text-sm text-red-700 whitespace-pre-line">{error}</p>
+              <p className="mt-1 text-base text-red-700 whitespace-pre-line">{error}</p>
               {uploadedIdMap.size > 0 && (
                 <button
                   onClick={handleRetryContext}
                   disabled={uploading}
-                  className="mt-2 inline-flex items-center gap-2 rounded-md bg-red-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-red-700 disabled:opacity-50 transition-colors"
+                  className="mt-2 inline-flex items-center gap-2 rounded-md bg-red-600 px-3 py-1.5 text-base font-medium text-white hover:bg-red-700 disabled:opacity-50 transition-colors"
                 >
                   {uploading ? (
                     <><Loader2 className="h-3.5 w-3.5 animate-spin" /> Retrying...</>
@@ -700,7 +700,7 @@ export default function UploadPage() {
       {response && (
         <div className="rounded-lg border border-gray-200 bg-white shadow-sm">
           <div className="border-b border-gray-200 px-4 py-3">
-            <h3 className="text-sm font-semibold text-gray-900">
+            <h3 className="text-base font-semibold text-gray-900">
               Upload complete &mdash; {response.uploaded} of {response.total}{" "}
               file{response.total !== 1 ? "s" : ""} processed
             </h3>
@@ -712,11 +712,11 @@ export default function UploadPage() {
                 <li key={r.filename} className="flex items-center gap-3 px-4 py-3">
                   {statusIcon(r.status)}
                   <div className="min-w-0 flex-1">
-                    <p className="text-sm font-medium text-gray-900 truncate">
+                    <p className="text-base font-medium text-gray-900 truncate">
                       {r.title || r.filename}
                     </p>
                     <div className="flex items-center gap-2">
-                      <p className="text-xs text-gray-500">{r.filename}</p>
+                      <p className="text-sm text-gray-500">{r.filename}</p>
                       {ctx?.notes && (
                         <span className="inline-flex items-center rounded-full bg-purple-50 px-1.5 py-0.5 text-[10px] font-medium text-purple-700">
                           notes
@@ -729,11 +729,11 @@ export default function UploadPage() {
                       )}
                     </div>
                     {r.error && (
-                      <p className="text-xs text-red-600 mt-0.5">{r.error}</p>
+                      <p className="text-sm text-red-600 mt-0.5">{r.error}</p>
                     )}
                   </div>
                   <span
-                    className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
+                    className={`inline-flex items-center rounded-full px-2 py-0.5 text-sm font-medium ${
                       r.status === "inserted"
                         ? "bg-green-50 text-green-700"
                         : r.status === "updated"
@@ -748,7 +748,7 @@ export default function UploadPage() {
                   {r.id && (
                     <Link
                       href={`/transcripts/${r.id}`}
-                      className="text-xs text-blue-600 hover:text-blue-800 hover:underline flex-shrink-0"
+                      className="text-sm text-blue-600 hover:text-blue-800 hover:underline flex-shrink-0"
                     >
                       View
                     </Link>
@@ -760,7 +760,7 @@ export default function UploadPage() {
           <div className="border-t border-gray-200 px-4 py-3">
             <Link
               href="/transcripts"
-              className="text-sm text-blue-600 hover:text-blue-800 hover:underline"
+              className="text-base text-blue-600 hover:text-blue-800 hover:underline"
             >
               Go to Transcripts &rarr;
             </Link>

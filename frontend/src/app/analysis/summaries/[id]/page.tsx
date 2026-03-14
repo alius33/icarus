@@ -27,12 +27,12 @@ export default async function SummaryDetailPage({
       <div className="space-y-6">
         <Link
           href="/analysis/summaries"
-          className="text-sm text-blue-600 hover:text-blue-800"
+          className="text-base text-blue-600 hover:text-blue-800"
         >
           &larr; Back to Summaries
         </Link>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
-          <p className="text-sm text-red-700">
+          <p className="text-base text-red-700">
             {error || "Unable to load summary. Please try again later."}
           </p>
         </div>
@@ -44,7 +44,7 @@ export default async function SummaryDetailPage({
     <div className="space-y-6">
       <Link
         href="/analysis/summaries"
-        className="inline-block text-sm text-blue-600 hover:text-blue-800"
+        className="inline-block text-base text-blue-600 hover:text-blue-800"
       >
         &larr; Back to Summaries
       </Link>
@@ -56,21 +56,21 @@ export default async function SummaryDetailPage({
         </h2>
         <div className="mt-2 flex items-center gap-3">
           {summary.date && (
-            <span className="text-sm text-gray-500">
+            <span className="text-base text-gray-500">
               {formatDate(summary.date)}
             </span>
           )}
           {summary.transcript_id && (
             <Link
               href={`/transcripts/${summary.transcript_id}`}
-              className="text-sm text-blue-600 hover:text-blue-800"
+              className="text-base text-blue-600 hover:text-blue-800"
             >
               View Source Transcript
             </Link>
           )}
         </div>
         {summary.tldr && (
-          <p className="mt-3 text-sm text-gray-600 italic">
+          <p className="mt-3 text-base text-gray-600 italic">
             TL;DR: {summary.tldr}
           </p>
         )}
@@ -90,7 +90,7 @@ export default async function SummaryDetailPage({
             </h3>
             <ul className="space-y-2">
               {summary.key_decisions.map((d, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                <li key={i} className="flex items-start gap-2 text-base text-gray-700">
                   <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-blue-500 flex-shrink-0" />
                   {d}
                 </li>
@@ -106,7 +106,7 @@ export default async function SummaryDetailPage({
             </h3>
             <ul className="space-y-2">
               {summary.action_items.map((a, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                <li key={i} className="flex items-start gap-2 text-base text-gray-700">
                   <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-green-500 flex-shrink-0" />
                   {a}
                 </li>
@@ -122,7 +122,7 @@ export default async function SummaryDetailPage({
             </h3>
             <ul className="space-y-2">
               {summary.risks_and_concerns.map((r, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                <li key={i} className="flex items-start gap-2 text-base text-gray-700">
                   <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-red-500 flex-shrink-0" />
                   {r}
                 </li>
@@ -138,7 +138,7 @@ export default async function SummaryDetailPage({
             </h3>
             <ul className="space-y-2">
               {summary.follow_ups.map((f, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                <li key={i} className="flex items-start gap-2 text-base text-gray-700">
                   <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-yellow-500 flex-shrink-0" />
                   {f}
                 </li>

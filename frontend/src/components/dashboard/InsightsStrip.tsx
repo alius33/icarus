@@ -83,7 +83,7 @@ export default function InsightsStrip({ insights }: Props) {
       {metrics.map((m) => (
         <div key={m.label} className="flex items-center gap-1.5">
           <span className={`h-2 w-2 rounded-full ${m.dotColor}`} />
-          <span className="text-xs text-gray-600">
+          <span className="text-sm text-gray-600">
             {m.label}:{" "}
             <span className="font-semibold text-gray-900">{m.value}</span>
           </span>

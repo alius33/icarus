@@ -43,7 +43,7 @@ export default function DecisionViewSwitcher({
               key={key}
               onClick={() => onViewChange(key)}
               className={cn(
-                "flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-md transition-colors",
+                "flex items-center gap-1.5 px-3 py-1.5 text-base font-medium rounded-md transition-colors",
                 view === key
                   ? "bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm"
                   : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
@@ -58,7 +58,7 @@ export default function DecisionViewSwitcher({
         <button
           onClick={onToggleFilters}
           className={cn(
-            "flex items-center gap-1.5 px-3 py-1.5 text-sm rounded-md border transition-colors",
+            "flex items-center gap-1.5 px-3 py-1.5 text-base rounded-md border transition-colors",
             showFilters
               ? "border-blue-300 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300"
               : "border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
@@ -67,7 +67,7 @@ export default function DecisionViewSwitcher({
           <Filter className="h-4 w-4" />
           Filters
           {Object.values(filters).filter(Boolean).length > 0 && (
-            <span className="ml-1 px-1.5 py-0.5 text-xs bg-blue-500 text-white rounded-full">
+            <span className="ml-1 px-1.5 py-0.5 text-sm bg-blue-500 text-white rounded-full">
               {Object.values(filters).filter(Boolean).length}
             </span>
           )}
@@ -92,13 +92,13 @@ export default function DecisionViewSwitcher({
             />
           )}
           <div className="flex flex-col gap-1">
-            <span className="text-xs font-medium text-gray-500 dark:text-gray-400">Search</span>
+            <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Search</span>
             <input
               type="text"
               value={filters.search}
               onChange={(e) => onFilterChange("search", e.target.value)}
               placeholder="Search decisions..."
-              className="text-sm border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="text-base border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-blue-500"
             />
           </div>
           {Object.values(filters).some(Boolean) && (
@@ -108,7 +108,7 @@ export default function DecisionViewSwitcher({
                 onFilterChange("workstream", "");
                 onFilterChange("search", "");
               }}
-              className="text-xs text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 underline self-end mb-1"
+              className="text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 underline self-end mb-1"
             >
               Clear all
             </button>
@@ -132,11 +132,11 @@ function FilterSelect({
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <span className="text-xs font-medium text-gray-500 dark:text-gray-400">{label}</span>
+      <span className="text-sm font-medium text-gray-500 dark:text-gray-400">{label}</span>
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="text-sm border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-blue-500"
+        className="text-base border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-blue-500"
       >
         <option value="">All</option>
         {options.map((o) => (

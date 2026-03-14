@@ -14,12 +14,12 @@ export default function GapCard({ item }: GapCardProps) {
         <AlertCircle className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
         <div className="flex-1 min-w-0">
           <div className="flex items-start justify-between mb-2">
-            <h3 className="font-medium text-sm">
+            <h3 className="font-medium text-base">
               {item.gap_description || item.contradiction_type}
             </h3>
             {item.severity && (
               <span
-                className={`px-2 py-0.5 rounded-full text-xs flex-shrink-0 ml-2 ${
+                className={`px-2 py-0.5 rounded-full text-sm flex-shrink-0 ml-2 ${
                   item.severity === "CRITICAL"
                     ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400"
                     : item.severity === "HIGH"
@@ -32,7 +32,7 @@ export default function GapCard({ item }: GapCardProps) {
             )}
           </div>
 
-          <div className="space-y-1.5 text-sm text-gray-600 dark:text-gray-300">
+          <div className="space-y-1.5 text-base text-gray-600 dark:text-gray-300">
             {item.expected_source && (
               <p>
                 <span className="text-gray-400">Expected from:</span>{" "}
@@ -59,7 +59,7 @@ export default function GapCard({ item }: GapCardProps) {
             )}
           </div>
 
-          <div className="flex items-center gap-3 mt-2 text-xs text-gray-400">
+          <div className="flex items-center gap-3 mt-2 text-sm text-gray-400">
             <span>
               Status:{" "}
               <span

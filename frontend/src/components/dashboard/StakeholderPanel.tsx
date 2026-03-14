@@ -60,12 +60,12 @@ export default function StakeholderPanel({ items, onItemClick }: Props) {
 
   return (
     <div>
-      <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+      <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
         <Users className="h-3.5 w-3.5" />
         Stakeholder Engagement
       </h4>
       {items.length === 0 ? (
-        <p className="text-sm text-gray-500">No tier 1-2 stakeholder data.</p>
+        <p className="text-base text-gray-500">No tier 1-2 stakeholder data.</p>
       ) : (
         <div className="space-y-2.5">
           {items.map((s) => (
@@ -76,7 +76,7 @@ export default function StakeholderPanel({ items, onItemClick }: Props) {
             >
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium text-gray-900 group-hover:text-blue-700 truncate">
+                  <span className="text-base font-medium text-gray-900 group-hover:text-blue-700 truncate">
                     {s.name}
                   </span>
                   <span className="inline-flex items-center rounded bg-blue-50 px-1.5 py-0.5 text-[10px] font-medium text-blue-700">

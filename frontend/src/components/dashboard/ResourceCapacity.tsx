@@ -55,26 +55,26 @@ export default function ResourceCapacity() {
   };
 
   if (loading) {
-    return <div className="p-4 text-sm text-gray-500">Loading resources...</div>;
+    return <div className="p-4 text-base text-gray-500">Loading resources...</div>;
   }
 
   return (
     <div>
       <div className="flex items-center justify-between mb-3">
-        <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
+        <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
           <UserCog className="h-3.5 w-3.5" />
           Resource Capacity ({resources.length})
         </h4>
         <button
           onClick={handleCreate}
-          className="flex items-center gap-1 text-xs text-blue-600 hover:text-blue-800"
+          className="flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800"
         >
           <Plus className="h-3 w-3" /> Add
         </button>
       </div>
 
       {resources.length === 0 ? (
-        <p className="text-sm text-gray-500">No resource allocations tracked.</p>
+        <p className="text-base text-gray-500">No resource allocations tracked.</p>
       ) : (
         <div className="space-y-2">
           {resources.map((r) => {
@@ -90,7 +90,7 @@ export default function ResourceCapacity() {
               >
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm font-medium text-gray-900">
+                    <span className="text-base font-medium text-gray-900">
                       {r.person_name}
                     </span>
                     <span

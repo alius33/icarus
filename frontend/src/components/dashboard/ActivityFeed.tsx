@@ -20,11 +20,11 @@ interface Props {
 export default function ActivityFeed({ items, onItemClick }: Props) {
   return (
     <div>
-      <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+      <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
         Recent Activity
       </h4>
       {items.length === 0 ? (
-        <p className="text-sm text-gray-500">No recent activity.</p>
+        <p className="text-base text-gray-500">No recent activity.</p>
       ) : (
         <ul className="space-y-2.5">
           {items.map((item, i) => (
@@ -35,7 +35,7 @@ export default function ActivityFeed({ items, onItemClick }: Props) {
               >
                 <EntityIcon type={item.entity_type} />
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm text-gray-900 truncate">{item.title}</p>
+                  <p className="text-base text-gray-900 truncate">{item.title}</p>
                   <div className="flex items-center gap-2 mt-0.5">
                     {item.date && (
                       <span className="text-[10px] text-gray-400">

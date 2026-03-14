@@ -88,7 +88,7 @@ export default function ContradictionsPage() {
           <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
             Contradictions & Information Gaps
           </h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+          <p className="text-base text-gray-500 dark:text-gray-400 mt-1">
             Identify contradictory statements and missing information across meetings
           </p>
         </div>
@@ -111,14 +111,14 @@ export default function ContradictionsPage() {
           <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
             Contradictions & Information Gaps
           </h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+          <p className="text-base text-gray-500 dark:text-gray-400 mt-1">
             Identify contradictory statements and missing information across meetings
           </p>
         </div>
         <div className="text-center py-16">
           <AlertTriangle className="h-12 w-12 mx-auto text-gray-300 dark:text-gray-600 mb-4" />
           <p className="text-gray-500 dark:text-gray-400">
-            No data yet. Run <code className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded text-sm">/analyse-deep</code> to populate.
+            No data yet. Run <code className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded text-base">/analyse-deep</code> to populate.
           </p>
         </div>
       </div>
@@ -131,7 +131,7 @@ export default function ContradictionsPage() {
         <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
           Contradictions & Information Gaps
         </h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+        <p className="text-base text-gray-500 dark:text-gray-400 mt-1">
           Identify contradictory statements and missing information across meetings
         </p>
       </div>
@@ -145,7 +145,7 @@ export default function ContradictionsPage() {
               setActiveTab(tab.key);
               setSeverityFilter("");
             }}
-            className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-b-2 transition-colors ${
+            className={`flex items-center gap-2 px-4 py-2.5 text-base font-medium border-b-2 transition-colors ${
               activeTab === tab.key
                 ? "border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400"
                 : "border-transparent text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
@@ -153,7 +153,7 @@ export default function ContradictionsPage() {
           >
             {tab.icon}
             {tab.label}
-            <span className="ml-1 text-xs bg-gray-100 dark:bg-gray-700 px-1.5 py-0.5 rounded-full">
+            <span className="ml-1 text-sm bg-gray-100 dark:bg-gray-700 px-1.5 py-0.5 rounded-full">
               {tab.count}
             </span>
           </button>
@@ -162,11 +162,11 @@ export default function ContradictionsPage() {
 
       {/* Severity filter */}
       <div className="flex gap-3 items-center">
-        <label className="text-sm text-gray-500 dark:text-gray-400">Filter by severity:</label>
+        <label className="text-base text-gray-500 dark:text-gray-400">Filter by severity:</label>
         <select
           value={severityFilter}
           onChange={(e) => setSeverityFilter(e.target.value)}
-          className="text-sm border rounded-md px-3 py-1.5 bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-200"
+          className="text-base border rounded-md px-3 py-1.5 bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-200"
         >
           <option value="">All Severities</option>
           <option value="CRITICAL">Critical</option>
@@ -177,12 +177,12 @@ export default function ContradictionsPage() {
         {severityFilter && (
           <button
             onClick={() => setSeverityFilter("")}
-            className="text-xs text-blue-600 hover:underline dark:text-blue-400"
+            className="text-sm text-blue-600 hover:underline dark:text-blue-400"
           >
             Clear
           </button>
         )}
-        <span className="ml-auto text-sm text-gray-500 dark:text-gray-400">
+        <span className="ml-auto text-base text-gray-500 dark:text-gray-400">
           {filtered.length} result{filtered.length !== 1 ? "s" : ""}
         </span>
       </div>
@@ -220,15 +220,15 @@ function ContradictionCard({ item }: { item: ContradictionSchema }) {
       <div className="px-5 py-3 border-b border-gray-100 dark:border-gray-700 flex items-center justify-between">
         <div className="flex items-center gap-3">
           {item.person && (
-            <span className="flex items-center gap-1.5 text-sm font-medium text-gray-900 dark:text-gray-100">
+            <span className="flex items-center gap-1.5 text-base font-medium text-gray-900 dark:text-gray-100">
               <User2 className="w-4 h-4 text-gray-400" />
               {item.person}
             </span>
           )}
-          <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${sev.bg} ${sev.text}`}>
+          <span className={`px-2 py-0.5 rounded-full text-sm font-medium ${sev.bg} ${sev.text}`}>
             {item.severity || "UNKNOWN"}
           </span>
-          <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${resClass}`}>
+          <span className={`px-2 py-0.5 rounded-full text-sm font-medium ${resClass}`}>
             {item.resolution}
           </span>
         </div>
@@ -242,15 +242,15 @@ function ContradictionCard({ item }: { item: ContradictionSchema }) {
         {/* Statement A */}
         <div className="px-5 py-4">
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-xs font-semibold text-red-500 uppercase tracking-wider">Statement A</span>
+            <span className="text-sm font-semibold text-red-500 uppercase tracking-wider">Statement A</span>
             {item.date_a && (
-              <span className="flex items-center gap-1 text-xs text-gray-400">
+              <span className="flex items-center gap-1 text-sm text-gray-400">
                 <Calendar className="w-3 h-3" />
                 {item.date_a}
               </span>
             )}
           </div>
-          <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+          <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
             {item.statement_a || "Not recorded"}
           </p>
         </div>
@@ -258,15 +258,15 @@ function ContradictionCard({ item }: { item: ContradictionSchema }) {
         {/* Statement B */}
         <div className="px-5 py-4">
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-xs font-semibold text-blue-500 uppercase tracking-wider">Statement B</span>
+            <span className="text-sm font-semibold text-blue-500 uppercase tracking-wider">Statement B</span>
             {item.date_b && (
-              <span className="flex items-center gap-1 text-xs text-gray-400">
+              <span className="flex items-center gap-1 text-sm text-gray-400">
                 <Calendar className="w-3 h-3" />
                 {item.date_b}
               </span>
             )}
           </div>
-          <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+          <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
             {item.statement_b || "Not recorded"}
           </p>
         </div>
@@ -275,7 +275,7 @@ function ContradictionCard({ item }: { item: ContradictionSchema }) {
       {/* Footer */}
       {item.contradiction_type && (
         <div className="px-5 py-2 border-t border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
-          <span className="text-xs text-gray-500 dark:text-gray-400">
+          <span className="text-sm text-gray-500 dark:text-gray-400">
             Type: <span className="font-medium text-gray-700 dark:text-gray-300">{item.contradiction_type}</span>
           </span>
         </div>
@@ -293,21 +293,21 @@ function GapCard({ item }: { item: ContradictionSchema }) {
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow border border-gray-200 dark:border-gray-700 p-5">
       <div className="flex items-start justify-between mb-3">
         <div className="flex-1">
-          <p className="text-sm font-medium text-gray-900 dark:text-gray-100 mb-1">
+          <p className="text-base font-medium text-gray-900 dark:text-gray-100 mb-1">
             {item.gap_description || "Unspecified information gap"}
           </p>
           {item.expected_source && (
-            <p className="text-xs text-gray-500 dark:text-gray-400">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
               Expected source: <span className="font-medium text-gray-700 dark:text-gray-300">{item.expected_source}</span>
             </p>
           )}
         </div>
-        <span className={`px-2 py-0.5 rounded-full text-xs font-medium flex-shrink-0 ml-3 ${sev.bg} ${sev.text}`}>
+        <span className={`px-2 py-0.5 rounded-full text-sm font-medium flex-shrink-0 ml-3 ${sev.bg} ${sev.text}`}>
           {item.severity || "UNKNOWN"}
         </span>
       </div>
 
-      <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+      <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
         {item.last_mentioned && (
           <span className="flex items-center gap-1">
             <Calendar className="w-3 h-3" />
@@ -326,7 +326,7 @@ function GapCard({ item }: { item: ContradictionSchema }) {
       </div>
 
       {item.person && (
-        <div className="mt-2 flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400">
+        <div className="mt-2 flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
           <User2 className="w-3 h-3" />
           Related to: <span className="font-medium text-gray-700 dark:text-gray-300">{item.person}</span>
         </div>
@@ -345,7 +345,7 @@ function ConfidenceBadge({ confidence }: { confidence: string | null }) {
   };
   if (!confidence) return null;
   return (
-    <span className={`px-2 py-0.5 rounded-full text-xs ${colors[confidence] || "bg-gray-100 dark:bg-gray-700"}`}>
+    <span className={`px-2 py-0.5 rounded-full text-sm ${colors[confidence] || "bg-gray-100 dark:bg-gray-700"}`}>
       {confidence} confidence
     </span>
   );

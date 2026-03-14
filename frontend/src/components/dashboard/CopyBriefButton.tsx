@@ -53,7 +53,7 @@ export default function CopyBriefButton() {
         <button
           onClick={() => handleCopy("leadership")}
           disabled={state === "loading"}
-          className="inline-flex items-center gap-1.5 rounded-l-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 disabled:opacity-50"
+          className="inline-flex items-center gap-1.5 rounded-l-md border border-gray-300 bg-white px-3 py-1.5 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 disabled:opacity-50"
         >
           {state === "loading" && <Loader2 className="h-4 w-4 animate-spin" />}
           {state === "copied" && <Check className="h-4 w-4 text-green-600" />}
@@ -74,7 +74,7 @@ export default function CopyBriefButton() {
             <button
               key={opt.value}
               onClick={() => handleCopy(opt.value)}
-              className="block w-full px-3 py-2 text-left text-sm text-gray-700 hover:bg-gray-50 first:rounded-t-md last:rounded-b-md"
+              className="block w-full px-3 py-2 text-left text-base text-gray-700 hover:bg-gray-50 first:rounded-t-md last:rounded-b-md"
             >
               {opt.label}
             </button>

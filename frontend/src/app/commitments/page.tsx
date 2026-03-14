@@ -166,7 +166,7 @@ export default function CommitmentsPage() {
     return (
       <div className="space-y-6">
         <h2 className="text-2xl font-bold text-gray-900">Commitments</h2>
-        <p className="text-sm text-gray-500">Loading commitments...</p>
+        <p className="text-base text-gray-500">Loading commitments...</p>
       </div>
     );
 
@@ -175,7 +175,7 @@ export default function CommitmentsPage() {
       <div className="space-y-6">
         <h2 className="text-2xl font-bold text-gray-900">Commitments</h2>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
-          <p className="text-sm text-red-700">{error}</p>
+          <p className="text-base text-red-700">{error}</p>
         </div>
       </div>
     );
@@ -189,7 +189,7 @@ export default function CommitmentsPage() {
           <select
             value={personFilter}
             onChange={(e) => setPersonFilter(e.target.value)}
-            className="border border-gray-300 rounded-md px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="border border-gray-300 rounded-md px-3 py-2 text-base text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500"
           >
             <option value="">All people</option>
             {uniquePersons.map((p) => (
@@ -198,12 +198,12 @@ export default function CommitmentsPage() {
               </option>
             ))}
           </select>
-          <span className="text-sm text-gray-500">
+          <span className="text-base text-gray-500">
             {filtered.length} commitment{filtered.length !== 1 ? "s" : ""}
           </span>
           <button
             onClick={openCreate}
-            className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
+            className="px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
           >
             + New Commitment
           </button>
@@ -213,18 +213,18 @@ export default function CommitmentsPage() {
       {/* Grouped tables */}
       {Object.keys(grouped).length === 0 ? (
         <div className="text-center py-12">
-          <p className="text-sm text-gray-500">No commitments recorded yet.</p>
+          <p className="text-base text-gray-500">No commitments recorded yet.</p>
         </div>
       ) : (
         Object.entries(grouped).map(([status, items]) => (
           <div key={status} className="space-y-2">
             <div className="flex items-center gap-2">
               <span
-                className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold border capitalize ${STATUS_COLORS[status] || "bg-gray-50 text-gray-600 border-gray-200"}`}
+                className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-semibold border capitalize ${STATUS_COLORS[status] || "bg-gray-50 text-gray-600 border-gray-200"}`}
               >
                 {status}
               </span>
-              <span className="text-xs text-gray-400">
+              <span className="text-sm text-gray-400">
                 {items.length} item{items.length !== 1 ? "s" : ""}
               </span>
             </div>
@@ -232,20 +232,20 @@ export default function CommitmentsPage() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-gray-200 bg-gray-50">
-                    <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 w-40">
+                    <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-40">
                       Person
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                    <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500">
                       Commitment
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 w-32">
+                    <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-32">
                       Date Made
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 w-40">
+                    <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-40">
                       Deadline
                     </th>
                     {status === "conditional" && (
-                      <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 w-48">
+                      <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-48">
                         Condition
                       </th>
                     )}
@@ -259,25 +259,25 @@ export default function CommitmentsPage() {
                       className="hover:bg-gray-50 transition-colors cursor-pointer"
                       onClick={() => openEdit(c)}
                     >
-                      <td className="px-6 py-4 text-sm font-medium text-gray-900">
+                      <td className="px-6 py-4 text-base font-medium text-gray-900">
                         {c.person}
                       </td>
-                      <td className="px-6 py-4 text-sm text-gray-700">
+                      <td className="px-6 py-4 text-base text-gray-700">
                         {c.commitment}
                         {c.notes && (
-                          <p className="mt-1 text-xs text-gray-400">
+                          <p className="mt-1 text-sm text-gray-400">
                             {c.notes}
                           </p>
                         )}
                       </td>
-                      <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                      <td className="px-6 py-4 text-base text-gray-500 whitespace-nowrap">
                         {c.date_made ? formatDate(c.date_made) : "\u2014"}
                       </td>
-                      <td className="px-6 py-4 text-sm text-gray-500">
+                      <td className="px-6 py-4 text-base text-gray-500">
                         {c.deadline_text || "\u2014"}
                       </td>
                       {status === "conditional" && (
-                        <td className="px-6 py-4 text-sm text-gray-500 italic">
+                        <td className="px-6 py-4 text-base text-gray-500 italic">
                           {c.condition || "\u2014"}
                         </td>
                       )}

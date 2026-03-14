@@ -47,7 +47,7 @@ export default function LabelTagInput({ labels, onChange, suggestions = [], plac
         {labels.map((label) => (
           <span
             key={label}
-            className="inline-flex items-center gap-1 px-2 py-0.5 text-xs rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300"
+            className="inline-flex items-center gap-1 px-2 py-0.5 text-sm rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300"
           >
             {label}
             <button
@@ -69,7 +69,7 @@ export default function LabelTagInput({ labels, onChange, suggestions = [], plac
           onFocus={() => setShowSuggestions(true)}
           onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
           placeholder={labels.length === 0 ? placeholder : ""}
-          className="flex-1 min-w-[80px] text-sm bg-transparent outline-none text-gray-900 dark:text-gray-100 placeholder-gray-400"
+          className="flex-1 min-w-[80px] text-base bg-transparent outline-none text-gray-900 dark:text-gray-100 placeholder-gray-400"
         />
       </div>
 
@@ -81,7 +81,7 @@ export default function LabelTagInput({ labels, onChange, suggestions = [], plac
               key={s}
               type="button"
               onMouseDown={() => addLabel(s)}
-              className="w-full text-left px-3 py-1.5 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100"
+              className="w-full text-left px-3 py-1.5 text-base hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100"
             >
               {s}
             </button>

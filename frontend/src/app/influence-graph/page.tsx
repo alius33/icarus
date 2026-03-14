@@ -133,9 +133,9 @@ function StrengthBadge({ strength }: { strength: string | null }) {
     MODERATE: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400",
     WEAK: "bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300",
   };
-  if (!strength) return <span className="text-gray-400 text-xs">--</span>;
+  if (!strength) return <span className="text-gray-400 text-sm">--</span>;
   return (
-    <span className={`px-2 py-0.5 rounded-full text-xs ${colors[strength] || "bg-gray-100 dark:bg-gray-700"}`}>
+    <span className={`px-2 py-0.5 rounded-full text-sm ${colors[strength] || "bg-gray-100 dark:bg-gray-700"}`}>
       {strength}
     </span>
   );
@@ -148,7 +148,7 @@ function ConfidenceBadge({ confidence }: { confidence: string | null }) {
     LOW: "text-red-500 dark:text-red-400",
   };
   if (!confidence) return null;
-  return <span className={`text-xs font-medium ${colors[confidence] || ""}`}>{confidence}</span>;
+  return <span className={`text-sm font-medium ${colors[confidence] || ""}`}>{confidence}</span>;
 }
 
 // ── Main page ──────────────────────────────────────────────────────────────────
@@ -206,7 +206,7 @@ export default function InfluenceGraphPage() {
       <div className="space-y-6">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Influence Map</h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+          <p className="text-base text-gray-500 dark:text-gray-400 mt-1">
             Visualise stakeholder influence patterns, coalitions, and power dynamics
           </p>
         </div>
@@ -223,14 +223,14 @@ export default function InfluenceGraphPage() {
       <div className="space-y-6">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Influence Map</h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+          <p className="text-base text-gray-500 dark:text-gray-400 mt-1">
             Visualise stakeholder influence patterns, coalitions, and power dynamics
           </p>
         </div>
         <div className="text-center py-16">
           <Users className="h-12 w-12 mx-auto text-gray-300 dark:text-gray-600 mb-4" />
           <p className="text-gray-500 dark:text-gray-400">
-            No data yet. Run <code className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded text-sm">/analyse-deep</code> to populate.
+            No data yet. Run <code className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded text-base">/analyse-deep</code> to populate.
           </p>
         </div>
       </div>
@@ -243,7 +243,7 @@ export default function InfluenceGraphPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Influence Map</h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+        <p className="text-base text-gray-500 dark:text-gray-400 mt-1">
           Visualise stakeholder influence patterns, coalitions, and power dynamics
         </p>
       </div>
@@ -271,7 +271,7 @@ export default function InfluenceGraphPage() {
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow border border-gray-200 dark:border-gray-700 overflow-hidden">
           <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700">
             <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Network Graph</h2>
-            <p className="text-xs text-gray-500 dark:text-gray-400">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
               Click a node to highlight. Node size reflects signal count.
             </p>
           </div>
@@ -361,7 +361,7 @@ export default function InfluenceGraphPage() {
                     x={node.x}
                     y={node.y - radius - 8}
                     textAnchor="middle"
-                    className="text-xs font-medium"
+                    className="text-sm font-medium"
                     fill="currentColor"
                   >
                     {node.name}
@@ -381,7 +381,7 @@ export default function InfluenceGraphPage() {
           </svg>
 
           {/* Legend */}
-          <div className="flex gap-5 px-4 py-2.5 border-t dark:border-gray-700 text-xs text-gray-500 dark:text-gray-400 flex-wrap">
+          <div className="flex gap-5 px-4 py-2.5 border-t dark:border-gray-700 text-sm text-gray-500 dark:text-gray-400 flex-wrap">
             <div className="flex items-center gap-1.5">
               <span className="inline-block w-4 h-0.5 bg-green-500 rounded" />
               Positive (support, bridging)
@@ -413,13 +413,13 @@ export default function InfluenceGraphPage() {
           <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700">
             <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
               Influence Signals
-              <span className="ml-2 text-sm font-normal text-gray-500 dark:text-gray-400">
+              <span className="ml-2 text-base font-normal text-gray-500 dark:text-gray-400">
                 ({sortedSignals.length})
               </span>
             </h2>
           </div>
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+            <table className="w-full text-base">
               <thead>
                 <tr className="border-b border-gray-200 dark:border-gray-700 text-left text-gray-500 dark:text-gray-400">
                   <th className="px-4 py-2.5 font-medium">Date</th>
@@ -446,7 +446,7 @@ export default function InfluenceGraphPage() {
                     </td>
                     <td className="px-4 py-2.5">
                       <span
-                        className={`inline-block px-2 py-0.5 rounded text-xs font-medium ${
+                        className={`inline-block px-2 py-0.5 rounded text-sm font-medium ${
                           POSITIVE_TYPES.has(s.influence_type)
                             ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
                             : NEGATIVE_TYPES.has(s.influence_type)
@@ -488,7 +488,7 @@ export default function InfluenceGraphPage() {
 function StatCard({ label, value, color }: { label: string; value: number; color?: string }) {
   return (
     <div className="border rounded-lg p-4 bg-white dark:bg-gray-800 dark:border-gray-700">
-      <p className="text-sm text-gray-500 dark:text-gray-400">{label}</p>
+      <p className="text-base text-gray-500 dark:text-gray-400">{label}</p>
       <p className={`text-2xl font-bold mt-1 ${color || "text-gray-900 dark:text-gray-100"}`}>
         {value}
       </p>
@@ -517,13 +517,13 @@ function SelectedNodeDetail({
       <div className="flex items-center justify-between mb-4">
         <div>
           <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{node.name}</h3>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
+          <p className="text-base text-gray-500 dark:text-gray-400">
             {node.signal_count} signals | {outgoing.length} outgoing | {incoming.length} incoming
           </p>
         </div>
         <button
           onClick={onClose}
-          className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm"
+          className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-base"
         >
           Close
         </button>
@@ -532,14 +532,14 @@ function SelectedNodeDetail({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {outgoing.length > 0 && (
           <div>
-            <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <h4 className="text-base font-medium text-gray-700 dark:text-gray-300 mb-2">
               Influencing ({outgoing.length})
             </h4>
             <div className="space-y-1.5">
               {outgoing.map((edge, i) => (
-                <div key={`o-${i}`} className="flex items-center gap-2 text-sm">
+                <div key={`o-${i}`} className="flex items-center gap-2 text-base">
                   <span
-                    className={`px-2 py-0.5 rounded text-xs ${
+                    className={`px-2 py-0.5 rounded text-sm ${
                       POSITIVE_TYPES.has(edge.type)
                         ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
                         : NEGATIVE_TYPES.has(edge.type)
@@ -558,16 +558,16 @@ function SelectedNodeDetail({
         )}
         {incoming.length > 0 && (
           <div>
-            <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <h4 className="text-base font-medium text-gray-700 dark:text-gray-300 mb-2">
               Influenced by ({incoming.length})
             </h4>
             <div className="space-y-1.5">
               {incoming.map((edge, i) => (
-                <div key={`i-${i}`} className="flex items-center gap-2 text-sm">
+                <div key={`i-${i}`} className="flex items-center gap-2 text-base">
                   <span className="font-medium text-gray-900 dark:text-gray-100">{getNodeName(edge.source)}</span>
                   <span className="text-gray-400">&rarr;</span>
                   <span
-                    className={`px-2 py-0.5 rounded text-xs ${
+                    className={`px-2 py-0.5 rounded text-sm ${
                       POSITIVE_TYPES.has(edge.type)
                         ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
                         : NEGATIVE_TYPES.has(edge.type)

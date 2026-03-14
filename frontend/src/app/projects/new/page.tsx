@@ -54,14 +54,14 @@ export default function NewProjectPage() {
     <div className="space-y-6">
       <Link
         href="/projects"
-        className="inline-block text-sm text-blue-600 hover:text-blue-800"
+        className="inline-block text-base text-blue-600 hover:text-blue-800"
       >
         &larr; Back to Projects
       </Link>
 
       <div className="mx-auto max-w-lg">
         <h2 className="text-2xl font-bold text-gray-900">New Project</h2>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-base text-gray-500">
           Create a custom project to group related items.
         </p>
 
@@ -70,7 +70,7 @@ export default function NewProjectPage() {
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-base font-medium text-gray-700"
             >
               Project Name *
             </label>
@@ -80,7 +80,7 @@ export default function NewProjectPage() {
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
               placeholder="e.g. Q1 Data Migration"
             />
           </div>
@@ -89,7 +89,7 @@ export default function NewProjectPage() {
           <div>
             <label
               htmlFor="description"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-base font-medium text-gray-700"
             >
               Description
             </label>
@@ -98,7 +98,7 @@ export default function NewProjectPage() {
               rows={3}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
               placeholder="Brief description of what this project covers..."
             />
           </div>
@@ -107,7 +107,7 @@ export default function NewProjectPage() {
           <div>
             <label
               htmlFor="status"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-base font-medium text-gray-700"
             >
               Status
             </label>
@@ -115,7 +115,7 @@ export default function NewProjectPage() {
               id="status"
               value={status}
               onChange={(e) => setStatus(e.target.value)}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
             >
               {STATUS_OPTIONS.map((s) => (
                 <option key={s} value={s}>
@@ -127,7 +127,7 @@ export default function NewProjectPage() {
 
           {/* Color */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-base font-medium text-gray-700">
               Color
             </label>
             <div className="mt-2 flex gap-2">
@@ -150,7 +150,7 @@ export default function NewProjectPage() {
           {/* Error */}
           {error && (
             <div className="rounded-md border border-red-200 bg-red-50 p-3">
-              <p className="text-sm text-red-700">{error}</p>
+              <p className="text-base text-red-700">{error}</p>
             </div>
           )}
 
@@ -159,13 +159,13 @@ export default function NewProjectPage() {
             <button
               type="submit"
               disabled={submitting || !name.trim()}
-              className="inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-base font-medium text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               {submitting ? "Creating..." : "Create Project"}
             </button>
             <Link
               href="/projects"
-              className="text-sm text-gray-500 hover:text-gray-700"
+              className="text-base text-gray-500 hover:text-gray-700"
             >
               Cancel
             </Link>

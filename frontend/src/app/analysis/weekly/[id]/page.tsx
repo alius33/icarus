@@ -27,12 +27,12 @@ export default async function WeeklyReportDetailPage({
       <div className="space-y-6">
         <Link
           href="/analysis/weekly"
-          className="text-sm text-blue-600 hover:text-blue-800"
+          className="text-base text-blue-600 hover:text-blue-800"
         >
           &larr; Back to Weekly Reports
         </Link>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
-          <p className="text-sm text-red-700">
+          <p className="text-base text-red-700">
             {error || "Unable to load weekly report. Please try again later."}
           </p>
         </div>
@@ -44,7 +44,7 @@ export default async function WeeklyReportDetailPage({
     <div className="space-y-6">
       <Link
         href="/analysis/weekly"
-        className="inline-block text-sm text-blue-600 hover:text-blue-800"
+        className="inline-block text-base text-blue-600 hover:text-blue-800"
       >
         &larr; Back to Weekly Reports
       </Link>
@@ -53,12 +53,12 @@ export default async function WeeklyReportDetailPage({
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
         <h2 className="text-2xl font-bold text-gray-900">{report.title}</h2>
         <div className="mt-2 flex items-center gap-3">
-          <span className="text-sm text-gray-500">
+          <span className="text-base text-gray-500">
             {formatDate(report.week_start)} &mdash;{" "}
             {formatDate(report.week_end)}
           </span>
           {report.period_label && (
-            <span className="px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600 border border-gray-200">
+            <span className="px-2 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-600 border border-gray-200">
               {report.period_label}
             </span>
           )}
@@ -81,7 +81,7 @@ export default async function WeeklyReportDetailPage({
               {report.highlights.map((h, i) => (
                 <li
                   key={i}
-                  className="flex items-start gap-2 text-sm text-gray-700"
+                  className="flex items-start gap-2 text-base text-gray-700"
                 >
                   <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-green-500 flex-shrink-0" />
                   {h}
@@ -100,7 +100,7 @@ export default async function WeeklyReportDetailPage({
               {report.workstream_updates.map((w, i) => (
                 <li
                   key={i}
-                  className="flex items-start gap-2 text-sm text-gray-700"
+                  className="flex items-start gap-2 text-base text-gray-700"
                 >
                   <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-blue-500 flex-shrink-0" />
                   {w}
@@ -119,7 +119,7 @@ export default async function WeeklyReportDetailPage({
               {report.risks.map((r, i) => (
                 <li
                   key={i}
-                  className="flex items-start gap-2 text-sm text-gray-700"
+                  className="flex items-start gap-2 text-base text-gray-700"
                 >
                   <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-red-500 flex-shrink-0" />
                   {r}

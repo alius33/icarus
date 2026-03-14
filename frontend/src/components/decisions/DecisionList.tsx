@@ -69,22 +69,22 @@ export default function DecisionList({ decisions, onDecisionClick, onStatusChang
     <div className="space-y-4">
       {/* Controls */}
       <div className="flex items-center gap-3">
-        <span className="text-xs font-medium text-gray-500 dark:text-gray-400">Group by:</span>
+        <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Group by:</span>
         <select
           value={groupBy}
           onChange={(e) => setGroupBy(e.target.value as GroupKey)}
-          className="text-sm border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+          className="text-base border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
         >
           <option value="none">None</option>
           <option value="execution_status">Status</option>
           <option value="workstream">Workstream</option>
         </select>
-        <span className="ml-auto text-xs text-gray-400">{decisions.length} decisions</span>
+        <span className="ml-auto text-sm text-gray-400">{decisions.length} decisions</span>
       </div>
 
       {/* Table */}
       <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-        <table className="w-full text-sm">
+        <table className="w-full text-base">
           <thead className="bg-gray-50 dark:bg-gray-800">
             <tr>
               {(
@@ -119,7 +119,7 @@ export default function DecisionList({ decisions, onDecisionClick, onStatusChang
                   <tr>
                     <td colSpan={6} className="px-3 py-2 bg-gray-100 dark:bg-gray-800/80">
                       <button
-                        className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+                        className="flex items-center gap-2 text-base font-medium text-gray-700 dark:text-gray-300"
                         onClick={() => toggleGroup(group.label)}
                       >
                         {collapsedGroups.has(group.label) ? (
@@ -128,7 +128,7 @@ export default function DecisionList({ decisions, onDecisionClick, onStatusChang
                           <ChevronDown className="h-4 w-4" />
                         )}
                         {group.label}
-                        <span className="text-xs text-gray-400 font-normal">({group.decisions.length})</span>
+                        <span className="text-sm text-gray-400 font-normal">({group.decisions.length})</span>
                       </button>
                     </td>
                   </tr>
@@ -144,9 +144,9 @@ export default function DecisionList({ decisions, onDecisionClick, onStatusChang
                         onClick={() => onDecisionClick(decision)}
                       >
                         <td className="px-3 py-2">
-                          <span className="text-xs font-mono text-gray-400">#{decision.number}</span>
+                          <span className="text-sm font-mono text-gray-400">#{decision.number}</span>
                         </td>
-                        <td className="px-3 py-2 text-xs text-gray-500 dark:text-gray-400">
+                        <td className="px-3 py-2 text-sm text-gray-500 dark:text-gray-400">
                           {decision.date ? new Date(decision.date).toLocaleDateString("en-GB", { day: "numeric", month: "short" }) : "\u2014"}
                         </td>
                         <td className="px-3 py-2">
@@ -157,19 +157,19 @@ export default function DecisionList({ decisions, onDecisionClick, onStatusChang
                             <select
                               value={decision.execution_status}
                               onChange={(e) => onStatusChange(decision.id, e.target.value)}
-                              className={`text-xs font-medium rounded px-2 py-1 border-0 ${statusCfg?.bgColor ?? "bg-gray-100"} ${statusCfg?.color ?? "text-gray-600"}`}
+                              className={`text-sm font-medium rounded px-2 py-1 border-0 ${statusCfg?.bgColor ?? "bg-gray-100"} ${statusCfg?.color ?? "text-gray-600"}`}
                             >
                               {Object.entries(DECISION_STATUS_CONFIG).map(([k, v]) => (
                                 <option key={k} value={k}>{v.label}</option>
                               ))}
                             </select>
                           ) : (
-                            <span className={`text-xs font-medium px-2 py-1 rounded ${statusCfg?.bgColor ?? "bg-gray-100"} ${statusCfg?.color ?? "text-gray-600"}`}>
+                            <span className={`text-sm font-medium px-2 py-1 rounded ${statusCfg?.bgColor ?? "bg-gray-100"} ${statusCfg?.color ?? "text-gray-600"}`}>
                               {statusCfg?.label ?? decision.execution_status}
                             </span>
                           )}
                         </td>
-                        <td className="px-3 py-2 text-xs text-gray-400 truncate">
+                        <td className="px-3 py-2 text-sm text-gray-400 truncate">
                           {decision.workstream || "\u2014"}
                         </td>
                         <td className="px-3 py-2">
@@ -177,13 +177,13 @@ export default function DecisionList({ decisions, onDecisionClick, onStatusChang
                             {decision.key_people.slice(0, 2).map((person) => (
                               <span
                                 key={person}
-                                className="px-1.5 py-0.5 text-xs rounded bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300"
+                                className="px-1.5 py-0.5 text-sm rounded bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300"
                               >
                                 {person}
                               </span>
                             ))}
                             {decision.key_people.length > 2 && (
-                              <span className="text-xs text-gray-400">+{decision.key_people.length - 2}</span>
+                              <span className="text-sm text-gray-400">+{decision.key_people.length - 2}</span>
                             )}
                           </div>
                         </td>

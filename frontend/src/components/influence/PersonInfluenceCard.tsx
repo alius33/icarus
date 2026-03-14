@@ -45,24 +45,24 @@ export default function PersonInfluenceCard({
         </button>
       </div>
 
-      <div className="text-sm text-gray-500 dark:text-gray-400">
+      <div className="text-base text-gray-500 dark:text-gray-400">
         {node.signal_count} total signal{node.signal_count !== 1 ? "s" : ""}
       </div>
 
       {/* Outgoing influences */}
       {outgoing.length > 0 && (
         <div>
-          <h4 className="text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
+          <h4 className="text-base font-medium mb-2 text-gray-700 dark:text-gray-300">
             Influencing ({outgoing.length})
           </h4>
           <div className="space-y-1.5">
             {outgoing.map((edge, i) => (
               <div
                 key={`out-${i}`}
-                className="flex items-center gap-2 text-sm"
+                className="flex items-center gap-2 text-base"
               >
                 <span
-                  className={`px-2 py-0.5 rounded text-xs ${
+                  className={`px-2 py-0.5 rounded text-sm ${
                     typeColors[edge.type] || "bg-gray-100 dark:bg-gray-700"
                   }`}
                 >
@@ -70,7 +70,7 @@ export default function PersonInfluenceCard({
                 </span>
                 <span className="text-gray-400">&rarr;</span>
                 <span className="font-medium">{getNodeName(edge.target)}</span>
-                <span className="text-gray-400 text-xs ml-auto">
+                <span className="text-gray-400 text-sm ml-auto">
                   weight: {edge.weight}
                 </span>
               </div>
@@ -82,25 +82,25 @@ export default function PersonInfluenceCard({
       {/* Incoming influences */}
       {incoming.length > 0 && (
         <div>
-          <h4 className="text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
+          <h4 className="text-base font-medium mb-2 text-gray-700 dark:text-gray-300">
             Influenced by ({incoming.length})
           </h4>
           <div className="space-y-1.5">
             {incoming.map((edge, i) => (
               <div
                 key={`in-${i}`}
-                className="flex items-center gap-2 text-sm"
+                className="flex items-center gap-2 text-base"
               >
                 <span className="font-medium">{getNodeName(edge.source)}</span>
                 <span className="text-gray-400">&rarr;</span>
                 <span
-                  className={`px-2 py-0.5 rounded text-xs ${
+                  className={`px-2 py-0.5 rounded text-sm ${
                     typeColors[edge.type] || "bg-gray-100 dark:bg-gray-700"
                   }`}
                 >
                   {edge.type}
                 </span>
-                <span className="text-gray-400 text-xs ml-auto">
+                <span className="text-gray-400 text-sm ml-auto">
                   weight: {edge.weight}
                 </span>
               </div>
@@ -110,7 +110,7 @@ export default function PersonInfluenceCard({
       )}
 
       {outgoing.length === 0 && incoming.length === 0 && (
-        <p className="text-sm text-gray-400">No connections found for this person.</p>
+        <p className="text-base text-gray-400">No connections found for this person.</p>
       )}
     </div>
   );

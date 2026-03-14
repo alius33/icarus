@@ -37,7 +37,7 @@ const statusConfig: Record<
 export default function MilestoneBurndown({ milestones }: Props) {
   if (milestones.length === 0) {
     return (
-      <p className="text-sm text-gray-500">No milestones tracked.</p>
+      <p className="text-base text-gray-500">No milestones tracked.</p>
     );
   }
 
@@ -56,10 +56,10 @@ export default function MilestoneBurndown({ milestones }: Props) {
       {/* Progress bar */}
       <div className="mb-4">
         <div className="flex items-center justify-between mb-1">
-          <span className="text-xs font-medium text-gray-600">
+          <span className="text-sm font-medium text-gray-600">
             Milestone Progress
           </span>
-          <span className="text-xs font-semibold text-gray-900">
+          <span className="text-sm font-semibold text-gray-900">
             {completed}/{total} ({pct}%)
           </span>
         </div>
@@ -96,7 +96,7 @@ export default function MilestoneBurndown({ milestones }: Props) {
                     {config.icon}
                   </span>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm text-gray-900">
+                    <p className="text-base text-gray-900">
                       {m.title || m.notes || "Milestone"}
                     </p>
                     <div className="flex items-center gap-2 mt-0.5">

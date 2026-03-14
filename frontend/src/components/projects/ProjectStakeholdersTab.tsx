@@ -55,12 +55,12 @@ export default function ProjectStakeholdersTab({
   return (
     <div className="space-y-4">
       <div className="flex justify-end">
-        <button onClick={openCreate} className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">+ New Stakeholder</button>
+        <button onClick={openCreate} className="px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">+ New Stakeholder</button>
       </div>
 
       {stakeholders.length === 0 ? (
         <div className="rounded-lg border border-gray-200 bg-white p-8 text-center">
-          <p className="text-sm text-gray-500">No stakeholders linked to this project yet.</p>
+          <p className="text-base text-gray-500">No stakeholders linked to this project yet.</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -73,14 +73,14 @@ export default function ProjectStakeholdersTab({
               <Link href={`/stakeholders/${s.id}`} className="block">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-900">{s.name}</h4>
-                    {s.role && <p className="mt-0.5 text-xs text-gray-500">{s.role}</p>}
+                    <h4 className="text-base font-semibold text-gray-900">{s.name}</h4>
+                    {s.role && <p className="mt-0.5 text-sm text-gray-500">{s.role}</p>}
                   </div>
-                  <span className="inline-flex items-center rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700">
+                  <span className="inline-flex items-center rounded-full bg-blue-50 px-2 py-0.5 text-sm font-medium text-blue-700">
                     Tier {s.tier}
                   </span>
                 </div>
-                <div className="mt-3 flex items-center justify-between text-xs text-gray-400">
+                <div className="mt-3 flex items-center justify-between text-sm text-gray-400">
                   <span>{tierLabels[s.tier] || `Tier ${s.tier}`}</span>
                   <span>{s.mention_count} mentions</span>
                 </div>

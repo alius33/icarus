@@ -153,7 +153,7 @@ export default function MeetingScoresPage() {
       <div className="space-y-6">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Meeting Effectiveness</h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+          <p className="text-base text-gray-500 dark:text-gray-400 mt-1">
             Track and improve meeting quality across five key dimensions
           </p>
         </div>
@@ -172,14 +172,14 @@ export default function MeetingScoresPage() {
       <div className="space-y-6">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Meeting Effectiveness</h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+          <p className="text-base text-gray-500 dark:text-gray-400 mt-1">
             Track and improve meeting quality across five key dimensions
           </p>
         </div>
         <div className="text-center py-16">
           <BarChart3 className="h-12 w-12 mx-auto text-gray-300 dark:text-gray-600 mb-4" />
           <p className="text-gray-500 dark:text-gray-400">
-            No data yet. Run <code className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded text-sm">/analyse-deep</code> to populate.
+            No data yet. Run <code className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded text-base">/analyse-deep</code> to populate.
           </p>
         </div>
       </div>
@@ -190,7 +190,7 @@ export default function MeetingScoresPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Meeting Effectiveness</h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+        <p className="text-base text-gray-500 dark:text-gray-400 mt-1">
           Track and improve meeting quality across five key dimensions
         </p>
       </div>
@@ -292,7 +292,7 @@ export default function MeetingScoresPage() {
             {Object.entries(MEETING_TYPE_COLORS)
               .filter(([k]) => k !== "default")
               .map(([type, color]) => (
-                <div key={type} className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400">
+                <div key={type} className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
                   <span
                     className="inline-block w-3 h-3 rounded-full"
                     style={{ backgroundColor: color }}
@@ -363,20 +363,20 @@ function MeetingCard({ meeting }: { meeting: MeetingScoreSchema }) {
             </h3>
             <div className="flex items-center gap-2 mt-1 flex-wrap">
               {meeting.date && (
-                <span className="text-xs text-gray-500 dark:text-gray-400">{meeting.date}</span>
+                <span className="text-sm text-gray-500 dark:text-gray-400">{meeting.date}</span>
               )}
               {meeting.meeting_type && (
-                <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${meetingTypeBadgeClass(meeting.meeting_type)}`}>
+                <span className={`px-2 py-0.5 rounded-full text-sm font-medium ${meetingTypeBadgeClass(meeting.meeting_type)}`}>
                   {meeting.meeting_type}
                 </span>
               )}
               {meeting.duration_category && (
-                <span className="text-xs text-gray-400 dark:text-gray-500">
+                <span className="text-sm text-gray-400 dark:text-gray-500">
                   {meeting.duration_category}
                 </span>
               )}
               {meeting.participant_count !== null && (
-                <span className="text-xs text-gray-400 dark:text-gray-500">
+                <span className="text-sm text-gray-400 dark:text-gray-500">
                   {meeting.participant_count} participants
                 </span>
               )}
@@ -388,7 +388,7 @@ function MeetingCard({ meeting }: { meeting: MeetingScoreSchema }) {
             <p className={`text-2xl font-bold ${scoreColor(meeting.overall_score)}`}>
               {meeting.overall_score.toFixed(1)}
             </p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">/ 10</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400">/ 10</p>
           </div>
         </div>
       </div>
@@ -428,7 +428,7 @@ function MeetingCard({ meeting }: { meeting: MeetingScoreSchema }) {
         <div className="grid grid-cols-5 gap-2 mb-3">
           {radarData.map((dim) => (
             <div key={dim.dimension} className="text-center">
-              <p className={`text-sm font-semibold ${scoreColor(dim.value)}`}>
+              <p className={`text-base font-semibold ${scoreColor(dim.value)}`}>
                 {dim.value > 0 ? dim.value.toFixed(1) : "--"}
               </p>
               <p className="text-[10px] text-gray-500 dark:text-gray-400 leading-tight mt-0.5">
@@ -441,11 +441,11 @@ function MeetingCard({ meeting }: { meeting: MeetingScoreSchema }) {
         {/* Recommendations */}
         {meeting.recommendations && (
           <div className="mt-3 pt-3 border-t border-gray-100 dark:border-gray-700">
-            <p className="text-xs font-medium text-gray-700 dark:text-gray-300 mb-1 flex items-center gap-1">
+            <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 flex items-center gap-1">
               <Award className="w-3.5 h-3.5 text-amber-500" />
               Recommendations
             </p>
-            <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
               {meeting.recommendations}
             </p>
           </div>
@@ -472,7 +472,7 @@ function StatCard({
 }) {
   return (
     <div className="border rounded-lg p-4 bg-white dark:bg-gray-800 dark:border-gray-700">
-      <p className="text-sm text-gray-500 dark:text-gray-400">{label}</p>
+      <p className="text-base text-gray-500 dark:text-gray-400">{label}</p>
       <div className="flex items-center gap-2 mt-1">
         {icon}
         <p className={`text-2xl font-bold ${valueColor || "text-gray-900 dark:text-gray-100"}`}>
@@ -480,7 +480,7 @@ function StatCard({
         </p>
       </div>
       {subtext && (
-        <p className="text-xs text-gray-400 dark:text-gray-500 mt-1 truncate">{subtext}</p>
+        <p className="text-sm text-gray-400 dark:text-gray-500 mt-1 truncate">{subtext}</p>
       )}
     </div>
   );

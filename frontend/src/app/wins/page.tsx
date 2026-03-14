@@ -70,20 +70,20 @@ function confidenceBadge(confidence: string) {
   switch (confidence) {
     case "measured":
       return (
-        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 border border-green-200">
+        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800 border border-green-200">
           Measured
         </span>
       );
     case "estimated":
       return (
-        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800 border border-amber-200">
+        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-sm font-medium bg-amber-100 text-amber-800 border border-amber-200">
           Estimated
         </span>
       );
     case "anecdotal":
     default:
       return (
-        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600 border border-gray-200">
+        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-600 border border-gray-200">
           Anecdotal
         </span>
       );
@@ -343,7 +343,7 @@ export default function WinsPage() {
     return (
       <div className="space-y-6">
         <h2 className="text-2xl font-bold text-gray-900">Programme Wins</h2>
-        <p className="text-sm text-gray-500">Loading wins...</p>
+        <p className="text-base text-gray-500">Loading wins...</p>
       </div>
     );
   }
@@ -353,7 +353,7 @@ export default function WinsPage() {
       <div className="space-y-6">
         <h2 className="text-2xl font-bold text-gray-900">Programme Wins</h2>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
-          <p className="text-sm text-red-700">{error}</p>
+          <p className="text-base text-red-700">{error}</p>
         </div>
       </div>
     );
@@ -365,13 +365,13 @@ export default function WinsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-2xl font-bold text-gray-900">Programme Wins</h2>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-base text-gray-500">
             Track and celebrate measurable programme achievements
           </p>
         </div>
         <button
           onClick={openCreate}
-          className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
         >
           + New Win
         </button>
@@ -380,13 +380,13 @@ export default function WinsPage() {
       {/* summary stats bar */}
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
         <div className="bg-white rounded-lg border border-gray-200 p-4">
-          <p className="text-xs font-medium uppercase tracking-wider text-gray-500">
+          <p className="text-sm font-medium uppercase tracking-wider text-gray-500">
             Total Wins
           </p>
           <p className="mt-1 text-2xl font-bold text-gray-900">{wins.length}</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 p-4">
-          <p className="text-xs font-medium uppercase tracking-wider text-gray-500">
+          <p className="text-sm font-medium uppercase tracking-wider text-gray-500">
             Measured
           </p>
           <p className="mt-1 text-2xl font-bold text-green-600">
@@ -394,7 +394,7 @@ export default function WinsPage() {
           </p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 p-4">
-          <p className="text-xs font-medium uppercase tracking-wider text-gray-500">
+          <p className="text-sm font-medium uppercase tracking-wider text-gray-500">
             Workstreams
           </p>
           <p className="mt-1 text-2xl font-bold text-blue-600">
@@ -402,7 +402,7 @@ export default function WinsPage() {
           </p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 p-4">
-          <p className="text-xs font-medium uppercase tracking-wider text-gray-500">
+          <p className="text-sm font-medium uppercase tracking-wider text-gray-500">
             Categories
           </p>
           <p className="mt-1 text-2xl font-bold text-purple-600">
@@ -413,10 +413,10 @@ export default function WinsPage() {
 
       {/* category filter */}
       <div className="flex items-center gap-2 flex-wrap">
-        <span className="text-sm font-medium text-gray-700">Filter:</span>
+        <span className="text-base font-medium text-gray-700">Filter:</span>
         <button
           onClick={() => setFilterCategory("all")}
-          className={`px-3 py-1 text-xs font-medium rounded-full border transition-colors ${
+          className={`px-3 py-1 text-sm font-medium rounded-full border transition-colors ${
             filterCategory === "all"
               ? "bg-gray-900 text-white border-gray-900"
               : "bg-white text-gray-600 border-gray-300 hover:border-gray-400"
@@ -428,7 +428,7 @@ export default function WinsPage() {
           <button
             key={cat.value}
             onClick={() => setFilterCategory(cat.value)}
-            className={`px-3 py-1 text-xs font-medium rounded-full border transition-colors ${
+            className={`px-3 py-1 text-sm font-medium rounded-full border transition-colors ${
               filterCategory === cat.value
                 ? "bg-gray-900 text-white border-gray-900"
                 : "bg-white text-gray-600 border-gray-300 hover:border-gray-400"
@@ -442,7 +442,7 @@ export default function WinsPage() {
       {/* wins by category */}
       {filteredWins.length === 0 ? (
         <div className="text-center py-12">
-          <p className="text-sm text-gray-500">
+          <p className="text-base text-gray-500">
             No wins recorded yet. Click &ldquo;+ New Win&rdquo; to add your
             first programme win.
           </p>
@@ -459,7 +459,7 @@ export default function WinsPage() {
                 <h3 className="text-lg font-semibold text-gray-900">
                   {categoryLabel(category)}
                 </h3>
-                <span className="text-sm text-gray-400">
+                <span className="text-base text-gray-400">
                   ({catWins.length})
                 </span>
               </div>
@@ -473,7 +473,7 @@ export default function WinsPage() {
                     <div className="p-5">
                       {/* top row: title + confidence */}
                       <div className="flex items-start justify-between gap-3 mb-3">
-                        <h4 className="text-sm font-semibold text-gray-900 leading-tight">
+                        <h4 className="text-base font-semibold text-gray-900 leading-tight">
                           {win.title}
                         </h4>
                         {confidenceBadge(win.confidence)}
@@ -481,7 +481,7 @@ export default function WinsPage() {
 
                       {/* description */}
                       {win.description && (
-                        <p className="text-sm text-gray-600 mb-3">
+                        <p className="text-base text-gray-600 mb-3">
                           {win.description}
                         </p>
                       )}
@@ -491,10 +491,10 @@ export default function WinsPage() {
                         <div className="flex gap-3 mb-3">
                           {win.before_state && (
                             <div className="flex-1 bg-red-50 border border-red-100 rounded-md p-3">
-                              <p className="text-xs font-medium text-red-500 mb-1">
+                              <p className="text-sm font-medium text-red-500 mb-1">
                                 Before
                               </p>
-                              <p className="text-sm text-red-800">
+                              <p className="text-base text-red-800">
                                 {win.before_state}
                               </p>
                             </div>
@@ -518,10 +518,10 @@ export default function WinsPage() {
                           )}
                           {win.after_state && (
                             <div className="flex-1 bg-green-50 border border-green-100 rounded-md p-3">
-                              <p className="text-xs font-medium text-green-500 mb-1">
+                              <p className="text-sm font-medium text-green-500 mb-1">
                                 After
                               </p>
-                              <p className="text-sm text-green-800">
+                              <p className="text-base text-green-800">
                                 {win.after_state}
                               </p>
                             </div>
@@ -530,7 +530,7 @@ export default function WinsPage() {
                       )}
 
                       {/* meta row */}
-                      <div className="flex items-center gap-3 text-xs text-gray-400">
+                      <div className="flex items-center gap-3 text-sm text-gray-400">
                         {win.workstream && (
                           <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200 font-medium">
                             {win.workstream}

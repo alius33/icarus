@@ -24,7 +24,7 @@ export default async function WorkstreamDetailPage({
       {/* Back link */}
       <Link
         href="/workstreams"
-        className="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700"
+        className="inline-flex items-center gap-1 text-base text-gray-500 hover:text-gray-700"
       >
         <ArrowLeft className="h-4 w-4" />
         Back to Workstreams
@@ -37,17 +37,17 @@ export default async function WorkstreamDetailPage({
         </h2>
         <div className="mt-3 flex flex-wrap items-center gap-3">
           <span
-            className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${getStatusColor(ws.status)}`}
+            className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-sm font-medium ${getStatusColor(ws.status)}`}
           >
             {ws.status}
           </span>
           {ws.owner && (
-            <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-700">
+            <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-700">
               Lead: {ws.owner}
             </span>
           )}
           {ws.progress_pct !== null && (
-            <span className="text-sm text-gray-500">
+            <span className="text-base text-gray-500">
               {ws.progress_pct}% complete
             </span>
           )}
@@ -89,7 +89,7 @@ export default async function WorkstreamDetailPage({
                   />
 
                   {/* Date */}
-                  <div className="w-28 flex-shrink-0 text-sm text-gray-500">
+                  <div className="w-28 flex-shrink-0 text-base text-gray-500">
                     {milestone.target_date
                       ? formatDate(milestone.target_date)
                       : "No date"}
@@ -97,18 +97,18 @@ export default async function WorkstreamDetailPage({
 
                   {/* Content */}
                   <div className="flex-1">
-                    <p className="text-sm font-medium text-gray-900">
+                    <p className="text-base font-medium text-gray-900">
                       {milestone.title}
                     </p>
                     <div className="mt-1 flex items-center gap-2">
                       <span
-                        className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium ${getStatusColor(milestone.status)}`}
+                        className={`inline-flex items-center rounded-full border px-2 py-0.5 text-sm font-medium ${getStatusColor(milestone.status)}`}
                       >
                         {milestone.status}
                       </span>
                     </div>
                     {milestone.notes && (
-                      <p className="mt-1 text-sm text-gray-500">
+                      <p className="mt-1 text-base text-gray-500">
                         {milestone.notes}
                       </p>
                     )}
@@ -130,7 +130,7 @@ export default async function WorkstreamDetailPage({
             {ws.recent_mentions.map((mention, i) => (
               <li
                 key={i}
-                className="text-sm text-gray-700 rounded-md bg-gray-50 px-3 py-2"
+                className="text-base text-gray-700 rounded-md bg-gray-50 px-3 py-2"
               >
                 {mention}
               </li>

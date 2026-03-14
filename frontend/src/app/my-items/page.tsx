@@ -87,7 +87,7 @@ export default function MyItemsPage() {
           <h2 className="text-2xl font-bold text-gray-900">
             What Needs My Attention
           </h2>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-base text-gray-500">
             Person-centric view of all open items.
           </p>
         </div>
@@ -99,7 +99,7 @@ export default function MyItemsPage() {
         <select
           value={selectedPerson}
           onChange={(e) => setSelectedPerson(e.target.value)}
-          className="rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500"
+          className="rounded-md border border-gray-300 bg-white px-3 py-2 text-base text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500"
         >
           <option value="">All People</option>
           {people.map((p) => (
@@ -107,7 +107,7 @@ export default function MyItemsPage() {
           ))}
         </select>
         {selectedPerson && (
-          <span className="text-sm text-gray-500">
+          <span className="text-base text-gray-500">
             {personItems.actions.length} actions ({overdueActions.length} overdue)
             {personItems.commitments.length > 0 && `, ${personItems.commitments.length} commitments`}
             {personItems.threads.length > 0 && `, ${personItems.threads.length} threads`}
@@ -120,14 +120,14 @@ export default function MyItemsPage() {
         <div className="rounded-lg border border-gray-200 bg-white p-4">
           <div className="flex items-center gap-2 mb-2">
             <CheckSquare className="h-4 w-4 text-green-500" />
-            <span className="text-sm font-semibold text-gray-900">Open Actions</span>
+            <span className="text-base font-semibold text-gray-900">Open Actions</span>
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-2xl font-bold text-gray-900">
               {personItems.actions.length}
             </span>
             {overdueActions.length > 0 && (
-              <span className="text-sm font-medium text-red-600">
+              <span className="text-base font-medium text-red-600">
                 ({overdueActions.length} overdue)
               </span>
             )}
@@ -137,7 +137,7 @@ export default function MyItemsPage() {
         <div className="rounded-lg border border-gray-200 bg-white p-4">
           <div className="flex items-center gap-2 mb-2">
             <Handshake className="h-4 w-4 text-amber-500" />
-            <span className="text-sm font-semibold text-gray-900">Pending Commitments</span>
+            <span className="text-base font-semibold text-gray-900">Pending Commitments</span>
           </div>
           <span className="text-2xl font-bold text-gray-900">
             {personItems.commitments.length}
@@ -147,7 +147,7 @@ export default function MyItemsPage() {
         <div className="rounded-lg border border-gray-200 bg-white p-4">
           <div className="flex items-center gap-2 mb-2">
             <AlertCircle className="h-4 w-4 text-red-500" />
-            <span className="text-sm font-semibold text-gray-900">Owned Threads</span>
+            <span className="text-base font-semibold text-gray-900">Owned Threads</span>
           </div>
           <span className="text-2xl font-bold text-gray-900">
             {personItems.threads.length}
@@ -158,7 +158,7 @@ export default function MyItemsPage() {
       {/* Action items */}
       {personItems.actions.length > 0 && (
         <section>
-          <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+          <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
             Open Actions
           </h3>
           <div className="rounded-lg border border-gray-200 bg-white divide-y divide-gray-100">
@@ -170,15 +170,15 @@ export default function MyItemsPage() {
                     className={`h-4 w-4 mt-0.5 flex-shrink-0 ${isOverdue ? "text-red-500" : "text-gray-400"}`}
                   />
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm text-gray-900">
+                    <p className="text-base text-gray-900">
                       {action.title || action.description}
                     </p>
                     <div className="flex items-center gap-2 mt-0.5">
                       {action.owner && (
-                        <span className="text-xs text-gray-500">{action.owner}</span>
+                        <span className="text-sm text-gray-500">{action.owner}</span>
                       )}
                       {action.due_date && (
-                        <span className={`text-xs ${isOverdue ? "text-red-600 font-medium" : "text-gray-400"}`}>
+                        <span className={`text-sm ${isOverdue ? "text-red-600 font-medium" : "text-gray-400"}`}>
                           <Clock className="inline h-3 w-3 mr-0.5" />
                           {formatDate(action.due_date)}
                         </span>
@@ -195,7 +195,7 @@ export default function MyItemsPage() {
       {/* Commitments */}
       {personItems.commitments.length > 0 && (
         <section>
-          <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+          <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
             Pending Commitments
           </h3>
           <div className="rounded-lg border border-gray-200 bg-white divide-y divide-gray-100">
@@ -203,11 +203,11 @@ export default function MyItemsPage() {
               <div key={c.id} className="flex items-start gap-3 px-4 py-3">
                 <Handshake className="h-4 w-4 mt-0.5 text-amber-500 flex-shrink-0" />
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm text-gray-900">{c.commitment}</p>
+                  <p className="text-base text-gray-900">{c.commitment}</p>
                   <div className="flex items-center gap-2 mt-0.5">
-                    <span className="text-xs text-gray-500">{c.person}</span>
+                    <span className="text-sm text-gray-500">{c.person}</span>
                     {c.deadline_text && (
-                      <span className="text-xs text-gray-400">{c.deadline_text}</span>
+                      <span className="text-sm text-gray-400">{c.deadline_text}</span>
                     )}
                     {c.condition && (
                       <span className="text-[10px] text-gray-400 italic">
@@ -236,7 +236,7 @@ export default function MyItemsPage() {
       {/* Threads */}
       {personItems.threads.length > 0 && (
         <section>
-          <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+          <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
             Owned Threads
           </h3>
           <div className="rounded-lg border border-gray-200 bg-white divide-y divide-gray-100">
@@ -244,9 +244,9 @@ export default function MyItemsPage() {
               <div key={t.id} className="flex items-start gap-3 px-4 py-3">
                 <AlertCircle className="h-4 w-4 mt-0.5 text-red-500 flex-shrink-0" />
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium text-gray-900">{t.title}</p>
+                  <p className="text-base font-medium text-gray-900">{t.title}</p>
                   {t.description && (
-                    <p className="text-xs text-gray-500 mt-0.5 truncate">
+                    <p className="text-sm text-gray-500 mt-0.5 truncate">
                       {t.description}
                     </p>
                   )}
@@ -274,7 +274,7 @@ export default function MyItemsPage() {
         personItems.commitments.length === 0 &&
         personItems.threads.length === 0 && (
           <div className="rounded-lg border border-gray-200 bg-gray-50 p-8 text-center">
-            <p className="text-sm text-gray-500">
+            <p className="text-base text-gray-500">
               {selectedPerson
                 ? `No open items found for ${selectedPerson}.`
                 : "No open items found."}

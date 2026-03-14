@@ -6,25 +6,25 @@ function capacityBadge(status: string) {
   const s = status.toLowerCase();
   if (s === "available")
     return (
-      <span className="inline-flex items-center gap-1 rounded-full bg-green-50 px-2.5 py-0.5 text-xs font-medium text-green-700 border border-green-200">
+      <span className="inline-flex items-center gap-1 rounded-full bg-green-50 px-2.5 py-0.5 text-sm font-medium text-green-700 border border-green-200">
         Available
       </span>
     );
   if (s === "stretched")
     return (
-      <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-medium text-amber-700 border border-amber-200">
+      <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-0.5 text-sm font-medium text-amber-700 border border-amber-200">
         Stretched
       </span>
     );
   if (s === "overloaded")
     return (
-      <span className="inline-flex items-center gap-1 rounded-full bg-red-50 px-2.5 py-0.5 text-xs font-medium text-red-700 border border-red-200">
+      <span className="inline-flex items-center gap-1 rounded-full bg-red-50 px-2.5 py-0.5 text-sm font-medium text-red-700 border border-red-200">
         <AlertTriangle className="h-3 w-3" />
         Overloaded
       </span>
     );
   return (
-    <span className="inline-flex items-center rounded-full bg-gray-50 px-2.5 py-0.5 text-xs font-medium text-gray-600 border border-gray-200">
+    <span className="inline-flex items-center rounded-full bg-gray-50 px-2.5 py-0.5 text-sm font-medium text-gray-600 border border-gray-200">
       {status}
     </span>
   );
@@ -54,7 +54,7 @@ function AllocationBar({
   const pct = Math.min(allocation.percentage, 100);
   return (
     <div className="space-y-1">
-      <div className="flex items-center justify-between text-xs">
+      <div className="flex items-center justify-between text-sm">
         <span className="text-gray-600 truncate mr-2">
           {allocation.workstream}
         </span>
@@ -91,7 +91,7 @@ function ResourceCard({ resource }: { resource: ResourceAllocationSchema }) {
               {resource.person_name}
             </h3>
             {resource.role && (
-              <p className="text-sm text-gray-500 truncate">{resource.role}</p>
+              <p className="text-base text-gray-500 truncate">{resource.role}</p>
             )}
           </div>
         </div>
@@ -107,7 +107,7 @@ function ResourceCard({ resource }: { resource: ResourceAllocationSchema }) {
       )}
 
       <div className="mt-4 flex items-center justify-between border-t border-gray-100 pt-3">
-        <div className="flex items-center gap-1.5 text-sm">
+        <div className="flex items-center gap-1.5 text-base">
           <BarChart3 className="h-4 w-4 text-gray-400" />
           <span className="text-gray-500">Total:</span>
           <span
@@ -120,7 +120,7 @@ function ResourceCard({ resource }: { resource: ResourceAllocationSchema }) {
           )}
         </div>
         {(resource.start_date || resource.end_date) && (
-          <div className="flex items-center gap-1 text-xs text-gray-400">
+          <div className="flex items-center gap-1 text-sm text-gray-400">
             <Calendar className="h-3 w-3" />
             <span>
               {resource.start_date ?? "..."} &ndash;{" "}
@@ -131,7 +131,7 @@ function ResourceCard({ resource }: { resource: ResourceAllocationSchema }) {
       </div>
 
       {resource.notes && (
-        <p className="mt-3 text-xs text-gray-500 leading-relaxed">
+        <p className="mt-3 text-sm text-gray-500 leading-relaxed">
           {resource.notes}
         </p>
       )}
@@ -150,7 +150,7 @@ export default async function ResourcesPage() {
           Resource Allocation
         </h2>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
-          <p className="text-sm text-red-700">
+          <p className="text-base text-red-700">
             Failed to load resource allocations. Make sure the backend is
             running.
           </p>
@@ -180,7 +180,7 @@ export default async function ResourcesPage() {
         <h2 className="text-2xl font-bold text-gray-900">
           Resource Allocation
         </h2>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-base text-gray-500">
           Team capacity and workstream allocation overview
         </p>
       </div>
@@ -193,7 +193,7 @@ export default async function ResourcesPage() {
             </div>
             <div>
               <p className="text-2xl font-bold text-gray-900">{totalPeople}</p>
-              <p className="text-sm text-gray-500">Total People</p>
+              <p className="text-base text-gray-500">Total People</p>
             </div>
           </div>
         </div>
@@ -211,7 +211,7 @@ export default async function ResourcesPage() {
               <p className="text-2xl font-bold text-gray-900">
                 {overloadedCount}
               </p>
-              <p className="text-sm text-gray-500">Overloaded</p>
+              <p className="text-base text-gray-500">Overloaded</p>
             </div>
           </div>
         </div>
@@ -225,7 +225,7 @@ export default async function ResourcesPage() {
               <p className="text-2xl font-bold text-gray-900">
                 {avgUtilization}%
               </p>
-              <p className="text-sm text-gray-500">Avg Utilization</p>
+              <p className="text-base text-gray-500">Avg Utilization</p>
             </div>
           </div>
         </div>
@@ -243,7 +243,7 @@ export default async function ResourcesPage() {
           <p className="mt-3 text-gray-500">
             No resource allocations found.
           </p>
-          <p className="mt-1 text-sm text-gray-400">
+          <p className="mt-1 text-base text-gray-400">
             Add resources via the API to see them here.
           </p>
         </div>

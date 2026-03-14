@@ -63,12 +63,12 @@ export default function ProjectActionsTab({
   return (
     <div className="space-y-4">
       <div className="flex justify-end">
-        <button onClick={openCreate} className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">+ New Action</button>
+        <button onClick={openCreate} className="px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">+ New Action</button>
       </div>
 
       {actions.length === 0 ? (
         <div className="rounded-lg border border-gray-200 bg-white p-8 text-center">
-          <p className="text-sm text-gray-500">No action items linked to this project yet.</p>
+          <p className="text-base text-gray-500">No action items linked to this project yet.</p>
         </div>
       ) : (
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
@@ -76,11 +76,11 @@ export default function ProjectActionsTab({
             <thead>
               <tr className="border-b border-gray-200 bg-gray-50">
                 <th className="px-3 py-3 w-10"></th>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 w-12">#</th>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Action</th>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 w-36">Owner</th>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 w-28">Deadline</th>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 w-36">Status</th>
+                <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-12">#</th>
+                <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500">Action</th>
+                <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-36">Owner</th>
+                <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-28">Deadline</th>
+                <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-36">Status</th>
                 <th className="px-3 py-3 w-10"></th>
               </tr>
             </thead>
@@ -94,15 +94,15 @@ export default function ProjectActionsTab({
                       </button>
                     )}
                   </td>
-                  <td className="px-4 py-4 text-sm text-gray-400 tabular-nums">{a.id}</td>
+                  <td className="px-4 py-4 text-base text-gray-400 tabular-nums">{a.id}</td>
                   <td className="px-4 py-4">
-                    <p className="text-sm text-gray-900">{a.title}</p>
-                    {a.description && <p className="mt-1 text-xs text-gray-500">{a.description}</p>}
+                    <p className="text-base text-gray-900">{a.title}</p>
+                    {a.description && <p className="mt-1 text-sm text-gray-500">{a.description}</p>}
                   </td>
-                  <td className="px-4 py-4 text-sm text-gray-600">{a.owner || "\u2014"}</td>
-                  <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">{a.due_date ? formatDate(a.due_date) : "\u2014"}</td>
+                  <td className="px-4 py-4 text-base text-gray-600">{a.owner || "\u2014"}</td>
+                  <td className="px-4 py-4 text-base text-gray-500 whitespace-nowrap">{a.due_date ? formatDate(a.due_date) : "\u2014"}</td>
                   <td className="px-4 py-4">
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getStatusColor(a.status)}`}>{a.status.replace(/_/g, " ")}</span>
+                    <span className={`px-2 py-1 rounded-full text-sm font-medium border ${getStatusColor(a.status)}`}>{a.status.replace(/_/g, " ")}</span>
                   </td>
                   <td className="px-3 py-4 text-center">
                     <button onClick={(e) => { e.stopPropagation(); openEdit(a); }} className="text-gray-400 hover:text-blue-600" title="Edit">

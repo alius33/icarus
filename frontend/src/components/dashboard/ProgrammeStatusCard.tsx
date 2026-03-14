@@ -28,10 +28,10 @@ export default function ProgrammeStatusCard({ status }: Props) {
 
         {/* Narrative */}
         <div className="flex-1 min-w-0">
-          <h3 className="text-sm font-semibold text-gray-900 mb-1">
+          <h3 className="text-base font-semibold text-gray-900 mb-1">
             Programme Health
           </h3>
-          <p className="text-sm text-gray-700 leading-relaxed">
+          <p className="text-base text-gray-700 leading-relaxed">
             {status.narrative}
           </p>
 
@@ -44,7 +44,7 @@ export default function ProgrammeStatusCard({ status }: Props) {
                   <span className="text-[10px] font-semibold uppercase text-green-700">
                     Biggest Win
                   </span>
-                  <p className="text-xs text-green-800 mt-0.5">
+                  <p className="text-sm text-green-800 mt-0.5">
                     {status.biggest_win}
                   </p>
                 </div>
@@ -57,7 +57,7 @@ export default function ProgrammeStatusCard({ status }: Props) {
                   <span className="text-[10px] font-semibold uppercase text-red-700">
                     Biggest Risk
                   </span>
-                  <p className="text-xs text-red-800 mt-0.5">
+                  <p className="text-sm text-red-800 mt-0.5">
                     {status.biggest_risk}
                   </p>
                 </div>

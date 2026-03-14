@@ -38,28 +38,28 @@ export default function ProgrammePulse({ projects }: Props) {
           </div>
 
           {/* Status text */}
-          <p className="text-sm text-gray-500 mb-4 ml-5.5 truncate">
+          <p className="text-base text-gray-500 mb-4 ml-5.5 truncate">
             {p.status}
           </p>
 
           {/* 2x2 metric grid */}
           <div className="grid grid-cols-2 gap-3 mb-4">
-            <div className="flex items-center gap-2 text-sm">
+            <div className="flex items-center gap-2 text-base">
               <CheckCircle2 className="h-4 w-4 text-gray-400" />
               <span className="font-semibold text-gray-900">{p.action_count}</span>
               <span className="text-gray-500">Actions</span>
             </div>
-            <div className="flex items-center gap-2 text-sm">
+            <div className="flex items-center gap-2 text-base">
               <GitBranch className="h-4 w-4 text-gray-400" />
               <span className="font-semibold text-gray-900">{p.decision_count}</span>
               <span className="text-gray-500">Decisions</span>
             </div>
-            <div className="flex items-center gap-2 text-sm">
+            <div className="flex items-center gap-2 text-base">
               <MessageSquare className="h-4 w-4 text-gray-400" />
               <span className="font-semibold text-gray-900">{p.open_thread_count}</span>
               <span className="text-gray-500">Threads</span>
             </div>
-            <div className="flex items-center gap-2 text-sm">
+            <div className="flex items-center gap-2 text-base">
               <FileText className="h-4 w-4 text-gray-400" />
               <span className="font-semibold text-gray-900">{p.transcript_count}</span>
               <span className="text-gray-500">Transcripts</span>
@@ -68,7 +68,7 @@ export default function ProgrammePulse({ projects }: Props) {
 
           {/* Footer: last activity */}
           {p.last_activity_date && (
-            <p className="text-xs text-gray-400 border-t border-gray-100 pt-3">
+            <p className="text-sm text-gray-400 border-t border-gray-100 pt-3">
               Last activity {formatDate(p.last_activity_date)}
             </p>
           )}

@@ -100,7 +100,7 @@ export default function RiskDependencyBoard() {
   };
 
   if (loading) {
-    return <div className="p-6 text-sm text-gray-500">Loading risks & dependencies...</div>;
+    return <div className="p-6 text-base text-gray-500">Loading risks & dependencies...</div>;
   }
 
   const criticalThreads = threads.filter((t) => t.severity === "CRITICAL");
@@ -115,13 +115,13 @@ export default function RiskDependencyBoard() {
       {/* Risk Heat Map */}
       <div>
         <div className="flex items-center justify-between mb-3">
-          <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
+          <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
             <ShieldAlert className="h-3.5 w-3.5" />
             Open Risks ({threads.length})
           </h4>
           <button
             onClick={handleThreadCreate}
-            className="flex items-center gap-1 text-xs text-blue-600 hover:text-blue-800"
+            className="flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800"
           >
             <Plus className="h-3 w-3" /> Add
           </button>
@@ -138,7 +138,7 @@ export default function RiskDependencyBoard() {
             <RiskGroup label="Other" items={otherThreads} onEdit={handleThreadEdit} />
           )}
           {threads.length === 0 && (
-            <p className="text-sm text-gray-500">No open risks.</p>
+            <p className="text-base text-gray-500">No open risks.</p>
           )}
         </div>
       </div>
@@ -146,13 +146,13 @@ export default function RiskDependencyBoard() {
       {/* Dependency List */}
       <div>
         <div className="flex items-center justify-between mb-3">
-          <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
+          <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
             <Link2 className="h-3.5 w-3.5" />
             Dependencies ({dependencies.length})
           </h4>
           <button
             onClick={handleDepCreate}
-            className="flex items-center gap-1 text-xs text-blue-600 hover:text-blue-800"
+            className="flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800"
           >
             <Plus className="h-3 w-3" /> Add
           </button>
@@ -185,7 +185,7 @@ export default function RiskDependencyBoard() {
         )}
 
         {dependencies.length === 0 && (
-          <p className="text-sm text-gray-500">No dependencies tracked.</p>
+          <p className="text-base text-gray-500">No dependencies tracked.</p>
         )}
       </div>
 
@@ -288,7 +288,7 @@ function RiskGroup({
               {t.severity || "?"}
             </span>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-gray-900 truncate">
+              <p className="text-base font-medium text-gray-900 truncate">
                 {t.title}
               </p>
               {t.trend && (
@@ -330,7 +330,7 @@ function DepCard({
         {dep.status}
       </span>
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-medium text-gray-900 truncate">{dep.name}</p>
+        <p className="text-base font-medium text-gray-900 truncate">{dep.name}</p>
         {dep.blocking_reason && (
           <p className="text-[10px] text-gray-500 truncate">
             {dep.blocking_reason}

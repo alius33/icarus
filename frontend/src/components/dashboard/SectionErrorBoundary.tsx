@@ -32,13 +32,13 @@ export default class SectionErrorBoundary extends Component<Props, State> {
         <div className="rounded-lg border border-red-200 bg-red-50 p-4">
           <div className="flex items-center gap-2">
             <AlertCircle className="h-4 w-4 text-red-500 flex-shrink-0" />
-            <p className="text-sm text-red-700">
+            <p className="text-base text-red-700">
               Failed to load {this.props.section}.
             </p>
             {this.props.onRetry && (
               <button
                 onClick={this.handleRetry}
-                className="ml-auto flex items-center gap-1 text-xs text-red-600 hover:text-red-800"
+                className="ml-auto flex items-center gap-1 text-sm text-red-600 hover:text-red-800"
               >
                 <RefreshCw className="h-3 w-3" />
                 Retry

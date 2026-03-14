@@ -83,7 +83,7 @@ export default async function DependenciesPage() {
           Dependencies / Integration Queue
         </h2>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
-          <p className="text-sm text-red-700">
+          <p className="text-base text-red-700">
             Failed to load dependencies. Is the backend running?
           </p>
         </div>
@@ -111,21 +111,21 @@ export default async function DependenciesPage() {
       {/* Summary Stats */}
       <div className="grid grid-cols-3 gap-4">
         <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
-          <div className="flex items-center gap-2 text-sm text-gray-500 mb-1">
+          <div className="flex items-center gap-2 text-base text-gray-500 mb-1">
             <Layers className="w-4 h-4" />
             Total
           </div>
           <p className="text-2xl font-semibold text-gray-900">{total}</p>
         </div>
         <div className="bg-white rounded-lg border border-red-200 p-4 shadow-sm">
-          <div className="flex items-center gap-2 text-sm text-red-600 mb-1">
+          <div className="flex items-center gap-2 text-base text-red-600 mb-1">
             <AlertTriangle className="w-4 h-4" />
             Blocked
           </div>
           <p className="text-2xl font-semibold text-red-700">{blockedCount}</p>
         </div>
         <div className="bg-white rounded-lg border border-blue-200 p-4 shadow-sm">
-          <div className="flex items-center gap-2 text-sm text-blue-600 mb-1">
+          <div className="flex items-center gap-2 text-base text-blue-600 mb-1">
             <Loader2 className="w-4 h-4" />
             In Progress
           </div>
@@ -139,7 +139,7 @@ export default async function DependenciesPage() {
       {total === 0 ? (
         <div className="text-center py-12 bg-white rounded-lg border border-gray-200 shadow-sm">
           <GitBranch className="w-8 h-8 text-gray-300 mx-auto mb-3" />
-          <p className="text-sm text-gray-500">
+          <p className="text-base text-gray-500">
             No dependencies tracked yet.
           </p>
         </div>
@@ -148,38 +148,38 @@ export default async function DependenciesPage() {
           <div key={status} className="space-y-2">
             <div className="flex items-center gap-2 px-1">
               {statusIcon(status)}
-              <h3 className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
+              <h3 className="text-base font-semibold text-gray-700 uppercase tracking-wide">
                 {STATUS_LABELS[status] || status}
               </h3>
-              <span className="text-xs text-gray-400">({deps.length})</span>
+              <span className="text-sm text-gray-400">({deps.length})</span>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-gray-200 bg-gray-50">
-                    <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                    <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500">
                       Name
                     </th>
-                    <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 w-28">
+                    <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-28">
                       Type
                     </th>
-                    <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 w-28">
+                    <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-28">
                       Status
                     </th>
-                    <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 w-24">
+                    <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-24">
                       Priority
                     </th>
-                    <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                    <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500">
                       Blocking Reason
                     </th>
-                    <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 w-28">
+                    <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-28">
                       Effort
                     </th>
-                    <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 w-32">
+                    <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-32">
                       Assigned To
                     </th>
-                    <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 w-40">
+                    <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-40">
                       Workstreams
                     </th>
                   </tr>
@@ -197,18 +197,18 @@ export default async function DependenciesPage() {
                         }
                       >
                         <td className="px-4 py-4">
-                          <p className="text-sm font-medium text-gray-900">
+                          <p className="text-base font-medium text-gray-900">
                             {dep.name}
                           </p>
                           {dep.notes && (
-                            <p className="text-xs text-gray-500 mt-0.5 line-clamp-2">
+                            <p className="text-sm text-gray-500 mt-0.5 line-clamp-2">
                               {dep.notes}
                             </p>
                           )}
                         </td>
                         <td className="px-4 py-4">
                           <span
-                            className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium border ${typeBadge(dep.dependency_type)}`}
+                            className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-sm font-medium border ${typeBadge(dep.dependency_type)}`}
                           >
                             {dep.dependency_type.toLowerCase() ===
                             "integration" ? (
@@ -224,40 +224,40 @@ export default async function DependenciesPage() {
                         </td>
                         <td className="px-4 py-4">
                           <span
-                            className={`px-2 py-1 rounded-full text-xs font-medium border ${getStatusColor(dep.status)}`}
+                            className={`px-2 py-1 rounded-full text-sm font-medium border ${getStatusColor(dep.status)}`}
                           >
                             {dep.status.replace(/[-_]/g, " ")}
                           </span>
                         </td>
                         <td className="px-4 py-4">
                           <span
-                            className={`px-2 py-0.5 rounded-full text-xs font-medium border ${priorityBadge(dep.priority)}`}
+                            className={`px-2 py-0.5 rounded-full text-sm font-medium border ${priorityBadge(dep.priority)}`}
                           >
                             {dep.priority}
                           </span>
                         </td>
                         <td className="px-4 py-4">
                           {dep.blocking_reason ? (
-                            <p className="text-sm text-gray-700">
+                            <p className="text-base text-gray-700">
                               {dep.blocking_reason}
                             </p>
                           ) : (
-                            <span className="text-sm text-gray-400">
+                            <span className="text-base text-gray-400">
                               &mdash;
                             </span>
                           )}
                         </td>
-                        <td className="px-4 py-4 text-sm text-gray-600 whitespace-nowrap">
+                        <td className="px-4 py-4 text-base text-gray-600 whitespace-nowrap">
                           {dep.estimated_effort || "\u2014"}
                         </td>
                         <td className="px-4 py-4">
                           {dep.assigned_to ? (
-                            <span className="inline-flex items-center gap-1 text-sm text-gray-700">
+                            <span className="inline-flex items-center gap-1 text-base text-gray-700">
                               <User className="w-3.5 h-3.5 text-gray-400" />
                               {dep.assigned_to}
                             </span>
                           ) : (
-                            <span className="text-sm text-gray-400">
+                            <span className="text-base text-gray-400">
                               &mdash;
                             </span>
                           )}
@@ -272,14 +272,14 @@ export default async function DependenciesPage() {
                                 .map((ws) => (
                                   <span
                                     key={ws}
-                                    className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-indigo-50 text-indigo-700 border border-indigo-200"
+                                    className="inline-flex items-center px-2 py-0.5 rounded text-sm font-medium bg-indigo-50 text-indigo-700 border border-indigo-200"
                                   >
                                     {ws}
                                   </span>
                                 ))}
                             </div>
                           ) : (
-                            <span className="text-sm text-gray-400">
+                            <span className="text-base text-gray-400">
                               &mdash;
                             </span>
                           )}

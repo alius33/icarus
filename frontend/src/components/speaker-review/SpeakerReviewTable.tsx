@@ -42,7 +42,7 @@ function statusBadge(status: string) {
   };
   const c = config[status] || config.flagged;
   return (
-    <span className={cn("inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium", c.bg, c.text)}>
+    <span className={cn("inline-flex items-center rounded-full px-2 py-0.5 text-sm font-medium", c.bg, c.text)}>
       {c.label}
     </span>
   );
@@ -53,7 +53,7 @@ function methodBadge(method: string) {
     .replace(/_/g, " ")
     .replace(/\b\w/g, (c) => c.toUpperCase());
   return (
-    <span className="inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-700 px-2 py-0.5 text-xs text-gray-600 dark:text-gray-300">
+    <span className="inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-700 px-2 py-0.5 text-sm text-gray-600 dark:text-gray-300">
       {short}
     </span>
   );
@@ -108,14 +108,14 @@ export default function SpeakerReviewTable({
     return (
       <div className="text-center py-12 text-gray-500 dark:text-gray-400">
         <p className="text-lg font-medium">No items in this view</p>
-        <p className="text-sm mt-1">All identifications are in other tabs.</p>
+        <p className="text-base mt-1">All identifications are in other tabs.</p>
       </div>
     );
   }
 
   return (
     <div className="overflow-x-auto">
-      <table className="w-full text-sm">
+      <table className="w-full text-base">
         <thead>
           <tr className="border-b border-gray-200 dark:border-gray-700 text-left">
             <th className="w-8 p-3" />
@@ -252,7 +252,7 @@ function TableRow({
             {truncateFilename(item.transcript_filename)}
           </span>
           {item.timestamp && (
-            <span className="ml-2 text-xs text-gray-400">@{item.timestamp}</span>
+            <span className="ml-2 text-sm text-gray-400">@{item.timestamp}</span>
           )}
         </td>
 
@@ -279,7 +279,7 @@ function TableRow({
                 style={{ width: `${Math.round(item.confidence * 100)}%` }}
               />
             </div>
-            <span className={cn("text-xs font-mono", confidenceTextColor(item.confidence))}>
+            <span className={cn("text-sm font-mono", confidenceTextColor(item.confidence))}>
               {(item.confidence * 100).toFixed(0)}%
             </span>
           </div>
@@ -350,7 +350,7 @@ function TableRow({
         <tr className="bg-blue-50/50 dark:bg-blue-900/10">
           <td colSpan={8} className="p-3 pl-12">
             <div className="flex items-center gap-2 relative">
-              <label className="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">
+              <label className="text-base text-gray-600 dark:text-gray-400 whitespace-nowrap">
                 Assign to:
               </label>
               <div className="relative flex-1 max-w-xs">
@@ -363,7 +363,7 @@ function TableRow({
                     if (e.key === "Escape") setShowManual(false);
                   }}
                   placeholder="Type stakeholder name…"
-                  className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-1.5 text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
                   autoFocus
                 />
                 {suggestions.length > 0 && (
@@ -375,7 +375,7 @@ function TableRow({
                           onManualChange(name);
                           submitManual(name);
                         }}
-                        className="block w-full text-left px-3 py-2 text-sm hover:bg-blue-50 dark:hover:bg-blue-900/30 text-gray-700 dark:text-gray-200"
+                        className="block w-full text-left px-3 py-2 text-base hover:bg-blue-50 dark:hover:bg-blue-900/30 text-gray-700 dark:text-gray-200"
                       >
                         {name}
                       </button>
@@ -386,13 +386,13 @@ function TableRow({
               <button
                 onClick={() => submitManual(manualVal)}
                 disabled={!manualVal.trim()}
-                className="px-3 py-1.5 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-3 py-1.5 text-base bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Apply
               </button>
               <button
                 onClick={() => setShowManual(false)}
-                className="px-3 py-1.5 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
+                className="px-3 py-1.5 text-base text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
               >
                 Cancel
               </button>
@@ -405,7 +405,7 @@ function TableRow({
       {isExpanded && (
         <tr className="bg-gray-50/50 dark:bg-gray-800/30">
           <td colSpan={8} className="p-4 pl-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-base">
               <div>
                 <h4 className="font-medium text-gray-700 dark:text-gray-300 mb-1">Evidence</h4>
                 <p className="text-gray-600 dark:text-gray-400 whitespace-pre-wrap">

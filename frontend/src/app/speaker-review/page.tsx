@@ -118,7 +118,7 @@ export default function SpeakerReviewPage() {
             Speaker Identification Review
           </h1>
         </div>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+        <p className="text-base text-gray-500 dark:text-gray-400 mt-1">
           Review and confirm speaker identifications from the automated pipeline
         </p>
       </div>
@@ -133,10 +133,10 @@ export default function SpeakerReviewPage() {
       {/* Error state */}
       {error && (
         <div className="rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 p-4">
-          <p className="text-red-700 dark:text-red-300 text-sm">{error}</p>
+          <p className="text-red-700 dark:text-red-300 text-base">{error}</p>
           <button
             onClick={fetchData}
-            className="mt-2 text-sm text-red-600 dark:text-red-400 underline hover:no-underline"
+            className="mt-2 text-base text-red-600 dark:text-red-400 underline hover:no-underline"
           >
             Try again
           </button>
@@ -181,7 +181,7 @@ export default function SpeakerReviewPage() {
                 .map(([method, count]) => (
                   <span
                     key={method}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-gray-100 dark:bg-gray-800 px-3 py-1 text-xs text-gray-600 dark:text-gray-300"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-gray-100 dark:bg-gray-800 px-3 py-1 text-sm text-gray-600 dark:text-gray-300"
                   >
                     <span className="font-medium">
                       {method.replace(/_/g, " ")}
@@ -232,7 +232,7 @@ export default function SpeakerReviewPage() {
           {(pendingActions.length > 0 || submitResult) && (
             <div className="sticky bottom-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-4">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4 text-sm">
+                <div className="flex items-center gap-4 text-base">
                   {pendingActions.length > 0 && (
                     <>
                       <span className="text-gray-600 dark:text-gray-400">
@@ -270,7 +270,7 @@ export default function SpeakerReviewPage() {
                   {tab === "review" && reviewCount > 0 && (
                     <button
                       onClick={handleAcceptAllFlagged}
-                      className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                      className="flex items-center gap-2 px-3 py-2 text-base text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                     >
                       <CheckCheck className="h-4 w-4" />
                       Accept All Flagged
@@ -280,14 +280,14 @@ export default function SpeakerReviewPage() {
                     <>
                       <button
                         onClick={() => setActions(new Map())}
-                        className="px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
+                        className="px-3 py-2 text-base text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
                       >
                         Clear
                       </button>
                       <button
                         onClick={handleSubmit}
                         disabled={submitting}
-                        className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                        className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-base font-medium rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                       >
                         <Send className="h-4 w-4" />
                         {submitting ? "Applying…" : `Apply ${pendingActions.length} Changes`}
@@ -333,7 +333,7 @@ function MetricCard({
         {icon}
         <span className="text-2xl font-bold">{value}</span>
       </div>
-      <p className="text-xs mt-1 opacity-80">{label}</p>
+      <p className="text-sm mt-1 opacity-80">{label}</p>
     </div>
   );
 }
@@ -361,14 +361,14 @@ function TabButton({
     <button
       onClick={onClick}
       className={cn(
-        "px-4 py-2.5 text-sm font-medium border-b-2 transition-colors",
+        "px-4 py-2.5 text-base font-medium border-b-2 transition-colors",
         active
           ? "border-blue-600 text-blue-600 dark:text-blue-400"
           : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
       )}
     >
       {label}
-      <span className={cn("ml-2 inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium", badgeColors[countColor])}>
+      <span className={cn("ml-2 inline-flex items-center rounded-full px-2 py-0.5 text-sm font-medium", badgeColors[countColor])}>
         {count}
       </span>
     </button>

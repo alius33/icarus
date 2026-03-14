@@ -56,7 +56,7 @@ export default function ScopeTracker() {
   };
 
   if (loading) {
-    return <div className="p-4 text-sm text-gray-500">Loading scope items...</div>;
+    return <div className="p-4 text-base text-gray-500">Loading scope items...</div>;
   }
 
   const original = items.filter((i) => i.scope_type === "original");
@@ -69,13 +69,13 @@ export default function ScopeTracker() {
   return (
     <div>
       <div className="flex items-center justify-between mb-3">
-        <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
+        <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
           <Target className="h-3.5 w-3.5" />
           Scope ({items.length})
         </h4>
         <button
           onClick={handleCreate}
-          className="flex items-center gap-1 text-xs text-blue-600 hover:text-blue-800"
+          className="flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800"
         >
           <Plus className="h-3 w-3" /> Add
         </button>
@@ -84,7 +84,7 @@ export default function ScopeTracker() {
       {/* Scope creep indicator */}
       <div className="flex items-center gap-3 mb-3 rounded-md bg-gray-50 px-3 py-2">
         <div className="flex-1">
-          <div className="flex items-center justify-between text-xs mb-1">
+          <div className="flex items-center justify-between text-sm mb-1">
             <span className="text-gray-600">
               Original: <span className="font-semibold">{original.length}</span>
             </span>
@@ -106,7 +106,7 @@ export default function ScopeTracker() {
           </div>
         </div>
         <span
-          className={`text-sm font-bold ${
+          className={`text-base font-bold ${
             creepPct > 30 ? "text-red-600" : creepPct > 15 ? "text-amber-600" : "text-green-600"
           }`}
         >
@@ -115,7 +115,7 @@ export default function ScopeTracker() {
       </div>
 
       {items.length === 0 ? (
-        <p className="text-sm text-gray-500">No scope items tracked.</p>
+        <p className="text-base text-gray-500">No scope items tracked.</p>
       ) : (
         <div className="space-y-1.5 max-h-64 overflow-y-auto">
           {items.map((item) => (
@@ -134,7 +134,7 @@ export default function ScopeTracker() {
                 {item.scope_type}
               </span>
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-gray-900 truncate">
+                <p className="text-base font-medium text-gray-900 truncate">
                   {item.name}
                 </p>
                 {item.workstream && (

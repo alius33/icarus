@@ -106,31 +106,31 @@ function SearchContent() {
 
       {!query.trim() && (
         <div className="text-center py-12">
-          <p className="text-sm text-gray-500 dark:text-gray-400">
+          <p className="text-base text-gray-500 dark:text-gray-400">
             Enter a search term in the header to get started.
           </p>
         </div>
       )}
 
       {loading && (
-        <p className="text-sm text-gray-500 dark:text-gray-400">Searching...</p>
+        <p className="text-base text-gray-500 dark:text-gray-400">Searching...</p>
       )}
 
       {error && (
         <div className="rounded-lg border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/30 p-6">
-          <p className="text-sm text-red-700 dark:text-red-400">{error}</p>
+          <p className="text-base text-red-700 dark:text-red-400">{error}</p>
         </div>
       )}
 
       {data && !loading && (
         <>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
+          <p className="text-base text-gray-500 dark:text-gray-400">
             {data.total} result{data.total !== 1 ? "s" : ""} found
           </p>
 
           {data.results.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-sm text-gray-500 dark:text-gray-400">
+              <p className="text-base text-gray-500 dark:text-gray-400">
                 No results found for &ldquo;{query}&rdquo;
               </p>
             </div>
@@ -147,7 +147,7 @@ function SearchContent() {
                 >
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
                     {formatEntityType(entityType)}
-                    <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">
+                    <span className="text-base font-normal text-gray-500 dark:text-gray-400 ml-2">
                       ({results.length})
                     </span>
                   </h3>
@@ -160,20 +160,20 @@ function SearchContent() {
                       >
                         <div className="flex items-start gap-3">
                           <span
-                            className={`px-2 py-1 rounded-full text-xs font-medium border flex-shrink-0 ${getEntityColor(result.type)}`}
+                            className={`px-2 py-1 rounded-full text-sm font-medium border flex-shrink-0 ${getEntityColor(result.type)}`}
                           >
                             {formatEntityType(result.type)}
                           </span>
                           <div className="min-w-0 flex-1">
                             <Link
                               href={buildResultUrl(result)}
-                              className="text-sm font-medium text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline"
+                              className="text-base font-medium text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline"
                             >
                               {result.title}
                             </Link>
                             {result.snippet && (
                               <p
-                                className="text-sm text-gray-600 dark:text-gray-300 mt-1"
+                                className="text-base text-gray-600 dark:text-gray-300 mt-1"
                                 dangerouslySetInnerHTML={{
                                   __html: sanitizeHtml(result.snippet),
                                 }}
@@ -181,7 +181,7 @@ function SearchContent() {
                             )}
                           </div>
                           {result.score > 0 && (
-                            <span className="text-xs text-gray-400 dark:text-gray-500 flex-shrink-0 tabular-nums">
+                            <span className="text-sm text-gray-400 dark:text-gray-500 flex-shrink-0 tabular-nums">
                               {result.score.toFixed(2)}
                             </span>
                           )}
@@ -205,7 +205,7 @@ export default function SearchPage() {
       fallback={
         <div className="space-y-6">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Search</h2>
-          <p className="text-sm text-gray-500 dark:text-gray-400">Loading...</p>
+          <p className="text-base text-gray-500 dark:text-gray-400">Loading...</p>
         </div>
       }
     >

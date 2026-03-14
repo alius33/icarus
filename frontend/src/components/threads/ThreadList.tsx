@@ -93,23 +93,23 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
     <div className="space-y-4">
       {/* Controls */}
       <div className="flex items-center gap-3">
-        <span className="text-xs font-medium text-gray-500 dark:text-gray-400">Group by:</span>
+        <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Group by:</span>
         <select
           value={groupBy}
           onChange={(e) => setGroupBy(e.target.value as GroupKey)}
-          className="text-sm border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+          className="text-base border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
         >
           <option value="none">None</option>
           <option value="status">Status</option>
           <option value="severity">Severity</option>
           <option value="trend">Trend</option>
         </select>
-        <span className="ml-auto text-xs text-gray-400">{threads.length} threads</span>
+        <span className="ml-auto text-sm text-gray-400">{threads.length} threads</span>
       </div>
 
       {/* Table */}
       <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-        <table className="w-full text-sm">
+        <table className="w-full text-base">
           <thead className="bg-gray-50 dark:bg-gray-800">
             <tr>
               {(
@@ -141,7 +141,7 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
                   <tr>
                     <td colSpan={5} className="px-3 py-2 bg-gray-100 dark:bg-gray-800/80">
                       <button
-                        className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+                        className="flex items-center gap-2 text-base font-medium text-gray-700 dark:text-gray-300"
                         onClick={() => toggleGroup(group.label)}
                       >
                         {collapsedGroups.has(group.label) ? (
@@ -150,7 +150,7 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
                           <ChevronDown className="h-4 w-4" />
                         )}
                         {group.label}
-                        <span className="text-xs text-gray-400 font-normal">({group.threads.length})</span>
+                        <span className="text-sm text-gray-400 font-normal">({group.threads.length})</span>
                       </button>
                     </td>
                   </tr>
@@ -179,14 +179,14 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
                             <select
                               value={thread.status}
                               onChange={(e) => onStatusChange(thread.id, e.target.value)}
-                              className={`text-xs font-medium rounded px-2 py-1 border-0 ${statusCfg?.bgColor ?? "bg-gray-100"} ${statusCfg?.color ?? "text-gray-600"}`}
+                              className={`text-sm font-medium rounded px-2 py-1 border-0 ${statusCfg?.bgColor ?? "bg-gray-100"} ${statusCfg?.color ?? "text-gray-600"}`}
                             >
                               {THREAD_STATUSES.map((s) => (
                                 <option key={s} value={s}>{THREAD_STATUS_CONFIG[s].label}</option>
                               ))}
                             </select>
                           ) : (
-                            <span className={`text-xs font-medium px-2 py-1 rounded ${statusCfg?.bgColor ?? "bg-gray-100"} ${statusCfg?.color ?? "text-gray-600"}`}>
+                            <span className={`text-sm font-medium px-2 py-1 rounded ${statusCfg?.bgColor ?? "bg-gray-100"} ${statusCfg?.color ?? "text-gray-600"}`}>
                               {statusCfg?.label ?? thread.status}
                             </span>
                           )}
@@ -196,7 +196,7 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
                             <select
                               value={thread.severity ?? ""}
                               onChange={(e) => onSeverityChange(thread.id, e.target.value)}
-                              className="text-xs rounded px-1 py-1 border-0 bg-transparent"
+                              className="text-sm rounded px-1 py-1 border-0 bg-transparent"
                             >
                               <option value="">None</option>
                               {THREAD_SEVERITIES.map((s) => (
@@ -206,13 +206,13 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
                           ) : (
                             <span className="flex items-center gap-1.5">
                               <span className={`w-2 h-2 rounded-full ${severityCfg?.dotColor ?? "bg-gray-300"}`} />
-                              <span className="text-xs">{severityCfg?.label ?? (thread.severity || "None")}</span>
+                              <span className="text-sm">{severityCfg?.label ?? (thread.severity || "None")}</span>
                             </span>
                           )}
                         </td>
                         <td className="px-3 py-2">
                           {thread.trend && (
-                            <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
+                            <span className={`text-sm font-medium px-2 py-0.5 rounded-full ${
                               thread.trend === "escalating" ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" :
                               thread.trend === "stable" ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400" :
                               "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
@@ -221,7 +221,7 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
                             </span>
                           )}
                         </td>
-                        <td className="px-3 py-2 text-xs text-gray-500 dark:text-gray-400">
+                        <td className="px-3 py-2 text-sm text-gray-500 dark:text-gray-400">
                           {thread.opened_date ? new Date(thread.opened_date).toLocaleDateString("en-GB", { day: "numeric", month: "short" }) : "\u2014"}
                         </td>
                       </tr>

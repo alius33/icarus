@@ -26,7 +26,7 @@ function DashboardInner({ initialData }: Props) {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Programme Dashboard</h1>
-        <p className="text-sm text-gray-500 mt-1">
+        <p className="text-base text-gray-500 mt-1">
           {d.projects.length} projects &middot; {d.open_actions} open actions &middot; {d.total_transcripts} transcripts
         </p>
       </div>

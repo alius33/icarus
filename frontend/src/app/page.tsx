@@ -61,12 +61,12 @@ export default async function DashboardPage() {
           <h2 className="text-2xl font-bold text-gray-900">
             Programme Dashboard
           </h2>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-base text-gray-500">
             Gen AI Programme overview and status.
           </p>
         </div>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
-          <p className="text-sm text-red-700">
+          <p className="text-base text-red-700">
             {error || "Unable to load dashboard data. Please try again later."}
           </p>
         </div>

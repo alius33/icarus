@@ -76,7 +76,7 @@ export default function DecisionTimeline({ decisions, onDecisionClick }: Decisio
 
   if (datedDecisions.length === 0) {
     return (
-      <div className="flex items-center justify-center py-12 text-gray-400 text-sm">
+      <div className="flex items-center justify-center py-12 text-gray-400 text-base">
         No decisions with dates to show on timeline. Add dates to see decisions here.
       </div>
     );
@@ -86,7 +86,7 @@ export default function DecisionTimeline({ decisions, onDecisionClick }: Decisio
     <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
       {/* Header: week columns */}
       <div className="flex bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-        <div className="w-64 shrink-0 px-3 py-2 text-xs font-medium text-gray-500 dark:text-gray-400 border-r border-gray-200 dark:border-gray-700">
+        <div className="w-64 shrink-0 px-3 py-2 text-sm font-medium text-gray-500 dark:text-gray-400 border-r border-gray-200 dark:border-gray-700">
           Decision
         </div>
         <div className="flex-1 relative">
@@ -94,7 +94,7 @@ export default function DecisionTimeline({ decisions, onDecisionClick }: Decisio
             {weekLabels.map((wl, i) => (
               <div
                 key={i}
-                className="text-xs text-gray-400 px-2 py-2 border-r border-gray-200 dark:border-gray-700"
+                className="text-sm text-gray-400 px-2 py-2 border-r border-gray-200 dark:border-gray-700"
                 style={{ width: "120px" }}
               >
                 {wl.label}
@@ -123,17 +123,17 @@ export default function DecisionTimeline({ decisions, onDecisionClick }: Decisio
                 onClick={() => onDecisionClick(decision.id)}
               >
                 <div className="min-w-0">
-                  <p className="text-sm text-gray-900 dark:text-gray-100 truncate">{decision.title}</p>
+                  <p className="text-base text-gray-900 dark:text-gray-100 truncate">{decision.title}</p>
                   <div className="flex items-center gap-2 mt-0.5">
-                    <span className="text-xs font-mono text-gray-400">#{decision.number}</span>
+                    <span className="text-sm font-mono text-gray-400">#{decision.number}</span>
                     {decision.key_people.length > 0 && (
-                      <span className="text-xs text-gray-400 truncate">
+                      <span className="text-sm text-gray-400 truncate">
                         {decision.key_people.slice(0, 2).join(", ")}
                         {decision.key_people.length > 2 && ` +${decision.key_people.length - 2}`}
                       </span>
                     )}
                     {statusCfg && (
-                      <span className={`text-xs font-medium px-1 py-0.5 rounded ${statusCfg.bgColor} ${statusCfg.color}`}>
+                      <span className={`text-sm font-medium px-1 py-0.5 rounded ${statusCfg.bgColor} ${statusCfg.color}`}>
                         {statusCfg.label}
                       </span>
                     )}

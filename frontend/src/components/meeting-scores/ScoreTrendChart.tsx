@@ -49,7 +49,7 @@ export default function ScoreTrendChart({ data }: ScoreTrendChartProps) {
 
   return (
     <div className="border rounded-lg p-4 bg-white dark:bg-gray-800 dark:border-gray-700">
-      <h3 className="text-sm font-semibold mb-4">Score Trend Over Time</h3>
+      <h3 className="text-base font-semibold mb-4">Score Trend Over Time</h3>
       <ResponsiveContainer width="100%" height={300}>
         <LineChart data={chartData}>
           <CartesianGrid strokeDasharray="3 3" opacity={0.3} />
@@ -67,7 +67,7 @@ export default function ScoreTrendChart({ data }: ScoreTrendChartProps) {
               if (!active || !payload?.length) return null;
               const item = payload[0].payload;
               return (
-                <div className="bg-white dark:bg-gray-800 border dark:border-gray-700 rounded-lg shadow-lg p-3 text-sm">
+                <div className="bg-white dark:bg-gray-800 border dark:border-gray-700 rounded-lg shadow-lg p-3 text-base">
                   <p className="font-medium">{item.date}</p>
                   <p>
                     Score: <span className="font-semibold">{item.score}</span>
@@ -79,7 +79,7 @@ export default function ScoreTrendChart({ data }: ScoreTrendChartProps) {
           />
           <Legend
             formatter={(value: string) => (
-              <span className="text-xs capitalize">{value}</span>
+              <span className="text-sm capitalize">{value}</span>
             )}
           />
           <Line
@@ -111,7 +111,7 @@ export default function ScoreTrendChart({ data }: ScoreTrendChartProps) {
       {/* Meeting type color legend */}
       <div className="flex gap-3 mt-2 flex-wrap justify-center">
         {meetingTypes.map((type) => (
-          <div key={type} className="flex items-center gap-1.5 text-xs">
+          <div key={type} className="flex items-center gap-1.5 text-sm">
             <div
               className="w-3 h-3 rounded-full"
               style={{

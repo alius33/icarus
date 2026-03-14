@@ -58,8 +58,8 @@ export default function StakeholdersPage() {
     finally { setDeleting(false); }
   };
 
-  if (loading) return (<div className="space-y-6"><h2 className="text-2xl font-bold text-gray-900">Stakeholders</h2><p className="text-sm text-gray-500">Loading stakeholders...</p></div>);
-  if (error) return (<div className="space-y-6"><h2 className="text-2xl font-bold text-gray-900">Stakeholders</h2><div className="rounded-lg border border-red-200 bg-red-50 p-6"><p className="text-sm text-red-700">{error}</p></div></div>);
+  if (loading) return (<div className="space-y-6"><h2 className="text-2xl font-bold text-gray-900">Stakeholders</h2><p className="text-base text-gray-500">Loading stakeholders...</p></div>);
+  if (error) return (<div className="space-y-6"><h2 className="text-2xl font-bold text-gray-900">Stakeholders</h2><div className="rounded-lg border border-red-200 bg-red-50 p-6"><p className="text-base text-red-700">{error}</p></div></div>);
 
   const grouped = stakeholders.reduce<Record<number, StakeholderBase[]>>((acc, s) => {
     const tier = s.tier || 4;
@@ -74,9 +74,9 @@ export default function StakeholdersPage() {
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-2xl font-bold text-gray-900">Stakeholders</h2>
-          <p className="mt-1 text-sm text-gray-500">{stakeholders.length} stakeholders across {tiers.length} tiers</p>
+          <p className="mt-1 text-base text-gray-500">{stakeholders.length} stakeholders across {tiers.length} tiers</p>
         </div>
-        <button onClick={openCreate} className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">+ New Stakeholder</button>
+        <button onClick={openCreate} className="px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">+ New Stakeholder</button>
       </div>
 
       {tiers.map((tier) => (
@@ -93,8 +93,8 @@ export default function StakeholdersPage() {
                   <div className="flex items-start justify-between">
                     <div>
                       <p className="font-semibold text-gray-900">{s.name}</p>
-                      {s.role && <p className="mt-1 text-sm text-gray-500">{s.role}</p>}
-                      {s.organisation && <p className="mt-0.5 text-xs text-gray-400">{s.organisation}</p>}
+                      {s.role && <p className="mt-1 text-base text-gray-500">{s.role}</p>}
+                      {s.organisation && <p className="mt-0.5 text-sm text-gray-400">{s.organisation}</p>}
                     </div>
                     {s.risk_level && s.risk_level !== "none" && (
                       <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold ${
@@ -108,13 +108,13 @@ export default function StakeholdersPage() {
                     )}
                   </div>
                   {s.morale_notes && (
-                    <p className="mt-2 text-xs text-amber-700 bg-amber-50 rounded px-2 py-1 border border-amber-200">
+                    <p className="mt-2 text-sm text-amber-700 bg-amber-50 rounded px-2 py-1 border border-amber-200">
                       {s.morale_notes}
                     </p>
                   )}
                   <div className="mt-3 flex flex-wrap items-center gap-2">
-                    <span className="inline-flex items-center rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 border border-blue-200">Tier {s.tier}</span>
-                    {s.mention_count > 0 && <span className="text-xs text-gray-500">Mentioned in {s.mention_count} transcript{s.mention_count !== 1 ? "s" : ""}</span>}
+                    <span className="inline-flex items-center rounded-full bg-blue-50 px-2 py-0.5 text-sm font-medium text-blue-700 border border-blue-200">Tier {s.tier}</span>
+                    {s.mention_count > 0 && <span className="text-sm text-gray-500">Mentioned in {s.mention_count} transcript{s.mention_count !== 1 ? "s" : ""}</span>}
                   </div>
                 </Link>
               </div>

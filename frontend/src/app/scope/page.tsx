@@ -23,7 +23,7 @@ function ScopeCard({ item }: { item: ScopeItemSchema }) {
             <Target className="h-5 w-5 text-blue-500 flex-shrink-0 mt-0.5" />
           )}
           <div className="min-w-0 flex-1">
-            <h4 className="text-sm font-semibold text-gray-900">{item.name}</h4>
+            <h4 className="text-base font-semibold text-gray-900">{item.name}</h4>
             <div className="flex flex-wrap items-center gap-2 mt-1.5">
               {item.workstream && (
                 <span className="inline-flex items-center rounded bg-blue-50 px-2 py-0.5 text-[11px] font-medium text-blue-700">
@@ -47,7 +47,7 @@ function ScopeCard({ item }: { item: ScopeItemSchema }) {
               )}
             </div>
             {item.description && (
-              <p className="mt-2 text-xs text-gray-600 line-clamp-2">
+              <p className="mt-2 text-sm text-gray-600 line-clamp-2">
                 {item.description}
               </p>
             )}
@@ -56,7 +56,7 @@ function ScopeCard({ item }: { item: ScopeItemSchema }) {
                 <summary className="text-[11px] font-medium text-amber-700 cursor-pointer hover:text-amber-800">
                   Impact notes
                 </summary>
-                <p className="mt-1 text-xs text-gray-600 bg-amber-50 rounded p-2 border border-amber-100">
+                <p className="mt-1 text-sm text-gray-600 bg-amber-50 rounded p-2 border border-amber-100">
                   {item.impact_notes}
                 </p>
               </details>
@@ -101,7 +101,7 @@ export default async function ScopeTrackerPage() {
       {/* Header */}
       <div>
         <h2 className="text-2xl font-bold text-gray-900">Scope Creep Tracker</h2>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-base text-gray-500">
           Original scope vs. additions across the Gen AI Programme.
         </p>
       </div>
@@ -109,7 +109,7 @@ export default async function ScopeTrackerPage() {
       {/* Error state */}
       {error && (
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
-          <p className="text-sm text-red-700">{error}</p>
+          <p className="text-base text-red-700">{error}</p>
         </div>
       )}
 
@@ -119,7 +119,7 @@ export default async function ScopeTrackerPage() {
           <div className="rounded-lg border border-gray-200 bg-white p-4">
             <div className="flex items-center gap-2 mb-1">
               <Target className="h-4 w-4 text-blue-500" />
-              <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">
                 Original
               </span>
             </div>
@@ -128,7 +128,7 @@ export default async function ScopeTrackerPage() {
           <div className="rounded-lg border border-amber-200 bg-amber-50/30 p-4">
             <div className="flex items-center gap-2 mb-1">
               <PlusCircle className="h-4 w-4 text-amber-500" />
-              <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">
                 Additions
               </span>
             </div>
@@ -137,7 +137,7 @@ export default async function ScopeTrackerPage() {
           <div className="rounded-lg border border-green-200 bg-green-50/30 p-4">
             <div className="flex items-center gap-2 mb-1">
               <DollarSign className="h-4 w-4 text-green-600" />
-              <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">
                 Budgeted
               </span>
             </div>
@@ -146,7 +146,7 @@ export default async function ScopeTrackerPage() {
           <div className="rounded-lg border border-red-200 bg-red-50/30 p-4">
             <div className="flex items-center gap-2 mb-1">
               <DollarSign className="h-4 w-4 text-red-500" />
-              <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">
                 Unbudgeted
               </span>
             </div>
@@ -158,7 +158,7 @@ export default async function ScopeTrackerPage() {
       {/* Original Scope Section */}
       {!error && original.length > 0 && (
         <section>
-          <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+          <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
             <Target className="h-3.5 w-3.5 text-blue-500" />
             Original Scope ({original.length})
           </h3>
@@ -173,7 +173,7 @@ export default async function ScopeTrackerPage() {
       {/* Additions Section */}
       {!error && additions.length > 0 && (
         <section>
-          <h3 className="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+          <h3 className="text-sm font-semibold text-amber-600 uppercase tracking-wider mb-3 flex items-center gap-1.5">
             <PlusCircle className="h-3.5 w-3.5 text-amber-500" />
             Additions ({additions.length})
           </h3>
@@ -189,7 +189,7 @@ export default async function ScopeTrackerPage() {
       {!error && items.length === 0 && (
         <div className="rounded-lg border border-gray-200 bg-white p-12 text-center">
           <Target className="h-10 w-10 text-gray-300 mx-auto mb-3" />
-          <p className="text-sm text-gray-500">No scope items recorded yet.</p>
+          <p className="text-base text-gray-500">No scope items recorded yet.</p>
         </div>
       )}
     </div>

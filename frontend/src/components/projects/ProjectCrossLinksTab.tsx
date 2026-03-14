@@ -179,7 +179,7 @@ export default function ProjectCrossLinksTab({
 
   if (loading)
     return (
-      <p className="text-sm text-gray-500 py-4">
+      <p className="text-base text-gray-500 py-4">
         Loading cross-project links...
       </p>
     );
@@ -187,7 +187,7 @@ export default function ProjectCrossLinksTab({
   if (error)
     return (
       <div className="rounded-lg border border-red-200 bg-red-50 p-6">
-        <p className="text-sm text-red-700">{error}</p>
+        <p className="text-base text-red-700">{error}</p>
       </div>
     );
 
@@ -196,7 +196,7 @@ export default function ProjectCrossLinksTab({
       <div className="flex justify-end">
         <button
           onClick={openCreate}
-          className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
         >
           + New Link
         </button>
@@ -204,7 +204,7 @@ export default function ProjectCrossLinksTab({
 
       {links.length === 0 ? (
         <div className="rounded-lg border border-gray-200 bg-white p-8 text-center">
-          <p className="text-sm text-gray-500">
+          <p className="text-base text-gray-500">
             No cross-project links detected yet.
           </p>
         </div>
@@ -235,7 +235,7 @@ export default function ProjectCrossLinksTab({
 
                     <div className="space-y-1">
                       {/* Project names and direction */}
-                      <div className="flex items-center gap-2 text-sm">
+                      <div className="flex items-center gap-2 text-base">
                         <span className="font-medium text-gray-900">
                           This project
                         </span>
@@ -250,7 +250,7 @@ export default function ProjectCrossLinksTab({
 
                       {/* Description */}
                       {link.description && (
-                        <p className="text-sm text-gray-600">
+                        <p className="text-base text-gray-600">
                           {link.description}
                         </p>
                       )}
@@ -258,12 +258,12 @@ export default function ProjectCrossLinksTab({
                       {/* Badges row */}
                       <div className="flex items-center gap-2 mt-1">
                         <span
-                          className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border capitalize ${LINK_TYPE_COLORS[link.link_type] || "bg-gray-50 text-gray-600 border-gray-200"}`}
+                          className={`inline-flex items-center px-2 py-0.5 rounded-full text-sm font-medium border capitalize ${LINK_TYPE_COLORS[link.link_type] || "bg-gray-50 text-gray-600 border-gray-200"}`}
                         >
                           {link.link_type}
                         </span>
                         <span
-                          className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border capitalize ${
+                          className={`inline-flex items-center px-2 py-0.5 rounded-full text-sm font-medium border capitalize ${
                             link.status === "resolved"
                               ? "bg-green-50 text-green-700 border-green-200"
                               : link.status === "monitoring"
@@ -274,7 +274,7 @@ export default function ProjectCrossLinksTab({
                           {link.status}
                         </span>
                         {link.date_detected && (
-                          <span className="text-xs text-gray-400">
+                          <span className="text-sm text-gray-400">
                             Detected {formatDate(link.date_detected)}
                           </span>
                         )}

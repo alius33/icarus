@@ -227,7 +227,7 @@ export default function ProjectOverviewTab({ project, hub, timeline }: Props) {
                 <ArrowRight className="h-4 w-4 opacity-50" />
               </div>
               <p className="mt-3 text-2xl font-bold">{stat.count}</p>
-              <p className="text-xs font-medium">{stat.label}</p>
+              <p className="text-sm font-medium">{stat.label}</p>
               {stat.detail && (
                 <p className="text-[10px] opacity-75 mt-0.5">{stat.detail}</p>
               )}
@@ -239,7 +239,7 @@ export default function ProjectOverviewTab({ project, hub, timeline }: Props) {
       {/* Current Status */}
       {statusEntries && statusEntries.length > 0 && (
         <div className="rounded-lg border border-blue-200 bg-gradient-to-br from-blue-50/80 to-white p-6">
-          <h3 className="flex items-center gap-2 text-sm font-semibold text-gray-900 mb-4">
+          <h3 className="flex items-center gap-2 text-base font-semibold text-gray-900 mb-4">
             <Activity className="h-4 w-4 text-blue-600" />
             Current Status
           </h3>
@@ -248,8 +248,8 @@ export default function ProjectOverviewTab({ project, hub, timeline }: Props) {
               if (entry.type === "legacy") {
                 return (
                   <div key={i}>
-                    <span className="text-xs text-gray-400 mb-2 block">as of {entry.weekLabel}</span>
-                    <div className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-h2:mt-4 prose-h2:mb-2 prose-h2:text-sm prose-h2:font-semibold prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900">
+                    <span className="text-sm text-gray-400 mb-2 block">as of {entry.weekLabel}</span>
+                    <div className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-h2:mt-4 prose-h2:mb-2 prose-h2:text-base prose-h2:font-semibold prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900">
                       <MarkdownContent>{entry.content}</MarkdownContent>
                     </div>
                   </div>
@@ -258,7 +258,7 @@ export default function ProjectOverviewTab({ project, hub, timeline }: Props) {
               return (
                 <div key={entry.date} className={i > 0 ? "border-t border-blue-100 pt-4" : ""}>
                   <div className="mb-2 flex items-center gap-2">
-                    <span className="text-xs font-medium text-gray-600">{formatStatusDate(entry.date)}</span>
+                    <span className="text-sm font-medium text-gray-600">{formatStatusDate(entry.date)}</span>
                   </div>
                   {entry.items.map((s) => (
                     <div key={s.id} className="mb-2 last:mb-0">
@@ -280,13 +280,13 @@ export default function ProjectOverviewTab({ project, hub, timeline }: Props) {
       {/* Attention Required */}
       {attentionItems.length > 0 && (
         <div className="rounded-lg border border-orange-200 bg-orange-50/50 p-5">
-          <h3 className="flex items-center gap-2 text-sm font-semibold text-gray-900 mb-3">
+          <h3 className="flex items-center gap-2 text-base font-semibold text-gray-900 mb-3">
             <AlertTriangle className="h-4 w-4 text-orange-600" />
             Attention Required
           </h3>
           <div className="space-y-2">
             {attentionItems.map((item, i) => (
-              <div key={i} className="flex items-start gap-2 text-sm">
+              <div key={i} className="flex items-start gap-2 text-base">
                 <AlertCircle className="h-4 w-4 flex-shrink-0 text-orange-500 mt-0.5" />
                 <div>
                   <span className="text-gray-900">{item.title}</span>
@@ -308,7 +308,7 @@ export default function ProjectOverviewTab({ project, hub, timeline }: Props) {
       {recentActivity.length > 0 && (
         <div className="rounded-lg border border-gray-200 bg-white">
           <div className="border-b border-gray-100 px-5 py-4">
-            <h3 className="flex items-center gap-2 text-sm font-semibold text-gray-900">
+            <h3 className="flex items-center gap-2 text-base font-semibold text-gray-900">
               <Clock className="h-4 w-4 text-gray-500" />
               Recent Activity
             </h3>
@@ -324,7 +324,7 @@ export default function ProjectOverviewTab({ project, hub, timeline }: Props) {
                 >
                   <TypeIcon className="h-4 w-4 flex-shrink-0 text-gray-400 mt-0.5" />
                   <div className="min-w-0 flex-1">
-                    <p className="text-sm text-gray-900 truncate">{item.title}</p>
+                    <p className="text-base text-gray-900 truncate">{item.title}</p>
                     <div className="mt-0.5 flex items-center gap-2">
                       <span className="text-[10px] text-gray-400 capitalize">{item.type}</span>
                       {item.date && (

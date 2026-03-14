@@ -119,7 +119,7 @@ export default function TopicEvolutionPage() {
       <div className="space-y-6">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Topic Evolution</h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+          <p className="text-base text-gray-500 dark:text-gray-400 mt-1">
             Track how themes emerge, intensify, and fade across meetings
           </p>
         </div>
@@ -145,14 +145,14 @@ export default function TopicEvolutionPage() {
       <div className="space-y-6">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Topic Evolution</h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+          <p className="text-base text-gray-500 dark:text-gray-400 mt-1">
             Track how themes emerge, intensify, and fade across meetings
           </p>
         </div>
         <div className="text-center py-16">
           <BarChart2 className="h-12 w-12 mx-auto text-gray-300 dark:text-gray-600 mb-4" />
           <p className="text-gray-500 dark:text-gray-400">
-            No data yet. Run <code className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded text-sm">/analyse-deep</code> to populate.
+            No data yet. Run <code className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded text-base">/analyse-deep</code> to populate.
           </p>
         </div>
       </div>
@@ -163,7 +163,7 @@ export default function TopicEvolutionPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Topic Evolution</h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+        <p className="text-base text-gray-500 dark:text-gray-400 mt-1">
           Track how themes emerge, intensify, and fade across meetings
         </p>
       </div>
@@ -174,7 +174,7 @@ export default function TopicEvolutionPage() {
           <button
             key={cat}
             onClick={() => setCategory(cat === "all" ? undefined : cat)}
-            className={`px-3 py-1.5 text-sm rounded-full border transition-colors ${
+            className={`px-3 py-1.5 text-base rounded-full border transition-colors ${
               (cat === "all" && !category) || cat === category
                 ? "bg-blue-50 border-blue-200 text-blue-700 dark:bg-blue-900/30 dark:border-blue-700 dark:text-blue-300"
                 : "bg-white border-gray-200 text-gray-600 hover:bg-gray-50 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-700"
@@ -235,7 +235,7 @@ export default function TopicEvolutionPage() {
               <Legend
                 wrapperStyle={{ paddingTop: "1rem" }}
                 formatter={(value: string) => (
-                  <span className="text-sm text-gray-600 dark:text-gray-300">{value}</span>
+                  <span className="text-base text-gray-600 dark:text-gray-300">{value}</span>
                 )}
               />
               {topicNames.map((topic) => {
@@ -301,7 +301,7 @@ function MomentumSection({
       <h2 className="text-lg font-semibold flex items-center gap-2 mb-3 text-gray-900 dark:text-gray-100">
         {icon}
         {title}
-        <span className="text-sm font-normal text-gray-500 dark:text-gray-400">({topics.length})</span>
+        <span className="text-base font-normal text-gray-500 dark:text-gray-400">({topics.length})</span>
       </h2>
       <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
         {topics.map((topic) => (
@@ -323,13 +323,13 @@ function TopicCard({ topic }: { topic: TopicSignalSchema }) {
       </div>
 
       <div className="flex gap-2 flex-wrap mb-3">
-        <span className={`px-2 py-0.5 rounded-full text-xs ${catClass}`}>
+        <span className={`px-2 py-0.5 rounded-full text-sm ${catClass}`}>
           {topic.category || "unknown"}
         </span>
         <ConfidenceBadge confidence={topic.confidence} />
       </div>
 
-      <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400 mb-2">
+      <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400 mb-2">
         <span className="flex items-center gap-1">
           <MessageSquare className="w-3 h-3" />
           {topic.meetings_count} meetings
@@ -340,7 +340,7 @@ function TopicCard({ topic }: { topic: TopicSignalSchema }) {
       </div>
 
       {topic.key_quote && (
-        <p className="text-xs text-gray-600 dark:text-gray-300 mt-2 italic border-l-2 border-gray-200 dark:border-gray-600 pl-2 line-clamp-3">
+        <p className="text-sm text-gray-600 dark:text-gray-300 mt-2 italic border-l-2 border-gray-200 dark:border-gray-600 pl-2 line-clamp-3">
           &ldquo;{topic.key_quote}&rdquo;
         </p>
       )}
@@ -358,7 +358,7 @@ function TrendBadge({ trend }: { trend: string | null }) {
   if (!trend) return null;
   const c = config[trend] || config.stable;
   return (
-    <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ${c.bg} ${c.text}`}>
+    <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-sm font-medium ${c.bg} ${c.text}`}>
       {c.arrow} {trend}
     </span>
   );
@@ -372,7 +372,7 @@ function ConfidenceBadge({ confidence }: { confidence: string | null }) {
   };
   if (!confidence) return null;
   return (
-    <span className={`px-2 py-0.5 rounded-full text-xs ${colors[confidence] || "bg-gray-100 dark:bg-gray-700"}`}>
+    <span className={`px-2 py-0.5 rounded-full text-sm ${colors[confidence] || "bg-gray-100 dark:bg-gray-700"}`}>
       {confidence}
     </span>
   );

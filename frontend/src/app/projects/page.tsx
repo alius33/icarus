@@ -18,7 +18,7 @@ export default async function ProjectsListPage() {
       <div className="space-y-6">
         <h2 className="text-2xl font-bold text-gray-900">Project Hub</h2>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
-          <p className="text-sm text-red-700">{error}</p>
+          <p className="text-base text-red-700">{error}</p>
         </div>
       </div>
     );
@@ -31,14 +31,14 @@ export default async function ProjectsListPage() {
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-2xl font-bold text-gray-900">Project Hub</h2>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-base text-gray-500">
             Each project aggregates all related transcripts, decisions, actions,
             and more.
           </p>
         </div>
         <Link
           href="/projects/new"
-          className="inline-flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-colors"
+          className="inline-flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-base font-medium text-white hover:bg-blue-700 transition-colors"
         >
           <Plus className="h-4 w-4" />
           New Project
@@ -56,7 +56,7 @@ export default async function ProjectsListPage() {
 
       {(!projects || projects.length === 0) && (
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 text-center">
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-base">
             No projects yet. Projects are automatically created from workstreams
             when the import pipeline runs.
           </p>
@@ -89,7 +89,7 @@ function ProjectCard({ project: p }: { project: { id: number; name: string; desc
         <div className="mb-3 flex items-center justify-between">
           <div className="flex items-center gap-2" />
           <span
-            className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${getStatusColor(p.status)}`}
+            className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-sm font-medium ${getStatusColor(p.status)}`}
           >
             {p.status}
           </span>
@@ -98,7 +98,7 @@ function ProjectCard({ project: p }: { project: { id: number; name: string; desc
         <h3 className="text-base font-semibold text-gray-900">{p.name}</h3>
 
         {p.description && (
-          <p className="mt-1 text-xs text-gray-500 line-clamp-2">
+          <p className="mt-1 text-sm text-gray-500 line-clamp-2">
             {p.description}
           </p>
         )}
@@ -138,7 +138,7 @@ function CountPill({
   label: string;
 }) {
   return (
-    <span className="inline-flex items-center gap-1 rounded-full bg-gray-100 px-2 py-0.5 text-xs text-gray-600">
+    <span className="inline-flex items-center gap-1 rounded-full bg-gray-100 px-2 py-0.5 text-sm text-gray-600">
       {icon}
       {count} {label}
     </span>

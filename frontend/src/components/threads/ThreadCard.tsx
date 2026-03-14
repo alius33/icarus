@@ -66,24 +66,24 @@ export default function ThreadCard({ thread, onClick, isDragging }: ThreadCardPr
             <span className={`w-2 h-2 rounded-full ${severityCfg.dotColor}`} title={severityCfg.label} />
           )}
           {severityCfg && (
-            <span className={`text-xs ${severityCfg.color}`}>{severityCfg.label}</span>
+            <span className={`text-sm ${severityCfg.color}`}>{severityCfg.label}</span>
           )}
         </div>
         {trend && (
-          <span className={`text-sm font-medium ${trendColor(trend)}`} title={trend}>
+          <span className={`text-base font-medium ${trendColor(trend)}`} title={trend}>
             {trendIndicator(trend)}
           </span>
         )}
       </div>
 
       {/* Title */}
-      <p className="text-sm font-medium text-gray-900 dark:text-gray-100 line-clamp-2 mb-2">
+      <p className="text-base font-medium text-gray-900 dark:text-gray-100 line-clamp-2 mb-2">
         {thread.title}
       </p>
 
       {/* Description snippet */}
       {thread.description && (
-        <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-2 mb-2">
+        <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2 mb-2">
           {thread.description.length > 80
             ? thread.description.slice(0, 80) + "..."
             : thread.description}
@@ -91,7 +91,7 @@ export default function ThreadCard({ thread, onClick, isDragging }: ThreadCardPr
       )}
 
       {/* Bottom row: opened date */}
-      <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
+      <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
         {thread.opened_date && (
           <span className="flex items-center gap-1">
             <Calendar className="h-3 w-3" />

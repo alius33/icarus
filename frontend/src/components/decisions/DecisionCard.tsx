@@ -44,14 +44,14 @@ export default function DecisionCard({ decision, onClick, isDragging }: Decision
     >
       {/* Top row: identifier + status badge */}
       <div className="flex items-center justify-between mb-1">
-        <span className="text-xs font-mono text-gray-400">Decision #{decision.number}</span>
-        <span className={`text-xs font-medium px-1.5 py-0.5 rounded ${statusCfg.bgColor} ${statusCfg.color}`}>
+        <span className="text-sm font-mono text-gray-400">Decision #{decision.number}</span>
+        <span className={`text-sm font-medium px-1.5 py-0.5 rounded ${statusCfg.bgColor} ${statusCfg.color}`}>
           {statusCfg.label}
         </span>
       </div>
 
       {/* Title */}
-      <p className="text-sm font-medium text-gray-900 dark:text-gray-100 line-clamp-2 mb-2">
+      <p className="text-base font-medium text-gray-900 dark:text-gray-100 line-clamp-2 mb-2">
         {decision.title}
       </p>
 
@@ -61,13 +61,13 @@ export default function DecisionCard({ decision, onClick, isDragging }: Decision
           {decision.key_people.slice(0, 3).map((person) => (
             <span
               key={person}
-              className="px-1.5 py-0.5 text-xs rounded bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300"
+              className="px-1.5 py-0.5 text-sm rounded bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300"
             >
               {person}
             </span>
           ))}
           {decision.key_people.length > 3 && (
-            <span className="px-1.5 py-0.5 text-xs text-gray-400">
+            <span className="px-1.5 py-0.5 text-sm text-gray-400">
               +{decision.key_people.length - 3}
             </span>
           )}
@@ -75,7 +75,7 @@ export default function DecisionCard({ decision, onClick, isDragging }: Decision
       )}
 
       {/* Bottom row: date, workstream */}
-      <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
+      <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
         {decision.date && (
           <span className="flex items-center gap-1">
             <Calendar className="h-3 w-3" />
@@ -92,7 +92,7 @@ export default function DecisionCard({ decision, onClick, isDragging }: Decision
 
       {/* Workstream badge */}
       {decision.workstream && (
-        <div className="mt-2 text-xs text-gray-400 truncate">
+        <div className="mt-2 text-sm text-gray-400 truncate">
           {decision.workstream}
         </div>
       )}

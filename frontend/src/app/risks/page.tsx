@@ -64,7 +64,7 @@ function TrendIndicator({ trend }: { trend: string | null }) {
   const t = trend.toLowerCase();
   if (t === "escalating") {
     return (
-      <span className="inline-flex items-center gap-1 text-xs font-medium text-red-600">
+      <span className="inline-flex items-center gap-1 text-sm font-medium text-red-600">
         <TrendingUp className="h-3.5 w-3.5" />
         Escalating
       </span>
@@ -72,14 +72,14 @@ function TrendIndicator({ trend }: { trend: string | null }) {
   }
   if (t === "de-escalating") {
     return (
-      <span className="inline-flex items-center gap-1 text-xs font-medium text-green-600">
+      <span className="inline-flex items-center gap-1 text-sm font-medium text-green-600">
         <TrendingDown className="h-3.5 w-3.5" />
         De-escalating
       </span>
     );
   }
   return (
-    <span className="inline-flex items-center gap-1 text-xs font-medium text-yellow-600">
+    <span className="inline-flex items-center gap-1 text-sm font-medium text-yellow-600">
       <Minus className="h-3.5 w-3.5" />
       Stable
     </span>
@@ -186,7 +186,7 @@ export default function RiskRegisterPage() {
     return (
       <div className="space-y-6">
         <h2 className="text-2xl font-bold text-gray-900">Risk Register</h2>
-        <p className="text-sm text-gray-500">Loading risks...</p>
+        <p className="text-base text-gray-500">Loading risks...</p>
       </div>
     );
   }
@@ -201,7 +201,7 @@ export default function RiskRegisterPage() {
           <h2 className="text-2xl font-bold text-gray-900">Risk Register</h2>
         </div>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
-          <p className="text-sm text-red-700">{error}</p>
+          <p className="text-base text-red-700">{error}</p>
         </div>
       </div>
     );
@@ -220,7 +220,7 @@ export default function RiskRegisterPage() {
           </Link>
           <div>
             <h2 className="text-2xl font-bold text-gray-900">Risk Register</h2>
-            <p className="mt-1 text-sm text-gray-500">
+            <p className="mt-1 text-base text-gray-500">
               {totalCount} open thread{totalCount !== 1 ? "s" : ""} across all
               severity levels
             </p>
@@ -239,7 +239,7 @@ export default function RiskRegisterPage() {
               className={`rounded-lg border ${style.border} bg-white p-4 text-center`}
             >
               <p className="text-2xl font-bold text-gray-900">{count}</p>
-              <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mt-1">
+              <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mt-1">
                 {sev}
               </p>
             </div>
@@ -250,7 +250,7 @@ export default function RiskRegisterPage() {
       {/* Risk board columns */}
       {totalCount === 0 ? (
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-12 text-center">
-          <p className="text-sm text-gray-500">
+          <p className="text-base text-gray-500">
             No open threads found. Risks will appear here once open threads are
             recorded.
           </p>
@@ -268,9 +268,9 @@ export default function RiskRegisterPage() {
                 >
                   <div className="flex items-center gap-2">
                     {style.icon}
-                    <span className="text-sm font-semibold">{sev}</span>
+                    <span className="text-base font-semibold">{sev}</span>
                   </div>
-                  <span className="text-sm font-medium opacity-80">
+                  <span className="text-base font-medium opacity-80">
                     {items.length}
                   </span>
                 </div>
@@ -279,7 +279,7 @@ export default function RiskRegisterPage() {
                   className={`flex-1 space-y-3 rounded-b-lg border-x border-b ${style.border} bg-gray-50 p-3`}
                 >
                   {items.length === 0 ? (
-                    <p className="text-xs text-gray-400 text-center py-6">
+                    <p className="text-sm text-gray-400 text-center py-6">
                       No items
                     </p>
                   ) : (
@@ -289,26 +289,26 @@ export default function RiskRegisterPage() {
                         className="rounded-lg bg-white border border-gray-200 p-4 shadow-sm hover:shadow-md hover:border-gray-300 transition-all cursor-pointer"
                         onClick={() => openEdit(thread)}
                       >
-                        <h4 className="text-sm font-semibold text-gray-900 leading-snug">
+                        <h4 className="text-base font-semibold text-gray-900 leading-snug">
                           {thread.title}
                         </h4>
 
                         {thread.description && (
-                          <p className="mt-2 text-xs text-gray-600 leading-relaxed">
+                          <p className="mt-2 text-sm text-gray-600 leading-relaxed">
                             {truncate(thread.description, 120)}
                           </p>
                         )}
 
                         <div className="mt-3 flex flex-wrap items-center gap-2">
                           <span
-                            className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border ${getStatusColor(thread.status)}`}
+                            className={`inline-flex items-center px-2 py-0.5 rounded-full text-sm font-medium border ${getStatusColor(thread.status)}`}
                           >
                             {thread.status}
                           </span>
                           <TrendIndicator trend={thread.trend} />
                         </div>
 
-                        <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-gray-400">
+                        <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-gray-400">
                           {thread.opened_date && (
                             <span>Opened {formatDate(thread.opened_date)}</span>
                           )}

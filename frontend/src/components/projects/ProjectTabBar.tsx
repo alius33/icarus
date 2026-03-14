@@ -40,7 +40,7 @@ export default function ProjectTabBar({ counts }: Props) {
               key={tab.key}
               href={`${pathname}?tab=${tab.key}`}
               className={cn(
-                "whitespace-nowrap border-b-2 py-3 text-sm font-medium transition-colors flex items-center gap-1.5",
+                "whitespace-nowrap border-b-2 py-3 text-base font-medium transition-colors flex items-center gap-1.5",
                 isActive
                   ? "border-blue-600 text-blue-600"
                   : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",

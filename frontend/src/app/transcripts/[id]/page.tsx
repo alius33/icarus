@@ -26,7 +26,7 @@ function formatTranscriptContent(rawText: string): React.ReactNode[] {
           <span className="font-semibold text-blue-700">
             {match[1].trim()}
           </span>
-          <span className="text-xs text-gray-400 ml-2">
+          <span className="text-sm text-gray-400 ml-2">
             {timestampMatch ? timestampMatch[0] : ""}
           </span>
           <br />
@@ -69,12 +69,12 @@ export default async function TranscriptDetailPage({
       <div className="space-y-6">
         <Link
           href="/transcripts"
-          className="text-sm text-blue-600 hover:text-blue-800"
+          className="text-base text-blue-600 hover:text-blue-800"
         >
           &larr; Back to Transcripts
         </Link>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
-          <p className="text-sm text-red-700">
+          <p className="text-base text-red-700">
             {error || "Unable to load transcript. Please try again later."}
           </p>
         </div>
@@ -94,7 +94,7 @@ export default async function TranscriptDetailPage({
     <div className="space-y-6">
       <Link
         href="/transcripts"
-        className="inline-block text-sm text-blue-600 hover:text-blue-800"
+        className="inline-block text-base text-blue-600 hover:text-blue-800"
       >
         &larr; Back to Transcripts
       </Link>
@@ -107,19 +107,19 @@ export default async function TranscriptDetailPage({
 
         <div className="mt-3 flex flex-wrap items-center gap-3">
           {transcript.date && (
-            <span className="text-sm text-gray-500">
+            <span className="text-base text-gray-500">
               {formatDate(transcript.date)}
             </span>
           )}
 
-          <span className="px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600 border border-gray-200">
+          <span className="px-2 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-600 border border-gray-200">
             {transcript.word_count.toLocaleString()} words
           </span>
 
           {hasSummary && (
             <Link
               href={`/analysis/summaries/${transcriptId}`}
-              className="px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700 border border-blue-200 hover:bg-blue-200 transition-colors"
+              className="px-2 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-700 border border-blue-200 hover:bg-blue-200 transition-colors"
             >
               View Summary
             </Link>
@@ -129,14 +129,14 @@ export default async function TranscriptDetailPage({
         {/* Participants */}
         {transcript.participants.length > 0 && (
           <div className="mt-4">
-            <p className="text-xs font-medium uppercase tracking-wider text-gray-500 mb-2">
+            <p className="text-sm font-medium uppercase tracking-wider text-gray-500 mb-2">
               Participants
             </p>
             <div className="flex flex-wrap gap-2">
               {transcript.participants.map((name) => (
                 <span
                   key={name}
-                  className="px-2 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200"
+                  className="px-2 py-1 rounded-full text-sm font-medium bg-blue-50 text-blue-700 border border-blue-200"
                 >
                   {name}
                 </span>
@@ -157,7 +157,7 @@ export default async function TranscriptDetailPage({
         <h3 className="text-lg font-semibold text-gray-900 mb-4">
           Transcript
         </h3>
-        <div className="font-mono text-sm leading-relaxed max-w-none">
+        <div className="font-mono text-base leading-relaxed max-w-none">
           {formatTranscriptContent(transcript.raw_text)}
         </div>
       </div>

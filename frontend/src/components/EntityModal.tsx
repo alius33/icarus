@@ -53,7 +53,7 @@ export default function EntityModal({
         <div className="px-6 py-4 space-y-4">
           {error && (
             <div className="rounded-md bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 px-4 py-2">
-              <p className="text-sm text-red-700 dark:text-red-400">{error}</p>
+              <p className="text-base text-red-700 dark:text-red-400">{error}</p>
             </div>
           )}
           {children}
@@ -66,7 +66,7 @@ export default function EntityModal({
               <button
                 onClick={onDelete}
                 disabled={deleting}
-                className="px-4 py-2 text-sm font-medium text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md transition-colors disabled:opacity-50"
+                className="px-4 py-2 text-base font-medium text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md transition-colors disabled:opacity-50"
               >
                 {deleting ? "Deleting..." : "Delete"}
               </button>
@@ -75,14 +75,14 @@ export default function EntityModal({
           <div className="flex gap-3">
             <button
               onClick={onClose}
-              className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
+              className="px-4 py-2 text-base font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
             >
               Cancel
             </button>
             <button
               onClick={onSave}
               disabled={saving}
-              className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50"
+              className="px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50"
             >
               {saving ? "Saving..." : "Save"}
             </button>
@@ -105,7 +105,7 @@ export function FormField({
 }) {
   return (
     <div>
-      <label htmlFor={htmlFor} className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+      <label htmlFor={htmlFor} className="block text-base font-medium text-gray-700 dark:text-gray-300 mb-1">
         {label}
       </label>
       {children}
@@ -138,7 +138,7 @@ export function FormInput({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         disabled={disabled}
-        className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 text-sm text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 dark:disabled:bg-gray-600"
+        className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 text-base text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 dark:disabled:bg-gray-600"
       />
     </FormField>
   );
@@ -166,7 +166,7 @@ export function FormTextarea({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         rows={rows}
-        className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 text-sm text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+        className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 text-base text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
       />
     </FormField>
   );
@@ -190,7 +190,7 @@ export function FormSelect({
         id={id}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 text-sm text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+        className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 text-base text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
       >
         {options.map((opt) => (
           <option key={opt.value} value={opt.value}>

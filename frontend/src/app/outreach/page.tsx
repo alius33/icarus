@@ -72,23 +72,23 @@ function ContactCard({
     >
       <div className="flex items-start justify-between mb-2">
         <div>
-          <h4 className="text-sm font-semibold text-gray-900">
+          <h4 className="text-base font-semibold text-gray-900">
             {contact.contact_name}
           </h4>
           {contact.contact_role && (
-            <p className="text-xs text-gray-500">{contact.contact_role}</p>
+            <p className="text-sm text-gray-500">{contact.contact_role}</p>
           )}
         </div>
         <Stars count={contact.interest_level} />
       </div>
 
       {contact.division && (
-        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-purple-50 text-purple-700 border border-purple-200 mb-2">
+        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-sm font-medium bg-purple-50 text-purple-700 border border-purple-200 mb-2">
           {contact.division}
         </span>
       )}
 
-      <div className="flex items-center gap-3 text-xs text-gray-400 mt-2">
+      <div className="flex items-center gap-3 text-sm text-gray-400 mt-2">
         {contact.meeting_count > 0 && (
           <span className="flex items-center gap-1">
             <svg
@@ -114,10 +114,10 @@ function ContactCard({
 
       {contact.next_step && (
         <div className="mt-3 p-2 bg-blue-50 border border-blue-100 rounded-md">
-          <p className="text-xs font-medium text-blue-600 mb-0.5">Next Step</p>
-          <p className="text-xs text-blue-800">{contact.next_step}</p>
+          <p className="text-sm font-medium text-blue-600 mb-0.5">Next Step</p>
+          <p className="text-sm text-blue-800">{contact.next_step}</p>
           {contact.next_step_date && (
-            <p className="text-xs text-blue-500 mt-0.5">
+            <p className="text-sm text-blue-500 mt-0.5">
               Due: {formatDate(contact.next_step_date)}
             </p>
           )}
@@ -148,20 +148,20 @@ function DivisionCard({
       className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow cursor-pointer p-4 min-w-[220px]"
     >
       <div className="flex items-start justify-between mb-2">
-        <h4 className="text-sm font-semibold text-gray-900">{division.name}</h4>
+        <h4 className="text-base font-semibold text-gray-900">{division.name}</h4>
         <span
-          className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border ${sc}`}
+          className={`inline-flex items-center px-2 py-0.5 rounded-full text-sm font-medium border ${sc}`}
         >
           {division.status.replace(/_/g, " ")}
         </span>
       </div>
       {division.key_contact && (
-        <p className="text-xs text-gray-500 mb-1">
+        <p className="text-sm text-gray-500 mb-1">
           <span className="font-medium">Contact:</span> {division.key_contact}
         </p>
       )}
       {division.pain_points && (
-        <p className="text-xs text-gray-400 line-clamp-2">
+        <p className="text-sm text-gray-400 line-clamp-2">
           {division.pain_points}
         </p>
       )}
@@ -414,7 +414,7 @@ export default function OutreachPage() {
     return (
       <div className="space-y-6">
         <h2 className="text-2xl font-bold text-gray-900">Outreach Tracker</h2>
-        <p className="text-sm text-gray-500">Loading...</p>
+        <p className="text-base text-gray-500">Loading...</p>
       </div>
     );
   }
@@ -424,7 +424,7 @@ export default function OutreachPage() {
       <div className="space-y-6">
         <h2 className="text-2xl font-bold text-gray-900">Outreach Tracker</h2>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
-          <p className="text-sm text-red-700">{error}</p>
+          <p className="text-base text-red-700">{error}</p>
         </div>
       </div>
     );
@@ -438,20 +438,20 @@ export default function OutreachPage() {
           <h2 className="text-2xl font-bold text-gray-900">
             Outreach Tracker
           </h2>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-base text-gray-500">
             Track cross-division outreach contacts and engagement pipeline
           </p>
         </div>
         <div className="flex gap-2">
           <button
             onClick={openCreateDiv}
-            className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+            className="px-4 py-2 text-base font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
           >
             + Division
           </button>
           <button
             onClick={openCreateContact}
-            className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
+            className="px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
           >
             + Contact
           </button>
@@ -461,7 +461,7 @@ export default function OutreachPage() {
       {/* division profiles */}
       {divisions.length > 0 && (
         <div>
-          <h3 className="text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wider">
+          <h3 className="text-base font-semibold text-gray-700 mb-3 uppercase tracking-wider">
             Division Profiles
           </h3>
           <div className="flex gap-4 overflow-x-auto pb-2">
@@ -483,16 +483,16 @@ export default function OutreachPage() {
             <div
               className={`flex items-center gap-2 mb-3 pb-2 border-b-2 ${col.color}`}
             >
-              <h3 className="text-sm font-semibold text-gray-700">
+              <h3 className="text-base font-semibold text-gray-700">
                 {col.label}
               </h3>
-              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gray-100 text-xs font-medium text-gray-600">
+              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gray-100 text-sm font-medium text-gray-600">
                 {col.contacts.length}
               </span>
             </div>
             <div className="space-y-3">
               {col.contacts.length === 0 ? (
-                <p className="text-xs text-gray-400 italic py-4 text-center">
+                <p className="text-sm text-gray-400 italic py-4 text-center">
                   No contacts
                 </p>
               ) : (
@@ -513,8 +513,8 @@ export default function OutreachPage() {
       {coldContacts.length > 0 && (
         <div>
           <div className="flex items-center gap-2 mb-3 pb-2 border-b-2 border-red-300">
-            <h3 className="text-sm font-semibold text-gray-700">Cold</h3>
-            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gray-100 text-xs font-medium text-gray-600">
+            <h3 className="text-base font-semibold text-gray-700">Cold</h3>
+            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gray-100 text-sm font-medium text-gray-600">
               {coldContacts.length}
             </span>
           </div>
@@ -533,7 +533,7 @@ export default function OutreachPage() {
       {/* empty state */}
       {contacts.length === 0 && divisions.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-sm text-gray-500">
+          <p className="text-base text-gray-500">
             No outreach contacts or divisions yet. Use the buttons above to get
             started.
           </p>

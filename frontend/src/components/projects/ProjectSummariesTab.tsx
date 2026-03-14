@@ -95,7 +95,7 @@ export default function ProjectSummariesTab({ timeline, project }: Props) {
     return (
       <div className="rounded-lg border border-gray-200 bg-white p-8 text-center">
         <Calendar className="mx-auto h-8 w-8 text-gray-300 mb-2" />
-        <p className="text-sm text-gray-500">No summaries available for this project yet.</p>
+        <p className="text-base text-gray-500">No summaries available for this project yet.</p>
       </div>
     );
   }
@@ -103,18 +103,18 @@ export default function ProjectSummariesTab({ timeline, project }: Props) {
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2 text-sm text-gray-500">
+        <div className="flex items-center gap-2 text-base text-gray-500">
           <Calendar className="h-4 w-4" />
           <span>
             {activeWeeks} active week{activeWeeks !== 1 ? "s" : ""} of {timeline.total_weeks} total
           </span>
         </div>
         <div className="flex gap-2">
-          <button onClick={expandAll} className="text-xs text-blue-600 hover:text-blue-800">
+          <button onClick={expandAll} className="text-sm text-blue-600 hover:text-blue-800">
             Expand all
           </button>
-          <span className="text-xs text-gray-300">|</span>
-          <button onClick={collapseAll} className="text-xs text-blue-600 hover:text-blue-800">
+          <span className="text-sm text-gray-300">|</span>
+          <button onClick={collapseAll} className="text-sm text-blue-600 hover:text-blue-800">
             Collapse all
           </button>
         </div>
@@ -147,7 +147,7 @@ export default function ProjectSummariesTab({ timeline, project }: Props) {
                 ) : (
                   <ChevronRight className="h-4 w-4 flex-shrink-0 text-gray-400" />
                 )}
-                <span className={`text-sm font-semibold ${empty ? "text-gray-400" : "text-gray-900"}`}>
+                <span className={`text-base font-semibold ${empty ? "text-gray-400" : "text-gray-900"}`}>
                   {week.week_label}
                 </span>
                 {hasReport && !isOpen && (
@@ -157,7 +157,7 @@ export default function ProjectSummariesTab({ timeline, project }: Props) {
                   </span>
                 )}
                 {empty && (
-                  <span className="text-xs italic text-gray-400">No activity this week</span>
+                  <span className="text-sm italic text-gray-400">No activity this week</span>
                 )}
               </div>
               {!empty && (
@@ -186,7 +186,7 @@ export default function ProjectSummariesTab({ timeline, project }: Props) {
 
             {!isOpen && !empty && !hasReport && week.transcripts.length > 0 && (
               <div className="-mt-1 px-5 pb-3">
-                <p className="pl-6 text-xs text-gray-400 line-clamp-2">
+                <p className="pl-6 text-sm text-gray-400 line-clamp-2">
                   {week.transcripts
                     .filter((t) => t.summary_tldr)
                     .map((t) => t.title || t.file_name)
@@ -204,23 +204,23 @@ export default function ProjectSummariesTab({ timeline, project }: Props) {
                       <div className="mb-3 flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <BookOpen className="h-4 w-4 text-indigo-600" />
-                          <span className="text-sm font-semibold text-gray-900">Weekly Report</span>
+                          <span className="text-base font-semibold text-gray-900">Weekly Report</span>
                         </div>
                         {week.weekly_report_id && (
                           <Link
                             href={`/analysis/weekly/${week.weekly_report_id}`}
-                            className="flex items-center gap-1 text-xs text-gray-400 hover:text-indigo-600 transition-colors"
+                            className="flex items-center gap-1 text-sm text-gray-400 hover:text-indigo-600 transition-colors"
                           >
                             Full report <ExternalLink className="h-3 w-3" />
                           </Link>
                         )}
                       </div>
                       {filtered ? (
-                        <div className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-h2:mt-6 prose-h2:mb-3 prose-h2:text-base prose-h3:mt-4 prose-h3:mb-2 prose-h3:text-sm prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900">
+                        <div className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-h2:mt-6 prose-h2:mb-3 prose-h2:text-base prose-h3:mt-4 prose-h3:mb-2 prose-h3:text-base prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900">
                           <MarkdownContent>{filtered}</MarkdownContent>
                         </div>
                       ) : (
-                        <p className="text-sm text-gray-400 italic">No project-specific updates this week.</p>
+                        <p className="text-base text-gray-400 italic">No project-specific updates this week.</p>
                       )}
                     </div>
                   );
@@ -238,10 +238,10 @@ export default function ProjectSummariesTab({ timeline, project }: Props) {
                         <ChevronRight className="h-3.5 w-3.5 text-gray-400" />
                       )}
                       <FileText className="h-3.5 w-3.5 text-blue-500" />
-                      <span className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                      <span className="text-sm font-semibold uppercase tracking-wider text-gray-500">
                         Individual Call Summaries
                       </span>
-                      <span className="text-xs text-gray-400">
+                      <span className="text-sm text-gray-400">
                         ({week.transcripts.length} call{week.transcripts.length !== 1 ? "s" : ""})
                       </span>
                     </button>
@@ -258,12 +258,12 @@ export default function ProjectSummariesTab({ timeline, project }: Props) {
                                 <FileText className="h-4 w-4 flex-shrink-0 text-blue-500" />
                                 <Link
                                   href={`/transcripts/${t.id}`}
-                                  className="text-sm font-semibold text-blue-700 hover:underline"
+                                  className="text-base font-semibold text-blue-700 hover:underline"
                                 >
                                   {t.title || t.file_name}
                                 </Link>
                                 {t.date && (
-                                  <span className="text-xs text-gray-400">{t.date}</span>
+                                  <span className="text-sm text-gray-400">{t.date}</span>
                                 )}
                                 <div className="ml-auto flex flex-shrink-0 items-center gap-1.5">
                                   {t.participant_count > 0 && (
@@ -283,7 +283,7 @@ export default function ProjectSummariesTab({ timeline, project }: Props) {
                                 <div className="ml-6 mt-1">
                                   <button
                                     onClick={() => toggleCall(callKey)}
-                                    className="mb-1 flex items-center gap-1 text-xs text-purple-600 hover:text-purple-800"
+                                    className="mb-1 flex items-center gap-1 text-sm text-purple-600 hover:text-purple-800"
                                   >
                                     {callOpen ? (
                                       <ChevronDown className="h-3 w-3" />
@@ -299,14 +299,14 @@ export default function ProjectSummariesTab({ timeline, project }: Props) {
                                     </div>
                                   ) : (
                                     t.summary_tldr && (
-                                      <p className="text-sm text-gray-600 line-clamp-2">
+                                      <p className="text-base text-gray-600 line-clamp-2">
                                         {t.summary_tldr}
                                       </p>
                                     )
                                   )}
                                 </div>
                               ) : (
-                                <p className="ml-6 mt-1 text-xs italic text-gray-400">
+                                <p className="ml-6 mt-1 text-sm italic text-gray-400">
                                   No summary available.
                                 </p>
                               )}

@@ -50,7 +50,7 @@ export default function ContextModal({ item, onClose }: ContextModalProps) {
             <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
               Transcript Context
             </h3>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
+            <p className="text-base text-gray-500 dark:text-gray-400 mt-0.5">
               {item.transcript_filename}
               {item.timestamp && <span className="ml-2">@ {item.timestamp}</span>}
             </p>
@@ -72,13 +72,13 @@ export default function ContextModal({ item, onClose }: ContextModalProps) {
           )}
 
           {error && (
-            <div className="text-red-600 dark:text-red-400 text-sm py-4">
+            <div className="text-red-600 dark:text-red-400 text-base py-4">
               Failed to load context: {error}
             </div>
           )}
 
           {context && (
-            <div className="space-y-1 font-mono text-sm">
+            <div className="space-y-1 font-mono text-base">
               {context.lines.map((line, i) => (
                 <div
                   key={i}
@@ -97,7 +97,7 @@ export default function ContextModal({ item, onClose }: ContextModalProps) {
         </div>
 
         {/* Footer info */}
-        <div className="px-6 py-3 border-t border-gray-200 dark:border-gray-700 text-xs text-gray-500 dark:text-gray-400 flex gap-4">
+        <div className="px-6 py-3 border-t border-gray-200 dark:border-gray-700 text-sm text-gray-500 dark:text-gray-400 flex gap-4">
           <span>
             <strong>Speaker:</strong> {item.speaker_label}
           </span>

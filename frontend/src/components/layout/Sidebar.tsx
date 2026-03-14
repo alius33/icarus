@@ -249,7 +249,7 @@ function NavLink({
       href={item.href}
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        "flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors",
+        "flex items-center gap-3 rounded-md px-3 py-2 text-base font-medium transition-colors",
         indent && "ml-4",
         isActive
           ? "bg-blue-600 text-white"
@@ -278,14 +278,14 @@ export default function Sidebar() {
       <nav className="flex-1 space-y-1 overflow-y-auto px-3 py-4">
         {navSections.map((section) => (
           <div key={section.title} className="mb-4">
-            <p className="mb-1 px-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
+            <p className="mb-1 px-3 text-sm font-semibold uppercase tracking-wider text-gray-500">
               {section.title}
             </p>
             {section.items.map((item) => (
               <div key={item.href}>
                 {item.children ? (
                   <>
-                    <div className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400">
+                    <div className="flex items-center gap-3 px-3 py-2 text-base font-medium text-gray-400">
                       {item.icon}
                       {item.label}
                     </div>
@@ -309,7 +309,7 @@ export default function Sidebar() {
 
       {/* Footer */}
       <div className="border-t border-gray-800 px-6 py-4 flex items-center justify-between">
-        <p className="text-xs text-gray-500">Icarus v1.0</p>
+        <p className="text-sm text-gray-500">Icarus v1.0</p>
         <ThemeToggle />
       </div>
     </aside>

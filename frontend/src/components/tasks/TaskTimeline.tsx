@@ -80,7 +80,7 @@ export default function TaskTimeline({ tasks, onTaskClick }: TaskTimelineProps) 
 
   if (tasks.length === 0) {
     return (
-      <div className="flex items-center justify-center py-12 text-gray-400 text-sm">
+      <div className="flex items-center justify-center py-12 text-gray-400 text-base">
         No tasks with dates to show on timeline. Add start or due dates to see tasks here.
       </div>
     );
@@ -90,7 +90,7 @@ export default function TaskTimeline({ tasks, onTaskClick }: TaskTimelineProps) 
     <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
       {/* Header: week columns */}
       <div className="flex bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-        <div className="w-64 shrink-0 px-3 py-2 text-xs font-medium text-gray-500 dark:text-gray-400 border-r border-gray-200 dark:border-gray-700">
+        <div className="w-64 shrink-0 px-3 py-2 text-sm font-medium text-gray-500 dark:text-gray-400 border-r border-gray-200 dark:border-gray-700">
           Task
         </div>
         <div className="flex-1 relative">
@@ -98,7 +98,7 @@ export default function TaskTimeline({ tasks, onTaskClick }: TaskTimelineProps) 
             {weekLabels.map((wl, i) => (
               <div
                 key={i}
-                className="text-xs text-gray-400 px-2 py-2 border-r border-gray-200 dark:border-gray-700"
+                className="text-sm text-gray-400 px-2 py-2 border-r border-gray-200 dark:border-gray-700"
                 style={{ width: "120px" }}
               >
                 {wl.label}
@@ -138,8 +138,8 @@ export default function TaskTimeline({ tasks, onTaskClick }: TaskTimelineProps) 
                     <span className={`w-2 h-2 rounded-full shrink-0 ${priorityCfg.dotColor}`} />
                   )}
                   <div className="min-w-0">
-                    <p className="text-sm text-gray-900 dark:text-gray-100 truncate">{task.title}</p>
-                    <p className="text-xs text-gray-400">{task.identifier} {task.assignee && `· ${task.assignee}`}</p>
+                    <p className="text-base text-gray-900 dark:text-gray-100 truncate">{task.title}</p>
+                    <p className="text-sm text-gray-400">{task.identifier} {task.assignee && `· ${task.assignee}`}</p>
                   </div>
                 </div>
               </div>
@@ -172,7 +172,7 @@ export default function TaskTimeline({ tasks, onTaskClick }: TaskTimelineProps) 
                   onClick={() => onTaskClick(task.id)}
                   title={`${task.title} (${task.start_date ?? "?"} → ${task.due_date ?? "?"})`}
                 >
-                  <span className={`text-xs truncate ${textColor} font-medium`}>
+                  <span className={`text-sm truncate ${textColor} font-medium`}>
                     {task.identifier}
                   </span>
                 </div>
