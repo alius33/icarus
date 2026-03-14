@@ -413,7 +413,7 @@ export default function OutreachPage() {
   if (loading) {
     return (
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold text-gray-900">Outreach Tracker</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">Outreach Tracker</h2>
         <p className="text-base text-gray-500">Loading...</p>
       </div>
     );
@@ -422,7 +422,7 @@ export default function OutreachPage() {
   if (error) {
     return (
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold text-gray-900">Outreach Tracker</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">Outreach Tracker</h2>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
           <p className="text-base text-red-700">{error}</p>
         </div>

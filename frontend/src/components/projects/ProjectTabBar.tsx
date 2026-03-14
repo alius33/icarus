@@ -30,8 +30,8 @@ export default function ProjectTabBar({ counts }: Props) {
   const activeTab = (searchParams.get("tab") as TabKey) || "overview";
 
   return (
-    <div className="border-b border-gray-200 bg-white">
-      <nav className="-mb-px flex space-x-6 px-6" aria-label="Tabs">
+    <div className="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 overflow-x-auto scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
+      <nav className="-mb-px flex space-x-4 md:space-x-6 px-4 md:px-6 min-w-max" aria-label="Tabs">
         {TABS.map((tab) => {
           const isActive = activeTab === tab.key;
           const count = tab.countKey && counts ? counts[tab.countKey] : undefined;
