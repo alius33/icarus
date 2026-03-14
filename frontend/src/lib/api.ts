@@ -102,24 +102,29 @@ async function mutateApi<T>(
 
 const getApiBase = () => {
   if (typeof window === "undefined") {
-    // Server-side (inside Docker): use container service name
-    return process.env.INTERNAL_API_URL || "http://backend:8000";
+    // Server-side: use internal backend URL (runtime env var)
+    return process.env.INTERNAL_API_URL || "http://localhost:8000";
   }
-  // Client-side (browser): use host-mapped port
-  return process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+  // Client-side: use build-time env var if set, otherwise proxy via same-origin
+  // NEXT_PUBLIC_* vars are inlined at build time — if not set during build,
+  // falls back to "" which routes through the Next.js API proxy at /api/[...path]
+  return process.env.NEXT_PUBLIC_API_URL || "";
 };
 
 async function fetchApi<T>(
   path: string,
   params?: Record<string, string>,
 ): Promise<T> {
-  const url = new URL(`${getApiBase()}${path}`);
+  const base = getApiBase();
+  const qs = new URLSearchParams();
   if (params) {
     Object.entries(params).forEach(([k, v]) => {
-      if (v !== undefined && v !== "") url.searchParams.set(k, v);
+      if (v !== undefined && v !== "") qs.set(k, v);
     });
   }
-  const res = await fetch(url.toString(), { cache: "no-store" });
+  const query = qs.toString();
+  const url = `${base}${path}${query ? `?${query}` : ""}`;
+  const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) {
     let detail = `API error: ${res.status}`;
     try {

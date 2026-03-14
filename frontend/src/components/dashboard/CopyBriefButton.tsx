@@ -32,7 +32,7 @@ export default function CopyBriefButton() {
     setMenuOpen(false);
     try {
       const apiBase =
-        process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+        process.env.NEXT_PUBLIC_API_URL || "";
       const url = type === "leadership"
         ? `${apiBase}/api/dashboard/brief`
         : `${apiBase}/api/dashboard/brief?type=${type}`;
