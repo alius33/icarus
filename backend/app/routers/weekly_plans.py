@@ -1,6 +1,6 @@
 from datetime import date, timedelta
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, BackgroundTasks, Depends
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
@@ -20,6 +20,7 @@ from app.schemas.weekly_plan import (
     WeeklyPlanUpdate,
 )
 from app.schemas.programme_deliverable import ProgressSnapshotBase
+from app.services.weekly_plan_export import export_plans_to_seed
 
 router = APIRouter(tags=["weekly-plans"])
 
@@ -155,7 +156,7 @@ async def get_plan(plan_id: int, db: AsyncSession = Depends(get_db)):
 
 
 @router.post("/weekly-plans", response_model=WeeklyPlanFull, status_code=201)
-async def create_plan(body: WeeklyPlanCreate, db: AsyncSession = Depends(get_db)):
+async def create_plan(body: WeeklyPlanCreate, bg: BackgroundTasks, db: AsyncSession = Depends(get_db)):
     start_date = date.fromisoformat(body.week_start_date)
     end_date = date.fromisoformat(body.week_end_date)
 
@@ -203,6 +204,9 @@ async def create_plan(body: WeeklyPlanCreate, db: AsyncSession = Depends(get_db)
 
     await db.commit()
 
+    # Auto-export all plans to seed JSON for Railway deploys
+    await export_plans_to_seed(db)
+
     # Re-fetch with relationships
     result = await db.execute(
         select(WeeklyPlan)
@@ -238,6 +242,10 @@ async def update_plan(plan_id: int, body: WeeklyPlanUpdate, db: AsyncSession = D
 
     await db.commit()
     await db.refresh(p, ["actions", "snapshots"])
+
+    # Auto-export all plans to seed JSON for Railway deploys
+    await export_plans_to_seed(db)
+
     return _plan_full(p)
 
 
@@ -296,6 +304,10 @@ async def update_action(action_id: int, body: WeeklyPlanActionUpdate, db: AsyncS
 
     await db.commit()
     await db.refresh(a)
+
+    # Auto-export all plans to seed JSON for Railway deploys
+    await export_plans_to_seed(db)
+
     return _action_schema(a)
 
 
