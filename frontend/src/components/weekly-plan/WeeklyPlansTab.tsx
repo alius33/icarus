@@ -68,9 +68,9 @@ function PillarProgressCard({ deliverables }: { deliverables: ProgrammeDeliverab
 function ActionRow({ action, onToggle }: { action: WeeklyPlanAction; onToggle: (id: number, status: string) => void }) {
   const isDone = action.status === "DONE" || action.status === "SKIPPED";
   const priorityColors: Record<string, string> = {
-    HIGH: "text-red-400 bg-red-900/30",
-    MEDIUM: "text-amber-400 bg-amber-900/30",
-    LOW: "text-gray-400 bg-white dark:bg-gray-800",
+    HIGH: "text-red-700 bg-red-100 dark:text-red-400 dark:bg-red-900/30",
+    MEDIUM: "text-amber-700 bg-amber-100 dark:text-amber-400 dark:bg-amber-900/30",
+    LOW: "text-gray-600 bg-gray-100 dark:text-gray-400 dark:bg-gray-800",
   };
 
   return (
@@ -88,7 +88,7 @@ function ActionRow({ action, onToggle }: { action: WeeklyPlanAction; onToggle: (
             <Sparkles className="h-3 w-3 text-purple-400 flex-shrink-0" />
           )}
           {action.carried_from_week && (
-            <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-900/30 text-amber-400">
+            <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400">
               Week {action.carried_from_week}
             </span>
           )}
