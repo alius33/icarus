@@ -12,11 +12,12 @@ Usage:
 import argparse
 import asyncio
 import hashlib
+import json
 import os
 import re
 import sys
 import traceback
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 
 from sqlalchemy import delete, select, text
@@ -31,6 +32,7 @@ from app.models import (
     Contradiction,
     Decision,
     DeletedImport,
+    DeliverableProgressSnapshot,
     Document,
     GlossaryEntry,
     InfluenceSignal,
@@ -47,6 +49,8 @@ from app.models import (
     TopicSignal,
     Transcript,
     TranscriptMention,
+    WeeklyPlan,
+    WeeklyPlanAction,
     WeeklyReport,
     Workstream,
     WorkstreamMilestone,
@@ -2000,6 +2004,112 @@ async def build_project_links(session: AsyncSession, verbose: bool) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Weekly plan seeding from JSON
+# ---------------------------------------------------------------------------
+
+
+async def seed_weekly_plans(session: AsyncSession, verbose: bool) -> dict:
+    """Seed weekly plans from JSON files in scripts/seed_data/.
+
+    Reads weekly_plans.json (single plan or list of plans) and creates
+    any plans that don't already exist (matched by week_number).
+    Idempotent: skips plans that already exist for a given week.
+    """
+    stats = {"inserted": 0, "skipped": 0, "errors": 0}
+    seed_file = Path(__file__).resolve().parent / "seed_data" / "weekly_plans.json"
+
+    if not seed_file.exists():
+        _log("No weekly_plans.json seed file found, skipping.", verbose)
+        return stats
+
+    try:
+        with open(seed_file, "r") as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, IOError) as e:
+        _log(f"Error reading weekly_plans.json: {e}", verbose)
+        stats["errors"] += 1
+        return stats
+
+    # Support both single plan object and list of plans
+    plans = data if isinstance(data, list) else [data]
+
+    for plan_data in plans:
+        week_num = plan_data.get("week_number")
+        if not week_num:
+            _log("Skipping plan with no week_number", verbose)
+            stats["errors"] += 1
+            continue
+
+        # Check if plan for this week already exists
+        existing = await session.execute(
+            select(WeeklyPlan).where(WeeklyPlan.week_number == week_num)
+        )
+        if existing.scalar_one_or_none():
+            _log(f"Weekly plan for week {week_num} already exists, skipping.", verbose)
+            stats["skipped"] += 1
+            continue
+
+        try:
+            # Create the plan
+            plan = WeeklyPlan(
+                week_number=week_num,
+                week_start_date=date.fromisoformat(plan_data["week_start_date"]),
+                week_end_date=date.fromisoformat(plan_data["week_end_date"]),
+                deliverable_progress_summary=plan_data.get("deliverable_progress_summary"),
+                programme_actions_summary=plan_data.get("programme_actions_summary"),
+                status=plan_data.get("status", "DRAFT"),
+            )
+            session.add(plan)
+            await session.flush()  # Get plan.id
+
+            # Create actions
+            actions_data = plan_data.get("actions", [])
+            for i, action_data in enumerate(actions_data):
+                action = WeeklyPlanAction(
+                    weekly_plan_id=plan.id,
+                    category=action_data["category"],
+                    title=action_data["title"],
+                    description=action_data.get("description"),
+                    priority=action_data.get("priority", "MEDIUM"),
+                    owner=action_data.get("owner"),
+                    status=action_data.get("status", "PENDING"),
+                    deliverable_id=action_data.get("deliverable_id"),
+                    position=action_data.get("position", i),
+                    is_ai_generated=action_data.get("is_ai_generated", True),
+                    carried_from_week=action_data.get("carried_from_week"),
+                )
+                session.add(action)
+
+            # Create progress snapshots
+            snapshots_data = plan_data.get("snapshots", [])
+            for snap_data in snapshots_data:
+                snap = DeliverableProgressSnapshot(
+                    deliverable_id=snap_data["deliverable_id"],
+                    weekly_plan_id=plan.id,
+                    week_number=snap_data.get("week_number", week_num),
+                    rag_status=snap_data.get("rag_status", "GREEN"),
+                    progress_percent=snap_data.get("progress_percent", 0),
+                    milestones_completed=snap_data.get("milestones_completed", 0),
+                    milestones_total=snap_data.get("milestones_total", 0),
+                    narrative=snap_data.get("narrative"),
+                )
+                session.add(snap)
+
+            await session.commit()
+            _log(f"Created weekly plan for week {week_num} with "
+                 f"{len(actions_data)} actions, {len(snapshots_data)} snapshots.", verbose)
+            stats["inserted"] += 1
+
+        except Exception as e:
+            await session.rollback()
+            _log(f"Error creating weekly plan for week {week_num}: {e}", verbose)
+            traceback.print_exc()
+            stats["errors"] += 1
+
+    return stats
+
+
+# ---------------------------------------------------------------------------
 # Main orchestrator
 # ---------------------------------------------------------------------------
 
@@ -2021,7 +2131,7 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
 
     all_stats = {}
 
-    total_steps = 21
+    total_steps = 22
 
     async with Session() as session:
         # 1. Transcripts
@@ -2104,8 +2214,12 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
         print(f"[20/{total_steps}] Importing project summaries...")
         all_stats["project_summaries"] = await import_project_summaries(session, root, verbose)
 
-        # 21. Build project links for decisions, tasks, threads
-        print(f"[21/{total_steps}] Building project links...")
+        # 21. Seed weekly plans from JSON
+        print(f"[21/{total_steps}] Seeding weekly plans...")
+        all_stats["weekly_plans"] = await seed_weekly_plans(session, verbose)
+
+        # 22. Build project links for decisions, tasks, threads
+        print(f"[22/{total_steps}] Building project links...")
         all_stats["project_links_built"] = await build_project_links(session, verbose)
 
         # Generate slugs for projects that are missing them
