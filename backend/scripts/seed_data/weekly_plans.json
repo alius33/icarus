@@ -1,16 +1,907 @@
 [
   {
+    "week_number": 1,
+    "week_start_date": "2026-02-23",
+    "week_end_date": "2026-02-27",
+    "deliverable_progress_summary": "**Programme Week 1** \u2014 the formal starting gun.\n\n### Key Developments\n- **Diya endorsed** the three-pillar programme structure (23 Feb), confirming the 12-week resource plan\n- **CLARA already live** \u2014 D1 milestone 1 complete from programme start\n- **App Factory operational** under BenVH \u2014 D12 milestone 1 complete\n- **Martin returned** from holiday and scoped three Build in Five demo scenarios for March 21 exceedance event\n\n### Resource Commitment\n| Person | Allocation |\n|--------|-----------|\n| Martin Davies | 75% |\n| Chris | 50% |\n| Nikhil | 50% |\n| BenVH | 50% |\n| Rotating grad | From April 7 |\n\n### Emerging Risks\n- **Token budget crisis** unresolved \u2014 $750 consumed in 3 days\n- **Catherine** identified as active CLARA detractor\n- **CLARA flat-pack concept** articulated: templatised deployment for cross-OU reuse",
+    "programme_actions_summary": "### Week 1 Outcome Summary\n\n| # | Priority | Result |\n|---|----------|--------|\n| 1 | Secure Diya endorsement and 12-week resource commitment | **ACHIEVED** |\n| 2 | Onboard Martin, Nikhil, and Chris | **ACHIEVED** |\n| 3 | Define Build in Five demo scenarios | **ACHIEVED** |\n| 4 | Resolve token budget crisis | **UNRESOLVED** \u2014 carries to Week 2 |\n| 5 | Maintain CLARA feature freeze while clearing feedback backlog | **ONGOING** |",
+    "status": "FINAL",
+    "actions": [
+      {
+        "category": "deliverable_strategic",
+        "title": "Secure Diya endorsement of three-pillar programme structure",
+        "description": "Present three pillars (IRP Portfolio Governance, Platform-Embedded Intelligence, Internal Productivity) to Diya for executive backing. Outcome: endorsed with insurance IRP focus confirmed, no Life roadmap. D#28.",
+        "priority": "HIGH",
+        "owner": "Richard/Ben Brooks",
+        "status": "DONE",
+        "deliverable_id": null,
+        "position": 0,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_strategic",
+        "title": "Confirm 12-week resource plan with Diya",
+        "description": "Formalise resource commitment: Martin 75%, Chris 50%, Nikhil 50%, BenVH 50%. Rotating grad from April 7. Post-12-week requires business case for dedicated team of 3-5. D#29, C#44.",
+        "priority": "HIGH",
+        "owner": "Ben Brooks",
+        "status": "DONE",
+        "deliverable_id": null,
+        "position": 1,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_strategic",
+        "title": "Scope Build in Five demo scenarios for exceedance event",
+        "description": "Martin returned from holiday. Three scenarios defined: data integration service, custom analytics views, and webhook notification (Golden Bear lost deal). Foundation approach over scripted demo confirmed.",
+        "priority": "HIGH",
+        "owner": "Richard/Martin",
+        "status": "DONE",
+        "deliverable_id": 10,
+        "position": 2,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_tactical",
+        "title": "Onboard Martin with programme docs and access",
+        "description": "Send all programme docs, set up Claude Code access, get Stacy sign-off on time allocation, create SharePoint folder, establish standup schedule. AI#147-158.",
+        "priority": "HIGH",
+        "owner": "Richard",
+        "status": "DONE",
+        "deliverable_id": 10,
+        "position": 3,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_tactical",
+        "title": "Onboard Nikhil and Chris to programme",
+        "description": "AI infrastructure session on Feb 26 formally brought Nikhil and Chris in. Nikhil positioned on Cat Accelerate tech debt and App Factory. Chris on CLARA bug fixes. AI#158-168.",
+        "priority": "HIGH",
+        "owner": "Richard/Azmain",
+        "status": "DONE",
+        "deliverable_id": null,
+        "position": 4,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_tactical",
+        "title": "Articulate CLARA flat-pack concept for cross-OU reuse",
+        "description": "Templatised architecture for independent deployment by other OUs, avoiding multi-tenant political triggers with Salesforce team. Emerged during Diya session planning.",
+        "priority": "MEDIUM",
+        "owner": "Azmain",
+        "status": "DONE",
+        "deliverable_id": 1,
+        "position": 5,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_tactical",
+        "title": "Maintain CLARA feature freeze and triage feedback backlog",
+        "description": "Feature freeze continued. Adoption charter deferred to sprint 2. Feedback management crisis: CSMs submitting trivial issues alongside genuine bugs. Severity governance needed.",
+        "priority": "MEDIUM",
+        "owner": "Azmain",
+        "status": "IN_PROGRESS",
+        "deliverable_id": 1,
+        "position": 6,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_tactical",
+        "title": "Scope L1 ticket automation concept",
+        "description": "Agents managing Salesforce queue, answering via Navigator, routing or escalating. OpenClaw and Copilot Studio identified as agent frameworks. D8/D9 foundational work.",
+        "priority": "LOW",
+        "owner": "BenVH/Nikhil",
+        "status": "DONE",
+        "deliverable_id": 9,
+        "position": 7,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "programme_strategic",
+        "title": "Resolve token budget crisis",
+        "description": "Azmain burned $750 in 3 Cursor days. Claude Max expired. Team scrambling between Windsurf, OpenAI fallback, and Bedrock. R#018. No resolution this week \u2014 carries forward.",
+        "priority": "HIGH",
+        "owner": "Azmain/Richard",
+        "status": "IN_PROGRESS",
+        "deliverable_id": null,
+        "position": 8,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "programme_strategic",
+        "title": "Address Cat Accelerate tech debt exposure",
+        "description": "AI infrastructure session surfaced: no testing suite in 4 years, fragile CDK deployment, no non-prod environment. Rahul proposed prioritisation framework (value + risk + capacity).",
+        "priority": "MEDIUM",
+        "owner": "Nikhil/Rahul",
+        "status": "DONE",
+        "deliverable_id": null,
+        "position": 9,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "programme_tactical",
+        "title": "Build interim Salesforce data pipeline",
+        "description": "Sales Recon pilot disappointed: missing parent-child hierarchy, wrong dates, outdated SSO. Team decided to build own data access rather than wait for Sales Recon fixes.",
+        "priority": "MEDIUM",
+        "owner": "Richard",
+        "status": "IN_PROGRESS",
+        "deliverable_id": 7,
+        "position": 10,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "programme_tactical",
+        "title": "Establish App Factory gating criteria",
+        "description": "App Factory needs gating criteria for deployment decisions. Prevent unvetted apps from being deployed. Governance structure not yet designed \u2014 carries forward.",
+        "priority": "MEDIUM",
+        "owner": "Azmain/Richard",
+        "status": "IN_PROGRESS",
+        "deliverable_id": 12,
+        "position": 11,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      }
+    ],
+    "snapshots": [
+      {
+        "deliverable_id": 1,
+        "week_number": 1,
+        "rag_status": "GREEN",
+        "progress_percent": 33,
+        "milestones_completed": 1,
+        "milestones_total": 3,
+        "narrative": "CLARA dashboard live and operational since programme start. Feature freeze maintained. Flat-pack concept articulated for cross-OU reuse."
+      },
+      {
+        "deliverable_id": 2,
+        "week_number": 1,
+        "rag_status": "GREEN",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Charter work deferred to sprint 2. Template design target is week 5 \u2014 on schedule."
+      },
+      {
+        "deliverable_id": 3,
+        "week_number": 1,
+        "rag_status": "GREEN",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Baseline measurement target is week 2. Not yet started but on schedule."
+      },
+      {
+        "deliverable_id": 4,
+        "week_number": 1,
+        "rag_status": "GREEN",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Onboarding stages target week 3. IRP onboarding mapping underway."
+      },
+      {
+        "deliverable_id": 5,
+        "week_number": 1,
+        "rag_status": "GREEN",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 2,
+        "narrative": "Future phases \u2014 not yet scheduled. No action expected until week 8+."
+      },
+      {
+        "deliverable_id": 6,
+        "week_number": 1,
+        "rag_status": "GREEN",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Concept not yet scoped. Meeting brief template target week 5."
+      },
+      {
+        "deliverable_id": 7,
+        "week_number": 1,
+        "rag_status": "GREEN",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Sales Recon pilot disappointing. Own Salesforce data path being considered. Data mapping target week 4."
+      },
+      {
+        "deliverable_id": 8,
+        "week_number": 1,
+        "rag_status": "GREEN",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Navigator API analysis not yet started. Target week 3."
+      },
+      {
+        "deliverable_id": 9,
+        "week_number": 1,
+        "rag_status": "GREEN",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "L1 automation scoped conceptually. Depends on Navigator API and Salesforce integration."
+      },
+      {
+        "deliverable_id": 10,
+        "week_number": 1,
+        "rag_status": "GREEN",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Martin returned from holiday. Three demo scenarios scoped. Framework documentation target week 2."
+      },
+      {
+        "deliverable_id": 11,
+        "week_number": 1,
+        "rag_status": "GREEN",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Demo environment setup not started. Foundation approach confirmed over scripted demo."
+      },
+      {
+        "deliverable_id": 12,
+        "week_number": 1,
+        "rag_status": "GREEN",
+        "progress_percent": 33,
+        "milestones_completed": 1,
+        "milestones_total": 3,
+        "narrative": "App Factory operational under BenVH. Four apps in pipeline. Gating criteria discussion started."
+      },
+      {
+        "deliverable_id": 13,
+        "week_number": 1,
+        "rag_status": "GREEN",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Cross-OU outreach not yet formalised. Maps team reversed from refusal to offering help after Diya backing."
+      }
+    ]
+  },
+  {
+    "week_number": 2,
+    "week_start_date": "2026-03-02",
+    "week_end_date": "2026-03-06",
+    "deliverable_progress_summary": "**Programme Week 2** \u2014 fractures beneath operational progress.\n\n### Personnel Crises\nThree converging threats to programme stability:\n- **BenVH burnout** \u2014 triggered by Nikhil appropriating his App Factory work (renaming it \"Moplit\")\n- **Richard flight risk** \u2014 briefly exploring other positions\n- **Azmain disengagement** \u2014 browsing internal job boards\n\n### Operational Progress\n- **Friday PM app launched** \u2014 built by 30 concurrent AI agents in one day\n- **CLARA shown to Life SLT** with flat-pack interest\n- **Catherine pivot** \u2014 emerged as surprise governance ally (detractor \u2192 facilitating Gainsight meeting)\n- **Dan Flemington** brought Julia Valencia with Salesforce CDR access\n\n### Milestones Completed\n| Milestone | Deliverable | Significance |\n|-----------|-------------|-------------|\n| M7: Baseline manual effort measured | D3 | Quantified current reporting burden |\n| M10: Onboarding stages defined | D4 | IRP onboarding stages mapped |\n| M27: Build in Five framework documented | D10 | Martin onboarded, framework established |",
+    "programme_actions_summary": "### Week 2 Outcome Summary\n\n| # | Priority | Result |\n|---|----------|--------|\n| 1 | Stabilise BenVH situation | **PARTIALLY ADDRESSED** \u2014 acknowledged, not resolved |\n| 2 | CLARA Life SLT demo | **ACHIEVED** |\n| 3 | Formalise Gainsight relationship | **ACHIEVED** via Catherine |\n| 4 | Launch Friday PM tool | **ACHIEVED** \u2014 endorsed by Diana |\n| 5 | Resolve token budget crisis | **EVOLVED** into security audit exposure |\n| 6 | Onboard Chris and Nikhil to CLARA tasks | **ACHIEVED** (D#31) |",
+    "status": "FINAL",
+    "actions": [
+      {
+        "category": "deliverable_strategic",
+        "title": "Demo CLARA to Life Side SLT for cross-OU validation",
+        "description": "CLARA shown to Life leadership (Jack, Jason, Alexandre, Christophe). Template/flat-pack approach validated. Life interested in own instance. Cross-OU demand confirmed.",
+        "priority": "HIGH",
+        "owner": "Richard/Ben Brooks",
+        "status": "DONE",
+        "deliverable_id": 1,
+        "position": 0,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_strategic",
+        "title": "Launch Friday PM tool and secure Diana endorsement",
+        "description": "Azmain built Friday with 30 concurrent AI agents in one day (burning entire $1,000 monthly Cursor budget). Diana endorsed it as replacement for slide-based Wednesday advisory review. IRP projects sync bidirectionally with CLARA. D#34, D#35.",
+        "priority": "HIGH",
+        "owner": "Azmain",
+        "status": "DONE",
+        "deliverable_id": null,
+        "position": 1,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_strategic",
+        "title": "Formalise Gainsight integration relationship via Catherine",
+        "description": "Catherine transformed from detractor to governance ally. Set up formal meeting with Tina Palumbo, Nadim, Rajesh. Volunteered for App Factory intake governance. CLARA positioned as complementary to Gainsight. D#37.",
+        "priority": "HIGH",
+        "owner": "Catherine/Azmain",
+        "status": "DONE",
+        "deliverable_id": 7,
+        "position": 2,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_tactical",
+        "title": "Assign Chris to CLARA bug stabilisation",
+        "description": "Chris began working through consolidated feedback list. Discovered many early items already fixed but never documented \u2014 systemic feedback management gap. D#31.",
+        "priority": "HIGH",
+        "owner": "Chris",
+        "status": "DONE",
+        "deliverable_id": 1,
+        "position": 3,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_tactical",
+        "title": "Get Nikhil Bedrock API key working",
+        "description": "Nikhil confirmed Bedrock Claude API working via OU-based IAM roles on his local environment. Significant technical milestone \u2014 resolves token budget crisis technically.",
+        "priority": "HIGH",
+        "owner": "Nikhil",
+        "status": "DONE",
+        "deliverable_id": null,
+        "position": 4,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_tactical",
+        "title": "Shift Build in Five demo timeline from March 21 to May",
+        "description": "Demo target moved to Exceedance conference in May, with content agreed by April. Martin to reverse-engineer Apollo dashboard into spec and rebuild. Modular UI with drag-and-drop IRP API modules. D#36.",
+        "priority": "MEDIUM",
+        "owner": "Richard/Martin",
+        "status": "DONE",
+        "deliverable_id": 10,
+        "position": 5,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_tactical",
+        "title": "Redesign migration dashboard for Diya scorecard needs",
+        "description": "Session with Stacy and Natalia: removed confusing grey box, consolidated Hosting Plus under Risk Link, RBO under Risk Browser. New Scorecard tab with quarterly migration view. Credibility risk: 4 pre-2026 completions counted in 2026. R#028.",
+        "priority": "MEDIUM",
+        "owner": "Azmain/Stacy",
+        "status": "DONE",
+        "deliverable_id": 3,
+        "position": 6,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_tactical",
+        "title": "Open Salesforce data path via Dan Flemington",
+        "description": "Dan brought working Cursor-built tools and Julia Valencia with SFDC CDR access. His variance report concept adopted for CLARA 'what changed since last login' view. Convergence: Bernard, Courtney, Kevin Pern, Dan all need Salesforce programmatic access.",
+        "priority": "MEDIUM",
+        "owner": "Richard/Dan",
+        "status": "DONE",
+        "deliverable_id": 7,
+        "position": 7,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_tactical",
+        "title": "Maintain CLARA feature freeze and triage feedback",
+        "description": "Carried from Week 1. Feature freeze maintained. Two-week release cycle adopted (Friday releases). 113 git migration heads squashed to one. Feedback triage improving with Chris.",
+        "priority": "MEDIUM",
+        "owner": "Azmain/Chris",
+        "status": "DONE",
+        "deliverable_id": 1,
+        "position": 8,
+        "is_ai_generated": true,
+        "carried_from_week": 1
+      },
+      {
+        "category": "programme_strategic",
+        "title": "Address BenVH burnout and Nikhil credit-taking crisis",
+        "description": "BenVH admitted absence was not illness \u2014 Nikhil renaming App Factory to 'Moplit', presenting architecture as his own, receiving public credit while BenVH unmentioned. Explicit parallel to traumatic Microsoft experience. R#024. CRITICAL personnel risk \u2014 not resolved this week.",
+        "priority": "HIGH",
+        "owner": "Richard",
+        "status": "IN_PROGRESS",
+        "deliverable_id": null,
+        "position": 9,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "programme_strategic",
+        "title": "Resolve token budget and security audit exposure",
+        "description": "Carried from Week 1. Evolved from budget problem to security audit: caught using personal Claude for proprietary data. Azmain admitted 'no proprietary info' defence is false. Ben Brooks providing cover. Bedrock migration resolves going forward. R#018 \u2192 R#026.",
+        "priority": "HIGH",
+        "owner": "Azmain/Richard",
+        "status": "IN_PROGRESS",
+        "deliverable_id": null,
+        "position": 10,
+        "is_ai_generated": true,
+        "carried_from_week": 1
+      },
+      {
+        "category": "programme_tactical",
+        "title": "Establish App Factory governance with Catherine intake design",
+        "description": "Carried from Week 1. Catherine volunteered to design decision tree for App Factory intake \u2014 first external stakeholder offering governance help. Partly to prevent Rhett deploying unvetted apps.",
+        "priority": "MEDIUM",
+        "owner": "Catherine/Azmain",
+        "status": "IN_PROGRESS",
+        "deliverable_id": 12,
+        "position": 11,
+        "is_ai_generated": true,
+        "carried_from_week": 1
+      },
+      {
+        "category": "programme_tactical",
+        "title": "Navigate Rhett adoption charter friction",
+        "description": "Rhett built Excel-based charter approach without consulting CSMs, contradicting agreed Word-to-app plan. Richard spent full day integrating his incomplete code. Political: 'Don't escalate to Ben Brooks \u2014 Rhett is Ben's favourite.'",
+        "priority": "MEDIUM",
+        "owner": "Richard/Azmain",
+        "status": "IN_PROGRESS",
+        "deliverable_id": 2,
+        "position": 12,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "programme_tactical",
+        "title": "Deploy Friday to dev environment for pilot",
+        "description": "BenVH agreed to deploy Friday to dev without authentication for a four-week pilot. Diana allocated Prashant as resource. C#65.",
+        "priority": "MEDIUM",
+        "owner": "BenVH",
+        "status": "IN_PROGRESS",
+        "deliverable_id": null,
+        "position": 13,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      }
+    ],
+    "snapshots": [
+      {
+        "deliverable_id": 1,
+        "week_number": 2,
+        "rag_status": "GREEN",
+        "progress_percent": 33,
+        "milestones_completed": 1,
+        "milestones_total": 3,
+        "narrative": "CLARA shown to Life SLT \u2014 flat-pack interest confirmed. Chris on bug stabilisation. Two-week release cycle adopted. Blocker tracking progressing (M2 in progress)."
+      },
+      {
+        "deliverable_id": 2,
+        "week_number": 2,
+        "rag_status": "AMBER",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Charter complexity revealed: multi-page documents with embedded images requiring OCR and multi-modal LLM. Rhett's uncoordinated Excel approach creating friction. Target week 5."
+      },
+      {
+        "deliverable_id": 3,
+        "week_number": 2,
+        "rag_status": "GREEN",
+        "progress_percent": 33,
+        "milestones_completed": 1,
+        "milestones_total": 3,
+        "narrative": "M7 completed: baseline manual effort documented during initial assessment. CLARA generating some automated views. Migration dashboard redesigned for Diya scorecard."
+      },
+      {
+        "deliverable_id": 4,
+        "week_number": 2,
+        "rag_status": "GREEN",
+        "progress_percent": 33,
+        "milestones_completed": 1,
+        "milestones_total": 3,
+        "narrative": "M10 completed: IRP onboarding stages mapped in CLARA. Outcome tracking per client next (M11 target week 6)."
+      },
+      {
+        "deliverable_id": 5,
+        "week_number": 2,
+        "rag_status": "GREEN",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 2,
+        "narrative": "No action expected until week 8+. CLARA flat-pack approach enables future cross-product support."
+      },
+      {
+        "deliverable_id": 6,
+        "week_number": 2,
+        "rag_status": "AMBER",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Dan Flemington emerged with Salesforce access path. Meeting brief concept not yet scoped. Depends on Salesforce integration (D7)."
+      },
+      {
+        "deliverable_id": 7,
+        "week_number": 2,
+        "rag_status": "AMBER",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Dan Flemington brought Julia Valencia with SFDC CDR access. Convergence identified: multiple teams need same Salesforce data. Data mapping target week 4."
+      },
+      {
+        "deliverable_id": 8,
+        "week_number": 2,
+        "rag_status": "GREEN",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Navigator API analysis progressing. Target week 3 for endpoint cataloguing."
+      },
+      {
+        "deliverable_id": 9,
+        "week_number": 2,
+        "rag_status": "AMBER",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "L1 triage dependent on D7 (Salesforce) and D8 (Navigator). Design not yet started. Target week 6."
+      },
+      {
+        "deliverable_id": 10,
+        "week_number": 2,
+        "rag_status": "GREEN",
+        "progress_percent": 33,
+        "milestones_completed": 1,
+        "milestones_total": 3,
+        "narrative": "M27 completed: Martin onboarded, framework established. Demo timeline shifted to May \u2014 more runway. Reverse-engineering Apollo dashboard into spec."
+      },
+      {
+        "deliverable_id": 11,
+        "week_number": 2,
+        "rag_status": "GREEN",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Demo shifted to May Exceedance conference. More time available. Ben Brooks to define panel positioning."
+      },
+      {
+        "deliverable_id": 12,
+        "week_number": 2,
+        "rag_status": "GREEN",
+        "progress_percent": 33,
+        "milestones_completed": 1,
+        "milestones_total": 3,
+        "narrative": "App Factory operational. BenVH stretched thin \u2014 4 apps in pipeline. Catherine offering governance intake design. Nikhil/credit-taking straining operations."
+      },
+      {
+        "deliverable_id": 13,
+        "week_number": 2,
+        "rag_status": "GREEN",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Life SLT shown CLARA \u2014 cross-OU interest building. Formal meeting cadence not yet established. Target week 3."
+      }
+    ]
+  },
+  {
+    "week_number": 3,
+    "week_start_date": "2026-03-09",
+    "week_end_date": "2026-03-13",
+    "deliverable_progress_summary": "**Programme Week 3** \u2014 the expansion week (23 transcripts, highest volume yet).\n\n### Cross-OU Demand Validated\n- **Banking**: Gina Greer, Olivier arrived asking for what Insurance has built\n- **Life Insurance**: Jack Cheyne, Christian Curran expressing interest\n- Both divisions want CLARA-equivalent capability\n\n### Build in Five Breakthrough\n- Martin's **dashboard builder exceeded expectations** \u2014 Richard compared it to Databricks Genie\n- MCP server wiring identified as the critical gap to unlock full potential\n\n### Architecture Decisions\n- **App Factory** pivoted to MCP architecture (Phantom Agent positioning)\n- **Salesforce integration** design crystallised: one-way read, Cases/CaseFeed, MCP middleware\n- **Cihan** (MD Product & Tech) gave full CLARA endorsement after demo\n- **~5,000 viewers** imported into CLARA\n\n### Milestones Completed\n| Milestone | Deliverable | Significance |\n|-----------|-------------|-------------|\n| M21: Navigator API endpoints catalogued | D8 | API analysis completed |\n| M36: Cross-OU meeting cadence established | D13 | Banking + Life engagement formalised |\n\n### Political Risk\n- **Catherine's trajectory reversed again**: from ally back to confirmed COE political threat (R#045)",
+    "programme_actions_summary": "### Week 3 Outcome Summary\n\n| # | Priority | Result |\n|---|----------|--------|\n| 1 | Cross-OU outreach sessions with Banking and Life | **ACHIEVED** \u2014 demand validated |\n| 2 | Build in Five dashboard builder development | **ACHIEVED** \u2014 breakthrough output |\n| 3 | Gainsight integration meeting | **ACHIEVED** \u2014 charter approach agreed |\n| 4 | CLARA demo to Product & Tech | **ACHIEVED** \u2014 Cihan endorsement |\n| 5 | Salesforce integration design | **ACHIEVED** \u2014 architecture decided |\n| 6 | Resolve BenVH/Nikhil conflict | **ESCALATED** to CRITICAL \u2014 Richard planning confrontation |\n| 7 | App Factory MCP pivot | **ACHIEVED** \u2014 Phantom Agent positioning |",
+    "status": "FINAL",
+    "actions": [
+      {
+        "category": "deliverable_strategic",
+        "title": "Demo CLARA to Cihan (MD Product & Tech) for executive endorsement",
+        "description": "Cihan gave full endorsement after seeing CLARA demo. Offered team resources for data quality. Asked sharp questions about scalability. ~5,000 viewers imported under Andy Frappe.",
+        "priority": "HIGH",
+        "owner": "Richard/Azmain",
+        "status": "DONE",
+        "deliverable_id": 1,
+        "position": 0,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_strategic",
+        "title": "Conduct cross-OU outreach sessions with Banking and Life Insurance",
+        "description": "Banking (Gina Greer, Olivier) and Life Insurance (Jack Cheyne, Christian Curran) sessions held. Both validated demand for AI enablement tools. Banking Credit team's agent day framework discovered \u2014 ready-made model for WS1. D#38.",
+        "priority": "HIGH",
+        "owner": "Richard/Azmain",
+        "status": "DONE",
+        "deliverable_id": 13,
+        "position": 1,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_strategic",
+        "title": "Advance Salesforce integration design to architecture decision",
+        "description": "Design session with Dan Flemington path: one-way read integration, Cases/CaseFeed tables, MCP middleware approach. Kevin Pern identified as Cases consumer. Catherine/Gainsight as shared dependency. D#40 context.",
+        "priority": "HIGH",
+        "owner": "Azmain/Richard",
+        "status": "DONE",
+        "deliverable_id": 7,
+        "position": 2,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_strategic",
+        "title": "Pivot App Factory to MCP server architecture",
+        "description": "BenVH's Phantom Agent (personal 5-year project) positioned as orchestration layer. MCP server enables inter-app communication. Azmain's strategy: let Moody's feel cost pain of uncontrolled AI, then present solution. D#44.",
+        "priority": "HIGH",
+        "owner": "BenVH/Azmain",
+        "status": "DONE",
+        "deliverable_id": 12,
+        "position": 3,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_tactical",
+        "title": "Build in Five dashboard builder development sprint",
+        "description": "Martin produced dashboard builder that exceeded all expectations. Richard compared to Databricks Genie. Drag-and-drop modules, auto-generated dashboards. MCP server wiring is critical next step \u2014 needs Navigator repo access from Nicole.",
+        "priority": "HIGH",
+        "owner": "Martin",
+        "status": "DONE",
+        "deliverable_id": 10,
+        "position": 4,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_tactical",
+        "title": "Complete Gainsight integration meeting and agree charter approach",
+        "description": "Meeting with Tina Palumbo, Nadim, Rajesh held. Bi-directional integration proposal received. Team agreed to demanding charter to control scope. POC earliest May after grads arrive. R#046. D#37.",
+        "priority": "HIGH",
+        "owner": "Azmain/Catherine",
+        "status": "DONE",
+        "deliverable_id": 7,
+        "position": 5,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_tactical",
+        "title": "Onboard Idris to TSR automation project",
+        "description": "Idris formally onboarded as first non-core team member. Ben Brooks approved dedicated time. Focus on TSR/cat bond automation. Becomes AI champion back to risk advisory team. D#38, D#39.",
+        "priority": "MEDIUM",
+        "owner": "Azmain/Richard",
+        "status": "DONE",
+        "deliverable_id": null,
+        "position": 6,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_tactical",
+        "title": "Onboard Lucia's team as first App Factory external customer",
+        "description": "Sales team apps identified for App Factory hosting. Lucia's team becomes first external customer. Dan Flemington's app to be deployed to shared AWS. D#44.",
+        "priority": "MEDIUM",
+        "owner": "BenVH/Richard",
+        "status": "DONE",
+        "deliverable_id": 12,
+        "position": 7,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_tactical",
+        "title": "Establish CLARA fortnightly release governance",
+        "description": "Natalia Plant stepped in to structure releases. Fortnightly release cycle with Tuesday review. Ben Brooks restricted to sandbox for direct changes. R#047 de-escalating.",
+        "priority": "MEDIUM",
+        "owner": "Natalia Plant/Chris",
+        "status": "DONE",
+        "deliverable_id": 1,
+        "position": 8,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "deliverable_tactical",
+        "title": "Import ~5,000 CLARA viewers under Andy Frappe",
+        "description": "Azmain imported all users as CLARA viewers. Expands visibility but creates support risk \u2014 no helpdesk or onboarding guide exists. R#049.",
+        "priority": "MEDIUM",
+        "owner": "Azmain",
+        "status": "DONE",
+        "deliverable_id": 1,
+        "position": 9,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "programme_strategic",
+        "title": "Resolve BenVH/Nikhil conflict \u2014 now CRITICAL",
+        "description": "Carried from Week 2. Escalated to CRITICAL: BenVH stopped all communication with Nikhil, cancelled meetings. Daily boundary violations: scheduling meetings after being told no, introducing tasks to CAT team, going around BenVH to Richard. Richard planning direct confrontation and Ben Brooks escalation. R#039. C#74, C#75.",
+        "priority": "HIGH",
+        "owner": "Richard",
+        "status": "IN_PROGRESS",
+        "deliverable_id": null,
+        "position": 10,
+        "is_ai_generated": true,
+        "carried_from_week": 2
+      },
+      {
+        "category": "programme_strategic",
+        "title": "Manage Catherine COE political threat to programme",
+        "description": "Catherine's COE mandate overlaps AI programme. Organised Gainsight meeting without consulting CLARA team. Positioning to absorb programme under her remit. Diana to discuss with Natalia O. Richard to raise with Diya. R#045.",
+        "priority": "HIGH",
+        "owner": "Richard/Diana",
+        "status": "IN_PROGRESS",
+        "deliverable_id": null,
+        "position": 11,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "programme_tactical",
+        "title": "Configure AWS Bedrock cost attribution tags",
+        "description": "$1,163 in first two weeks of March with zero attribution. Everyone routing through one RMS Bedrock key. Tags need configuring urgently. On pace for $10K/month.",
+        "priority": "HIGH",
+        "owner": "BenVH",
+        "status": "IN_PROGRESS",
+        "deliverable_id": null,
+        "position": 12,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "programme_tactical",
+        "title": "Plan cross-OU showcase meeting for Week 4",
+        "description": "Richard and Idrees coordinating cross-OU showcase. Agenda: CS team AI updates, retention dashboard, ROB AI app, App Factory. Risk of becoming demo-fest without clear asks. R#044. C#73-87.",
+        "priority": "MEDIUM",
+        "owner": "Richard/Idrees",
+        "status": "IN_PROGRESS",
+        "deliverable_id": 13,
+        "position": 13,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "programme_tactical",
+        "title": "Plan Slidey cross-team collaboration meeting",
+        "description": "Juliet, Richard, and others all building PowerPoint generators independently. Need to consolidate into one tool via App Factory. Meeting planned for Tuesday Week 4. R#041. C#76.",
+        "priority": "LOW",
+        "owner": "Richard",
+        "status": "IN_PROGRESS",
+        "deliverable_id": null,
+        "position": 14,
+        "is_ai_generated": true,
+        "carried_from_week": null
+      },
+      {
+        "category": "programme_tactical",
+        "title": "App Factory governance board with Catherine intake design",
+        "description": "Carried from Weeks 1-2. Catherine actively designing decision tree. MCP pivot adds architectural clarity. Governance now includes: intake criteria, cost controls, deployment standards.",
+        "priority": "MEDIUM",
+        "owner": "Catherine/Azmain",
+        "status": "IN_PROGRESS",
+        "deliverable_id": 12,
+        "position": 15,
+        "is_ai_generated": true,
+        "carried_from_week": 2
+      }
+    ],
+    "snapshots": [
+      {
+        "deliverable_id": 1,
+        "week_number": 3,
+        "rag_status": "GREEN",
+        "progress_percent": 66,
+        "milestones_completed": 2,
+        "milestones_total": 3,
+        "narrative": "Cihan (MD Product & Tech) full CLARA endorsement. ~5,000 viewers imported. Blocker tracking operational (M2 done). Fortnightly release governance established under Natalia Plant."
+      },
+      {
+        "deliverable_id": 2,
+        "week_number": 3,
+        "rag_status": "AMBER",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Charter template design not started. Rhett friction unresolved. Target week 5 approaching \u2014 2 weeks away. Multi-page OCR complexity confirmed."
+      },
+      {
+        "deliverable_id": 3,
+        "week_number": 3,
+        "rag_status": "GREEN",
+        "progress_percent": 33,
+        "milestones_completed": 1,
+        "milestones_total": 3,
+        "narrative": "CLARA replacing ad-hoc spreadsheets. Management dashboard in daily use. Scorecard tab built for Diya. M8 (first automated reports) in progress."
+      },
+      {
+        "deliverable_id": 4,
+        "week_number": 3,
+        "rag_status": "GREEN",
+        "progress_percent": 33,
+        "milestones_completed": 1,
+        "milestones_total": 3,
+        "narrative": "Onboarding stages live. Over 50% of migration target completed before Q1 ends. Outcome tracking next (M11 target week 6)."
+      },
+      {
+        "deliverable_id": 5,
+        "week_number": 3,
+        "rag_status": "GREEN",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 2,
+        "narrative": "No cross-product work yet. App Factory MCP architecture enables future Casualty/Cyber support."
+      },
+      {
+        "deliverable_id": 6,
+        "week_number": 3,
+        "rag_status": "AMBER",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Salesforce integration design agreed but implementation not started. Meeting brief concept depends on CRM data access. Target week 5 approaching."
+      },
+      {
+        "deliverable_id": 7,
+        "week_number": 3,
+        "rag_status": "AMBER",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Salesforce MCP middleware decided. One-way read, Cases/CaseFeed. Data mapping not started \u2014 M18 target week 4 is next week. Catherine/Gainsight as shared dependency."
+      },
+      {
+        "deliverable_id": 8,
+        "week_number": 3,
+        "rag_status": "GREEN",
+        "progress_percent": 33,
+        "milestones_completed": 1,
+        "milestones_total": 3,
+        "narrative": "M21 completed: Navigator API endpoints catalogued and documented. MCP server integration is Build in Five top priority. Test suite embedding next (M22 target week 7)."
+      },
+      {
+        "deliverable_id": 9,
+        "week_number": 3,
+        "rag_status": "AMBER",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Design phase. Kevin Pern identified as Cases consumer. Depends on D7 Salesforce integration and D8 Navigator work. Triage decision tree target week 6."
+      },
+      {
+        "deliverable_id": 10,
+        "week_number": 3,
+        "rag_status": "GREEN",
+        "progress_percent": 66,
+        "milestones_completed": 2,
+        "milestones_total": 3,
+        "narrative": "Martin dashboard builder exceeded expectations \u2014 Richard compared to Databricks Genie. M28 first POC actively in progress. MCP server wiring is critical next step \u2014 needs Nicole's Navigator repo access."
+      },
+      {
+        "deliverable_id": 11,
+        "week_number": 3,
+        "rag_status": "GREEN",
+        "progress_percent": 0,
+        "milestones_completed": 0,
+        "milestones_total": 3,
+        "narrative": "Ben Brooks engaged on exceedance panel positioning. AIG use case identified. Demo shifted to May \u2014 comfortable timeline. M30 demo environment in progress."
+      },
+      {
+        "deliverable_id": 12,
+        "week_number": 3,
+        "rag_status": "GREEN",
+        "progress_percent": 33,
+        "milestones_completed": 1,
+        "milestones_total": 3,
+        "narrative": "App Factory MCP pivot (Phantom Agent). Lucia's team first external customer. Chris ramping. Idris onboarded for TSR. M34 first external onboarding in progress."
+      },
+      {
+        "deliverable_id": 13,
+        "week_number": 3,
+        "rag_status": "GREEN",
+        "progress_percent": 66,
+        "milestones_completed": 2,
+        "milestones_total": 3,
+        "narrative": "M36 completed: cross-OU meetings with Banking and Life held. Banking Credit agent day framework discovered \u2014 ready-made model for WS1. Idrees building strategic alliance. Cross-OU showcase planned for Week 4."
+      }
+    ]
+  },
+  {
     "week_number": 4,
     "week_start_date": "2026-03-16",
     "week_end_date": "2026-03-20",
-    "deliverable_progress_summary": "Strong Week 3 momentum across all three pillars. CLARA demonstrated to Product & Tech (Cihan endorsement, ~5,000 viewers imported). Build in Five dashboard builder exceeded expectations - Richard compared to Databricks Genie. Banking Credit team agent day framework discovered, providing a ready-made model for WS1 Training & Enablement. Salesforce integration design crystallised (one-way, Cases/CaseFeed, MCP middleware). Key risk: Catherine COE political threat confirmed and escalating. BenVH/Nikhil conflict at breaking point.",
-    "programme_actions_summary": "Week 4 priorities: (1) Secure Navigator MCP server access for Martin to complete Build in Five demo loop, (2) Manage Catherine/COE political threat via Diana-Natalia and Richard-Diya channels, (3) Advance Salesforce integration design to data mapping, (4) Cross-OU showcase Wednesday if ISLTR in London, (5) Begin charter template design for adoption charters deliverable.",
+    "deliverable_progress_summary": "**Programme Week 4** \u2014 strong momentum, critical blockers.\n\n### Momentum\n- **CLARA**: Executive endorsement from Cihan (MD Product & Tech), ~5,000 viewers imported\n- **Build in Five**: Dashboard builder exceeded expectations \u2014 MCP server wiring is the critical gap\n- **Salesforce**: Integration architecture decided (one-way, MCP middleware) but data mapping not started\n- **Cross-OU**: Demand validated from Banking and Life Insurance\n\n### Critical Risks\n| Risk | Severity | Detail |\n|------|----------|--------|\n| BenVH/Nikhil conflict | **CRITICAL** (R#039) | At breaking point \u2014 Richard confrontation needed |\n| Catherine COE threat | **HIGH** (R#045) | COE mandate overlaps AI programme |\n| AWS costs | **MEDIUM** | $1,163 with zero attribution |\n\n### Deliverable Concerns\n- **D2 (Automated charters)** at 0% \u2014 target week 5 approaching\n- **D7 (Salesforce integration)** \u2014 M18 data mapping target was this week, not started\n- **Programme pace**: 6 of 38 milestones complete (16%) at 33% through timeline",
+    "programme_actions_summary": "### Week 4 Priorities\n\n| # | Priority | Action | Origin |\n|---|----------|--------|--------|\n| 1 | **CRITICAL** | Resolve BenVH/Nikhil conflict \u2014 Richard confrontation + Ben Brooks escalation | Carried from Week 2 |\n| 2 | **HIGH** | Secure Navigator MCP server access from Nicole for Martin | New \u2014 unlocks D10 + D11 |\n| 3 | **HIGH** | Defend programme from Catherine COE absorption (Diana-Natalia + Richard-Diya channels) | Carried from Week 3 |\n| 4 | MEDIUM | Begin Salesforce data mapping (M18 target this week) | New |\n| 5 | MEDIUM | Begin adoption charter template design (D2 at 0%, target week 5) | New |\n| 6 | MEDIUM | Execute cross-OU showcase with Idrees | Carried from Week 3 |\n| 7 | LOW | Configure AWS Bedrock cost attribution tags | Carried from Week 3 |",
     "status": "DRAFT",
     "actions": [
       {
         "category": "deliverable_strategic",
         "title": "Complete Navigator MCP server integration for Build in Five",
-        "description": "Martin needs Navigator repo access from Nicole to wire up the MCP server, replacing the JavaScript agent stub with live API definitions. This completes the demo loop and is the single most impactful deliverable action this week.",
+        "description": "Martin needs Navigator repo access from Nicole to wire up the MCP server, replacing the JavaScript agent stub with live API definitions. This completes the demo loop and is the single most impactful deliverable action this week. Unlocks D10 and D11.",
         "priority": "HIGH",
         "owner": "Richard/Martin",
         "status": "PENDING",
@@ -21,27 +912,39 @@
       },
       {
         "category": "deliverable_strategic",
-        "title": "Defend programme independence from Catherine COE",
-        "description": "Catherine COE mandate overlaps AI programme. Diana to discuss with Natalia Orzechowska. Richard to raise directly with Diya during her London visit. Frame AI enablement as distinct from digital enablement.",
+        "title": "Begin adoption charter template design",
+        "description": "D2 has 0% progress. M4 (charter template designed) target is week 5 \u2014 must start this week. Multi-page documents with embedded images requiring OCR and multi-modal LLM. Rhett's uncoordinated Excel approach needs resolution. Carried theme from Week 1.",
         "priority": "HIGH",
-        "owner": "Richard/Diana",
+        "owner": "Azmain",
         "status": "PENDING",
-        "deliverable_id": null,
+        "deliverable_id": 2,
         "position": 1,
+        "is_ai_generated": true,
+        "carried_from_week": 1
+      },
+      {
+        "category": "deliverable_strategic",
+        "title": "Start Salesforce-IRP data mapping document",
+        "description": "M18 (data mapping documented) target is this week (week 4). Document which Cases/CaseFeed fields map to CLARA data. Coordinate with Catherine and Kevin Pern. Architecture decided in Week 3 \u2014 now execution.",
+        "priority": "HIGH",
+        "owner": "Azmain",
+        "status": "PENDING",
+        "deliverable_id": 7,
+        "position": 2,
         "is_ai_generated": true,
         "carried_from_week": null
       },
       {
         "category": "deliverable_strategic",
-        "title": "Begin adoption charter template design",
-        "description": "Deliverable 2 (automated charters) has 0% progress with target week 5 for template design. Start with existing IRP data fields in CLARA to define what a charter should contain.",
-        "priority": "MEDIUM",
-        "owner": "Azmain",
+        "title": "Defend programme independence from Catherine COE",
+        "description": "Carried from Week 3. Catherine's COE mandate overlaps AI programme. Organised Gainsight meeting without consulting team. Diana to discuss with Natalia Orzechowska. Richard to raise with Diya during London visit. Frame AI enablement as distinct from digital enablement. R#045.",
+        "priority": "HIGH",
+        "owner": "Richard/Diana",
         "status": "PENDING",
-        "deliverable_id": 2,
-        "position": 2,
+        "deliverable_id": null,
+        "position": 3,
         "is_ai_generated": true,
-        "carried_from_week": null
+        "carried_from_week": 3
       },
       {
         "category": "deliverable_tactical",
@@ -51,18 +954,6 @@
         "owner": "Richard",
         "status": "PENDING",
         "deliverable_id": 10,
-        "position": 3,
-        "is_ai_generated": true,
-        "carried_from_week": null
-      },
-      {
-        "category": "deliverable_tactical",
-        "title": "Start Salesforce-IRP data mapping document",
-        "description": "D7 milestone: data mapping for Salesforce-IRP connection. Document which Cases/CaseFeed fields map to CLARA data. Coordinate with Catherine and Kevin Pern.",
-        "priority": "MEDIUM",
-        "owner": "Azmain",
-        "status": "PENDING",
-        "deliverable_id": 7,
         "position": 4,
         "is_ai_generated": true,
         "carried_from_week": null
@@ -81,8 +972,8 @@
       },
       {
         "category": "deliverable_tactical",
-        "title": "Document Banking agent day framework for reuse",
-        "description": "Capture Nils four-tier model, transit teacher concept, pre-work methodology, bi-weekly follow-ups. Adapt for insurance. Directly addresses stalled WS1.",
+        "title": "Document Banking agent day framework for WS1 reuse",
+        "description": "Capture Nils's four-tier model, transit teacher concept, pre-work methodology, bi-weekly follow-ups from Banking Credit team. Adapt for insurance. Directly addresses stalled WS1 Training & Enablement.",
         "priority": "MEDIUM",
         "owner": "Azmain",
         "status": "PENDING",
@@ -94,7 +985,7 @@
       {
         "category": "deliverable_tactical",
         "title": "Plan CLARA viewer onboarding for 5,000 new users",
-        "description": "After importing ~5,000 viewers under Andy Frappe, create a lightweight onboarding guide or FAQ. No helpdesk exists yet.",
+        "description": "After importing ~5,000 viewers, create lightweight onboarding guide or FAQ. No helpdesk exists yet. Risk of support overwhelm if significant portion activates. R#049.",
         "priority": "LOW",
         "owner": "Chris",
         "status": "PENDING",
@@ -105,49 +996,61 @@
       },
       {
         "category": "programme_strategic",
-        "title": "Execute cross-OU showcase meeting (Wednesday)",
-        "description": "Richard and Idrees coordinating. Agenda: CS team AI updates across OUs, retention dashboard, ROB AI app, App Factory. ISLTR may be in London. Goal: build business case for dedicated team.",
+        "title": "Resolve BenVH/Nikhil conflict \u2014 direct confrontation",
+        "description": "Carried from Week 2. CRITICAL: BenVH stopped all communication with Nikhil. Richard planning (a) direct confrontation with Nikhil about boundaries, (b) escalation to Ben Brooks. Redirect Nikhil to Salesforce integration or AIG project. R#039. C#74, C#75.",
         "priority": "HIGH",
-        "owner": "Richard/Idrees",
+        "owner": "Richard",
         "status": "PENDING",
         "deliverable_id": null,
         "position": 8,
         "is_ai_generated": true,
-        "carried_from_week": null
+        "carried_from_week": 2
       },
       {
         "category": "programme_strategic",
-        "title": "Resolve BenVH/Nikhil conflict",
-        "description": "BenVH stopped all communication with Nikhil. Richard planning direct confrontation and Ben Brooks escalation. Redirect Nikhil to Salesforce integration or AIG project. CRITICAL personnel risk.",
+        "title": "Execute cross-OU showcase meeting",
+        "description": "Carried from Week 3. Richard and Idrees coordinating. Agenda: CS team AI updates across OUs, retention dashboard, ROB AI app, App Factory. Needs clear asks, not just demos. Goal: build business case for dedicated team. R#044.",
         "priority": "HIGH",
-        "owner": "Richard",
+        "owner": "Richard/Idrees",
         "status": "PENDING",
         "deliverable_id": null,
         "position": 9,
         "is_ai_generated": true,
-        "carried_from_week": null
-      },
-      {
-        "category": "programme_tactical",
-        "title": "Cross-team Slidey collaboration meeting (Tuesday)",
-        "description": "Juliet, Richard, and others all building PowerPoint generators independently. Consolidate into one tool via App Factory.",
-        "priority": "MEDIUM",
-        "owner": "Richard",
-        "status": "PENDING",
-        "deliverable_id": null,
-        "position": 10,
-        "is_ai_generated": true,
-        "carried_from_week": null
+        "carried_from_week": 3
       },
       {
         "category": "programme_tactical",
         "title": "Configure AWS Bedrock cost attribution tags",
-        "description": "$1,163 in first two weeks of March with zero attribution. Tags need configuring urgently. On pace for $10K/month.",
+        "description": "Carried from Week 3. $1,163 in first two weeks of March with zero attribution. Tags need configuring urgently. On pace for $10K/month. Everyone routing through one RMS Bedrock key.",
         "priority": "HIGH",
         "owner": "BenVH",
         "status": "PENDING",
         "deliverable_id": null,
+        "position": 10,
+        "is_ai_generated": true,
+        "carried_from_week": 3
+      },
+      {
+        "category": "programme_tactical",
+        "title": "Slidey cross-team collaboration meeting",
+        "description": "Carried from Week 3. Juliet, Richard, and others all building PowerPoint generators independently. Tuesday meeting to consolidate into one tool via App Factory. R#041. C#76.",
+        "priority": "MEDIUM",
+        "owner": "Richard",
+        "status": "PENDING",
+        "deliverable_id": null,
         "position": 11,
+        "is_ai_generated": true,
+        "carried_from_week": 3
+      },
+      {
+        "category": "programme_tactical",
+        "title": "Prepare for CLARA release on 27 March",
+        "description": "Fortnightly release cycle established by Natalia Plant. Next release 27 March. Chris to complete feedback pipeline fixes. Tuesday governance review.",
+        "priority": "MEDIUM",
+        "owner": "Chris/Natalia Plant",
+        "status": "PENDING",
+        "deliverable_id": 1,
+        "position": 12,
         "is_ai_generated": true,
         "carried_from_week": null
       },
@@ -157,18 +1060,6 @@
         "description": "Juliet needs separate AWS for commission data (too sensitive for shared hosting). Richard and BenVH to walkthrough setup.",
         "priority": "LOW",
         "owner": "BenVH/Richard",
-        "status": "PENDING",
-        "deliverable_id": null,
-        "position": 12,
-        "is_ai_generated": true,
-        "carried_from_week": null
-      },
-      {
-        "category": "programme_tactical",
-        "title": "Prepare for CLARA release on 27 March",
-        "description": "Fortnightly release cycle established by Natalia Plant. Next release 27 March. Chris to complete feedback pipeline fixes. Tuesday governance review.",
-        "priority": "MEDIUM",
-        "owner": "Chris/Natalia Plant",
         "status": "PENDING",
         "deliverable_id": null,
         "position": 13,
@@ -184,7 +1075,7 @@
         "progress_percent": 66,
         "milestones_completed": 2,
         "milestones_total": 3,
-        "narrative": "CLARA demoed to Cihan (MD Product & Tech). ~5,000 viewers imported. Blocker tracking now operational."
+        "narrative": "CLARA has Cihan endorsement, ~5,000 viewers, fortnightly release governance under Natalia Plant. Blocker tracking operational. Portfolio-level reporting (M3) next \u2014 target week 8."
       },
       {
         "deliverable_id": 2,
@@ -193,7 +1084,7 @@
         "progress_percent": 0,
         "milestones_completed": 0,
         "milestones_total": 3,
-        "narrative": "Charter template design not started. Target week 5. Grads arriving April 7 may free capacity."
+        "narrative": "Charter template design not started after 3 weeks. M4 target is week 5 \u2014 must begin this week. Rhett friction unresolved. Multi-page OCR complexity confirmed. Grads arriving April 7 may free capacity."
       },
       {
         "deliverable_id": 3,
@@ -202,7 +1093,7 @@
         "progress_percent": 33,
         "milestones_completed": 1,
         "milestones_total": 3,
-        "narrative": "CLARA replacing ad-hoc spreadsheets. Management dashboard in daily use by Cihan."
+        "narrative": "CLARA replacing ad-hoc spreadsheets. Management dashboard in daily use by Cihan. Scorecard tab live. M8 first automated reports in progress."
       },
       {
         "deliverable_id": 4,
@@ -211,7 +1102,7 @@
         "progress_percent": 33,
         "milestones_completed": 1,
         "milestones_total": 3,
-        "narrative": "Onboarding stages live. Over 50% of migration target completed before Q1 ends."
+        "narrative": "Onboarding stages live. Over 50% of migration target completed before Q1 ends. Outcome tracking per client next \u2014 M11 target week 6."
       },
       {
         "deliverable_id": 5,
@@ -220,7 +1111,7 @@
         "progress_percent": 0,
         "milestones_completed": 0,
         "milestones_total": 2,
-        "narrative": "No cross-product work yet. App Factory MCP architecture enables future support."
+        "narrative": "No cross-product work yet. App Factory MCP architecture enables future Casualty/Cyber support. M13 target week 8."
       },
       {
         "deliverable_id": 6,
@@ -229,7 +1120,7 @@
         "progress_percent": 0,
         "milestones_completed": 0,
         "milestones_total": 3,
-        "narrative": "Salesforce integration design agreed. Implementation not started."
+        "narrative": "Salesforce integration design agreed but implementation not started. Meeting brief concept depends on CRM data. M15 target week 5 \u2014 approaching."
       },
       {
         "deliverable_id": 7,
@@ -238,7 +1129,7 @@
         "progress_percent": 0,
         "milestones_completed": 0,
         "milestones_total": 3,
-        "narrative": "Salesforce MCP middleware decided. Data mapping not started."
+        "narrative": "Salesforce MCP middleware decided. M18 data mapping target is THIS WEEK. Catherine/Gainsight as shared Salesforce dependency. Must begin data mapping now."
       },
       {
         "deliverable_id": 8,
@@ -247,7 +1138,7 @@
         "progress_percent": 33,
         "milestones_completed": 1,
         "milestones_total": 3,
-        "narrative": "Navigator API endpoints catalogued. MCP server integration is Build in Five top priority."
+        "narrative": "Navigator API endpoints catalogued. MCP server integration is Build in Five's top priority. M22 test suite target week 7."
       },
       {
         "deliverable_id": 9,
@@ -256,7 +1147,7 @@
         "progress_percent": 0,
         "milestones_completed": 0,
         "milestones_total": 3,
-        "narrative": "Design phase. Kevin Pern identified as Cases consumer."
+        "narrative": "Design phase. Kevin Pern identified as Cases consumer. Depends on D7 Salesforce integration. M24 triage decision tree target week 6."
       },
       {
         "deliverable_id": 10,
@@ -265,7 +1156,7 @@
         "progress_percent": 66,
         "milestones_completed": 2,
         "milestones_total": 3,
-        "narrative": "Martin dashboard builder exceeded expectations. MCP server wiring is critical next step."
+        "narrative": "Martin dashboard builder exceeded expectations \u2014 Richard compared to Databricks Genie. MCP server wiring is critical next step \u2014 blocked on Nicole granting Navigator repo access."
       },
       {
         "deliverable_id": 11,
@@ -274,7 +1165,7 @@
         "progress_percent": 0,
         "milestones_completed": 0,
         "milestones_total": 3,
-        "narrative": "Ben Brooks engaged on exceedance positioning. AIG use case identified."
+        "narrative": "Ben Brooks engaged on exceedance panel positioning. AIG use case identified. Demo shifted to May \u2014 comfortable timeline. M30 demo environment in progress."
       },
       {
         "deliverable_id": 12,
@@ -283,7 +1174,7 @@
         "progress_percent": 33,
         "milestones_completed": 1,
         "milestones_total": 3,
-        "narrative": "App Factory operational. Lucia team as first external customer. Chris ramping. Idris onboarded."
+        "narrative": "App Factory operational with MCP pivot. Lucia's team first external customer (M34 in progress). Chris ramping. Idris onboarded for TSR. Tableau sunsetting creating demand pressure (R#048)."
       },
       {
         "deliverable_id": 13,
@@ -292,7 +1183,7 @@
         "progress_percent": 66,
         "milestones_completed": 2,
         "milestones_total": 3,
-        "narrative": "Banking and Life sessions held. Agent day framework discovered - ready-made model for WS1."
+        "narrative": "Cross-OU meetings held with Banking and Life. Agent day framework discovered. Idrees building strategic alliance. Cross-OU showcase this week. M37 shared standards next \u2014 target week 7."
       }
     ]
   }

@@ -6,6 +6,7 @@ import { api } from "@/lib/api";
 import { RAG_CONFIG, type WeeklyPlanAction, type ProgrammeDeliverable } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { Sparkles, ChevronDown } from "lucide-react";
+import MarkdownContent from "@/components/MarkdownContent";
 
 const PROGRAMME_START = new Date(2026, 1, 23); // 23 Feb 2026 (month is 0-indexed)
 
@@ -202,7 +203,7 @@ export default function WeeklyPlansTab() {
         </div>
         {planDetail?.deliverable_progress_summary && (
           <div className="mt-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 p-4">
-            <p className="text-sm text-gray-600 dark:text-gray-300 whitespace-pre-wrap">{planDetail.deliverable_progress_summary}</p>
+            <MarkdownContent className="text-sm">{planDetail.deliverable_progress_summary}</MarkdownContent>
           </div>
         )}
       </div>
@@ -244,7 +245,7 @@ export default function WeeklyPlansTab() {
           {planDetail.programme_actions_summary && (
             <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 p-4">
               <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">Programme Summary</h3>
-              <p className="text-sm text-gray-400 whitespace-pre-wrap">{planDetail.programme_actions_summary}</p>
+              <MarkdownContent className="text-sm">{planDetail.programme_actions_summary}</MarkdownContent>
             </div>
           )}
         </>

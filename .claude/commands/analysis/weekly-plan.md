@@ -86,15 +86,52 @@ Each action needs: title, description, priority (HIGH/MEDIUM/LOW), category, and
 
 ## Step 6: Write to API
 
-Create the weekly plan atomically:
+Create the weekly plan atomically. **IMPORTANT**: Both summary fields must use structured markdown (rendered by the frontend). Follow these formats:
+
+### `deliverable_progress_summary` format:
+```markdown
+**Programme Week N** — one-line theme.
+
+### Key Developments
+- **Bold lead-in** for each major development (2-5 bullets)
+
+### Milestones Completed (if any this week)
+| Milestone | Deliverable | Significance |
+|-----------|-------------|-------------|
+| M##: Name | D## | What it means |
+
+### Emerging Risks (or Critical Risks / Deliverable Concerns)
+- **Risk name** — brief detail with risk ID if applicable
+```
+
+### `programme_actions_summary` format (retrospective weeks):
+```markdown
+### Week N Outcome Summary
+
+| # | Priority | Result |
+|---|----------|--------|
+| 1 | Action description | **ACHIEVED** / **UNRESOLVED** / **ESCALATED** — detail |
+```
+
+### `programme_actions_summary` format (forward-looking weeks):
+```markdown
+### Week N Priorities
+
+| # | Priority | Action | Origin |
+|---|----------|--------|--------|
+| 1 | **CRITICAL** | Action description | Carried from Week N / New |
+```
+
+Use headers (###), bold (**), bullet lists, and tables. Do NOT write dense paragraph blocks.
+
 ```
 POST /api/weekly-plans
 Body: {
   "week_number": N,
   "week_start_date": "YYYY-MM-DD",  (Monday)
   "week_end_date": "YYYY-MM-DD",    (Friday)
-  "deliverable_progress_summary": "Overall narrative...",
-  "programme_actions_summary": "Key focus areas for the week...",
+  "deliverable_progress_summary": "Structured markdown (see format above)...",
+  "programme_actions_summary": "Structured markdown (see format above)...",
   "actions": [
     {
       "category": "deliverable_strategic|deliverable_tactical|programme_strategic|programme_tactical",
