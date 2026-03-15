@@ -348,7 +348,7 @@ export default function ProjectWeeklyOverviewTab({
               >
                 Expand all
               </button>
-              <span className="text-sm text-gray-300">|</span>
+              <span className="text-sm text-gray-600 dark:text-gray-300">|</span>
               <button
                 onClick={collapseAll}
                 className="text-sm text-blue-600 hover:text-blue-800"
@@ -385,7 +385,7 @@ export default function ProjectWeeklyOverviewTab({
                 >
                   <div className="flex items-center gap-2">
                     {empty ? (
-                      <Minus className="h-4 w-4 flex-shrink-0 text-gray-300" />
+                      <Minus className="h-4 w-4 flex-shrink-0 text-gray-600 dark:text-gray-300" />
                     ) : isOpen ? (
                       <ChevronDown className="h-4 w-4 flex-shrink-0 text-gray-400" />
                     ) : (

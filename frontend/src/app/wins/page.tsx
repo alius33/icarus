@@ -418,7 +418,7 @@ export default function WinsPage() {
           onClick={() => setFilterCategory("all")}
           className={`px-3 py-1 text-sm font-medium rounded-full border transition-colors ${
             filterCategory === "all"
-              ? "bg-gray-900 text-white border-gray-900"
+              ? "bg-gray-900 text-gray-900 dark:text-white border-gray-900"
               : "bg-white text-gray-600 border-gray-300 hover:border-gray-400"
           }`}
         >
@@ -430,7 +430,7 @@ export default function WinsPage() {
             onClick={() => setFilterCategory(cat.value)}
             className={`px-3 py-1 text-sm font-medium rounded-full border transition-colors ${
               filterCategory === cat.value
-                ? "bg-gray-900 text-white border-gray-900"
+                ? "bg-gray-900 text-gray-900 dark:text-white border-gray-900"
                 : "bg-white text-gray-600 border-gray-300 hover:border-gray-400"
             }`}
           >

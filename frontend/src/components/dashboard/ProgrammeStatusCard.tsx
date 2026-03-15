@@ -17,7 +17,7 @@ export default function ProgrammeStatusCard({ status }: Props) {
           <div
             className={`h-10 w-10 rounded-full flex items-center justify-center ${healthRagColor(status.health_rag)}`}
           >
-            <Shield className="h-5 w-5 text-white" />
+            <Shield className="h-5 w-5 text-gray-900 dark:text-white" />
           </div>
           <span
             className={`text-[10px] font-semibold uppercase ${healthRagTextColor(status.health_rag)}`}

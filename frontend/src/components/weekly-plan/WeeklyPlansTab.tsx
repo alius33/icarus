@@ -40,10 +40,10 @@ function PillarProgressCard({ deliverables }: { deliverables: ProgrammeDeliverab
   const ragCfg = RAG_CONFIG[rag] || RAG_CONFIG.GREEN;
 
   return (
-    <div className="rounded-lg border border-gray-700 bg-gray-800 p-4">
+    <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4">
       <div className="flex items-center gap-2 mb-3">
         <span className={cn("h-2.5 w-2.5 rounded-full", ragCfg.dotColor)} />
-        <h3 className="text-sm font-semibold text-white truncate">{pillarName}</h3>
+        <h3 className="text-sm font-semibold text-gray-900 dark:text-white truncate">{pillarName}</h3>
         <span className={cn("ml-auto text-xs px-2 py-0.5 rounded-full", ragCfg.bgColor, ragCfg.color)}>
           {ragCfg.label}
         </span>
@@ -53,7 +53,7 @@ function PillarProgressCard({ deliverables }: { deliverables: ProgrammeDeliverab
           <span>{avgProgress}% complete</span>
           <span>{completedMilestones}/{totalMilestones} milestones</span>
         </div>
-        <div className="h-2 w-full rounded-full bg-gray-700">
+        <div className="h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700">
           <div
             className={cn("h-2 rounded-full transition-all", rag === "RED" ? "bg-red-500" : rag === "AMBER" ? "bg-amber-500" : "bg-green-500")}
             style={{ width: `${avgProgress}%` }}
@@ -69,20 +69,20 @@ function ActionRow({ action, onToggle }: { action: WeeklyPlanAction; onToggle: (
   const priorityColors: Record<string, string> = {
     HIGH: "text-red-400 bg-red-900/30",
     MEDIUM: "text-amber-400 bg-amber-900/30",
-    LOW: "text-gray-400 bg-gray-800",
+    LOW: "text-gray-400 bg-white dark:bg-gray-800",
   };
 
   return (
-    <div className={cn("flex items-start gap-3 rounded-md px-3 py-2 transition-colors hover:bg-gray-800/50", isDone && "opacity-50")}>
+    <div className={cn("flex items-start gap-3 rounded-md px-3 py-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800/50", isDone && "opacity-50")}>
       <input
         type="checkbox"
         checked={isDone}
         onChange={() => onToggle(action.id, isDone ? "PENDING" : "DONE")}
-        className="mt-1 h-4 w-4 rounded border-gray-600 bg-gray-700 text-blue-500 focus:ring-blue-500"
+        className="mt-1 h-4 w-4 rounded border-gray-300 dark:border-gray-600 bg-gray-200 dark:bg-gray-700 text-blue-500 focus:ring-blue-500"
       />
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 flex-wrap">
-          <span className={cn("text-sm text-gray-200", isDone && "line-through")}>{action.title}</span>
+          <span className={cn("text-sm text-gray-700 dark:text-gray-200", isDone && "line-through")}>{action.title}</span>
           {action.is_ai_generated && (
             <Sparkles className="h-3 w-3 text-purple-400 flex-shrink-0" />
           )}
@@ -169,7 +169,7 @@ export default function WeeklyPlansTab() {
           <select
             value={selectedWeekNum}
             onChange={(e) => setSelectedWeekNum(Number(e.target.value))}
-            className="appearance-none rounded-md border border-gray-600 bg-gray-800 px-3 py-1.5 pr-8 text-sm text-white focus:border-blue-500 focus:outline-none"
+            className="appearance-none rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-1.5 pr-8 text-sm text-gray-900 dark:text-white focus:border-blue-500 focus:outline-none"
           >
             {weekOptions.map((w) => {
               const { start, end } = getWeekDates(w);
@@ -186,7 +186,7 @@ export default function WeeklyPlansTab() {
           <ChevronDown className="pointer-events-none absolute right-2 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
         </div>
         {selectedWeekNum < currentWeek && (
-          <span className="text-xs text-gray-500 bg-gray-800 rounded px-2 py-1">
+          <span className="text-xs text-gray-500 bg-white dark:bg-gray-800 rounded px-2 py-1">
             Week {selectedWeekNum} · Completed
           </span>
         )}
@@ -194,33 +194,33 @@ export default function WeeklyPlansTab() {
 
       {/* Deliverable Progress */}
       <div>
-        <h2 className="text-lg font-semibold text-white mb-3">Deliverable Progress</h2>
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Deliverable Progress</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {[1, 2, 3].map(pillar => (
             <PillarProgressCard key={pillar} deliverables={pillarGroups[pillar] || []} />
           ))}
         </div>
         {planDetail?.deliverable_progress_summary && (
-          <div className="mt-3 rounded-lg border border-gray-700 bg-gray-800/50 p-4">
-            <p className="text-sm text-gray-300 whitespace-pre-wrap">{planDetail.deliverable_progress_summary}</p>
+          <div className="mt-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 p-4">
+            <p className="text-sm text-gray-600 dark:text-gray-300 whitespace-pre-wrap">{planDetail.deliverable_progress_summary}</p>
           </div>
         )}
       </div>
 
       {!planDetail ? (
         /* Empty state */
-        <div className="rounded-lg border border-dashed border-gray-600 bg-gray-800/30 p-8 text-center">
+        <div className="rounded-lg border border-dashed border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800/30 p-8 text-center">
           <p className="text-gray-400 mb-2">No plan generated for Week {selectedWeekNum} yet.</p>
           <p className="text-sm text-gray-500">
-            Run <code className="bg-gray-700 px-1.5 py-0.5 rounded text-gray-300">/weekly-plan</code> in Claude Code to generate.
+            Run <code className="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-gray-600 dark:text-gray-300">/weekly-plan</code> in Claude Code to generate.
           </p>
         </div>
       ) : (
         <>
           {/* Deliverable Actions */}
           <div>
-            <h2 className="text-lg font-semibold text-white mb-3">Deliverable Actions</h2>
-            <div className="rounded-lg border border-gray-700 bg-gray-800 divide-y divide-gray-700">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Deliverable Actions</h2>
+            <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
               <ActionGroup title="Strategic" actions={deliverableStrategic} onToggle={handleToggleAction} />
               <ActionGroup title="Tactical" actions={deliverableTactical} onToggle={handleToggleAction} />
               {!deliverableStrategic.length && !deliverableTactical.length && (
@@ -231,8 +231,8 @@ export default function WeeklyPlansTab() {
 
           {/* Programme Actions */}
           <div>
-            <h2 className="text-lg font-semibold text-white mb-3">Programme Actions</h2>
-            <div className="rounded-lg border border-gray-700 bg-gray-800 divide-y divide-gray-700">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Programme Actions</h2>
+            <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
               <ActionGroup title="Strategic" actions={programmeStrategic} onToggle={handleToggleAction} />
               <ActionGroup title="Tactical" actions={programmeTactical} onToggle={handleToggleAction} />
               {!programmeStrategic.length && !programmeTactical.length && (
@@ -242,8 +242,8 @@ export default function WeeklyPlansTab() {
           </div>
 
           {planDetail.programme_actions_summary && (
-            <div className="rounded-lg border border-gray-700 bg-gray-800/50 p-4">
-              <h3 className="text-sm font-medium text-gray-300 mb-2">Programme Summary</h3>
+            <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 p-4">
+              <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">Programme Summary</h3>
               <p className="text-sm text-gray-400 whitespace-pre-wrap">{planDetail.programme_actions_summary}</p>
             </div>
           )}

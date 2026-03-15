@@ -47,7 +47,7 @@ function Stars({ count, max = 5 }: { count: number; max?: number }) {
       {Array.from({ length: max }, (_, i) => (
         <svg
           key={i}
-          className={`w-3.5 h-3.5 ${i < count ? "text-amber-400" : "text-gray-200"}`}
+          className={`w-3.5 h-3.5 ${i < count ? "text-amber-400" : "text-gray-700 dark:text-gray-200"}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >

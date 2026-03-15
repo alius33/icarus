@@ -384,10 +384,10 @@ export default function UploadPage() {
         <select
           value={value ?? ""}
           onChange={(e) => onChange(e.target.value ? Number(e.target.value) : null)}
-          className={`text-sm border rounded-md px-2 py-1.5 bg-gray-900 text-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none flex-1 min-w-[180px] ${
+          className={`text-sm border rounded-md px-2 py-1.5 bg-gray-900 text-gray-700 dark:text-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none flex-1 min-w-[180px] ${
             required && !value
               ? "border-amber-500/50"
-              : "border-gray-600"
+              : "border-gray-300 dark:border-gray-600"
           }`}
         >
           <option value="">{required ? "Select project..." : "None"}</option>
@@ -457,9 +457,9 @@ export default function UploadPage() {
 
       {/* File list with project assignment + context */}
       {files.length > 0 && (
-        <div className="rounded-lg border border-gray-700 bg-gray-800 shadow-sm">
-          <div className="flex items-center justify-between border-b border-gray-700 px-4 py-3">
-            <h3 className="text-base font-semibold text-gray-100">
+        <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm">
+          <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 px-4 py-3">
+            <h3 className="text-base font-semibold text-gray-800 dark:text-gray-100">
               {files.length} file{files.length !== 1 ? "s" : ""} selected
             </h3>
             <button
@@ -469,7 +469,7 @@ export default function UploadPage() {
               Clear all
             </button>
           </div>
-          <ul className="divide-y divide-gray-700">
+          <ul className="divide-y divide-gray-200 dark:divide-gray-700">
             {files.map((file) => {
               const a = getAssignment(file.name);
               const isExpanded = contextExpanded[file.name] ?? false;
@@ -482,7 +482,7 @@ export default function UploadPage() {
                   <div className="flex items-center gap-3 mb-3">
                     <FileText className="h-4 w-4 flex-shrink-0 text-gray-400" />
                     <div className="min-w-0 flex-1">
-                      <span className="text-base text-gray-200 truncate block">
+                      <span className="text-base text-gray-700 dark:text-gray-200 truncate block">
                         {file.name}
                       </span>
                       <span className="text-sm text-gray-500">
@@ -542,7 +542,7 @@ export default function UploadPage() {
                     </button>
 
                     {isExpanded && (
-                      <div className="mt-2 space-y-3 pl-3 border-l-2 border-gray-700 ml-1">
+                      <div className="mt-2 space-y-3 pl-3 border-l-2 border-gray-200 dark:border-gray-700 ml-1">
                         {/* Notes textarea */}
                         <div>
                           <label className="text-sm text-gray-400 block mb-1">
@@ -553,7 +553,7 @@ export default function UploadPage() {
                             onChange={(e) => setNote(file.name, e.target.value)}
                             rows={3}
                             placeholder="Meeting agenda, key topics to watch, pre-read notes..."
-                            className="w-full rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-base text-gray-200 placeholder:text-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none resize-y"
+                            className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-gray-900 px-3 py-2 text-base text-gray-700 dark:text-gray-200 placeholder:text-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none resize-y"
                           />
                         </div>
 
@@ -591,7 +591,7 @@ export default function UploadPage() {
                                 input.click();
                               }}
                               disabled={atts.length >= MAX_ATTACHMENTS_PER_TRANSCRIPT}
-                              className="inline-flex items-center gap-1 rounded-md border border-gray-600 bg-gray-800 px-2.5 py-1.5 text-sm text-gray-300 hover:bg-gray-700 hover:text-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                              className="inline-flex items-center gap-1 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-2.5 py-1.5 text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                             >
                               <Paperclip className="h-3 w-3" />
                               Choose files
@@ -606,7 +606,7 @@ export default function UploadPage() {
                               {atts.map((att, attIdx) => (
                                 <li
                                   key={`${att.name}-${att.size}-${attIdx}`}
-                                  className="flex items-center gap-2 text-sm text-gray-300 bg-gray-800/50 rounded px-2 py-1.5"
+                                  className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-800/50 rounded px-2 py-1.5"
                                 >
                                   <FileText
                                     className={`h-3 w-3 flex-shrink-0 ${
@@ -639,7 +639,7 @@ export default function UploadPage() {
               );
             })}
           </ul>
-          <div className="border-t border-gray-700 px-4 py-3 flex items-center gap-3">
+          <div className="border-t border-gray-200 dark:border-gray-700 px-4 py-3 flex items-center gap-3">
             <button
               onClick={handleUpload}
               disabled={uploading || !allHavePrimary}

@@ -239,7 +239,7 @@ export default async function ResourcesPage() {
         </div>
       ) : (
         <div className="rounded-lg border border-gray-200 bg-white p-12 text-center shadow-sm">
-          <User className="mx-auto h-10 w-10 text-gray-300" />
+          <User className="mx-auto h-10 w-10 text-gray-600 dark:text-gray-300" />
           <p className="mt-3 text-gray-500">
             No resource allocations found.
           </p>

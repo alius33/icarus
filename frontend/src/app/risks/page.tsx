@@ -53,7 +53,7 @@ const SEVERITY_STYLES: Record<
     icon: <ShieldCheck className="h-4 w-4" />,
   },
   Unclassified: {
-    header: "bg-gray-400 text-white",
+    header: "bg-gray-400 text-gray-900 dark:text-white",
     border: "border-gray-300",
     icon: <HelpCircle className="h-4 w-4" />,
   },

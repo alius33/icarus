@@ -72,7 +72,7 @@ const typeStyles: Record<ToastType, string> = {
   error:
     "bg-red-600 text-white",
   info:
-    "bg-gray-800 text-white dark:bg-gray-200 dark:text-gray-900",
+    "bg-white dark:bg-gray-800 text-gray-900 dark:text-white dark:bg-gray-200 dark:text-gray-900",
 };
 
 function ToastContainer({

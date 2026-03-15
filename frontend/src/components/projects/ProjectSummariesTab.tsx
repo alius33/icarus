@@ -94,7 +94,7 @@ export default function ProjectSummariesTab({ timeline, project }: Props) {
   if (timeline.weeks.length === 0) {
     return (
       <div className="rounded-lg border border-gray-200 bg-white p-8 text-center">
-        <Calendar className="mx-auto h-8 w-8 text-gray-300 mb-2" />
+        <Calendar className="mx-auto h-8 w-8 text-gray-600 dark:text-gray-300 mb-2" />
         <p className="text-base text-gray-500">No summaries available for this project yet.</p>
       </div>
     );
@@ -113,7 +113,7 @@ export default function ProjectSummariesTab({ timeline, project }: Props) {
           <button onClick={expandAll} className="text-sm text-blue-600 hover:text-blue-800">
             Expand all
           </button>
-          <span className="text-sm text-gray-300">|</span>
+          <span className="text-sm text-gray-600 dark:text-gray-300">|</span>
           <button onClick={collapseAll} className="text-sm text-blue-600 hover:text-blue-800">
             Collapse all
           </button>
@@ -141,7 +141,7 @@ export default function ProjectSummariesTab({ timeline, project }: Props) {
             >
               <div className="flex items-center gap-2">
                 {empty ? (
-                  <Minus className="h-4 w-4 flex-shrink-0 text-gray-300" />
+                  <Minus className="h-4 w-4 flex-shrink-0 text-gray-600 dark:text-gray-300" />
                 ) : isOpen ? (
                   <ChevronDown className="h-4 w-4 flex-shrink-0 text-gray-400" />
                 ) : (

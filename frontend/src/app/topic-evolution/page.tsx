@@ -150,7 +150,7 @@ export default function TopicEvolutionPage() {
           </p>
         </div>
         <div className="text-center py-16">
-          <BarChart2 className="h-12 w-12 mx-auto text-gray-300 dark:text-gray-600 mb-4" />
+          <BarChart2 className="h-12 w-12 mx-auto text-gray-600 dark:text-gray-300 dark:text-gray-600 mb-4" />
           <p className="text-gray-500 dark:text-gray-400">
             No data yet. Run <code className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded text-base">/analyse-deep</code> to populate.
           </p>

@@ -138,7 +138,7 @@ export default async function DependenciesPage() {
       {/* Dependency Groups */}
       {total === 0 ? (
         <div className="text-center py-12 bg-white rounded-lg border border-gray-200 shadow-sm">
-          <GitBranch className="w-8 h-8 text-gray-300 mx-auto mb-3" />
+          <GitBranch className="w-8 h-8 text-gray-600 dark:text-gray-300 mx-auto mb-3" />
           <p className="text-base text-gray-500">
             No dependencies tracked yet.
           </p>

@@ -17,7 +17,7 @@ export default function WeeklyPlanTabBar({ activeTab }: Props) {
   const pathname = usePathname();
 
   return (
-    <div className="border-b border-gray-700">
+    <div className="border-b border-gray-200 dark:border-gray-700">
       <nav className="-mb-px flex gap-4">
         {TABS.map((tab) => (
           <Link

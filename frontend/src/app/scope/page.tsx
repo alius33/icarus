@@ -188,7 +188,7 @@ export default async function ScopeTrackerPage() {
       {/* Empty state */}
       {!error && items.length === 0 && (
         <div className="rounded-lg border border-gray-200 bg-white p-12 text-center">
-          <Target className="h-10 w-10 text-gray-300 mx-auto mb-3" />
+          <Target className="h-10 w-10 text-gray-600 dark:text-gray-300 mx-auto mb-3" />
           <p className="text-base text-gray-500">No scope items recorded yet.</p>
         </div>
       )}
