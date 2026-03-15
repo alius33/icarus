@@ -1231,3 +1231,126 @@ export interface AnalysisInsights {
   new_contradictions_this_week: number;
   top_rising_topic: string | null;
 }
+
+// ── Programme Deliverables & Weekly Plans ────────────────────────────────────
+
+export const MILESTONE_STATUSES = ["NOT_STARTED", "IN_PROGRESS", "COMPLETED", "BLOCKED"] as const;
+export type MilestoneStatus = typeof MILESTONE_STATUSES[number];
+
+export const MILESTONE_STATUS_CONFIG: Record<MilestoneStatus, { label: string; color: string; bgColor: string }> = {
+  NOT_STARTED: { label: "Not Started", color: "text-gray-500", bgColor: "bg-gray-100 dark:bg-gray-800" },
+  IN_PROGRESS: { label: "In Progress", color: "text-blue-600", bgColor: "bg-blue-100 dark:bg-blue-900/30" },
+  COMPLETED: { label: "Completed", color: "text-green-600", bgColor: "bg-green-100 dark:bg-green-900/30" },
+  BLOCKED: { label: "Blocked", color: "text-red-600", bgColor: "bg-red-100 dark:bg-red-900/30" },
+};
+
+export const PLAN_ACTION_STATUSES = ["PENDING", "IN_PROGRESS", "DONE", "SKIPPED"] as const;
+export type PlanActionStatus = typeof PLAN_ACTION_STATUSES[number];
+
+export const PLAN_ACTION_STATUS_CONFIG: Record<PlanActionStatus, { label: string; color: string; bgColor: string }> = {
+  PENDING: { label: "Pending", color: "text-gray-500", bgColor: "bg-gray-100 dark:bg-gray-800" },
+  IN_PROGRESS: { label: "In Progress", color: "text-blue-600", bgColor: "bg-blue-100 dark:bg-blue-900/30" },
+  DONE: { label: "Done", color: "text-green-600", bgColor: "bg-green-100 dark:bg-green-900/30" },
+  SKIPPED: { label: "Skipped", color: "text-gray-400", bgColor: "bg-gray-50 dark:bg-gray-900" },
+};
+
+export const ACTION_CATEGORIES = ["deliverable_strategic", "deliverable_tactical", "programme_strategic", "programme_tactical"] as const;
+export type ActionCategory = typeof ACTION_CATEGORIES[number];
+
+export const ACTION_CATEGORY_CONFIG: Record<ActionCategory, { label: string; section: string }> = {
+  deliverable_strategic: { label: "Strategic", section: "Deliverable Actions" },
+  deliverable_tactical: { label: "Tactical", section: "Deliverable Actions" },
+  programme_strategic: { label: "Strategic", section: "Programme Actions" },
+  programme_tactical: { label: "Tactical", section: "Programme Actions" },
+};
+
+export const RAG_CONFIG: Record<string, { label: string; color: string; bgColor: string; dotColor: string }> = {
+  GREEN: { label: "On Track", color: "text-green-600", bgColor: "bg-green-100 dark:bg-green-900/30", dotColor: "bg-green-500" },
+  AMBER: { label: "At Risk", color: "text-amber-600", bgColor: "bg-amber-100 dark:bg-amber-900/30", dotColor: "bg-amber-500" },
+  RED: { label: "Off Track", color: "text-red-600", bgColor: "bg-red-100 dark:bg-red-900/30", dotColor: "bg-red-500" },
+};
+
+export interface DeliverableMilestone {
+  id: number;
+  deliverable_id: number;
+  title: string;
+  description: string | null;
+  status: MilestoneStatus;
+  target_week: number | null;
+  completed_week: number | null;
+  evidence: string | null;
+  position: number;
+}
+
+export interface DeliverableProgressSnapshot {
+  id: number;
+  deliverable_id: number;
+  weekly_plan_id: number;
+  week_number: number;
+  rag_status: string;
+  progress_percent: number;
+  milestones_completed: number;
+  milestones_total: number;
+  narrative: string | null;
+}
+
+export interface ProgrammeDeliverable {
+  id: number;
+  pillar: number;
+  pillar_name: string;
+  title: string;
+  description: string | null;
+  position: number;
+  project_id: number | null;
+  rag_status: string;
+  progress_percent: number;
+  notes: string | null;
+  milestones: DeliverableMilestone[];
+  latest_snapshot?: DeliverableProgressSnapshot | null;
+}
+
+export interface DeliverableWithHistory extends ProgrammeDeliverable {
+  snapshots: DeliverableProgressSnapshot[];
+}
+
+export interface PillarSummary {
+  pillar: number;
+  pillar_name: string;
+  deliverables: ProgrammeDeliverable[];
+  aggregate_progress: number;
+  aggregate_rag: string;
+}
+
+export interface DeliverableOverview {
+  pillars: PillarSummary[];
+}
+
+export interface WeeklyPlanAction {
+  id: number;
+  weekly_plan_id: number;
+  category: ActionCategory;
+  title: string;
+  description: string | null;
+  priority: string;
+  owner: string | null;
+  status: PlanActionStatus;
+  deliverable_id: number | null;
+  position: number;
+  is_ai_generated: boolean;
+  carried_from_week: number | null;
+}
+
+export interface WeeklyPlan {
+  id: number;
+  week_number: number;
+  week_start_date: string;
+  week_end_date: string;
+  deliverable_progress_summary: string | null;
+  programme_actions_summary: string | null;
+  status: string;
+}
+
+export interface WeeklyPlanFull extends WeeklyPlan {
+  actions: WeeklyPlanAction[];
+  snapshots: DeliverableProgressSnapshot[];
+}

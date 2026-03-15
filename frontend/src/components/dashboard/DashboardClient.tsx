@@ -4,6 +4,7 @@ import { useEffect, Suspense } from "react";
 import { DashboardProvider, useDashboardDispatch } from "./DashboardContext";
 import { useDashboardData } from "./hooks/useDashboardData";
 import ProgrammePulse from "./ProgrammePulse";
+import DiyaDeliverablesSummary from "./DiyaDeliverablesSummary";
 import type { DashboardDataV2 } from "@/lib/types";
 
 interface Props {
@@ -32,6 +33,8 @@ function DashboardInner({ initialData }: Props) {
       </div>
 
       <ProgrammePulse projects={d.projects} />
+
+      <DiyaDeliverablesSummary />
     </div>
   );
 }

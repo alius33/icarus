@@ -82,6 +82,13 @@ import type {
   RiskEntrySchema,
   RiskHeatmapRow,
   ProjectSummarySchema,
+  ProgrammeDeliverable,
+  DeliverableWithHistory,
+  DeliverableOverview,
+  DeliverableMilestone,
+  WeeklyPlan,
+  WeeklyPlanFull,
+  WeeklyPlanAction,
 } from "./types";
 
 async function mutateApi<T>(
@@ -547,4 +554,38 @@ export const api = {
   // Transcript Context (for analysis)
   getTranscriptContext: (id: number) =>
     fetchApi<TranscriptContextData>(`/api/transcripts/${id}/context`),
+
+  // Programme Deliverables
+  getProgrammeDeliverables: () =>
+    fetchApi<ProgrammeDeliverable[]>("/api/programme-deliverables"),
+  getProgrammeDeliverable: (id: number) =>
+    fetchApi<DeliverableWithHistory>(`/api/programme-deliverables/${id}`),
+  getDeliverableOverview: () =>
+    fetchApi<DeliverableOverview>("/api/programme-deliverables/overview"),
+  updateDeliverable: (id: number, body: Record<string, unknown>) =>
+    mutateApi<ProgrammeDeliverable>(`/api/programme-deliverables/${id}`, "PATCH", body),
+  addMilestone: (deliverableId: number, body: Record<string, unknown>) =>
+    mutateApi<DeliverableMilestone>(`/api/programme-deliverables/${deliverableId}/milestones`, "POST", body),
+  updateMilestone: (id: number, body: Record<string, unknown>) =>
+    mutateApi<DeliverableMilestone>(`/api/programme-deliverables/milestones/${id}`, "PATCH", body),
+  deleteMilestone: (id: number) =>
+    mutateApi<{ ok: boolean }>(`/api/programme-deliverables/milestones/${id}`, "DELETE"),
+
+  // Weekly Plans
+  getWeeklyPlans: () =>
+    fetchApi<WeeklyPlan[]>("/api/weekly-plans"),
+  getWeeklyPlan: (id: number) =>
+    fetchApi<WeeklyPlanFull>(`/api/weekly-plans/${id}`),
+  getCurrentWeeklyPlan: () =>
+    fetchApi<WeeklyPlanFull | null>("/api/weekly-plans/current"),
+  createWeeklyPlan: (body: Record<string, unknown>) =>
+    mutateApi<WeeklyPlanFull>("/api/weekly-plans", "POST", body),
+  updateWeeklyPlan: (id: number, body: Record<string, unknown>) =>
+    mutateApi<WeeklyPlanFull>(`/api/weekly-plans/${id}`, "PATCH", body),
+  addPlanAction: (planId: number, body: Record<string, unknown>) =>
+    mutateApi<WeeklyPlanAction>(`/api/weekly-plans/${planId}/actions`, "POST", body),
+  updatePlanAction: (id: number, body: Record<string, unknown>) =>
+    mutateApi<WeeklyPlanAction>(`/api/weekly-plans/actions/${id}`, "PATCH", body),
+  deletePlanAction: (id: number) =>
+    mutateApi<{ ok: boolean }>(`/api/weekly-plans/actions/${id}`, "DELETE"),
 };

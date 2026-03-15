@@ -30,6 +30,7 @@ import {
   GitBranch,
   AlertTriangle,
   BarChart3,
+  Rocket,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -198,6 +199,11 @@ const navSections: NavSection[] = [
   {
     title: "Strategy",
     items: [
+      {
+        label: "Weekly Plan",
+        href: "/weekly-plan",
+        icon: <Rocket className="h-4 w-4" />,
+      },
       {
         label: "Programme Wins",
         href: "/wins",

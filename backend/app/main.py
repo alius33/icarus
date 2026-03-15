@@ -46,6 +46,7 @@ from app.routers import (
     meeting_scores,
     open_threads,
     outreach,
+    programme_deliverables,
     project_summaries,
     projects,
     resources,
@@ -59,6 +60,7 @@ from app.routers import (
     timeline,
     topic_signals,
     transcripts,
+    weekly_plans,
     weekly_reports,
     wins,
     workstreams,
@@ -115,6 +117,8 @@ app.include_router(meeting_scores.router, prefix="/api")
 app.include_router(risk_entries.router, prefix="/api")
 app.include_router(project_summaries.router, prefix="/api")
 app.include_router(transcript_extras.router, prefix="/api")
+app.include_router(programme_deliverables.router, prefix="/api")
+app.include_router(weekly_plans.router, prefix="/api")
 
 
 @app.get("/")

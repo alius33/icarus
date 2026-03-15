@@ -33,6 +33,10 @@ import type {
   MeetingScoreTrend,
   RiskEntrySchema,
   ProjectSummarySchema,
+  ProgrammeDeliverable,
+  DeliverableOverview,
+  WeeklyPlan,
+  WeeklyPlanFull,
 } from "./types";
 
 const defaultConfig: SWRConfiguration = {
@@ -318,6 +322,48 @@ export function useProjectSummaries(
   return useSWR<ProjectSummarySchema[]>(
     projectId ? ["project-summaries", projectId] : null,
     () => api.getProjectSummaries(projectId),
+    { ...defaultConfig, ...config },
+  );
+}
+
+// Programme Deliverables
+export function useProgrammeDeliverables(config?: SWRConfiguration) {
+  return useSWR<ProgrammeDeliverable[]>(
+    "programme-deliverables",
+    () => api.getProgrammeDeliverables(),
+    { ...defaultConfig, ...config },
+  );
+}
+
+export function useDeliverableOverview(config?: SWRConfiguration) {
+  return useSWR<DeliverableOverview>(
+    "deliverable-overview",
+    () => api.getDeliverableOverview(),
+    { ...defaultConfig, ...config },
+  );
+}
+
+// Weekly Plans
+export function useWeeklyPlans(config?: SWRConfiguration) {
+  return useSWR<WeeklyPlan[]>(
+    "weekly-plans",
+    () => api.getWeeklyPlans(),
+    { ...defaultConfig, ...config },
+  );
+}
+
+export function useWeeklyPlan(id: number | null, config?: SWRConfiguration) {
+  return useSWR<WeeklyPlanFull>(
+    id ? ["weekly-plan", id] : null,
+    () => api.getWeeklyPlan(id!),
+    { ...defaultConfig, ...config },
+  );
+}
+
+export function useCurrentWeeklyPlan(config?: SWRConfiguration) {
+  return useSWR<WeeklyPlanFull | null>(
+    "weekly-plan-current",
+    () => api.getCurrentWeeklyPlan(),
     { ...defaultConfig, ...config },
   );
 }
