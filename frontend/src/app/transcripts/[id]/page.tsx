@@ -82,14 +82,6 @@ export default async function TranscriptDetailPage({
     );
   }
 
-  let hasSummary = false;
-  try {
-    await api.getTranscriptSummary(transcriptId);
-    hasSummary = true;
-  } catch {
-    // No summary available
-  }
-
   return (
     <div className="space-y-6">
       <Link
@@ -116,9 +108,9 @@ export default async function TranscriptDetailPage({
             {transcript.word_count.toLocaleString()} words
           </span>
 
-          {hasSummary && (
+          {transcript.summary && (
             <Link
-              href={`/analysis/summaries/${transcriptId}`}
+              href={`/analysis/summaries/${transcript.summary.id}`}
               className="px-2 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-700 border border-blue-200 hover:bg-blue-200 transition-colors"
             >
               View Summary
