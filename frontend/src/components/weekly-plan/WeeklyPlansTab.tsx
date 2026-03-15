@@ -28,7 +28,7 @@ function getCurrentWeekNumber(): number {
   return Math.floor(diff / (7 * 24 * 60 * 60 * 1000)) + 1;
 }
 
-function PillarProgressCard({ pillar, deliverables }: { pillar: number; deliverables: ProgrammeDeliverable[] }) {
+function PillarProgressCard({ deliverables }: { deliverables: ProgrammeDeliverable[] }) {
   if (!deliverables.length) return null;
   const pillarName = deliverables[0].pillar_name;
   const avgProgress = Math.round(deliverables.reduce((sum, d) => sum + d.progress_percent, 0) / deliverables.length);
@@ -197,7 +197,7 @@ export default function WeeklyPlansTab() {
         <h2 className="text-lg font-semibold text-white mb-3">Deliverable Progress</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {[1, 2, 3].map(pillar => (
-            <PillarProgressCard key={pillar} pillar={pillar} deliverables={pillarGroups[pillar] || []} />
+            <PillarProgressCard key={pillar} deliverables={pillarGroups[pillar] || []} />
           ))}
         </div>
         {planDetail?.deliverable_progress_summary && (

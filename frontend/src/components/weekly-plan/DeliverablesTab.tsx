@@ -60,7 +60,7 @@ function MilestoneStatusIcon({ status }: { status: string }) {
   }
 }
 
-function MilestoneRow({ milestone, onUpdate }: { milestone: DeliverableMilestone; onUpdate: () => void }) {
+function MilestoneRow({ milestone }: { milestone: DeliverableMilestone }) {
   const cfg = MILESTONE_STATUS_CONFIG[milestone.status as keyof typeof MILESTONE_STATUS_CONFIG] || MILESTONE_STATUS_CONFIG.NOT_STARTED;
   return (
     <div className="flex items-start gap-3 py-2 px-3 rounded hover:bg-gray-800/50">
@@ -83,7 +83,7 @@ function MilestoneRow({ milestone, onUpdate }: { milestone: DeliverableMilestone
   );
 }
 
-function DeliverableRow({ deliverable, onUpdate }: { deliverable: ProgrammeDeliverable; onUpdate: () => void }) {
+function DeliverableRow({ deliverable }: { deliverable: ProgrammeDeliverable }) {
   const [expanded, setExpanded] = useState(false);
   const ragCfg = RAG_CONFIG[deliverable.rag_status] || RAG_CONFIG.GREEN;
   const totalMs = deliverable.milestones.length;
@@ -109,7 +109,7 @@ function DeliverableRow({ deliverable, onUpdate }: { deliverable: ProgrammeDeliv
       {expanded && deliverable.milestones.length > 0 && (
         <div className="pl-8 pr-4 pb-3 space-y-0.5">
           {deliverable.milestones.map((m) => (
-            <MilestoneRow key={m.id} milestone={m} onUpdate={onUpdate} />
+            <MilestoneRow key={m.id} milestone={m} />
           ))}
         </div>
       )}
@@ -117,7 +117,7 @@ function DeliverableRow({ deliverable, onUpdate }: { deliverable: ProgrammeDeliv
   );
 }
 
-function PillarSection({ pillarNum, deliverables, onUpdate }: { pillarNum: number; deliverables: ProgrammeDeliverable[]; onUpdate: () => void }) {
+function PillarSection({ deliverables }: { deliverables: ProgrammeDeliverable[] }) {
   const [collapsed, setCollapsed] = useState(false);
   if (!deliverables.length) return null;
 
@@ -151,7 +151,7 @@ function PillarSection({ pillarNum, deliverables, onUpdate }: { pillarNum: numbe
       {!collapsed && (
         <div>
           {deliverables.map((d) => (
-            <DeliverableRow key={d.id} deliverable={d} onUpdate={onUpdate} />
+            <DeliverableRow key={d.id} deliverable={d} />
           ))}
         </div>
       )}
@@ -160,7 +160,7 @@ function PillarSection({ pillarNum, deliverables, onUpdate }: { pillarNum: numbe
 }
 
 export default function DeliverablesTab() {
-  const { data: deliverables, mutate } = useProgrammeDeliverables();
+  const { data: deliverables } = useProgrammeDeliverables();
 
   if (!deliverables) {
     return <div className="text-gray-400">Loading deliverables...</div>;
@@ -178,9 +178,7 @@ export default function DeliverablesTab() {
         {[1, 2, 3].map(pillar => (
           <PillarSection
             key={pillar}
-            pillarNum={pillar}
             deliverables={pillarGroups[pillar] || []}
-            onUpdate={() => mutate()}
           />
         ))}
       </div>
