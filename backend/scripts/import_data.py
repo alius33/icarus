@@ -2047,18 +2047,23 @@ async def seed_weekly_plans(session: AsyncSession, verbose: bool) -> dict:
         existing_plan = existing.scalar_one_or_none()
         if existing_plan:
             # Update summary fields if they differ (allows reformatting)
-            updated = False
-            for field in ("deliverable_progress_summary", "programme_actions_summary", "status"):
-                new_val = plan_data.get(field)
-                if new_val and getattr(existing_plan, field) != new_val:
-                    setattr(existing_plan, field, new_val)
-                    updated = True
-            if updated:
-                await session.commit()
-                _log(f"Weekly plan for week {week_num} updated (summary fields).", verbose)
-                stats["updated"] += 1
-            else:
-                _log(f"Weekly plan for week {week_num} already exists, skipping.", verbose)
+            try:
+                updated = False
+                for field in ("deliverable_progress_summary", "programme_actions_summary", "status"):
+                    new_val = plan_data.get(field)
+                    if new_val and getattr(existing_plan, field, None) != new_val:
+                        setattr(existing_plan, field, new_val)
+                        updated = True
+                if updated:
+                    await session.commit()
+                    _log(f"Weekly plan for week {week_num} updated (summary fields).", verbose)
+                    stats["updated"] += 1
+                else:
+                    _log(f"Weekly plan for week {week_num} already exists, skipping.", verbose)
+                    stats["skipped"] += 1
+            except Exception as e:
+                await session.rollback()
+                _log(f"Error updating weekly plan for week {week_num}: {e}", verbose)
                 stats["skipped"] += 1
             continue
 
