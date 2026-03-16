@@ -27,7 +27,7 @@ Key developments from March transcripts:
 | Developer | Martin Davies | 12-week assignment. Building the customer-facing pre-sales tool. Previously built Apollo dashboards using IRP APIs. Nearly full-time on this ("canopies isn't too busy anyway, so pretty much my whole time will be on this"). |
 | Vision / Concept | Richard Dosoo | Originated the concept on 6 Jan. Provides strategic direction and manages stakeholder expectations (especially Ben). |
 | Programme | Azmain | Provided Martin with context documents. Defined MVP scope with Martin on 3 Mar. Managing programme-level coordination. |
-| Stakeholder / Champion | Ben Brooks | Wants to use Build in Five for his innovation panel at the exceedance event. Driving the demo requirements. Has additional demo scenarios beyond the dashboard use case. |
+| Stakeholder / Champion | Ben Brookes | Wants to use Build in Five for his innovation panel at the exceedance event. Driving the demo requirements. Has additional demo scenarios beyond the dashboard use case. |
 | App Factory / Infrastructure | BenVH (Ben Van Houten) | Responsible for the deployment pipeline that Build in Five apps would flow through. Also building app factory input funnel. Nicole helping with 50% of her time. |
 | Supporting | Nicole | 50% time allocated to help BenVH with app factory. Also onboarding to help with CLARA. |
 
@@ -152,7 +152,7 @@ Future aspiration: skip the local build step entirely -- go straight from idea t
 |------------|-------|--------|------------------------|
 | App factory deployment pipeline | BenVH | Under-resourced; BenVH split across multiple demands | Blocks transition from local prototype to deployed app |
 | IRP API access for demo | Martin / product team | Martin has prior experience from Apollo; API access appears available | Foundation layer depends on working API connections |
-| Exceedance event requirements from Ben | Ben Brooks | Pending -- Martin to send summary for Ben's feedback | Determines whether exceedance demo is in scope or deferred |
+| Exceedance event requirements from Ben | Ben Brookes | Pending -- Martin to send summary for Ben's feedback | Determines whether exceedance demo is in scope or deferred |
 | Nicole 50% time on app factory | Nicole / Richard | Agreed 3 Mar | Helps unblock BenVH but competes with CLARA support work |
 | Nikhil supporting BenVH on app factory | Nikhil | Referenced by Richard on 4 Mar | Additional capacity for infrastructure work |
 

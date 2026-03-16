@@ -37,26 +37,28 @@ The name "CLARA" was crowd-sourced from the CSM team during the January 2026 rol
 
 | Role | Person | Notes |
 |------|--------|-------|
-| Product Owner / Visionary | Ben Brooks | Built v1 over Christmas 2025. Drives speed and adoption. "Kill CSMs with kindness." |
+| Product Owner / Visionary | Ben Brookes | Built v1 over Christmas 2025. Drives speed and adoption. "Kill CSMs with kindness." |
 | Programme / Operational Owner | Richard Dosoo | Technical bridge. Manages stakeholders up/across/down. Carries deployment knowledge. Handles solution blueprint integration and Rhett's adoption charter Excel work. |
 | Programme Manager & Lead Developer | Azmain | 100% consumed by CLARA since Jan. Learning Git/CI/CD on the job. Single point of failure for features. |
 | Infrastructure Engineer | BenVH (Van Houten) | AWS deployment, CI/CD pipeline, security, app factory. Single point of failure for infrastructure. Created patented CICD orchestration tool. Building automated prod-to-staging sync. |
 | Developer (Bug Fixes & Feedback) | Chris M | Onboarded early March 2026. Working through consolidated feedback list. Getting familiar with codebase via bug fixes. |
 | Developer (50% time) | Nikhil | New tech consulting lead (replaced Alex). Split between CLARA and app factory. Reports to Richard. |
 | Developer (Build in Five) | Martin Davies | 12-week assignment. Primarily on WS6 but part of wider CLARA standup team. |
-| CS Lead / Azmain's Manager | Natalia Plant | Runs weekly Portfolio Reviews using CLARA. Defined priority account framework (31 scorecard migrations). Owns Gainsight relationship. |
+| Azmain's Manager (until 31 March) | Natalia Orzechowska | Senior Director. Runs weekly Portfolio Reviews using CLARA. Defined priority account framework (31 scorecard migrations). Owns Gainsight relationship. Engaged on charter (14 Mar). Diana Kazakova-Ivanova takes over 1 April. |
+| Gainsight Governance / CLARA Release Lead | Natalia Plant | Established fortnightly CLARA release cadence (12 Mar). Tuesday governance reviews. DIFFERENT person from Natalia Orzechowska. |
 | Executive Sponsor | Diya Sawhny | Engaged properly since 23 Feb governance session. Regularly checks scorecard numbers. Impatient with detail. |
 | President, Moody's Analytics | Andy Frappe | Saw CLARA demo Feb 20. Wants centralised migration reporting in Power BI. |
 | CSM Leadership (Gatekeeper) | Josh Ellingson | Conservative on release timing. Key concern: data interpretation accuracy reaching Andy Frappe. Coming around. |
 | CSM Leadership (Workshop Lead) | George Dyke | Organised Feb workshops. Building separate account planner. Pragmatic. |
 | Data & Reporting | Stacy Dixtra | Defines reporting requirements. Writing insurance migration BRD. Reviewing analytics tab. Testing reports. Prefers Excel exports. |
-| Data Alignment | Catherine | Sense-checking complex accounts (reinsurer, primary, broker, global entity). Working with Gainsight team. Key contact for enterprise tools integration. |
+| Data Alignment / COE Lead | Kathryn Palkovics (referred to as "Catherine" in earlier audio transcripts) | Sense-checking complex accounts (reinsurer, primary, broker, global entity). Working with Gainsight team. Key contact for enterprise tools integration. COE lead — digital engagement, enablement, Gainsight/SFDC. 14 Mar: Asserted COE authority on Gainsight integration charter, requested to join project team. |
 | User Voice Integration | Peter Kimes | Detailed requirements captured 26 Feb for integrating User Voice data into CLARA. |
 | HD Models Analysis | Courtney | Analysed 2000-3000 HD support cases. Exploring how to surface adoption barrier themes in CLARA. |
 | Adoption Charter Process | Steve Gentilli | Owns adoption charter workflow. Being folded into CLARA (WS4). Solution fit matrix may be separate app. |
 | Solution Architecture Feedback | Liz Couchman | Provides tracker feedback on specific accounts and usability. |
 | Rhett | Adoption Charter (Excel route) | Built Excel-based adoption charter tool independently. Not coordinated with agreed Word-to-app approach. Richard integrating his work. |
-| Rotating Graduates (x2) | TBD (arriving April 7) | One in New York, one in London. Will take over bug fix backlog. |
+| Rotating Graduate (London) | Alvin | Arriving Q2 2026 (April 7 target). Interviewed and chosen by Azmain specifically for AI/CLARA work. |
+| Rotating Graduate (New York) | Sam | Arriving Q2 2026 (April 7 target). Interviewed and chosen by Azmain specifically for AI/CLARA work. Different person from Samuel Gibson. |
 
 ---
 
@@ -64,7 +66,7 @@ The name "CLARA" was crowd-sourced from the CSM team during the January 2026 rol
 
 | Date | Milestone | Significance |
 |------|-----------|-------------|
-| Christmas 2025 | Ben Brooks builds v1 locally | SQLite database, built in Cursor over holiday evenings. Dashboard, use cases, blockers, action plans, data quality views. Proof of concept. |
+| Christmas 2025 | Ben Brookes builds v1 locally | SQLite database, built in Cursor over holiday evenings. Dashboard, use cases, blockers, action plans, data quality views. Proof of concept. |
 | Dec 2025 | Steerco establishes programme | Richard presents five (later six) workstreams. Training elevated to own workstream. |
 | 6 Jan 2026 | Ben demos tracker to Azmain and Richard | First internal showing. Key concepts established: migration vs adoption, migration-critical workflows, RAG status. Richard recognises potential to break golden source into proper data model. |
 | 6 Jan 2026 | Richard frames programme for Azmain | Six projects laid out. CLARA positioned as career growth vehicle for Azmain. North Star: full customer journey system. |
@@ -251,7 +253,7 @@ The name "CLARA" was crowd-sourced from the CSM team during the January 2026 rol
 - Any misinterpreted data point at this level could damage programme credibility permanently
 - One level below the board. Highest-stakes audience.
 
-**Ben Brooks (Product Owner)**
+**Ben Brookes (Product Owner)**
 - Built v1 and is emotionally invested in CLARA's success
 - Pushes speed over caution. Runs 5am training sessions for CSMs.
 - Strategy: shopping CLARA around internally (e.g., Life MD) to create independent demand
@@ -277,7 +279,7 @@ The name "CLARA" was crowd-sourced from the CSM team during the January 2026 rol
 - Prefers Excel exports because "too much is changing"
 - Currently reviewing analytics tab, testing reports section, and refining scorecard requirements
 
-**Catherine (Data Alignment)**
+**Kathryn Palkovics (Data Alignment / COE Lead, referred to as "Catherine" in earlier transcripts)**
 - Sense-checking complex accounts against Clara data
 - Key contact for Gainsight team integration
 - Can help with enterprise tools governance and reducing duplication

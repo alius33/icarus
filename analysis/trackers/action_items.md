@@ -1046,3 +1046,13 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 682 | 13 Mar | Set up feedback submission channel/process for product & tech teams | Azmain | This week | 2026-03-13_-_CLARA_Demo_to_Product_and_Tech_teams |  |
 | 683 | 13 Mar | HD model adoption data deep-dive at Monday programme review | Natalia/Ben | Monday 17 Mar | 2026-03-13_-_CLARA_Demo_to_Product_and_Tech_teams |  |
 | 684 | 13 Mar | Rewrite blocker descriptions with better structure for thematic analysis | CSMs/Natalia | Ongoing | 2026-03-13_-_CLARA_Demo_to_Product_and_Tech_teams |  |
+| 685 | 16 Mar | Organize Build in Five stakeholder share-out (MPS, Sales, Product) — similar to App Factory approach | Azmain | Next week | project-update: adding sam gibson |  |
+| 686 | 16 Mar | Connect Samuel Gibson and Mike Bibo with Martin's Build in Five work | Richard | Next week | project-update: adding sam gibson |  |
+| 687 | 16 Mar | Review and comment on CLARA-Gainsight Integration Charter V1 | All team | This week | project-update: gainsight integration |  |
+| 688 | 16 Mar | Establish RACI for Gainsight integration immediately | Richard | This week | project-update: gainsight integration |  |
+| 689 | 16 Mar | Schedule Phase 0 structured review of CLARA features with Gainsight team present | Richard | This week | project-update: gainsight integration |  |
+| 690 | 16 Mar | Follow up with Natalia Orzechowska on Gainsight charter (Monday) | Richard | Monday 17 Mar | project-update: gainsight integration |  |
+| 691 | 16 Mar | Arrange Gainsight demo for the Clara team | Kathryn Palkovics | TBD | project-update: gainsight integration |  |
+| 692 | 16 Mar | Clarify with Emma Jaggs that Azmain's 2 grads (Alvin, Sam) are separate from Nikhil's Elliot replacement | Richard / Azmain | Immediate | project-update: grads rotation |  |
+| 693 | 16 Mar | Confirm which AI programme project Elliot was brought into | Azmain | TBD | project-update: grads rotation |  |
+| 694 | 16 Mar | Update Idrees Deen on Gainsight integration progress | Richard | This afternoon (Fri 14 Mar) | project-update: gainsight integration |  |

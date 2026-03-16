@@ -1,6 +1,6 @@
 # Open Threads & Unresolved Questions
 
-Last updated: 2026-03-12 (all transcripts through 12 March processed)
+Last updated: 2026-03-16 (project updates through 16 March processed)
 
 Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially addressed, needs follow-up), or **CLOSED** (resolved — move to bottom with resolution date).
 
@@ -8,12 +8,13 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 
 ## OPEN
 
-### 1. Gainsight Integration Timeline — MEETING HELD, CHARTER PHASE
+### 1. Gainsight Integration Timeline — CHARTER V1 CREATED, UNDER REVIEW
 - **First raised:** 12 Jan
-- **Updated:** 12 Mar — Meeting held between Clara team and Gainsight Business Systems team (Tina Palumbo, Rajesh, Nadeem). Bi-directional integration proposed by Gainsight team. Ben Brooks demanded formal charter before any development. Team privately agreed strategy: demanding requirements to slow integration. Natalia Orzechowska confirmed no POC before end of March; earliest May. Gainsight team focused on March 30 onboarding deadline for RMS/Cape/Predicate.
-- **Context:** Catherine organised the meeting without consulting Clara team — described as a "blindside" by the entire team. Prep materials sent to Catherine were not shared.
-- **Question:** Will the charter approach successfully control integration pace? Will Catherine's gatekeeping role persist or be addressed?
-- **Why it matters:** Gainsight integration is outside the 12-week Diya plan but the expectation is now set. Scope creep risk if not managed.
+- **Updated:** 16 Mar (from project update) — Azmain created CLARA-Gainsight Integration Charter V1 and shared with the team (14 Mar). Ben Brookes added business SLAs: cannot slow migration, cannot split CSMs between two systems, cannot block adoption squads. Natalia Orzechowska asked about consulting CSMs on business requirements. Idrees Deen offered cross-OU help. Richard demanded Phase 0 structured review of CLARA features with Gainsight team present, plus immediate RACI. Kathryn Palkovics (Catherine) asserted COE authority — asked to be added to project team, offered Gainsight demo.
+- **Previous:** 12 Mar — Meeting held with Gainsight Business Systems team (Tina Palumbo, Rajesh, Nadeem). Bi-directional integration proposed. Natalia Orzechowska confirmed no POC before end of March; earliest May.
+- **Context:** Kathryn organised the original meeting without consulting Clara team — described as a "blindside." Now asserting COE authority on the charter itself.
+- **Question:** Will the charter process give the team enough control? Will Kathryn's COE role be contained or will she end up owning the integration?
+- **Why it matters:** Gainsight integration is outside the 12-week Diya plan. The charter is now the battleground for who controls the process.
 
 ### 2. Sales Recon Pilot Results
 - **First raised:** 11 Feb
@@ -23,7 +24,7 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 
 ### 3. AWS Bedrock / Claude Code Rollout
 - **First raised:** 9 Jan (licences), secured in principle 9 Feb
-- **Updated:** 3 Mar — Bedrock API key now working. Security audit caught personal Claude account usage for Moody's work; Ben Brooks providing cover. Azmain admitted "no proprietary information" defence is "wildly a lie."
+- **Updated:** 3 Mar — Bedrock API key now working. Security audit caught personal Claude account usage for Moody's work; Ben Brookes providing cover. Azmain admitted "no proprietary information" defence is "wildly a lie."
 - **Context:** Access approved via AWS. Bedrock API key functional as of March.
 - **Question:** Is all development now on Bedrock/corporate accounts? Has the personal account usage been resolved?
 - **Why it matters:** Personal account usage is a compliance risk. Bedrock integration should resolve this but transition needs confirming.
@@ -68,7 +69,7 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 
 ### 10. Build in Five Scope — MAJOR PROGRESS
 - **First raised:** 5 Feb (Martin and Azmain both unclear), demo target shifted
-- **Updated:** 10 Mar — Martin's dashboard builder dramatically exceeded expectations. Full drag-drop UI, white-labelling, live Risk Modeller API connection, AI assistant mode, theming/dark mode. Richard compared it to Databricks Genie. Ben Brooks saw it and was positive. Critical next step: wire up Navigator MCP server for live API definitions. Stakeholder cascade defined. Exceedance panel format being planned.
+- **Updated:** 10 Mar — Martin's dashboard builder dramatically exceeded expectations. Full drag-drop UI, white-labelling, live Risk Modeller API connection, AI assistant mode, theming/dark mode. Richard compared it to Databricks Genie. Ben Brookes saw it and was positive. Critical next step: wire up Navigator MCP server for live API definitions. Stakeholder cascade defined. Exceedance panel format being planned.
 - **Context:** The "cheating" approach (reverse-engineering Apollo) worked brilliantly. Martin has built something that could be a product feature, not just a demo.
 - **Question:** Can MCP server integration happen in the next two weeks? Will product team want to absorb this? How does Ben frame this at exceedance — product capability or customer self-service?
 - **Why it matters:** Build in Five has gone from "unclear scope" to "potentially the programme's most impactful deliverable for adoption blockers." The product positioning question (Moody's experience vs customer self-service) is strategically important.
@@ -111,14 +112,14 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 
 ### 17. BenVH / Nikhil Conflict — CRISIS LEVEL
 - **First raised:** 6 Mar
-- **Updated:** 12 Mar — BenVH still stopped responding to Nikhil. Making progress on MCP server using Bedrock AI agents. Channelling anger productively. Richard planning confrontation and Ben Brooks escalation this week.
+- **Updated:** 12 Mar — BenVH still stopped responding to Nikhil. Making progress on MCP server using Bedrock AI agents. Channelling anger productively. Richard planning confrontation and Ben Brookes escalation this week.
 - **Context:** BenVH feels Nikhil is taking credit for his App Factory work, renaming it, and presenting his architecture as his own. BenVH's recent absence was not illness but being worn down. This is a serious morale/retention risk.
-- **Question:** Has Richard confronted Nikhil yet? Has Ben Brooks been briefed?
+- **Question:** Has Richard confronted Nikhil yet? Has Ben Brookes been briefed?
 - **Why it matters:** BenVH is the only person who can deploy. Losing him would be catastrophic for infrastructure.
 
 ### 18. Security Audit / Personal Claude Usage
 - **First raised:** 6 Mar
-- **Context:** Security audit caught personal Claude account usage for Moody's work. Ben Brooks providing cover. Azmain admitted the "no proprietary information" defence is false. Team spending 200 GBP/month personal money for Claude that they cannot expense.
+- **Context:** Security audit caught personal Claude account usage for Moody's work. Ben Brookes providing cover. Azmain admitted the "no proprietary information" defence is false. Team spending 200 GBP/month personal money for Claude that they cannot expense.
 - **Question:** Has Bedrock fully replaced personal accounts? Is there ongoing compliance risk?
 - **Why it matters:** Data governance violation. If escalated, could damage programme credibility or result in disciplinary action.
 
@@ -152,16 +153,18 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 - **Question:** Can cost tags be fixed this week? Who approves the Bedrock budget? Is there a per-project allocation model?
 - **Why it matters:** The Bedrock migration was supposed to solve the personal-account compliance problem, but it introduced a new problem: invisible cost scaling with zero accountability.
 
-### 24. Catherine COE Political Threat to AI Programme
+### 24. Kathryn Palkovics (Catherine) COE Political Threat to AI Programme — ESCALATING
 - **First raised:** 12 Mar (Diana 1-1 and Post Gainsight debrief)
-- **Context:** Catherine's Centre of Excellence mandate (digital engagement, enablement, Gainsight/SFDC retirement) overlaps directly with the AI programme. She organised the Gainsight integration meeting without consulting the Clara team. Ben Brooks, Richard, Azmain, and BenVH unanimously view her as a threat. Diana revealed Catherine's objectives were approved by Natalia Orzechowska and signed off by Diya. Diana suspects Josh Ellingson may be Catherine's senior backer.
-- **Question:** Can the "AI enablement ≠ digital enablement" framing hold politically? Will Natalia Orzechowska adjust Catherine's scope? Will Richard's direct approach with Diya work?
-- **Why it matters:** If Catherine's COE absorbs the AI programme, Azmain stated he will leave. The entire programme's delivery capability depends on keeping the current team intact and autonomous.
+- **Updated:** 16 Mar (from project update) — Kathryn now asserting COE authority directly on the Gainsight integration charter. Requested to be added to the project team, claiming COE "typically handles business reqs for the CSMs when we are scoping." Pushed back on Richard's frustration, framing the prior meeting as "just exploring" and a "POC which we do not need to do." Offered Gainsight demo. Her positioning is strategic: embedding herself in the charter process gives her legitimate authority over the integration.
+- **Context:** Kathryn's COE mandate (digital engagement, enablement, Gainsight/SFDC retirement) overlaps directly with the AI programme. Diana revealed her objectives were approved by Natalia Orzechowska and signed off by Diya. Diana suspects Josh Ellingson may be Kathryn's senior backer.
+- **Question:** Can the team keep Kathryn in an advisory role rather than an ownership role? Her request to join the project team is a concrete step toward control.
+- **Why it matters:** If Kathryn's COE absorbs the AI programme, Azmain stated he will leave. The charter process is becoming the mechanism through which this could happen.
+- **Note:** "Catherine" in earlier audio transcripts = "Kathryn Palkovics" per Teams chat (confirmed 14 Mar).
 
 ### 25. CLARA Governance and Release Cadence
 - **First raised:** 12 Mar (Clara feedback cadence meeting)
-- **Context:** Natalia Plant established fortnightly release cycle with Tuesday governance reviews. Chris handling feedback systematically. Two grads arriving April 7 for dedicated maintenance. Ben Brooks restricted to sandbox.
-- **Question:** Will Ben Brooks respect the sandbox restriction? Can governance hold when ISLT is using Clara live from Monday?
+- **Context:** Natalia Plant established fortnightly release cycle with Tuesday governance reviews. Chris handling feedback systematically. Two grads arriving April 7 for dedicated maintenance. Ben Brookes restricted to sandbox.
+- **Question:** Will Ben Brookes respect the sandbox restriction? Can governance hold when ISLT is using Clara live from Monday?
 - **Why it matters:** CLARA's transition from build mode to maintenance mode is critical for programme credibility. Uncontrolled changes risk data corruption ahead of senior leadership usage.
 
 ### 26. Adoption Runbook Collaboration (Rhett + PMs)
@@ -188,6 +191,18 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 - **Question:** Will the insurance team adopt Banking's agent day model? Who will coordinate the cross-OU skills sharing? Can the quarterly cadence be maintained?
 - **Why it matters:** WS1 (Training & Enablement) has been stalled since January. Banking has a proven framework that could be adopted. If skills sharing works cross-OU, it multiplies the value of every agent built.
 
+### 30. Graduate Rotation Resource Conflict (Azmain vs Nikhil)
+- **First raised:** 16 Mar (from project updates)
+- **Context:** Azmain requested and interviewed 2 graduates (Alvin, London; Sam, New York) specifically for AI/CLARA work. Nikhil Koli separately asked Emma Jaggs (grad manager) for a replacement for Elliot (former team member who joined the AI programme). Emma merged the two requests and told them only 2 grads available. Richard clarified to Emma that the requests are separate: Azmain's 2 for CLARA + Nikhil's 1 Elliot replacement = 3 total needed.
+- **Question:** Will Emma actually allocate 3 grads (2 for Azmain + 1 for Nikhil)? Or is budget/availability truly capped at 2? Which project did Elliot join?
+- **Why it matters:** If Nikhil takes one of Azmain's grads, CLARA maintenance mode is undermined. This is another front in the Nikhil friction pattern — after credit-taking (BenVH conflict) and boundary violations, now resource encroachment.
+
+### 31. Build in Five Stakeholder Cascade
+- **First raised:** 16 Mar (from project update)
+- **Context:** Richard wants to organize a Build in Five share-out similar to the App Factory approach. Key stakeholder groups: MPS, Sales, Product. Samuel Gibson added to group chat — keen on MCP server for customer demos, says "Mike B sees the DataLake as the future." Richard asked Azmain to connect Samuel and Mike Bibo with Martin's work and schedule a brief call once Martin is ready.
+- **Question:** When is Martin ready for the share-out? How does this relate to the exceedance event demo?
+- **Why it matters:** Build in Five is transitioning from internal development to external stakeholder engagement. This is the programme starting to commercialise the work.
+
 ---
 
 ## WATCHING
@@ -200,7 +215,7 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 ### Scorecard Data Accuracy
 - **First raised:** 5 Feb
 - **Context:** The 30-31 migration target for 2026. Are switch-off dates populated? Is the data good enough to track against the scorecard?
-- **Status:** Catherine doing sense-check on complex accounts. Unclear if complete.
+- **Status:** Kathryn Palkovics doing sense-check on complex accounts. Unclear if complete.
 
 ---
 
