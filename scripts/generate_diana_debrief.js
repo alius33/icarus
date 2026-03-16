@@ -369,7 +369,7 @@ const projects = [
     ],
     overviewRag: "GREEN",
     priorities: [
-      "Diana presenting Friday vision to Ben Brooks and Charlotte for formal approval",
+      "Diana presenting Friday vision to Ben Brookes and Charlotte for formal approval",
       "Deploy to dev (BenVH) without auth for a four-week pilot",
       "Seed with Diana's Excel file as initial data",
       "Prashant allocated to help with development",
@@ -479,7 +479,7 @@ const projects = [
     status: "MATURING",
     overview: [
       "Diya endorsed three-pillar structure: IRP governance, customer intelligence, platform enablement",
-      "Catherine emerged as a governance ally — volunteered for App Factory intake decision tree",
+      "Kathryn Palkovics emerged as a governance ally — volunteered for App Factory intake decision tree",
       "Formal Gainsight integration meeting set up with Tina Palumbo, Nadim, Rajesh",
       "56 decisions logged, 44 risks tracked — meeting intelligence tracked systematically",
     ],
@@ -502,7 +502,7 @@ const projects = [
     title: "TSR Enhancements", subtitle: "Cat Bond TSR Automation (Idris Abram)",
     status: "IN_PROGRESS",
     overview: [
-      "Idris Abram formally onboarded with Ben Brooks's approval for dedicated time",
+      "Idris Abram formally onboarded with Ben Brookes's approval for dedicated time",
       "Focus: automating TSR processes for cat bonds — first project outside core insurance CS team",
       "First test of the programme's enablement model: take someone from another team, provide tooling, produce output",
       "Idris has strong domain knowledge of cat bonds and TSRs",
@@ -580,7 +580,7 @@ addNavyHeader(sPeople, "Key Stakeholders");
 const people = [
   { name: "Richard Dosoo", role: "Programme / Operational Owner", note: "Strategic bridge between vision and execution. Manages Diya relationship. Stable. Key strategic bridge between vision and execution." },
   { name: "Azmain Hossain", role: "PM & CLARA Developer", note: "Builds everything. Reports to Diana. Stretched across CLARA, Friday, and 5 other workstreams." },
-  { name: "Ben Brooks", role: "Product Owner (de facto)", note: "Built CLARA v1. Pushes for speed. Shopping CLARA cross-OU. Exceedance panel planning." },
+  { name: "Ben Brookes", role: "Product Owner (de facto)", note: "Built CLARA v1. Pushes for speed. Shopping CLARA cross-OU. Exceedance panel planning." },
   { name: "BenVH (Van Houten)", role: "Infrastructure & Deployment", note: "Only person who can deploy. App Factory architect. Owns patented Phantom Agent. Burnout risk." },
   { name: "Natalia Orzechowska", role: "Senior Director / CS Lead", note: "Runs Portfolio Reviews. Practical, process-focused. Your skip-level manager." },
   { name: "Natalia Plant", role: "Gainsight Team Lead", note: "Leads the Gainsight team. Key contact for Gainsight integration." },
@@ -588,8 +588,8 @@ const people = [
   { name: "Nikhil", role: "Tech Consulting (50/50)", note: "Bedrock API working. Being redirected from App Factory due to interpersonal conflict with BenVH." },
   { name: "Chris M", role: "Developer (CLARA)", note: "Methodical, adapting well. Bug fixes. Next assignment: Salesforce integration." },
   { name: "Idrees Deen", role: "Banking CS / Cross-OU", note: "Cross-OU coalition builder. Retention dashboard. Strategic thinker, strong banking ally." },
-  { name: "Idris Abram", role: "TSR Enhancements", note: "First expansion outside core team. Cat bond / TSR automation. Ben Brooks approved dedicated time." },
-  { name: "Catherine", role: "Data & Gainsight Governance", note: "Strongest new ally. Volunteered for App Factory governance. Full advocate conversion." },
+  { name: "Idris Abram", role: "TSR Enhancements", note: "First expansion outside core team. Cat bond / TSR automation. Ben Brookes approved dedicated time." },
+  { name: "Kathryn Palkovics", role: "Data & Gainsight Governance", note: "Strongest new ally. Volunteered for App Factory governance. Full advocate conversion." },
   { name: "Diya Sawhny", role: "Executive Sponsor", note: "Impatient with detail. Wants elevator pitches. Engagement improved after Feb governance session." },
 ];
 
@@ -724,9 +724,9 @@ const threads = [
   { title: "Salesforce / Gainsight", text: "Gainsight hard launch March 30. Salesforce one-way read designed. Both via App Factory MCP." },
   { title: "Build in Five Demo", text: "Martin's May exceedance target. MCP server integration is the critical next step." },
   { title: "Cross-OU Expansion", text: "Banking, AM, Life all interested. Wednesday showcase with ISLTR. Currently unfunded." },
-  { title: "Stakeholder Engagement", text: "Who's leaning in (Catherine, Idrees), who's drifting (Diya attention span)." },
+  { title: "Stakeholder Engagement", text: "Who's leaning in (Kathryn Palkovics, Idrees), who's drifting (Diya attention span)." },
   { title: "BenVH / Nikhil Conflict", text: "At breaking point. Richard planning confrontation. Nikhil to be redirected to Salesforce." },
-  { title: "Governance Maturity", text: "Transitioning from informal to structured. Post-12-week case needed. Catherine as new ally." },
+  { title: "Governance Maturity", text: "Transitioning from informal to structured. Post-12-week case needed. Kathryn Palkovics as new ally." },
 ];
 
 threads.forEach((t, i) => {

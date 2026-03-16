@@ -8,7 +8,7 @@
 | 2026-01-07 | Portfolio review feature | Feature | High | 2026-01-07 | 20+ | Sustained | "This looks really, really good" -- Natalia | High |
 | 2026-01-09 | AI tool licensing/procurement | Operational | High | 2026-01-09 | 15+ | Sustained | N/A | High |
 | 2026-01-09 | Alembic migration fragility | Technical | High | 2026-01-09 | 10 | Declining (spec-first adopted) | N/A | High |
-| 2026-01-14 | Ben Brooks executive sponsorship | Political | High | 2026-01-14 | 15+ | Sustained | N/A | High |
+| 2026-01-14 | Ben Brookes executive sponsorship | Political | High | 2026-01-14 | 15+ | Sustained | N/A | High |
 | 2026-01-16 | Josh Everett as gatekeeper | Political | Medium | 2026-01-16 | 8 | Evolved (gatekeeper to partner) | N/A | High |
 | 2026-01-19 | Data quality and golden source | Data | High | 2026-01-19 | 20+ | Sustained (chronic issue) | N/A | High |
 | 2026-01-19 | Sales Recon convergence | Strategy | High | 2026-01-19 | 8 | Declined (CLARA stays standalone) | N/A | High |
@@ -59,7 +59,7 @@
 | 2026-03-06 | Richard personnel situation (resolved) | Personnel | Low | 2026-03-14 | 0 | Resolved | Committed to programme | Low |
 | 2026-03-06 | All three core people considering exit | Personnel | CRITICAL | 2026-03-06 | 1 | Critical (new) | N/A | High |
 | 2026-03-06 | Gainsight integration preparation | Strategy | High | 2026-03-06 | 2 | New | N/A | High |
-| 2026-03-06 | Catherine as governance ally | Political | High | 2026-03-06 | 1 | New (positive) | "Speaking my love language" | High |
+| 2026-03-06 | Kathryn Palkovics as governance ally | Political | High | 2026-03-06 | 1 | New (positive) | "Speaking my love language" | High |
 | 2026-03-06 | April grads arriving | Resource | Medium | 2026-03-06 | 2 | New | N/A | Medium |
 | 2026-03-06 | App Factory governance board | Governance | Medium | 2026-03-06 | 2 | New | N/A | Medium |
 | 2026-03-09 | Cross-department enablement (Sales) | Strategy | Medium | 2026-03-04 | 3 | Rising | N/A | High |
@@ -69,7 +69,7 @@
 | 2026-03-09 | Databricks Risk Data Lake deprecation | Technical | Low | 2026-03-09 | 1 | New | N/A | Medium |
 | 2026-03-09 | Advisory project portfolio visibility | Governance | Low | 2026-03-09 | 1 | New | Diana: "this is a shit show" | Medium |
 | 2026-03-11 | App Factory MCP server pivot | Architecture | Very High | 2026-03-11 | 1 | New/Rising | BenVH: entire App Factory core becoming an MCP server; any app can consume it | High |
-| 2026-03-11 | Nikhil boundary conflict | Personnel | Very High | 2026-03-03 | 6+ | Escalating | Daily boundary violations now; Richard planning confrontation and Ben Brooks escalation | High |
+| 2026-03-11 | Nikhil boundary conflict | Personnel | Very High | 2026-03-03 | 6+ | Escalating | Daily boundary violations now; Richard planning confrontation and Ben Brookes escalation | High |
 | 2026-03-11 | Salesforce integration design | Integration | High | 2026-03-06 | 3 | Rising | One-way decision made; Cases/CaseFeed objects scoped; four consumer groups identified | High |
 | 2026-03-11 | Slidey (PowerPoint generation) | Product | Medium | 2026-03-11 | 1 | New/Rising | Multiple teams building same tool independently; cross-team meeting planned | Medium |
 | 2026-03-11 | Gainsight March 30 launch | Integration | Medium | 2026-03-11 | 1 | New/Rising | Hard launch confirmed; creates Clara sync pressure even though no IRP data expected | Medium |
@@ -80,7 +80,7 @@
 | 2026-03-11 | AON account intelligence | Client | Medium | 2026-03-11 | 1 | New | Natalie Bath requested agent view on AON; Rob Fulber meeting Dan Dick next week. Cross-OU visibility opportunity | Medium |
 | 2026-03-11 | Segment-agnostic retention dashboard | Product | Medium | 2026-03-11 | 1 | New | Idrees building Moody's-wide retention dashboard; looped DIA and George Dyke in today | Medium |
 | 2026-03-12 | Gainsight-Clara integration | Integration | High | 2026-01-12 | 8 | Rising | N/A | High |
-| 2026-03-12 | Catherine COE political conflict | Political | High | 2026-03-06 | 5 | Rising | N/A | High |
+| 2026-03-12 | Kathryn Palkovics COE political conflict | Political | High | 2026-03-06 | 5 | Rising | N/A | High |
 | 2026-03-12 | CLARA governance and release cadence | Process | High | 2026-03-04 | 4 | Rising | N/A | High |
 | 2026-03-12 | CLARA maintenance mode transition | Programme | Medium | 2026-03-12 | 1 | New | N/A | High |
 | 2026-03-12 | Adoption runbook (Rhett + PMs) | Feature | Medium | 2026-03-12 | 1 | New | N/A | Medium |

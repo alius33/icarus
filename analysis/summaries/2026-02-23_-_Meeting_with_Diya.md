@@ -1,6 +1,6 @@
 # Meeting with Diya — Governance Session
 **Date:** 2026-02-23
-**Attendees:** Richard Dosoo, Azmain Hossain, Natalia (Plant), Ben Brooks, Diya Sawhny, Rahul (entering later)
+**Attendees:** Richard Dosoo, Azmain Hossain, Natalia (Plant), Ben Brookes, Diya Sawhny, Rahul (entering later)
 **Duration context:** Medium (~20 minutes)
 **Workstreams touched:** WS2 CLARA, WS3 CS Agent, WS4 Friday (Adoption Charter), WS5 Navigator L1, WS6 Build in Five
 
@@ -21,7 +21,7 @@
 | CLARA stays focused on insurance IRP -- no Life roadmap | Strategic boundary | High | Diya |
 | Sales Recon is the sole cross-OU integration point needing alignment | Strategic | High | Diya |
 | 12-week resource plan: Martin 75%, Chris 50%, Nikhil 50%, rotating grad | Resourcing | High | Ben to formalise |
-| Natalia to investigate Gainsight account planning overlap with Catherine | Scoping | Medium | Natalia |
+| Natalia to investigate Gainsight account planning overlap with Kathryn Palkovics | Scoping | Medium | Natalia |
 | Approach it with "throwaway" mindset for account planner -- prototype, hand PRD to Sales Recon | Development philosophy | Medium | Ben / Diya |
 
 ## Action Items
@@ -30,7 +30,7 @@
 | Add resource estimates and timelines to presentation for Wednesday Diya session | Richard | Wed 25 Feb | High | Open |
 | Get sign-off on 12-week resource allocation from Stacy | Ben / Richard | This week | High | Open |
 | Set up meeting with Courtney on HD blockers and support ticket intelligence | Richard / Ben | This week | High | Open |
-| Investigate Gainsight account planning overlap with Catherine | Natalia | Next 2 weeks | Medium | Open |
+| Investigate Gainsight account planning overlap with Kathryn Palkovics | Natalia | Next 2 weeks | Medium | Open |
 | Prepare business case for dedicated resources beyond 12 weeks | Richard | ~6 weeks | Medium | Open |
 | Talk to Christina (Maps team) about infrastructure alignment | Diya | Next week | Medium | Open |
 
@@ -47,7 +47,7 @@
 
 ## Stakeholder Signals
 - **Diya Sawhny:** Engaged for the first time substantively. Receptive to three-pillar framing but wants ROI and outcomes, not just activity. Her question about post-12-weeks is the defining strategic horizon.
-- **Ben Brooks:** Pushing evangelism strategy hard -- demoing to Life leadership, shopping CLARA around internally. Believes CSMs can manage 2x accounts with right tools.
+- **Ben Brookes:** Pushing evangelism strategy hard -- demoing to Life leadership, shopping CLARA around internally. Believes CSMs can manage 2x accounts with right tools.
 - **Natalia Plant:** Strategically thoughtful. Her Gainsight awareness and "build for one first" advice prevents the team from over-extending.
 - **Azmain Hossain:** Makes bus factor explicit in front of leadership for the first time. Concerned about sustainability.
 - **Maps team (absent):** Dramatic shift from refusing to engage ("not important enough") to offering help. Diya's backing has changed the power dynamics.
@@ -57,7 +57,7 @@
 |-----|-----------|---------|------------|
 | Ben | Formalise resource sign-off with Stacy | Team | High |
 | Richard | Resource estimates on slides for Wednesday | Diya | High |
-| Natalia | Investigate Gainsight overlap with Catherine | Team | Medium |
+| Natalia | Investigate Gainsight overlap with Kathryn Palkovics | Team | Medium |
 | Diya | Talk to Christina about Maps alignment | Team | Medium |
 
 ## Meeting Effectiveness

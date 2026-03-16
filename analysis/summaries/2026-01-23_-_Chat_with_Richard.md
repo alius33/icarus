@@ -53,8 +53,8 @@
 ## Commitments Made
 | Who | Commitment | To Whom | Confidence |
 |-----|-----------|---------|------------|
-| Azmain | Map all employees under Colin | Ben Brooks | High |
-| Azmain | Get CSM assignments before Monday | Ben Brooks | High |
+| Azmain | Map all employees under Colin | Ben Brookes | High |
+| Azmain | Get CSM assignments before Monday | Ben Brookes | High |
 | Richard | Purchase Claude Max Pro for Azmain | Azmain | High |
 | Richard | Raise Azure access ticket | Azmain | Medium |
 | Both | Reconnect at 2pm | Each other | High |

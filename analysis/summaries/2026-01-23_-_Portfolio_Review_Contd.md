@@ -1,6 +1,6 @@
 # Portfolio Review — Continued
 **Date:** 2026-01-23
-**Attendees:** Ben Brooks, Natalia (Plant), Azmain Hossain
+**Attendees:** Ben Brookes, Natalia (Plant), Azmain Hossain
 **Duration context:** Short (~19 minutes)
 **Workstreams touched:** WS2 CLARA (portfolio review feature, Monday demo)
 
@@ -45,12 +45,12 @@
 
 ## Power Dynamics
 - **Natalia** asked the critical meeting-design questions: how do I find other reds? What about later quarters? Her flow proposal (priority accounts always, then reds by quarter descending) was accepted with minimal negotiation, confirming her authority over the meeting structure.
-- **Ben Brooks** operated both as product visionary (explaining the accelerate concept) and hands-on tester (clicking through the app to find bugs). His discovery of the 500 error in real-time was uncomfortable but valuable.
+- **Ben Brookes** operated both as product visionary (explaining the accelerate concept) and hands-on tester (clicking through the app to find bugs). His discovery of the 500 error in real-time was uncomfortable but valuable.
 - **Azmain Hossain** managed the awkwardness of a demo failing in front of Natalia with transparency, immediately acknowledging the error and linking it to the portfolio review changes.
 
 ## Stakeholder Signals
 - **Natalia** — Her "this looks really, really good" was the most positive product feedback from her in Week 3. She was seeing the portfolio review through the lens of actually using it in Monday's meeting, which made her engagement qualitatively different from previous sessions.
-- **Ben Brooks** — "A day is a long time in vibe coding land" captured the volatility of the development process. His willingness to test in production and surface bugs was valuable but also exposed how fragile the system was.
+- **Ben Brookes** — "A day is a long time in vibe coding land" captured the volatility of the development process. His willingness to test in production and surface bugs was valuable but also exposed how fragile the system was.
 - **Azmain Hossain** — His comment that "we have neither the tools nor the resources — the worst of all situations" captured the frustration of discovering a critical bug while both developers were blocked from their coding tools.
 
 ## Commitments Made
@@ -79,9 +79,9 @@
 - Can the demo use a mix of real data (for account navigation) and pre-populated data (for portfolio review)?
 
 ## Raw Quotes of Note
-- "A day is a long time in vibe coding land" — Ben Brooks, on the volatility of AI-assisted development
+- "A day is a long time in vibe coding land" — Ben Brookes, on the volatility of AI-assisted development
 - "We have neither the tools nor the resources — the worst of all situations" — Azmain Hossain, on being blocked from both Cursor and having no BenVH support
-- "Don't tell Natalia" — Ben Brooks, joking about the demo mode cookie leaking between localhost and production
+- "Don't tell Natalia" — Ben Brookes, joking about the demo mode cookie leaking between localhost and production
 
 ## Narrative Notes
 This continuation session was both encouraging and alarming. Encouraging because Natalia's engagement with the portfolio review feature was genuine and constructive — her meeting flow proposal (priority accounts, then reds by quarter, then accelerate) was exactly the kind of structured approach that would make the weekly review productive rather than chaotic. Alarming because the 500 error on use case creation was a show-stopping bug discovered less than three days before the Monday demo. The duplicate key violation suggested a database constraint issue, possibly introduced by BenVH's portfolio review migration. With both Azmain and Ben blocked from Cursor, and BenVH running a race in Amsterdam, the bug represented the worst possible timing for a critical defect. The interaction between Ben and Azmain — trying to debug a production error by opening browser dev tools during a demo to a stakeholder — captured the duct-tape nature of CLARA's development process in week three.

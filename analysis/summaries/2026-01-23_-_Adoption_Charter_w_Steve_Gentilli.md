@@ -58,7 +58,7 @@
 ## Stakeholder Signals
 - **Steve Gentilli** — A natural ally for CLARA adoption. His experience building databases and data models in previous roles gave him immediate credibility in discussing schema design. His "input, process, output — start at the end" philosophy aligned with Azmain's approach. His willingness to refine requirements over the weekend showed genuine engagement.
 - **Azmain Hossain** — His revelation that George Dyke's account planner also overlapped with CLARA's data model established a pattern: multiple stakeholders building separate tools that could all be served by CLARA's centralized database. His framing of "how many people are going to want to know who's the implementation lead" was persuasive consolidation logic.
-- **Ben Brooks** (referenced) — His adoption charter feature design (success criteria, milestones, blueprints, roles) was more ambitious than Steve's current Excel approach, showing long-term product thinking.
+- **Ben Brookes** (referenced) — His adoption charter feature design (success criteria, milestones, blueprints, roles) was more ambitious than Steve's current Excel approach, showing long-term product thinking.
 - **Alexandre** (referenced) — Needs to be consulted on partner section requirements before fields are finalized.
 - **Kate Grove** (referenced) — Added implementation team columns to Steve's tracker; her requirements for downstream implementation tracking need to be captured.
 

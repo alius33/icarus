@@ -284,7 +284,7 @@
       "Ben Van Houten": 12,
       "Philip Garner": 1,
       "Diana": 6,
-      "Ben Brooks": 30,
+      "Ben Brookes": 30,
       "Amit": 1,
       "Alexandra": 1,
       "Christine": 1,
@@ -471,7 +471,7 @@
     "facilitator_score": 0.0,
     "gender": "F",
     "co_speakers": {
-      "Ben Brooks": 2,
+      "Ben Brookes": 2,
       "Richard Dosoo": 2,
       "Natalia Plant": 3,
       "Azmain Hossain": 3,
@@ -642,7 +642,7 @@
     "facilitator_score": 0.018518518518518517,
     "gender": "M",
     "co_speakers": {
-      "Ben Brooks": 2,
+      "Ben Brookes": 2,
       "Martin Davies": 2,
       "Richard Dosoo": 3,
       "Azmain Hossain": 5,
@@ -825,7 +825,7 @@
     "facilitator_score": 0.04326923076923077,
     "gender": "F",
     "co_speakers": {
-      "Ben Brooks": 7,
+      "Ben Brookes": 7,
       "Richard Dosoo": 1,
       "Diya Sawhny": 3,
       "Azmain Hossain": 11,
@@ -1086,7 +1086,7 @@
       "Martin Davies": 13,
       "Azmain Hossain": 74,
       "Ben Van Houten": 8,
-      "Ben Brooks": 21,
+      "Ben Brookes": 21,
       "Christine": 1,
       "Steve Getilli": 1,
       "Juliet": 1,
@@ -1108,13 +1108,13 @@
       "Idrees Deen": 1
     }
   },
-  "Ben Brooks": {
-    "canonical_name": "Ben Brooks",
+  "Ben Brookes": {
+    "canonical_name": "Ben Brookes",
     "aliases": [
       "Ben B",
       "BenB",
       "ben b",
-      "Ben Brooks"
+      "Ben Brookes"
     ],
     "total_segments": 543,
     "total_words": 45241,
@@ -1496,7 +1496,7 @@
       "Richard Dosoo": 13,
       "Alexandra": 1,
       "Chris M": 1,
-      "Ben Brooks": 5,
+      "Ben Brookes": 5,
       "George Dyke": 2,
       "Josh Ellingson": 1,
       "Ben Van Houten": 2
@@ -1605,7 +1605,7 @@
       "Azmain Hossain": 1
     }
   },
-  "Diana": {
+  "Diana Kazakova-Ivanova": {
     "canonical_name": "Diana",
     "aliases": [
       "Diana",
@@ -1918,7 +1918,7 @@
     "facilitator_score": 0.0,
     "gender": null,
     "co_speakers": {
-      "Ben Brooks": 1,
+      "Ben Brookes": 1,
       "Richard Dosoo": 1,
       "Azmain Hossain": 1,
       "Steve Getilli": 1
@@ -2076,7 +2076,7 @@
     "co_speakers": {
       "Azmain Hossain": 2,
       "Steve Gentilli": 1,
-      "Ben Brooks": 1,
+      "Ben Brookes": 1,
       "Richard Dosoo": 1,
       "Christine": 1
     }
@@ -2246,7 +2246,7 @@
     "facilitator_score": 0.0,
     "gender": "M",
     "co_speakers": {
-      "Ben Brooks": 1,
+      "Ben Brookes": 1,
       "Richard Dosoo": 1,
       "Azmain Hossain": 2,
       "Kathryn": 1,
@@ -2531,7 +2531,7 @@
       "Richard Dosoo": 2,
       "Azmain Hossain": 3,
       "Peter Kimes": 1,
-      "Ben Brooks": 1,
+      "Ben Brookes": 1,
       "Jamie": 1
     }
   },
@@ -2696,7 +2696,7 @@
       "Stacy Dixtra": 1
     }
   },
-  "Kathryn": {
+  "Kathryn Palkovics": {
     "canonical_name": "Kathryn",
     "aliases": [
       "Kathryn",
@@ -3217,7 +3217,7 @@
     "co_speakers": {
       "Richard Dosoo": 1,
       "Azmain Hossain": 1,
-      "Ben Brooks": 1
+      "Ben Brookes": 1
     }
   },
   "Liz Couchman": {
@@ -3455,7 +3455,7 @@
       "Azmain Hossain": 12,
       "Chris M": 1,
       "Martin Davies": 2,
-      "Ben Brooks": 1
+      "Ben Brookes": 1
     }
   },
   "Stacy Dixtra": {
@@ -4466,7 +4466,7 @@
     "co_speakers": {
       "Richard Dosoo": 1,
       "Azmain Hossain": 1,
-      "Ben Brooks": 1
+      "Ben Brookes": 1
     }
   },
   "Vlad": {
@@ -4783,7 +4783,7 @@
       "Richard Dosoo": 2,
       "Azmain Hossain": 2,
       "George Dyke": 1,
-      "Ben Brooks": 1,
+      "Ben Brookes": 1,
       "Idrees": 1
     }
   },

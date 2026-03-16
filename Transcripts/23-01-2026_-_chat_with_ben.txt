@@ -1,159 +1,159 @@
-Ben Brooks  0:00  
+Ben Brookes  0:00  
 It like the main I'll take it at the main dashboard page, and there was, there's a load of red at the top, but as you get back down through them, I couldn't quite work out what was being displayed. If I share my screen one sec. So as you get down to the middle of the pack, you've got load of green statuses, yes, and so the so this is the rag status at the top of the account. So it's the worst status of the use cases taken at the account level. So if there's one red use case, the whole account is red, right?
 
 Azmain Hossain  0:48  
 I don't know if that's the logic. I think it is. So for Alliant, if you click into it, they've got four use cases. Is it green? Because, okay, it's green because
 
-Ben Brooks  0:57  
+Ben Brookes  0:57  
 they're all green, yeah. And that's what I was trying to work out. What was going on on the on that page, because the background on Alliant is still red,
 
 Azmain Hossain  1:10  
 yeah, I think either you put in a command, or I put in a command, or someone did where it was like, highlight the lack of updates, yes, on account and yeah, it took that to mean mark them read,
 
-Ben Brooks  1:26  
+Ben Brookes  1:26  
 that's fine. But then it's not literally the account rag status. It's just flagging in a box that it was updated four months ago, right?
 
 Azmain Hossain  1:37  
 Yeah, what we need to change so it needs to keep that little pill that says updated seven months ago, but not, yeah, right.
 
-Ben Brooks  1:44  
+Ben Brookes  1:44  
 I think that's right. I think that's right. And then I also think this blue rag status is superfluous. You don't need that because it's that that's giving you the rag status.
 
 Azmain Hossain  1:56  
 So would you say get, just get rid of that green pillbox?
 
-Ben Brooks  2:00  
+Ben Brookes  2:00  
 Well, I either, either use the pillbox and make it green or amber or red, or remove the highlight on the box, and then so here I was trying to work out what the fuck was going on on some of these where you've got a Red Box, an orange top, an amber status, that's great, that's great. And a red background. And I think it's just two, it's just two things that cursor has gone to town in the UI with, right
 
 Azmain Hossain  2:34  
 because we're MacGyvering the shit out of this with multiple people just brain dumping ideas. Yeah, but yeah,
 
-Ben Brooks  2:46  
+Ben Brookes  2:46  
 but it's, it's easy to bring it back to where it needs to be. I think if we, if we just tell this page never to colour the background of the box, I don't know what the red highlight on the whole box is. That's the piece that I think has confused
 
 Azmain Hossain  3:00  
 me on Tokyo Marine, I'm noticing one colour, oh, the side red is because the updates is are old, okay? I'm like,
 
-Ben Brooks  3:09  
+Ben Brookes  3:09  
 why it's not, though, because these are updated a year ago, and there's no side red. So I'm not sure why that is like that. Okay? So it could be to do with account status or something like that.
 
 Azmain Hossain  3:23  
 But it's not external. There's an external blocker.
 
-Ben Brooks  3:27  
+Ben Brookes  3:27  
 Yeah, maybe, I'm not sure
 
 Azmain Hossain  3:30  
 it's, yeah, it's just trying to be as helpful as it can, while also being
 
-Ben Brooks  3:37  
+Ben Brookes  3:37  
 very stupid. No, that's, it's totally cool. I think I would just strip these panels back so that it shows the updated status and the rag status, and then the what's the little number giving you
 
 Azmain Hossain  3:53  
 that number is, what does 45 mean? Oh, go out. Scroll up. I think that's the percentage. Okay, okay, cool, yeah, it's just putting tabs, sorry, icons in there to mean stuff that it's never No,
 
-Ben Brooks  4:08  
+Ben Brookes  4:08  
 I think that's great. I think, I think that's really helpful to be able to look at a glance at all your accounts. It may well be more helpful for someone idea looking at a raft of accounts. But I would, I would keep all of that. I like it. I just want to make sure that we're clean in what's being represented. Yeah, yeah. So I think this would probably work best. I don't know how. How would we prefer to look at the rag status?
 
 Azmain Hossain  4:35  
 Is one thing I'm just thinking of. To make this all simpler, why don't we go with the list view, where you can just have columns of data instead
 
-Ben Brooks  4:43  
+Ben Brookes  4:43  
 of now. And I like these little widgets. I think, I think they're quite helpful, not least because people can click on them and interact with it. And so if we, if we look at the Oh shit, I didn't mean to click on it, we. I can't right click on I just want to look at the developer tab.
 
 Azmain Hossain  5:07  
 Oh, on Windows,
 
-Ben Brooks  5:13  
+Ben Brookes  5:13  
 it's F 12. I'm on a Mac. I think DIA is going to hit the roof. Today, I've submitted a request for a developer laptop and and I think she's going to really go for me in terms of my focus. Will you focus on fucking migrations? I am, dear. I'm just doing it in a technologically advanced way, bollocks. I want to inspect that element. I can't anyway, I was just going to try and turn these things on and off live. But if we, if we do it in cursor, that's fine. So keep this. It's helpful. Drop that, drop that colour, and drop the background colour, and then I think everything else
 
 Azmain Hossain  5:57  
 works. The colour at the top is fine, right?
 
-Ben Brooks  6:00  
+Ben Brookes  6:00  
 Yeah. I think that's a good way to show rag status. Yeah, okay.
 
 Azmain Hossain  6:04  
 The data completeness. Would it be helpful to add a little context to it, or just get rid of it?
 
-Ben Brooks  6:11  
+Ben Brookes  6:11  
 It's trying to show something. I think it might be cutting off so it looks like maybe there's a layer there. If you see that, it says, plus one more.
 
 Azmain Hossain  6:18  
 What if you hover over it, up above where it's in a list view, not a card. So if you scroll up where it says Am, trust they also have the 645,
 
-Ben Brooks  6:27  
+Ben Brookes  6:27  
 there you go, yeah, oh, it
 
 Azmain Hossain  6:29  
 actually tells you what's missing. That's very helpful. Yeah? So yeah, I was gonna say, make it turn that into a pill box that just says data completeness 45% instead of just 45
 
-Ben Brooks  6:42  
+Ben Brookes  6:42  
 Yeah? Yeah, sure if, if it fits the label might be, I mean, I think once people have looked it up, once they'll understand exactly what it is, and they won't need to know again. So the so the this little overlay is super helpful. That's great. Okay, cool. And then this quick updates thing to your you're suggesting flipping this to look
 
 Azmain Hossain  7:02  
 like that looks horrible, because it's for all accounts when, when you're a person, and you've only got, I don't know, seven accounts, there's only going
 
-Ben Brooks  7:08  
+Ben Brookes  7:08  
 to be two things. Yeah, yeah. So I think you could. I wish I could. You could
 
 Azmain Hossain  7:14  
 even right now, because I have a list of employees. I have the golden source of CSMs, I just can't do anything because my cursor is blocked.
 
-Ben Brooks  7:24  
+Ben Brookes  7:24  
 Is it completely blocked or just on Claude? It's on
 
 Azmain Hossain  7:27  
 it's on everything, because I put it on auto and it's not even saying that I've hit the hard limit which, which is the previous error I got. Now it's your team has hit its users. That's the so that's something I think the account manager fixed. But, you know, we didn't use $1,000 worth of credits.
 
-Ben Brooks  7:44  
+Ben Brookes  7:44  
 No, absolutely not. I'm gonna set something off in a minute. I'll see if it works for a different problem.
 
 Azmain Hossain  7:51  
 Okay, I don't know, Richard, or you be like, can I just, I don't know, can you approve a $200 Claude code licence? But then yesterday, when you were asking the person, that's
 
-Ben Brooks  8:02  
+Ben Brookes  8:02  
 why I asked him, I want to know whether I'm going to be in trouble or not. I'm pretty I'm pretty sure Rich has been doing that, but he's not supposed to. So I know, I don't think I would, to be honest, but hopefully we can get unblocked really quickly, soon.
 
 Azmain Hossain  8:20  
 Do you know if he's in the US? He sounded like he was in the US.
 
-Ben Brooks  8:23  
+Ben Brookes  8:23  
 Yeah, I think so we'll have to get him first thing,
 
 Azmain Hossain  8:29  
 yeah, but in the meantime, Richards is working, so just, I'm just gonna send him the stuff and get Richard to run
 
-Ben Brooks  8:35  
+Ben Brookes  8:35  
 it. Yeah, okay, all right.
 
 Azmain Hossain  8:37  
 All right. Give me a shout if you have any other ideas. Really helpful to capture all this because, yeah, nobody's done like UX testing on this, or what it's actually like to use it.
 
-Ben Brooks  8:47  
+Ben Brookes  8:47  
 Well, that's what this first week's about, really, yeah, yeah, albeit a little bit broad audience.
 
 Azmain Hossain  8:54  
 My hope is that all the pain points gets captured as they're going through the workflow, as they're updating stuff as a test case.
 
-Ben Brooks  9:03  
+Ben Brookes  9:03  
 That's right, yeah. Okay, cool. All right,
 
 Azmain Hossain  9:08  
 to approve those developer laptops, because mine and rich is not approved. I think we're getting them on Tuesday.
 
-Ben Brooks  9:16  
+Ben Brookes  9:16  
 You did. Oh, nice. Okay, great,
 
 Azmain Hossain  9:18  
 get yours as well. Okay, brilliant.
 
-Ben Brooks  9:21  
+Ben Brookes  9:21  
 So the last thing was, is the is the Edit context implemented yet, where you can only edit your own accounts? Or is that to come?
 
 Azmain Hossain  9:30  
 No, that step one is getting the employees in. Now that I have a list of everyone under College, previously, I manual did it for everyone under dia. But if we have solution architects and implementations, we need everyone under College. Under Colin. So that's what I'm working with, Richard. I need to and again, really make sure I don't break the database, because Ben Houghton has another race to prep for tomorrow. So I was like, he fixed, he fixed your portfolio view this morning, but very limited availability in case. Yeah, so yeah, fingers crossed. Okay.
 
-Ben Brooks  10:04  
+Ben Brookes  10:04  
 All right, cool. All right, thanks, buddy, thanks. This is great. All right, see you soon. Thank you. Bye.
 

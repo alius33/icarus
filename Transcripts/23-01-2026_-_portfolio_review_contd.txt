@@ -13,46 +13,46 @@ I think the best way to show is that Ben you've got like a local version where t
 Unknown Speaker  1:32  
 I always like to say this, I'm
 
-Ben Brooks  1:35  
+Ben Brookes  1:35  
 wondering if it still works, because a day is a long time in vibe coding land, it does cool. Okay, so I can show you this.
 
-Ben Brooks  1:52  
+Ben Brookes  1:52  
 So azmains version will be moderately more beautiful than this, because that's how these things work. But this is what I had yesterday, right? So, on your real version? No,
 
-Ben Brooks  2:14  
+Ben Brookes  2:14  
 on your real version, you've got some stuff at the top of this page, I think. Yeah, to date progress, yeah, to date progress, yeah, that's cool. So we put the high priority accounts in first. No problem. By the sound of it, we're going to add AIG into that list today, because it's taking up enough time and everybody's asking about it. And then I think, yeah, we would just explain to the team that we'll we'll walk through these as a group and look for the first one that you know, probably check in on this one. Yeah. So we'd ask this person to tell us everything good, everything good right next, and walk through until we get to one that's amber or red, and then dig into what's the problem to your point. The other day, I simplified this a little bit so you just go and click on the record and oops, and enter it if you want to do that, rather than needing to do pop ups here and all that kind of nonsense. And we just walk through one by one. I think,
 
 Unknown Speaker  3:25  
 yes, that's the point. So I
 
-Ben Brooks  3:27  
+Ben Brookes  3:27  
 guess we just demo that workflow to people when we when we get going, right?
 
 Natalia  3:32  
 Yeah. And then, how do I find? How do I find other rats? So the next point on the agenda other rats, like, where do I find them?
 
-Ben Brooks  3:43  
+Ben Brookes  3:43  
 Well, so that's the high priority ones. Yeah. Then Then we'd go to timeline and say there are five here that are overdue from last quarter, so they're late. What's going on? These two Ambers are for deals that should be finishing this quarter. Work through that way, and then potentially work through q2 if we have time and want to do that too. So I think that is other reds. But that raises a really important point. So that doesn't there is an overlap there. We may have already talked about something that's in the high priority account list at this point,
 
 Natalia  4:23  
 which is fine. I mean, if it's been covered in a high priority we don't talk about it anymore. But what if we have something that is planned for q3 and it's red? We should not be looking at those.
 
-Ben Brooks  4:36  
+Ben Brookes  4:36  
 We can. I think it's just a question of, how do you want to structure the conversation, and in what order do you want to tackle it? So then, then we have things like action owners in here, which was just where, where are things blocked? And people have actions, and do we want to talk about them? So that was, that was more about, I don't, I'm not sure we want people to give an overview of an account that's not due to finish for six months, because we'll spend a lot of time, but they might have to. Actions in there where they need some help. So this becomes more of an action based conversation for later on. Does that make sense? But you're but again, this is not, this is not filtered for the sequence of that conversation. So this is all action owners, some of whom we've just spoken about, in the q1, q2 bucket. So I think we would need to either update this by quarter, that's probably the cleanest way, or we'd want to filter out the stuff that we already talked about somehow. Or we
 
-Ben Brooks  5:40  
+Ben Brookes  5:40  
 don't worry about it too much, and we just haven't any other business conversation. Yeah, anybody wants to volunteer a topic on an account? We'll go over here and we say, okay, great. Thanks for raising your hand. Miles. Let's talk about your account. Score, open up. Score. What's the issue?
 
 Natalia  5:58  
 I think, you know, view on blockers might be already covered when we talk about rate red accounts. So it's yeah, hopefully it's unlikely that we have a blocker on account that it's not red because it should be. So I think I like the concept that we have high priority. We cover all of them, we go to timeline, and then first we look at this quarter, at the current quarter, Red's there. And numbers maybe less intensively, then we move to second quarter and maybe focus only on the reds. Yeah, that's that's a good flow, yeah. Okay, cool.
 
-Ben Brooks  6:35  
+Ben Brookes  6:35  
 And then, so should we? Should we remove these then? Because if we're not going to use them, we might as well clear it up and then. But I think we should keep the accelerate ones, because that's yeah, pick, but we could, so we could do high priority timeline accelerate and then any others, with any others won't be in the system. We'll just go back and do it by the dashboard, because it will be random every week.
 
 Azmain Hossain  6:57  
 Just a quick heads up. We don't have an accelerate like flag
 
-Ben Brooks  7:02  
+Ben Brookes  7:02  
 in the app. So I think it wants to be a query that says, is everything green, yeah. And is it nearly complete somehow and falling in, not the current quarter?
 
 Natalia  7:17  
@@ -64,43 +64,43 @@ that's the best way to do it. Rather than having any pop ups and stuff, easier t
 Natalia  8:15  
 Yeah, yeah. Okay, so I think Azmain, if at the end of the demo, you can also show that that part in portfolio review, we don't have to add go through the timeline bit, but just the high priority. This is how we are displaying our priorities, and this is where we will be starting the portfolio review. Then I think it also would be
 
-Ben Brooks  8:34  
+Ben Brookes  8:34  
 good. Yeah,
 
 Azmain Hossain  8:36  
 yeah. I'm just thinking because I noticed, Ben, you're using demo mode. I don't know if it will work with the portfolio review, no, but I think basically exactly what you just showed to Natalia. Now I want to be able to show to the CSMs so they see what the high priority and the timeline views look like. Yeah. Do you think that would be okay switching from like, the live version to the demo version and saying, like, Look, guys, once you fill this all in, this is what the whole dashboard is going to look like when we start.
 
-Ben Brooks  9:23  
+Ben Brookes  9:23  
 It's not, it's not perfect, because the demo I've realised the demo data is not very good, and it doesn't have, like, the full account depth to it. So you can't click on a row in the demo data and go to the Account page and edit it, because it's not that deep. Yeah, we could, we could update the demo data and just say, fill in account level data for these for all accounts. Or we could flip between real data and demo data. Or we could just throw some timelines into five accounts by hand before the demo so they show up.
 
 Azmain Hossain  10:04  
 Let me try and get the demo data to go a bit deeper. We don't need to be able to edit them. We just need a couple of pages.
 
-Ben Brooks  10:12  
+Ben Brookes  10:12  
 Well, why don't? Why don't we just put dodgy timelines in or real timelines in an account? But we should have that information we've got baseline data.
 
 Azmain Hossain  10:25  
 Do we have all the other update data, like we could have, like, created at and then modified, but we don't know all the other modifications,
 
-Ben Brooks  10:33  
+Ben Brookes  10:33  
 like, what? Which? What bits do we not have that we need for that view. So if
 
 Azmain Hossain  10:44  
 you go to timeline,
 
-Ben Brooks  10:53  
+Ben Brookes  10:53  
 it's just the target, isn't it? Target Date
 
 Azmain Hossain  10:59  
 is that? Oh, okay, is that what it basically pulls from, what the target
 
-Ben Brooks  11:03  
+Ben Brookes  11:03  
 date is, it should be, that was the, that was the intent, yeah, yeah, oh, yeah, yeah, yeah.
 
 Azmain Hossain  11:07  
 If that's there, then it should be pulling from normal data. Everything has a target date, yeah.
 
-Ben Brooks  11:16  
+Ben Brookes  11:16  
 And is it? Is that? Is that working? Then, because it's not, they're not showing here in the in the prod version, yeah,
 
 Azmain Hossain  11:22  
@@ -109,78 +109,78 @@ I think it's because, if you go to knowledge gaps, I think everything is stuck i
 Natalia  11:37  
 Oh, a cat. My cat sitting, and this cat is making some distraction in the other room.
 
-Ben Brooks  11:42  
+Ben Brookes  11:42  
 Sorry, so, but they Yeah, okay, all right, but
 
 Azmain Hossain  11:48  
 I mean live literally, you could go into aeolia and fill those in and
 
-Ben Brooks  11:53  
+Ben Brookes  11:53  
 see if it's Yeah. Exactly. Why does well, bollocks. What's going on here? I
 
-Ben Brooks  12:06  
+Ben Brookes  12:06  
 It's something about the linking of the customer call on this page. Oh, shit.
 
-Ben Brooks  12:17  
+Ben Brookes  12:17  
 Oh, that was weird. It just carried the demo mode cookie between local host and production. That's probably the
 
 Azmain Hossain  12:25  
 issue, yeah, because this thing is duct taped together with like two,
 
-Ben Brooks  12:32  
+Ben Brookes  12:32  
 don't tell Natalia. All right, can I drop off now? Yes, yes, no. Okay, so here's, here's Elis, yeah. So if we assign the CSN, I used to know who that was,
 
 Azmain Hossain  12:50  
 then I can just remove it, yeah. And then, okay, so now it's use cases. There are no use cases, so we gotta make one. I feel
 
-Ben Brooks  13:02  
+Ben Brookes  13:02  
 like it needs that. Is that, is that still not gonna work?
 
 Azmain Hossain  13:06  
 Though? No, I think it needs all those. Okay. I don't know how it's made it, because obviously, you kind of just asked it to make this page. I feel like it set a strict limit that, okay, so it looks so basically, if you look at completeness, now that one's more complete, it's gone down because, yeah,
 
-Ben Brooks  13:27  
+Ben Brookes  13:27  
 that's that's fine. That's fine. So, so we want to give it a use case. Let's give them event response. Yeah, and they need a completion date, so their target is, let's make it this quarter so it shows up migration, critical in scope at
 
 Azmain Hossain  14:00  
 Yes, open the console, god damn it, and we don't have Ben and I don't have cursor. The worst of all situations, we have neither the tools nor the resources. Error creating customer use case, why? What don't you like about it? And I don't even know how to think of this. Debug.
 
-Ben Brooks  14:29  
+Ben Brookes  14:29  
 This like a bad response status code, 500 post, oh, man, that
 
 Azmain Hossain  14:39  
 looks like a database error.
 
-Ben Brooks  14:46  
+Ben Brookes  14:46  
 Duplicate key value violates what I'm trying to
 
-Ben Brooks  14:55  
+Ben Brookes  14:55  
 do, yeah, it's trying to insert into customer use cases. Oh, that's weird, is it? Does it think Elis already has something?
 
-Ben Brooks  15:08  
+Ben Brookes  15:08  
 Elus doesn't have anything, does it? No,
 
 Azmain Hossain  15:19  
 can you try adding a blocker, I just want to see if it's like anything being pushed into the database is just not working.
 
-Ben Brooks  15:27  
+Ben Brookes  15:27  
 Maybe, yeah, yeah, no, okay, so I can't do that because I don't have a use case.
 
 Azmain Hossain  15:44  
 Yeah, you don't have access to cursor either, right, even, even on auto mode.
 
-Ben Brooks  15:56  
+Ben Brookes  15:56  
 I don't, don't think so.
 
 Azmain Hossain  15:59  
 Let me do a restart of my laptop. That's the only time it's it's worked if I do a and then, yeah, try that. I'll try and recreate this. Get this error and ask it what is happening. Okay, okay, cool. All right, give me a shout. Find any other errors. It's good that you're looking through them, because otherwise,
 
-Ben Brooks  16:25  
+Ben Brookes  16:25  
 have you done, have you done much testing to try and make this work?
 
 Azmain Hossain  16:31  
 All of these adding individual thing is, they were working before the portfolio review thing. Okay, so I know that Ben, when Houghton had to do a bunch of, I don't know, alembic migration or whatever, yeah, all that data in, yeah, I don't know if that broke something, but they were worried maybe. Okay. All right,
 
-Ben Brooks  16:55  
+Ben Brookes  16:55  
 yeah, it's the same on this one, same on that one. Okay, yeah, cool, all right, yeah, thank you. See you later. Bye. You.
 

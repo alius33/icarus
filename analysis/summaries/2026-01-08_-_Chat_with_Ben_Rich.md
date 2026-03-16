@@ -1,6 +1,6 @@
 # Chat with Ben Rich
 **Date:** 2026-01-08
-**Attendees:** Richard Dosoo, Ben Brooks, Azmain Hossain, BenVH (referenced for deployment)
+**Attendees:** Richard Dosoo, Ben Brookes, Azmain Hossain, BenVH (referenced for deployment)
 **Duration context:** Long (~50 minutes, transcript ~466 lines)
 **Workstreams touched:** WS2 (CLARA/IRP Adoption Tracker), WS4 (Adoption Charter -- acceptance criteria/charter data model)
 
@@ -42,7 +42,7 @@
 ## Action Items
 | Action | Owner | Deadline | Status | Confidence |
 |--------|-------|----------|--------|------------|
-| Push latest code to GitHub main | Ben Brooks | Today | Open | HIGH |
+| Push latest code to GitHub main | Ben Brookes | Today | Open | HIGH |
 | Create branch with updated data model | Richard/Azmain | Today | Open | HIGH |
 | Map golden source to new data model | Azmain | Today | Open | HIGH |
 | Deploy to AWS | BenVH | Today/tomorrow | Open | HIGH |
@@ -60,20 +60,20 @@
 | Person | Role This Meeting | Influence Acts | Engagement % |
 |--------|-------------------|----------------|--------------|
 | Richard Dosoo | Architecture lead, mentor | Drives data model, plans deployment, mentors Azmain | 45% |
-| Ben Brooks | Product owner, vision setter | Prioritises data over dashboard, envisions pipeline meetings | 35% |
+| Ben Brookes | Product owner, vision setter | Prioritises data over dashboard, envisions pipeline meetings | 35% |
 | Azmain Hossain | Learner, data mapper | Takes on mapping task, flags capability gap | 20% |
 
 ## Stakeholder Signals
 | Person | Sentiment | Shift | Topic | Quote |
 |--------|-----------|-------|-------|-------|
-| Ben Brooks | champion | STABLE | Product delivery urgency | "data visibility problem is really urgent now" |
+| Ben Brookes | champion | STABLE | Product delivery urgency | "data visibility problem is really urgent now" |
 | Richard Dosoo | champion | STABLE | Technical execution | Driving same-day data model completion |
 | Azmain Hossain | supportive | STABLE | Learning and contributing | Honest about limitations, eager to learn |
 
 ## Commitments Made
 | Person | Commitment | Implied Deadline | Condition | Confidence |
 |--------|------------|------------------|-----------|------------|
-| Ben Brooks | Push code to GitHub | Today | None | HIGH |
+| Ben Brookes | Push code to GitHub | Today | None | HIGH |
 | Azmain | Golden source data mapping | Today | Schema from Richard | HIGH |
 | Richard | Finalise data model | Today | None | MEDIUM |
 | BenVH | AWS deployment | Today/tomorrow | Code and schema | HIGH |

@@ -22,19 +22,19 @@ Yep, perfect. Do
 Speaker 1  1:55  
 Yeah, your control of the main branch. I mean, did that review code? Did it yield any results? Azmain,
 
-Ben Brooks  2:18  
+Ben Brookes  2:18  
 yeah, do it. It's, I love the I love the collective discomfort that all this stuff is causing, like the this shit gets iterated over a 12 hour period, and we throw stuff in the bin and just read through it. It's fantastic. And the Yeah, no one is comfortable with that. I've just spent an hour and a half on the phone with Charlotte talking about, you know, just do it, press the button, see what it produces. And if it's shit, put it in the bin and do it again. Like you've got infinite iteration here. Let's go. And it was like, Oh, what do I do? Am I allowed to allow this? I was just fucking do it. Like policy will stop you if you can't,
 
 Speaker 1  3:01  
 it's hilarious, we'll run out of tokens first. But if 100
 
-Ben Brooks  3:09  
+Ben Brookes  3:09  
 people spend 10 grand, I would call that success,
 
 Unknown Speaker  3:12  
 we'll soon find out. Don't
 
-Ben Brooks  3:14  
+Ben Brookes  3:14  
 worry, yeah, we'll be in trouble. So
 
 Richard Dosoo  3:17  
@@ -52,7 +52,7 @@ Yeah, this is this more account plans, but yeah,
 Richard Dosoo  4:41  
 yeah, account plans, yeah, and then, and then he obviously select that folder.
 
-Ben Brooks  4:46  
+Ben Brookes  4:46  
 Oh, version number on it, you're gonna have version 3456, by the end of the day. Out planner. Oh, one, if you're feeling if you're feeling optimistic, give it three digits, because you might get up to 100 by the end of the week. All right.
 
 Richard Dosoo  5:02  
@@ -109,7 +109,7 @@ And as I said, like, this was just a very crude, like, example we can give. We c
 George Dyke  10:19  
 I think this is the complexity of this is going to be much less than what you know you'd be working on for the IRP offer their what are we calling it? The the whole option tracker, or adoption tracker, or whatever it's called. I think that. I think that's going to be more involved than what this account planner might do, a bit more sort of customer context research alongside it or something. But actually, like the stuff that goes in, it is relatively simple, right? And it's stuff that there's so many standards for, right? I mean, I think where you're going to have a
 
-Ben Brooks  10:53  
+Ben Brookes  10:53  
 fun challenge with it is like organisational getting, getting everyone aligned around the idea and the need and all the rest of it, but also the potential grey areas and where it can bleed into as other iterations, phase two, phase three, which are phenomenal. But you know, when you imagine how much stuff is actually in Salesforce that should be coming into this and various other places that will get pretty interesting pretty quick, that's right.
 
 George Dyke  11:18  
@@ -179,7 +179,7 @@ George Dyke  29:42
 I think there's an end, yeah, okay, and it'll be in this export thing, right? About telling it the template we want, what the export to actually look like, right? So if we've got and then there's a couple of tiers of this, there's my probably final quick thought is, I think there's probably a strategic account template that we want that's more robust. There's probably, like a standard one, and then there's maybe even, although maybe this is a complication for them. Maybe there's like a light version that we have for, like our tiny accounts, but maybe not. Maybe that's the same as the standard one. Maybe that's just standard and strategic, and it needs the space for the things that pull in to say, like we tell we provide the space that say, if you're a strategic account, you know, you must have a plan for at least a quarterly business review, whatever that thing is, right? And then it needs to be obvious in how you use it, as to how your people, timelines, topics, goals, whatever kind of come together to feed into those things. And then there's a flagging or a tracking mechanism, right, for when things are progressing without those having happened. So any and all of that really is, what is, what's jumping out? Probably, maybe this could be simplified a little, and maybe there's, you know, maybe there's a button right away that it's like, build a new plan, right? And we start with that. And I don't know if you start by typing an account name in, or if it looks it up right from the Salesforce lookup, or how we want to start. And maybe, I don't know, maybe we start by doing it a bit more manual, and think about the integration steps as we go. I don't know. I don't know what you think is the sensible way of building that sort
 
 Richard Dosoo  31:17  
-of stuff out. Yeah, no, we've, we have a similar challenge on on the adoption Tracker app, with the integration of Salesforce, and what we can do on that, what we've decided to do on that is start, obviously without any integration to Salesforce, but we're working with, we're going to be working with Natalia plant to she's Obviously the managing the game site rollout with Catherine shifting our point of contact to work through what, what we need to do to either get our requirements into the game site roadmap, or we need to have a tactical conversation about Salesforce in the interim. But in the absence of all of that, we're going to just work with data that we have, that we have right now. Azmain, for example, has got an extract of the Golden source data for source data from sales. We could share that with you and do the same thing here. But longer term, I want to say longer term. I mean, just over the next week or so, we want to come up with an integration approach to me, like, what essentially, how do we get the API's from Salesforce or Gainsight, and how do we integrate into that, using those tooling that's that's basically the next step. The reason we haven't taken that step yet is everyone's been a bit cautious because of the Gainsight rollout to be able to provide us with those APIs already, and people are very cautious about us implementing in Salesforce, so but it's fine. That shouldn't stop us, right? We can continue to ideate, we continue to build out. And in parallel, we can start thinking about what the integration strategy is between what we're building here and those application so what I think, George, maybe then actually, what the next step is, is, if you just brainstorm and go through this and just write up, oh, I think this will be cool. I want this. I want this. Then what we can do is we can share some prompts collectively of how we'd update this application, like, what prompt would you need to give cursor to make those changes that you need. And then we can share that with you. And then what we can work on that collectively. And then then you can start monitoring and creating versions.
+of stuff out. Yeah, no, we've, we have a similar challenge on on the adoption Tracker app, with the integration of Salesforce, and what we can do on that, what we've decided to do on that is start, obviously without any integration to Salesforce, but we're working with, we're going to be working with Natalia plant to she's Obviously the managing the game site rollout with Kathryn Palkovics shifting our point of contact to work through what, what we need to do to either get our requirements into the game site roadmap, or we need to have a tactical conversation about Salesforce in the interim. But in the absence of all of that, we're going to just work with data that we have, that we have right now. Azmain, for example, has got an extract of the Golden source data for source data from sales. We could share that with you and do the same thing here. But longer term, I want to say longer term. I mean, just over the next week or so, we want to come up with an integration approach to me, like, what essentially, how do we get the API's from Salesforce or Gainsight, and how do we integrate into that, using those tooling that's that's basically the next step. The reason we haven't taken that step yet is everyone's been a bit cautious because of the Gainsight rollout to be able to provide us with those APIs already, and people are very cautious about us implementing in Salesforce, so but it's fine. That shouldn't stop us, right? We can continue to ideate, we continue to build out. And in parallel, we can start thinking about what the integration strategy is between what we're building here and those application so what I think, George, maybe then actually, what the next step is, is, if you just brainstorm and go through this and just write up, oh, I think this will be cool. I want this. I want this. Then what we can do is we can share some prompts collectively of how we'd update this application, like, what prompt would you need to give cursor to make those changes that you need. And then we can share that with you. And then what we can work on that collectively. And then then you can start monitoring and creating versions.
 
 George Dyke  33:19  
 I was thinking I might just go and start testing that out directly. What's the things to guard against doing that? For No, it's fine.
@@ -217,13 +217,13 @@ okay, cool. Awesome.
 Richard Dosoo  35:23  
 All right, well, um, I guess George does that kind of give? Does that answer the questions that you had about how to get up and running? Exactly perfect. So I think the next step then, then I'll create a separate chat thread, or I'll turn this into a permanent chat thread, and then we can all be helping George out of any questions that he's got in the meanwhile. And then George will probably connect tail end of this week, or definitely early part of next week, to talk about how we bring this up into the infrastructure that we've already got. So cool.
 
-Ben Brooks  35:56  
+Ben Brookes  35:56  
 Ben, where's Ben VH at with the app factory stuff.
 
 Richard Dosoo  36:05  
 So he made some progress on it, because I was out on Friday. I haven't followed up with him, but he's in, he's in our time zone now. He's in Amsterdam. So that was definitely the goal of this week, to catch up with him on it, because
 
-Ben Brooks  36:18  
+Ben Brookes  36:18  
 he's working there, or is he out,
 
 Richard Dosoo  36:21  
@@ -238,7 +238,7 @@ I guess Azmain Martin, any I know you guys, have been working tangentially on st
 Martin Davies  37:44  
 The only thing I'd say is, if you're unsure about anything, just ask her, sir. I mean, anything you would feel like you need to reach out to Richard or someone to just, I mean, normally it'll answer the question for you. So Right?
 
-Ben Brooks  37:55  
+Ben Brookes  37:55  
 And better than rich, right? Yeah, maybe less enthusiastically. But what did you, what did you build that mock up with? Was it on auto, or was it on a particular model when you hit that prompt? Yeah, it looked like an auto kind of output. If you, if you grab sonnet or Opus, I think you get much better mock ups when you do that kind of stuff. Try, try running it again. If you you know where it's got the little agent selection, George, have you seen that bit? Maybe not
 
 Richard Dosoo  38:36  
@@ -250,13 +250,13 @@ a budget, sorry.
 Richard Dosoo  39:25  
 So the kind of marketing answer is that those models are better for deep reasoning and implementation tasks where you need, like a much bigger context window. So what that means, in regular terms, is they're much better at planning and executing tasks that are where you need to think more critically and specifically about what you're doing. So very well suited to development activities, very well suited to things like that now, but they cost more, right? So when I say cost more, we have a budget that we're all tapping into, those models are more expensive than some of the other general purpose models. So you can run out of token. The tokens much faster by using using those. But to Ben's point, it's worth it, because they're much better. So if you, if you change, if you click, let's say Opus, right, for example, or Sonic, let's say, let's say Sonic, actually, it
 
-Ben Brooks  40:15  
+Ben Brookes  40:15  
 blows the fucking doors off on on the first couple of runs, and then you can tweak it with a cheaper model afterwards. I would I pick Opus when I do these mock ups first pass and then, and then tell it, you know, act as a expert software UI engineer or whatever, however you want to describe that at the same time as whatever, an expert CSM or something, and it will end up doing 95% of the legwork, I think, in ways that are better than any of us would do to get started, and then you can tweak from there, and so that that's the huge lift. I think it's worth running again and just comparing side by side, what the what the model could use Cool. All right, I kind of want you to do it now, because I want to see it. To be honest,
 
 Unknown Speaker  41:04  
 I can just do a direct reprompt and see
 
-Ben Brooks  41:07  
+Ben Brookes  41:07  
 what it does. Yeah, yeah.
 
 George Dyke  41:14  
@@ -310,13 +310,13 @@ gonna, you see, it's creating a v1 so what I'll do? George, I don't know, Azmain
 Unknown Speaker  45:13  
 Whose tokens are they? Ben, are they Moody's tokens.
 
-Ben Brooks  45:18  
+Ben Brookes  45:18  
 These are your personal tokens. George, I mean, it's, it's AI is your credit card, and it's spaffing cash loan. Now they're meeting second
 
 Unknown Speaker  45:25  
 the Moody's. Moody's, rather, if you're
 
-Ben Brooks  45:28  
+Ben Brookes  45:28  
 in rich or my shoes, you will, you've also got a credit card problem because you've been playing around off the Moody's data estate. But you know, there we are. So, yeah,
 
 Richard Dosoo  45:39  
@@ -331,7 +331,7 @@ we've raised effectively separately that our plan is to roll this out and our bu
 Richard Dosoo  46:37  
 Yeah. So you can see, right, the plan that is creating is so important. Now let's jump to the implementation. Cool. So I
 
-Ben Brooks  46:50  
+Ben Brookes  46:50  
 think it may have, did it scribble all over the plan, or did it write a new version? Maybe write a new version?
 
 Unknown Speaker  46:56  
@@ -343,13 +343,13 @@ yeah, let's see what else. It doesn't look like. It made that many changes to ac
 Richard Dosoo  47:25  
 Yeah, it's giving you, if you keep going, it's put some of the navigational structure in there. It's much it's much more thorough and much more detail. I mean, that's the I think, yeah, depends on the money, and that's what my notice is, I've noticed since I've started using these anthropic models that they're just much more detail orientated, like the other models are good for, like, high level, maybe, like a product discussion. But when you want to talk about what an implementation actually looks like, this just gives you much, much more
 
-Ben Brooks  47:59  
+Ben Brookes  47:59  
 I think, I think every time you use auto and you do a mock up, it looks like a kind of Noddy application. Every time you use Opus, it looks like a seriously polished piece of kit, or at least it has done when I've tried it. And I think that just changes people's instantaneous reaction and buy in in so many ways, to be honest, Azmain, I wrote that whole of that IRP tracker in auto. I mean, it wouldn't do us a disservice to rebuild the front end fairly soon, I don't think.
 
 Unknown Speaker  48:42  
 Yeah, really, okay, yeah,
 
-Ben Brooks  48:56  
+Ben Brookes  48:56  
 maybe, okay, that was interesting. I
 
 Richard Dosoo  49:15  
@@ -358,19 +358,19 @@ so hopefully this won't take too much longer, Georgia, then we can see, yeah, wh
 Speaker 4  49:32  
 Ben on a slightly different look. I'm going to send the I'll send you that business case study for the licences for,
 
-Ben Brooks  49:47  
+Ben Brookes  49:47  
 yeah, we, like, sort of cleared to use it from a security and all that bullshit standpoint, because that's the problem. Yeah?
 
 Richard Dosoo  49:57  
 So the My understanding is we are the issue. That's the hold up at the moment. Is more around the enterprise licence, because basically they're negotiating the commercials on it. So our business is the deal is not that all should we use it? It's that, can we bring forward some spend, because it unlocks this value? Yeah.
 
-Ben Brooks  50:16  
+Ben Brookes  50:16  
 Okay, cool. And so is there a huge, big picture conversation going on with anthropic then about,
 
 Richard Dosoo  50:23  
 yeah, yeah. That's how, that's how Divya reached out to me and asked me, Do I want some licences? I reached back out to me. I was like, Yes, please.
 
-Ben Brooks  50:34  
+Ben Brookes  50:34  
 It's the pope a Catholic, yeah, yeah.
 
 Richard Dosoo  50:37  
@@ -382,13 +382,13 @@ be okay. What a tease, see, that's
 Unknown Speaker  50:48  
 it. Don't get me started.
 
-Ben Brooks  50:51  
+Ben Brookes  50:51  
 I want to try co work. That thing looks like it blows the doors off. Yeah.
 
 Speaker 4  50:56  
 So it's available now, but it's only on Mac if you're a Windows machine, if they haven't released a version for Windows yet, but the version for Mac is out there right now. I've got
 
-Ben Brooks  51:06  
+Ben Brookes  51:06  
 it on my laptop, personal laptop. I just don't know where to start with it, really, because I'm not doing any work on there, so I might have a play with it later. But I was reading the blogs on it. They built that thing in a week with Claude code. Yeah. And yeah, three people. It's mad, isn't it?
 
 Richard Dosoo  51:26  
@@ -415,13 +415,13 @@ to see what I mean, like that would be like, rather than Rahul spending painstak
 Richard Dosoo  52:55  
 wasn't expecting it to take this long. George, sorry. I thought it would. It would kick out quite quickly, but hopefully it's building.
 
-Ben Brooks  53:01  
+Ben Brookes  53:01  
 The whole thing is telling us how to manage marsh and like, give it a give it a chance.
 
 Speaker 2  53:20  
 It's Hurry up a value prompt. I've now never actually tried that.
 
-Ben Brooks  53:31  
+Ben Brookes  53:31  
 There is some stuff we need to do, rich on expense management, context bloat and all of that. It gets totally out of hand quite quickly, but I don't really know how to tackle that stuff.
 
 Unknown Speaker  53:43  
@@ -430,7 +430,7 @@ Yeah, I think when we learn there's
 Richard Dosoo  53:48  
 some best practices, right, like the what I was sending yesterday and not using, using Ralph loops
 
-Ben Brooks  53:55  
+Ben Brookes  53:55  
 in here as well. Is that how you think about these?
 
 Richard Dosoo  53:59  
@@ -442,13 +442,13 @@ running, okay, cool.
 Unknown Speaker  54:36  
 It's faster, more pipeline. So that's a start. Is
 
-Ben Brooks  54:39  
+Ben Brookes  54:39  
 that the second version, yeah, okay, something very different, very similar. Yeah, I think it's used the context of the first one, hasn't
 
 Unknown Speaker  54:53  
 it? Well, it should run the
 
-Ben Brooks  54:55  
+Ben Brookes  54:55  
 same sense. Send me the same prompt where they don't want to run it, yeah. Buck around some other stuff.
 
 Unknown Speaker  55:08  

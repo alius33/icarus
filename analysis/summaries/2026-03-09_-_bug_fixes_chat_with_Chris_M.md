@@ -8,13 +8,13 @@
 ## Key Points
 - Chris has been working on a date input bug fix (S3 severity) — different browsers handle min/max date field boundaries differently, causing some users to see errors when entering dates
 - **Root cause:** The CLARA app does not explicitly define min/max values on date fields, leaving it to browser defaults. Some browsers allow 5 or 6 digit years, others only 4 — causing entry errors when they clash with required formats
-- **Date min limit to be set to 2022** — Ben Brooks requested this after discovering someone entered a 1999 date which broke the migration burndown chart (a 26-year gap then all data at the end)
+- **Date min limit to be set to 2022** — Ben Brookes requested this after discovering someone entered a 1999 date which broke the migration burndown chart (a 26-year gap then all data at the end)
 - **Philosophical question:** Whether to set hard limits vs use calendar-only input. Azmain decided: push the fix as-is, enforce calendar picker usage rather than free-form typing, and let users report edge cases via the feedback form
 - **Date format concern raised:** US (MM/DD) vs European (DD/MM) ordering — Chris to verify the database handles this correctly regardless of browser locale
 - **939 tests** run at each stage of the CI pipeline (branch → develop → staging → main). Azmain walked Chris through the full deployment process for the first time
 - **Chris cannot run full test suite** because he doesn't have prod database access — BenVH is working on getting that set up
 - Chris found the documentation AI-generated ("so nicely ordered and so wordy") and had never been referenced by anyone
-- **CSM frustration boiling point for Azmain:** Portfolio Review call users ask 17 messages of "where do I click?" after 4 weeks. Catherine keeps changing data requirements. Azmain is losing patience
+- **CSM frustration boiling point for Azmain:** Portfolio Review call users ask 17 messages of "where do I click?" after 4 weeks. Kathryn Palkovics keeps changing data requirements. Azmain is losing patience
 - **Environment URLs:** dev.advisoryappfactory, staging.advisoryappfactory, and production (advisoryappfactory)
 - Cat Accelerate comparison: "wild west" — just merge to main with 2 reviewers, no staging buffers. CLARA's three-environment pipeline is more rigorous
 

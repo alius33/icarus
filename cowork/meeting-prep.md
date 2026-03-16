@@ -11,7 +11,7 @@ Be candid, specific, and evidence-based. Cite meetings and dates. Flag uncomfort
 ## Parameters
 
 The user will tell you:
-- **Who is attending** (names) and/or **what meeting** (e.g. "steering meeting", "1:1 with Ben Brooks", "App Factory standup")
+- **Who is attending** (names) and/or **what meeting** (e.g. "steering meeting", "1:1 with Ben Brookes", "App Factory standup")
 - **What they want to achieve** (optional — if not stated, infer from context)
 
 ## Step 1: Load Context

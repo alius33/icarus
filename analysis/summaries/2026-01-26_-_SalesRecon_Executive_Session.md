@@ -1,6 +1,6 @@
 # [IMP] Sales Recon -- Cross-Business Alignment Session
 **Date:** 2026-01-26
-**Attendees:** Richard Dosoo, Azmain Hossain, Ben Brooks, Jamie (Sales Recon lead), Ari Lahavi (Head of Applied AI), Speaker 1 (senior CS leader -- Divya's designee or Colin Holmes), Idrees (Banking CS), Craig (Corporate CS), Rupert, Irina, Matt (absent but joined late), Bernard, Mike Steele, Gustavo, others
+**Attendees:** Richard Dosoo, Azmain Hossain, Ben Brookes, Jamie (Sales Recon lead), Ari Lahavi (Head of Applied AI), Speaker 1 (senior CS leader -- Divya's designee or Colin Holmes), Idrees (Banking CS), Craig (Corporate CS), Rupert, Irina, Matt (absent but joined late), Bernard, Mike Steele, Gustavo, others
 **Duration context:** Long (~1hr 29min)
 **Workstreams touched:** WS3 Sales Recon Convergence, WS2 CLARA, WS1 Data Quality, WS6 Governance
 
@@ -9,7 +9,7 @@
 - Jamie presented the Sales Recon platform vision: a customer intelligence layer that aggregates Salesforce data, external intelligence, and interaction data into actionable insights for sales teams -- with conversation starters, gap analysis, and nudge-based data enrichment
 - The Sales Recon team has been working on the platform for approximately a year; currently rolling out to sales ops teams with a UAT target for April
 - Richard and Azmain presented CLARA (the IRP adoption tracker) as a complementary but distinct tool -- purpose-built for the IRP adoption problem, not a generic CRM replacement
-- Ben Brooks framed CLARA as bespoke to insurance's IRP migration challenge, suggesting it should remain insurance-owned but with API integration points to Sales Recon
+- Ben Brookes framed CLARA as bespoke to insurance's IRP migration challenge, suggesting it should remain insurance-owned but with API integration points to Sales Recon
 - Key strategic question emerged: should CLARA data feed into Sales Recon, or should Sales Recon provide APIs for CLARA to consume? Consensus leaned toward bidirectional integration via API, not consolidation
 - Bernard demonstrated a Copilot-built customer insight agent pulling from Salesforce, Power BI, and Databricks usage data -- showing recurring support case themes and account health scoring
 - Idrees confirmed Banking CS has a quantitative scoring model (five factors including support cases, severity, qualitative CSM input) that differs from Insurance's approach
@@ -53,7 +53,7 @@
 | Topic | Category | Key Quote | Confidence |
 |-------|----------|-----------|------------|
 | Sales Recon platform overview and vision | Strategic/Product | "Everything we are doing is an excuse for [shared customer understanding] to happen" -- Ari | HIGH |
-| CLARA demo and IRP-specific problem framing | Product/Demo | "Very deliberately designed around the specific problem... around IRP adoption" -- Ben Brooks | HIGH |
+| CLARA demo and IRP-specific problem framing | Product/Demo | "Very deliberately designed around the specific problem... around IRP adoption" -- Ben Brookes | HIGH |
 | Data quality and CRM fragmentation | Operational | "Salesforce data quality has been an issue for years" -- Mike | HIGH |
 | Cross-sell opportunity identification (CSQL) | Strategic/Sales | "Can we use Sales Recon... for CSMs to identify potential use case questions" -- Craig | MEDIUM |
 | Integration architecture (push/pull, APIs, agent-ready) | Technical/Architecture | "The answer to the questions... should be bridges and harmonisation of the experience" -- Ari | HIGH |
@@ -66,7 +66,7 @@
 | Richard Dosoo | Meeting chair, CS representative, presenter | Framed agenda, navigated time, positioned CLARA | 20% |
 | Ari (Speaker 2) | Strategic authority, Sales Recon vision owner | Set vision, guided integration discussion, validated approaches | 20% |
 | Jamie (Speaker 3) | Sales Recon product lead | Presented platform status, offered APIs, managed expectations | 18% |
-| Ben Brooks | Strategic framer for CLARA | Positioned CLARA as insurance-owned, bespoke tool | 8% |
+| Ben Brookes | Strategic framer for CLARA | Positioned CLARA as insurance-owned, bespoke tool | 8% |
 | Azmain Hossain | CLARA demo presenter | Showed tracker capabilities, explained data strategy | 10% |
 | Idrees | Banking CS perspective | Provided banking context, validated data quality issues | 5% |
 | Craig (Speaker 10) | Corporate CS perspective | Raised CSQL gap, Gainsight alignment | 5% |
@@ -79,7 +79,7 @@
 |--------|-----------|-------|-------|-------|
 | Ari | Visionary, receptive | Engaged -- sees CLARA as complementary, not competitive | Integration | "This whole notion of what we read and what we write is an area we could talk about" |
 | Jamie | Pragmatic, cautious on scope | Stable -- offering APIs but not absorbing CLARA | Rollout | "We need to decide who's going to do that rollout" |
-| Ben Brooks | Protective of CLARA ownership | Strong -- explicitly kept CLARA in insurance's domain | Positioning | "It does make sense for the insurance business to own this" |
+| Ben Brookes | Protective of CLARA ownership | Strong -- explicitly kept CLARA in insurance's domain | Positioning | "It does make sense for the insurance business to own this" |
 | Mike | Impressed, wants more | Positive shift -- seeing value in integration | Demo reaction | "This is fantastic, having this all together" |
 | Idrees | Collaborative, practical | Stable | Data quality | "A lot depends on who you are. You want a different view" |
 | Craig | Constructive, raising gaps | Engaged -- wants CSQL functionality | Cross-sell | "One thing I noticed missing... initial identification of customer success qualified leads" |
@@ -122,7 +122,7 @@
 
 ## Raw Quotes of Note
 - "Everything we are doing is an excuse for [shared customer understanding] to happen" -- Ari, revealing the true strategic ambition behind Sales Recon
-- "It does make sense for the insurance business to own this" -- Ben Brooks, asserting CLARA's independence from Sales Recon
+- "It does make sense for the insurance business to own this" -- Ben Brookes, asserting CLARA's independence from Sales Recon
 - "We can't wait. We can't have that risk unmanaged" -- Richard, on why CLARA exists despite Gainsight being the long-term answer
 - "I want us to have an understanding, a shared understanding, across the organisation of our customers" -- Ari, on the intelligence layer vision
 - "Salesforce data quality has been an issue for years" -- Mike, on the elephant in the room
@@ -130,6 +130,6 @@
 ## Narrative Notes
 This was the most strategically significant meeting of the week -- the first time Insurance's CLARA initiative was presented alongside the broader Sales Recon platform to a cross-functional audience including Banking, Corporate, Life, and Applied AI. The meeting revealed both alignment and tension: everyone agrees on the need for centralised customer intelligence, but the implementation paths are diverging across business units.
 
-Ben Brooks's positioning of CLARA as bespoke and insurance-owned was deliberate and important. He prevented CLARA from being absorbed into Sales Recon's roadmap, preserving the team's autonomy and speed. Ari was receptive -- he sees value in the approach and is genuinely interested in API integration rather than consolidation. Jamie was more pragmatic, offering APIs but not taking on CLARA's requirements.
+Ben Brookes's positioning of CLARA as bespoke and insurance-owned was deliberate and important. He prevented CLARA from being absorbed into Sales Recon's roadmap, preserving the team's autonomy and speed. Ari was receptive -- he sees value in the approach and is genuinely interested in API integration rather than consolidation. Jamie was more pragmatic, offering APIs but not taking on CLARA's requirements.
 
 The elephant in the room is the tool proliferation problem: CLARA for IRP adoption, Sales Recon for sales intelligence, Gainsight for CS operations, Copilot agents for ad-hoc analysis, plus whatever Banking and Corporate are building independently. Multiple speakers circled this issue without fully confronting it. The double-entry fatigue -- CSMs being asked to input data into multiple systems -- was raised by nearly everyone and remains the most dangerous adoption risk across all initiatives. Divya's decision to expand this meeting's audience signals executive recognition that coordination is needed, but the actual coordination mechanisms remain undefined.

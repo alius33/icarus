@@ -148,7 +148,7 @@ Oh my god. Let's just see how long you can wait.
 Unknown Speaker  24:16  
 Then I was about to come in on you go.
 
-Ben Brooks  24:21  
+Ben Brookes  24:21  
 Not at all. So I'm really interested in, like, what's the sort of intelligence layer in here that determines solution fit to the customer? And I say this partly selfishly from the customer enablement standpoint, but we've been doing a lot of work on which segments Should we go after with which solutions, where they're most mature, and how do they fit? Because that then makes the customer satisfaction part of the follow on from the sale that much easier. And it's kind of counter to the sales white space analysis, where you look for the gap where the customer doesn't have the product, and then you try to put the product in the customer, but that product may not fit right? So there's a lot of places where we've been working on blueprints. Solution fit concepts that I would love to feed into this for the insurance BU, especially for the property side and IRP, because that, I think, is what brings this kind of account intelligence and the opportunity to sell something really compelling to life. But I'm not sure what we would need to engage with there to be helpful.
 
 Speaker 3  25:19  
@@ -166,7 +166,7 @@ Call it a product description. Sorry, it's
 Speaker 5  27:03  
 a lot. Go to Market. Strategy is the but, and that intelligence, then that you are building, we would want to capture it there. We want the agents to be to be aware.
 
-Ben Brooks  27:12  
+Ben Brookes  27:12  
 Yeah, perfect. There's something about like we've defined the concept of an archetype within the insurance space. So are you a broker? Are you reinsurer? Are you primary insurer? Because you want very different things from us. From us, depending on where you sit in the market and what you're trying to do with our solution. So, you know, Caterpillar isn't going to want our treaty reinsurance purchasing application, but they are going to want other things that we would be able to define for that archetype in a way that would be quite interesting.
 
 Speaker 2  27:37  
@@ -487,7 +487,7 @@ And Richard, this was built because the RMS business didn't make its way into ki
 Richard Dosoo  1:16:41  
 It's not there yet, and we can't wait. We can't have that risk unmanaged. It's all that implementation.
 
-Ben Brooks  1:16:46  
+Ben Brookes  1:16:46  
 Well, it's a bit more than that. It's all sort of very it's all very deliberately designed around the specific problem that we're dealing with around IRP adoption, and the sort of four or five major things that we have to get done in order to do that, we've got to understand use cases statuses are use cases blockers that are stopping them from being green. What are the charters? What are the blueprints being used? It's very, very bespoke to the IRP problem. You could abstract from it, and it would be in a, you know, a SaaS migration application in general, but that's not where we were going with it. So I think in that sense, it does make sense for the insurance business to own this. But to Richard's point, how do we get the right interface with sales recon, Customer Success recon, in order that the intelligence is kind of used pervasively, that that's where I think it comes to life.
 
 Speaker 4  1:17:32  

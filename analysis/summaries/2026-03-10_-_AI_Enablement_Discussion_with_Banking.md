@@ -1,6 +1,6 @@
 # AI Enablement Discussion with Banking (Gina Greer & Olivier)
 **Date:** 2026-03-10
-**Attendees:** Richard Dosoo, Azmain Hossain, Ben Brooks, Gina Greer, Olivier
+**Attendees:** Richard Dosoo, Azmain Hossain, Ben Brookes, Gina Greer, Olivier
 **Duration context:** Long (~5,700 words)
 **Workstreams touched:** WS1 Training & Enablement, WS2 CLARA, App Factory
 
@@ -24,7 +24,7 @@
 |--------|-------|----------|--------|
 | Share enablement journey and ROI approach with banking team | Richard / Azmain | Next 2 weeks | Open |
 | Banking team to complete AI initiative mapping and prioritisation | Gina / Olivier | TBD | Open |
-| Explore specific App Factory hosting opportunities for banking tools | Ben Brooks | TBD | Open |
+| Explore specific App Factory hosting opportunities for banking tools | Ben Brookes | TBD | Open |
 | Follow up on Idris-style re-architecture for any banking Cursor-built apps | BenVH | TBD | Open |
 
 ## Stakeholder Signals

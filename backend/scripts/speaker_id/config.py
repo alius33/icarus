@@ -11,7 +11,7 @@ STAKEHOLDER_ALIASES: dict[str, list[str]] = {
     "Colin Holmes": ["Colin", "colin"],
 
     # Tier 2 — Core Product & Delivery
-    "Ben Brooks": ["Ben B", "BenB", "ben b", "Ben Brooks"],
+    "Ben Brookes": ["Ben B", "BenB", "ben b", "Ben Brookes", "Ben Brookes"],
     "Richard Dosoo": ["Richard", "Rich", "richard", "rich"],
     "Azmain Hossain": ["Azmain", "azmain"],
     "Natalia Plant": ["Natalia", "Nat", "natalia", "nat"],
@@ -26,7 +26,7 @@ STAKEHOLDER_ALIASES: dict[str, list[str]] = {
     "Martin Davies": ["Martin", "martin"],
     "Chris M": ["Chris", "chris"],
     "Rhett": ["Rhett", "rhett"],
-    "Nikhil": ["Nikhil", "nikhil"],
+    "Nikhil Koli": ["Nikhil", "nikhil", "Nikhil Koli"],
     "Bala": ["Bala", "bala"],
     "Prashant": ["Prashant", "prashant"],
 
@@ -41,10 +41,10 @@ STAKEHOLDER_ALIASES: dict[str, list[str]] = {
     "Courtney": ["Courtney", "courtney"],
     "Peter Kimes": ["Peter", "P Kimes", "peter", "Peter Kimes"],
     "Liz Couchman": ["Liz", "liz"],
-    "Catherine": ["Catherine", "catherine"],
+    "Kathryn Palkovics": ["Kathryn", "kathryn", "Catherine", "catherine", "Kathryn Palkovics"],
 
     # Tier 4 — PM & Governance
-    "Diana": ["Diana", "diana"],
+    "Diana Kazakova-Ivanova": ["Diana", "diana", "Diana Kazakova-Ivanova"],
     "Divya": ["Divya", "divya"],
     "Adrian Thomas": ["Adrian", "adrian"],
     "Brandon Smith": ["Brandon", "brandon"],
@@ -72,26 +72,25 @@ STAKEHOLDER_ALIASES: dict[str, list[str]] = {
     "Julia Valencia": ["Julia", "julia"],
 
     # Other
-    "Kathryn": ["Kathryn", "kathryn"],
     "Pietro": ["Pietro", "pietro"],
     "Stephanie": ["Stephanie", "stephanie"],
 }
 
 # Known gender for pronoun-based narrowing
 SPEAKER_GENDER: dict[str, str] = {
-    "Richard Dosoo": "M", "Ben Brooks": "M", "Ben Van Houten": "M",
+    "Richard Dosoo": "M", "Ben Brookes": "M", "Ben Van Houten": "M",
     "Azmain Hossain": "M", "Martin Davies": "M", "Josh Ellingson": "M",
     "George Dyke": "M", "Steve Gentilli": "M", "Peter Kimes": "M",
     "Chris M": "M", "Rhett": "M", "Dan Flemington": "M", "Bernard": "M",
-    "Philip Garner": "M", "Idris": "M", "Nikhil": "M", "Kevin Pern": "M",
+    "Philip Garner": "M", "Idris": "M", "Nikhil Koli": "M", "Kevin Pern": "M",
     "Vlad": "M", "Naveen": "M", "Miles": "M", "Bala": "M", "Cihan": "M",
     "Jamie": "M", "Conrad": "M", "Andy Frappe": "M", "Ari Lahavi": "M",
     "Colin Holmes": "M", "Adrian Thomas": "M", "Brandon Smith": "M",
     "Prashant": "M", "Pietro": "M",
-    "Natalia Plant": "F", "Diya Sawhny": "F", "Diana": "F",
+    "Natalia Plant": "F", "Diya Sawhny": "F", "Diana Kazakova-Ivanova": "F",
     "Stacy Dixtra": "F", "Courtney": "F", "Liz Couchman": "F",
-    "Rachel Gillespie": "F", "Alexandra": "F", "Catherine": "F",
-    "Nicole": "F", "Kathryn": "F", "Rhonda": "F", "Tina Palumbo": "F",
+    "Rachel Gillespie": "F", "Alexandra": "F", "Kathryn Palkovics": "F",
+    "Nicole": "F", "Rhonda": "F", "Tina Palumbo": "F",
     "Amanda Fleming": "F", "Charlotte": "F", "Chanel": "F",
     "Cara": "F", "Julia Valencia": "F", "Stephanie": "F", "Divya": "F",
 }
@@ -114,7 +113,7 @@ def resolve_name(name: str) -> str | None:
 TITLE_NAME_PATTERNS: list[tuple[str, str]] = [
     # Specific multi-word names first (order matters!)
     (r"(?i)\bBen\s*VH\b|BenVH\b|Ben\s+Van\s+Houten\b", "Ben Van Houten"),
-    (r"(?i)\bBen\s*B\b|Ben\s+Brooks\b", "Ben Brooks"),
+    (r"(?i)\bBen\s*B\b|Ben\s+Brookes?\b", "Ben Brookes"),
     (r"(?i)\bJosh\s*E\b|Josh\s+Ellingson\b", "Josh Ellingson"),
     (r"(?i)\bGeorge\s*D\b|George\s+Dyke\b", "George Dyke"),
     (r"(?i)\bP\s*Kimes\b|Peter\s+Kimes\b", "Peter Kimes"),
@@ -133,7 +132,7 @@ TITLE_NAME_PATTERNS: list[tuple[str, str]] = [
     (r"(?i)\bJosh\b", "Josh Ellingson"),
     (r"(?i)\bGeorge\b", "George Dyke"),
     (r"(?i)\bStacy\b", "Stacy Dixtra"),
-    (r"(?i)\bDiana\b", "Diana"),
+    (r"(?i)\bDiana\b", "Diana Kazakova-Ivanova"),
     (r"(?i)\bCourtney\b", "Courtney"),
     (r"(?i)\bSteve\b", "Steve Gentilli"),
     (r"(?i)\bLiz\b", "Liz Couchman"),
@@ -147,10 +146,9 @@ TITLE_NAME_PATTERNS: list[tuple[str, str]] = [
     (r"(?i)\bIdris\b", "Idris"),
     (r"(?i)\bBernard\b", "Bernard"),
     (r"(?i)\bAlexandra\b", "Alexandra"),
-    (r"(?i)\bKathryn\b", "Kathryn"),
+    (r"(?i)\bKathryn\b|(?i)\bCatherine\b", "Kathryn Palkovics"),
     (r"(?i)\bVlad\b", "Vlad"),
-    (r"(?i)\bCatherine\b", "Catherine"),
-    (r"(?i)\bNikhil\b", "Nikhil"),
+    (r"(?i)\bNikhil\b", "Nikhil Koli"),
     (r"(?i)\bAmanda\b", "Amanda Fleming"),
     (r"(?i)\bKevin\b", "Kevin Pern"),
 ]
@@ -158,7 +156,7 @@ TITLE_NAME_PATTERNS: list[tuple[str, str]] = [
 # "Ben" alone — requires context-dependent disambiguation
 # Handled separately in heuristics.py with domain analysis
 AMBIGUOUS_NAMES: dict[str, list[str]] = {
-    "Ben": ["Ben Brooks", "Ben Van Houten"],
+    "Ben": ["Ben Brookes", "Ben Van Houten"],
 }
 
 # Meeting type detection from title keywords
@@ -185,14 +183,14 @@ MEETING_TYPE_PATTERNS: list[tuple[str, str]] = [
 # Meeting type → typical attendees (used as prior in elimination)
 MEETING_TYPE_ATTENDEES: dict[str, list[str]] = {
     "1_on_1": ["Azmain Hossain"],  # + person from title
-    "standup": ["Azmain Hossain", "Richard Dosoo", "Ben Brooks", "Natalia Plant"],
-    "workshop": ["Azmain Hossain", "George Dyke", "Josh Ellingson", "Ben Brooks"],
-    "programme_review": ["Richard Dosoo", "Azmain Hossain", "Ben Brooks", "Natalia Plant", "Diana"],
+    "standup": ["Azmain Hossain", "Richard Dosoo", "Ben Brookes", "Natalia Plant"],
+    "workshop": ["Azmain Hossain", "George Dyke", "Josh Ellingson", "Ben Brookes"],
+    "programme_review": ["Richard Dosoo", "Azmain Hossain", "Ben Brookes", "Natalia Plant", "Diana Kazakova-Ivanova"],
     "sales_recon": ["Richard Dosoo", "Jamie", "George Dyke", "Azmain Hossain"],
     "build_in_five": ["Martin Davies", "Richard Dosoo", "Azmain Hossain"],
-    "portfolio_review": ["Natalia Plant", "Ben Brooks", "Azmain Hossain"],
+    "portfolio_review": ["Natalia Plant", "Ben Brookes", "Azmain Hossain"],
     "infrastructure": ["Ben Van Houten", "Azmain Hossain", "Richard Dosoo"],
-    "clara": ["Azmain Hossain", "Richard Dosoo", "Ben Brooks"],
+    "clara": ["Azmain Hossain", "Richard Dosoo", "Ben Brookes"],
     "executive": ["Richard Dosoo", "Diya Sawhny", "Azmain Hossain"],
     "technical_specialist": ["Richard Dosoo", "Courtney", "Azmain Hossain"],
     "demo": ["Azmain Hossain", "Richard Dosoo"],
@@ -256,11 +254,15 @@ SPEECH_PATTERNS: dict[str, dict] = {
         "personal_markers": [r"(?i)\badhd\b", r"(?i)\bwife\b",
                              r"(?i)my brain", r"(?i)drowning"],
     },
-    "Ben Brooks": {
+    "Ben Brookes": {
         "signature_words": [r"stealth preview", r"polish layer",
                             r"data visibility", r"kill.*csms.*kindness"],
         "role_phrases": [r"\badoption\b", r"\bcsm\b", r"\bdashboard\b",
                          r"\bmetrics\b", r"\bonboarding\b"],
+    },
+    "Kathryn Palkovics": {
+        "role_phrases": [r"(?i)\bcoe\b", r"(?i)\benablement\b",
+                         r"(?i)\bcouncil\b", r"(?i)\bgovernance\b"],
     },
     "Natalia Plant": {
         "signature_words": [r"\benablement\b", r"\bexecution\b",

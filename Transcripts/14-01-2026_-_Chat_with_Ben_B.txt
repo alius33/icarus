@@ -1,4 +1,4 @@
-Ben Brooks  0:00  
+Ben Brookes  0:00  
 Like two minutes.
 
 Unknown Speaker  0:20  
@@ -38,7 +38,7 @@ Speaker 2  4:33
 This is the part I wanted to ask the question, want Salesforce as a source of truth over this tracker? What is that?
 
 Speaker 1  4:40  
-No, the other, the other way. So if we use this for data entry, yeah, information needs to flow out the back end. Yeah, that's the plan. We can keep it manual. If that's the way to do it with a download once a week and pump it in there. I wouldn't wait. I wouldn't spend too long on that problem right now. Okay, because I. Think I'm hearing Josh and Catherine and Chanel and CO gradually say, okay, clearly Salesforce doesn't work. Should we just give up with it? Which is ideal. We don't have to worry about that problem. Yeah, until Gainsight comes along.
+No, the other, the other way. So if we use this for data entry, yeah, information needs to flow out the back end. Yeah, that's the plan. We can keep it manual. If that's the way to do it with a download once a week and pump it in there. I wouldn't wait. I wouldn't spend too long on that problem right now. Okay, because I. Think I'm hearing Josh and Kathryn Palkovics and Chanel and CO gradually say, okay, clearly Salesforce doesn't work. Should we just give up with it? Which is ideal. We don't have to worry about that problem. Yeah, until Gainsight comes along.
 
 Azmain Hossain  5:14  
 I saw Richard was telling me, there's a there's a blocker, like no changes can be made to Salesforce. We're pushing the data, and even if we do it manually, won't that counting the change or because we're not actively changing, presumably, structure,
@@ -107,7 +107,7 @@ Speaker 1  10:19
 yeah, no use cases. There's nothing. Why not? I guess they're complete according to our slides. So there's like a reconciliation there quite figured itself.
 
 Unknown Speaker  10:41  
-That's from Catherine's data. I don't
+That's from Kathryn Palkovics' data. I don't
 
 Azmain Hossain  10:44  
 quite understand. There is so much information sitting in people's heads and in their laptops to the data review part. I know it's just one line, but that's gonna take this is why we have to get it to a position where we can legitimately show it to people, yeah, because people will be like, Oh, this is missing. Let me add it. They need to be able to add it. We can't be like, Oh, no, no, don't actually touch it. Now it's still not working. That's the point. Area.
@@ -137,7 +137,7 @@ Azmain Hossain  12:23
 Where is that date? Because it's not in there. But I know for a fact, because when me and Stacey were reviewing there were huge gaps in when they started, when they're expected to finish. There were dates that have been passed, and it's saying risk link is on. Okay, so there's a lot of stuff that needs to be cleaned up, and
 
 Speaker 1  12:43  
-Catherine's the owner of it, yeah, let's see if we can find that and pump it in somehow. Okay, and then possibly have something like a burn down chart for migrations. That would be ideal, like, if we can show customer count by quarter, outstanding customer. That would be amazing for next week, if we can do it, can do it. Then I've got HD flags, so we've got all the use cases. We've got a lot of effort going into HD enablement, which is going to be a blocker all over the place, right? So if we've got here, we are, model validation. When I want to green, event response that wants red. Let's have a look at that. There's no blocker listed there. We just know it's red. So there must be a reason for that. This, this all has to come to life as we enter data, but we'll probably find quite a lot of blockers that are, you know, saying things like, they need more HD enablement. And I think we want to have something at the use case level, which says whether that use case is HD enabled, whether they are able to use HD models in that use case. Because these sort of two dimensions to it. There's, yeah, there's an application and workflow dimension, there's an analytics dimension, yeah.
+Kathryn Palkovics' the owner of it, yeah, let's see if we can find that and pump it in somehow. Okay, and then possibly have something like a burn down chart for migrations. That would be ideal, like, if we can show customer count by quarter, outstanding customer. That would be amazing for next week, if we can do it, can do it. Then I've got HD flags, so we've got all the use cases. We've got a lot of effort going into HD enablement, which is going to be a blocker all over the place, right? So if we've got here, we are, model validation. When I want to green, event response that wants red. Let's have a look at that. There's no blocker listed there. We just know it's red. So there must be a reason for that. This, this all has to come to life as we enter data, but we'll probably find quite a lot of blockers that are, you know, saying things like, they need more HD enablement. And I think we want to have something at the use case level, which says whether that use case is HD enabled, whether they are able to use HD models in that use case. Because these sort of two dimensions to it. There's, yeah, there's an application and workflow dimension, there's an analytics dimension, yeah.
 
 Azmain Hossain  14:07  
 So if we could come in here to use cases, I'm just trying to think, is there anything in our in all our current data that has a flag for HD? So in that case, we would be adding it in the quickest and most accurate way to do it is manually, literally, just like with the critical migrations, we get several people to go through. Or after we've got the team members added in, we just assign it by CSN. Here's your three accounts. Can you just take if it's HD,

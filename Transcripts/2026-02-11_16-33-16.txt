@@ -14,7 +14,7 @@ Azmain Hossain  1:48
 So yeah, yeah. I think it's good to have several sessions with individual CSMs to kind of get a kind of like a rounded view of, what are people struggling with? What are people's concerns? Like, I had a session with Naveen earlier today where we were going over his accounts, and kind of was able to capture questions that a normal CSM would have, like, why is there a status and then a rag status? What's the difference? Why do really important questions which like need to be discussed and answered? Because why have redundant fields in there? This kind of stuff is what I'm kind of looking at now, not big, giant functionality changes, but quality of life.
 
 Josh Ellingson  2:38  
-What makes sense? So I mean, as an example, Catherine, I had the same question as we're going through, but my guess is someone's, someone's told you they need those to track, and there's like, we just need, we'd started consolidating some of that down and really understanding, what are we trying to report? Like, my big concern, obviously, is like, the data that we've pulled over, is there valid? It can be easily updated. But then you're obviously getting a lot of questions around how to report on this.
+What makes sense? So I mean, as an example, Kathryn Palkovics, I had the same question as we're going through, but my guess is someone's, someone's told you they need those to track, and there's like, we just need, we'd started consolidating some of that down and really understanding, what are we trying to report? Like, my big concern, obviously, is like, the data that we've pulled over, is there valid? It can be easily updated. But then you're obviously getting a lot of questions around how to report on this.
 
 Azmain Hossain  3:04  
 And yeah, I would rather fix all the data entry issues first. I would agree with you, yeah, because reporting comes out the other side. So there's we can think about that once the data is right? It's, it's just what, what is the most pertinent data points that you guys need from CSMs, identifying those and then making those the key things that should be updated on a regular basis. There are fields which you guys don't might not care about being updated, or you don't want to check against or report against those, we can leave till later. But basically, so there's like a checklist for CSMs, like, I need to do these three things on my accounts every week, leave an update, check the status, do X, Y and Z.
@@ -41,10 +41,10 @@ Kathryn  7:05
 So those were, I saw you would put them in, but I put a bunch of comments in because I think it was implemented incorrectly. So I wanted to make sure that, I wanted to make sure you saw that and offered the call
 
 Azmain Hossain  7:17  
-rich when you built the plan you put in, like, all of Catherine's
+rich when you built the plan you put in, like, all of Kathryn Palkovics'
 
 Richard Dosoo  7:23  
-comments, where, yeah, all the Catherine's comments, yeah.
+comments, where, yeah, all the Kathryn Palkovics' comments, yeah.
 
 Azmain Hossain  7:27  
 So where you've put in, like, this is fine, but it's not quite what I need. These kind of comments, those have been taking into account as well. So those are all the fixes we've pushed out. If, if there's still stuff that you're finding, yeah, we just need to know,
@@ -113,7 +113,7 @@ Josh Ellingson  13:29
 yeah, this is, you're seeing the complexity. That's right, yeah, that's what we built in Salesforce, and that's why we had to go through the architecture we had, because to resolve all those questions,
 
 Azmain Hossain  13:40  
-yeah, yeah. It's just for us. You know, in Salesforce, you have to get to what you want. You have to follow all their dumb rules about structure and stuff. We don't have to do any of that. So we can agree. I agree one, but yeah, this is, this is one of the reasons I set up this call, and I think Catherine, it would be a good idea for just me and you to have a regular session
+yeah, yeah. It's just for us. You know, in Salesforce, you have to get to what you want. You have to follow all their dumb rules about structure and stuff. We don't have to do any of that. So we can agree. I agree one, but yeah, this is, this is one of the reasons I set up this call, and I think Kathryn Palkovics, it would be a good idea for just me and you to have a regular session
 
 Kathryn  14:02  
 just to go, Yeah, I know that's why I asked so many times, yeah,
@@ -128,7 +128,7 @@ Richard Dosoo  14:44
 That's the hope. And Azmain is fine. We just add two more tables under the customer use case under the sorry, I think it's blockers table and or, sorry, the customer use case table. And we will just have a list in there. And we'll just do. For a row in that table for what we already have, and we'll bring in the rest of the data from from the Salesforce extract. It's just more schema changes.
 
 Azmain Hossain  15:11  
-So I, if you've got time Catherine tomorrow, I would like to have, like, an hour session just with you, just you like, I'll record the session. You just in plain words, explain, go through each of these and be like, this is exactly what's needed, and this is why, and that would be the most helpful thing.
+So I, if you've got time Kathryn Palkovics tomorrow, I would like to have, like, an hour session just with you, just you like, I'll record the session. You just in plain words, explain, go through each of these and be like, this is exactly what's needed, and this is why, and that would be the most helpful thing.
 
 Kathryn  15:31  
 Yeah, I'm happy to like, let me know what time or two. If I like, I can happy to rearrange, if needed, if you have trouble finding a time,
@@ -164,7 +164,7 @@ Richard Dosoo  17:49
 okay, but these two line items here, the the adding the multiple apps to the use case, Azmain. I'll talk to Ben about this tomorrow and see if we can just put it in dev and not push it anywhere else.
 
 Azmain Hossain  18:05  
-There's, there's a couple of these. So from the call on Monday, there was request for every member of the account team to have multiple options, because we have, apparently, there's backup CSMs, or there's multiple CSMs on some and it's the same for like implementation lead. There could be a main person, but then a secondary, same for Solution Architect. So there's several places that we need to add in multi select Options. I just, I wasn't doing that right now, because the aim is, everything is finalised, built for, ready for Monday, and ready for CSMs to actually use it. So post Monday's call is when we're going to do the big push of another bunch of updates. Good. So yeah, that Catherine that gives me a new time to go over it tomorrow and Friday, if need be, so that everything is documented and ready to just build and push out this time next week. Okay?
+There's, there's a couple of these. So from the call on Monday, there was request for every member of the account team to have multiple options, because we have, apparently, there's backup CSMs, or there's multiple CSMs on some and it's the same for like implementation lead. There could be a main person, but then a secondary, same for Solution Architect. So there's several places that we need to add in multi select Options. I just, I wasn't doing that right now, because the aim is, everything is finalised, built for, ready for Monday, and ready for CSMs to actually use it. So post Monday's call is when we're going to do the big push of another bunch of updates. Good. So yeah, that Kathryn Palkovics that gives me a new time to go over it tomorrow and Friday, if need be, so that everything is documented and ready to just build and push out this time next week. Okay?
 
 Speaker 1  19:08  
 And then, yeah, I updated additional it's in here. And then

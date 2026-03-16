@@ -3,7 +3,7 @@
 ## The Programme
 - **Icarus** — Internal codename for this analysis project
 - **CS Gen AI Programme** — The formal name; six workstreams under Richard Dosoo
-- **CLARA** — The IRP adoption tracker app. Built by Ben Brooks over Christmas 2025, now the programme's flagship deliverable
+- **CLARA** — The IRP adoption tracker app. Built by Ben Brookes over Christmas 2025, now the programme's flagship deliverable
 - **Build in Five** — Workstream 6; framework for building demo apps on IRP's Risk Data Lake using Cursor in customer conversations. Led by Martin Davies.
 
 ## Organisation
@@ -56,12 +56,12 @@
 |------|------|-----------|
 | **Azmain** | Programme manager, CLARA developer | Stretched thin, learning Git on the job |
 | **Richard Dosoo** | Programme/operational owner | Technical bridge, manages stakeholders up/across/down |
-| **Ben Brooks** | Product visionary, built CLARA v1 | Pushes speed, "just do it" mentality |
+| **Ben Brookes** | Product visionary, built CLARA v1 | Pushes speed, "just do it" mentality |
 | **Natalia (Plant)** | CS lead, Azmain's manager | Process-focused, runs Portfolio Reviews |
 | **BenVH (Van Houten)** | Platform/infra engineer | AWS, CICD, security. Single point of failure. |
 | **Martin Davies** | Developer (12-week assignment) | Building Build in Five |
 | **Chris** | Developer | CLARA bug fixes, security audit findings |
-| **Diana** | Advisory PM, now Azmain's manager | Supportive of Friday, presenting vision to Ben/Charlotte |
+| **Diana Kazakova-Ivanova** | Advisory PM, now Azmain's manager | Supportive of Friday, presenting vision to Ben/Charlotte |
 | **Prashant** | Developer (planned) | To be allocated to help with Friday |
 
 ### Leadership / Decision Makers
@@ -77,7 +77,7 @@
 ### Technical / Adjacent
 | Name | Role |
 |------|------|
-| **Nikhil** | New tech consulting lead (replaced Alex) |
+| **Nikhil Koli** | New tech consulting lead (replaced Alex) |
 | **Bala** | New, from banking/edfx |
 | **Rhett** | Consulting/tech, learning to push code |
 | **Kevin Pern** | CS Agent prototype (Copilot Studio) |
@@ -100,18 +100,18 @@
 | **Stephanie** | Training KPIs and measurement |
 | **Liz (Couchman)** | Solution architecture, tracker feedback |
 | **Steve Gentilli** | Adoption charter process owner |
-| **Diana** | Advisory PM, ILS team help |
+| **Diana Kazakova-Ivanova** | Advisory PM, ILS team help |
 | **Philip (Garner)** | CSM, used as test subject for RBAC |
 | **Alexandra** | Partner tracking requirements |
 | **Nicole** | Infrastructure, Cat Accelerate tech debt |
 | **Adrian Thomas** | Security/infra (Azure blocker) |
 | **Brandon Smith** | Cyber architecture team |
 | **Charlotte** | Cultural resistance to rapid iteration |
-| **Catherine** | Data alignment, complex account mapping |
+| **Kathryn Palkovics** | Data alignment, complex account mapping |
 | **Amanda Fleming** | Asset management / KYC team |
 | **Dan Flemington** | Sales, building own tools |
 | **Julia Valencia** | Salesforce data access contact |
-| **Catherine** | Data alignment + Gainsight governance ally |
+| **Kathryn Palkovics** | Data alignment + Gainsight governance ally |
 | **Tina Palumbo** | Gainsight team |
 | **Vlad** | PM, data input process |
 | **Miles** | CSM, workshop guinea pig |

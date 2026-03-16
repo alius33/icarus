@@ -1,6 +1,6 @@
 # Adoption Tracker - Deployment to AWS
 **Date:** 2026-01-08
-**Attendees:** Richard Dosoo, Ben Brooks, Azmain Hossain, BenVH (Speaker 3, referenced for deployment)
+**Attendees:** Richard Dosoo, Ben Brookes, Azmain Hossain, BenVH (Speaker 3, referenced for deployment)
 **Duration context:** Long (~50 minutes, transcript ~466 lines)
 **Workstreams touched:** WS2 (CLARA/IRP Adoption Tracker), WS4 (Adoption Charter -- data model for charters, blueprints, acceptance criteria discussed)
 
@@ -53,7 +53,7 @@
 ## Action Items
 | Action | Owner | Deadline | Status | Confidence |
 |--------|-------|----------|--------|------------|
-| Push latest code to GitHub main | Ben Brooks | Today | Open | HIGH |
+| Push latest code to GitHub main | Ben Brookes | Today | Open | HIGH |
 | Create new branch with updated data model | Richard/Azmain | Today | Open | HIGH |
 | Map golden source data to new data model (data mapping exercise) | Azmain | Today | Open | HIGH |
 | Deploy application on AWS | BenVH | Today/tomorrow | Open | HIGH |
@@ -75,20 +75,20 @@
 | Person | Role This Meeting | Influence Acts | Engagement % |
 |--------|-------------------|----------------|--------------|
 | Richard Dosoo | Architecture lead, mentor | Drives data model decisions, plans deployment, mentors Azmain | 45% |
-| Ben Brooks | Product owner, vision setter | Defines priority (data first, dashboard second), envisions pipeline meetings | 35% |
+| Ben Brookes | Product owner, vision setter | Defines priority (data first, dashboard second), envisions pipeline meetings | 35% |
 | Azmain Hossain | Learner, data mapper | Asks questions, expresses uncertainty, takes on data mapping task | 20% |
 
 ## Stakeholder Signals
 | Person | Sentiment | Shift | Topic | Quote |
 |--------|-----------|-------|-------|-------|
 | Richard Dosoo | champion | STABLE | Technical delivery | Driving urgency on data model and deployment |
-| Ben Brooks | champion | STABLE | Product vision | "data visibility problem is really urgent now" |
+| Ben Brookes | champion | STABLE | Product vision | "data visibility problem is really urgent now" |
 | Azmain Hossain | supportive | STABLE | Data mapping role | Eager but acknowledges skill gap on codebase |
 
 ## Commitments Made
 | Person | Commitment | Implied Deadline | Condition | Confidence |
 |--------|------------|------------------|-----------|------------|
-| Ben Brooks | Push code to GitHub main | Today | None | HIGH |
+| Ben Brookes | Push code to GitHub main | Today | None | HIGH |
 | Azmain | Do data mapping from golden source to new data model | Today | Receives data model schema | HIGH |
 | Richard | Finalise data model changes | Today | ChatGPT performance permitting | MEDIUM |
 | BenVH | Deploy to AWS | Today/tomorrow | Code and schema provided | HIGH |

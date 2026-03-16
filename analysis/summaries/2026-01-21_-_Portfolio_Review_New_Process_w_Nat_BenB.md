@@ -1,11 +1,11 @@
-# Portfolio Review — New Process with Natalia and Ben Brooks
+# Portfolio Review — New Process with Natalia and Ben Brookes
 **Date:** 2026-01-21
-**Attendees:** Ben Brooks, Natalia (Plant), Azmain Hossain
+**Attendees:** Ben Brookes, Natalia (Plant), Azmain Hossain
 **Duration context:** Medium (~32 minutes)
 **Workstreams touched:** WS2 CLARA (portfolio review feature, dashboard design)
 
 ## Key Points
-- Ben Brooks proposed a structured weekly portfolio review meeting built around four pillars: (1) Timeline/Priority by quarter, (2) Action Owners accountability, (3) Knowledge Gaps identification, and (4) Accelerate — pulling forward on-track accounts
+- Ben Brookes proposed a structured weekly portfolio review meeting built around four pillars: (1) Timeline/Priority by quarter, (2) Action Owners accountability, (3) Knowledge Gaps identification, and (4) Accelerate — pulling forward on-track accounts
 - Ben had already prototyped a portfolio review page locally in Cursor using CLARA's codebase (not touching GitHub), showing a quarterly funnel view with discussion points flagged automatically
 - Natalia pushed back on creating a separate portfolio review page, arguing that the existing dashboard, customers, and use cases tabs should be used during the meeting to encourage familiarity with the tool
 - Compromise reached: the portfolio review page serves as pre-meeting prep (snapshot of what needs discussion), while the actual meeting uses existing app views to walk through specific accounts
@@ -32,7 +32,7 @@
 | Conduct dry run of portfolio review meeting format | All three | 2026-01-23 afternoon | High |
 | Share priority account list with the team | Natalia | 2026-01-22 | High |
 | Add migration-critical workflow tag to use cases | Azmain Hossain | 2026-01-23 | Medium |
-| Send screen grabs and specs for portfolio review page | Ben Brooks | 2026-01-22 | Medium |
+| Send screen grabs and specs for portfolio review page | Ben Brookes | 2026-01-22 | Medium |
 | Get SSO identity mapping working with BenVH | Azmain Hossain | 2026-01-23 | Medium |
 
 ## Theme Segments
@@ -46,12 +46,12 @@
 | 28:00-32:00 | Monday meeting plan, dry run scheduling | Natalia, Ben | Action-oriented |
 
 ## Power Dynamics
-- **Ben Brooks** came in with a fully prototyped vision and was willing to be redirected by Natalia. His willingness to build something in Cursor overnight showed both initiative and a tendency to lead with artifacts rather than discussion.
+- **Ben Brookes** came in with a fully prototyped vision and was willing to be redirected by Natalia. His willingness to build something in Cursor overnight showed both initiative and a tendency to lead with artifacts rather than discussion.
 - **Natalia** exercised quiet but firm authority. Her pushback on the separate page was grounded in practical adoption concerns (why create a separate view when the dashboard already has the data?). She shaped the final approach more than anyone.
 - **Azmain** played connector between the PM feedback he had gathered and the strategic discussion. He mediated effectively between Ben's vision and Natalia's pragmatism.
 
 ## Stakeholder Signals
-- **Ben Brooks** — Visionary thinking but sometimes ahead of what the team can deliver. His prototype demonstrated capability but also revealed a tendency to build before aligning. His multi-persona view concept (CSM, management, SA, exec) is strategically sound but represents significant scope.
+- **Ben Brookes** — Visionary thinking but sometimes ahead of what the team can deliver. His prototype demonstrated capability but also revealed a tendency to build before aligning. His multi-persona view concept (CSM, management, SA, exec) is strategically sound but represents significant scope.
 - **Natalia** — Pragmatic, operationally minded, and focused on adoption. Her insistence on using existing tools during meetings rather than creating separate views showed a user-first mindset. Her concern about time efficiency in meetings was well-placed.
 - **Azmain** — Showed growing confidence in managing the product direction, pushing back gently on scope while accepting the core requirements. His mention of PM feedback showed he is actively gathering requirements from multiple user groups.
 
@@ -86,7 +86,7 @@
 
 ## Raw Quotes of Note
 - "I'm not saying no to this, because that's maybe structuring exactly how we should have a conversation. But I feel that maybe from the better usability of the tracker, it would be easier to use the existing dashboard" — Natalia, on the portfolio review page
-- "I wrote that whole of that IRP tracker in Auto... it wouldn't do us a disservice to rebuild the front end fairly soon" — Ben Brooks (referenced from the Account Planner call, consistent theme)
+- "I wrote that whole of that IRP tracker in Auto... it wouldn't do us a disservice to rebuild the front end fairly soon" — Ben Brookes (referenced from the Account Planner call, consistent theme)
 
 ## Narrative Notes
 This meeting was the most productive design conversation of Week 3. The constructive tension between Ben's prototype-first approach and Natalia's existing-view pragmatism produced a superior outcome: a prep-focused portfolio review page that complements rather than duplicates the main dashboard. Natalia's influence on the meeting structure was decisive and well-judged — her insistence on always covering priority accounts, never discussing greens, and avoiding live edits during meetings will be critical for keeping the weekly reviews efficient. Ben's multi-persona view concept, while ambitious, planted a seed for CLARA's evolution from a data entry tool to a collaboration platform. The fact that Ben could prototype a page overnight in Cursor underscored both the speed of AI-assisted development and the governance challenge it creates: anyone with Cursor access can build features faster than the team can review and integrate them. This tension between speed and coordination will be a recurring theme as the programme scales.

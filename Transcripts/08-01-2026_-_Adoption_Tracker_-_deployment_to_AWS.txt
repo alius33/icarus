@@ -1,10 +1,10 @@
-Ben Brooks  0:00  
+Ben Brookes  0:00  
 I just say, create it and then started using it. So I know some of it is a bit duplicative. I don't know what the difference between partner bench and team members is. Oh yes, I do. Team members is on a specific
 
 Richard Dosoo  0:14  
 adoption, yeah. Okay, yeah. So we can that's, that's, it's all great, normalised structure. We can have the partners in there. We can have partner assignments to projects. We can even, if you wanted to, depending on how much, how far you want to go, you can even have resource assignments from Project flowing up in here as well. But I don't think you didn't want to do resource management with this yet, right? That wasn't, or did you?
 
-Ben Brooks  0:40  
+Ben Brookes  0:40  
 Maybe, before long, we could, but I don't. I wasn't intending to right now.
 
 Unknown Speaker  0:46  
@@ -25,7 +25,7 @@ So that's, that's what I was thinking like, whatever is basically the most minim
 Richard Dosoo  3:03  
 the I guess Azmain. What I wanted to try and figure out is, what's the delta between what you've done already and what Ben as well out there? And then we can figure out what changes we need to make to the to the UI, or to incorporate your stuff into into the UI. Basically, I'm trying to figure out next.
 
-Ben Brooks  3:18  
+Ben Brookes  3:18  
 But by by done already, you mean the dashboard that we had pre Christmas. Yeah.
 
 Speaker 1  3:24  
@@ -37,13 +37,13 @@ should be, it should be at least consistent, because I stuff that into the Yeah,
 Azmain Hossain  3:50  
 yeah, once, once Richard's got it up. I just wanted to ask you, Ben, because my kind of understanding is given how much you've expanded it out the charts and graphs, and the dashboard part is kind of taken a bit of a second priority to getting the database up and running on the back end and making it so that all of these little disparate pieces that you've added in, of the adoption Charter, the blueprints, the partner stuff, all of that works in conjunction the dashboard part is, is a part of it, as you've put on the left hand side, but it forms kind of that's not what's expected of it right now, because we've got other
 
-Ben Brooks  4:34  
+Ben Brookes  4:34  
 it's the it's the result of it. Yeah, yeah, yeah. What we need to build is the way in which we create the data that the dashboard can bring to life.
 
 Azmain Hossain  4:45  
 That was my understanding that would take precedence, making sure that the data is correct, and then the dashboard comes as a byproduct of that.
 
-Ben Brooks  4:54  
+Ben Brookes  4:54  
 Yeah, exactly. The dashboard is just a bunch of queries on top of what what we've then done. Yeah, yeah.
 
 Richard Dosoo  5:00  
@@ -55,19 +55,19 @@ your local host.
 Richard Dosoo  5:15  
 You had a version of the app with the dashboards
 
-Ben Brooks  5:21  
+Ben Brookes  5:21  
 into on local host. It's not going to work if I share even my IP, because I don't have a external static ERP here, right? Can I do that over VPN?
 
 Richard Dosoo  5:33  
 No, it won't. It won't let me connect to your laptop. It won't do it if, maybe if you just bring it up and share it on the screen again and then
 
-Ben Brooks  6:02  
+Ben Brookes  6:02  
 see Yeah, yeah, yeah, cool. So is there, is there a particular part of it you want to take a look at?
 
 Richard Dosoo  6:12  
 So I guess I think the way, the way you guys described it, is exactly what we're going to do. We'll nail the data model, we'll create the database. We'll pump it for of data. But the question I had Azmain was, Ben, where did you have the dashboard reports in here? Was there an executive dashboard or any report?
 
-Ben Brooks  6:29  
+Ben Brookes  6:29  
 There's a there's a few different cuts at it. I didn't spend very long on trying to replicate, to be honest, because once the data is there and it's all stood up, that part is it's relatively easy. So I put a couple of bits here in executive but then I also thought about, we should have a report builder in here. Should stick a natural language query thing in here. It would all be dead easy. Deer can go and ask the machine questions instead of bothering the rest of us about it.
 
 Richard Dosoo  6:59  
@@ -76,7 +76,7 @@ Yeah, exactly why should, once we build out the data.
 Azmain Hossain  7:02  
 So, so, yeah, Richard, basically the executive dashboard, that's the one that I'll I can work on to make it look like what I had. But what I had was, again, just a bunch of ideas and stuff. Nothing was concrete. The other thing that we were, we were working on is persona based tabs. So like, we're having one for CSMs, having one for team leaders. But I think that's Ben's covered that under the main dashboard, which is like the CSM,
 
-Ben Brooks  7:34  
+Ben Brookes  7:34  
 it's supposed to be contextual in so far as it'll show the accounts for the teams that you're on. Yeah,
 
 Unknown Speaker  7:43  
@@ -88,13 +88,13 @@ that will use the Burn me a second,
 Richard Dosoo  7:56  
 that will use the the, what did you call it? Team roles? Yeah, not seeing roles. There was another team.
 
-Ben Brooks  8:03  
+Ben Brookes  8:03  
 Yeah, it was. There's a team members thing here, which, in the data model must, must be there somewhere where we just assign people to the to the teams, right? If we, if
 
 Speaker 3  8:19  
 it's the team roles, people. You've got it in there with dates, yeah?
 
-Ben Brooks  8:24  
+Ben Brookes  8:24  
 If I turn that off, it will show you what we've currently got. So well, this is from the golden source you used in December, Azmain. But, yeah, it's basically just the CSM that's assigned. Yeah, that's the only person that I mean, yeah. So we need to build that out. Yeah, yeah.
 
 Richard Dosoo  8:48  
@@ -136,13 +136,13 @@ Okay, okay, one thing I wanted to ask, we haven't put anything about blueprints 
 Unknown Speaker  15:29  
 no, no, that's, this is a really good point.
 
-Ben Brooks  15:33  
+Ben Brookes  15:33  
 I'm not sure we want to start there. I think maybe we get there over time. So I was wondering about switching off blueprint and maybe the partner stuff in the first go round, I'm not sure,
 
 Richard Dosoo  15:49  
 because the blueprints, essentially, right, are just a way for us to define what use cases are going to be in here, right? That if you really want to boil it down so it's most simple thing, right? All the blueprints and the use and the other questions that we ask are essentially the input criteria to what customer use cases and dates. So for now, we can just have this table and manually populate it, and then maybe, then, that's the second workstream that we work on, right to build out that module that fields, and that's basically the input pipeline to it. So if I Yeah, okay, let me bring up, I'm not putting it into the long grass. We're going to get it done. It's not going to take long. Liz and Christine have done a whole bunch of work on it. It's just in terms of what we get done like today, that's, that's what I'm thinking. Just me, yeah,
 
-Ben Brooks  16:40  
+Ben Brookes  16:40  
 yeah, no, that's fine. It can, it can be phase two, which can be a quick one.
 
 Unknown Speaker  16:47  
@@ -151,31 +151,31 @@ Yeah? So here you've got,
 Richard Dosoo  16:52  
 yeah, use case, Id, priority, status, notes, create a date. What we probably have off the back of this Ben is, and do you want acceptance criteria in this as well,
 
-Ben Brooks  17:09  
+Ben Brookes  17:09  
 in the use case? No, I don't think so,
 
 Richard Dosoo  17:12  
 hanging off the use case. So we'd have another table hanging off the use case, which will be acceptance criteria like, do I know when we spoke from slightly talking about blueprints. Initially, that was what we were thinking, right, that we would have like in the in the blue, in the charter, the customer would not only sign up the use cases, but the acceptance criteria. Are we going to shift that out to later on from a process standpoint,
 
-Ben Brooks  17:38  
+Ben Brookes  17:38  
 or no, no, we want, I think we want I think we want to do that. But I'm questioning at what level that is pegged, I think, in the in the dashboard that we were doing before using all the stuff that's in Salesforce, the use cases aren't the driver of the success criteria. The success criteria is at an account level,
 
 Unknown Speaker  17:58  
 isn't it? Okay? Yeah, so that which
 
-Ben Brooks  18:00  
+Ben Brookes  18:00  
 is, which is probably not right. That's a That's good. It's a good challenge. Maybe they should be at the use case level. You should have success criteria for event
 
 Richard Dosoo  18:09  
 response, yeah. That's, that's what I was thinking, treaty roll up, yeah. Or a series of event criteria, right for, for those success criteria. So that would be basically a table hanging off this.
 
-Ben Brooks  18:21  
+Ben Brookes  18:21  
 So I think that's I think that's a good idea. I think we add it, and we add it at the use case level, but also at the account level. Is that going to get really confusing for people?
 
 Richard Dosoo  18:32  
 So what I would say is, we add a table at the use case level, but we go back to what I mentioned before, is we have a view, right, which is just a way for you to represent the data at the account level
 
-Ben Brooks  18:44  
+Ben Brookes  18:44  
 you need. I think I feel like you need a one to many use case to success criteria mapping. Then, because you need to be able to say, I have a use case that is, I can do instantaneous event response. My use case of the event response, my success criteria is, it has to be instantaneous. Yep. So we've got that. I can also have a I could also have a success criteria. That is, I want to be able to have 5x throughput of all schedules and therefore write more business. And that's not a particular workflow success criteria that's three, right?
 
 Unknown Speaker  19:22  
@@ -184,7 +184,7 @@ It should be. You should
 Richard Dosoo  19:25  
 have a use case which is, like, I want to source the truth that handles all of my data per line of business, and then the acceptance criteria, except for the plan to see what I mean, like that. Don't get me wrong, I completely, yeah, but they
 
-Ben Brooks  19:36  
+Ben Brookes  19:36  
 but the use case is, is predefined. There's only 15 of them, or whatever that we've designed,
 
 Richard Dosoo  19:43  
@@ -196,7 +196,7 @@ lines we do, to be honest, I don't think we do.
 Richard Dosoo  19:53  
 But is that functional? Because we don't do it today, right?
 
-Ben Brooks  19:56  
+Ben Brookes  19:56  
 Probably. So you. Basis, let me just have a look at what we've got today.
 
 Unknown Speaker  20:05  
@@ -205,31 +205,31 @@ Sorry, Azmain, you had your hand up as well. Ben.
 Azmain Hossain  20:09  
 Ben, answered my question. You guys have moved on from the point.
 
-Ben Brooks  20:18  
+Ben Brookes  20:18  
 Anyway, for use cases are statements like insurance, reinsurance, placement, student roll up, treaty underwriting, treaty modelling, yeah.
 
 Richard Dosoo  20:31  
 So they're, they're casting the current functionality. So when you start talking about things that we can't do today, we don't have a use case for it, but that's okay, right? Let's write one.
 
-Ben Brooks  20:41  
+Ben Brookes  20:41  
 Yeah, we just add it. We add it in future.
 
 Richard Dosoo  20:44  
 Yeah, this is it. But that, I think Ben that comes back to your question you raised earlier, right? Which is, is that a migration use case, or is that a adoption
 
-Ben Brooks  20:56  
+Ben Brookes  20:56  
 use case? Definitely a migration, an
 
 Richard Dosoo  20:59  
 adoption use Yeah, exactly. So that means, and then obviously, like, I know someone like QBE would tell you, would hang that over your head and say, well, the only reason we adopted your platform is because you told us we could do this. So we may, it's there may be instances where it still is critical, but I think we can. We can add it to the listener and do that like, evolve, yeah,
 
-Ben Brooks  21:21  
+Ben Brookes  21:21  
 okay, but that's, that's posturing. It's not real workflow, criticality. It's just negotiation.
 
 Richard Dosoo  21:30  
 This is it, right? It's what, it's the framework that we've gone in there with, right? Whether, if that was the premise that the thing was sold on, okay, fair enough. But you can't do that today. So how can it be critical for you to view, yeah, so in that, in that case, then Ben, if we did the so we keep customer use cases, and then we have customer acceptance criteria underneath it that hangs with the use case, and we present that view on top right. Okay, so let me then go back, yeah, yeah.
 
-Ben Brooks  22:02  
+Ben Brookes  22:02  
 I think I think maybe we, maybe we define this as use case acceptance criteria and customer success criteria. They're different things. Yeah, one is account level and one is use case level, okay, because the success criteria could be, I can do single source of truth across my whole business, but the acceptance criteria is, I could do instant event response,
 
 Richard Dosoo  22:33  
@@ -244,19 +244,19 @@ sorry, let me bring this up.
 Richard Dosoo  23:26  
 Yeah, so be the adoption customer adoptions, right? That's the, see, yeah. So this is the excelsiors customer record, then adoption ID, customer ID, adoption stage. So you want acceptance criteria hanging off that. So that would be our single substitute, and then we'll have right event response, which is the use case, and we'll have another table off the back of that. Yeah.
 
-Ben Brooks  23:53  
+Ben Brookes  23:53  
 Okay, so, so what's, what's actually going on here? Is the charter is hanging off the adoption. Yeah, it may it may not be in the data model, but that's the the idea the charter hangs off the adoption, and the success criteria sits in the charter along with milestones and various other things,
 
 Richard Dosoo  24:16  
 yeah, but these the success criteria in the charter, it's not at this level, right? It's at
 
-Ben Brooks  24:22  
+Ben Brookes  24:22  
 that level. Yeah, it's not use case level, it's adoption level.
 
 Speaker 3  24:26  
 Yeah, we got, we don't have it at that level yet. We haven't had time,
 
-Ben Brooks  24:29  
+Ben Brookes  24:29  
 no, but we should have, we should have acceptance criteria for each use case.
 
 Richard Dosoo  24:34  
@@ -286,13 +286,13 @@ Okay, I guess project manager hat on. What's the time frame we're looking at yes
 Speaker 3  28:45  
 No, this is it, right? This is this Azmain, exactly. This is it so?
 
-Ben Brooks  28:52  
+Ben Brookes  28:52  
 So my my hope is we can, we can get something stood up pretty quickly. I'd love to do that today. I don't think it's outside the realms of possibility, and I want to then be pitching it around, getting people excited. We're better hope it doesn't fall flat on its face after that. And in an ideal world, we'd start getting people to fill it in as well, because the data visibility problem is really urgent now. And I think if we've got people comfortable with the idea that this is going to get easier, they'll start thinking the right way, behaving the right way, having customer conversations that I don't want to wait a couple of weeks, because we've got it perfect, and then wait a couple of weeks for everybody to go and have the right discussions, and it's a month before we've got any data. So so I'm hoping we can kind of launch in a bit of a stealth preview, little bit selective. We choose the people that we want to be friendly with, and see how we go, but also get you know programme team aligned around this programme review meetings set up. All that sort of stuff for pipeline management, get people a bit fired up, and then be able to pivot with the data that they're already entering as we harden it and as we launch it properly, in a, I don't know, in a week.
 
 Richard Dosoo  30:16  
 And Ben, would you want to do that in like banners, weekly project status, or is this going to be like a different call?
 
-Ben Brooks  30:25  
+Ben Brookes  30:25  
 We're going to have a probably a couple of calls on a Monday. Each one of them is likely to be an hour. We'll do it Europe and US to begin with, where we get the entirety of all adoption squad, team members for all of the accounts within that region on a call for an hour, and we run through it in a very structured, prioritised way, so the call might be okay. Let's look at the overall q1 migration completion accounts. There's five that have a target migration date this quarter. Let's work through each of those accounts. Is everybody comfortable with the next steps that have to happen this week? Is the plan in there is the data up to date? There'll be loads of places we say, right? You guys go work on that plan. Do it offline. Get on with it. Come back next week with the right answer, but we just create the teamwork around it, the visibility of the team. And then, I think, depending on how that meeting goes, we may or may not get into the weeds very much on a particular account, and there may or may not be a lot of kind of help needed and problem solving in the conversation, but it can happen at the back as we get better at doing this, so we're doing less kind of, oh, there's a data problem here. Who's not updated the spreadsheet stuff. We can spend more time doing the high value stuff of, how do we unblock this account? What relationship strings do we need to pull? Where? How are we going to make that happen? Those sorts of things. And then we can also get a little bit better at having the forecast conversation, which is okay. What are we saying about q2 already? How do we make sure we can pull three of those forward into q1 which are the best candidates? Let's go look at those ones. Spend the time that way too. Yeah.
 
 Richard Dosoo  32:14  
@@ -301,7 +301,7 @@ No, that makes sense. So the first thing Azmain, the first report you're going t
 Unknown Speaker  33:17  
 Let me find it.
 
-Ben Brooks  33:18  
+Ben Brookes  33:18  
 Yeah, so I wanted to check in on that as well. So on GitHub is a branch before I blew it all up with Azure, that might be the better one to use. That's the fast API stuff. Having said that, I'm still making some changes locally as I talk to people, so I need to push something back up to GitHub that you guys can use to deploy.
 
 Richard Dosoo  33:42  
@@ -313,31 +313,31 @@ let's have a look.
 Richard Dosoo  34:36  
 So this, this one, right? This is the one that you made yesterday.
 
-Ben Brooks  34:49  
+Ben Brookes  34:49  
 No, that's something Martin created. I don't know what that was about.
 
 Richard Dosoo  34:52  
 Okay, yeah, I'm gonna meet him. I've got a meeting with him. Me and him are at Chaucer in a couple hours, so I can ask him, then he's. Howard right now, but we can, otherwise, we'll probably use this one, this main one
 
-Ben Brooks  35:06  
+Ben Brookes  35:06  
 that you tell me what's best is that, is that my update yesterday? I honestly don't know, but I can just push whatever I've got now to get out. That's fine, and it will push to main, I think, doesn't it?
 
 Richard Dosoo  35:19  
 Yeah, just Yeah. Push it to main. And as I said, then we'll pick that up. And then we'll push, we'll push new data model change. We'll create a branch, push these data model changes to it so we don't break it. And then we can, and then we can redo the UI based off the new tip.
 
-Ben Brooks  35:36  
+Ben Brookes  35:36  
 Do we want to do any rationalising of this stuff? I am certain what I've got is bloated. I don't know whether it matters.
 
 Richard Dosoo  35:46  
 Right now, we're not trying to build a production code right now. We're just trying to get something up there. That's why we wouldn't work. We're going to have to do a lot of refactoring. I know we shouldn't, like we should have, if we were doing this properly, we would have the architecture will be hardened without the workflow now, the UI now would have all that stuff all agreed, and the code is the thing that you'll do last. But we're, we're kind of coming at this from the from the other end, right? We're trying to get a prototype and running first. So for now, then we'll just go with it, right? And then what we'll do is we just have to make sure that, you know, the week after next, we spend one or two days doing the hardening and then making that for and then cleaning up all the old versions, removing them. And then that's our golden main that everyone has signed off on, and that's the one we move forward for. But we'll give us up about a week before we tidy up. And yeah, all right, so let's do this then Azmain, if you've got a few minutes now, Azmain, should we have a look at the Golden source and try and do a data mapping from that? And then Ben, well, if you check your latest version into main, then me and Azmain can pick that up and start working on that once that's been checked in.
 
-Ben Brooks  37:00  
+Ben Brookes  37:00  
 Yeah. Okay, cool. I'll do that. I'll drop off and get on with
 
 Unknown Speaker  37:05  
 that. Awesome. Thank you. Ben,
 
-Ben Brooks  37:06  
+Ben Brookes  37:06  
 excellent. Thanks guys. See you soon.
 
 Azmain Hossain  37:13  

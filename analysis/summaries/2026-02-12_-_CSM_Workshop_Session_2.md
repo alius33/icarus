@@ -12,7 +12,7 @@
 - Asha asks what CSMs get back from the data they put in. She wants to see how blockers are being actioned — not just report them into a void. George reinforces this by sharing an example where Liz McLagan asked for account status on specific clients and he pointed her to CLARA instead of responding manually. The decreasing frequency of manual update requests is the measure of success.
 - Azmain shows the blocker analytics feature: AI analysis groups blockers across customers, identifies patterns, and suggests generic recommendations. He explains the vision for integrating Claude/OpenAI API to read customer updates over time and generate intelligent summaries for executives.
 - New features shown in dev environment: multi-select for account team roles (multiple CSMs, implementation leads, solution architects per account), employee profiles showing all assignments, and the feedback-to-GitHub pipeline where Claude automatically attempts fixes on submitted bugs.
-- Asha asks about blocker standardisation — different CSMs describe the same issue differently. Azmain confirms a standard blocker taxonomy is being developed (with Steve Gentilly and Catherine Pavlovich) that will become a selectable list rather than free text.
+- Asha asks about blocker standardisation — different CSMs describe the same issue differently. Azmain confirms a standard blocker taxonomy is being developed (with Steve Gentilly and Kathryn Palkovics Pavlovich) that will become a selectable list rather than free text.
 - Internal vs external blocker distinction explained: internal = something Moody's can fix; external = on the client's side or a partner's side (e.g., Imaginera).
 - Implementation lead and project management views requested as dashboard filters alongside the existing CSM view.
 - Philip notes that the feedback workflow going straight to GitHub and being auto-triaged by Claude is impressive — 7 issues already auto-fixed, 10 attempted, 8 in human review.
@@ -24,7 +24,7 @@
 |----------|------|---------|------------|
 | Data preservation commitment: no more bulk updates that wipe CSM-entered data | Infrastructure | Azmain | High — public commitment |
 | Bottom-up approach adopted: ask CSMs what they need, not just what executives want | Process | Azmain/George | High |
-| Blocker taxonomy to be standardised as selectable list | Feature | Steve Gentilly/Catherine/Azmain | Medium |
+| Blocker taxonomy to be standardised as selectable list | Feature | Steve Gentilly/Kathryn Palkovics/Azmain | Medium |
 | Implementation lead and PM dashboard views to be added | Feature | George's team request | Medium |
 
 ## Action Items
@@ -32,7 +32,7 @@
 |--------|-------|----------|--------|------------|
 | Fix parent/subsidiary rollup issue for dashboard metrics | Azmain | TBD | Open | Medium — architecturally complex |
 | Schedule 1:1 sessions with each CSM to review their accounts | Azmain / Natalia's team | TBD | Open | Medium |
-| Develop standard blocker taxonomy as selectable list | Steve Gentilly / Catherine / Azmain | TBD | Open | Medium |
+| Develop standard blocker taxonomy as selectable list | Steve Gentilly / Kathryn Palkovics / Azmain | TBD | Open | Medium |
 | Add implementation lead and PM views to dashboard | Azmain | TBD | Open | Medium |
 | Integrate Claude/OpenAI API for intelligent summaries and executive Q&A | Azmain | TBD | Open | Low |
 
@@ -81,7 +81,7 @@
 - **Parent/subsidiary rollup is an architectural debt.** This is not a bug — it is a fundamental data model limitation. Fixing it properly requires rethinking how accounts relate to each other in the database, which could be a significant undertaking.
 - **Asha's reciprocity challenge is existential.** If CSMs perceive CLARA as a reporting tool for management rather than a tool that helps them, they will enter the minimum data required and disengage. The blocker analytics and AI summaries are the answer, but they are not yet functional.
 - **Gainsight uncertainty.** Philip's scepticism is shared by others. If Gainsight never properly incorporates RMS data, CLARA's scope may need to expand beyond IRP migrations — directly contradicting Josh's scope declaration from the same day.
-- **Blocker taxonomy depends on Steve Gentilly and Catherine.** Both are external to the core dev team. If they do not deliver, the free-text blocker problem persists and analytics remain unreliable.
+- **Blocker taxonomy depends on Steve Gentilly and Kathryn Palkovics.** Both are external to the core dev team. If they do not deliver, the free-text blocker problem persists and analytics remain unreliable.
 
 ## Open Questions Raised
 - How to solve the parent/subsidiary data rollup problem architecturally?

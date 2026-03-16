@@ -20,7 +20,7 @@ A conceptual framework exists from the January 14 planning session, but there ha
 | Advisory (Learning) | Pietro | Learning specialist. Advised against starting with training — start with capability identification, then assess proficiency, then design learning |
 | Advisory (KPIs) | Stephanie | Emphasised measuring training success with clear KPIs |
 | Advisory (Governance) | Colin Holmes | Senior leadership. Explained the insurance-wide AI steerco established mid-2025. Provided governance context for where training fits |
-| Previous Trainer | Ben Brooks | Ran December 2025 training sessions (5am sessions). De facto evangelist for Cursor adoption |
+| Previous Trainer | Ben Brookes | Ran December 2025 training sessions (5am sessions). De facto evangelist for Cursor adoption |
 | Cultural Bridge | George Dyke | Organised CSM workshops (12 Feb). Could be a natural fit for training delivery given his pragmatic style |
 | Cultural Resistance Example | Charlotte | Ben cited her as an example of the cultural barrier: spent 90 minutes on the phone coaching her to "just press the button" |
 
@@ -112,7 +112,7 @@ The cultural challenge is significant. Ben described spending 90 minutes on the 
 | 9 Jan | `09-01-2026_-_AI_Licenses_Request.txt` | Cursor/Claude licensing constraints that affect training delivery |
 | 14 Jan | `14-01-2026_-_AI_Training_DIscussion.txt` | **Key transcript.** Deep session with Colin, Pietro, Stephanie. Framework established. |
 | 19 Jan | `19-01-2026_-_Account_Planner_w_George_D.txt` | George onboarded to Cursor. Shows the informal 1:1 training model. |
-| 11 Feb | `2026-02-11_13-30-56.txt` | Diana helping ILS team with basic Microsoft tools — shows how far behind some teams are |
+| 11 Feb | `2026-02-11_13-30-56.txt` | Diana Kazakova-Ivanova helping ILS team with basic Microsoft tools — shows how far behind some teams are |
 | 12 Feb | `2026-02-12_-_CSM_Workshop_Session_1.txt` | George's workshop — broader team enablement context |
 | 12 Feb | `2026-02-12_-_CSM_Workshop_Session_2.txt` | Hands-on CLARA session — closest thing to WS1 training delivered |
 | 20 Feb | `2026-02-20_-_Natalia_1-1.txt` | **Key transcript.** Azmain flags WS1 stall to Natalia. |

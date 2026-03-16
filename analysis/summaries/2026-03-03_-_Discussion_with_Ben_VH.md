@@ -14,7 +14,7 @@
 - Priority sequence for CLARA onboarding established: feedback/bugs first, blocker intelligence (Bedrock API) second, adoption charters third.
 - Nikhil confirmed to have Bedrock API key working on his local environment using IAM roles (not hard-coded keys) -- this is a significant technical milestone.
 - Azmain mentioned deploying his new PM app (Friday) via App Factory.
-- They agreed to sync with Richard before approaching Ben Brooks about Phantom Agent.
+- They agreed to sync with Richard before approaching Ben Brookes about Phantom Agent.
 
 ## Decisions Made
 | Decision | Type | Confidence | Owner |
@@ -22,7 +22,7 @@
 | Deliberately delay Phantom Agent introduction until cost pain is felt | Strategic | Medium | Azmain advising BenVH |
 | Keep onboarding call focused on bugs/features, not LLM orchestration | Tactical | High | Azmain |
 | CLARA work priority: bugs -> blocker intelligence -> adoption charters | Prioritisation | High | Azmain |
-| Sync with Richard before approaching Ben Brooks about Phantom Agent | Process | High | Azmain, BenVH |
+| Sync with Richard before approaching Ben Brookes about Phantom Agent | Process | High | Azmain, BenVH |
 
 ## Action Items
 | Action | Owner | Deadline | Status | Confidence |
@@ -54,7 +54,7 @@
 |-----|-----------|---------|---------|
 | Azmain | Keep LLM orchestration off the onboarding call | BenVH | Protect Phantom Agent introduction |
 | Azmain | Name-drop BenVH and Phantom Agent in group chats | BenVH | Credit protection |
-| Both | Sync with Richard before approaching Ben Brooks | Each other | Strategic alignment |
+| Both | Sync with Richard before approaching Ben Brookes | Each other | Strategic alignment |
 
 ## Meeting Effectiveness
 | Dimension | Score (1-10) | Notes |
@@ -81,4 +81,4 @@
 - "I've had people steal my ideas. I've had people build something and it's half assed, but because of their visibility in the company, their shit gets pushed versus mine." -- BenVH, revealing career trauma
 
 ## Narrative Notes
-This is one of the most strategically significant conversations of the week. It reveals two critical dynamics: (1) BenVH is not just technically frustrated but existentially anxious about repeating a traumatic career pattern, and (2) Azmain is emerging as a sophisticated political operator who controls information flow across the programme. The "let them feel the pain" strategy is a calculated gambit -- protecting BenVH's position but also allowing unnecessary costs to accumulate. The adoption charter complexity reveal is also significant: what Ben Brooks frames as a simple feature requires multi-modal AI capabilities nobody has scoped. The personal career frustrations shared by both men -- BenVH's Microsoft trauma, Azmain's deferred promotion -- reveal a programme held together by people who are personally invested but professionally under-rewarded.
+This is one of the most strategically significant conversations of the week. It reveals two critical dynamics: (1) BenVH is not just technically frustrated but existentially anxious about repeating a traumatic career pattern, and (2) Azmain is emerging as a sophisticated political operator who controls information flow across the programme. The "let them feel the pain" strategy is a calculated gambit -- protecting BenVH's position but also allowing unnecessary costs to accumulate. The adoption charter complexity reveal is also significant: what Ben Brookes frames as a simple feature requires multi-modal AI capabilities nobody has scoped. The personal career frustrations shared by both men -- BenVH's Microsoft trauma, Azmain's deferred promotion -- reveal a programme held together by people who are personally invested but professionally under-rewarded.

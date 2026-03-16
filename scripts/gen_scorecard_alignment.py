@@ -351,7 +351,7 @@ def gen_gaps_chart(tmpdir):
         ("WS5 Navigator -- no CS ownership", 75, mRED),
         ("WS3 CS Agent -- unconnected prototype", 70, mAMBER),
         ("Cost management -- zero attribution", 70, mAMBER),
-        ("Catherine COE overlap", 65, mAMBER),
+        ("Kathryn Palkovics COE overlap", 65, mAMBER),
         ("Cross-OU demand unfunded", 60, mAMBER),
     ]
     names = [g[0] for g in gaps]
@@ -1408,7 +1408,7 @@ def build_pdf(output_path):
     pdf.sub_title("8.9 TSR Enhancements (Cat Bond Automation)")
     pdf.body(
         "Idris Abram's project to automate Transaction Summary Reports for cat bonds. First expansion "
-        "beyond the core insurance CS team. Ben Brooks approved dedicated time. Azmain supporting with "
+        "beyond the core insurance CS team. Ben Brookes approved dedicated time. Azmain supporting with "
         "project planning. Treated as a proper scoped project, not a side experiment."
     )
     pdf.add_table(
@@ -1594,10 +1594,10 @@ def build_pdf(output_path):
          "The scorecard has cloud efficiency KPIs.",
          "Get BenVH to configure Bedrock tags. Frame cost against value: "
          "$10K/month vs $150K AS saving vs $896M migration ARR."),
-        ("Catherine COE overlap (65%)",
-         "Catherine's centre of excellence mandate overlaps with the AI programme. "
+        ("Kathryn Palkovics COE overlap (65%)",
+         "Kathryn Palkovics' centre of excellence mandate overlaps with the AI programme. "
          "The scorecard's AI adoption targets could be claimed by her COE instead.",
-         "Present to Diya before Catherine does. Anchor the scorecard mapping. "
+         "Present to Diya before Kathryn Palkovics does. Anchor the scorecard mapping. "
          "Make it clear your programme IS the execution engine."),
         ("Cross-OU demand unfunded (60%)",
          "Banking and Life both want what you've built. No resourcing or formal structure.",
@@ -1679,7 +1679,7 @@ def build_pdf(output_path):
             ["Training programme doesn't launch", "90% AI adoption KPI missed. Insurance falls behind Banking (already using Copilot).", "HIGH without dedicated owner"],
             ["Cross-OU demand goes unmet", "Banking and Life build duplicate tools. ~$200K in wasted effort. Political damage.", "MEDIUM -- already happening"],
             ["AS agentic target missed (Q3)", "$150K saving unrealised. 20 staff not redeployed. NatCat Q4 target cascades.", "HIGH without developer hire"],
-            ["Programme loses informal status", "Catherine's COE absorbs the AI narrative. Your team loses credit for 10 weeks of delivery.", "MEDIUM -- COE mandate active"],
+            ["Programme loses informal status", "Kathryn Palkovics' COE absorbs the AI narrative. Your team loses credit for 10 weeks of delivery.", "MEDIUM -- COE mandate active"],
         ],
         [55, 95, 40]
     )
@@ -1704,7 +1704,7 @@ def build_pdf(output_path):
         "This programme has no formal status, no dedicated budget, and runs on ~5 full-time "
         "people. Martin's 12-week assignment ends soon. Azmain is a single point of failure "
         "building every tool. BenVH is the only person who can deploy. Cross-OU demand is growing "
-        "with no resources to meet it. Catherine's COE mandate could absorb the AI narrative "
+        "with no resources to meet it. Kathryn Palkovics' COE mandate could absorb the AI narrative "
         "if the programme doesn't formalise first."
     )
 

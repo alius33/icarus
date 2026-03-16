@@ -57,13 +57,13 @@
   {
     "category": "reach",
     "title": "First External Team Member (Idris) Onboarded for TSR Automation",
-    "description": "Idris formally onboarded as first non-core-team member approved for dedicated programme time (approved by Ben Brooks). Working on TSR automation as concrete project. Becomes AI ambassador back to risk advisory team.",
+    "description": "Idris formally onboarded as first non-core-team member approved for dedicated programme time (approved by Ben Brookes). Working on TSR automation as concrete project. Becomes AI ambassador back to risk advisory team.",
     "before_state": "Programme limited to core insurance CS team",
     "after_state": "Cross-team expansion model proved viable; first external team member producing value",
     "project": "TSR Enhancements",
     "confidence": "measured",
     "date_recorded": "2026-03-10",
-    "notes": "Explicitly approved by Ben Brooks."
+    "notes": "Explicitly approved by Ben Brookes."
   },
   {
     "category": "reach",
@@ -118,7 +118,7 @@
     "project": "Build in Five",
     "confidence": "measured",
     "date_recorded": "2026-03-10",
-    "notes": "Richard compared it to Databricks Genie. Ben Brooks focused on product positioning rather than features, indicating technical confidence."
+    "notes": "Richard compared it to Databricks Genie. Ben Brookes focused on product positioning rather than features, indicating technical confidence."
   },
   {
     "category": "quality",
@@ -156,8 +156,8 @@
   {
     "category": "process_improvement",
     "title": "Gainsight Integration Governance Formalised",
-    "description": "Catherine convened formal Gainsight integration meeting. Clear decisions: CLARA is IRP-specific, Gainsight is overall CSM BAU (complementary). One-way integration (read only, Cases and Case Feed phase 1). Catherine volunteered to design governance decision tree for App Factory intake.",
-    "before_state": "Gainsight relationship unclear; integration approach uncoordinated; Catherine seen as detractor",
+    "description": "Kathryn Palkovics convened formal Gainsight integration meeting. Clear decisions: CLARA is IRP-specific, Gainsight is overall CSM BAU (complementary). One-way integration (read only, Cases and Case Feed phase 1). Kathryn Palkovics volunteered to design governance decision tree for App Factory intake.",
+    "before_state": "Gainsight relationship unclear; integration approach uncoordinated; Kathryn Palkovics seen as detractor",
     "after_state": "Clear integration scope, appointed governance gatekeeper, enthusiastic enterprise stakeholder",
     "project": "CLARA",
     "confidence": "measured",

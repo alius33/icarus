@@ -19,13 +19,13 @@ there's look. We want to, we want to be open and receptive to feedback and obvio
 Richard Dosoo  2:37  
 Did they put severities on that issues
 
-Ben Brooks  2:41  
+Ben Brookes  2:41  
 just put severity high every time they want something right. It's just the issue is sort of cultural,
 
 Richard Dosoo  2:49  
 okay, no, but the severity would have been a way to filter right and say, Guys,
 
-Ben Brooks  2:53  
+Ben Brookes  2:53  
 no, yeah, I agree. I agree, but it's we need, we need to take that judgement I think,
 
 Azmain Hossain  2:58  
@@ -34,25 +34,25 @@ yeah, okay, obviously obviously, anything that that actually disrupts the the wo
 Richard Dosoo  3:13  
 Okay, so maybe Azmain Me and you can do that today. But the like, essentially, what I'm suggesting is we do one build this week, on Wednesday, another build next week, and we use that as the but as our capacity planner, right wherever we can fit safely into those two builds, that's what we'll work on. But we're not going to do we're not going to we're not going to plan on doing any more work that takes up any more resources than me and you for the next two weeks. Yeah, yeah. And then obviously Ben has got to the reason why we need to prioritise Ben's factory pieces. He's now getting inundated with requests from the team to migrate apps to the platform, which is good, right? But obviously we can't scale Ben until the automation is done. So there's got to go up on their list next, right? Otherwise, his thing's going to be drowning in requests to just manually keep deploying these apps and deploying Git repositories and stuff. So I think that's the we have to push that up the list to just enable everyone else. And when that's done, then we can start pivoting back to the rest of the pieces. And then this includes, I know you said you built an MCP service for your PowerPoint bit. Do you when do you need that finish? Right? I guess that's the next question. The reason I'm asking is Nichols suggested we should jump in and help you with that. So I was
 
-Ben Brooks  4:34  
+Ben Brookes  4:34  
 thinking, this is a pet project. I just think there's a there's a broad use case to it two angles. One being, there's no reason anybody couldn't do this kind of stuff, so it's a little bit of a kind of enablement kick. And the other being, it's helpful. It's useful. It should save a lot of time, but it's not, it's not urgent. It's just whenever we get to it is cool, and I might get to it today, but. And or it might take a little
 
-Ben Brooks  5:02  
+Ben Brookes  5:02  
 while I'm relaxed about it.
 
-Ben Brooks  5:04  
+Ben Brookes  5:04  
 I think, I think what I want to, what would be good, is to just plot out the chunks that we want to get to with Clara in particular. But also what, as you said, what, what Ben is looking at. Because for me, the stuff that I've got a sense of, we got to figure out the plan for is the solution, fit stuff and the rep playbook, stuff, rum book, whatever he calls it. So that's that's like a kind of enablement around getting guidance that should go into Clara, there's Courtney's support ticket stuff, which I think she's she's crying out some help on. And would be pretty powerful if we can, if we can get to that soon, because we can use it to tackle HD stuff and blockers and so on, right
 
 Richard Dosoo  5:53  
 and just on that. Ben, just so, because I've got, there's two support ticket things with Courtney, I just want to make sure I'm talking about the right thing. So her and Matt Allen, basically, were like, Oh, they gave me a list of support calls that their team answer, categorised them and said, you know, X percentage of them can be resolved probably when navigator can answer queries about API. So if we can automate that process that will take a number of queries off their table is that was Courtney's spoken to you about, or she mentioned something.
 
-Ben Brooks  6:23  
+Ben Brookes  6:23  
 I think, I think it might be, but I also feel like that's the sort of not very quick way of resolving these things. So if we just wait for navigator, we'll wait forever, because I just don't believe anybody's doing much about it. So I think
 
 Richard Dosoo  6:41  
 it's for us to like, even when navigator comes out, that's going to be a separate, standalone thing, right? We need to build something, yes, that navigator API, when a ticket gets raised, checks the if the answer, if it can be answered by Navigator, and then back in Salesforce, that was the we've got that as a project, but we haven't resourced it yet, which is why we want to bring on Chris and or nickel to help with Yeah.
 
-Ben Brooks  7:04  
+Ben Brookes  7:04  
 But I think, I think what Courtney needs right now is the foundations, is the building blocks of I need to be able to pull out of mix panel, add a user voice, out of Salesforce case data, yeah. And if we, if we built those pipelines, then, you know, the rest of it's relatively easy. On top of that, I think,
 
 Richard Dosoo  7:21  
@@ -61,7 +61,7 @@ no, absolutely. And that, to be honest, when that Bernard from the Life team has
 Azmain Hossain  8:04  
 yeah, and that would be mixed panel and anything else.
 
-Ben Brooks  8:07  
+Ben Brookes  8:07  
 And I think, I think the thing that we want to drive towards, even if we want to do an MVP version of this, is like HD blocker intelligence, so we can start making some progress on understanding what we need to get customers moving there. Yeah.
 
 Richard Dosoo  8:25  
@@ -70,13 +70,13 @@ And, okay, yeah, no, that's cool. We can definitely do that. But then, I guess, 
 Richard Dosoo  8:50  
 then outside of that bin. Or is there anything else from going here? Was there anything else?
 
-Ben Brooks  8:59  
+Ben Brookes  8:59  
 Yeah, I think, I think the LLM in and out stuff would be really helpful for everybody to use the app as much as possible.
 
 Richard Dosoo  9:06  
 Yeah, yeah. So that's I spoke to the guys on Friday night. It looks like people are being a little bit spurious about the Claude key, about the
 
-Ben Brooks  9:17  
+Ben Brookes  9:17  
 anthropic Oh, it's so fucking irritating that that chat, I read it last night, that chat you had back and forwards with those two guys in the, whatever you call it, cheons lab experiment. Why? Why do we have to explain ourselves to them? Just give us a key, right? Well, tell us who to Yeah, you are way more patient than I
 
 Richard Dosoo  9:44  
@@ -94,31 +94,31 @@ You guys were probably not hearing me. I've been talking for a while. No, no, it
 Richard Dosoo  10:27  
 Yep, yeah, exactly. And then we'll chase those guys, because apparently, yeah that. Or even, to be honest, we can use a Microsoft copilot key. Just get that and start with, I think before you go, yeah, let's do that.
 
-Ben Brooks  10:43  
+Ben Brookes  10:43  
 Let's just get, let's get moving there. But you don't, you probably don't want that. I think building your code on the back end, but that's a
 
 Richard Dosoo  10:50  
 different problem. Yeah, I think Azmain, the way you've done it right now is the keys are just part of the GitHub workflow, right? So to just say, set what any key you want as part of their deployment, but Azmain, we can come back to guys. I'm just going in my elevator. I'll be back at my desk in like two minutes. I'm just going to drop Okay,
 
-Ben Brooks  11:37  
+Ben Brookes  11:37  
 hi, Jaz, a new surviving,
 
 Azmain Hossain  11:39  
 yeah, yeah. For me, it's one of the pieces that we had kind of combined, was training and enablement, like I was, I was telling Natalia on Friday, but it's obviously with the with being unsure about what we're going to use, all this plot, API stuff, the training stuff. Can go back and what Rich is talking about, like the enablement piece for all these people building apps so that Ben can deploy them and actually get them running. That that's become the more priority piece. And then one question we keep talking about solution blueprint. Is that different from adoption charters, or is that the same? Yeah?
 
-Ben Brooks  12:26  
+Ben Brookes  12:26  
 Okay, yeah. It is different. So the blueprints are like the the the description of how you would, how we would suggest somebody implements our products, end to end for a given use case. So it's Yeah. They often Yeah, in principle, yep, yep.
 
 Azmain Hossain  12:54  
 So does that mean the adoption charter stuff? We can push it back.
 
-Ben Brooks  13:02  
+Ben Brookes  13:02  
 What because of, because of what Steve and Rhett are doing. You mean, yeah, I don't think that covers the charter stuff, really. I think it's, I think it's slightly different. So Steve's got the kind of blueprint explorer solution fit stuff, but then the charter, like, key success, criteria, extraction, all the rest of it's a slightly different proposition. They kind of need to happen alongside each other.
 
 Azmain Hossain  13:31  
 Okay, yeah, because we were, we were talking to Liz about the, about the adoption charter stuff, and she was like, we've got, we've got a couple of adoption charters that are already done. We've got documentation on, like, what they're supposed to be, what they're supposed to capture, all that stuff. So I was just thinking, given that you've already built, like, the skeleton of the adoption charter stuff in the app, just expand on it a little bit whenever, whenever I get time in the next two weeks. Yeah.
 
-Ben Brooks  14:00  
+Ben Brookes  14:00  
 Okay, okay. And we, you know, we can, we can push some of the other guys to build things like that out, if it's, if it's helpful,
 
 Azmain Hossain  14:10  
@@ -133,7 +133,7 @@ And then there's the enablement piece, which has to be a priority. And HD blocke
 Richard Dosoo  15:13  
 Yes, a solution depends on blocking space. Yeah.
 
-Ben Brooks  15:22  
+Ben Brookes  15:22  
 Sure. Great way to collect and manage all this stuff. Guys, how are you doing it now? Is it just a little bit free form?
 
 Azmain Hossain  15:28  
@@ -148,7 +148,7 @@ Yeah, okay.
 Richard Dosoo  16:00  
 So beyond the next two weeks, then we've got, actually, well, actually, maybe we can do it with the other resources which come on in the next two weeks. So we've got blocker intelligence around HD.
 
-Ben Brooks  16:18  
+Ben Brookes  16:18  
 You writing notes rich, trying
 
 Richard Dosoo  16:20  
@@ -175,13 +175,13 @@ Yeah, no, we're gonna probably need to have conversation with Liz and Steve abou
 Unknown Speaker  19:04  
 which bit Can you see?
 
-Ben Brooks  19:08  
+Ben Brookes  19:08  
 Oh, right, right, yeah. No, that can, that can get kicked into the long grass, yeah. Then otherwise,
 
 Richard Dosoo  19:17  
 yeah, no school. So this has been the thing that I was saying to you earlier that we spoke for Bernard that would have a that could also help Courtney as well. So this is the
 
-Ben Brooks  19:27  
+Ben Brookes  19:27  
 who's Bernard? Who are we working with?
 
 Azmain Hossain  19:31  
@@ -190,7 +190,7 @@ You know, he's on the life side.
 Richard Dosoo  19:35  
 Okay, yeah, so, yeah. I think it reports into Alexa. So he, he based, this is how the whole thing started, but with the whole co pilot studio and getting that building out agent, I would interact with data from Salesforce. So I created a POC. He then picked it up and ran even further with it. But he's been like importing data from Salesforce. Into copilot studio, building up a set of prompts that can do sentiment analysis. So we just need to take what he's done and give him a data pipeline. We were thinking that the sales recon guys would give us that pipeline, but that's not going to come into the end of q1 so we'll do something in the interim, basically, okay, I suppose you haven't met and before,
 
-Ben Brooks  20:24  
+Ben Brookes  20:24  
 but looking at the org, okay, into Fuad only into Alexandra, okay,
 
 Azmain Hossain  20:34  
@@ -199,13 +199,13 @@ what I was gonna say Rich is difference in quality, in terms of LLM performance,
 Richard Dosoo  20:58  
 I mean, look, burnout has been pretty accommodating, right? So if we want him to not use copilot studio, and we want him to use something else, I think he'll be fine with it, because prom story built right was just changing the platform where he's using it. So the reason I was bringing it up was more that there's a crossover right between what him and Courtney want. So we can kill two birds in one stone and then Ben. This is the bits that we already discussed. Ben's pieces, the building, five pieces that come over that. And then Azmain. I think this one is probably going to be like we probably will spend more time on it with Chris and nickel once we finish scoping it out, so we can onboard them in the next two weeks. And then have there be additional resources that help get the internal bit of that we can work on a detail plan of what that is. The only thing that we haven't got on here that we
 
-Ben Brooks  21:48  
+Ben Brookes  21:48  
 probably I just think on some of this stuff we need to, we need to think about the right way to resource this stuff out from the teams that are getting the benefit. So, you know, if Courtney wants to go hard on support tickets and HD blocking, which I do too. I think we should do that by sort of saying, okay, who's going to work with you guys from Courtney's team with the context of what they need? And get really good at cursor really fast, just like you had to Azmain said, it's not just all on a small group or the advisory team, right? Yeah. But I mean, let's, let's bring in Christopher Nikki or whoever, if we've got time and capacity. But equally, I want, I want some of that to come from those teams that are, you know, going to, going to take the symptoms back, partly because there has to be a support and maintenance of it, yeah, yeah.
 
 Richard Dosoo  22:37  
 And I agreed. I haven't even spoken to Courtney said, so we should go on
 
-Ben Brooks  22:44  
+Ben Brookes  22:44  
 this week. We should just definitely do that and catch up and start to flesh out that plan together. Yeah, that'd be good.
 
 Richard Dosoo  22:52  
@@ -220,13 +220,13 @@ yeah, go on Azmain. It's cool. Anything else we haven't talked about training ye
 Azmain Hossain  23:17  
 it's not trading. It's just my, my Claude Max runs out today, and I used up, I think like 75% of cursor allowance in three days. So yeah, there's seven days left. I've kept a bit of my usage. I think I've got like 200 Yeah, 200 bucks left. But whenever that runs out then, then we're blocked. Can't do anything.
 
-Ben Brooks  23:43  
+Ben Brookes  23:43  
 You got windsurf?
 
 Azmain Hossain  23:44  
 I do have windsurf. Yeah, I got it installed.
 
-Ben Brooks  23:50  
+Ben Brookes  23:50  
 Okay, it's on. It's on a different billing cycle. It's about two weeks off. So you should be able to loop from one to the other if you need to. It's not ideal, and it's not as good as cursor, I don't think. But, yeah, yeah. And then rich, if we can get those bedrock APIs, we can just go hell for leather on claw code anyway, right?
 
 Richard Dosoo  24:07  
@@ -247,25 +247,25 @@ okay, I was up because a bunch of issue with.
 Azmain Hossain  25:06  
 Actually just need a bit of help. Ben, you've used Windsor before. I tried logging in with SSO for enterprise. It's not letting me ready.
 
-Ben Brooks  25:19  
+Ben Brookes  25:19  
 I'm pretty sure that's all I did. That's the company, SSO portal ID. So what does that need to be? I don't know. Let me see if I can do that here.
 
-Ben Brooks  25:40  
+Ben Brookes  25:40  
 Have you got the app downloaded? Yeah,
 
-Ben Brooks  25:56  
+Ben Brookes  25:56  
 I don't see any of that stuff. I'm already logged in. Yeah,
 
-Ben Brooks  26:06  
+Ben Brookes  26:06  
 so that's just kicking you off to find the company portal ID, yeah, all right, should I try logging out and see what happens? No, I quit it and try running it again.
 
-Ben Brooks  26:30  
+Ben Brookes  26:30  
 Yeah, just fire straight up.
 
-Ben Brooks  26:46  
+Ben Brookes  26:46  
 It doesn't give me a lot. It just says, it says Moody's in the top corner. You could try Moody's is the ID. I don't think it's gonna be right, but
 
-Ben Brooks  27:02  
+Ben Brookes  27:02  
 and, right, yeah, okay, as you get, you get 1000 prompt credits, whatever that is,
 
 Azmain Hossain  27:10  
@@ -280,25 +280,25 @@ you can go through remember to request it. Don't just instal it using admin priv
 Speaker 1  27:45  
 Even my admin privileges that have not been revoked, right? So I don't.
 
-Ben Brooks  27:49  
+Ben Brookes  27:49  
 There was a request this morning, Rich, I reapproved it.
 
 Richard Dosoo  27:53  
 Yeah, no, apparently they need to do the audit with the permissions on there so they don't get like, I'm swearing. I should really swear. So, alright, so let's do this then, Azmain, well, I'll find us some more time for us to just find out this plan and but the main thing, I think the key, critical path stuff is API keys, bedrock accounts. We got a call with Ben in the afternoon to just go through his stuff to just because he's got about four or five things in his pocket right now that just want to make sure everyone's agreed on the priorities for them. And then Ben will just formalise like a plan and put it out there in terms of the call with the Wednesday. We're just going to go through this.
 
-Ben Brooks  28:41  
+Ben Brookes  28:41  
 Okay, yeah, cool. We're
 
 Richard Dosoo  28:43  
 just going to go through this. And basically the only change we're going to make is just put the resourcing, just high level resourcing, and timelines for each of these things.
 
-Ben Brooks  28:51  
+Ben Brookes  28:51  
 I should put the Yeah, put the specific things underneath what it is that we're going to need to try to do, and how we're going to create their the resourcing for them as well.
 
 Richard Dosoo  29:00  
 Yeah, exactly. I'll add one more slide, and then Azmain, this is what I was going to say, presented here on Wednesday. Basically, she's already seen this, but we just add one more layer with the resources.
 
-Ben Brooks  29:09  
+Ben Brookes  29:09  
 Yeah, cool. All right, I gotta jump, guys. Sorry, but this is good. Thank you.
 
 Richard Dosoo  29:15  

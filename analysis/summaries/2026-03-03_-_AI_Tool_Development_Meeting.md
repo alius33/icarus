@@ -29,7 +29,7 @@
 | Identify three initial API modules for MVP | Martin | TBD | Open | High |
 | Build foundation layer and modular drag-and-drop UI | Martin | TBD | Open | High |
 | Create assets folder with Moody's colours and logo | Azmain | TBD | Open | Medium |
-| Show progress to Richard and Ben Brooks for feedback | Martin/Azmain | TBD | Open | High |
+| Show progress to Richard and Ben Brookes for feedback | Martin/Azmain | TBD | Open | High |
 
 ## Theme Segments
 1. **Tooling and environment setup** (0:00-5:00) -- Discussion of Cursor, Claude, budget constraints, API keys
@@ -50,7 +50,7 @@
 | Who | Commitment | To Whom | Context |
 |-----|-----------|---------|---------|
 | Martin | Build MVP with three modules from scratch | Azmain | Core Build in Five deliverable |
-| Martin | Summarise approach and share with Ben Brooks | Richard (mentioned) | Exceedance demo planning |
+| Martin | Summarise approach and share with Ben Brookes | Richard (mentioned) | Exceedance demo planning |
 | Azmain | Provide assets folder (logos, colours) | Martin | Design consistency |
 
 ## Meeting Effectiveness

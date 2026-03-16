@@ -15,7 +15,7 @@
 - Rhett's Excel-based adoption charter work mentioned as a complication -- created confusion because it contradicts the agreed Word-to-app approach.
 - CLARA has zero formal documentation. Chris found the READMEs are outdated and incomplete. Azmain admitted he has never looked at them and just tells Cursor to deploy locally.
 - Git hygiene improved: Azmain squashed 113 migration heads to one, pushed to staging successfully.
-- Martin's Build in Five discussed briefly -- Richard will connect with him and Ben Brooks about Exceedance demo timeline this week.
+- Martin's Build in Five discussed briefly -- Richard will connect with him and Ben Brookes about Exceedance demo timeline this week.
 - Nikhil and BenVH had already discussed App Factory architecture the day before -- BenVH wants something like Replit for internal use.
 
 ## Decisions Made
@@ -33,7 +33,7 @@
 | Create group chat and share consolidated feedback list | Azmain | Today | Open | High |
 | Work through bug/defect list first | Chris | This week | Open | High |
 | Help BenVH with App Factory 50% of time | Nikhil | Ongoing | Open | High |
-| Connect with Martin and Ben Brooks about Exceedance demo | Richard | This week | Open | High |
+| Connect with Martin and Ben Brookes about Exceedance demo | Richard | This week | Open | High |
 | Send high-level adoption tracker slides to group | Richard | Today | Open | High |
 | Promote staging build to production | Azmain | End of day | Open | High |
 

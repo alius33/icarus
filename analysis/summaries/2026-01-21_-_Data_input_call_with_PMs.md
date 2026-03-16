@@ -20,13 +20,13 @@
 - **PMs to facilitate CSM data entry, not own the data themselves** (type: process, confidence: high) — CSMs are responsible for accuracy; PMs coordinate sessions and flag gaps
 - **Defer PM-specific features to later phase** (type: prioritization, confidence: high) — PM views for project tracking and service quality are acknowledged but not built yet
 - **No export functionality by design** (type: strategic, confidence: high) — prevents users from reverting to Excel-based workflows
-- **Critical accounts and priority fields to be defined by Ben Brooks** (type: governance, confidence: high) — expected by end of day 2026-01-21
+- **Critical accounts and priority fields to be defined by Ben Brookes** (type: governance, confidence: high) — expected by end of day 2026-01-21
 - **Vlad to test with 3 known accounts immediately** (type: tactical, confidence: high) — provides early validation that data persists correctly
 
 ## Action Items
 | Action | Owner | Deadline | Confidence |
 |--------|-------|----------|------------|
-| Meet with Ben Brooks to identify critical/priority accounts | Azmain Hossain | 2026-01-21 EOD | High |
+| Meet with Ben Brookes to identify critical/priority accounts | Azmain Hossain | 2026-01-21 EOD | High |
 | Confirm deadline for data entry exercise with Natalia/Ben | Azmain Hossain | 2026-01-21 EOD | High |
 | Share critical account list and priority field requirements with PMs | Azmain Hossain | 2026-01-22 | High |
 | Test data entry on Mafra/Star/AIG accounts | Vlad | 2026-01-21 | High |
@@ -55,7 +55,7 @@
 - **Vlad** — Proactive and willing to start immediately. His direct management of 3 accounts makes him a natural early tester. His question about CSM availability showed awareness of the human bottleneck.
 - **Diana** — Slightly frustrated that the tool does not yet support PM workflows, but professional about it. Her needs (project tracking, service quality monitoring, distinguishing customer-led vs Moody's-led work) represent a real feature gap that will need addressing.
 - **Azmain** — Showed product ownership maturity by deferring PM features rather than promising them. His awareness of the blocker type categorization (client, product, sales, etc.) showed he has thought about reporting needs.
-- **Ben Brooks** (referenced) — His directive that "buy-in is not optional" for CSMs sets the tone. He is the authority figure whose prioritization decisions will determine the data entry push scope.
+- **Ben Brookes** (referenced) — His directive that "buy-in is not optional" for CSMs sets the tone. He is the authority figure whose prioritization decisions will determine the data entry push scope.
 
 ## Commitments Made
 | Who | Commitment | To Whom | Confidence |
@@ -81,14 +81,14 @@
 | Free text fields creating inconsistent data | LOW | Region and blocker owner are currently free text when they should be constrained dropdowns. Small data quality issue that compounds at scale. |
 
 ## Open Questions Raised
-- How many of the 155 active accounts will be tagged as critical/priority by Ben Brooks?
+- How many of the 155 active accounts will be tagged as critical/priority by Ben Brookes?
 - What is the realistic deadline for the initial data entry push — end of January or later?
 - How will CSM managers (Josh Ellingson, George Dyke) be involved in the assignment confirmation process?
 - When will PM-specific features (project tracking, service quality) be built into CLARA?
 - Should there be a "light" version of the data entry for small/low-priority accounts?
 
 ## Raw Quotes of Note
-- "Buy-in is not optional. This is what they have to do." — Azmain Hossain, quoting Ben Brooks on CSM adoption
+- "Buy-in is not optional. This is what they have to do." — Azmain Hossain, quoting Ben Brookes on CSM adoption
 - "The thinking is also to change people's behaviour, because if you can export something into Excel, they're just going to do that" — Azmain Hossain, on the deliberate omission of export functionality
 
 ## Narrative Notes

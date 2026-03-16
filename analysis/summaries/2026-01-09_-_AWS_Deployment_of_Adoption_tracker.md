@@ -1,6 +1,6 @@
 # AWS Deployment of Adoption Tracker
 **Date:** 2026-01-09
-**Attendees:** Richard Dosoo, Azmain Hossain (Ben Brooks mentioned sending data/files, not directly on call)
+**Attendees:** Richard Dosoo, Azmain Hossain (Ben Brookes mentioned sending data/files, not directly on call)
 **Duration context:** Long (~42 minutes, transcript ~345 lines)
 **Workstreams touched:** WS2 (CLARA/IRP Adoption Tracker), WS1 (Training & Enablement -- discussed), WS6 (Build in Five -- mentioned in broader programme context)
 

@@ -10,7 +10,7 @@
 - The Nikhil conflict has escalated significantly. BenVH described daily boundary-crossing: Nikhil attempting to deploy without permission, introducing App Factory tasks to the CAT team, going directly to Richard about centralised logging after BenVH explicitly told him it was out of scope, and scheduling deployment meetings 30 minutes after being told no
 - Richard and BenVH met with Asia/Pacific teams (Singapore, Japan, Australia) — strong interest in App Factory, which increases urgency for the MCP server approach
 - BenVH is putting Nikhil's UI work on the back burner entirely — the MCP server makes a standalone UI unnecessary
-- Richard is planning a direct confrontation with Nikhil about repeated boundary violations and also intends to escalate to Ben Brooks
+- Richard is planning a direct confrontation with Nikhil about repeated boundary violations and also intends to escalate to Ben Brookes
 - Strategy to neutralise Nikhil: redirect him to the Salesforce integration or AIG project, away from App Factory entirely
 - BenVH explicitly stated he would prefer to work overtime himself rather than have Nikhil interact with any App Factory app
 - Azure app registration completed for Slidey authentication (BenVH and Richard working through Azure privilege management live)
@@ -25,14 +25,14 @@
 - Nikhil to be redirected away from App Factory to Salesforce integration or AIG → Richard
 - Martin's app will be the initial MCP server proof of concept → BenVH/Martin
 - Richard to have direct conversation with Nikhil about boundaries → Richard
-- Richard to escalate to Ben Brooks about Nikhil's behaviour → Richard
+- Richard to escalate to Ben Brookes about Nikhil's behaviour → Richard
 
 ## Action Items
 | Action | Owner | Deadline | Status |
 |--------|-------|----------|--------|
 | Complete App Factory MCP server | BenVH | End of week (14 Mar) | Open |
 | Have direct boundary conversation with Nikhil | Richard | This week | Open |
-| Escalate Nikhil behaviour to Ben Brooks | Richard | This week | Open |
+| Escalate Nikhil behaviour to Ben Brookes | Richard | This week | Open |
 | Set up App Factory Town Hall/Lunch and Learn for wider visibility | Richard | Next 2 weeks | Open |
 | Redirect Nikhil to Salesforce integration or AIG project | Richard | This week | Open |
 | Set up presentation to Dennis Clement (MD Digital Content), Dubai, Asia-Pac for App Factory showcase | Richard | Next 2-3 weeks | Open |

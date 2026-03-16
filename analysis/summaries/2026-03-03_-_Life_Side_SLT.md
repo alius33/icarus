@@ -1,12 +1,12 @@
 # Life Side SLT
 **Date:** 2026-03-03
-**Attendees:** Ben Brooks, Richard Dosoo (Speaker 1/6), Azmain Hossain, Christophe (Speaker 3), Jack (Speaker 5), Jason (Speaker 4), Alexandre (Speaker 2), Michelle (mentioned), Kelly (mentioned, absent)
+**Attendees:** Ben Brookes, Richard Dosoo (Speaker 1/6), Azmain Hossain, Christophe (Speaker 3), Jack (Speaker 5), Jason (Speaker 4), Alexandre (Speaker 2), Michelle (mentioned), Kelly (mentioned, absent)
 **Duration context:** Medium (~30 minutes)
 **Workstreams touched:** WS2 CLARA, Cross-OU scaling, Gainsight relationship
 
 ## Key Points
 - CLARA was demoed to the Life Side Senior Leadership Team at Christophe's invitation, following a prior presentation at the insurance ISLT meeting.
-- Ben Brooks set the narrative frame: the journey from dashboards to system of record, driven by the realisation that the problem was data visibility, not visualisation. He described building three iterations over Christmas week in Cursor.
+- Ben Brookes set the narrative frame: the journey from dashboards to system of record, driven by the realisation that the problem was data visibility, not visualisation. He described building three iterations over Christmas week in Cursor.
 - Richard demonstrated CLARA live: authentication (Moody's SSO), RBAC, account portfolio view, product-level metrics (Risk Link, Risk Browser adoption), individual customer breakdowns (use cases, blockers, action plans), and the portfolio review dashboard.
 - Jack raised the key infrastructure question: how did they handle customer data security and hosting? Richard confirmed AWS hosting with TSG Azure tenant for SSO authentication, role-based access control. Jack wants a follow-up session to understand the pattern for replication.
 - Jack compared CLARA to "Gainsight on steroids" -- Richard immediately cautioned that CLARA is complementary to Gainsight, not a replacement. He has been told several times to frame it this way.
@@ -33,13 +33,13 @@
 | Reconvene to discuss Life team applicability | All | TBD | Open | Medium |
 
 ## Theme Segments
-1. **Ben Brooks narrative** (0:00-7:00) -- Journey from dashboards to system of record; iterative Cursor development
+1. **Ben Brookes narrative** (0:00-7:00) -- Journey from dashboards to system of record; iterative Cursor development
 2. **Live CLARA demo** (7:00-16:00) -- Authentication, portfolio view, metrics, blockers, action plans, portfolio review
 3. **Gainsight positioning debate** (16:00-22:00) -- Jack's "on steroids" comment; Richard's careful correction; Azmain's template pitch
 4. **Cross-OU applicability discussion** (22:00-30:00) -- Life team use cases; data flow back to Salesforce/Gainsight
 
 ## Power Dynamics
-- **Ben Brooks commands attention** even from a car with no camera. His narrative framing (Christmas build, iterative discovery, data visibility problem) is compelling and sets the tone.
+- **Ben Brookes commands attention** even from a car with no camera. His narrative framing (Christmas build, iterative discovery, data visibility problem) is compelling and sets the tone.
 - **Richard runs the demo confidently** and manages the Gainsight messaging carefully. He has clearly been coached on this positioning.
 - **Azmain provides the technical vision** (template approach, live development demonstration) and positions himself as the execution engine.
 - **Jack is the most engaged Life SLT member.** He asks the sharpest questions (data security, infrastructure patterns) and sees the infrastructure as the real value.
@@ -49,7 +49,7 @@
 
 ## Stakeholder Signals
 - **Life SLT** -- Newly engaged audience. Impressed by development speed and the RBAC/authentication story. Jack sees reusable infrastructure patterns. Jason wants Salesforce integration. Alexandre is already an advocate. This is a potential expansion opportunity but also a scope creep risk.
-- **Ben Brooks** -- Continues to shop CLARA around to generate independent demand. This is his "kill them with kindness" strategy -- create enough cross-OU interest that CLARA becomes politically untouchable.
+- **Ben Brookes** -- Continues to shop CLARA around to generate independent demand. This is his "kill them with kindness" strategy -- create enough cross-OU interest that CLARA becomes politically untouchable.
 - **Richard** -- Precise on Gainsight messaging. He has clearly been burned by positioning CLARA as a competitor to Gainsight and is now very disciplined about saying "complementary."
 - **Azmain** -- The template/flat-pack concept is new and well-received. He is thinking beyond IRP-specific needs toward platform-level reusability.
 
@@ -72,7 +72,7 @@
 ## Risk Signals
 - **MEDIUM: Scope creep via cross-OU expansion.** If the Life team wants their own CLARA instance, it adds significant work to an already overloaded team. The template approach mitigates this but is not yet built.
 - **MEDIUM: Gainsight relationship fragility.** Jack's "on steroids" comment shows how easily CLARA's positioning can slide toward "Gainsight replacement" in stakeholder minds, despite careful messaging.
-- **LOW: Impression management risk.** Ben Brooks framing the Christmas build as a compelling origin story, combined with Azmain's live demo, creates high expectations that may be difficult to sustain as the team scales.
+- **LOW: Impression management risk.** Ben Brookes framing the Christmas build as a compelling origin story, combined with Azmain's live demo, creates high expectations that may be difficult to sustain as the team scales.
 
 ## Open Questions Raised
 - What specific Life team use cases would benefit from a CLARA-style template?

@@ -14,7 +14,7 @@
 - Natalia sent the list of 31 priority 2026 migration clients and 17 accelerated adoption clients. These are being tagged in the app.
 - Josh frames the need for the tool to be easier than Salesforce for data entry. He publicly acknowledges the pressure Azmain is under with multiple voices providing conflicting requirements.
 - Josh suggests a Thursday meeting (set up by Natalia) to discuss the decision process — what should and shouldn't be in the app, how to avoid giving Azmain contradictory feedback.
-- Azmain proposes a layered approach: CSM perspective workshop (morning, George's team), then Josh/Kathryn-level perspective, then Natalia/Ben Brooks executive perspective.
+- Azmain proposes a layered approach: CSM perspective workshop (morning, George's team), then Josh/Kathryn-level perspective, then Natalia/Ben Brookes executive perspective.
 
 ## Decisions Made
 | Decision | Type | Made By | Confidence |
@@ -72,7 +72,7 @@
 
 ## Risk Signals
 - **Field confusion is a governance failure, not a technical one.** The "high risk" field exists because nobody defined it before it was built. This pattern — build first, define later — recurs across the programme.
-- **Golden source data gap is structural.** The golden source is too messy to import programmatically (Catherine uses manual X's, O's, and formulas inconsistently in the same column). This means account-level data will need to be manually reconciled, which is a significant labour overhead.
+- **Golden source data gap is structural.** The golden source is too messy to import programmatically (Kathryn Palkovics uses manual X's, O's, and formulas inconsistently in the same column). This means account-level data will need to be manually reconciled, which is a significant labour overhead.
 - **Multiple voices, no single decision maker.** Josh raises this explicitly. Until a governance structure is in place, Azmain will continue receiving conflicting requirements.
 
 ## Open Questions Raised

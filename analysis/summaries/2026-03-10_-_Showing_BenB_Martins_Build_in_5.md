@@ -1,11 +1,11 @@
-# Showing Ben Brooks Martin's Build in Five Dashboard
+# Showing Ben Brookes Martin's Build in Five Dashboard
 **Date:** 2026-03-10
-**Attendees:** Ben Brooks, Richard Dosoo, Azmain Hossain, Martin Davies
+**Attendees:** Ben Brookes, Richard Dosoo, Azmain Hossain, Martin Davies
 **Duration context:** Medium (~3,100 words)
 **Workstreams touched:** WS6 Build in Five
 
 ## Key Points
-- This was **Ben Brooks's first time seeing Martin's dashboard builder** — the earlier standup had been without him
+- This was **Ben Brookes's first time seeing Martin's dashboard builder** — the earlier standup had been without him
 - Ben's reaction: positive but strategically focused. Less about the specific features, more about **how to frame this for exceedance** and what the demo should demonstrate
 - Discussion about the exceedance panel format: innovation track, customer challenges discussion with panel guests, then pivot to a live (or semi-live) demo of Build in Five
 - Ben specifically interested in whether the demo can show **a common, irritating market workflow** being solved quickly — not just a cool dashboard, but a transformation of something that currently takes huge amounts of time
@@ -23,12 +23,12 @@
 | Action | Owner | Deadline | Status |
 |--------|-------|----------|--------|
 | Wire up remaining API connections and AI agent integration | Martin | Next 2 weeks | Open |
-| Define exceedance panel format and guest list | Ben Brooks | April | Open |
+| Define exceedance panel format and guest list | Ben Brookes | April | Open |
 | Arrange product team meeting to assess Build in Five as product feature | Ben / Richard | Before exceedance | Open |
 | Explore risk data lake integration feasibility | Martin | TBD | Open |
 
 ## Stakeholder Signals
-- **Ben Brooks** — Thinking at the meta level about positioning and storytelling, not just features. Wants the exceedance moment to land with maximum impact. Open-minded about format ("very open"). Not micromanaging Martin — trusting the team to define the approach and then aligning it to his conference narrative.
+- **Ben Brookes** — Thinking at the meta level about positioning and storytelling, not just features. Wants the exceedance moment to land with maximum impact. Open-minded about format ("very open"). Not micromanaging Martin — trusting the team to define the approach and then aligning it to his conference narrative.
 - **Martin** — Confident but honest about boundaries. Acknowledged data lake is a gap in his understanding. Focused on finishing the wiring before expanding scope.
 - **Azmain** — Playing the hype role effectively. His comment about Slidey reaction from Life team shows he understands how to generate internal demand.
 
@@ -39,4 +39,4 @@
 - Who are the panel guests for exceedance?
 
 ## Raw Quotes of Note
-- "I nearly didn't make it a Moody's app. I was gonna stick it on the app store and see how far I could get" — Ben Brooks, on Slidey
+- "I nearly didn't make it a Moody's app. I was gonna stick it on the app store and see how far I could get" — Ben Brookes, on Slidey

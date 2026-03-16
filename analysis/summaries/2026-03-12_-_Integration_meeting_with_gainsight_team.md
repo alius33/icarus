@@ -1,12 +1,12 @@
 # Integration Meeting with Gainsight Team
 **Date:** 2026-03-12
-**Attendees:** Catherine (facilitator), Tina Palumbo, Rajesh (solution architect), Nadeem, Azmain Hossain, Richard Dosoo, Ben Brooks, BenVH, Kevin Pern
+**Attendees:** Kathryn Palkovics (facilitator), Tina Palumbo, Rajesh (solution architect), Nadeem, Azmain Hossain, Richard Dosoo, Ben Brookes, BenVH, Kevin Pern
 **Duration context:** Medium (~25 minutes)
 **Primary project:** CLARA (IRP Adoption Tracker)
 **Secondary projects:** Program Management
 
 ## Speaker Identification Notes
-- Speaker 1 = Catherine (organised and facilitated the meeting)
+- Speaker 1 = Kathryn Palkovics (organised and facilitated the meeting)
 - Speaker 2 = Tina Palumbo (Business Systems team)
 - Speaker 3 = BenVH (technical API questions from Clara side)
 - Speaker 5 = Nadeem (project manager, Gainsight team)
@@ -21,14 +21,14 @@
 - Azmain described the automated transcript-to-update pipeline as a potential POC test case (weekly call transcribed, notes automatically pushed to Clara — could push to Gainsight too)
 - Rajesh explained Gainsight's integration options: batch export via S3 bucket (proven method) or real-time API (with limitations to assess)
 - BenVH asked for API documentation and authentication details to determine Clara-side integration requirements
-- Ben Brooks pushed for a formal charter defining success criteria and stakeholder responsibilities
+- Ben Brookes pushed for a formal charter defining success criteria and stakeholder responsibilities
 - Gainsight team focused on sunsetting RMS Salesforce by June; POC would be fitted into that timeline
 - Tina confirmed they want to start with a POC to validate system connectivity
 
 ## Decisions Made
 - Azmain to create a v1 integration charter document → share with Tina and Natalia Plant
 - Gainsight team to share API documentation (Rajesh and Shashank to provide)
-- Catherine to coordinate follow-up technical sessions between the two teams
+- Kathryn Palkovics to coordinate follow-up technical sessions between the two teams
 - Both sides agreed the integration should start as a POC before full implementation
 - Automated meeting note push (Clara → Gainsight) identified as a potential first test case
 
@@ -37,7 +37,7 @@
 |--------|-------|----------|--------|
 | Create v1 Gainsight integration charter | Azmain | Next week | Open |
 | Share Gainsight API documentation | Rajesh/Shashank | ASAP | Open |
-| Coordinate follow-up technical sessions with Gainsight team | Catherine | TBD | Open |
+| Coordinate follow-up technical sessions with Gainsight team | Kathryn Palkovics | TBD | Open |
 | Provide rough POC timeline after internal regroup | Tina/Nadeem | Next week | Open |
 | Assess full scope of data objects needing sync (beyond use cases) | Both teams | Follow-up session | Open |
 
@@ -45,7 +45,7 @@
 - Tina Palumbo: cooperative and solution-oriented, clearly mandated to protect Gainsight adoption while accommodating Clara's cross-functional needs
 - Rajesh: technically pragmatic, offered batch and real-time options without overselling either
 - Azmain: diplomatically positive ("love the idea") while protecting Clara's autonomy
-- Ben Brooks: strategic framing — insisted on a written charter to pin down commitments and prevent scope creep
+- Ben Brookes: strategic framing — insisted on a written charter to pin down commitments and prevent scope creep
 - BenVH: focused on technical detail — immediately asked about authentication and API specs
 
 ## Open Questions Raised

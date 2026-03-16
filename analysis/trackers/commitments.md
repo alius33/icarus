@@ -6,11 +6,11 @@
 | 2026-01-07 | Richard | Set up Cursor rules and project structure | 2026-01-09 | None | Completed | Architecture Review | High |
 | 2026-01-09 | BenVH | Fix deployment pipeline issues | 2026-01-10 | None | Completed | AWS Deployment | High |
 | 2026-01-09 | Stacy | Raise Snow ticket for AI licences | 2026-01-10 | None | Unknown | AI Licenses Request | Medium |
-| 2026-01-14 | Ben Brooks | Provide strategic cover for CLARA | Ongoing | Programme continues | Open | Chat with Ben B | High |
+| 2026-01-14 | Ben Brookes | Provide strategic cover for CLARA | Ongoing | Programme continues | Open | Chat with Ben B | High |
 | 2026-01-16 | Josh Everett | Share feedback on CLARA data model | 2026-01-21 | None | Completed | Demo and Feedback from Josh E | High |
 | 2026-01-19 | BenVH | Debug database connectivity issues | 2026-01-20 | None | Completed | Deployment DB Sync | High |
 | 2026-01-21 | Natalia | Design portfolio review meeting structure | 2026-01-23 | None | Completed | Portfolio Review New Process | High |
-| 2026-01-21 | Ben Brooks | Deliver 12-month narrative for Monday | 2026-01-27 | None | Completed | Portfolio Review New Process | High |
+| 2026-01-21 | Ben Brookes | Deliver 12-month narrative for Monday | 2026-01-27 | None | Completed | Portfolio Review New Process | High |
 | 2026-01-22 | Richard | Frame Sales Recon convergence ask for Monday | 2026-01-27 | None | Completed | SalesRecon Decision Prep | High |
 | 2026-01-23 | Steve Gentilli | Refine column requirements with lookup values | 2026-01-24 | None | Completed | Adoption Charter w Steve | High |
 | 2026-01-23 | Azmain | Send notes to Steve | 2026-01-23 | None | Completed | Adoption Charter w Steve | High |
@@ -33,8 +33,8 @@
 | 2026-02-04 | Martin | Build partner section as quick-win | 2026-02-09 | None | Unknown | Tracker Next Steps | Medium |
 | 2026-02-04 | Cara | Run Sales Recon UAT with 8 CSMs | 2026-02-25 | Two-week pilot | Completed | SalesRecon Process Coordination | High |
 | 2026-02-05 | Natalia | Reduce priority to 31 migration accounts | 2026-02-09 | None | Completed | Portfolio Review with Natalia | High |
-| 2026-02-05 | Ben Brooks | Introduce HTML prototyping step for App Factory | 2026-02-19 | None | Unknown | Tracker Discussion with Josh | Medium |
-| 2026-02-09 | Ben Brooks | Override Richard on CSM usability priority | 2026-02-09 | None | Completed | Monday Tracker Standup | High |
+| 2026-02-05 | Ben Brookes | Introduce HTML prototyping step for App Factory | 2026-02-19 | None | Unknown | Tracker Discussion with Josh | Medium |
+| 2026-02-09 | Ben Brookes | Override Richard on CSM usability priority | 2026-02-09 | None | Completed | Monday Tracker Standup | High |
 | 2026-02-09 | Josh Everett | Remove RBAC restriction | 2026-02-09 | None | Completed | Session with Josh Kathryn | High |
 | 2026-02-11 | Diya | Three-pillar endorsement of programme | 2026-02-23 | Formal review | Completed | Divya AI Programme Governance | High |
 | 2026-02-11 | Josh Everett | Define CLARA as IRP migrations only | 2026-02-11 | None | Completed | Josh Data Requirements | High |
@@ -50,9 +50,9 @@
 | 2026-03-03 | Martin | MVP: 3 modules + foundation by March 21 | 2026-03-21 | No AI/LLM in app | Open | AI Tool Development Meeting | High |
 | 2026-03-03 | Nikhil | Formal onboarding to CLARA | 2026-03-10 | None | Open | GenAI Program Standup | Medium |
 | 2026-03-03 | Chris | Formal onboarding to CLARA | 2026-03-10 | None | Open | GenAI Program Standup | Medium |
-| 2026-03-04 | Martin | Summarise demo approach for Ben Brooks | 2026-03-07 | None | Open | Build in 5 Discussion | High |
+| 2026-03-04 | Martin | Summarise demo approach for Ben Brookes | 2026-03-07 | None | Open | Build in 5 Discussion | High |
 | 2026-03-04 | Richard | Create FinancialForce project entries | 2026-03-07 | None | Open | Build in 5 Discussion | Medium |
-| 2026-03-04 | Diana | Champion Friday to Ben Brooks and Charlotte | 2026-03-11 | None | Open | Diana 1-1 | High |
+| 2026-03-04 | Diana | Champion Friday to Ben Brookes and Charlotte | 2026-03-11 | None | Open | Diana 1-1 | High |
 | 2026-03-04 | Diana | Allocate Prashant to Friday development | 2026-03-07 | None | Open | Diana 1-1 | High |
 | 2026-03-04 | Azmain | Two-week release cycle for CLARA | Ongoing | None | Open | Diana 1-1 | High |
 | 2026-03-04 | Dan Flemington | Connect Julia Valencia with team | 2026-03-07 | None | Open | Meeting with Dan Flemington | High |
@@ -64,18 +64,18 @@
 | 2026-03-06 | BenVH | Deploy Friday to dev without auth | 2026-03-10 | None | Open | Chat with BenVH | High |
 | 2026-03-06 | Azmain | Advocate for BenVH credit publicly | Ongoing | None | Open | Chat with BenVH | High |
 | 2026-03-06 | Richard | Send App Factory/CLARA docs to Gainsight team | 2026-03-12 | Before Thursday | Open | Pre Gainsight Team Meeting | High |
-| 2026-03-06 | Catherine | Set Salesforce agenda for Thursday Gainsight call | 2026-03-12 | Before Thursday | Open | Pre Gainsight Team Meeting | High |
-| 2026-03-06 | Catherine | Help design App Factory governance/decision tree | 2026-03-20 | None | Open | Pre Gainsight Team Meeting | High |
+| 2026-03-06 | Kathryn Palkovics | Set Salesforce agenda for Thursday Gainsight call | 2026-03-12 | Before Thursday | Open | Pre Gainsight Team Meeting | High |
+| 2026-03-06 | Kathryn Palkovics | Help design App Factory governance/decision tree | 2026-03-20 | None | Open | Pre Gainsight Team Meeting | High |
 | 2026-03-06 | Azmain | Adapt CLARA architecture to fit Gainsight | Ongoing | None | Open | Pre Gainsight Team Meeting | High |
 | 2026-03-09 | Juliet Valencia | Connect Richard/Azmain with SPM team for data access | Next week | Dan confirms data source | Conditional | Sales dashboard call with Juliet | High |
 | 2026-03-09 | Richard | Share skills repo and prompt library with Juliet | End of week | None | Open | Sales dashboard call with Juliet | Medium |
 | 2026-03-09 | Chris | Push date input fix through full pipeline | This week | Tests pass | Conditional | Bug fixes chat with Chris M | High |
 | 2026-03-11 | BenVH | Complete App Factory MCP server by end of week | 2026-03-14 | None | Open | App Factory Standup | High |
 | 2026-03-11 | Richard | Have direct confrontation with Nikhil about boundaries | This week | None | Open | App Factory Standup | High |
-| 2026-03-11 | Richard | Escalate Nikhil behaviour to Ben Brooks | This week | None | Open | App Factory Standup | High |
+| 2026-03-11 | Richard | Escalate Nikhil behaviour to Ben Brookes | This week | None | Open | App Factory Standup | High |
 | 2026-03-11 | Richard | Set up Slidey cross-team meeting | Next Tuesday | None | Open | Sales team apps in App Factory | High |
 | 2026-03-11 | Richard | Tidy Salesforce integration design doc for tomorrow | 2026-03-11 | None | Open | Salesforce Integration Design | High |
-| 2026-03-11 | Catherine | Share Salesforce design with wider team for tomorrow meeting | 2026-03-11 | None | Open | Salesforce Integration Design | High |
+| 2026-03-11 | Kathryn Palkovics | Share Salesforce design with wider team for tomorrow meeting | 2026-03-11 | None | Open | Salesforce Integration Design | High |
 | 2026-03-11 | Juliet | Share PowerPoint generator GitHub repo | This week | None | Open | Sales team apps in App Factory | Medium |
 | 2026-03-11 | Azmain | Write up inter-app communication requirements (CLARA → Slidey) | This week | None | Open | App Factory Discussion | High |
 | 2026-03-11 | BenVH | Complete App Factory MCP server for Martin integration | 2026-03-14 | None | Open | App Factory Discussion | High |
@@ -89,9 +89,9 @@
 | 2026-03-12 | Rajesh/Shashank | Share Gainsight API documentation | ASAP | None | Open | Integration meeting with Gainsight team | High |
 | 2026-03-12 | Tina Palumbo | Provide rough POC timeline after internal regroup | Next week | None | Open | Integration meeting with Gainsight team | Medium |
 | 2026-03-12 | Natalia Plant | Set up Tuesday fortnightly prioritisation review | This week | None | Open | Clara feedback cadence | High |
-| 2026-03-12 | Diana | Discuss Catherine situation with Natalia Orzechowska | Next week | None | Open | Diana 1-1 | High |
+| 2026-03-12 | Diana | Discuss Kathryn Palkovics situation with Natalia Orzechowska | Next week | None | Open | Diana 1-1 | High |
 | 2026-03-12 | Diana | Invite Azmain to IRP weekly call | This week | None | Open | Diana 1-1 | High |
-| 2026-03-12 | Richard | Discuss Catherine's behaviour with Diya in London | Next week | Diya in London | Open | Post Gainsight debrief | High |
+| 2026-03-12 | Richard | Discuss Kathryn Palkovics' behaviour with Diya in London | Next week | Diya in London | Open | Post Gainsight debrief | High |
 | 2026-03-13 | Nils | Share agent day slide deck and materials with insurance team | Next week | None | Open | How Credit team in Banking does AI training | High |
 | 2026-03-13 | Richard | Internal homework: build skills repo, governance model, identify enablement coordinator | Before next cross-OU session | None | Open | How Credit team in Banking does AI training | High |
 | 2026-03-13 | Lucia | Gather dashboard requirements from Carlin and Courtney's priorities | 2 weeks | None | Open | Review AI Powered Dashboards | High |

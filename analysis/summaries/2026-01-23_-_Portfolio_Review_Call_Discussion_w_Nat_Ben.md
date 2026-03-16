@@ -1,6 +1,6 @@
 # Portfolio Review Call Discussion with Natalia and Ben
 **Date:** 2026-01-23
-**Attendees:** Natalia (Plant), Ben Brooks, Azmain Hossain
+**Attendees:** Natalia (Plant), Ben Brookes, Azmain Hossain
 **Duration context:** Medium (~30 minutes)
 **Workstreams touched:** WS2 CLARA (portfolio review, Monday demo preparation)
 
@@ -55,12 +55,12 @@
 
 ## Power Dynamics
 - **Natalia** drove the meeting structure with clarity, assigning speaking roles and time blocks. Her insistence on recording quality vs live engagement showed someone who thinks about multiple audiences simultaneously.
-- **Ben Brooks** provided the motivational narrative layer — his pep talk about bringing teams together was polished and ready for Monday. His pushback on CSM workload perception ("I don't think they have many responsibilities at all") was bold but potentially tone-deaf.
+- **Ben Brookes** provided the motivational narrative layer — his pep talk about bringing teams together was polished and ready for Monday. His pushback on CSM workload perception ("I don't think they have many responsibilities at all") was bold but potentially tone-deaf.
 - **Azmain Hossain** was the technical enabler, demonstrating features live and negotiating between Natalia's structure and Ben's vision. His suggestion to allow questions during the demo showed user-first thinking.
 
 ## Stakeholder Signals
 - **Natalia** — Her positive reaction to the tool ("this looks really, really good") was significant — she had been the most consistently pragmatic voice about what CLARA should and should not try to do. Her concern about data accuracy was well-placed and led to the important framing decision.
-- **Ben Brooks** — His squad-based approach showed he understood that CSMs would resist if they felt singled out. His frustration about the AIG meeting where 45 minutes of discussion went unrecorded revealed a pattern he was trying to break with CLARA.
+- **Ben Brookes** — His squad-based approach showed he understood that CSMs would resist if they felt singled out. His frustration about the AIG meeting where 45 minutes of discussion went unrecorded revealed a pattern he was trying to break with CLARA.
 - **Azmain Hossain** — His willingness to update the golden source data and pull CSM assignments before Monday showed commitment, but the cumulative task list was growing rapidly with only a weekend to deliver.
 
 ## Commitments Made
@@ -93,9 +93,9 @@
 - How will the weekly executive summary data be used downstream?
 
 ## Raw Quotes of Note
-- "Guys, you've just spent 45 minutes talking about AIG, none of this shit is written down anywhere. How does anybody know what's going on?" — Ben Brooks, on why CLARA's data capture matters
-- "I don't think they have many responsibilities at all, but whatever" — Ben Brooks, on CSM workload perception
-- "We've done the boring bit for you" — Ben Brooks, on the messaging about pre-loaded golden source data
+- "Guys, you've just spent 45 minutes talking about AIG, none of this shit is written down anywhere. How does anybody know what's going on?" — Ben Brookes, on why CLARA's data capture matters
+- "I don't think they have many responsibilities at all, but whatever" — Ben Brookes, on CSM workload perception
+- "We've done the boring bit for you" — Ben Brookes, on the messaging about pre-loaded golden source data
 
 ## Narrative Notes
 This session crystallized the Monday demo plan into a coherent story: 12 months of isolated capability building, now converging into a single system with visibility for all. Natalia's structural instincts (15-15-30 time split, recording for absentees, Slido engagement) combined with Ben's motivational narrative and Azmain's technical delivery to create a credible plan. The most important decision was the data accuracy framing — rather than trying to fix all the numbers before Monday, they would tell CSMs that the data needs their help to become accurate. This was both honest and strategic: it turned a weakness (bad data) into a call to action. Ben's AIG story — 45 minutes of unrecorded discussion that no one could reference later — was exactly the kind of concrete example that would resonate with CSMs who had experienced the same frustration. The concern was Azmain's task list: with Cursor blocked and BenVH unavailable, delivering all the changes needed for Monday while also preparing the demo itself was a significant ask for one person over a weekend.

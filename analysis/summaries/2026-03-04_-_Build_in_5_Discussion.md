@@ -6,9 +6,9 @@
 
 ## Key Points
 - The Exceedance conference demo target shifted from March 21 to May. Content must be agreed and reviewed by April, meaning preparation starts now. Richard is not sure the timelines will work.
-- Ben Brooks has a speaking panel at Exceedance on innovation. He wants to demonstrate that modern tools enable rapid reimagining of underwriting workflows. Build in Five would support this narrative.
+- Ben Brookes has a speaking panel at Exceedance on innovation. He wants to demonstrate that modern tools enable rapid reimagining of underwriting workflows. Build in Five would support this narrative.
 - The agreed approach: Martin will reverse-engineer his existing Apollo dashboard into a specification, then rebuild it from scratch as the demo. This is "cheating" -- they already know the goal and have a working prototype.
-- Three demo scenarios planned: (1) the Apollo-style dashboard (Martin's strength), (2) and (3) to be defined with Ben Brooks' input. Martin will summarise the approach in the Teams thread and get Ben's feedback.
+- Three demo scenarios planned: (1) the Apollo-style dashboard (Martin's strength), (2) and (3) to be defined with Ben Brookes' input. Martin will summarise the approach in the Teams thread and get Ben's feedback.
 - Martin has capacity -- Canopy work is light. His 12-week assignment clock is ticking but not raised as urgent.
 - Azmain mentioned his Friday PM app looks the same after hours of work because he has not pulled and built locally -- he ran it on Claude Code cloud environment.
 - Richard is getting additional resources: Azmain will get two analyst grads, but timing is uncertain (they may not arrive in time to help Martin).
@@ -20,14 +20,14 @@
 |----------|------|------------|-------|
 | Exceedance demo target: May (shifted from March 21) | Timeline | High | Richard |
 | First demo scenario: reverse-engineer Apollo dashboard | Approach | High | Martin, Richard |
-| Martin to summarise approach and get Ben Brooks' feedback | Process | High | Martin |
+| Martin to summarise approach and get Ben Brookes' feedback | Process | High | Martin |
 | Richard to create FinancialForce projects for time tracking | Administrative | Medium | Richard |
 
 ## Action Items
 | Action | Owner | Deadline | Status | Confidence |
 |--------|-------|----------|--------|------------|
-| Summarise demo approach and share with Ben Brooks in Teams | Martin | This week | Open | High |
-| Get Ben Brooks' input on second and third demo scenarios | Martin/Richard | This week | Open | Medium |
+| Summarise demo approach and share with Ben Brookes in Teams | Martin | This week | Open | High |
+| Get Ben Brookes' input on second and third demo scenarios | Martin/Richard | This week | Open | Medium |
 | Create FinancialForce project entries for time tracking | Richard | This week | Open | Medium |
 | Clarify Build in Five / App Factory dependency | Richard | TBD | Open | Medium |
 
@@ -38,22 +38,22 @@
 4. **Resources and admin** (12:00-16:00) -- Martin's capacity, FinancialForce time tracking, Friday PM app status
 
 ## Power Dynamics
-- **Richard drives the meeting.** He sets the strategic frame (Exceedance, Ben's panel, timelines) and coordinates between Martin and Ben Brooks.
+- **Richard drives the meeting.** He sets the strategic frame (Exceedance, Ben's panel, timelines) and coordinates between Martin and Ben Brookes.
 - **Martin is receptive and capable** but needs direction. He has the technical skills (Apollo dashboard) but relies on Richard for strategic framing.
 - **Azmain is peripheral here** -- joins late, drops off early. He is consumed by other priorities (CLARA, Friday) and explicitly asks to leave.
-- **Ben Brooks' absence is significant.** He did not join the call despite it being about his Exceedance panel. The team has to plan around him.
+- **Ben Brookes' absence is significant.** He did not join the call despite it being about his Exceedance panel. The team has to plan around him.
 
 ## Stakeholder Signals
 - **Martin** -- Has capacity and is ready to execute. Canopy work is light. Comfortable with the reverse-engineering approach. Not yet panicked about timeline.
-- **Richard** -- Managing expectations carefully. He "didn't commit" to Ben Brooks that they could deliver for Exceedance. Realistic about timelines.
+- **Richard** -- Managing expectations carefully. He "didn't commit" to Ben Brookes that they could deliver for Exceedance. Realistic about timelines.
 - **Azmain** -- Brain is "fried from all the stuff." Acknowledges Friday PM app ate his budget. Peripheral to Build in Five execution but owns the strategic direction.
 
 ## Commitments Made
 | Who | Commitment | To Whom | Context |
 |-----|-----------|---------|---------|
-| Martin | Summarise demo approach for Ben Brooks | Richard/Ben | Teams thread update |
+| Martin | Summarise demo approach for Ben Brookes | Richard/Ben | Teams thread update |
 | Richard | Create FinancialForce time tracking entries | Martin/Stacy | Administrative compliance |
-| Richard | Set up Build in Five sync with Ben Brooks | Martin | This week |
+| Richard | Set up Build in Five sync with Ben Brookes | Martin | This week |
 
 ## Meeting Effectiveness
 | Dimension | Score (1-10) | Notes |
@@ -66,7 +66,7 @@
 
 ## Risk Signals
 - **MEDIUM: Timeline compression.** May demo with April content deadline. Martin needs to rebuild Apollo from scratch, define two more scenarios, and get Ben's approval, all within weeks.
-- **MEDIUM: Ben Brooks not present.** Planning for his panel without his input risks misalignment. He may add scope when he eventually engages.
+- **MEDIUM: Ben Brookes not present.** Planning for his panel without his input risks misalignment. He may add scope when he eventually engages.
 - **LOW: FinancialForce admin.** Time tracking is a governance signal -- Stacy is starting to ask questions about resource allocation, which could lead to scrutiny of how time is being spent.
 
 ## Open Questions Raised
@@ -80,4 +80,4 @@
 - "My brain is fried from all the stuff." -- Azmain, on his current state
 
 ## Narrative Notes
-This is a pragmatic planning session that achieves its goal: defining the first Build in Five demo approach and acknowledging the timeline challenge. The reverse-engineering strategy (rebuild Apollo from scratch using the existing dashboard as the specification) is clever -- it dramatically de-risks the demo because Martin already knows the end state. The shifted timeline from March to May gives breathing room but the April content deadline means execution must start immediately. Ben Brooks' absence from a call about his own conference panel is a warning sign about attention allocation. The brief mention of grads arriving in April could be transformative for the programme's capacity -- two additional people, even junior ones, would be the first real resource injection since the programme started.
+This is a pragmatic planning session that achieves its goal: defining the first Build in Five demo approach and acknowledging the timeline challenge. The reverse-engineering strategy (rebuild Apollo from scratch using the existing dashboard as the specification) is clever -- it dramatically de-risks the demo because Martin already knows the end state. The shifted timeline from March to May gives breathing room but the April content deadline means execution must start immediately. Ben Brookes' absence from a call about his own conference panel is a warning sign about attention allocation. The brief mention of grads arriving in April could be transformative for the programme's capacity -- two additional people, even junior ones, would be the first real resource injection since the programme started.

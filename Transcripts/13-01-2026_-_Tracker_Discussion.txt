@@ -100,31 +100,31 @@ And we need nicknames for these guys. Hey, Ben, can you hear
 Richard Dosoo  9:49  
 it before you guys were gonna answer in stereo. Didn't do it. But no, but sorry. I. Know you're busy, so we'll be quick. We need your owner access temporarily to help us change something. So would you mind logging into the portal and going to the enterprise app, the adoption tracker?
 
-Ben Brooks  10:15  
+Ben Brookes  10:15  
 I feel like, I feel like I should maybe press a big fishing button right now. I've watched a good teams call three guys with their cameras off it's being recorded, and log into Azure and start owning
 
 Richard Dosoo  10:39  
 fishing attack. They come in all shapes.
 
-Ben Brooks  10:43  
+Ben Brookes  10:43  
 You guys are getting really sophisticated these days.
 
 Speaker 2  10:47  
 We're all AI, we're actually our cursor. At this point,
 
-Ben Brooks  10:53  
+Ben Brookes  10:53  
 this app would be working. If you all AI, let's be honest, this app would be working right now. All right, so where we go is your portal, right? Yeah.
 
 Richard Dosoo  11:01  
 So in the portal, and then enterprise applications go to the IRP adoption tracker. And then when that opens up, you'll see the Overview tab, deployment plan, diagnose and solve problems, manage. And then there's a security button. So when you open that up, oh, sorry, when you open up, I can go
 
-Ben Brooks  11:24  
+Ben Brookes  11:24  
 like, 100 miles an hour slower on the IRP adoption tracker. Yeah. Got that, yeah.
 
 Richard Dosoo  11:29  
 So you should see on the left hand side something called Manage Yeah, and then Yep. Sign on
 
-Ben Brooks  11:39  
+Ben Brookes  11:39  
 single, sign on, yep,
 
 Speaker 1  11:41  
@@ -133,46 +133,46 @@ and then you want to hit this, go to Application.
 Richard Dosoo  11:48  
 Wait, but did I do it right? Was that it?
 
-Ben Brooks  11:49  
+Ben Brookes  11:49  
 Yeah, let me, let me share my screen, and you can, and you can effectively do it one sec.
 
-Ben Brooks  12:07  
+Ben Brookes  12:07  
 Spell it up all right? So that's the Single Sign On screen.
 
 Speaker 2  12:14  
 You can click go to Application. It's on the app one, yeah, I so this is one of the few things. And then I think we should, I don't have Azure access, so we can make Richard an owner, and we can do that after this. But basically what I'm doing, what this is, what I'm trying to configure right now, is the AWS Cognito connects to Azure Active Directory, which will give us the auth tokens and everything that we need to get the applicant to log in and stuff like that. So okay, and the firewall team has also are they're in progress of making the domain work, so I put in the chat the two domains that we will probably need to add that's interesting. Try it again.
 
-Ben Brooks  13:17  
+Ben Brookes  13:17  
 Ariel that was successful that time. So this is the RP adoption tracker. Where do you be going?
 
 Speaker 2  13:23  
 Here? Did it do that's a good question. Manage, again. I think it reset you all the way back. So yeah, on the left hand side, manage, oh, did it okay? Yeah, and authentication for you. And then yeah. So add redirect URI, yeah, and then let's do web I think, yeah, that should be fun. And then, yeah, just pay the two URLs I just put in there, yeah. And let me make sure. And then after we add those two should be fine, but we shouldn't. We'll add Richard as a as the application owner, so he can go go back through if we need to just do additional troubleshooting. Let's see here.
 
-Ben Brooks  14:23  
+Ben Brookes  14:23  
 Okay, where's my bloody chat going with you guys? There is oh in the in the teams chat on this meeting.
 
 Unknown Speaker  14:35  
 Yes, sorry, no.
 
-Ben Brooks  14:38  
+Ben Brookes  14:38  
 So chat, yeah, okay. So advisory app factory, do we? Do we? Do we? Is that one long? No? Is that two URLs? That's two, yeah. So do i comma it or just do
 
 Speaker 2  14:52  
 one at a time, one at a time, I don't think yeah, that one yeah, and then click Configure at the bottom. Oh yeah. They love their their bottom things, yeah, and then another one, yeah. I don't know if we need to do that for it's either a single sign on or web. So we'll, we'll find out here shortly. I'm sure that configure, yeah.
 
-Ben Brooks  15:22  
+Ben Brookes  15:22  
 So if you're here, should it not? Where is it showing them? Oh, I say they're showing up.
 
 Speaker 2  15:26  
 Yeah, on the left hand side. And can you do me a favour, just real quick, if you can click on the single page application on the right hand side, oh, on the right hand side, the pile. Oh, yeah. Okay. Yeah, all right. And then you can go to owners on the left hand side, yeah. And now let's add Richard there. I don't imagine you can add me, because I don't have I'm not in the Azure SSO yet for Moody's okay, if you can add Richard, then we can, we can troubleshoot in case that didn't immediately solve it, okay, that should, in theory, have allowed us to go through. So let me see here. Oh, hold on one second. I'm going to ask if we can modify this real, real quick. Let me I gave you the when you add this URL, specifically, it does slash the IRP application tracker. So if we go back to authentication preview, oh,
 
-Ben Brooks  16:44  
+Ben Brookes  16:44  
 with the slash on the end of it, yeah, the
 
 Speaker 2  16:48  
 Yeah, authentication preview and yeah, you can just web Yeah, with a Yeah. And then, actually, since we can do two, oh yeah, you know what, let's just do, yeah, configure for now. Okay, let me refresh and see if that immediately solves it. Probably not. But, you know, troubleshooting at its finest.
 
-Ben Brooks  17:19  
+Ben Brookes  17:19  
 Do you need the original one with the trading slash on it. That one there, I just felt like it doesn't have a slash on the end of it.
 
 Speaker 2  17:28  
@@ -181,19 +181,19 @@ Yeah. No, that should be fine, yeah. It's just this is the redirect URI. So it s
 Richard Dosoo  18:22  
 Just while we've got you me and Azmain were just going over the how much or what data we prep with real life examples for for the demo, I've set up a call on Thursday with our, like this essay team, just to go over, give them an update. But you mentioned that what we really need to do is the next programme review with the, I'm guessing, with the CSMs and with Natalia and that team. Is that the next like is that next week Tuesday, when you wanted to show this with real data, or data that to do to drive the actual,
 
-Ben Brooks  18:59  
+Ben Brookes  18:59  
 I mean, as sort of as soon as possible, really, I think what we should do is get one account in decent shape and use that as a demo account, maybe, and then populate it with stuff that's nonsense.
 
 Richard Dosoo  19:13  
 Yeah, this is this exactly the input that we wanted, because basically what Azmain has done already is populated the spreadsheet with the information from the golden source for the accounts that we have that information. But as you can see here, for example, if we go to customer adoptions, we didn't have anything these tabs, right? Because there's nothing in the golden source. So that's why, then Azmain created another version of this spreadsheet where we simply where we synthesise this data, right? So the question is, how many accounts do we want to demo in the meeting that we need to create synthetic data that is realistic for which one, which accounts do we want to do it for? That's basically the question of, when do we want to do it by? So we can work backwards from that time period and get it all in ship, ship.
 
-Ben Brooks  20:00  
+Ben Brookes  20:00  
 Uh, what's an easy way to strip it back out again if we want, if we want to get rid of it later
 
 Richard Dosoo  20:09  
 it delete script that's we just try and create the tables and then, because right now, we have scripts that load data from this spreadsheet into our data model. Yeah. So all we need to do is basically just give this version of the spreadsheet to that script every time we want to
 
-Ben Brooks  20:22  
+Ben Brookes  20:22  
 prime it. Why don't Should we just create one test account that's deliberately not a real client, you know, call it massive, IRP user, reinsurance, limited or something, and then flesh out something comprehensive for that single account, and then we can delete the whole thing, or it can sit there as an example to everybody. To everybody.
 
 Richard Dosoo  20:44  
@@ -202,7 +202,7 @@ Yeah, I mean, to be honest, that Azmain has already done all that already. That'
 Azmain Hossain  20:51  
 So I basically, like every single field within the adoption tracker for every single account is filled in so it's fully complete. That's a version that I've created with, like, fully dummy data. Add it to wherever we have real data, so we can always show that. But literally, the moment you start showing it, CSMs will be like, Oh, but that's not real, and you have to say it.
 
-Ben Brooks  21:14  
+Ben Brookes  21:14  
 So can we? Can we? Can we put a toggle in there and just flip between real and demo? I had that in the local version, but let's do that, and then I would in the demo version, I would maybe make up the account names as well, right?
 
 Richard Dosoo  21:33  
@@ -214,13 +214,13 @@ something like that. I can just edit the this dummy data file and just remove al
 Unknown Speaker  21:57  
 Acme insurance, I think that's the way. And then
 
-Ben Brooks  22:00  
+Ben Brookes  22:00  
 you and then you want, you just want to make sure that that you're not constantly scripting that right? That just wants to be a flag to change a different database or different set of tables, or something to demo,
 
 Richard Dosoo  22:13  
 yeah, we can, there's different we can put something in the database, we can put something in the API, and it can toggle and we can figure out what's like. We can just like, ask the cursor to tell us what's the best like, easiest, most efficient one to do.
 
-Ben Brooks  22:28  
+Ben Brookes  22:28  
 What I want to make sure is we we don't populate real accounts with stuff that people get annoyed at having to undo or gives cause for, sort of complaining about the quality of it. But I also think we need to be able to show that there's a lot of emptiness that we have to fill in fast structurally, in the first conversations that's that's important, yeah, and then you want the reporting up to be accurate, even if bad to begin with, right? So in a page that says, What are the data gaps, it needs to look horrendous, because there's a lot of data gaps. Or if Mike still goes and looks in it and looks at travellers, he'll find no use cases. That's true. Whether it should be or not, is a different matter. Like, I don't want to create a false picture of any of the real accounts. Yeah.
 
 Richard Dosoo  23:20  
@@ -232,7 +232,7 @@ were going over use cases.
 Richard Dosoo  23:43  
 Yeah, I guess just for Ben and the other Ben's benefit, if he goes back one up to dashboard. Yep. So this is comes from the red, amber, green status burn. So, you know, you know, that's very easy. We could get for our existing customers. We can get this filled out, right? We can just ask the CSMs to tell us for the 300
 
-Ben Brooks  24:03  
+Ben Brookes  24:03  
 so, yeah, just if you flip through, if you've got data in the other ones at the moment, yeah, yeah. So somewhere in this whole process, the dashboards gotten broken. I think the blockers have gotten broken as well. Yeah, and I don't quite understand what happened is probably, I probably did something stupid before I uploaded it to GitHub, but I've been going through today and just fixing some of that stuff locally, more as an excuse to play with Opus than anything, because it's ridiculous. But you can, you can improve it fairly quickly as well, so that the dashboard looks a bit better on my local now I've got, like, migration stats in there working a bit better. I've got attention needed tabs and stuff like
 
 Richard Dosoo  24:49  
@@ -244,7 +244,7 @@ could we see the Yeah, sure editions while you're bringing that up. I just had a
 Richard Dosoo  25:13  
 Richard, yeah, so the builder, Ben, has got, right now, doesn't have edit screens for all of the information, so that's the that will need to
 
-Ben Brooks  25:25  
+Ben Brookes  25:25  
 be updated. What I started to edit here as well. I don't know whether I've done a very good job on it, yeah, I haven't had a chance to go back through it, but that kind of stuff needs, needs to be wrapped up before anything goes live.
 
 Richard Dosoo  25:38  
@@ -253,31 +253,31 @@ Yeah, because we need, like, for example, I mean, the customer use case of it. Y
 Azmain Hossain  26:04  
 So what I wanted to suggest is, rather than rushing you guys to do that, creating just a simple front end that will update the Excel file so that, like from whenever it's possible, if it's possible, on Friday this week, we just start asking CSMs, PMS, anybody to fill in whatever they can.
 
-Ben Brooks  26:24  
+Ben Brookes  26:24  
 I think that would be harder to do, to be honest, because you're putting the information back into a flat file is going to make, I don't know. I sort of feel like that might be harder than just bowing through. If we, if we've got a deployed database and a deployed front end, the edits to make it editable are incredibly are incredibly simple. I started doing that today, and really what it needs is somebody to go through page by page, fire up Opus thinking and say, make this as good as it can be. And it fucking does it. So, you know, block, a block of pages look a bit different to what they did before I got an yeah, there's just, there's like, just general tidy up per page that somebody with a, you know, with a brain needs to, kind of say, I want to fix this. I want to fix that. But it's very easy, and it's kind of like one or two prompts to sort stuff out.
 
 Richard Dosoo  27:23  
 Now, Opus is decent. I've been using it in Claude code to try and be unbelievable.
 
-Ben Brooks  27:26  
+Ben Brookes  27:26  
 Look at this. Look at this shit that I made for George in two prompts, two prompts. So he wanted an account planning.
 
 Richard Dosoo  27:41  
 Is it the is it done that as a React app for you, or is it a static web page?
 
-Ben Brooks  27:46  
+Ben Brookes  27:46  
 So it's a mock up for now, the depth of what it produces is insane, I think, whereas so I asked it for plan, like, give me a plan for a world class account planning application. It came up with all these things that it thought would be important. And I said, Great, build me the HTML mock ups and the app behind that would be next step and dead easy. Where is it? So that's the account. So this is the summary of the whatever it thinks we should be measuring for the account, all sorts of shit in here, key stakeholders, product adoption, renewals, revenue, health score, NPS score, contract details, blah, blah, blah, blah, blah stakeholders who's involved in the company, org chart, influence.
 
 Richard Dosoo  28:41  
 This is what we need to show, context all this
 
-Ben Brooks  28:50  
+Ben Brookes  28:50  
 kind of stuff, success plan. What do we need to do in order to make this stuff work? How am I doing on that success plan? What my mom? It's unbelievable
 
 Richard Dosoo  29:01  
 to Idris? But from the banking basically, no, he's basically like the George in the banking team for customer success, and he's doing exactly this, but for all his banking clients. And he's built out a whole bunch of dashboards that he's built also in cursor, and he's working with Azmain and myself and ourselves reconciling to funnel them in there. But we should, we should connect. But anyway, he's in London in a few weeks. We definitely should say something to connect the dots.
 
-Ben Brooks  29:29  
+Ben Brookes  29:29  
 Yeah, yeah. But that was, I think that was two prompts in Opus to generate all of that, and then you can imagine how many more it's going to take to just turn it into a structured data source and start filling it so it's mad. Anyway, that's not what we're here to talk about.
 
 Richard Dosoo  29:48  
@@ -289,43 +289,43 @@ makes sense to me. Cool,
 Richard Dosoo  30:47  
 I guess. Ben, okay, well, Ben, I know you were busy, so we'll let you go. Me Azmain And the other Ben, will just continue getting the app up and running, and then hopefully we get to a stage where we can actually show you, like I said, the older version of it working. And once that's been working, then we can start talking about
 
-Ben Brooks  31:04  
+Ben Brookes  31:04  
 so no pressure. Josh has just sent me a team's message saying, will your app be finished by 7pm because I have a leadership call I'd like to show is
 
 Richard Dosoo  31:20  
 that 7pm Eastern?
 
-Ben Brooks  31:22  
+Ben Brookes  31:22  
 Nope, no, no, that's two and a half hours from now.
 
 Speaker 2  31:25  
 Okay, that's the challenge. Can we Well, if that's the case, can we do one thing? Because I just realised that I had us configure it wrong, and then I Yeah, it's it should have clicked sing, single application versus web, and that in that tile for configuring,
 
-Ben Brooks  31:46  
+Ben Brookes  31:46  
 okay, I mean here, yeah,
 
 Speaker 2  31:49  
 so those like, so it's the same URLs, but instead of web, so we can actually delete those
 
-Ben Brooks  31:57  
+Ben Brookes  31:57  
 single page application, yes,
 
 Speaker 2  31:59  
 so that same, yep, and then we can actually do the same thing for the app factory as well, with the here, with this like that. All right, yeah, those two should be good. All right, and then configure
 
-Ben Brooks  32:22  
+Ben Brookes  32:22  
 that, yep, with the with the trailing slash, yeah, yeah, that should be fun. Or yeah, either way is that, is that doing it? It should have first configure it's not showing up down here. Interesting.
 
 Speaker 2  32:42  
 I tried without a trailing slash two, just because I don't know. Yeah, it's fine.
 
-Ben Brooks  32:52  
+Ben Brookes  32:52  
 That worked, right? But it's not showing up down here.
 
 Speaker 2  32:56  
 Could it be? Because we have web already set, so we might need to delete those three web Okay, and I don't need to, yeah, sorry.
 
-Ben Brooks  33:07  
+Ben Brookes  33:07  
 All right, no, not so let's delete
 
 Unknown Speaker  33:12  
@@ -334,25 +334,25 @@ I think those three, yeah,
 Unknown Speaker  33:17  
 all right, and then add
 
-Ben Brooks  33:19  
+Ben Brookes  33:19  
 single page application that was the right one there, yeah.
 
 Speaker 2  33:24  
 And just for, just for my own sanity, you can remove the backslashes at the end too, just because, who knows, I don't want to Yeah.
 
-Ben Brooks  33:40  
+Ben Brookes  33:40  
 And then, yeah, the top right there. Yep, perfect. Okay. And then is there a third one or just those two?
 
 Speaker 2  33:46  
 No, just just those two, the advisory app factory will be the main domain, once we get the firewall team to approve it. Then the app factory. Dev is it's purely just well, Dev, so, okay, that was added, fantastic. All right, let me refresh. Okay, if there's anything else, then I can configure it myself here. Okay,
 
-Ben Brooks  34:18  
+Ben Brookes  34:18  
 so did someone have to go and buy that domain?
 
 Speaker 2  34:22  
 Yeah? Basically what happened is I had to go through and I registered the domain within our AWS account. But then the firewall team doesn't like any domains they don't know about, so they just black walled me immediately. So I had to get approval on that. All right, cool, but yeah, so hopefully that should be good, um, and we'll go from there. If not, I'll just harass Richard.
 
-Ben Brooks  34:51  
+Ben Brookes  34:51  
 That's what he's here for. Yeah. Okay, cool, good stuff. All right, thanks. Guys have. Crack off seven o'clock.
 
 Richard Dosoo  35:04  
@@ -364,7 +364,7 @@ I feel like it'll be some puppeteers in the back where it's like everything's wo
 Richard Dosoo  35:20  
 Travellers is live. That's when they know effect where we actually got some client data in there.
 
-Ben Brooks  35:25  
+Ben Brookes  35:25  
 Yeah. All right, thanks guys. Let's see a bit.
 
 Richard Dosoo  35:29  

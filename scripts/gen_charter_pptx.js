@@ -130,7 +130,7 @@ pg++;
   const claraRows = [
     [{ text: "Name", options: tableHeaderOpts }, { text: "Role", options: tableHeaderOpts }],
     [{ text: "Azmain Hossain", options: tableCellOpts }, { text: "Programme Manager & Lead Developer", options: tableCellOpts }],
-    [{ text: "Ben Brooks", options: tableCellAlt }, { text: "Product Owner, CLARA", options: tableCellAlt }],
+    [{ text: "Ben Brookes", options: tableCellAlt }, { text: "Product Owner, CLARA", options: tableCellAlt }],
     [{ text: "Richard Dosoo", options: tableCellOpts }, { text: "Programme & Operational Owner", options: tableCellOpts }],
     [{ text: "BenVH", options: tableCellAlt }, { text: "Infrastructure Engineer (AWS, CI/CD, App Factory)", options: tableCellAlt }],
   ];

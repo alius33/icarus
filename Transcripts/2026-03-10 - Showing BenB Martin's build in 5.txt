@@ -1,4 +1,4 @@
-Ben Brooks  0:00  
+Ben Brookes  0:00  
 
 Be sold. I tell you what, I nearly didn't make it a Moody's app. I was gonna stick it on the app store and see how far I could get. But all of a
 
@@ -10,7 +10,7 @@ sudden, you're retired.
 
 
 
-Ben Brooks  0:15  
+Ben Brookes  0:15  
 
 I don't need clients. I don't need support and maintenance,
 
@@ -34,7 +34,7 @@ it is. But to that end, actually, then we just wanted to grab you for a few minu
 
 
 
-Ben Brooks  2:07  
+Ben Brookes  2:07  
 
 I mean, I don't know what the right makeup of the hour and however long it is is, but yeah, I want to sort of explore our collective comfort with showing those types of capabilities, and how might we think about that in the in the moment, you know, doing something like super creative versus having it pre canned, and what's, what's like, what, what's just like, a really interesting way to bring the stuff to life for people and I, and I really don't know, so very open, cool.
 
@@ -64,7 +64,7 @@ So, yeah, he basically just build it out. And then eventually you can get throug
 
 
 
-Ben Brooks  6:40  
+Ben Brookes  6:40  
 
 Yeah, cool. So what's the kind of what's the like playground that you're doing this in from a from a data context point of view? Is it pulling IRP API's and in from risk modeller or something like that, or elsewhere?
 
@@ -76,7 +76,7 @@ So the data that you've seen here, a lot of it is just sample data. The data sou
 
 
 
-Ben Brooks  7:26  
+Ben Brookes  7:26  
 
 Yeah, okay, yeah, cool. Because I, I'm sort of really interested in what, what's the way we could show people stuff that currently takes a huge amount of time, in no time at all, is this, is there a, like, a common, irritating market workflow, or a problem that people can't get to today, or or something like that. That's demonstrative of the like, the flexibility somehow you see what I'm getting at.
 
@@ -88,7 +88,7 @@ Yeah, it's probably more on the data side. So yeah, that flows in. Data flows ou
 
 
 
-Ben Brooks  8:26  
+Ben Brookes  8:26  
 
 yeah, okay, that's cool. And I was sort of wondering about, I don't know whether we'll get anywhere near it for, for exceedance, but like, data lake capabilities and the con the portfolio context and that kind of stuff would be, would be pretty interesting, potentially. I don't know whether you can do that type of integration with with what's there today on risk data lake or not, but I wondered about that. And there's internal use cases around that as well, right? Like the way, the way that we do cat bond analytics or something like that today, but I don't know if we can have that work, given the the tech constraints that we have around the platform right now. Is that something that you've bumped into at any point?
 
@@ -100,7 +100,7 @@ No, I've not really done much on the on daily side, to be honest. Yeah, I'm stil
 
 
 
-Ben Brooks  9:29  
+Ben Brookes  9:29  
 
 partly why I asked the question, I'm with you. But I think, I think that kind of stuff is going to be a theme from the first day to potentially bring to life for people, I'm not sure. Maybe we don't bother because we can't figure it out either. That's fine. And then I think Rich was asking for the MCP code earlier, like it would be pretty interesting to show how you can prompt your way to some of these things.
 
@@ -112,7 +112,7 @@ Yeah. Again. As it comes in, with the workflows, I think on the dashboard builde
 
 
 
-Ben Brooks  10:20  
+Ben Brookes  10:20  
 
 Yeah, okay, all right, so what are you? What are you thinking of doing next?
 
@@ -124,7 +124,7 @@ Within here, I will finish wiring this one up. I said this is currently a JavaSc
 
 
 
-Ben Brooks  10:53  
+Ben Brookes  10:53  
 
 At some point we should, we should have a chat with the product guys about how we think about this as a potential experience. Like, is it something that we want customers to be doing inside a Moody's experience? Or do we want to just show people how to do it themselves and and have them go for it? I don't know, but I think that's potentially quite interesting. As you know, SAS gets eroded in value, that that's a way in which we retain some some control over that customer experience, I guess. And then also, are there ways we can plug in other bits of the Moody's data estate that would be pretty cool, like, if you could show, I don't know. I mean, you, you probably know Martin or, you know, hook up with Gentilly and think about it. From your joint market experience, if you're going from underwriting a piece of business, what are the things that you need to think about through that process? Do we have information on sanctions, KYC, credit risk, stuff that's interesting, and then kind of follow that through to the point where you're showing it in a in a dashboard, as part of a portfolio, and and that type of thing, like making this the kind of the life cycle of a risk kind of thing would be, would be quite an interesting demo, right? Because then there's something that's relevant to everybody in the audience.
 
@@ -136,7 +136,7 @@ Okay, yeah, is that data that we have access to those sanctions and credit ratin
 
 
 
-Ben Brooks  12:26  
+Ben Brookes  12:26  
 
 There's a whole, there's a whole load of stuff on copilot, on the what's it called, copilot developer site, I think, is it copilot.moody.com and then there's a dev, Developer Tools section or something like that. And I don't know how extensive that is relative to everything else that's going on, but there's a lot of talk about Moody's one view, or whatever it's called, this week at sales kickoff. So we can have a chat with some of the guys positioning that as a way in which we could, I don't know whether we can ingest data from that directly or call the API's behind it, all sorts of stuff in there, potentially that could be interesting.
 
@@ -148,7 +148,7 @@ Okay, okay, yeah, something to think about.
 
 
 
-Ben Brooks  13:12  
+Ben Brookes  13:12  
 
 Yeah, for sure, that's very cool. You've got it up and running super fast. Yeah.
 
@@ -160,7 +160,7 @@ I mean, it's cursor, though, right for me.
 
 
 
-Ben Brooks  13:23  
+Ben Brookes  13:23  
 
 So you do it all in cursor, rather than Claude or anything.
 
@@ -172,7 +172,7 @@ Yeah, all in cursor, yeah. I've not hit any limits yet. Which is good?
 
 
 
-Ben Brooks  13:35  
+Ben Brookes  13:35  
 
 Keeps destroying his Yeah.
 
@@ -184,7 +184,7 @@ Don't look at our bedrock API usage costs. Looked at it this morning. We were sa
 
 
 
-Ben Brooks  13:50  
+Ben Brookes  13:50  
 
 Okay, that's too bad,
 
@@ -214,7 +214,7 @@ conversation, but I mean, as far as this application goes, I mean, we should be 
 
 
 
-Ben Brooks  14:27  
+Ben Brookes  14:27  
 
 Cool. And then what? What's the, what's the process for that, in terms of, like, the users usage, do you have, like, an API key that gets entered by the user, or something,
 
@@ -226,7 +226,7 @@ the IRP for, for which part, sorry for that,
 
 
 
-Ben Brooks  14:44  
+Ben Brookes  14:44  
 
 for this, if you've I'm just wondering about how, how would a how would we use it? Or how would we suggest the customer uses it? They would just punch an API key in for IRP and hit it up that way.
 
@@ -238,7 +238,7 @@ Um, I guess. Yes. I mean, either way, I guess that's more of, like a an end use 
 
 
 
-Ben Brooks  16:49  
+Ben Brookes  16:49  
 
 Yeah, yeah, absolutely. But I'm also thinking about internal usage, so there could be an interesting chat with the guys doing ILS work about whether there's enough here that you could build out a risk analysis report for a catastrophe bond in an automated way, for example. And they do a lot in risk data lake now, where I think they've made reasonable efficiency gains from pre compiling scripts, running them on risk data lake, all that kind of stuff. But it's still assistant type workflows. There's still a human operating that process, and I'm kind of pushing them to say, how do you take that, end to end? Using platform API's, without the human in the loop. You write all the tests, automatically generate the numbers, and away you go. But they're not that. They're telling me that the limitations of risk data lake are such that they can't achieve that yet. And I'm kind of saying, Okay, well, maybe you shouldn't use risk data lake, then we're not limited by that, in that sense, not for that use case anyway. So, but in doing that, I would assume they need to put an API key in for IRP, for, you know, Lawrence, or whoever's running it, and run it that way. Yeah.
 

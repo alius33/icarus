@@ -143,7 +143,7 @@ Speaker 1  15:46
 Because, really, I don't mind having to do a little bit of manual effort, because this is once a month, and I'll just do a pivot table, and because we're going to take hosting out, so I'll filter those out, okay? And then I'll just do a quick pivot, pivot, and that's it. I mean, that's not a lot of effort at all. I'm just gonna do a real quick, I
 
 Azmain Hossain  16:15  
-would say is, don't, don't do an export yet. Catherine found a little discrepancy in the in the dates, like when, when somebody goes and updates it manually, it's not overriding the date that got brought in from the golden source. I have the fix. I'm just going to deploy it literally.
+would say is, don't, don't do an export yet. Kathryn Palkovics found a little discrepancy in the in the dates, like when, when somebody goes and updates it manually, it's not overriding the date that got brought in from the golden source. I have the fix. I'm just going to deploy it literally.
 
 Speaker 1  16:34  
 Now, that's fine. I just wanted to do it so that I can have something to base requirements off of,

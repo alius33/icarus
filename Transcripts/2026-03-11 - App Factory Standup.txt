@@ -194,7 +194,7 @@ BenVH  26:20
 moving moving forward. I don't, I don't need any, any help. I just need to be able to coordinate with Martin, because he will be, his application will be the initial proof of concept. Yeah, I'm no longer doing the to be completely transparent. I'm putting the app that Nikhil just built on the back burner. Because I don't, I just don't think it's, it's necessary at this point in time, the MPC, MCP server is the critical aspect of it, so everything else can just go through. Me. That's good. Okay, so in the app. So can you go to IRP tracker, because we're using that right now, because we don't have the app factory, but can you go to the authentication, I believe authentication.
 
 Azmain Hossain  27:08  
-Oh, rich, we've got that, like, really short meeting. Draft is Clara, yeah, it's Catherine, again, if you can add, sorry,
+Oh, rich, we've got that, like, really short meeting. Draft is Clara, yeah, it's Kathryn Palkovics, again, if you can add, sorry,
 
 BenVH  27:22  
 you're fine. Um, can you? Can you add so single page application, and this like it's the same things, Dev, dot, app factory, blah, blah, blah, blah, blah, and then just do slash, slightly slidey,

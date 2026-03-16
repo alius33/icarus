@@ -9,7 +9,7 @@
 - The error is a database schema mismatch -- back-end code references columns that don't exist in the production database
 - GitHub Actions build passed, but the production database doesn't match the code schema
 - Richard and BenVH identify that the API calls are failing because the production database hasn't had migrations applied
-- Ben Brooks comes online in about 30 minutes -- team decides to brief him and let him fix the remaining issues
+- Ben Brookes comes online in about 30 minutes -- team decides to brief him and let him fix the remaining issues
 - Richard suggests Azmain send manager Ben (Brooks) a prompt to pull down and deploy locally so he can review changes before the advisory team call
 - Azmain to start a new Cursor chat and pull down changes under a different branch to continue working while deployment issues are resolved
 - Richard recognises they can demo from localhost as a fallback if production deployment isn't ready for the advisory team demo
@@ -28,7 +28,7 @@
 ## Action Items
 | Action | Owner | Deadline | Status | Confidence |
 |--------|-------|----------|--------|------------|
-| Send Ben Brooks prompt to pull and review locally | Azmain | 2026-01-15 | Open | HIGH |
+| Send Ben Brookes prompt to pull and review locally | Azmain | 2026-01-15 | Open | HIGH |
 | Fix production database schema alignment | BenVH | 2026-01-15 | Open | HIGH |
 | Create new branch for continued development | Azmain | 2026-01-15 | Open | HIGH |
 | Prepare localhost demo as fallback for advisory team call | Azmain | 2026-01-15 | Open | HIGH |

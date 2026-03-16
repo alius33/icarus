@@ -11,7 +11,7 @@ Vlad  1:08
 Okay, and then, which accounts should we cover? Yeah, so I am sending you guys a link in the chat for the adoption
 
 Azmain Hossain  1:17  
-tracker, like this is the live version I um, so yeah, click it, and it should load up. Now, answering your question, Vlad, what are the key bits of information that need to be filled right away, and for which accounts? That's the question I need answered. So I'm going to have a call with Natalia, with Ben Brooks, and I need that like, confirmed by them. What are the accounts that we're targeting? How do I how do we identify them and within those accounts? What's the data fields? There's a lot of missing data fields. What's the most crucial ones? Hi, Diana, sorry, I had launched into, kind of explaining the purpose of the
+tracker, like this is the live version I um, so yeah, click it, and it should load up. Now, answering your question, Vlad, what are the key bits of information that need to be filled right away, and for which accounts? That's the question I need answered. So I'm going to have a call with Natalia, with Ben Brookes, and I need that like, confirmed by them. What are the accounts that we're targeting? How do I how do we identify them and within those accounts? What's the data fields? There's a lot of missing data fields. What's the most crucial ones? Hi, Diana, sorry, I had launched into, kind of explaining the purpose of the
 
 Diana  2:06  
 exercise to everyone. No worries Azmain for taking time to clarifying the purpose of the exercise. Yeah, yeah.
@@ -50,7 +50,7 @@ Vlad  8:57
 Okay? And since we have just like nine days until the end of the month, what would be the critical information that we should input first? Because, honestly, how many accounts do we have? There are? There are so many.
 
 Azmain Hossain  9:13  
-So right now, yeah, let me go to dashboard. We filtered in 155 that are active. So we're just skipping the inactive ones. Those are useless. But of these, I need to speak to Ben Brooks and understand for him and dia what are the critical, critical accounts that need the information first. And it will probably be like some kind of some kind of tag that that will, that will put on the critical account.
+So right now, yeah, let me go to dashboard. We filtered in 155 that are active. So we're just skipping the inactive ones. Those are useless. But of these, I need to speak to Ben Brookes and understand for him and dia what are the critical, critical accounts that need the information first. And it will probably be like some kind of some kind of tag that that will, that will put on the critical account.
 
 Vlad  9:47  
 Okay, so when will you have this information so that we can, we can start, because by the end of today. Okay, okay, then, so, yeah.
@@ -95,7 +95,7 @@ Vlad  13:46
 Yeah, for sure. And Azmain, how about the CSMs? Are they happy to work with us, or to start filling this platform instead of SLDC? Or are they aware of this? I'll tell
 
 Azmain Hossain  13:59  
-you what Ben Brooks told me when I was like, we were talking about Josh Alanson, and I was like, Yeah, we really need to get his and his team's buy in to get this into work. And Ben was like, buy in is not optional. This is what they have to do, okay.
+you what Ben Brookes told me when I was like, we were talking about Josh Alanson, and I was like, Yeah, we really need to get his and his team's buy in to get this into work. And Ben was like, buy in is not optional. This is what they have to do, okay.
 
 Vlad  14:14  
 But were they informed? Sorry, were they informed, yeah, literally from the very beginning,
@@ -167,7 +167,7 @@ Azmain Hossain  22:34
 go to Natalia, we go to Ben, and we're like this. Person is not available. How do we get
 
 Vlad  22:47  
-this information? Should we go that far? Probably just the first level, like the CSMs manager. Wouldn't that be enough? Because probably the CSS manager knows who else can cover the topic. Because probably going to Ben Brooks, it could be like an escalation, like, you know, I mean, one
+this information? Should we go that far? Probably just the first level, like the CSMs manager. Wouldn't that be enough? Because probably the CSS manager knows who else can cover the topic. Because probably going to Ben Brookes, it could be like an escalation, like, you know, I mean, one
 
 Azmain Hossain  23:06  
 of the reasons they wanted PMS to do this is they rely on our critical decision, just like, get it done without causing

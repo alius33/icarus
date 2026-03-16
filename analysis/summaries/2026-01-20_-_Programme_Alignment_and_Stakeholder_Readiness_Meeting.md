@@ -7,7 +7,7 @@
 ## Key Points
 - Richard provided critical context on Diya Sawhny's management style: she is not detail-oriented, needs elevator-pitch communication, and will visibly disengage (scroll phone) during long presentations
 - Richard traced the programme's origin story: it started when Diya asked how to get better data out of Salesforce, then expanded through Copilot experiments, training sessions, and cross-pollination with Sales Recon and Idris's banking team
-- Azmain demonstrated CLARA's new responsive UI design that adapts to different screen sizes (mobile and desktop), a direct response to Ben Brooks' request for phone accessibility
+- Azmain demonstrated CLARA's new responsive UI design that adapts to different screen sizes (mobile and desktop), a direct response to Ben Brookes' request for phone accessibility
 - Critical infrastructure discussion: once CSMs start using CLARA for data entry, no more uncontrolled deployments — need dev/prod environment separation before handing keys to users
 - Richard proposed the deployment workflow: builds auto-deploy to Dev on check-in, but releases to prod must be human-gated (by BenVH) at scheduled intervals with data fix scripts
 - The two spent significant time (~15 minutes) discussing personal faith (Islam), ADHD medication, family life, and setting work-life boundaries — particularly blocking Friday prayer time on calendars
@@ -45,7 +45,7 @@
 - **Diya Sawhny** (discussed, not present) — Richard's characterization painted her as a high-level executive who delegates details and loses patience with granular presentations. This is critical intelligence for how the programme should communicate upward. She is waiting for a high-level overview of scope and resourcing but has not received it yet.
 - **Richard Dosoo** — Revealed personal depth: a Muslim revert navigating faith, work, and programme leadership simultaneously. His understanding of Diya's style shows political awareness.
 - **Azmain Hossain** — More personally open than in any other transcript. His ADHD self-diagnosis, faith journey, and family priorities reveal a person managing significant personal growth alongside intense professional demands.
-- **Ben Brooks** (referenced) — His push for mobile accessibility was taken as a given requirement by Azmain.
+- **Ben Brookes** (referenced) — His push for mobile accessibility was taken as a given requirement by Azmain.
 - **BenVH** (referenced) — Confirmed as the gatekeeper for production deployments once the environment separation is complete.
 
 ## Commitments Made

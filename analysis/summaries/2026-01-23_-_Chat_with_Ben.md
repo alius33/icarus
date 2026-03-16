@@ -1,6 +1,6 @@
-# Chat with Ben Brooks — Dashboard UI/UX Review
+# Chat with Ben Brookes — Dashboard UI/UX Review
 **Date:** 2026-01-23
-**Attendees:** Ben Brooks, Azmain Hossain
+**Attendees:** Ben Brookes, Azmain Hossain
 **Duration context:** Short (~10 minutes)
 **Workstreams touched:** WS2 CLARA (UI/UX, dashboard design)
 
@@ -28,7 +28,7 @@
 | Remove blue RAG pillbox from card design | Azmain Hossain | 2026-01-23 | High |
 | Label data completeness percentage properly | Azmain Hossain | 2026-01-23 | Medium |
 | Get employee list under Colin mapped into system | Azmain Hossain | 2026-01-24 | High |
-| Request developer laptop approval from Diya | Ben Brooks | 2026-01-23 | Medium |
+| Request developer laptop approval from Diya | Ben Brookes | 2026-01-23 | Medium |
 
 ## Theme Segments
 | Timestamp Range | Theme | Speakers | Tone |
@@ -40,11 +40,11 @@
 | 8:30-10:00 | Edit restrictions, BenVH availability, developer laptops | Ben, Azmain | Pragmatic, wrap-up |
 
 ## Power Dynamics
-- **Ben Brooks** showed product ownership by doing hands-on UX testing — he navigated the app, identified specific problems, and proposed solutions. His frustration was directed at the output, not the people, and his feedback was actionable.
+- **Ben Brookes** showed product ownership by doing hands-on UX testing — he navigated the app, identified specific problems, and proposed solutions. His frustration was directed at the output, not the people, and his feedback was actionable.
 - **Azmain Hossain** was receptive and transparent about the cause of the visual mess: multiple people prompting Cursor without UX coordination. His acknowledgement that "nobody's done UX testing on this" showed self-awareness about the development process.
 
 ## Stakeholder Signals
-- **Ben Brooks** — Engaged as both a product owner and user. His request for a developer laptop signals he intends to continue hands-on building, despite the political risk of appearing unfocused on his core migration mandate. His comment about Diya "going for him" showed awareness of the tension.
+- **Ben Brookes** — Engaged as both a product owner and user. His request for a developer laptop signals he intends to continue hands-on building, despite the political risk of appearing unfocused on his core migration mandate. His comment about Diya "going for him" showed awareness of the tension.
 - **Azmain Hossain** — Resource-constrained: blocked on Cursor, dependent on Richard and BenVH for critical operations. His admission that UX testing has been skipped entirely is an honest assessment of the development pace vs quality trade-off.
 - **BenVH** (referenced) — Running another race in Amsterdam, providing limited availability. Becoming a single point of failure for database operations.
 
@@ -76,7 +76,7 @@
 
 ## Raw Quotes of Note
 - "We're MacGyvering the shit out of this with multiple people just brain dumping ideas" — Azmain Hossain, on the cause of the UI confusion
-- "I think DIA is going to hit the roof. I've submitted a request for a developer laptop... Will you focus on fucking migrations? I am, dear. I'm just doing it in a technologically advanced way" — Ben Brooks, on the political risk of his tool-building
+- "I think DIA is going to hit the roof. I've submitted a request for a developer laptop... Will you focus on fucking migrations? I am, dear. I'm just doing it in a technologically advanced way" — Ben Brookes, on the political risk of his tool-building
 
 ## Narrative Notes
 This brief call was the first real UX feedback session for CLARA's dashboard, and it exposed a fundamental problem with AI-assisted development at speed: when multiple people prompt Cursor to add visual features without a coherent design system, the result is a confusing mess of competing colour signals. Ben's observation that a single account card could have a red box, orange top, amber status pillbox, and red background simultaneously was a perfect illustration of design-by-committee-via-AI. The quick resolution — strip everything back to a simple top bar for RAG status — was sensible and showed Ben's product instinct. The more concerning subtext was the licence crisis: both Azmain and Ben were blocked on Cursor, and the workaround of sharing Richard's personal Claude Code account raised obvious security and compliance questions. Going into the Monday demo with the primary developer unable to use development tools was a serious risk that would require immediate resolution.

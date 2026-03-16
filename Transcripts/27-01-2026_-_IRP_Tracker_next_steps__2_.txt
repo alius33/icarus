@@ -1,7 +1,7 @@
 Richard Dosoo  0:00  
 Been discussing with Ben Van Houten about how we need to have multiple environments, because after Azmain stemmer yesterday, we're going to have data. So we need to have a release cycle that mimics what we're used to if there was a production environment. Yeah. So, so that's good, so Ben has already been looking into that. So that's on the way. That means we've got to make a decision about what the next focus is, what understanding from yesterday from Natalia was in about two weeks, we want to have not only the prior list of features delivered, but also like a curated data set in the environment. Two options. We can either have Azmain continue working through those lists the features and then building out the environment, or we say Martin and Azmain Accelerate for a list of features, if it's a lot, if we don't want Martin to do that, Martin then could help us on the platform type stuff, which is obviously helping them with the infrastructure for all the other apps, with the generic form for the app builder, for the release pipeline, all the other stuff we discussed yesterday. So it's really like, where, what do we want the focus to be? Is it? No, let's double down adoption tracker. Let's get that out. Let's get as much features in it as possible. Or are we going to say, actually, let's try and get the platform piece done as well, so we can actually roll out the capability to deploy the apps to the wider, sort of wider team.
 
-Ben Brooks  1:19  
+Ben Brookes  1:19  
 Cool. So I was going to start the notes thing in the IRP adoption. Or should we do if we transcribe this
 
 Unknown Speaker  1:27  
@@ -10,7 +10,7 @@ machine, and
 Richard Dosoo  1:33  
 I know if it says, well, Azmain right now is double dipping, right? He's actually not got any time to do the programme stuff, which I need to help them out as well. But ideally we should have all the project stuff, plan, estimates, scope, all of those things for what we're doing as well, in addition to the app and stuff that we're building.
 
-Ben Brooks  1:50  
+Ben Brookes  1:50  
 You mean plan for the app and so on, or just just a general on account, by account,
 
 Richard Dosoo  1:56  
@@ -28,7 +28,7 @@ You know, however, which somebody asked for a PID? I haven't got one finalised.
 Richard Dosoo  2:28  
 Yeah, but it's okay. This is hygiene, right? You just need to say that's probably something we should put as goal for the next two weeks to make sure all of the things were sorted up.
 
-Ben Brooks  2:36  
+Ben Brookes  2:36  
 Yeah, okay, maybe fast and safe, right? So I think priority number one is has to be adoption tracker for a while longer. So I think that means, if we can, if we can go parallel on it and speed through it, that's where I would lean. And I think that means data solidity, like the stuff in it has to be right and accessible, so that, that, I think, is things like the contextual edit, read only version for sales when we invite them in. So some, some like user management, assignment of
 
 Richard Dosoo  3:16  
@@ -37,13 +37,13 @@ role based access control. Yeah, you can just think that and just say, Can they'
 Azmain Hossain  3:24  
 Yeah, this is why getting all the employees in what's really
 
-Ben Brooks  3:28  
+Ben Brookes  3:28  
 important, and at the point where we've got that, plus a reasonable, latest cut, golden source in there, I think that's then free reign for everybody to dive into.
 
 Azmain Hossain  3:38  
 Yeah, one question that Natalia was asking me is, what's she going to do on the Monday call? Next Monday? Oh, she's going to use the she was like, Can I use it? Could you Yeah? Because I hope so, yeah.
 
-Ben Brooks  3:53  
+Ben Brookes  3:53  
 And it will be a messy call, because the data won't be very good, but that would be the first kind of like, okay, guys, let's go do this now. We did ask you before? Yeah, so in an ideal world, I don't know how feasible it is if we could get to the point where that dashboard is populated, you know, say Thursday, people could have Friday to pump their own account stuff in and update it, and it's not a big job. Everyone is gonna make a fuss about it, but it's a really
 
 Speaker 1  4:23  
@@ -52,25 +52,25 @@ small job. There's a fair bit in there. Now have you stood out by
 Azmain Hossain  4:29  
 all the objects are there? Yeah, relationships are there?
 
-Ben Brooks  4:32  
+Ben Brookes  4:32  
 Every account. Every CSM has that fire account? Top. So within two hours, I don't know whether you notice that dashboard had lit up with it's been updated in the last two hours because people have been in there hitting it up, which is great, yeah, so it's and it's easy to use. Once they've done one, the rest of them will follow fairly quickly and make sense. So I don't think we should be shy about that. And if our call on Monday is a bit of a shit show of you know, account A hasn't been updated and account B has, yeah, that's fine. That is literally the purpose of the call. Yeah. We just need to take out the excuses for not doing it right. And you have Josh on that call. I took a piss out of him afterwards because I Josh. I'm not sure should we, should we use Salesforce, or should we use the tracker? Like, tell me what you think if he says one more time, please don't use this tracker. I'm going to fly over there and punch it. Like, we need to use it. So we need to take all those excuses away, yeah, because objection about the objection is people might get confused. The data is not yet final in the system, therefore you should continue in Salesforce until it's final. I'm like, for fuck sake, it's never going to get final if you don't rip the band aid off and start. Yeah, right. But we can pull all we, all we have to do is make a declaration. So we have to get it to a state where it's as good as it's going to be from us. Yeah. And then we say, Okay. CSN, just over to you. Now I, you know, we beg and grovel you to put up with double entry for five minutes. So sorry to make it difficult for you, but get the fuck off.
 
 Richard Dosoo  5:56  
 But this is, this was one of the really good things that came out yesterday. We've got, we can. There's a several different ways we can get this data out of Salesforce. One way is the golden source spreadsheet that you've got. The other is some of this Power BI dashboard reporting that already exists, where the data is already clean. Another way that I just was talking about was us pulling a clean data set for data bricks to pump into our tool. And once we have that going, then the process is, we can repeat that process, right?
 
-Ben Brooks  6:27  
+Ben Brookes  6:27  
 So there's a couple of things. One is, I think the data, even if it's clean, is probably shit anyway, right? Because it's a bunch of ill conceived there are badly used inputs, yeah,
 
 Azmain Hossain  6:37  
 because there are data points we're asking for which is not captured,
 
-Ben Brooks  6:40  
+Ben Brookes  6:40  
 I would launch the thing empty, and I would say, start over, because it will make you think about the problem. And then you can enter something that's an intelligent summary of where the client's at, and not some bit shit from six months ago that you're calling the truth, right? But Josh doesn't behave like that. He won't work that way because that would be so hard. So we'll have to play nicely and start them off with the data set that's as good as we're going to get. It is not going to be perfect. The issue with just taking data grids or anything else, we're going to spend longer trying to massage the thing into our system, and just launching it, saying, Get on with it. It'll take everybody 10 minutes if they just try. So that's that's what we have to do. And then we use the Monday thing as the forcing method. Okay, I think best possible data is the starting point. But let's give ourselves a deadline. Let's say end of tomorrow the data is the data right after that, everything, every edge case, can be mocked up by a CSM or an implementation lead. That's fine. Okay, right? So end of tomorrow data is done. We've got to do role based access so that everyone calms down about, you know, edits all that kind of stuff. I think that should include audit trails wherever possible. Yeah. But then I think that's it. That's the, that's the MVP version that we can go to everybody on Thursday in that channel and say it's green, like, go
 
 Azmain Hossain  7:56  
 on Monday. Are we using this? There's, there's a couple of other things. Like one thing I really want to add in is updates with an audit trail. So right now there's like, an executive summary, which we expect them to fill in, so it's an overall thingy, but a week to week to week update, that way we can hold them accountable. Be like you haven't updated. So that's one of the first things. If we're going to work in parallel, like me, I've got a list of features we can just split 5050 get it done much faster. Also gives me time to work on the data stuff.
 
-Ben Brooks  8:26  
+Ben Brookes  8:26  
 Yeah, so on the role based access thing, we must have the restrictions on edits and read only version for others. And then we also need the admin controls on that, yep. So someone in settings needs to be on, muck about with it. But then I'm with you. I think we're into, we're into features that we want to prioritise, yeah. So, so one would be audit trail. Yep. Audit Trail everywhere. I think the, I think Watson is going to be my Bellwether on a lot of this stuff, because if you can get him to come along, everyone so he was whinging about double entry on charters yesterday, so I think probably fleshing out the charter entry is important. Okay, and I don't know whether that is just, hey guys, here's how you do it. In cursor. If you don't have cursor, ask a mate with cursor, dump the Word document in, get the success factors into them. It'll take five minutes. But the what if I don't need Kevin Pern to build a fucking agent?
 
 Azmain Hossain  9:29  
@@ -79,19 +79,19 @@ No, no, I was gonna say I don't think we even need cursor, because we can make i
 Richard Dosoo  9:38  
 Yeah, but even like, we just need to take the adoption chart of questions, create the data model flow, which you've already done. Yeah. We just need a screen where people just populate
 
-Ben Brooks  9:48  
+Ben Brookes  9:48  
 that stuff. Do we have the ability to run a ln over an API? Does that? That does exist? Isn't it? Maybe not very good one? Yes. So you can do Opus four? I think Can't
 
 Richard Dosoo  10:02  
 you not 4.5 so this is what the guy sent me yesterday, but I wanted to talk to a few people about it today. Apparently, we can get a key for Opus from our AWS deployed environment, and you basically just change our config on called code to use that opus on that AWS environment, so that after exactly that means we don't even get no more Max five subscription. We good, right? So is
 
-Ben Brooks  10:27  
+Ben Brookes  10:27  
 that the latest models on bedrock?
 
 Richard Dosoo  10:30  
 Yeah, this is Opus 4.5 right? Okay, so Wow. Okay, how do we get that that works? So Gustavo sent me this stuff yesterday, so that's the other thing I need to play with this morning. But if I get that going, and then all I need to do is change your XML file, because Jason file and you're on the screen, yeah?
 
-Ben Brooks  10:50  
+Ben Brookes  10:50  
 The tracker just thinking, maybe we should just take a look at things that we want to focus on specifically. Yeah.
 
 Richard Dosoo  10:57  
@@ -115,19 +115,19 @@ No, I do not. Oh, nice one. Look all those lovely roles.
 Azmain Hossain  12:03  
 So this is what I wanted to ask. I got rich. You helped me with this, the latest employee list. How come there's a bunch of people here that aren't on that list? Like, is it because they haven't been updated? Or is it because I've just pulled everyone under calling a mic and not people under sales?
 
-Ben Brooks  12:21  
+Ben Brookes  12:21  
 Yeah, that's what it so they report out through Noah and Helen.
 
 Azmain Hossain  12:25  
 Well, then I'm gonna have to put, like, I don't know, all 14,000 people in there.
 
-Ben Brooks  12:29  
+Ben Brookes  12:29  
 No, I think you can maybe leave that for now. It's just a notification. They're not accessing it right with the sales guys are not coming in. Yeah, exactly. I would leave that right now, maybe npns has to be left as well, but that would be good to have. What if we have on the admin panel the ability to add a user,
 
 Azmain Hossain  12:51  
 and you just, oh, that that's already there. So right now, like you can, you can search for something, and
 
-Ben Brooks  12:57  
+Ben Brookes  12:57  
 so you Yeah, but you can, you can put one of our guys in there. But you can't put a salesperson in there, right
 
 Azmain Hossain  13:03  
@@ -157,7 +157,7 @@ Yeah. I mean, how, how often, how do I say this? How often would we be updating 
 Richard Dosoo  15:14  
 for now? This will be the last time, going forward, like eventually, at some point in the future if new people are added, then we got to figure out a way to do it. But that's not a problem
 
-Ben Brooks  15:24  
+Ben Brookes  15:24  
 for them. Is there a way to use the centralised enter database? Isn't that the point?
 
 Richard Dosoo  15:30  
@@ -193,16 +193,16 @@ Oh, okay,
 Richard Dosoo  16:58  
 sufficient changes. Okay. It's just, could you do it by tomorrow? Right?
 
-Ben Brooks  17:05  
+Ben Brookes  17:05  
 Okay, for this week, we need the best possible data everywhere as a starter point, right? We need role based access. We need admin controls of that. We need audit trail everywhere.
 
-Ben Brooks  17:32  
+Ben Brookes  17:32  
 We need the charter functionality. If we can, we could, in theory, push that to next week. So I guess that's this
 
 Azmain Hossain  17:40  
 is if we, if we keep it simple, where it's literally like, we take the Word document, we just build those exact same fields, and then we make a process where they can turn that into, I don't know, a JSON file that we can just pull in.
 
-Ben Brooks  17:54  
+Ben Brookes  17:54  
 Yeah, so there's, well, let's put that into next week and just see whether we get there sooner. So in So then I'm just assuming, like, exec sponsor Field Sales fields are just notes, like you have it now, which is great. It just keeps a everybody thinks that it's coming, and we maybe just add a little note on it. That's okay. This will be implemented soon. And then we can do the charter functionality, build out the charter entry smoothly, enter IDs over API so the sales team and everybody shows up. Product Team is where this comes to life, I think so I want to be able to do that soon, but I also want the data to be where it needs to be before we get other people in the app. Otherwise, they're just going to reject it,
 
 Azmain Hossain  18:40  
@@ -211,13 +211,13 @@ yeah, can I just add a few more things for this week,
 Speaker 2  18:46  
 and then just out of curiosity, so the data that's currently in the database right now? Are we okay with moving that to production, or do we need to wait a little bit longer before the data is complete, we we
 
-Ben Brooks  19:03  
+Ben Brookes  19:03  
 made a bit of a mess with Josh's help on that call yesterday, because he told everybody to go and edit and play around with it, but not be retained. So now we have a data set. In theory, should be better, but somebody might have entered Mickey Mouse as
 
 Azmain Hossain  19:17  
 the executive sponsor. I mean, our data set was really old anyway, so do we just have to do a fresh? We have, we were always gonna have to do a fresh.
 
-Ben Brooks  19:23  
+Ben Brookes  19:23  
 Okay, all right, so then, so then that's
 
 Azmain Hossain  19:27  
@@ -226,7 +226,7 @@ fresh golden sauce up here. Yep, that's, that's number one.
 Speaker 2  19:31  
 So basically, what I've done on my side, we have a production environment ready. I haven't. Basically what I need to do is, whenever I, essentially, you guys give me the green light, I will do an RDS snapshot and migrate the database over to production. And then basically, you can start accessing the dev environment via it would be like this. Hold on one second, let me so anytime you wanted to do like a dev environment, hold on, yeah.
 
-Ben Brooks  20:10  
+Ben Brookes  20:10  
 So how about this then over. So let's, let's post in that teams channel that we told everybody about today, that at the end of day Wednesday, we're going to do a final golden source upload, which will be everything that's in Salesforce, yeah, and at that point onwards, from midnight on Wednesday or whatever time we choose, we will be entering data through this application, through this application, right? Yeah, so then everybody can get on with that Thursday morning. Yeah, can potentially continue to build on dev, and that will be the cut over to prod as well, which is perfect, okay? And then we can build on dev and maybe even release something before the end of the week, so that when we get to that meeting on Monday, we have some of the other pieces here, built out. Audit Trail, exec sponsor, yeah, so we would miss, we'd miss audit trail if we did it that way, though, wouldn't we? We may not have that fully implemented when everybody's updating it.
 
 Azmain Hossain  21:08  
@@ -241,7 +241,7 @@ right now it's like, if you, if you edit the record, change the name or somethin
 Richard Dosoo  21:31  
 Okay, that's gonna add up anyway. That's what we'll do it for now and then.
 
-Ben Brooks  21:39  
+Ben Brookes  21:39  
 What's the concern that that that adds a
 
 Richard Dosoo  21:41  
@@ -253,10 +253,10 @@ But like, what if we what if we reduce the amount of fields like
 Richard Dosoo  22:02  
 fiscal Rob, we've not got millions of records in this database. We'll get something out there, but we'll just make sure the week after next, we sit down and give ourselves some space to think about it properly. Look at how other people have done it, and then figure out, yeah, so we just, we're parking lot the you know, we're building technical debt as we go, but we'll fix it.
 
-Ben Brooks  22:27  
+Ben Brookes  22:27  
 Okay, so let's add that.
 
-Ben Brooks  22:37  
+Ben Brookes  22:37  
 So then if we do is that, is that viable before cut over or not that sort of audit functionality?
 
 Richard Dosoo  22:50  
@@ -265,47 +265,47 @@ I think so that's that's duplicate it scale is done by Friday, right? Basically,
 Azmain Hossain  22:57  
 it's not, it's not by end of Wednesday.
 
-Ben Brooks  22:59  
+Ben Brookes  22:59  
 That's the question as to, when do we do a data cutter? Do we want to try and have a window that people can go in there and shove action plans in there and say, oh shit, I haven't got a blocker on Friday? I think it would be good if we can, because that will give us an opportunity to not have a total shit show kickoff meeting. I would
 
 Azmain Hossain  23:19  
 prefer to have the day Thursday to have everything. So if we tell them Wednesday Midnight is data cut off, give us the day Thursday to get everything sorted. On Friday, you guys can start updating it for the Monday meeting. Okay, I know it's not a lot of time just to give them a day, but if we're prepared for a bit of an incomplete meeting.
 
-Ben Brooks  23:45  
+Ben Brookes  23:45  
 End of Day. Wednesday, cut off on SF data. Thursday, build and release.
 
 Speaker 1  23:59  
 Friday, yeah. Implementation leads can populate
 
-Ben Brooks  24:09  
+Ben Brookes  24:09  
 additional data ready for Monday.
 
 Azmain Hossain  24:12  
 Are you typing on this? Yeah,
 
-Ben Brooks  24:15  
+Ben Brookes  24:15  
 it's below. I think. Oh, okay, yeah.
 
-Ben Brooks  24:28  
+Ben Brookes  24:28  
 All right, okay, so then, what are the sort of feature priorities? I think if we can do it. It would be great to have some of the kind of Gen AI generation capabilities come to life fairly quickly. I think that will
 
 Richard Dosoo  24:47  
 really help people, basically put your charter, run it through an AI, get to do a SWOT analysis on the customer, and augment your feedback.
 
-Ben Brooks  24:54  
+Ben Brookes  24:54  
 Not even that, yes, but that would be that would be cool. But I think also Sonic life, press a button, but if I write HD issues in a blocker field, just a tiny little haiku prompt that says, structure, what do you mean? What's this? What's that? What's the issue?
 
 Richard Dosoo  25:12  
 What you mean, like a helper in certain
 
-Ben Brooks  25:16  
+Ben Brookes  25:16  
 places, for something like writing a blocker, for something like writing success criteria, this is what Kevin's been trying to build in copilot. Yeah, I don't think it needs to be anywhere near copilot as an agent. It's just helping people understand what's expected of a good description of something like a blocker or an action plan or think they need
 
 Richard Dosoo  25:36  
 an LLM to do that, right? But it might be cheaper. Well, we can write what we'll do after this school is and while Ben we've got you on the phone, we'll try if we will try and see if we can access all we need to do to get access to broad if we need keys from like the map environment, then we'll have to wait till this afternoon, until those guys come online and give us access. But if we can manage to get access this morning. When we have an API key to opens, right, we can just start using it straight.
 
 Azmain Hossain  26:04  
-Yeah, okay. My suggestion would be if, if me and Martin can split the work, I'm going to start chasing Catherine, Natalia Stacy, everyone about the data Martin can work on role based access with Ben on the back end if need be. Once we get those two done, then we can split audit trail and update feature between us. One of us takes each and work on those, and that's everything that we need.
+Yeah, okay. My suggestion would be if, if me and Martin can split the work, I'm going to start chasing Kathryn Palkovics, Natalia Stacy, everyone about the data Martin can work on role based access with Ben on the back end if need be. Once we get those two done, then we can split audit trail and update feature between us. One of us takes each and work on those, and that's everything that we need.
 
 Speaker 1  26:33  
 My only slight issue with this is I've still got some canopies. Yeah, that's
@@ -319,22 +319,22 @@ Thursday, I'm moving my some of my meetings out I had this morning. So I've got 
 Azmain Hossain  27:02  
 I've got a I've got a workshop. But so Alexandre yesterday, he was asking, like, about the partner section, they're having a workshop right after this, about how they're going to manage it, literally, like, just coming up with an idea. So he was, like, asked me to be involved so that from the get go, I can help shape how they want to manage it, because they really want to use the tracker for partner stuff as well.
 
-Ben Brooks  27:27  
+Ben Brookes  27:27  
 Yeah, it's just not a priority, yeah, just
 
-Ben Brooks  27:36  
+Ben Brookes  27:36  
 check the time I could. I could go to that for half
 
 Unknown Speaker  27:39  
 an hour. Okay. Yeah, I that,
 
-Ben Brooks  27:55  
+Ben Brookes  27:55  
 if they can mock up the tables of data that they want to see and manage in Excel, the reference
 
 Azmain Hossain  27:59  
 base pairs, right? Yeah, I think they want to have, like, a whole wide ranging conversation of how we're going to manage them, maintain the relationships, all that stuff.
 
-Ben Brooks  28:09  
+Ben Brookes  28:09  
 Yeah, it doesn't really involve,
 
 Azmain Hossain  28:12  
@@ -349,7 +349,7 @@ Yeah, yeah. It's just we can't show them Alexandra's like, can you show us the p
 Azmain Hossain  28:45  
 Okay, so we've got our plan cool.
 
-Ben Brooks  28:54  
+Ben Brookes  28:54  
 And then, yeah, I would, it would be great if we could figure out a way to do like, just natural language querying of the whole system, yeah. I mean,
 
 Azmain Hossain  29:04  
@@ -367,7 +367,7 @@ Well, the, yeah, we'd go through a PRD first, right? Which is, this is the requi
 Azmain Hossain  29:44  
 We should have some No, no, I'm talking about updates on customers. So if they're like, oh, there was a blocker on AXA and blah, blah, blah, this is happening, then we can compare it and be like, but in the record, there's no blocker. Why is there no blocker? You're just saying, like, a transcript upload, yeah, a transcript that then breaks it down by customer by customer by customer, and then if we have an LLM in the app that can read the apps data, we can be like, here's what was said, check against the data of the customer.
 
-Ben Brooks  30:09  
+Ben Brookes  30:09  
 Yeah, I wouldn't allow any autumn. I would, I would insist on, like, row by row, tip cross. I want to put it in. I don't want to put it in.
 
 Speaker 2  30:16  
@@ -376,13 +376,13 @@ Okay, yeah. I think, I mean, if most, most calls occur through teams, you can te
 Azmain Hossain  30:34  
 I don't want to, I don't want to link that. If we can get Claude API, I would rather write a Custom Prompt of like, go through this transcript, yeah, pick out this text file. Yes, exactly, yeah, and it's once a week. So it's fine.
 
-Ben Brooks  30:50  
+Ben Brookes  30:50  
 Well, I think we we encourage everyone to do it for their team, for their account team conversations as well. Transcribe everything. Yeah, always throw it at the machine to say, what did we talk about? Give me the yeah and the updates to these accounts off the back of that. So you'd have it identify the accounts that were discussed. Structure that's
 
 Azmain Hossain  31:09  
 in there. If we can have a log of transcripts the you know, you don't even need that. You don't
 
-Ben Brooks  31:13  
+Ben Brookes  31:13  
 you don't need to hold the transcripts. You just have an upload button that says, drop your transcript here. Prompt that says, extract from this Tran transcript, relevant accounts, blockers. Attach to accounts action plans. Attach the blockers. Turn into structured data, put it in the database. Oh, I mean,
 
 Speaker 2  31:33  
@@ -394,31 +394,31 @@ That would be super cool. Yeah, I'll Put that next
 Speaker 3  32:38  
 week, all right. Do Yeah.
 
-Ben Brooks  32:48  
+Ben Brookes  32:48  
 And I think partner stuff comes out of this,
 
 Richard Dosoo  32:51  
 yeah, when they say partner stuff, do they just mean, like managing a partner pipeline of projects,
 
-Ben Brooks  32:58  
+Ben Brookes  32:58  
 it's not difficult. I think it's just attaching partner names to accounts. Where is there a partner conversation happening? It's like, it's sort of a partner sales pipeline
 
 Unknown Speaker  33:07  
 overlay, yeah, yeah.
 
-Ben Brooks  33:11  
+Ben Brookes  33:11  
 But I think we keep pushing back on the partner team to define what they want and need, yeah, yeah. And then from there, it will be relatively easy to implement. I would call I I thought something else then, and it's gone again. Oh, so. And then after that, I think it's into, like, you know, broader deployment pipelines of apps generally, and all that kind of stuff. But I think that's done.
 
 Richard Dosoo  33:35  
 Well, that's it. This was the Ben is laying the foundations that will make that piece easier and then, and
 
-Ben Brooks  33:44  
+Ben Brookes  33:44  
 that probably also involves moving it to somewhere else as well, right?
 
 Richard Dosoo  33:48  
 Well. So this is it. We met with the maps guys last week and got basically the top you guys are not doing. We do support apps for customers, not internal apps. If you're going to do apps or for internal projects, you need TSgt environment that we got before. But one thing I'm thinking though Ben is that, like if, if that's the case, TSG can give us an Azure environment we're already running. Our AWS is already running on corporately approved. It's over to it's been moved over to the movies account. So if we're if whatever happens, we have to manage the infrastructure, support ourselves. There's no different to being on our AWS account, like cap the our AWS account is managed on Moody's infrastructure, so we get a lot of that stuff there anyway. So the benefit to moving to maps would be, you know, we were on the same technology as the platform, but they're telling us that that's only for products that customers use it. Yeah, so, but that's we'll have the conversation with.
 
-Ben Brooks  34:55  
+Ben Brookes  34:55  
 I wonder if there's sort of platform integration stuff that will get interesting here in the future. Yeah, you could see on the adoption record how much has been run recently, or, you know, someone near to their limits. Or when they're complaining about not using HD models, are they actually
 
 Richard Dosoo  35:10  
@@ -442,11 +442,11 @@ And then, as far as I know, we're talking about potentially moving this to maps 
 Richard Dosoo  37:21  
 Yeah, no, Ben, definitely what Ben, if you add to the list, basically connect with Victor and E I introduce Ben to him, and then we'll get the definite steer whether Maps is a no go or if it is. And then we'll if it's a go, Great. Then we migrate over to their do the provisioning. If it's not, then we'll just, will make a decision whether we're staying on our AWS account or we're going to Azure, and then that will then be our environment going forward. Cool, so I
 
-Ben Brooks  37:53  
+Ben Brookes  37:53  
 will ping George, Josh, Natalia, Stacey. I Anybody
 
-Ben Brooks  38:12  
-else need to be involved in that discussion? Catherine, yeah, I I
+Ben Brookes  38:12  
+else need to be involved in that discussion? Kathryn Palkovics, yeah, I I
 
 Speaker 2  38:44  
 I guess the the other thing too, in regard to the maps as well, as you know, once, I mean, if we do decide to go to maps, then it pretty much more or less may handicap us when we want to do any infrastructure modifications or changes. So that's something to keep in mind.
@@ -493,23 +493,23 @@ yeah, let me go and ask, cool. All right, Ben, I'm gonna end the call. Thank you
 Speaker 2  41:12  
 And the last thing is, yeah. So as I mentioned before, the production environment is pretty much good to go and just to confirm we said Wednesday after midnight, it'll be good to do a snapshot and migrate over. Yeah, okay,
 
-Ben Brooks  41:27  
+Ben Brookes  41:27  
 so we need so Wednesday's end of Salesforce entry. Yeah, and do you want some time to deal with that data before you do snapshot?
 
 Azmain Hossain  41:36  
 I think you do. Yeah, I would say Ben, snapshot should be Thursday night, because I'm just asking for Thursday just to, I don't know what state the date is going to be, especially because usually they have, like, a week to massage it and make it look pretty.
 
-Ben Brooks  41:50  
+Ben Brookes  41:50  
 I think it's, I think it's okay, just to say we have taken the golden source as existed before this platform came along, and we put it in the system. If that means there's some extra work, because the golden source on the ship
 
 Azmain Hossain  42:00  
-that's not on you, yeah, it's just, you know what the golden source is, an extract from RMS, Salesforce. Then Catherine puts in a lot of she talks to people and manually fills in a lot of fields. She won't have time to do that so there will be gaps.
+that's not on you, yeah, it's just, you know what the golden source is, an extract from RMS, Salesforce. Then Kathryn Palkovics puts in a lot of she talks to people and manually fills in a lot of fields. She won't have time to do that so there will be gaps.
 
 Richard Dosoo  42:14  
 Well, we've got edit screens that she
 
-Ben Brooks  42:16  
-can go it makes no absolutely but it makes no sense for her to do that in a system, in a single spreadsheet, having 15 conversations, and then put it in an app. Does it exactly? That just has to happen on Friday, yeah, go tell the shit you would have told Catherine to the app, yeah, and
+Ben Brookes  42:16  
+can go it makes no absolutely but it makes no sense for her to do that in a system, in a single spreadsheet, having 15 conversations, and then put it in an app. Does it exactly? That just has to happen on Friday, yeah, go tell the shit you would have told Kathryn Palkovics to the app, yeah, and
 
 Richard Dosoo  42:30  
 it gets them using it and trained on it,

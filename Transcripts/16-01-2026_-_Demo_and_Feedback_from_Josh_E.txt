@@ -7,7 +7,7 @@ complete agreement with you, like making sure that the data that's put in, whate
 Josh Ellingson  1:28  
 Hey, Ben, thanks for joining. Oh, great. We were having a good chat.
 
-Ben Brooks  1:40  
+Ben Brookes  1:40  
 Not anymore. Now you can't say what you really think. Josh, what does that
 
 Speaker 1  1:46  
@@ -16,13 +16,13 @@ ever stop me? Very diplomatic. I know. I know the subtext behind like when the i
 Unknown Speaker  1:49  
 of the data has to be what it was actually
 
-Ben Brooks  1:58  
+Ben Brookes  1:58  
 meant to be. Such a curious Josh, like, Come on, man,
 
 Speaker 1  2:04  
 yeah, here's what I don't want. Ben, this is exactly what I said. I don't want Andy frappe seeing one piece of data that's interpreted incorrectly and we can't get them off
 
-Ben Brooks  2:14  
+Ben Brookes  2:14  
 of it. I got a this will delight you. I got a request this morning from one of Andy frappes minions saying how much I need the GMB number right now from all the migrations that you're working on, I don't work in sales for a start. Secondly, it's fucking migration. The GMB was last year. Forget it. It's zero. Go away. Anyway. Yeah. So there's all sorts of misinterpretation happening. I can see you twitching, Josh, that's, that's the way it comes. This is where it's gonna go. I've totally derailed this conversation. I've only been here 30 seconds. Oh, shut up.
 
 Unknown Speaker  2:51  
@@ -61,37 +61,37 @@ Might I suggest then, when I if you open up to, if you send out the CSMs and say
 Speaker 2  11:02  
 really Ben you as well. Question to you, whether or not you think this is a good idea, I find that the best way to get feedback is to get people to do stuff rather than not to look at stuff. So yes, like, look at this and give me feedback. We just make it to that. Go in and update all the racks data sets for any account that's yours, because the moment they click edit, they're going to be like, Okay, I came here to update the rack status. Oh, the hell, that's that shouldn't be empty and, oh, it's at risk. They update two or three more things. They see a problem, they find a gap, they create a feedback request. It gets done that way. So rather than just asking them to do it, we start with a small little thing of, like, can you just update this one standard thing
 
-Ben Brooks  11:45  
+Ben Brookes  11:45  
 for your account? Yeah, yeah. I think that's that's not a bad idea, and I think we should be super open to the rapid iteration. Like, we'll change it fairly quickly as needed. But I also wonder whether we will change it. We're not going to take every piece of feedback and adapt to it, but the themes in that, you know, if we get a deluge of feedback, that's great. We can chuck it all in a, you know, cursor prompt and find the themes and address them. So I think that's all good. I suppose what I am also very interested in is, is how people end up using it, and where we need to put better guardrails in to make that consistent and easy, because there's a lot of free form text descriptions of blockers and things like that, right? So we were talking a bit the other day about we probably need to have something that shows what a good blocker description looks like, so that we don't just get, like, one line things that don't make sense, or, you know, we need to know this, that and the other about the blocker before it becomes useful information.
 
 Speaker 1  12:48  
 Yeah, we've got some we, well, we don't have any written guidelines, but we've, we've talked about it quite a bit from Salesforce and but it's gotten loose. Kevin burns, building a tool, least for use cases. To say, what's a good use case description, or no, sorry, sorry, not use cases. What's a good success? Like, he's built a tool, and then he's actually built a qualitative portion. So like, this is a good, complete one. This is a crappy one, and he's not using our own data to to do that. He's, he's ingested, he's, he's input other, other success criteria that would be more encompassing as the criteria to kind of train on that. So my point is, like we could probably still take what our current universe of blockers are and look at and consolidate and then build something to kind of train what a good blocker is, too.
 
-Ben Brooks  13:45  
+Ben Brookes  13:45  
 Yeah, yeah. And these are all things that we can do as we go. Because I think once we're up and running, it's it's not that hard to nudge and update and change things day over day, as we're as we're in it, using it so. And the other thing that I think is important is that this opens up the opportunity for six or seven different people to collaborate on the richness of the data, not just the CSN, right? So, you know, if it, if it makes more sense for whatever Kate to describe the blocker in a given situation than the CSN, because she's deeper into the weeds on something perfect. That's that's how it gets better. I think,
 
 Speaker 1  14:24  
 yes, the other thing I was gonna say, like an open question, I was just talking through some of the with stranel about some of the implications to Salesforce, like, what's some data that we're capturing in Salesforce that we still need, but not specifically for migration? So we're talking through that. And a good question came up. And Ben, I don't this is a philosophical question. I don't know that we've attracted at what point, let's assume we're in Gainsight, right? And that's our system of record for account health and stuff. What? Which use cases come into this tool, and which ones are evergreen? Like, just what? Which use cases don't come into this tool. And this would be dual entry to some aspect for CSMs. Like, is every client on IRP coming into this tool or not? Like, what if we've as an example, the client is migrated. They're done with the migration. Obviously, adoption of prior terminology is ongoing. Where do we capture that adoption? Do we should that be in Gainsight with what we're building now, or should it be in this tool? I don't think we have an answer right now, but it's something we need to think through.
 
-Ben Brooks  15:31  
+Ben Brookes  15:31  
 Yeah, I think we probably want it in here and then push the gain site on the back end, don't we? If we
 
 Speaker 1  15:37  
 can get through the security team to push data in, I I know that you will be solvable. I hope so. We're told right now, it's, it's not possible.
 
-Ben Brooks  15:48  
+Ben Brookes  15:48  
 Well, then their data will be shit. They'll have to deal with that, or they'll have to find somebody that sits there and pumps it in manually. Yeah, but then that's, that's us doing that. That's No, it's not, no, it's not. It's like, you know, there's a sales ops team in sales whose job is to sit there fucking about with spreadsheets and deal with shitty systems, because nobody's dealt with the shitty systems. So we'll just end up with our customer engagement ops team, who have a very boring job.
 
 Speaker 1  16:14  
 We didn't talk to D about that just and then we can get back to this. Sorry, Azmain, but one of our like, the goals coming down are the banking goals for CSMs, which I want to talk to the about, because a lot of it is Gainsight activity. How much are you entering into Gainsight? Is a goal.
 
-Ben Brooks  16:32  
+Ben Brookes  16:32  
 I get that, but I wouldn't be too hung up on that from the point of view of the order of the issue, like, if, if we are getting customers knocked off hand over fist, you know, we're up to 50 by halfway point this year, no one's going to give a fuck about Gainsight integration, because it's working really well, and the disruption will be a bad thing to disrupt the system that's working really well. If we've got nobody adopting and no visibility in a problem, it's going to be all about Gainsight adoption, because somebody's going to think that's the Holy Grail. So yeah, the first order is like getting a customer on and working and happy and all the rest of it. And the system is designed to track that. So I don't know, I don't really mind having that fight with somebody later. I may well lose it, but I think it will, it will go better when we've got a humming system. I agree the
 
 Speaker 1  17:27  
 consequences of making assumptions and losing that argument is significant to the CSM team. That's all. That's all I'm saying, just because they're going to be measured by metrics that others we can talk about this later. I don't spend, I don't want to waste as many time on this.
 
-Ben Brooks  17:45  
+Ben Brookes  17:45  
 I feel, I feel like there's plenty of ways around that. There's plenty of ways around it. Now, the pace of change, there'll be even more in a few weeks. Like I, you know, I, if I don't want to do something manual, I can tell cursor to start it, have access to my browser, click on the right links and do it over there on the side, and it will take care of it. For me, it works. So, you know, we could end up with some really stupid integration layer like that, if we had to, but I don't think we will need to. Let's, does Gainsight have API's that can be used and there's just some stupid policy? Because if that's the case,
 
 Unknown Speaker  18:19  
@@ -103,7 +103,7 @@ It's so Gainsight had a security breach, and there's still investigations going 
 Unknown Speaker  18:53  
 that's good, okay,
 
-Ben Brooks  18:55  
+Ben Brookes  18:55  
 yeah, there's a, there's a big fat Gainsight API spec on their website.
 
 Speaker 1  19:00  
@@ -112,13 +112,13 @@ Yep. Cool. Okay. Anyway, so Azmain, I think a good path forward, getting back to
 Speaker 2  19:42  
 and it's really kind of being aware of the expectations. We're taking it a little bit slow, and really want to get it to a place where, yeah, we can let it out to 50 people and it won't have issues and this and that problem. So. The thinking, if those 50 people like it, they'll give it access to more, let the implementation leads put in updates as well. That would be really helpful
 
-Ben Brooks  20:14  
+Ben Brookes  20:14  
 to get there on a weekly basis. It will just keep increasing. So from the from the get go, Yeah, this, this should be presented as a squad based approach. So I think getting the squads in there for a number of accounts is a pretty fundamental part of getting up and running.
 
 Speaker 1  20:29  
-I'm just cognizant. So this probably doesn't work with our timeline, but I'm going to say it anyway. So, so right, you might get more meaningful, targeted feedback if we bring in a couple CSM champions to work with you, Azmain, honestly, as opposed to sending it out to everyone, our challenge right now is that we have Gainsight champions because we're going live and Gainsight, it's timing issue, right? We're going gain We're going live end of March, we have digital engagement champions to work with. Catherine on, on building the digital engagement plan, which is effective because we're changing our service model. Our service model this year. Like, there's going to be a number of clients that we don't assign CSMs to anymore. We just deal with them digitally. And then we have Salesforce migration champions that we're going to be asking for soon. So I think, I mean, we can share the load, but I don't want it to slow it on this process. Like, if we have champions, and it's like, takes us another month that's like, that's not work. That's not the expectation. We want people. Why don't? Why don't
+I'm just cognizant. So this probably doesn't work with our timeline, but I'm going to say it anyway. So, so right, you might get more meaningful, targeted feedback if we bring in a couple CSM champions to work with you, Azmain, honestly, as opposed to sending it out to everyone, our challenge right now is that we have Gainsight champions because we're going live and Gainsight, it's timing issue, right? We're going gain We're going live end of March, we have digital engagement champions to work with. Kathryn Palkovics on, on building the digital engagement plan, which is effective because we're changing our service model. Our service model this year. Like, there's going to be a number of clients that we don't assign CSMs to anymore. We just deal with them digitally. And then we have Salesforce migration champions that we're going to be asking for soon. So I think, I mean, we can share the load, but I don't want it to slow it on this process. Like, if we have champions, and it's like, takes us another month that's like, that's not work. That's not the expectation. We want people. Why don't? Why don't
 
-Ben Brooks  21:27  
+Ben Brookes  21:27  
 we do that as a point of feedback collection? So you know, if you, if you choose two or three people that you think should champion this stuff, and they become collators of information from CSMs and bring it back and have a chat and and we triage that way, we get direct involvement at the same time as kind of going reasonably quickly in terms of launching and getting out there. So we could still, we could still show everybody, but we can just kind of say, you know, Watson is going to gather information in London, and Julia is going to do it in Zurich, and Dave Kenny is going to do it in the US, right, or whoever. And that's those. Those three guys are the other champs on this and they'll help us make it amazing, and everybody will benefit,
 
 Speaker 1  22:13  
@@ -136,7 +136,7 @@ two demos, as long as we can get people on the call, I would rather get have a s
 Speaker 1  25:41  
 we need. All right, we've come up to time Azmain. We're any pushback I have is about data quality, not about function. I think the function is great. I do like it's trending quickly and trending well, I like that website, yeah. And so when I want to be my definition right now data quality is like, I'm confident that all the data that we put into Salesforce is accurate. That's an
 
-Ben Brooks  26:10  
+Ben Brookes  26:10  
 important point I want to be I want to be careful with how we talk to CSMs about this. It's not data quality, it's data visibility correct. And I think the the issue is there are multiple teams that need to be able to see this stuff and work with it and edit it, and that's the collaboration coming to life, and that's it's kind of the cavalry coming to help. In many ways, is how I'd like them to feel data
 
 Speaker 1  26:32  

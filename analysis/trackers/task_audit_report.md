@@ -73,10 +73,10 @@ Generated: 2026-03-10
 | 19 | 6 Jan | Try Azure deployment via web app create pathway | Martin | Tomorrow (between client meetings) | One-shot deadline 'Tomorrow (between client meetings)', 63d  |
 | 20 | 6 Jan | Get something deployed and demoable for next week | Team | Week of 12 Jan | One-shot deadline 'Week of 12 Jan', 63d old |
 | 21 | 6 Jan | Set up source code management and branching strategy | Richard/BenVH | Week of 12 Jan | One-shot deadline 'Week of 12 Jan', 63d old |
-| 22 | 6 Jan | Push latest code to GitHub main branch | Ben Brooks | Tomorrow | One-shot deadline 'Tomorrow', 63d old |
+| 22 | 6 Jan | Push latest code to GitHub main branch | Ben Brookes | Tomorrow | One-shot deadline 'Tomorrow', 63d old |
 | 23 | 6 Jan | Call Arthur about Nicole's offer | Richard | Today | One-shot deadline 'Today', 63d old |
 | 24 | 6 Jan | Simplify data model | Richard | Tonight | One-shot deadline 'Tonight', 63d old |
-| 25 | 6 Jan | Push latest code to GitHub | Ben Brooks | Tomorrow | One-shot deadline 'Tomorrow', 63d old |
+| 25 | 6 Jan | Push latest code to GitHub | Ben Brookes | Tomorrow | One-shot deadline 'Tomorrow', 63d old |
 | 26 | 6 Jan | Continue Azure web app exploration | Martin | Tomorrow (between meetings) | One-shot deadline 'Tomorrow (between meetings)', 63d old |
 | 32 | 7 Jan | Check Aspen environment for actual testing activity | Emily | Today | One-shot deadline 'Today', 62d old |
 | 33 | 7 Jan | Talk to Martin about Patron/Atrium on tech standup | Stacy | Today | One-shot deadline 'Today', 62d old |
@@ -101,8 +101,8 @@ Generated: 2026-03-10
 | 579 | 4 Feb | Forward email and set up call | Richard | To Whom: Bernard; Strength: Firm | Scheduling task, 34d old |
 | 581 | 4 Feb | Set up afternoon cross-OU session | Richard | To Whom: Team; Strength: Firm | Scheduling task, 34d old |
 | 597 | 5 Feb | Schedule call with Natalia for Friday | Azmain | To Whom: Natalia; Strength: Firm | Scheduling task, 33d old |
-| 631 | 9 Feb | Schedule conversation about Exceedance demos | Ben Brooks/Richard | TBD | Scheduling task, 29d old |
-| 635 | 9 Feb | Will schedule half hour to discuss Exceedance demos | Ben Brooks | To Whom: Richard/Martin; Strength: Soft | Scheduling task, 29d old |
+| 631 | 9 Feb | Schedule conversation about Exceedance demos | Ben Brookes/Richard | TBD | Scheduling task, 29d old |
+| 635 | 9 Feb | Will schedule half hour to discuss Exceedance demos | Ben Brookes | To Whom: Richard/Martin; Strength: Soft | Scheduling task, 29d old |
 
 ## Done -- send/email task (5)
 
@@ -112,7 +112,7 @@ Generated: 2026-03-10
 | 301 | 19 Jan | Email office manager for guest access | Richard | To Whom: Jamie/Idris | Send/email task, 50d old |
 | 490 | 26 Jan | Share Copilot agent prompts/approach with Sales Recon team | Bernard + Richard | TBD | Send/email task, 43d old |
 | 523 | 27 Jan | Share partner data requirements with Azmain in Excel format | Partner team | Within 7 working days | Send/email task, 42d old |
-| 642 | 9 Feb | Send email to Catherine/Josh/Natalia/Ben with data ask | Azmain | To Whom: Richard; Strength: Firm | Send/email task, 29d old |
+| 642 | 9 Feb | Send email to Kathryn Palkovics/Josh/Natalia/Ben with data ask | Azmain | To Whom: Richard; Strength: Firm | Send/email task, 29d old |
 
 ## Done -- code/deploy task (1)
 
@@ -134,7 +134,7 @@ Generated: 2026-03-10
 | 190 | 14 Jan | Will map AI capabilities needed per workstream | Azmain | TBD | Old commitment, 55d old, no recent activity |
 | 208 | 14 Jan | Will add team members mapping | Azmain | Before Tuesday demo | Old commitment, 55d old, no recent activity |
 | 209 | 14 Jan | Will add migration critical flag | Azmain | Before Tuesday demo | Old commitment, 55d old, no recent activity |
-| 211 | 14 Jan | Will provide Valpers cultural commitments terminology for app | Ben Brooks | TBD | Old commitment, 55d old, no recent activity |
+| 211 | 14 Jan | Will provide Valpers cultural commitments terminology for app | Ben Brookes | TBD | Old commitment, 55d old, no recent activity |
 | 230 | 15 Jan | Will prepare localhost demo | Azmain | Before advisory call | Old commitment, 54d old, no recent activity |
 | 261 | 15 Jan | Will add guidance text for blocker descriptions | Azmain | Before CSM rollout | Old commitment, 54d old, no recent activity |
 | 262 | 15 Jan | Will add favourites/watch list feature | Azmain | Before wider deployment | Old commitment, 54d old, no recent activity |
@@ -144,12 +144,12 @@ Generated: 2026-03-10
 | 273 | 16 Jan | Will identify CSM champions for feedback | Josh | Before CSM demo | Old commitment, 53d old, no recent activity |
 | 274 | 16 Jan | Will ensure CSMs validate data before it reaches leadership | Josh | Before any exec presentation | Old commitment, 53d old, no recent activity |
 | 275 | 16 Jan | Will build feedback button with screenshot capture | Azmain | Before CSM demo | Old commitment, 53d old, no recent activity |
-| 277 | 16 Jan | Will work on squad-based rollout messaging | Ben Brooks | Before CSM demo | Old commitment, 53d old, no recent activity |
+| 277 | 16 Jan | Will work on squad-based rollout messaging | Ben Brookes | Before CSM demo | Old commitment, 53d old, no recent activity |
 | 283 | 19 Jan | Raise GitHub account ticket for George | Richard | To Whom: George | Old commitment, 50d old, no recent activity |
 | 284 | 19 Jan | Create chat thread for account planner collaboration | Richard | To Whom: Team | Old commitment, 50d old, no recent activity |
 | 285 | 19 Jan | Reconnect with George by end of week on infrastructure | Richard | To Whom: George | Old commitment, 50d old, no recent activity |
 | 286 | 19 Jan | Review requirements and iterate on Cursor output | George | To Whom: Self/Team | Old commitment, 50d old, no recent activity |
-| 287 | 19 Jan | Offered to review outputs and support iteration | Ben Brooks | To Whom: George | Old commitment, 50d old, no recent activity |
+| 287 | 19 Jan | Offered to review outputs and support iteration | Ben Brookes | To Whom: George | Old commitment, 50d old, no recent activity |
 | 296 | 19 Jan | Kick off February pilot with small CS group | Jamie | To Whom: Richard/Idris | Old commitment, 50d old, no recent activity |
 | 297 | 19 Jan | Monthly feature drops starting March | Jamie | To Whom: All OUs | Old commitment, 50d old, no recent activity |
 | 299 | 19 Jan | Demo banking CS agent at Monday meeting | Idris | To Whom: All | Old commitment, 50d old, no recent activity |
@@ -175,16 +175,16 @@ Generated: 2026-03-10
 | 395 | 23 Jan | Add adoption charter status (manual dropdown) | Azmain Hossain | TBD | Completion evidence in 2026-01-26_-_IRP_Adoption_Call_Intro. |
 | 439 | 23 Jan | Implement accelerate query (all-green, not current quarter) | Azmain Hossain | TBD | Completion evidence in 2026-01-26_-_IRP_Adoption_Call_Intro. |
 | 459 | 26 Jan | Plan infrastructure migration (AWS vs Azure vs MAP) | BenVH + Richard | TBD | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |
-| 466 | 26 Jan | Load fresh golden source data from Salesforce extract | Azmain + Catherine | Wed Jan 28 EOD | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |
+| 466 | 26 Jan | Load fresh golden source data from Salesforce extract | Azmain + Kathryn Palkovics | Wed Jan 28 EOD | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |
 | 467 | 26 Jan | Implement role-based access control (RBAC) | Martin + BenVH (backend) | Thu Jan 29 | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |
 | 468 | 26 Jan | Implement basic audit trail (record-level, then field-level) | Azmain | Thu Jan 29 | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |
 | 469 | 26 Jan | Implement weekly update feature with text entry | Azmain | Thu Jan 29 | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |
 | 470 | 26 Jan | Snapshot dev database and migrate to production | BenVH | Thu Jan 29 night | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |
-| 471 | 26 Jan | Chase Catherine, Natalia, Stacey for latest data | Azmain | Tue-Wed | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |
+| 471 | 26 Jan | Chase Kathryn Palkovics, Natalia, Stacey for latest data | Azmain | Tue-Wed | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |
 | 472 | 26 Jan | Get AWS Bedrock Opus 4.5 API key | Richard | Mon Jan 27 | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |
 | 473 | 26 Jan | CSMs to register in the tool and begin updating their accounts | All CSMs | Fri Jan 30 | Completion evidence in 2026-01-27_-_Partners_Workflow_Worksh |
 | 474 | 26 Jan | Prepare first live Portfolio Review using CLARA | Natalia | Mon Feb 2 | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |
-| 476 | 26 Jan | Post in Teams channel: end of day Wed is data cutoff | Ben Brooks | Mon-Tue | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |
+| 476 | 26 Jan | Post in Teams channel: end of day Wed is data cutoff | Ben Brookes | Mon-Tue | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |
 | 485 | 26 Jan | Plan key pilot users for February Sales Recon pilot across all CS units | Jamie + each CS lead | February 2026 | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |
 | 486 | 26 Jan | Consolidate CS requirements list and present to Jamie's group | Richard | February 2026 | Completion evidence in 2026-01-27_-_Partners_Workflow_Worksh |
 | 487 | 26 Jan | Catalogue data input processes across CS teams (where data lives, what formats) | Jamie's team | February 2026 | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |

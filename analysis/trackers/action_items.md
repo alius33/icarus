@@ -65,7 +65,7 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 53 | 12 Feb | [C] Document Score squad model | Miles | To Whom: George; Strength: Medium | 2026-02-12_-_CSM_Workshop_Session_1 |  |
 | 54 | 12 Feb | Fix parent/subsidiary rollup issue for dashboard metrics | Azmain | TBD | 2026-02-12_-_CSM_Workshop_Session_2 |  |
 | 55 | 12 Feb | Schedule 1:1 sessions with each CSM to review their accounts | Azmain / Natalia's team | TBD | 2026-02-12_-_CSM_Workshop_Session_2 |  |
-| 56 | 12 Feb | Develop standard blocker taxonomy as selectable list | Steve Gentilly / Catherine / Azmain | TBD | 2026-02-12_-_CSM_Workshop_Session_2 |  |
+| 56 | 12 Feb | Develop standard blocker taxonomy as selectable list | Steve Gentilly / Kathryn Palkovics / Azmain | TBD | 2026-02-12_-_CSM_Workshop_Session_2 |  |
 | 57 | 12 Feb | Add implementation lead and PM views to dashboard | Azmain | TBD | 2026-02-12_-_CSM_Workshop_Session_2 |  |
 | 58 | 12 Feb | Integrate Claude/OpenAI API for intelligent summaries and executive Q&A | Azmain | TBD | 2026-02-12_-_CSM_Workshop_Session_2 |  |
 | 59 | 12 Feb | [C] Data entered from 11 Feb onwards will never be wiped | Azmain | To Whom: All CSMs; Strength: Firm — public commitment | 2026-02-12_-_CSM_Workshop_Session_2 |  |
@@ -105,13 +105,13 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 93 | 20 Feb | [C] Will push back on golden source attachment when tagged | Liz | To Whom: Team (via chat); Specificity: Ongoing | 2026-02-20_-_Chat_w_Liz__tracker_feedback_ |  |
 | 94 | 20 Feb | [C] Will rename success criteria to target objectives | Azmain | To Whom: Liz; Specificity: After Diya meeting | 2026-02-20_-_Chat_w_Liz__tracker_feedback_ |  |
 | 95 | 20 Feb | Prepare resource estimates and programme overview for Diya | Azmain / Richard | By 25 Feb | 2026-02-20_-_Natalia_1-1 |  |
-| 96 | 20 Feb | Discuss CLARA maintenance resourcing with Ben Brooks | Natalia | Next week | 2026-02-20_-_Natalia_1-1 |  |
+| 96 | 20 Feb | Discuss CLARA maintenance resourcing with Ben Brookes | Natalia | Next week | 2026-02-20_-_Natalia_1-1 |  |
 | 97 | 20 Feb | Present CLARA updates to CSMs at afternoon standup | Azmain | Today (20 Feb PM) | 2026-02-20_-_Natalia_1-1 |  |
 | 98 | 20 Feb | Continue building project management feature prototype | Azmain | Ongoing | 2026-02-20_-_Natalia_1-1 |  |
 | 99 | 20 Feb | Engage with Kevin Pern on CS Agent status | Azmain / Richard | TBD | 2026-02-20_-_Natalia_1-1 |  |
 | 100 | 20 Feb | Discuss IRP Navigator L1 with product team (Matt Allen) | Azmain | TBD | 2026-02-20_-_Natalia_1-1 |  |
 | 101 | 20 Feb | [C] Prepare Diya presentation by 25 Feb | Azmain / Richard | To Whom: Natalia; Specificity: Specific date | 2026-02-20_-_Natalia_1-1 |  |
-| 102 | 20 Feb | [C] Raise maintenance resourcing with Ben Brooks | Natalia | To Whom: Azmain; Specificity: Next week | 2026-02-20_-_Natalia_1-1 |  |
+| 102 | 20 Feb | [C] Raise maintenance resourcing with Ben Brookes | Natalia | To Whom: Azmain; Specificity: Next week | 2026-02-20_-_Natalia_1-1 |  |
 | 103 | 20 Feb | [C] Present to CSMs at afternoon standup | Azmain | To Whom: Natalia; Specificity: Today | 2026-02-20_-_Natalia_1-1 |  |
 | 104 | 20 Feb | [C] No new features for ~1 week (critical fixes only) | Azmain | To Whom: Natalia / CSMs; Specificity: Until 25 Feb | 2026-02-20_-_Natalia_1-1 |  |
 | 105 | 20 Feb | [C] Come to office on Wednesday next week | Azmain | To Whom: Natalia; Specificity: Specific day | 2026-02-20_-_Natalia_1-1 |  |
@@ -129,12 +129,12 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 117 | 23 Feb | Add resource estimates and timelines to presentation for Wednesday Diya session | Richard | Wed 25 Feb | 2026-02-23_-_Meeting_with_Diya |  |
 | 118 | 23 Feb | Get sign-off on 12-week resource allocation from Stacy | Ben / Richard | This week | 2026-02-23_-_Meeting_with_Diya |  |
 | 119 | 23 Feb | Set up meeting with Courtney on HD blockers and support ticket intelligence | Richard / Ben | This week | 2026-02-23_-_Meeting_with_Diya |  |
-| 120 | 23 Feb | Investigate Gainsight account planning overlap with Catherine | Natalia | Next 2 weeks | 2026-02-23_-_Meeting_with_Diya |  |
+| 120 | 23 Feb | Investigate Gainsight account planning overlap with Kathryn Palkovics | Natalia | Next 2 weeks | 2026-02-23_-_Meeting_with_Diya |  |
 | 121 | 23 Feb | Prepare business case for dedicated resources beyond 12 weeks | Richard | ~6 weeks | 2026-02-23_-_Meeting_with_Diya |  |
 | 122 | 23 Feb | Talk to Christina (Maps team) about infrastructure alignment | Diya | Next week | 2026-02-23_-_Meeting_with_Diya |  |
 | 123 | 23 Feb | [C] Formalise resource sign-off with Stacy | Ben | To Whom: Team | 2026-02-23_-_Meeting_with_Diya |  |
 | 124 | 23 Feb | [C] Resource estimates on slides for Wednesday | Richard | To Whom: Diya | 2026-02-23_-_Meeting_with_Diya |  |
-| 125 | 23 Feb | [C] Investigate Gainsight overlap with Catherine | Natalia | To Whom: Team | 2026-02-23_-_Meeting_with_Diya |  |
+| 125 | 23 Feb | [C] Investigate Gainsight overlap with Kathryn Palkovics | Natalia | To Whom: Team | 2026-02-23_-_Meeting_with_Diya |  |
 | 126 | 23 Feb | [C] Talk to Christina about Maps alignment | Diya | To Whom: Team | 2026-02-23_-_Meeting_with_Diya |  |
 | 127 | 23 Feb | Triage UAT issues with Azmain | Richard / Azmain | Today | 2026-02-23_-_next_2_weeks_plan |  |
 | 128 | 23 Feb | Secure OpenAI API key as fallback | Richard | Today | 2026-02-23_-_next_2_weeks_plan |  |
@@ -238,9 +238,9 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 226 | 3 Mar | Identify three initial API modules for MVP | Martin | TBD | 2026-03-03_-_AI_Tool_Development_Meeting |  |
 | 227 | 3 Mar | Build foundation layer and modular drag-and-drop UI | Martin | TBD | 2026-03-03_-_AI_Tool_Development_Meeting |  |
 | 228 | 3 Mar | Create assets folder with Moody's colours and logo | Azmain | TBD | 2026-03-03_-_AI_Tool_Development_Meeting |  |
-| 229 | 3 Mar | Show progress to Richard and Ben Brooks for feedback | Martin/Azmain | TBD | 2026-03-03_-_AI_Tool_Development_Meeting |  |
+| 229 | 3 Mar | Show progress to Richard and Ben Brookes for feedback | Martin/Azmain | TBD | 2026-03-03_-_AI_Tool_Development_Meeting |  |
 | 230 | 3 Mar | [C] Build MVP with three modules from scratch | Martin | To Whom: Azmain; Context: Core Build in Five deliverable | 2026-03-03_-_AI_Tool_Development_Meeting |  |
-| 231 | 3 Mar | [C] Summarise approach and share with Ben Brooks | Martin | To Whom: Richard (mentioned); Context: Exceedance demo plann | 2026-03-03_-_AI_Tool_Development_Meeting |  |
+| 231 | 3 Mar | [C] Summarise approach and share with Ben Brookes | Martin | To Whom: Richard (mentioned); Context: Exceedance demo plann | 2026-03-03_-_AI_Tool_Development_Meeting |  |
 | 232 | 3 Mar | [C] Provide assets folder (logos, colours) | Azmain | To Whom: Martin; Context: Design consistency | 2026-03-03_-_AI_Tool_Development_Meeting |  |
 | 233 | 3 Mar | Prepare Phantom Agent for introduction once cost pressure emerges | BenVH | Ongoing | 2026-03-03_-_Discussion_with_Ben_VH |  |
 | 234 | 3 Mar | Sync with Richard about Phantom Agent positioning | Azmain, BenVH | This week | 2026-03-03_-_Discussion_with_Ben_VH |  |
@@ -248,7 +248,7 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 236 | 3 Mar | Onboard Nikhil and Chris to CLARA (bugs first) | Azmain | This week | 2026-03-03_-_Discussion_with_Ben_VH |  |
 | 237 | 3 Mar | [C] Keep LLM orchestration off the onboarding call | Azmain | To Whom: BenVH; Context: Protect Phantom Agent introduction | 2026-03-03_-_Discussion_with_Ben_VH |  |
 | 238 | 3 Mar | [C] Name-drop BenVH and Phantom Agent in group chats | Azmain | To Whom: BenVH; Context: Credit protection | 2026-03-03_-_Discussion_with_Ben_VH |  |
-| 239 | 3 Mar | [C] Sync with Richard before approaching Ben Brooks | Both | To Whom: Each other; Context: Strategic alignment | 2026-03-03_-_Discussion_with_Ben_VH |  |
+| 239 | 3 Mar | [C] Sync with Richard before approaching Ben Brookes | Both | To Whom: Each other; Context: Strategic alignment | 2026-03-03_-_Discussion_with_Ben_VH |  |
 | 240 | 3 Mar | Set up Phantom Agent test on personal AWS account | BenVH | Thursday (Mar 6) | 2026-03-03_-_Discussion_with_Ben_VH_2 |  |
 | 241 | 3 Mar | Walk Azmain through the setup and configuration | BenVH | Thursday (Mar 6) | 2026-03-03_-_Discussion_with_Ben_VH_2 |  |
 | 242 | 3 Mar | Guide Azmain on AWS account billing setup | BenVH | Same session | 2026-03-03_-_Discussion_with_Ben_VH_2 |  |
@@ -257,7 +257,7 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 245 | 3 Mar | Create group chat and share consolidated feedback list | Azmain | Today | 2026-03-03_-_GenAI_Program_Standup_and_Next_Steps |  |
 | 246 | 3 Mar | Work through bug/defect list first | Chris | This week | 2026-03-03_-_GenAI_Program_Standup_and_Next_Steps |  |
 | 247 | 3 Mar | Help BenVH with App Factory 50% of time | Nikhil | Ongoing | 2026-03-03_-_GenAI_Program_Standup_and_Next_Steps |  |
-| 248 | 3 Mar | Connect with Martin and Ben Brooks about Exceedance demo | Richard | This week | 2026-03-03_-_GenAI_Program_Standup_and_Next_Steps |  |
+| 248 | 3 Mar | Connect with Martin and Ben Brookes about Exceedance demo | Richard | This week | 2026-03-03_-_GenAI_Program_Standup_and_Next_Steps |  |
 | 249 | 3 Mar | Send high-level adoption tracker slides to group | Richard | Today | 2026-03-03_-_GenAI_Program_Standup_and_Next_Steps |  |
 | 250 | 3 Mar | Promote staging build to production | Azmain | End of day | 2026-03-03_-_GenAI_Program_Standup_and_Next_Steps |  |
 | 251 | 3 Mar | [C] Share consolidated feedback list and create group chat | Azmain | To Whom: Chris, Nikhil; Context: Onboarding | 2026-03-03_-_GenAI_Program_Standup_and_Next_Steps |  |
@@ -272,20 +272,20 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 260 | 3 Mar | [C] Infrastructure walkthrough session for Jack | Richard | To Whom: Jack; Context: Replication of authentication/hostin | 2026-03-03_-_Life_Side_SLT |  |
 | 261 | 3 Mar | [C] Share slides and CLARA link | Richard | To Whom: Life SLT; Context: Follow-up | 2026-03-03_-_Life_Side_SLT |  |
 | 262 | 3 Mar | [C] Explore CLARA and identify use cases | Life SLT | To Whom: Richard/Azmain; Context: Potential adoption | 2026-03-03_-_Life_Side_SLT |  |
-| 263 | 4 Mar | Summarise demo approach and share with Ben Brooks in Teams | Martin | This week | 2026-03-04_-_Build_in_5_Discussion |  |
-| 264 | 4 Mar | Get Ben Brooks' input on second and third demo scenarios | Martin/Richard | This week | 2026-03-04_-_Build_in_5_Discussion |  |
+| 263 | 4 Mar | Summarise demo approach and share with Ben Brookes in Teams | Martin | This week | 2026-03-04_-_Build_in_5_Discussion |  |
+| 264 | 4 Mar | Get Ben Brookes' input on second and third demo scenarios | Martin/Richard | This week | 2026-03-04_-_Build_in_5_Discussion |  |
 | 265 | 4 Mar | Create FinancialForce project entries for time tracking | Richard | This week | 2026-03-04_-_Build_in_5_Discussion |  |
 | 266 | 4 Mar | Clarify Build in Five / App Factory dependency | Richard | TBD | 2026-03-04_-_Build_in_5_Discussion |  |
-| 267 | 4 Mar | [C] Summarise demo approach for Ben Brooks | Martin | To Whom: Richard/Ben; Context: Teams thread update | 2026-03-04_-_Build_in_5_Discussion |  |
+| 267 | 4 Mar | [C] Summarise demo approach for Ben Brookes | Martin | To Whom: Richard/Ben; Context: Teams thread update | 2026-03-04_-_Build_in_5_Discussion |  |
 | 268 | 4 Mar | [C] Create FinancialForce time tracking entries | Richard | To Whom: Martin/Stacy; Context: Administrative compliance | 2026-03-04_-_Build_in_5_Discussion |  |
-| 269 | 4 Mar | [C] Set up Build in Five sync with Ben Brooks | Richard | To Whom: Martin; Context: This week | 2026-03-04_-_Build_in_5_Discussion |  |
-| 270 | 4 Mar | Set up checkpoint with Ben Brooks and Charlotte for Friday | Diana | Next week | 2026-03-04_-_Diana_1-1 |  |
+| 269 | 4 Mar | [C] Set up Build in Five sync with Ben Brookes | Richard | To Whom: Martin; Context: This week | 2026-03-04_-_Build_in_5_Discussion |  |
+| 270 | 4 Mar | Set up checkpoint with Ben Brookes and Charlotte for Friday | Diana | Next week | 2026-03-04_-_Diana_1-1 |  |
 | 271 | 4 Mar | Share advisory project Excel for Friday data seeding | Diana | This week | 2026-03-04_-_Diana_1-1 |  |
 | 272 | 4 Mar | Send CLARA release cycle communication to portfolio review group | Azmain | Today | 2026-03-04_-_Diana_1-1 |  |
 | 273 | 4 Mar | Set up regular Thursday 1-1 cadence | Both | Next week | 2026-03-04_-_Diana_1-1 |  |
 | 274 | 4 Mar | Engage Prashant on Friday development | Diana/Azmain | This week | 2026-03-04_-_Diana_1-1 |  |
 | 275 | 4 Mar | Join Monday advisory team meeting to understand current process | Azmain | Monday | 2026-03-04_-_Diana_1-1 |  |
-| 276 | 4 Mar | [C] Champion Friday to Ben Brooks and Charlotte | Diana | To Whom: Azmain; Context: Formal endorsement | 2026-03-04_-_Diana_1-1 |  |
+| 276 | 4 Mar | [C] Champion Friday to Ben Brookes and Charlotte | Diana | To Whom: Azmain; Context: Formal endorsement | 2026-03-04_-_Diana_1-1 |  |
 | 277 | 4 Mar | [C] Allocate Prashant to Friday development | Diana | To Whom: Azmain; Context: Resource support | 2026-03-04_-_Diana_1-1 |  |
 | 278 | 4 Mar | [C] Build Friday dashboard to replace Wednesday reviews | Azmain | To Whom: Diana; Context: Advisory project management | 2026-03-04_-_Diana_1-1 |  |
 | 279 | 4 Mar | [C] Communicate two-week CLARA release cycle | Azmain | To Whom: Portfolio review group; Context: Process change | 2026-03-04_-_Diana_1-1 |  |
@@ -304,7 +304,7 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 292 | 4 Mar | Add YTD actuals to dashboard | Azmain | This week | 2026-03-04_-_New_Migration_Dashboard_w_Stacy_Natalia |  |
 | 293 | 4 Mar | Investigate four pre-2026 completed accounts | Stacy | Today | 2026-03-04_-_New_Migration_Dashboard_w_Stacy_Natalia |  |
 | 294 | 4 Mar | Fix reports filter logic (multi-filter combinations) | Chris | This week | 2026-03-04_-_New_Migration_Dashboard_w_Stacy_Natalia |  |
-| 295 | 4 Mar | Check with Catherine on analytics tab usage | Stacy | TBD | 2026-03-04_-_New_Migration_Dashboard_w_Stacy_Natalia |  |
+| 295 | 4 Mar | Check with Kathryn Palkovics on analytics tab usage | Stacy | TBD | 2026-03-04_-_New_Migration_Dashboard_w_Stacy_Natalia |  |
 | 296 | 4 Mar | [C] Remove grey box today | Azmain | To Whom: Stacy/Natalia; Context: Portfolio review cleanup | 2026-03-04_-_New_Migration_Dashboard_w_Stacy_Natalia |  |
 | 297 | 4 Mar | [C] Build scorecard tab this week | Azmain | To Whom: Stacy/Natalia; Context: Diya's reporting needs | 2026-03-04_-_New_Migration_Dashboard_w_Stacy_Natalia |  |
 | 298 | 4 Mar | [C] Investigate four pre-2026 accounts today | Stacy | To Whom: Natalia/Azmain; Context: Credibility resolution | 2026-03-04_-_New_Migration_Dashboard_w_Stacy_Natalia |  |
@@ -336,17 +336,17 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 324 | 6 Mar | [C] Arrange data access for Chris | Azmain | To Whom: Chris; Context: Testing enablement | 2026-03-06_-_Chat_with_Chris |  |
 | 325 | 6 Mar | [C] Prepare onboarding template for April grads | Azmain | To Whom: Team; Context: Using Chris's bug work as model | 2026-03-06_-_Chat_with_Chris |  |
 | 326 | 6 Mar | Send App Factory slides and CLARA documentation to Gainsight team | Richard | Before Thursday | 2026-03-06_-_Pre_Gainsight_Team_Meeting |  |
-| 327 | 6 Mar | Set expectation with Gainsight team to include Salesforce in Thursday agenda | Catherine | Before Thursday | 2026-03-06_-_Pre_Gainsight_Team_Meeting |  |
+| 327 | 6 Mar | Set expectation with Gainsight team to include Salesforce in Thursday agenda | Kathryn Palkovics | Before Thursday | 2026-03-06_-_Pre_Gainsight_Team_Meeting |  |
 | 328 | 6 Mar | Compile Salesforce requirements from Bernard, Courtney, and Kevin Pern | Richard | Before Thursday | 2026-03-06_-_Pre_Gainsight_Team_Meeting |  |
 | 329 | 6 Mar | Get Bernard's detailed Salesforce requirements | Richard | Monday | 2026-03-06_-_Pre_Gainsight_Team_Meeting |  |
 | 330 | 6 Mar | Forward Thursday meeting invite to Chris | Richard | ASAP | 2026-03-06_-_Pre_Gainsight_Team_Meeting |  |
 | 331 | 6 Mar | Prepare CLARA-as-complementary-to-Gainsight positioning for Thursday | Azmain | Before Thursday | 2026-03-06_-_Pre_Gainsight_Team_Meeting |  |
-| 332 | 6 Mar | Provide visibility into Gainsight roadmap for the team | Catherine | Ongoing | 2026-03-06_-_Pre_Gainsight_Team_Meeting |  |
+| 332 | 6 Mar | Provide visibility into Gainsight roadmap for the team | Kathryn Palkovics | Ongoing | 2026-03-06_-_Pre_Gainsight_Team_Meeting |  |
 | 333 | 6 Mar | [C] Send App Factory and CLARA docs before Thursday | Richard | To Whom: Gainsight team; Context: Pre-reading for integratio | 2026-03-06_-_Pre_Gainsight_Team_Meeting |  |
-| 334 | 6 Mar | [C] Set Salesforce inclusion expectation for Thursday | Catherine | To Whom: Richard/team; Context: Combined agenda | 2026-03-06_-_Pre_Gainsight_Team_Meeting |  |
+| 334 | 6 Mar | [C] Set Salesforce inclusion expectation for Thursday | Kathryn Palkovics | To Whom: Richard/team; Context: Combined agenda | 2026-03-06_-_Pre_Gainsight_Team_Meeting |  |
 | 335 | 6 Mar | [C] Get Bernard's detailed requirements by Monday | Richard | To Whom: Team; Context: Salesforce integration scope | 2026-03-06_-_Pre_Gainsight_Team_Meeting |  |
-| 336 | 6 Mar | [C] Provide Gainsight roadmap visibility to the team | Catherine | To Whom: Richard/Azmain; Context: Governance enablement | 2026-03-06_-_Pre_Gainsight_Team_Meeting |  |
-| 337 | 6 Mar | [C] Help design governance/decision tree for App Factory | Catherine | To Whom: Richard/Azmain; Context: Intake process | 2026-03-06_-_Pre_Gainsight_Team_Meeting |  |
+| 336 | 6 Mar | [C] Provide Gainsight roadmap visibility to the team | Kathryn Palkovics | To Whom: Richard/Azmain; Context: Governance enablement | 2026-03-06_-_Pre_Gainsight_Team_Meeting |  |
+| 337 | 6 Mar | [C] Help design governance/decision tree for App Factory | Kathryn Palkovics | To Whom: Richard/Azmain; Context: Intake process | 2026-03-06_-_Pre_Gainsight_Team_Meeting |  |
 | 338 | 6 Mar | [C] Adapt CLARA architecture to fit Gainsight | Azmain | To Whom: Gainsight team; Context: Integration approach | 2026-03-06_-_Pre_Gainsight_Team_Meeting |  |
 
 ---
@@ -512,7 +512,7 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 148 | 14 Jan | Add migration critical flag per account | 14 Jan | One-shot deadline '2026-01-17', 55d old |  |
 | 149 | 14 Jan | Add HD enabled flag per use case | 14 Jan | One-shot deadline '2026-01-17', 55d old |  |
 | 150 | 14 Jan | Get CSMs to update migration criticality data | 14 Jan | One-shot deadline '2026-01-20', 55d old |  |
-| 151 | 14 Jan | Schedule alignment call with Natalia/Catherine/Kevin on data model | 14 Jan | One-shot deadline '2026-01-20', 55d old |  |
+| 151 | 14 Jan | Schedule alignment call with Natalia/Kathryn Palkovics/Kevin on data model | 14 Jan | One-shot deadline '2026-01-20', 55d old |  |
 | 152 | 14 Jan | Add updates/audit trail functionality to blockers and action plans | 14 Jan | One-shot deadline '2026-01-24', 55d old |  |
 | 153 | 14 Jan | [C] Will add team members mapping | 14 Jan | Old commitment, 55d old, no recent activity | 2026-01-14_-_Chat_with_Ben_B |
 | 154 | 14 Jan | [C] Will add migration critical flag | 14 Jan | Old commitment, 55d old, no recent activity | 2026-01-14_-_Chat_with_Ben_B |
@@ -531,7 +531,7 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 167 | 15 Jan | Ask cursor to fix test failures related to non-existent columns | 15 Jan | One-shot deadline '2026-01-15', 54d old |  |
 | 168 | 15 Jan | [C] Will chase laptop approvals today | 15 Jan | One-shot deadline '2026-01-15', 54d old | 2026-01-15_-_Chat_with_Richard_2 |
 | 169 | 15 Jan | [C] Will fix schema-related test failures | 15 Jan | One-shot deadline 'Today', 54d old | 2026-01-15_-_Chat_with_Richard_2 |
-| 170 | 15 Jan | Send Ben Brooks prompt to pull and review locally | 15 Jan | One-shot deadline '2026-01-15', 54d old |  |
+| 170 | 15 Jan | Send Ben Brookes prompt to pull and review locally | 15 Jan | One-shot deadline '2026-01-15', 54d old |  |
 | 171 | 15 Jan | Fix production database schema alignment | 15 Jan | One-shot deadline '2026-01-15', 54d old |  |
 | 172 | 15 Jan | Create new branch for continued development | 15 Jan | One-shot deadline '2026-01-15', 54d old |  |
 | 173 | 15 Jan | Prepare localhost demo as fallback for advisory team call | 15 Jan | One-shot deadline '2026-01-15', 54d old |  |
@@ -646,7 +646,7 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 282 | 21 Jan | [C] Start thread with Stephanie for employee data | 21 Jan | Old commitment, 48d old, no recent activity |  |
 | 283 | 21 Jan | [C] Investigate Alembic migration issues | 21 Jan | Old commitment, 48d old, no recent activity |  |
 | 284 | 21 Jan | [C] Map OKRs to training agenda | 21 Jan | Old commitment, 48d old, no recent activity |  |
-| 285 | 21 Jan | Meet with Ben Brooks to identify critical/priority accounts | 21 Jan | One-shot deadline '2026-01-21 EOD', 48d old |  |
+| 285 | 21 Jan | Meet with Ben Brookes to identify critical/priority accounts | 21 Jan | One-shot deadline '2026-01-21 EOD', 48d old |  |
 | 286 | 21 Jan | Confirm deadline for data entry exercise with Natalia/Ben | 21 Jan | One-shot deadline '2026-01-21 EOD', 48d old |  |
 | 287 | 21 Jan | Share critical account list and priority field requirements with PMs | 21 Jan | One-shot deadline '2026-01-22', 48d old |  |
 | 288 | 21 Jan | Test data entry on Mafra/Star/AIG accounts | 21 Jan | One-shot deadline '2026-01-21', 48d old |  |
@@ -775,14 +775,14 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 411 | 26 Jan | Implement basic audit trail (record-level, then field-level) | 26 Jan | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |  |
 | 412 | 26 Jan | Implement weekly update feature with text entry | 26 Jan | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |  |
 | 413 | 26 Jan | Snapshot dev database and migrate to production | 26 Jan | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |  |
-| 414 | 26 Jan | Chase Catherine, Natalia, Stacey for latest data | 26 Jan | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |  |
+| 414 | 26 Jan | Chase Kathryn Palkovics, Natalia, Stacey for latest data | 26 Jan | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |  |
 | 415 | 26 Jan | Get AWS Bedrock Opus 4.5 API key | 26 Jan | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |  |
 | 416 | 26 Jan | CSMs to register in the tool and begin updating their accounts | 26 Jan | Completion evidence in 2026-01-27_-_Partners_Workflow_Worksh |  |
 | 417 | 26 Jan | Prepare first live Portfolio Review using CLARA | 26 Jan | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |  |
-| 418 | 26 Jan | Ping Josh, George, Natalia, Stacey, Catherine about Monday readiness | 26 Jan | One-shot deadline 'This week', 43d old | 2026-01-26_-_IRP_Adoption_Call_Intro, 2026-01-27_-_IRP_Tracker_Next_Steps |
+| 418 | 26 Jan | Ping Josh, George, Natalia, Stacey, Kathryn Palkovics about Monday readiness | 26 Jan | One-shot deadline 'This week', 43d old | 2026-01-26_-_IRP_Adoption_Call_Intro, 2026-01-27_-_IRP_Tracker_Next_Steps |
 | 419 | 26 Jan | Post in Teams channel: end of day Wed is data cutoff | 26 Jan | Completion evidence in 2026-01-27_-_IRP_Tracker_Next_Steps.m |  |
 | 420 | 26 Jan | [C] Post in Teams channel about data cutoff timeline | 26 Jan | One-shot deadline 'This week', 43d old | 2026-01-26_-_IRP_Adoption_Call_Intro |
-| 421 | 26 Jan | [C] Ping Josh, George, Natalia, Stacey, Catherine about readiness | 26 Jan | One-shot deadline 'This week', 43d old | 2026-01-26_-_IRP_Adoption_Call_Intro |
+| 421 | 26 Jan | [C] Ping Josh, George, Natalia, Stacey, Kathryn Palkovics about readiness | 26 Jan | One-shot deadline 'This week', 43d old | 2026-01-26_-_IRP_Adoption_Call_Intro |
 | 422 | 26 Jan | [C] Chase data owners for golden source refresh | 26 Jan | Old commitment, 43d old, no recent activity | 2026-01-26_-_IRP_Adoption_Call_Intro |
 | 423 | 26 Jan | [C] Build audit trail and update features | 26 Jan | One-shot deadline 'By Thursday', 43d old | 2026-01-26_-_IRP_Adoption_Call_Intro |
 | 424 | 26 Jan | [C] Snapshot and migrate database to prod | 26 Jan | Old commitment, 43d old, no recent activity | 2026-01-26_-_IRP_Adoption_Call_Intro |
@@ -801,7 +801,7 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 437 | 26 Jan | [C] Consolidate CS requirements and present to Jamie's group | 26 Jan | Old commitment, 43d old, no recent activity | 2026-01-26_-_SalesRecon_Executive_Session |
 | 438 | 26 Jan | [C] Plan pilot users and rollout coordination | 26 Jan | Old commitment, 43d old, no recent activity | 2026-01-26_-_SalesRecon_Executive_Session |
 | 439 | 26 Jan | [C] Catalogue data input processes across CS teams | 26 Jan | Old commitment, 43d old, no recent activity | 2026-01-26_-_SalesRecon_Executive_Session |
-| 440 | 27 Jan | Chase Catherine, Natalia, Stacey for latest golden source data | 27 Jan | Completion evidence in 2026-02-04_-_Tracker_Next_Steps.md |  |
+| 440 | 27 Jan | Chase Kathryn Palkovics, Natalia, Stacey for latest golden source data | 27 Jan | Completion evidence in 2026-02-04_-_Tracker_Next_Steps.md |  |
 | 441 | 27 Jan | Implement RBAC with admin controls | 27 Jan | Completion evidence in 2026-02-02_-_RBAC_and_Authentication_ |  |
 | 442 | 27 Jan | Implement audit trail (basic first, then field-level) | 27 Jan | Completion evidence in 2026-02-02_-_RBAC_and_Authentication_ |  |
 | 443 | 27 Jan | Implement weekly update text entry feature | 27 Jan | Completion evidence in 2026-02-02_-_IRP_Priority_Accounts_Mi |  |
@@ -891,7 +891,7 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 527 | 4 Feb | [C] Produce Build in Five scope/estimates | 4 Feb | Completion evidence in 2026-02-05_-_Programme_Call_with_Mart |  |
 | 528 | 4 Feb | [C] Build partner section | 4 Feb | Completion evidence in 2026-02-05_-_Chat_with_Rich.md |  |
 | 529 | 4 Feb | [C] Pitch to Diya next week | 4 Feb | Completion evidence in 2026-02-05_-_Portfolio_Review_with_Na |  |
-| 530 | 5 Feb | Address Josh/Catherine data feedback | 5 Feb | Completion evidence in 2026-02-09_-_Monday_Tracker_Standup.m |  |
+| 530 | 5 Feb | Address Josh/Kathryn Palkovics data feedback | 5 Feb | Completion evidence in 2026-02-09_-_Monday_Tracker_Standup.m |  |
 | 531 | 5 Feb | Redesign portfolio review tabs per Natalia specs | 5 Feb | Completion evidence in 2026-02-09_-_Monday_Tracker_Standup.m |  |
 | 532 | 5 Feb | Set up cross-OU Teams channel | 5 Feb | Completion evidence in 2026-02-09_-_Next_Steps.md |  |
 | 533 | 5 Feb | Send Amanda the functional spec generation prompt | 5 Feb | Completion evidence in 2026-02-09_-_Monday_Tracker_Standup.m |  |
@@ -927,21 +927,21 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 563 | 5 Feb | [C] Clean duplicate product adoption rows | 5 Feb | Completion evidence in 2026-02-09_-_Session_with_Josh_Kathry |  |
 | 564 | 5 Feb | [C] Work with Azmain on Build in Five scope | 5 Feb | Completion evidence in 2026-02-09_-_Monday_Tracker_Standup.m |  |
 | 565 | 9 Feb | Get Claude Code API keys and environment access set up | 9 Feb | One-shot deadline '2026-02-09', 29d old |  |
-| 566 | 9 Feb | Get PRs merged and ready for Josh/Catherine review this afternoon | 9 Feb | One-shot deadline '2026-02-09', 29d old |  |
+| 566 | 9 Feb | Get PRs merged and ready for Josh/Kathryn Palkovics review this afternoon | 9 Feb | One-shot deadline '2026-02-09', 29d old |  |
 | 567 | 9 Feb | Walk through Martin's Build in Five plan before Wednesday departure | 9 Feb | One-shot deadline '2026-02-11', 29d old |  |
 | 568 | 9 Feb | Schedule conversation about Exceedance demos | 9 Feb | Scheduling task, 29d old |  |
 | 569 | 9 Feb | Compare Amanda's PRD against CLARA features | 9 Feb | Completion evidence in 2026-02-11_-_Divya_AI_Programme_Gover |  |
 | 570 | 9 Feb | [C] Get Claude Code API keys set up today | 9 Feb | Completion evidence in 2026-02-12_-_CSM_Workshop_Session_2.m |  |
-| 571 | 9 Feb | [C] Get PRs merged for Josh/Catherine review | 9 Feb | Completion evidence in 2026-02-11_-_Diana_ILS_Team_Discussio |  |
+| 571 | 9 Feb | [C] Get PRs merged for Josh/Kathryn Palkovics review | 9 Feb | Completion evidence in 2026-02-11_-_Diana_ILS_Team_Discussio |  |
 | 572 | 9 Feb | [C] Will schedule half hour to discuss Exceedance demos | 9 Feb | Scheduling task, 29d old |  |
 | 573 | 9 Feb | [C] Walk through Martin's plan before Wednesday | 9 Feb | Completion evidence in 2026-02-20_-_Natalia_1-1.md |  |
-| 574 | 9 Feb | Email Catherine/Josh/Natalia/Ben with data sense-check ask | 9 Feb | One-shot deadline '2026-02-09', 29d old |  |
-| 575 | 9 Feb | Catherine to sense-check complex accounts against CLARA data | 9 Feb | One-shot deadline 'End of Tue 2026-02-11', 29d old |  |
+| 574 | 9 Feb | Email Kathryn Palkovics/Josh/Natalia/Ben with data sense-check ask | 9 Feb | One-shot deadline '2026-02-09', 29d old |  |
+| 575 | 9 Feb | Kathryn Palkovics to sense-check complex accounts against CLARA data | 9 Feb | One-shot deadline 'End of Tue 2026-02-11', 29d old |  |
 | 576 | 9 Feb | Wednesday call to review data gaps and plan fixes | 9 Feb | One-shot deadline '2026-02-12', 29d old |  |
 | 577 | 9 Feb | Rebuild blockers page with real analytics, filterable table | 9 Feb | Completion evidence in 2026-02-12_-_CSM_Workshop_Session_2.m |  |
 | 578 | 9 Feb | Walk Azmain through local dev workaround | 9 Feb | One-shot deadline '2026-02-09', 29d old |  |
-| 579 | 9 Feb | [C] Send email to Catherine/Josh/Natalia/Ben with data ask | 9 Feb | Send/email task, 29d old |  |
-| 580 | 9 Feb | [C] Jump on a call with Catherine if needed to help navigate | 9 Feb | Completion evidence in 2026-02-26_-_Chat_with_Stacy.md |  |
+| 579 | 9 Feb | [C] Send email to Kathryn Palkovics/Josh/Natalia/Ben with data ask | 9 Feb | Send/email task, 29d old |  |
+| 580 | 9 Feb | [C] Jump on a call with Kathryn Palkovics if needed to help navigate | 9 Feb | Completion evidence in 2026-02-26_-_Chat_with_Stacy.md |  |
 | 581 | 9 Feb | Fix action plan linkage display issue | 9 Feb | Completion evidence in 2026-02-11_-_CSM_Session_with_Naveen. |  |
 | 582 | 9 Feb | Remove CSM-only editing restriction | 9 Feb | One-shot deadline '2026-02-09', 29d old |  |
 | 583 | 9 Feb | Provide delta of golden source data missing from CLARA | 9 Feb | Completion evidence in 2026-02-11_-_Diana_ILS_Team_Discussio |  |
@@ -978,7 +978,7 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 614 | 10 Mar | Get meeting with Mike Bibo / Sam Gibson (demo team) | Richard | Before exceedance | 2026-03-10_-_Build_in_Five_Standup |  |
 | 615 | 10 Mar | Connect Dan Flemington with Build in Five demo | Richard | TBD | 2026-03-10_-_Build_in_Five_Standup |  |
 | 616 | 10 Mar | Deploy dashboard builder to App Factory | BenVH | TBD | 2026-03-10_-_Build_in_Five_Standup |  |
-| 617 | 10 Mar | Define exceedance panel format and guest list | Ben Brooks | April | 2026-03-10_-_Showing_BenB_Martins_Build_in_5 |  |
+| 617 | 10 Mar | Define exceedance panel format and guest list | Ben Brookes | April | 2026-03-10_-_Showing_BenB_Martins_Build_in_5 |  |
 | 618 | 10 Mar | Arrange product team meeting to assess Build in Five as product feature | Ben / Richard | Before exceedance | 2026-03-10_-_Showing_BenB_Martins_Build_in_5 |  |
 | 619 | 9 Mar | Confirm with Dan Flemington which data source he uses (Tableau/SPM vs Sales Hub) | Richard | When Dan returns from Vienna | 2026-03-09_-_Sales_dashboard_call_with_Juliet |  |
 | 620 | 9 Mar | Connect Richard/Azmain with SPM team contacts once data source confirmed | Juliet Valencia | Next week | 2026-03-09_-_Sales_dashboard_call_with_Juliet |  |
@@ -988,7 +988,7 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 624 | 9 Mar | Get prod database access for Chris from BenVH | BenVH / Chris | Ongoing | 2026-03-09_-_bug_fixes_chat_with_Chris_M |  |
 | 625 | 11 Mar | Complete App Factory MCP server | BenVH | End of week (14 Mar) | 2026-03-11_-_App_Factory_Standup |  |
 | 626 | 11 Mar | Have direct boundary conversation with Nikhil about repeated overstepping | Richard | This week | 2026-03-11_-_App_Factory_Standup |  |
-| 627 | 11 Mar | Escalate Nikhil behaviour to Ben Brooks | Richard | This week | 2026-03-11_-_App_Factory_Standup |  |
+| 627 | 11 Mar | Escalate Nikhil behaviour to Ben Brookes | Richard | This week | 2026-03-11_-_App_Factory_Standup |  |
 | 628 | 11 Mar | Set up App Factory Town Hall / Lunch and Learn for wider org visibility | Richard | Next 2-3 weeks | 2026-03-11_-_App_Factory_Standup |  |
 | 629 | 11 Mar | Redirect Nikhil to Salesforce integration or AIG project, away from App Factory | Richard | This week | 2026-03-11_-_App_Factory_Standup |  |
 | 630 | 11 Mar | Set up cross-OU App Factory presentation (Dennis Clement, Dubai, Asia-Pac, banking, life) | Richard | Next 2-3 weeks | 2026-03-11_-_App_Factory_Standup |  |
@@ -1015,11 +1015,11 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 651 | 11 Mar | Schedule follow-up meeting with Gina Greer (banking) | Richard | Week of 23 Mar | 2026-03-11_-_Chat_with_Idrees |  |
 | 652 | 12 Mar | Create v1 Gainsight integration charter | Azmain | Next week | 2026-03-12_-_Integration_meeting_with_gainsight_team |  |
 | 653 | 12 Mar | Share Gainsight API documentation with Clara team | Rajesh/Shashank | ASAP | 2026-03-12_-_Integration_meeting_with_gainsight_team |  |
-| 654 | 12 Mar | Coordinate follow-up technical sessions with Gainsight team | Catherine | TBD | 2026-03-12_-_Integration_meeting_with_gainsight_team |  |
+| 654 | 12 Mar | Coordinate follow-up technical sessions with Gainsight team | Kathryn Palkovics | TBD | 2026-03-12_-_Integration_meeting_with_gainsight_team |  |
 | 655 | 12 Mar | Provide rough POC timeline after internal regroup | Tina/Nadeem | Next week | 2026-03-12_-_Integration_meeting_with_gainsight_team |  |
-| 656 | 12 Mar | Discuss Catherine COE overlap and behaviour with Diya in London | Richard | Next week | 2026-03-12_-_Post_gainsight_team_meeting_debrief |  |
-| 657 | 12 Mar | Share Catherine COE slide with Richard and Ben Brooks | Azmain | 12 Mar | 2026-03-12_-_Post_gainsight_team_meeting_debrief |  |
-| 658 | 12 Mar | Give Catherine/Stacy/Natalia access to feedback request list | Azmain | Before Tuesday | 2026-03-12_-_Clara_feedback_cadence |  |
+| 656 | 12 Mar | Discuss Kathryn Palkovics COE overlap and behaviour with Diya in London | Richard | Next week | 2026-03-12_-_Post_gainsight_team_meeting_debrief |  |
+| 657 | 12 Mar | Share Kathryn Palkovics COE slide with Richard and Ben Brookes | Azmain | 12 Mar | 2026-03-12_-_Post_gainsight_team_meeting_debrief |  |
+| 658 | 12 Mar | Give Kathryn Palkovics/Stacy/Natalia access to feedback request list | Azmain | Before Tuesday | 2026-03-12_-_Clara_feedback_cadence |  |
 | 659 | 12 Mar | Get Chris's feedback Excel with status of all items | Azmain | Before Tuesday | 2026-03-12_-_Clara_feedback_cadence |  |
 | 660 | 12 Mar | Add priority field to feedback form | Azmain | Before Tuesday | 2026-03-12_-_Clara_feedback_cadence |  |
 | 661 | 12 Mar | Set up Tuesday prioritisation review meeting (recurring, fortnightly) | Natalia Plant | This week | 2026-03-12_-_Clara_feedback_cadence |  |
@@ -1029,7 +1029,7 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 665 | 12 Mar | Fix back-button scroll position loss in Clara | Azmain | TBD | 2026-03-12_-_Clara_feedback_cadence |  |
 | 666 | 12 Mar | Send Diana programme debrief deck and Diya deliverables deck | Azmain | 12 Mar | 2026-03-12_-_Diana_1-1 |  |
 | 667 | 12 Mar | Invite Azmain to IRP weekly call (Vlad, Christian, Snare, Prashant) | Diana | This week | 2026-03-12_-_Diana_1-1 |  |
-| 668 | 12 Mar | Discuss Catherine situation with Natalia Orzechowska | Diana | Next week | 2026-03-12_-_Diana_1-1 |  |
+| 668 | 12 Mar | Discuss Kathryn Palkovics situation with Natalia Orzechowska | Diana | Next week | 2026-03-12_-_Diana_1-1 |  |
 | 669 | 12 Mar | Contact Alexandra for latest partner data update | Azmain | TBD | 2026-03-12_-_Diana_1-1 |  |
 | 670 | 12 Mar | Follow up with Rhett on adoption runbook maintenance plan | Diana | Next week | 2026-03-12_-_Diana_1-1 |  |
 | 671 | 12 Mar | Focus on CS Agent (WS3) and IRP Navigator (WS5) status — both red | Azmain | Next 1-2 weeks | 2026-03-12_-_Diana_1-1 |  |

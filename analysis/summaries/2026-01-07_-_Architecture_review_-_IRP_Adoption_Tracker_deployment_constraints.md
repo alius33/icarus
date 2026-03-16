@@ -1,6 +1,6 @@
 # Architecture Review - IRP Adoption Tracker Deployment Constraints
 **Date:** 2026-01-07
-**Attendees:** Richard Dosoo, Ben Brooks, Azmain Hossain, Martin Davies, Adrian (Speaker 1 -- M365/Digital Workplace), Thomas (Speaker 2 -- Cloud Identity/Graph API), BenVH (Speaker 3/4/5 -- infra engineer)
+**Attendees:** Richard Dosoo, Ben Brookes, Azmain Hossain, Martin Davies, Adrian (Speaker 1 -- M365/Digital Workplace), Thomas (Speaker 2 -- Cloud Identity/Graph API), BenVH (Speaker 3/4/5 -- infra engineer)
 **Duration context:** Medium (~32 minutes, transcript ~220 lines)
 **Workstreams touched:** WS2 (CLARA/IRP Adoption Tracker)
 
@@ -47,8 +47,8 @@
 | Reschedule call with Brandon Smith | Richard | Next week | Open | HIGH |
 | Include Charles Betancourt in follow-up | Richard | Next week | Open | HIGH |
 | Deploy CLARA to AWS behind basic login | BenVH | End of week (10 Jan) | Open | HIGH |
-| Contact Sayed about Azure hosting | Ben Brooks | Tomorrow | Open | LOW |
-| Contact Sirianzin about banking tech Azure approach | Ben Brooks | Tomorrow | Open | LOW |
+| Contact Sayed about Azure hosting | Ben Brookes | Tomorrow | Open | LOW |
+| Contact Sirianzin about banking tech Azure approach | Ben Brookes | Tomorrow | Open | LOW |
 | Set up collaborative dev workflow | Richard/BenVH | This week | Open | MEDIUM |
 | Write up deployment approach in slides | Richard | This week | Open | MEDIUM |
 
@@ -65,7 +65,7 @@
 | Person | Role This Meeting | Influence Acts | Engagement % |
 |--------|-------------------|----------------|--------------|
 | Richard Dosoo | Meeting driver, IT liaison, decision maker | Frames problem for IT, makes AWS pivot call after they leave | 50% |
-| Ben Brooks | Technical authority, option generator | Raises AWS alternative, gets external contacts, pushes SSO importance | 25% |
+| Ben Brookes | Technical authority, option generator | Raises AWS alternative, gets external contacts, pushes SSO importance | 25% |
 | Adrian (M365) | Gatekeeper, redirector | Acknowledges value but routes to other teams | 10% |
 | Thomas (Cloud Identity) | Scope boundary setter | Explicitly declares out of scope | 5% |
 | BenVH | CI/CD implementer | Offers Docker deployment expertise from personal projects | 10% |
@@ -74,7 +74,7 @@
 | Person | Sentiment | Shift | Topic | Quote |
 |--------|-----------|-------|-------|-------|
 | Richard Dosoo | frustrated | DOWN | Azure deployment friction | "it's just frustrating because... we're not trying to do anything unreasonable" |
-| Ben Brooks | pragmatic | STABLE | Platform flexibility | "I don't want to make it any more complicated than it needs to be" |
+| Ben Brookes | pragmatic | STABLE | Platform flexibility | "I don't want to make it any more complicated than it needs to be" |
 | Adrian | neutral | STABLE | Architecture review | "huge value in it, just to do a rinse and repeat" |
 | Thomas | disengaged | STABLE | Not his domain | Out of scope declaration |
 | BenVH | supportive | NEW | AWS deployment readiness | Has existing scripts to deploy quickly |
@@ -84,7 +84,7 @@
 |--------|------------|------------------|-----------|------------|
 | Richard | Reschedule with Brandon Smith and Charles Betancourt | Next week | They are available | MEDIUM |
 | BenVH | Deploy CLARA to AWS | End of week | Code and data model ready | HIGH |
-| Ben Brooks | Contact Sayed and Sirianzin | Tomorrow | None | LOW |
+| Ben Brookes | Contact Sayed and Sirianzin | Tomorrow | None | LOW |
 
 ## Meeting Effectiveness
 - **Type:** escalation

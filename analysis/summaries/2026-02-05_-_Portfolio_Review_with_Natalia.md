@@ -53,14 +53,14 @@
 ## Power Dynamics
 - **Natalia** is the clear requirements authority in this session -- she knows exactly what she needs and articulates the distinction between operational, executive, and management views with precision. She is the most structured thinker on the programme.
 - **Azmain** is in listening and absorbing mode -- asking clarifying questions, proposing implementation approaches, learning Natalia's vocabulary and priorities
-- **Ben Brooks (offscreen)** -- his approach is diplomatically criticised. He adds too many features to one screen in one meeting, creating confusion. His "accelerate" concept was different from what Natalia actually needs.
+- **Ben Brookes (offscreen)** -- his approach is diplomatically criticised. He adds too many features to one screen in one meeting, creating confusion. His "accelerate" concept was different from what Natalia actually needs.
 - **Sneha (offscreen)** -- the hidden data backbone. Her Excel sheets are the source of truth for historical reporting and the minimum standard that the dashboard must match.
 - **Diya (offscreen)** -- described as having no patience, no attention span, and giving no feedback. Multiple people cannot interpret her communication.
 
 ## Stakeholder Signals
 - **Natalia Plant:** The most structured requirements thinker on the team. She can articulate the difference between operational, executive, and management views with clarity that most PMs would struggle to match. Her criticism of Ben is diplomatic but firm -- he overloads screens. She is the gatekeeper for whether the Portfolio Review meeting works.
 - **Diya (SVP):** Remains an enigma. "Sometimes I'm not sure... I have people coming, what do you think she wants?" Natalia's admission that even she cannot interpret Diya's feedback is significant -- if the person closest to Diya does not know what she wants, the programme is flying blind on executive sponsorship.
-- **Ben Brooks (offscreen):** His feature additions (accelerate tab, extra status fields) are creating confusion rather than value. The gap between his concept and Natalia's actual needs reveals a requirements communication problem.
+- **Ben Brookes (offscreen):** His feature additions (accelerate tab, extra status fields) are creating confusion rather than value. The gap between his concept and Natalia's actual needs reveals a requirements communication problem.
 - **Sneha:** The person producing the manual PowerPoint reports that leadership relies on. Her data is the bridge between old reporting and new dashboard.
 
 ## Commitments Made
@@ -82,7 +82,7 @@
 - **Ben's vision vs Natalia's requirements** -- Ben added features (accelerate analytics, extra status fields) that Natalia does not want or is not ready for. This gap could create friction when Ben returns. Severity: MEDIUM
 - **Historical data gap** -- Management dashboard needs cumulative migration charts, but CLARA has no historical data. Depends on Sneha's Excel sheets, which may not be complete or standardised. Severity: MEDIUM
 - **Diya communication opacity** -- If leadership cannot interpret Diya's responses, the programme cannot confirm executive sponsorship. The 2-slide, 15-minute pitch next week is high-stakes with low feedback visibility. Severity: HIGH
-- **Azmain's bandwidth** -- Portfolio review redesign before Monday, management dashboard in 2 weeks, status/stage naming fixes, Sneha data import -- all while handling Josh/Catherine feedback and partner section. Severity: HIGH
+- **Azmain's bandwidth** -- Portfolio review redesign before Monday, management dashboard in 2 weeks, status/stage naming fixes, Sneha data import -- all while handling Josh/Kathryn Palkovics feedback and partner section. Severity: HIGH
 - **Status/stage naming confusion** -- Multiple fields all called "status" across the UI. Some from Salesforce, some Ben's additions. Users cannot tell what anything means. Severity: MEDIUM
 
 ## Open Questions Raised

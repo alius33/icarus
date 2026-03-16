@@ -15,7 +15,7 @@
 - BenVH has a meeting scheduled with Melinda Trigerino (AI governance lead). Azmain advises delaying until there is a working demo using Moody's AWS Bedrock API as proof point.
 - Discussion of Moody's Claude wrapper -- Azmain wants to build a non-technical user interface (like Claude Code for Desktop but using Bedrock). BenVH's Phantom Agent would handle the cloud environment provisioning behind it.
 - Microsoft Graph API integration discussed: connecting to Outlook, SharePoint, Teams via SSO to give Claude access to Moody's internal data -- something Copilot does poorly.
-- Catherine Lady called out again as an active CLARA detractor -- flagging issues, never volunteering solutions. Stacy ends up doing manual cleanup work that Catherine should be doing.
+- Kathryn Palkovics Lady called out again as an active CLARA detractor -- flagging issues, never volunteering solutions. Stacy ends up doing manual cleanup work that Kathryn Palkovics should be doing.
 - BenVH warns about bringing wrong people onto the team: enterprise employees who complain rather than build will slow everything down.
 
 ## Decisions Made
@@ -40,7 +40,7 @@
 2. **Value proposition for Moody's** (14:00-22:00) -- Cost of laptops vs cloud environments, security governance, audit trail
 3. **Go-to-market strategy** (22:00-32:00) -- Seeding questions, delaying Melinda meeting, working demo as proof point
 4. **Claude wrapper and Graph API** (32:00-38:00) -- Non-technical interface, Copilot replacement, Bedrock as backend
-5. **Team culture and detractors** (38:00-43:00) -- Catherine Lady behaviour, enterprise hiring risks, graduate strategy
+5. **Team culture and detractors** (38:00-43:00) -- Kathryn Palkovics Lady behaviour, enterprise hiring risks, graduate strategy
 
 ## Power Dynamics
 - **BenVH is vulnerable in this conversation.** He is sharing a deeply personal, five-year passion project with someone relatively junior. The trust dynamics are significant.
@@ -51,7 +51,7 @@
 - **BenVH:** Passionate, vulnerable, five years of personal investment in Phantom Agent. Trust issues around sharing IP. Wants Moody's to use it but not own it -- vendor/licensor model. This is personally and financially significant to him.
 - **Azmain Hossain:** Immediately grasps the strategic value. Proposes the political seeding strategy. Frames the cost argument in terms executives understand. Growing into a strategic partner role.
 - **Melinda Trigerino (absent, referenced):** AI governance lead. BenVH reached out after hearing her name in the Edward/Amanda meeting. Key gatekeeper for any AI tool adoption.
-- **Catherine Lady (absent, referenced):** Called out again as a detractor who creates problems without contributing solutions.
+- **Kathryn Palkovics Lady (absent, referenced):** Called out again as a detractor who creates problems without contributing solutions.
 
 ## Commitments Made
 | Who | Commitment | To Whom | Confidence |
@@ -86,7 +86,7 @@
 - "I built this. I patented it... I would honestly love for Moody's to actually use it... but I don't want Moody's to own it" -- BenVH, on Phantom Agent's personal significance
 - "This would frankly change my life" -- BenVH, on Moody's becoming a customer for Phantom Agent
 - "The cost of one person's laptop, like five grand, you can run this whole system for like 1,000 people for a month" -- Azmain, framing the value proposition
-- "She is maliciously trying to just undermine everything" -- Azmain, on Catherine Lady (repeated from tracker standup)
+- "She is maliciously trying to just undermine everything" -- Azmain, on Kathryn Palkovics Lady (repeated from tracker standup)
 
 ## Narrative Notes
 This is the most personally significant conversation of the week. BenVH opens up about Phantom Agent -- a five-year passion project that he has now adapted from CICD orchestration to AI agent governance. His vulnerability is palpable: he trusts Azmain enough to share something he has not shared widely. The solution addresses real problems the programme faces (cost control, security governance, developer hardware limitations), and Azmain's immediate grasp of the go-to-market strategy shows his growing strategic maturity. The vendor/licensor question is delicate -- BenVH wants compensation for his IP without Moody's claiming ownership. If handled well, this could become a genuine innovation story. If handled badly, BenVH has another reason to leave, and the programme loses its only infrastructure person. The seeding strategy (plant questions about cost control, then reveal the solution) is politically savvy but requires patience that the programme may not have.

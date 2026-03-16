@@ -7,7 +7,7 @@
 ## Key Points
 - Richard maps out next steps post-advisory demo: get feedback from Stacy, but Liz raised the critical point that Josh's and George's feedback must be incorporated first -- otherwise stakeholders feel sidelined when their teams start using the tool
 - Richard plans to create five project tabs in a spreadsheet with stakeholder RACI for each workstream: (1) PMO Dashboard/Adoption Tracker (CLARA), (2) Adoption Charter Generation, (3) Customer Success Agent (copilot studio), (4) Client Pipeline Development (separate AWS environment), (5) Navigator, (6) Cursor internal productivity
-- Customer Success Agent workstream still undefined -- may be copilot studio, may not be; needs Catherine, Kevin, and Alexandra's input; Idris doing related Salesforce copilot work
+- Customer Success Agent workstream still undefined -- may be copilot studio, may not be; needs Kathryn Palkovics, Kevin, and Alexandra's input; Idris doing related Salesforce copilot work
 - Azmain reveals he is building a demo mode with a demo database filled with synthetic data from Ben's Excel file
 - BenVH proposes the correct architecture for demo mode: use a static JSON file that mirrors the database schema, displayed on the front-end only -- no database interaction in demo mode; CRUD operations disabled with a pop-up saying "you're in demo mode"
 - Key architectural debate: database flag for demo data vs. static JSON display. BenVH argues the JSON approach is better because (1) cursor will forget about the demo flag in new contexts, (2) every stored procedure would need to filter by the flag, (3) JSON file serves as a schema reference document

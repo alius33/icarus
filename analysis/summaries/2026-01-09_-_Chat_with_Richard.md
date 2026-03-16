@@ -1,6 +1,6 @@
 # Chat with Richard
 **Date:** 2026-01-09
-**Attendees:** Richard Dosoo, Azmain Hossain (Ben Brooks mentioned but not directly on call)
+**Attendees:** Richard Dosoo, Azmain Hossain (Ben Brookes mentioned but not directly on call)
 **Duration context:** Long (~42 minutes, transcript ~345 lines)
 **Workstreams touched:** WS2 (CLARA/IRP Adoption Tracker), WS1 (Training & Enablement -- discussed), WS6 (Build in Five -- mentioned)
 
@@ -106,7 +106,7 @@
 | R-032 | OPEN | Only WS2 actively worked -- five other workstreams still scoped only | MEDIUM | STABLE | scope | MEDIUM |
 
 ## Open Questions Raised
-- Who are the CS leads for Sales Recon meeting (Josh, Kevin, Catherine, Alexandra, Idris)?
+- Who are the CS leads for Sales Recon meeting (Josh, Kevin, Kathryn Palkovics, Alexandra, Idris)?
 - Can external contractors be approved if internal resources blocked?
 - Will Diya provide executive air cover for resource prioritisation?
 - When will enterprise Claude access be provisioned?

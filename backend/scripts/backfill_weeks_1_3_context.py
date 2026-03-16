@@ -112,7 +112,7 @@ patches = [
             "Anthropic's cloud infrastructure with full internet access — no enterprise controls, "
             "data processing outside Moody's infrastructure. Personal spend: Azmain burned his "
             "entire **$1,000 monthly Cursor budget in ONE DAY** building Friday.\n\n"
-            "**Ben Brooks is providing political cover** but the risk persists if re-examined "
+            "**Ben Brookes is providing political cover** but the risk persists if re-examined "
             "formally. The **AWS Bedrock API** (working since Nikhil's contribution on 3 Mar) "
             "should resolve the issue going forward by keeping data within Moody's infrastructure, "
             "but the historical exposure remains unaddressed."
@@ -122,14 +122,14 @@ patches = [
         "id": 52,
         "source_transcript_id": 80,
         "context": (
-            "**Catherine** volunteered to design an **App Factory decision tree/intake process** "
+            "**Kathryn Palkovics** volunteered to design an **App Factory decision tree/intake process** "
             "during the Pre-Gainsight team meeting on 6 Mar. When the governance need was "
             "described, she responded: **\"you're speaking my love language.\"**\n\n"
             "Her proposed role: serve as a gating checkpoint — should an idea be built as a custom "
             "app, or does it already exist in Gainsight? This prevents silo creation. Examples: "
             "**George** building an account planning app and **Idris** (Banking) building something "
             "similar, both independently with no coordination.\n\n"
-            "Catherine sits between business and enterprise tooling, making her ideal for intake "
+            "Kathryn Palkovics sits between business and enterprise tooling, making her ideal for intake "
             "triage. She identified herself as a willing governance ally, NOT a blocker. However, "
             "Richard flagged that Gainsight integration is **NOT in the original 12-week plan** — "
             "replanning required if integration is expected."
@@ -144,7 +144,7 @@ patches = [
             "far more complex than expected — actual documents have **embedded images, diagrams, and "
             "multi-page formatting** requiring OCR and multi-modal LLM processing.\n\n"
             "Richard spent a **full day reverse-engineering** Rhett's incomplete spec (5 Mar Clara "
-            "standup). His explicit advice: **do NOT escalate to Ben Brooks** — Rhett has Ben's "
+            "standup). His explicit advice: **do NOT escalate to Ben Brookes** — Rhett has Ben's "
             "political protection.\n\n"
             "Azmain set the priority sequence: bugs first → Bedrock blocker intelligence second → "
             "adoption charters third. The one-directional data flow decision (CLARA → document, not "
@@ -185,7 +185,7 @@ patches = [
             "- Scheduling deployment meetings 30 minutes after being told no\n\n"
             "BenVH explicitly stated he'd **\"prefer to work overtime rather than have Nikhil "
             "interact with any App Factory app.\"** Richard is planning a direct confrontation "
-            "with Nikhil about boundary violations and intends to escalate to Ben Brooks.\n\n"
+            "with Nikhil about boundary violations and intends to escalate to Ben Brookes.\n\n"
             "**Neutralisation strategy:** redirect Nikhil to Salesforce integration or AIG "
             "project, away from App Factory."
         ),
@@ -194,16 +194,16 @@ patches = [
         "id": 66,
         "source_transcript_id": 118,
         "context": (
-            "**Catherine's Centre of Excellence (COE)** has three pillars: digital engagement, "
+            "**Kathryn Palkovics' Centre of Excellence (COE)** has three pillars: digital engagement, "
             "enablement, and Gainsight/SFDC retirement. The **first pillar (digital engagement) "
             "directly overlaps** with the AI programme's scope.\n\n"
             "Key incidents (from 12 Mar Diana 1-1 and Post-Gainsight debrief):\n"
-            "- Catherine organised the Gainsight team meeting **without consulting the CLARA team**, "
+            "- Kathryn Palkovics organised the Gainsight team meeting **without consulting the CLARA team**, "
             "blindsiding them\n"
             "- She finds trivial CLARA issues every two days, claims CSMs complained (they haven't)\n"
             "- She gatekeeps Gainsight/Salesforce access\n"
             "- Her objectives were **approved by Natalia Orzechowska and signed off by Diya**\n\n"
-            "**Strategy**: Frame \"digital enablement\" (Catherine's domain) as distinct from \"AI "
+            "**Strategy**: Frame \"digital enablement\" (Kathryn Palkovics' domain) as distinct from \"AI "
             "enablement\" (Azmain's domain). Diana to discuss with Natalia O. Richard to raise with "
             "Diya during London visit. Risk R#045."
         ),
@@ -245,7 +245,7 @@ patches = [
         "context": (
             "**Slidey convergence** was discovered on 11 Mar: **Juliet Valencia** (Sales) "
             "independently built a Moody's-branded PowerPoint generator — the same tool Richard's "
-            "team is building as **Slidey** (Ben Brooks's presentation app).\n\n"
+            "team is building as **Slidey** (Ben Brookes's presentation app).\n\n"
             "Juliet's bot connects to Databricks but can't write to SharePoint in the Azure sandbox. "
             "She opted for her **own AWS infrastructure** rather than shared App Factory (data "
             "governance: commission targets are confidential).\n\n"
@@ -264,7 +264,7 @@ patches = [
             "Slidey, Build in Five) connect to a central App Factory MCP server instead of building "
             "per-app LLM pipelines.\n\n"
             "**Wednesday 12 Mar** was set as the public launch meeting with senior stakeholders "
-            "(Ben Brooks, George, CS contacts). Catherine's intake design from week 2 feeds into "
+            "(Ben Brookes, George, CS contacts). Kathryn Palkovics' intake design from week 2 feeds into "
             "this governance board.\n\n"
             "Key decisions: no more per-app LLM pipelines, SharePoint knowledge cataloguing "
             "initiative (profile 10 years of consulting documents, vector DB, MCP on top for RAG). "
@@ -300,12 +300,12 @@ new_actions = [
         "category": "programme_strategic",
         "title": "Establish App Factory governance framework with intake criteria",
         "description": (
-            "Define gating criteria for App Factory intake and formalise Catherine's "
+            "Define gating criteria for App Factory intake and formalise Kathryn Palkovics' "
             "decision tree design. Merge the intake process, MCP architecture governance, "
             "and cross-OU adoption model into a single framework. Unblocks BenVH's queue."
         ),
         "priority": "HIGH",
-        "owner": "Richard / Catherine",
+        "owner": "Richard / Kathryn Palkovics",
         "status": "PENDING",
         "position": 14,
         "is_ai_generated": True,
@@ -314,10 +314,10 @@ new_actions = [
         "context": (
             "This action has been carried forward through **three consecutive weeks** without "
             "resolution — first raised in Week 1 as \"Establish App Factory gating criteria\" "
-            "(id=40), then Week 2 as \"Establish App Factory governance with Catherine intake "
-            "design\" (id=52), and Week 3 as \"App Factory governance board with Catherine "
+            "(id=40), then Week 2 as \"Establish App Factory governance with Kathryn Palkovics intake "
+            "design\" (id=52), and Week 3 as \"App Factory governance board with Kathryn Palkovics "
             "intake design\" (id=70).\n\n"
-            "**Catherine** volunteered to design the decision tree on 6 Mar (\"you're speaking my "
+            "**Kathryn Palkovics** volunteered to design the decision tree on 6 Mar (\"you're speaking my "
             "love language\"). The 11 Mar App Factory Discussion established MCP server as central "
             "middleware. A Wednesday 12 Mar public launch meeting was planned with senior "
             "stakeholders.\n\n"
@@ -344,7 +344,7 @@ new_actions = [
         "context": (
             "**Security audit caught the team using personal Claude accounts** for Moody's work "
             "in early March. Azmain admitted: \"The security team caught it... we were just like, "
-            "there's no proprietary information, which is wildly a lie.\" **Ben Brooks is providing "
+            "there's no proprietary information, which is wildly a lie.\" **Ben Brookes is providing "
             "political cover** but the risk persists.\n\n"
             "The exposure: Azmain ran **30 concurrent agents** on Anthropic's cloud with full "
             "internet access — no enterprise controls, data outside Moody's infrastructure. "

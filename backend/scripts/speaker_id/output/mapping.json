@@ -80,10 +80,10 @@
         "Unknown Speaker": {
           "instances": {
             "3:03": {
-              "identified_as": "Ben Brooks",
+              "identified_as": "Ben Brookes",
               "confidence": 0.617,
               "method": "stylometric_match",
-              "evidence": "Speech patterns match Ben Brooks (score: 0.22)",
+              "evidence": "Speech patterns match Ben Brookes (score: 0.22)",
               "supporting_signals": []
             }
           }
@@ -107,7 +107,7 @@
         "Unknown Speaker": {
           "instances": {
             "1:55": {
-              "identified_as": "Ben Brooks",
+              "identified_as": "Ben Brookes",
               "confidence": 0.45,
               "method": "claude_assisted",
               "evidence": "Claude-assisted: Short interjections in workshop planning with George; product owner would attend CSM workshop prep",
@@ -150,7 +150,7 @@
       "meeting_type": "unknown",
       "known_speakers": [
         "Azmain Hossain",
-        "Ben Brooks",
+        "Ben Brookes",
         "Martin Davies",
         "Richard Dosoo"
       ],
@@ -187,7 +187,7 @@
     "07-01-2026_-_Architecture_review_-_IRP_Adoption_Tracker_deployment_constraints.txt": {
       "meeting_type": "clara",
       "known_speakers": [
-        "Ben Brooks",
+        "Ben Brookes",
         "Martin Davies",
         "Richard Dosoo"
       ],
@@ -236,7 +236,7 @@
       "meeting_type": "clara",
       "known_speakers": [
         "Azmain Hossain",
-        "Ben Brooks",
+        "Ben Brookes",
         "Richard Dosoo"
       ],
       "title_candidates": [],
@@ -262,12 +262,12 @@
       "meeting_type": "1_on_1",
       "known_speakers": [
         "Azmain Hossain",
-        "Ben Brooks",
+        "Ben Brookes",
         "Richard Dosoo"
       ],
       "title_candidates": [
         "Richard Dosoo",
-        "Ben Brooks"
+        "Ben Brookes"
       ],
       "mappings": {
         "Unknown Speaker": {
@@ -350,10 +350,10 @@
         "Unknown Speaker": {
           "instances": {
             "3:18": {
-              "identified_as": "Ben Brooks",
+              "identified_as": "Ben Brookes",
               "confidence": 0.68,
               "method": "elimination",
-              "evidence": "Only unmatched candidate 'Ben Brooks' for Unknown Speaker (from meeting type attendees)",
+              "evidence": "Only unmatched candidate 'Ben Brookes' for Unknown Speaker (from meeting type attendees)",
               "supporting_signals": []
             }
           }
@@ -431,7 +431,7 @@
       "meeting_type": "clara",
       "known_speakers": [
         "Azmain Hossain",
-        "Ben Brooks",
+        "Ben Brookes",
         "Richard Dosoo"
       ],
       "title_candidates": [],
@@ -482,12 +482,12 @@
       "meeting_type": "1_on_1",
       "known_speakers": [
         "Azmain Hossain",
-        "Ben Brooks",
+        "Ben Brookes",
         "Richard Dosoo"
       ],
       "title_candidates": [
         "Richard Dosoo",
-        "Ben Brooks"
+        "Ben Brookes"
       ],
       "mappings": {
         "Unknown Speaker": {
@@ -513,16 +513,16 @@
         "Azmain Hossain"
       ],
       "title_candidates": [
-        "Ben Brooks"
+        "Ben Brookes"
       ],
       "mappings": {
         "Unknown Speaker": {
           "instances": {
             "0:00": {
-              "identified_as": "Ben Brooks",
+              "identified_as": "Ben Brookes",
               "confidence": 0.75,
               "method": "title_parse",
-              "evidence": "Title candidate 'Ben Brooks' with Unknown Speaker",
+              "evidence": "Title candidate 'Ben Brookes' with Unknown Speaker",
               "supporting_signals": []
             }
           }
@@ -670,7 +670,7 @@
       "meeting_type": "clara",
       "known_speakers": [
         "Azmain Hossain",
-        "Ben Brooks",
+        "Ben Brookes",
         "Christine",
         "Richard Dosoo",
         "Steve Getilli"
@@ -697,7 +697,7 @@
     "16-01-2026_-_Demo_and_Feedback_from_Josh_E.txt": {
       "meeting_type": "demo",
       "known_speakers": [
-        "Ben Brooks"
+        "Ben Brookes"
       ],
       "title_candidates": [
         "Josh Ellingson"
@@ -721,7 +721,7 @@
     "19-01-2026_-_Account_Planner_w_George_D.txt": {
       "meeting_type": "unknown",
       "known_speakers": [
-        "Ben Brooks",
+        "Ben Brookes",
         "George Dyke",
         "Martin Davies",
         "Richard Dosoo"
@@ -912,10 +912,10 @@
         "Unknown Speaker": {
           "instances": {
             "8:03": {
-              "identified_as": "Ben Brooks",
+              "identified_as": "Ben Brookes",
               "confidence": 0.68,
               "method": "elimination",
-              "evidence": "Only unmatched candidate 'Ben Brooks' for Unknown Speaker (from meeting type attendees)",
+              "evidence": "Only unmatched candidate 'Ben Brookes' for Unknown Speaker (from meeting type attendees)",
               "supporting_signals": []
             }
           }
@@ -1003,7 +1003,7 @@
       "meeting_type": "clara",
       "known_speakers": [
         "Azmain Hossain",
-        "Ben Brooks",
+        "Ben Brookes",
         "Martin Davies",
         "Richard Dosoo"
       ],
@@ -1259,7 +1259,7 @@
       "meeting_type": "technical",
       "known_speakers": [
         "Azmain Hossain",
-        "Ben Brooks",
+        "Ben Brookes",
         "Richard Dosoo"
       ],
       "title_candidates": [
@@ -1328,10 +1328,10 @@
         "Unknown Speaker": {
           "instances": {
             "0:41": {
-              "identified_as": "Ben Brooks",
+              "identified_as": "Ben Brookes",
               "confidence": 0.68,
               "method": "elimination",
-              "evidence": "Only unmatched candidate 'Ben Brooks' for Unknown Speaker (from meeting type attendees)",
+              "evidence": "Only unmatched candidate 'Ben Brookes' for Unknown Speaker (from meeting type attendees)",
               "supporting_signals": []
             }
           }
@@ -1346,7 +1346,7 @@
       "meeting_type": "unknown",
       "known_speakers": [
         "Azmain Hossain",
-        "Ben Brooks",
+        "Ben Brookes",
         "Natalia",
         "Richard Dosoo"
       ],
@@ -1373,7 +1373,7 @@
       "meeting_type": "unknown",
       "known_speakers": [
         "Azmain Hossain",
-        "Ben Brooks",
+        "Ben Brookes",
         "Richard Dosoo"
       ],
       "title_candidates": [],
@@ -1381,7 +1381,7 @@
         "Unknown Speaker": {
           "instances": {
             "5:02": {
-              "identified_as": "Ben Brooks",
+              "identified_as": "Ben Brookes",
               "confidence": 0.85,
               "method": "claude_assisted",
               "evidence": "Claude-assisted: Continuation of Ben speech at line 40 about being relaxed. Screen share question. Multiple speakers lose labels intermittently",
@@ -1404,10 +1404,10 @@
         "Unknown Speaker": {
           "instances": {
             "2:54": {
-              "identified_as": "Ben Brooks",
+              "identified_as": "Ben Brookes",
               "confidence": 0.68,
               "method": "elimination",
-              "evidence": "Only unmatched candidate 'Ben Brooks' for Unknown Speaker (from meeting type attendees)",
+              "evidence": "Only unmatched candidate 'Ben Brookes' for Unknown Speaker (from meeting type attendees)",
               "supporting_signals": []
             }
           }
@@ -1429,10 +1429,10 @@
         "Unknown Speaker": {
           "instances": {
             "0:00": {
-              "identified_as": "Ben Brooks",
+              "identified_as": "Ben Brookes",
               "confidence": 0.68,
               "method": "elimination",
-              "evidence": "Only unmatched candidate 'Ben Brooks' for Unknown Speaker (from meeting type attendees)",
+              "evidence": "Only unmatched candidate 'Ben Brookes' for Unknown Speaker (from meeting type attendees)",
               "supporting_signals": []
             }
           }
@@ -1721,17 +1721,17 @@
       "meeting_type": "executive",
       "known_speakers": [
         "Azmain Hossain",
-        "Ben Brooks"
+        "Ben Brookes"
       ],
       "title_candidates": [],
       "mappings": {
         "Unknown Speaker": {
           "instances": {
             "0:28": {
-              "identified_as": "Ben Brooks",
+              "identified_as": "Ben Brookes",
               "confidence": 0.683,
               "method": "stylometric_match",
-              "evidence": "Speech patterns match Ben Brooks (score: 0.44)",
+              "evidence": "Speech patterns match Ben Brookes (score: 0.44)",
               "supporting_signals": []
             }
           }
@@ -1946,11 +1946,11 @@
       "meeting_type": "portfolio_review",
       "known_speakers": [
         "Azmain Hossain",
-        "Ben Brooks",
+        "Ben Brookes",
         "Natalia"
       ],
       "title_candidates": [
-        "Ben Brooks",
+        "Ben Brookes",
         "Natalia Plant"
       ],
       "mappings": {
@@ -2062,7 +2062,7 @@
       "meeting_type": "unknown",
       "known_speakers": [
         "Azmain Hossain",
-        "Ben Brooks"
+        "Ben Brookes"
       ],
       "title_candidates": [],
       "mappings": {},
@@ -2109,12 +2109,12 @@
       "meeting_type": "portfolio_review",
       "known_speakers": [
         "Azmain Hossain",
-        "Ben Brooks",
+        "Ben Brookes",
         "Natalia"
       ],
       "title_candidates": [
         "Natalia Plant",
-        "Ben Brooks"
+        "Ben Brookes"
       ],
       "mappings": {
         "Unknown Speaker": {
@@ -2138,7 +2138,7 @@
       "meeting_type": "portfolio_review",
       "known_speakers": [
         "Azmain Hossain",
-        "Ben Brooks",
+        "Ben Brookes",
         "Natalia"
       ],
       "title_candidates": [],
@@ -2189,7 +2189,7 @@
       "meeting_type": "sales_recon",
       "known_speakers": [
         "Azmain Hossain",
-        "Ben Brooks",
+        "Ben Brookes",
         "Idrees",
         "Richard Dosoo"
       ],
@@ -2241,7 +2241,7 @@
       "meeting_type": "unknown",
       "known_speakers": [
         "Azmain Hossain",
-        "Ben Brooks",
+        "Ben Brookes",
         "Diya",
         "George Dyke",
         "Natalia"
@@ -2255,7 +2255,7 @@
       "meeting_type": "clara",
       "known_speakers": [
         "Azmain Hossain",
-        "Ben Brooks",
+        "Ben Brookes",
         "Richard Dosoo"
       ],
       "title_candidates": [],

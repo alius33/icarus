@@ -15,7 +15,7 @@
 - Liz confirms adoption charter templates are fully defined, actively in use, and have been established since October/November. There are two types: in-flight and pipeline. The 17-18 "accelerated" accounts have been identified as needing adoption charters.
 - Azmain admits he did not know the adoption charter structure was already this well-defined -- a significant information gap that has delayed integration work.
 - The group agrees on several quick wins: (1) Add a "strategic objectives" box to each customer's front page, (2) Rename "success criteria" to "target objectives," (3) Add adoption charter status field (not started / in progress / agreed) visible in portfolio reviews.
-- Azmain raises the cultural challenge: some stakeholders (Catherine, Josh) are emotionally attached to the golden source Excel format and resist process changes. Liz volunteers to be added to the team chat to provide pushback -- she becomes a formal ally in the culture change effort.
+- Azmain raises the cultural challenge: some stakeholders (Kathryn Palkovics, Josh) are emotionally attached to the golden source Excel format and resist process changes. Liz volunteers to be added to the team chat to provide pushback -- she becomes a formal ally in the culture change effort.
 - Liz mentions the CSMs are not doing adoption charters fast enough. Julia Valencia is one example: she has not started the Generali Risk Modeller charter and is trying to delegate it to Cherish, who has never worked on Generali -- a nonsensical handoff.
 - Azmain describes using Copilot to read Teams messages and aggregate user feedback -- an example of his personal AI-augmented workflow.
 
@@ -44,7 +44,7 @@
 | 0:00-5:44 | Non-work discussion: politics, current events | All (social bonding) |
 | 5:44-7:33 | Context setting: Christine's acceptance criteria, feature freeze | Richard, Azmain |
 | 7:33-15:06 | Adoption charter structure: strategic objectives vs target objectives, AIG example | Liz (dominant), Azmain |
-| 15:06-20:44 | Cultural resistance: golden source attachment, Catherine/Josh pushback, need for allies | Azmain, Liz |
+| 15:06-20:44 | Cultural resistance: golden source attachment, Kathryn Palkovics/Josh pushback, need for allies | Azmain, Liz |
 | 20:44-24:02 | Liz volunteers for team chat; concrete naming convention proposals | Liz, Azmain |
 | 24:02-30:56 | Adoption charter status tracking, quick wins, Copilot workflow, next steps | Azmain, Liz |
 
@@ -55,9 +55,9 @@
 - **Liz is volunteering to take on a change management role** -- offering to push back on golden source attachment. This is an organic escalation of her involvement that goes beyond "user providing feedback."
 
 ## Stakeholder Signals
-- **Liz Couchman:** Highly engaged, deeply knowledgeable, and actively volunteering to help with cultural change. She is becoming a critical ally for the programme -- not just as a feedback provider but as a change agent who can push back on Catherine and Josh's resistance. Her practical examples (AIG, Generali) demonstrate she lives this work daily.
+- **Liz Couchman:** Highly engaged, deeply knowledgeable, and actively volunteering to help with cultural change. She is becoming a critical ally for the programme -- not just as a feedback provider but as a change agent who can push back on Kathryn Palkovics and Josh's resistance. Her practical examples (AIG, Generali) demonstrate she lives this work daily.
 - **Azmain:** Frustrated by people treating CLARA as a golden source replica. Energised by Liz's concrete suggestions. Using Copilot to aggregate feedback from Teams -- shows AI-augmented personal workflow. His admission of not knowing the charter structure was defined is both honest and concerning (information is not flowing through the programme).
-- **Catherine:** Identified as emotionally attached to golden source structure. She sends a high volume of feedback messages ("this is wrong, this is wrong") without proportional understanding of Azmain's capacity constraints.
+- **Kathryn:** Identified as emotionally attached to golden source structure. She sends a high volume of feedback messages ("this is wrong, this is wrong") without proportional understanding of Azmain's capacity constraints.
 - **Josh Ellingson:** On board with strategic objectives conceptually but part of the golden source attachment culture. Not a blocker but not an active driver of change either.
 - **Julia Valencia:** CSM who is not completing adoption charters and is delegating inappropriately (to Cherish, who has no context on Generali).
 - **Christine:** Proactively thinking about acceptance criteria reporting but working in parallel without full awareness of what CLARA already does.
@@ -86,7 +86,7 @@
 |------|----------|------|
 | Information gap: Azmain did not know charter structure was already defined -- communication failure | HIGH | Programme governance |
 | CSMs not completing adoption charters fast enough (Julia/Generali example) | MEDIUM | Adoption |
-| Cultural resistance to moving beyond golden source (Catherine, Josh) | MEDIUM | Change management |
+| Cultural resistance to moving beyond golden source (Kathryn Palkovics, Josh) | MEDIUM | Change management |
 | Christine working on acceptance criteria in parallel without awareness of CLARA's existing features | MEDIUM | Duplication |
 | Feature freeze could frustrate CSMs who have been waiting for fixes | LOW | User satisfaction |
 | Liz's snagging list of ~10 items risks being deprioritised indefinitely | LOW | User satisfaction |

@@ -7,34 +7,34 @@ the other one, yeah, that's that's okay,
 Natalia  0:46  
 all right, so let me just share my screen. Okay, so the way I see the meeting starting at what was it, 3pm or whatever on Monday, is that I will go through the agenda saying, Okay, this is what we will be going. We have five points. Demo is at the end. But the five points is more for me to be able to just say, okay, logically, this is what we will be doing. There are, yeah, more slides that I originally anticipated. But okay, fine. And Ben, what I would like you to ask is, when I go to this slide, then maybe for you to cover pretty much the section that we have on the on the left side, but obviously not. I mean, with your own words, it's more like to set the base. This is why we're here, and this is what we're trying to achieve, unless you prefer to do it on slide five. So I don't know how how you want
 
-Ben Brooks  1:44  
+Ben Brookes  1:44  
 to approach it. I think that's absolutely fine. I think my speech at this point is, for the last 12 months, we've been really focused on trying to figure out the adoption and specifically the migration problem in doing so, we've built a lot of different capabilities that are now reasonably mature, reasonably well understood in isolation. So early in that process, we got really good at onboarding and training, and that's fantastic. It's been working well for a long time. We have done a lot of work on adoption charters. We have done a lot of work on solution blueprints. We've done a lot of work on solution fit. On solution fit. We've hired the teams that we needed, the implementation specialists, the solution architects, the customer success managers, the programme managers, and we still look at each other and say, Okay, how does this all work? And so this next phase is all about bringing together the teams, the people, the collaborations, against the challenges, with really good visibility, so that we can all go really fast together and understand what's happening, and that if we do it well, is going to result in much better client conversations, much better customer solutions, much happier Customers, much faster adoption migration, that's the whole point.
 
 Natalia  3:03  
 Okay, fine. If this is how much time it takes, then it's fine. Because, I mean, I'm sorry, I just don't want to spend too much time on it. But then I will walk through those slides saying, we will have a running agenda. We will see it on the next slide, and now on this one, who's invited. I understand what you're saying here, because originally I had like key participants. But how do we, how do we highlight the fact that we will be asking mainly CSMs for the update so they are somehow the key speakers are the key participants or the key contributors? I mean, how do you want to approach that?
 
-Ben Brooks  3:43  
+Ben Brookes  3:43  
 I want, I want the primary. I want the primary thing that the likes of miles, James Watson think at the end of this meeting to be, oh, now I get it. This is how everybody's helping, right? Okay, because there's, there's still so much, you know. Oh, the consulting team does that. Oh, the SO and SO team does that. And it's like, no, we're one team. We're going to get the shit done. And there's also a lot of resistance to CSMs, feeling like they have more, more and more responsibilities, which is a joke, because I don't think they have many responsibilities at all, but whatever. So. But so what the way through that, I think, is to is to kill them with kindness, be over the top about this stuff, show them how the collaboration is going to happen. And that's why I added all the other roles there, because I didn't want this to be, oh my god, there's another process that we have to handle. We're overloaded already and we're too busy.
 
 Natalia  4:35  
 Okay, so I will jump now very quickly to this to slide six, where I'm saying, what's next? Are you okay if here we have a call out to CSMs only with the wording previously that we asked them to do it, but they can use the help of all other participants assigned to that project, to particular client. In making sure that those updates are happening. But somehow, I mean, you know, we need to hold them accountable for that.
 
-Ben Brooks  5:09  
+Ben Brookes  5:09  
 Maybe I'd like it to be a bit more squad based than that. So okay, if the CSM and the implementation lead know who each other are, have a conversation, get on a team's call, update it, live, do it together, populate it. If that team doesn't exist, and the CSM is the only place where that knowledge is, and it's all in their head, they're going to have to do it. But I think there's, there's lots of places where there's much more knowledge than the CSN has, and it's not tracked. And so I had, you know, I did. I mentioned this yesterday. I can't remember I told you or not. I had a bit of a pop at my team about this the other day, because we were talking about AIG. And, you know, Kate and Christine and Liz and Steve all talking for 45 minutes about AIG, and we got to the end of it, I tuned out after five minutes. And like guys, you've just spent 45 minutes talking about AIG, none of this shit is written down anywhere. How does, how does anybody know what's going on? Take a transcript, take the notes from the transcript, put them in the tracker, and then everybody understands where we're at with AIG, for God's sake, stop working like this. And there's, there's places all over where that's the case. And it's not fair on the CSN, who's to say, you know, you guys need to fill this in because I don't think they know half of it. They don't know how to know some of it, and they don't know some of it.
 
 Natalia  6:27  
 So would that sentence following the alignment within the client's code, if equivocal or based on the individual input, is that reflecting better?
 
-Ben Brooks  6:39  
+Ben Brookes  6:39  
 What's under the button there? What's the first line? Yeah?
 
-Ben Brooks  6:50  
+Ben Brookes  6:50  
 Maybe, yeah. Maybe it's CSMs for each of your accounts, set up a meeting with the people that have already been involved 2020, minute meeting and fill out the data together. Or if you prefer to do it in a teams channel and all be in the app, that's fine. Couldn't care less. So CSM take accountability for it happening, because you know whose account you've got, there might be nobody else on that account, but lean on the solution. Architect, implementation leads, project managers as well.
 
 Natalia  7:18  
 Okay, I didn't want to put any formal Rassi in this in this deck, because I felt like, you know, it maybe will be too much, but the way we word it on this sentence, I think I'm fine with it. And obviously you can jump in anyway,
 
-Ben Brooks  7:36  
+Ben Brookes  7:36  
 yeah, can we just do one other thing in this instruction as well, which is we have already put the golden source data in here. We're not asking people to do new data entry, so don't start that nonsense already, because they will. And we're asking you to augment what is not captured by any system today with additional information. We've done the boring bit for you.
 
 Natalia  8:11  
@@ -43,7 +43,7 @@ Okay, the tool, no, no, not the system, okay, all right, okay, Azmain, you're ho
 Azmain Hossain  8:25  
 I wanted, I wanted you guys to kind of run through that train of thought question to ask if it would be helpful to have just an update text box within the customer page so that we can ask them, similarly to what they do in Salesforce right now, it's update the field and put in an update. If they're going to meet with the client squad anyway, they're going to know what's the latest from the implementation lead and stuff. This is interesting. We can't capture right now, like we don't have a section for the imp leads to put in their own data, but in that free text box, we can at least get an update of what's happening from a CSM who's just caught up with the whole team.
 
-Ben Brooks  9:09  
+Ben Brookes  9:09  
 There's an exact summary field.
 
 Azmain Hossain  9:13  
@@ -52,13 +52,13 @@ Do we ask them? Because, again, we need to tell them what that field is like it 
 Natalia  9:35  
 All right, back to my thoughts. So I think I don't have any other questions for for this slide, obviously, for the cadence, I will mention that for now, we're making a global pilot, but there is a thinking to have the regional meetings for, for each of the teams, fair enough. I hope that in. I gave ourselves a buffer from four to six weeks. Ben, are you still with us? You're just off the camera. All right, all right. Then next slide is the running agenda. I think on this one, we're fine. I can see that you also added the next quarter migrations. Fair enough. So I will cover this one. Just basically going through this, I will not be spending time on saying that this is what we see in the tool, because for that, we have a demo. And then slide five Ben, you will cover that.
 
-Ben Brooks  10:33  
+Ben Brookes  10:33  
 Yeah, if you don't like it, I don't mind deleting it.
 
 Speaker 1  10:38  
 I mean, the colour of the font I'm better with just
 
-Ben Brooks  10:44  
+Ben Brookes  10:44  
 this is where I wanted to make sure everybody realised that this is our attempt to help. I think
 
 Natalia  10:48  
@@ -82,7 +82,7 @@ theme, and then also with this phone on this one, I'll probably change the font 
 Azmain Hossain  12:00  
 Okay, because we have the time. Let's run through it. Let me share my Yes. Yes, please, yes, so hopefully you guys can see my screen. Yes, we have got the portfolio review working the screen. But obviously the I think, like nothing has a priority account tag right now, owners also haven't been assigned. So that's why this stuff is empty. The first question I had is, are we going to start the demo by showing them this portfolio review screen and saying, Look, this is what we're going to kick off from in the call and introduce it to them this way. Or do we start from the dashboard screen of what an individual CSM will see and be like, Okay, guys, here's how you use the tool. You sign in. This is the first thing you see.
 
-Ben Brooks  12:56  
+Ben Brookes  12:56  
 I would show it from a CSM point of view, I think, yeah. Or from a, well, from a user point of view, yeah, yeah.
 
 Natalia  13:05  
@@ -100,7 +100,7 @@ Where it'll be like, I'll scroll down. I'll be like, there is a section called m
 Natalia  14:23  
 Okay, so we do have one hour for the call I the intro with the slides. I wouldn't like that to be more than than 15 minutes. And probably there's it's not worth more than 15 minutes. Then half an hour for demo, and then 15 minutes for questions, including maybe some questions about the tool. Would that work for you?
 
-Ben Brooks  14:43  
+Ben Brookes  14:43  
 Yeah, I think we should leave at least 15 possibly
 
 Azmain Hossain  14:45  
@@ -121,7 +121,7 @@ This is you raise a good point, because I would ask, what's the priority? Is it 
 Natalia  15:52  
 arrested, the audience in the meeting, audience in the meeting.
 
-Ben Brooks  15:55  
+Ben Brookes  15:55  
 I think, I think I would be perfectly happy to do another, you know, Scoop Scoop up meeting afterwards, and just look for people that didn't attend and run another one.
 
 Azmain Hossain  16:05  
@@ -133,7 +133,7 @@ And that's a that's a very good point. Okay, let's, let's do it like this. So yo
 Azmain Hossain  17:31  
 No, we definitely need a central place that people can ask questions so randomly, just messaging, all right, they can think of good, you could just
 
-Ben Brooks  17:43  
+Ben Brookes  17:43  
 bet that in the app Azmain, if you, if you have a ask a question in teams, link, it will fire up.
 
 Azmain Hossain  17:49  
@@ -142,7 +142,7 @@ Oh, okay, that what I've added in the app is really easy feedback of if anything
 Natalia  18:12  
 So we have 11 minutes now, should we see the tool again?
 
-Ben Brooks  18:16  
+Ben Brookes  18:16  
 Yeah, you don't ask a lot. Natalia, you want, you want to see the tool the day before we do the demo. Come on,
 
 Natalia  18:23  
@@ -166,7 +166,7 @@ they the same? Are they always Definitely?
 Speaker 1  19:24  
 Yes, I think so. I think so.
 
-Ben Brooks  19:29  
+Ben Brookes  19:29  
 Let's just assume it and update it that way. I think because that will give us a start point that will be much better than not.
 
 Azmain Hossain  19:36  
@@ -187,19 +187,19 @@ I am not a CSM. I should be able to have a view all accounts,
 Azmain Hossain  20:09  
 yes, yeah, yeah. So that's what it shows. It's okay. This is, this is just a visual thing. When it goes to all accounts, this needs to be greyed out, because you're not, yeah, Miles' account anymore. You're looking at all accounts. So the two thing, the two pages that I want to circle between before we get to the portfolio review, is this dashboard, because it's the landing page that a CSM will see. And then is the data input screen, because once we fill in who the CSMs are from the golden source, they can filter this by themselves, and the thinking is nice. Once you filter this, what we really need you to do is go in here and look at your accounts. It will have just your accounts, and for each section, blockers, use cases, accounts, it'll tell you what information is missing. If your use case needs thinking, go into the use cases. Each of them fill in the information that's missing because the information that Natalia gave the critical fields, those are for the accounts. But we still need as much data as possible for these use cases, for the blockers for everything else.
 
-Ben Brooks  21:22  
+Ben Brookes  21:22  
 Yeah, cool. And is this doing it intelligently, in the sense that, if you so, you've got zero use cases? Yeah, on rockstone, but you've got 100% on blockers. That that's not possible?
 
 Azmain Hossain  21:36  
 Is it? This is because there are no blockers, so it's like everything. Okay, so if you do have blockers, so this is me fine, yeah. So if you do have blockers, you can see that, yeah, this blocker has
 
-Ben Brooks  21:52  
+Ben Brookes  21:52  
 so I wonder if from a from a No, that makes sense. But from an intuitive point of view, it might be better just to have a loop in there that says, if there's no blockers. Just say, congrats, no blockers or something.
 
 Azmain Hossain  22:04  
 Yeah, yeah, because it's not 100%
 
-Ben Brooks  22:07  
+Ben Brookes  22:07  
 complete in the sense that there's no use cases I don't know, or greyed out or whatever.
 
 Azmain Hossain  22:14  
@@ -211,13 +211,13 @@ This looks really, really good. I have to say, I love it.
 Azmain Hossain  22:29  
 Wow. Just wanted to make it as easy as possible, and literally like Tableau. So when you're looking at Argenta and you click on it, you will only see Argenta as use cases, because it does the filtering automatically. You go in, you click it, it takes you to exactly the place that you want. Literally, just made it as user friendly as possible. Yeah, awesome. And that way we can also in the demo, we're not using figma or some local version, we're showing it live like you can go into the URL right now and do this right now. So start while we're doing this demo, if
 
-Ben Brooks  23:08  
+Ben Brookes  23:08  
 you want is it is now? Is it going to be annoying just to have a couple of little nitty things to fit because I have noticed them and not done anything about it? One is the migration critical workflows. I think we show as green and the non criticals is red, and it feels like it's the wrong way around. So if you, if you scroll down a bit, yeah, so you've got migration critical no showing up as red. Oh, okay, and yes, is green, presumably. So I think, I think we probably don't want red and green for that, because, yeah, that's a rag status. Yeah, if we had bright orange and grey or something like that, that might bring to life the migration challenge better. So if it's mission, if it's migration critical, it's orange, if it's not migration critical, it's just grey. Maybe isn't the right thing, but you see what I'm getting at. It's not, yeah, it's not a traffic light. In Scope is
 
 Natalia  24:08  
 even not use orange, because orange is part of our traffic lights. It's rock, it's red, amber, green,
 
-Ben Brooks  24:14  
+Ben Brookes  24:14  
 yeah, okay, so, yeah, so maybe, so maybe it's, it's blue and grey, yes,
 
 Natalia  24:19  
@@ -226,20 +226,20 @@ maybe it's just like active, inactive. And the active would be the blue one, bec
 Azmain Hossain  24:27  
 okay, yeah, then I can change it to an active, inactive thing. Yeah, perfect. That's great. But yeah, I think so I would these kind of niggling little things. You're absolutely right. We want to fix them. I want to fix them.
 
-Ben Brooks  24:41  
+Ben Brookes  24:41  
 It doesn't matter. Yeah, I agree.
 
 Azmain Hossain  24:43  
 After we've done all like we've brought all the employees in, assigned the CSMs, put in, okay, the priority account checkbox or flags, yeah, after that, we can fix the cosmetics. Yeah.
 
-Ben Brooks  24:56  
+Ben Brookes  24:56  
 Okay, cool. And then, but I do have a. Question on the dashboard and the content so So the data that we have in here so far has 61 complete you scroll up and it has 90 in flight. Yes, are those the right numbers?
 
-Ben Brooks  25:19  
+Ben Brookes  25:19  
 The migration deck we have has 78 in flight. Yeah.
 
 Natalia  25:26  
-Okay, Azmain, can you check that with with Catherine? Okay? Because it's, it's like this number looks a bit too high. Indeed. I don't think that that has changed. It in, the last, I don't know, four days or seven days since we had our golden source updated. So that number is too high. Same like complete, 61
+Okay, Azmain, can you check that with with Kathryn Palkovics? Okay? Because it's, it's like this number looks a bit too high. Indeed. I don't think that that has changed. It in, the last, I don't know, four days or seven days since we had our golden source updated. So that number is too high. Same like complete, 61
 
 Azmain Hossain  25:51  
 six week old, December, golden
@@ -247,7 +247,7 @@ six week old, December, golden
 Natalia  25:55  
 source, still, it should be lower. And also for complete, I think we're looking into, I know 40 something complete, or maybe not even,
 
-Ben Brooks  26:04  
+Ben Brookes  26:04  
 okay, so do we need to do the data update to the current golden source? Yes?
 
 Natalia  26:10  
@@ -256,7 +256,7 @@ Okay, yes. And we do have a golden source already for January released. It's one
 Azmain Hossain  26:22  
 one, then I can use the new one.
 
-Ben Brooks  26:27  
+Ben Brookes  26:27  
 Yeah? So I think, I think what, yeah, I think what you want to do is just have cursor write an update script on existing fields only, no new added fields or any of that shit, and then pump that in right where there's a difference. Yeah,
 
 Unknown Speaker  26:45  
@@ -265,25 +265,25 @@ okay, I'll send the link to
 Azmain Hossain  26:48  
 a pain. Would it be to say, Look, guys, I know that the in flight and complete numbers aren't accurate here. That's why we need your help to make it accurate by filling in all this data so
 
-Ben Brooks  27:04  
+Ben Brookes  27:04  
 I'm honestly fine. I'm honestly fine with that, if we can also have a report that says every account has been touched by somebody, which we can so that we make sure none of it is still old data that nobody's looked at and they've said they have, yeah, yeah. Honestly that. I think that's fine.
 
 Azmain Hossain  27:24  
 I'll pull into January, the latest golden source, but I'm just like, what if the data is still wrong? There's too much to do now to go into the nitty gritty of getting these numbers.
 
-Ben Brooks  27:33  
+Ben Brookes  27:33  
 I also think there is an exercise for a number of individuals to do here, which is really not a big ask. Josh should go in here and go through every fucking account and fix things he knows to be wrong. So should George? So should I? So should you Natalia like it's not a big deal to go and do that, because you just scan a list, and we can then just really rationalise quickly. I think we will find a jump in our reporting, though, where the golden source just, I don't think people have been engaging with it in CSM land in a lot of ways.
 
 Natalia  28:04  
 Yeah, not really. I mean, they were engaging with RMS Salesforce, from which we're generating golden source, and have some extras there. Yeah, okay, I do have a hard stop in one minute. Okay, because I do have another meeting,
 
-Ben Brooks  28:19  
+Ben Brookes  28:19  
 but it's not going to be as much fun, though?
 
 Natalia  28:20  
 Is it central migration dashboard? No fun. I'm sorry, yeah, but actually, maybe I can use how cool I can show you what cool did you
 
-Ben Brooks  28:32  
+Ben Brookes  28:32  
 want to actually get back on in a minute and look at the portfolio review thing when you've done that other meeting, I can do another call later, if it's helpful.
 
 Natalia  28:40  

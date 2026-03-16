@@ -13,7 +13,7 @@
 - Josh explains the historical complexity: they previously tracked by product, then switched to use cases (Jan 2025). A single use case (e.g., portfolio management) involves multiple products (Responder, Exposure IQ, Data Bridge, Risk Modeller), each with its own adoption status. CLARA currently only shows one product per use case.
 - The team agrees that multiple products per use case, each with trackable status, is required. This is a significant schema addition.
 - Kathryn needs to provide Azmain with the correct product list. Azmain proposes a 1:1 recorded session with Kathryn to go through each data issue in plain language.
-- Josh reports that Ben Brooks has promised Mike Steele and Colin Holmes access to CLARA, increasing visibility pressure.
+- Josh reports that Ben Brookes has promised Mike Steele and Colin Holmes access to CLARA, increasing visibility pressure.
 - Multi-select fields needed in several places: multiple CSMs per account, multiple implementation leads, multiple solution architects. These changes are planned for the week after the Monday call.
 - Azmain is building a feedback-to-GitHub pipeline: when users submit bugs or feature requests, they go directly to GitHub issues where Claude can automatically attempt fixes.
 
@@ -47,13 +47,13 @@
 - **Josh's scope declaration is the defining moment.** By saying CLARA is for IRP migrations only, he draws a boundary that protects the tool from feature creep and also protects the Gainsight team's territory. This is governance through definition.
 - **Kathryn pushes harder for attention.** Her comment about having asked "so many times" signals that written feedback has been lost in the noise. The 1:1 session format is a direct response to this communication failure.
 - **Josh is increasingly a partner, not a gatekeeper.** His understanding of the schema complexity ("you're seeing the complexity — that's what we built in Salesforce") shows he appreciates the technical challenge Azmain faces.
-- **Ben Brooks (absent) is creating executive pressure.** Josh flags that Ben has promised Mike Steele and Colin Holmes access. This is not accusatory but the message is clear: the tool is being promoted to executives while the data is still being cleaned.
+- **Ben Brookes (absent) is creating executive pressure.** Josh flags that Ben has promised Mike Steele and Colin Holmes access. This is not accusatory but the message is clear: the tool is being promoted to executives while the data is still being cleaned.
 
 ## Stakeholder Signals
 - **Josh Ellingson:** Increasingly engaged and firm about scope boundaries. His declaration that CLARA is for IRP migrations only is a defining moment for the tool's identity. He is becoming more of a partner than a gatekeeper.
 - **Kathryn:** Has been trying to get Azmain's attention on data issues for some time. There is a communication gap where written feedback is not getting reviewed. The 1:1 session format should help.
 - **Azmain:** Open to feedback but struggling with the volume of it. His proposal for a recorded 1:1 shows he understands that written communication is not working for data alignment.
-- **Ben Brooks (mentioned):** Promising executive access to CLARA without coordinating with the dev team creates pressure. The tool's audience is expanding faster than its data quality is improving.
+- **Ben Brookes (mentioned):** Promising executive access to CLARA without coordinating with the dev team creates pressure. The tool's audience is expanding faster than its data quality is improving.
 
 ## Commitments Made
 | Who | Commitment | To Whom | Strength |

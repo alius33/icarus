@@ -5,7 +5,7 @@
 **Workstreams touched:** WS6 Build in Five, WS1 Training & Enablement, App Factory
 
 ## Key Points
-- Richard formally onboarding **Idris** to the AI programme with Ben Brooks's approval for **dedicated time** — not just a side project anymore
+- Richard formally onboarding **Idris** to the AI programme with Ben Brookes's approval for **dedicated time** — not just a side project anymore
 - The immediate project: **TSR (Transaction Summary Report) automation** — automating the cat bond summary reports that the risk advisory team produces
 - Longer-term goal: Idris learns the programme's tooling (Claude Code, Cursor, AWS) and becomes the **AI champion for the risk advisory team**, taking knowledge back to Philip, Arno, and others
 - TSRs explained: every cat bond that comes to market gets remodelled and summarised with risk metrics, deal structure analysis, and investor-relevant information. Template is consistent but content varies by deal, region, and structure.
@@ -14,14 +14,14 @@
 - Plan: get Idris access to Claude Code and AWS environment, Azmain to help define project plan and scope, team (Richard, BenVH, others) to support as needed
 
 ## Decisions Made
-- Ben Brooks approved dedicated time for Idris to work on the AI programme → Ben (confirmed)
+- Ben Brookes approved dedicated time for Idris to work on the AI programme → Ben (confirmed)
 - TSR automation to be treated as a proper project with scope and plan → Azmain / Idris
 - Idris to be the "AI ambassador" back to the risk advisory team → Richard (strategic intent)
 
 ## Action Items
 | Action | Owner | Deadline | Status |
 |--------|-------|----------|--------|
-| Get written confirmation from Ben Brooks for Idris's dedicated time | Richard | Today | Open |
+| Get written confirmation from Ben Brookes for Idris's dedicated time | Richard | Today | Open |
 | Inform Arno about Idris's new allocation | Richard | Today | Open |
 | Set up Claude Code and AWS environment access for Idris | Azmain | This week | Open |
 | TSR process primer session — Idris to walk Azmain through | Idris / Azmain | This week | Open |

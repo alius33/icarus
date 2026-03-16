@@ -31,8 +31,8 @@ Meeting type: clara | Known:
 ### 03-02-2026_-_CSM_Dashboard_Permissions___Testing_Review
 Meeting type: review | Known: Azmain Hossain, Richard Dosoo
 
-**Unknown Speaker** → Ben Brooks (confidence: 0.62) ⚠️
-  - Evidence: Speech patterns match Ben Brooks (score: 0.22)
+**Unknown Speaker** → Ben Brookes (confidence: 0.62) ⚠️
+  - Evidence: Speech patterns match Ben Brookes (score: 0.22)
 
 ### 07-01-2026_-_Advisory_weekly_project_review
 Meeting type: review | Known: Amit, Diana
@@ -41,7 +41,7 @@ Meeting type: review | Known: Amit, Diana
   - Evidence: Azmain records virtually every meeting and is not in named speakers (meeting type: review)
 
 ### 07-01-2026_-_Architecture_review_-_IRP_Adoption_Tracker_d...
-Meeting type: clara | Known: Ben Brooks, Martin Davies, Richard Dosoo
+Meeting type: clara | Known: Ben Brookes, Martin Davies, Richard Dosoo
 
 **Unknown Speaker** → Azmain Hossain (confidence: 0.68) ⚠️
   - Evidence: Only unmatched candidate 'Azmain Hossain' for Unknown Speaker (from meeting type attendees)
@@ -53,13 +53,13 @@ Meeting type: unknown | Known:
   - Evidence: Only unmatched candidate 'Azmain Hossain' for Unknown Speaker (from meeting type attendees)
 
 ### 08-01-2026_-_Adoption_Tracker_-_deployment_to_AWS
-Meeting type: clara | Known: Azmain Hossain, Ben Brooks, Richard Dosoo
+Meeting type: clara | Known: Azmain Hossain, Ben Brookes, Richard Dosoo
 
 **Unknown Speaker** → Steve Gentilli (confidence: 0.62) ⚠️
   - Evidence: Speech patterns match Steve Gentilli (score: 0.25)
 
 ### 08-01-2026_-_Chat_with_Ben_Rich
-Meeting type: 1_on_1 | Known: Azmain Hossain, Ben Brooks, Richard Dosoo
+Meeting type: 1_on_1 | Known: Azmain Hossain, Ben Brookes, Richard Dosoo
 
 **Unknown Speaker** → Steve Gentilli (confidence: 0.62) ⚠️
   - Evidence: Speech patterns match Steve Gentilli (score: 0.25)
@@ -73,8 +73,8 @@ Meeting type: 1_on_1 | Known: Azmain Hossain, Martin Davies, Richard Dosoo
 ### 09-01-2026_-_AWS_Deployment_of_Adoption_tracker
 Meeting type: clara | Known: Azmain Hossain, Richard Dosoo
 
-**Unknown Speaker** → Ben Brooks (confidence: 0.68) ⚠️
-  - Evidence: Only unmatched candidate 'Ben Brooks' for Unknown Speaker (from meeting type attendees)
+**Unknown Speaker** → Ben Brookes (confidence: 0.68) ⚠️
+  - Evidence: Only unmatched candidate 'Ben Brookes' for Unknown Speaker (from meeting type attendees)
 
 ### 09-01-2026_-_Chat_with_Richard
 Meeting type: 1_on_1 | Known: Azmain Hossain, Richard Dosoo
@@ -89,7 +89,7 @@ Meeting type: sales_recon | Known: Azmain Hossain, Richard Dosoo
   - Evidence: Stylometric match to Christine (distance: 0.321, word count: 145)
 
 ### 13-01-2026_-_Tracker_Discussion
-Meeting type: clara | Known: Azmain Hossain, Ben Brooks, Richard Dosoo
+Meeting type: clara | Known: Azmain Hossain, Ben Brookes, Richard Dosoo
 
 **Unknown Speaker** → Ben Van Houten (confidence: 0.62) ⚠️
   - Evidence: Speech patterns match Ben Van Houten (score: 0.25)
@@ -101,7 +101,7 @@ Meeting type: unknown | Known: Azmain Hossain, Richard Dosoo
   - Evidence: Stylometric match to Idrees (distance: 0.317, word count: 720)
 
 ### 14-01-2026_-_Catchup_x_Ben_Rich_6pm
-Meeting type: 1_on_1 | Known: Azmain Hossain, Ben Brooks, Richard Dosoo
+Meeting type: 1_on_1 | Known: Azmain Hossain, Ben Brookes, Richard Dosoo
 
 **Unknown Speaker** → Steve Gentilli (confidence: 0.62) ⚠️
   - Evidence: Speech patterns match Steve Gentilli (score: 0.25)
@@ -137,13 +137,13 @@ Meeting type: 1_on_1 | Known: Azmain Hossain, Richard Dosoo
   - Evidence: Speech patterns match George Dyke (score: 0.25)
 
 ### 15-01-2026_-_Tracker_demo_to_advisory_team
-Meeting type: clara | Known: Azmain Hossain, Ben Brooks, Christine, Richard Dosoo, Steve Getilli
+Meeting type: clara | Known: Azmain Hossain, Ben Brookes, Christine, Richard Dosoo, Steve Getilli
 
 **Unknown Speaker** → Josh Ellingson (confidence: 0.47) ❓
   - Evidence: Stylometric match to Josh Ellingson (distance: 0.378, word count: 213)
 
 ### 19-01-2026_-_Account_Planner_w_George_D
-Meeting type: unknown | Known: Ben Brooks, George Dyke, Martin Davies, Richard Dosoo
+Meeting type: unknown | Known: Ben Brookes, George Dyke, Martin Davies, Richard Dosoo
 
 **Unknown Speaker** → Azmain Hossain (confidence: 0.68) ⚠️
   - Evidence: Only unmatched candidate 'Azmain Hossain' for Unknown Speaker (from meeting type attendees)
@@ -169,11 +169,11 @@ Meeting type: sales_recon | Known: Azmain Hossain, Richard Dosoo
 ### 2026-02-05_-_Portfolio_review_with_Natalia__1_
 Meeting type: portfolio_review | Known: Azmain Hossain, Natalia
 
-**Unknown Speaker** → Ben Brooks (confidence: 0.68) ⚠️
-  - Evidence: Only unmatched candidate 'Ben Brooks' for Unknown Speaker (from meeting type attendees)
+**Unknown Speaker** → Ben Brookes (confidence: 0.68) ⚠️
+  - Evidence: Only unmatched candidate 'Ben Brookes' for Unknown Speaker (from meeting type attendees)
 
 ### 2026-02-09_-_Monday_Tracker_Standup
-Meeting type: clara | Known: Azmain Hossain, Ben Brooks, Martin Davies, Richard Dosoo
+Meeting type: clara | Known: Azmain Hossain, Ben Brookes, Martin Davies, Richard Dosoo
 
 **Unknown Speaker** → Amit (confidence: 0.53) ⚠️
   - Evidence: Stylometric match to Amit (distance: 0.126, word count: 59)
@@ -205,20 +205,20 @@ Meeting type: unknown | Known: Idrees, Richard Dosoo
 ### 2026-02-20_-_tracker_stand_up
 Meeting type: clara | Known: Azmain Hossain, Richard Dosoo
 
-**Unknown Speaker** → Ben Brooks (confidence: 0.68) ⚠️
-  - Evidence: Only unmatched candidate 'Ben Brooks' for Unknown Speaker (from meeting type attendees)
+**Unknown Speaker** → Ben Brookes (confidence: 0.68) ⚠️
+  - Evidence: Only unmatched candidate 'Ben Brookes' for Unknown Speaker (from meeting type attendees)
 
 ### 2026-02-23_-_tracker_standup
 Meeting type: clara | Known: Azmain Hossain, Richard Dosoo
 
-**Unknown Speaker** → Ben Brooks (confidence: 0.68) ⚠️
-  - Evidence: Only unmatched candidate 'Ben Brooks' for Unknown Speaker (from meeting type attendees)
+**Unknown Speaker** → Ben Brookes (confidence: 0.68) ⚠️
+  - Evidence: Only unmatched candidate 'Ben Brookes' for Unknown Speaker (from meeting type attendees)
 
 ### 2026-02-25_-_Clara_Standup
 Meeting type: clara | Known: Azmain Hossain, Richard Dosoo
 
-**Unknown Speaker** → Ben Brooks (confidence: 0.68) ⚠️
-  - Evidence: Only unmatched candidate 'Ben Brooks' for Unknown Speaker (from meeting type attendees)
+**Unknown Speaker** → Ben Brookes (confidence: 0.68) ⚠️
+  - Evidence: Only unmatched candidate 'Ben Brookes' for Unknown Speaker (from meeting type attendees)
 
 ### 2026-02-26_-_AI_Infrastructure
 Meeting type: infrastructure | Known: Azmain Hossain, Richard Dosoo
@@ -257,10 +257,10 @@ Meeting type: standup | Known: Azmain Hossain, Chris M, Richard Dosoo
   - Evidence: Speech patterns match Ben Van Houten (score: 0.38)
 
 ### 2026-03-03 - Life Side SLT
-Meeting type: executive | Known: Azmain Hossain, Ben Brooks
+Meeting type: executive | Known: Azmain Hossain, Ben Brookes
 
-**Unknown Speaker** → Ben Brooks (confidence: 0.68) ⚠️
-  - Evidence: Speech patterns match Ben Brooks (score: 0.44)
+**Unknown Speaker** → Ben Brookes (confidence: 0.68) ⚠️
+  - Evidence: Speech patterns match Ben Brookes (score: 0.44)
 
 ### 21-01-2026_-_Data_chat_with_richard
 Meeting type: 1_on_1 | Known: Azmain Hossain, Richard Dosoo
@@ -287,7 +287,7 @@ Meeting type: sales_recon | Known: Azmain Hossain, George Dyke, Richard Dosoo
   - Evidence: Only unmatched candidate 'Jamie' for Unknown Speaker (from meeting type attendees)
 
 ### 23-01-2026_-_Portfolio_review_call_discussion_w_Nat_Ben
-Meeting type: portfolio_review | Known: Azmain Hossain, Ben Brooks, Natalia
+Meeting type: portfolio_review | Known: Azmain Hossain, Ben Brookes, Natalia
 
 **Unknown Speaker** → Amit (confidence: 0.49) ❓
   - Evidence: Stylometric match to Amit (distance: 0.198, word count: 54)
@@ -299,7 +299,7 @@ Meeting type: demo | Known: Azmain Hossain, George Dyke, Martin Davies, Richard 
   - Evidence: Stylometric match to Amit (distance: 0.268, word count: 118)
 
 ### 27-01-2026_-_IRP_Tracker_next_steps__2_
-Meeting type: clara | Known: Azmain Hossain, Ben Brooks, Richard Dosoo
+Meeting type: clara | Known: Azmain Hossain, Ben Brookes, Richard Dosoo
 
 **Unknown Speaker** → Amit (confidence: 0.50) ❓
   - Evidence: Stylometric match to Amit (distance: 0.189, word count: 82)
@@ -335,7 +335,7 @@ Meeting type: unknown | Known: Azmain Hossain, Josh Ellingson, Kathryn, Richard 
 Unresolved labels: Unknown Speaker
 
 ### 2026-02-23_-_next_2_weeks_plan
-Meeting type: unknown | Known: Azmain Hossain, Ben Brooks, Richard Dosoo
+Meeting type: unknown | Known: Azmain Hossain, Ben Brookes, Richard Dosoo
 Unresolved labels: Unknown Speaker
 
 ### 2026-02-27_-_Build_in_Five_with_Martin
@@ -353,9 +353,9 @@ Unresolved labels: Unknown Speaker
 Title candidates: Natalia Plant, Stacy Dixtra
 
 ### 21-01-2026_-_Portfolio_Review_-_new_process_w_Nat_BenB
-Meeting type: portfolio_review | Known: Azmain Hossain, Ben Brooks, Natalia
+Meeting type: portfolio_review | Known: Azmain Hossain, Ben Brookes, Natalia
 Unresolved labels: Unknown Speaker
-Title candidates: Ben Brooks, Natalia Plant
+Title candidates: Ben Brookes, Natalia Plant
 
 ### 23-01-2026_-_Next_steps_on_dev_work_w_RIch
 Meeting type: review | Known: Azmain Hossain, Richard Dosoo
@@ -363,7 +363,7 @@ Unresolved labels: Unknown Speaker
 Title candidates: Richard Dosoo
 
 ### 23-01-2026_-_portfolio_review_contd
-Meeting type: portfolio_review | Known: Azmain Hossain, Ben Brooks, Natalia
+Meeting type: portfolio_review | Known: Azmain Hossain, Ben Brookes, Natalia
 Unresolved labels: Unknown Speaker
 
 ## Identification Methods Used

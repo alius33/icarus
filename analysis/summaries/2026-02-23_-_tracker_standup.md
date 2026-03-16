@@ -7,12 +7,12 @@
 ## Key Points
 - Follows the Diya governance session and next-2-weeks planning. Richard, Azmain, and BenVH align on programme execution.
 - Azmain burned $750 in three Cursor days. Team discusses the AI agent spend crisis -- parallels drawn to a viral video about AI agents costing more than employees.
-- Richard articulates the internal evangelism strategy: Ben Brooks is shopping CLARA around to create demand (Life team, Andy Frappe, Maps team). Azmain needs to prepare slides for Christoph's leadership team demo.
-- Ben Brooks is positioned as going to Life team to show CLARA architecture; the aim is to have Life's MD endorse the programme to Diya at the Wednesday governance follow-up.
+- Richard articulates the internal evangelism strategy: Ben Brookes is shopping CLARA around to create demand (Life team, Andy Frappe, Maps team). Azmain needs to prepare slides for Christoph's leadership team demo.
+- Ben Brookes is positioned as going to Life team to show CLARA architecture; the aim is to have Life's MD endorse the programme to Diya at the Wednesday governance follow-up.
 - Key insight about programme politics: if the team does not control the narrative, someone like Ray or Steve will do it for them and they lose control.
 - Discussion of App Factory governance: what gating criteria should determine what gets deployed. Richard and Azmain agree they need product management discipline -- not every request deserves deployment.
 - Richard reveals he wasted his weekend rewriting Steve's code, only to discover Steve was simultaneously updating it with Rhett. Deep frustration with coordination failures.
-- Catherine Lady identified as an active CLARA detractor -- flagging problems in the IRP adoption chat but never contributing solutions. Stacy ends up doing manual cleanup work that Catherine should be doing.
+- Kathryn Palkovics Lady identified as an active CLARA detractor -- flagging problems in the IRP adoption chat but never contributing solutions. Stacy ends up doing manual cleanup work that Kathryn Palkovics should be doing.
 - BenVH reveals four to five apps in the deployment queue: Idris, Rhett, Stacy, Eddie. Pipeline automation is the critical enabler.
 - Richard presents a six-layer platform architecture slide covering: design layer (voice input, guided workflow), data/tools layer (consulting IP, MCP servers, skills library), deployment layer (App Factory).
 - Azmain describes deliberate friction in the consulting AI platform intake -- designed to filter out low-value requests by making people work through structured questions.
@@ -52,7 +52,7 @@
 - **Richard Dosoo:** Exhausted but strategic. Managing multiple fronts. Deeply frustrated by Steve's wasted-weekend episode. Recognises evangelism is necessary but "icky."
 - **Azmain Hossain:** Growing into the product management role. Designs deliberate friction to filter low-value requests. Recognises the need to "scream from the rooftops" about their work.
 - **BenVH:** Quietly effective but under-resourced. Has four to five apps queued and a security audit. Single point of failure for infrastructure.
-- **Catherine Lady (absent):** Identified as active CLARA detractor. Creates negative sentiment without volunteering solutions.
+- **Kathryn Palkovics Lady (absent):** Identified as active CLARA detractor. Creates negative sentiment without volunteering solutions.
 - **Steve (absent):** Over-engineers, does not coordinate, wastes senior people's time. Richard explicitly frustrated.
 
 ## Commitments Made
@@ -86,7 +86,7 @@
 ## Raw Quotes of Note
 - "If we don't do it someone, you're going to get someone like Ray or Steve coming and doing it for you, and then you've lost control of the narrative" -- Richard, on evangelism urgency
 - "I wasted my weekend rewriting fucking dickhead's code" -- Richard, on Steve's coordination failure
-- "She is maliciously trying to just undermine everything" -- Azmain, on Catherine Lady's behaviour in the IRP adoption chat
+- "She is maliciously trying to just undermine everything" -- Azmain, on Kathryn Palkovics Lady's behaviour in the IRP adoption chat
 
 ## Narrative Notes
-This standup reveals the political layer of the programme that Diya's governance session did not see. The team is simultaneously building software, managing stakeholder relationships, controlling narratives, and fighting fires. Richard's weekend wasted on Steve's code is emblematic of the coordination chaos that happens without proper governance. The identification of Catherine Lady as an active detractor and the Maps team's about-face show how rapidly the political landscape is shifting. Azmain's growing product thinking -- deliberate friction in intake, gating criteria for the factory -- suggests he is developing the strategic muscle the programme needs, even as his tooling runs dry.
+This standup reveals the political layer of the programme that Diya's governance session did not see. The team is simultaneously building software, managing stakeholder relationships, controlling narratives, and fighting fires. Richard's weekend wasted on Steve's code is emblematic of the coordination chaos that happens without proper governance. The identification of Kathryn Palkovics Lady as an active detractor and the Maps team's about-face show how rapidly the political landscape is shifting. Azmain's growing product thinking -- deliberate friction in intake, gating criteria for the factory -- suggests he is developing the strategic muscle the programme needs, even as his tooling runs dry.

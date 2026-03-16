@@ -1,6 +1,6 @@
 # Ben Explains New Dashboard
 **Date:** 2026-01-06
-**Attendees:** Ben Brooks, Richard Dosoo, Azmain Hossain, Martin Davies
+**Attendees:** Ben Brookes, Richard Dosoo, Azmain Hossain, Martin Davies
 **Duration context:** Long (~36 minutes, transcript ~187 lines)
 **Workstreams touched:** WS2 (CLARA/IRP Adoption Tracker), WS4 (Adoption Charter -- data model for charters discussed)
 
@@ -43,7 +43,7 @@
 | Try Azure deployment via web app create pathway | Martin | Tomorrow (between client meetings) | Open | MEDIUM |
 | Get something deployed and demoable for next week | Team | Week of 12 Jan | Open | HIGH |
 | Set up source code management and branching strategy | Richard/BenVH | Week of 12 Jan | Open | MEDIUM |
-| Push latest code to GitHub main branch | Ben Brooks | Tomorrow | Open | HIGH |
+| Push latest code to GitHub main branch | Ben Brookes | Tomorrow | Open | HIGH |
 | Call Arthur about Nicole's offer | Richard | Today | Open | HIGH |
 
 ## Theme Segments
@@ -59,7 +59,7 @@
 ## Power Dynamics
 | Person | Role This Meeting | Influence Acts | Engagement % |
 |--------|-------------------|----------------|--------------|
-| Ben Brooks | Product visionary, prototype owner | Dominates with demo walkthrough; sets product direction; exposes data quality narrative | 45% |
+| Ben Brookes | Product visionary, prototype owner | Dominates with demo walkthrough; sets product direction; exposes data quality narrative | 45% |
 | Richard Dosoo | Technical strategist, architecture guide | Translates prototype to data model; proposes deployment path; manages timeline | 30% |
 | Azmain Hossain | Observer, validates data quality relief | Notes that update button solves his biggest headache; limited engagement | 15% |
 | Martin Davies | Technical explorer | Discovers Azure workaround mid-meeting; quiet but productive | 10% |
@@ -67,7 +67,7 @@
 ## Stakeholder Signals
 | Person | Sentiment | Shift | Topic | Quote |
 |--------|-----------|-------|-------|-------|
-| Ben Brooks | champion | STABLE | CLARA vision and data quality | "we spent ages last year navel gazing... so I did it" |
+| Ben Brookes | champion | STABLE | CLARA vision and data quality | "we spent ages last year navel gazing... so I did it" |
 | Richard Dosoo | champion | STABLE | Deployment urgency | "this should be like... it should just work for us" |
 | Azmain Hossain | supportive | UP | Data quality solution | "you've solved the biggest thing that was a headache for me" |
 | Martin Davies | supportive | NEW | Azure deployment | Actively troubleshooting during call |
@@ -78,7 +78,7 @@
 | Person | Commitment | Implied Deadline | Condition | Confidence |
 |--------|------------|------------------|-----------|------------|
 | Richard | Simplify data model | Tonight | None | HIGH |
-| Ben Brooks | Push latest code to GitHub | Tomorrow | None | HIGH |
+| Ben Brookes | Push latest code to GitHub | Tomorrow | None | HIGH |
 | Martin | Continue Azure web app exploration | Tomorrow (between meetings) | None | MEDIUM |
 
 ## Meeting Effectiveness
@@ -107,9 +107,9 @@
 - What is the right level of mandatory vs optional data entry?
 
 ## Raw Quotes of Note
-- "I got really grumpy on the stand up that day and kind of said, like, why aren't we doing a proper programme, pipeline management process here" -- Ben Brooks, on the catalyst for building CLARA
-- "We went from 28 to 41 completed migrations just by updating the fucking data. And it makes me want to cry." -- Ben Brooks, on data quality
-- "if people sign into this thing via SSO, they're going to think of it totally differently to stumbling on what's essentially a posh spreadsheet on a network server" -- Ben Brooks, on credibility
+- "I got really grumpy on the stand up that day and kind of said, like, why aren't we doing a proper programme, pipeline management process here" -- Ben Brookes, on the catalyst for building CLARA
+- "We went from 28 to 41 completed migrations just by updating the fucking data. And it makes me want to cry." -- Ben Brookes, on data quality
+- "if people sign into this thing via SSO, they're going to think of it totally differently to stumbling on what's essentially a posh spreadsheet on a network server" -- Ben Brookes, on credibility
 - "essentially, you're taking O and M and you're basically breaking out into a data model" -- Richard Dosoo, translating Ben's vision
 
 ## Narrative Notes

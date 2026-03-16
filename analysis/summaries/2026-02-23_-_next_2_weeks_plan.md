@@ -1,6 +1,6 @@
 # Next 2 Weeks Plan — Sprint Planning Session
 **Date:** 2026-02-23
-**Attendees:** Richard Dosoo, Azmain Hossain, Ben Brooks
+**Attendees:** Richard Dosoo, Azmain Hossain, Ben Brookes
 **Duration context:** Long (~30 minutes)
 **Workstreams touched:** WS2 CLARA, WS4 Friday (Adoption Charter), WS5 Navigator L1, WS6 Build in Five
 
@@ -50,7 +50,7 @@
 ## Stakeholder Signals
 - **Richard Dosoo:** Managing competing demands (Idris, Rhett, Steve, Courtney) while protecting Azmain's build time. Frustrated by Steve's over-engineering and wasted weekend rewriting code.
 - **Azmain Hossain:** At breaking point on tooling. Claude Max literally cut off mid-build at 5pm. Pragmatic about adoption charter timing. Advocates for triage discipline.
-- **Ben Brooks:** Pushes for HD blocker intelligence and LLM integration as priorities. Clear on solution blueprint vs charter distinction. Relaxed about his MCP PowerPoint project timing.
+- **Ben Brookes:** Pushes for HD blocker intelligence and LLM integration as priorities. Clear on solution blueprint vs charter distinction. Relaxed about his MCP PowerPoint project timing.
 
 ## Commitments Made
 | Who | Commitment | To Whom | Confidence |

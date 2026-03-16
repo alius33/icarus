@@ -6,7 +6,7 @@
 
 ## Key Points
 - Richard and Azmain reviewing pre-read slides for the January 26 executive meeting with Mike Steele, Colin Holmes, and Ari la Harvey (Sales Recon)
-- Discussion of ROI framing: Ben Brooks frames CLARA as a "value at risk" model -- managing a pipeline of 40 customers worth significant GMB; without tooling, implementations risk failure
+- Discussion of ROI framing: Ben Brookes frames CLARA as a "value at risk" model -- managing a pipeline of 40 customers worth significant GMB; without tooling, implementations risk failure
 - Azmain estimates 30-40% CSM capacity unlock from the Gen AI initiative alone, with more once Gainsight integration happens
 - Critical blocker identified: Natalia Plant has communicated that Gainsight/Salesforce API access is blocked due to cybersecurity concerns; no programmatic access until internal review completes (possibly March)
 - Strategy agreed: build data model internally in CLARA, accumulate data, then push to Gainsight when API access opens
@@ -49,7 +49,7 @@
 |--------|-------------------|----------------|--------------|
 | Richard Dosoo | Strategic lead, framing executive narrative | Setting agenda, defining ROI language, managing stakeholder sequence | 60% |
 | Azmain Hossain | Programme manager, technical bridge | Challenging assumptions, proposing practical solutions | 40% |
-| Ben Brooks (referenced) | Product visionary (absent but influential) | ROI framing cited by Richard as "value at risk" model | N/A |
+| Ben Brookes (referenced) | Product visionary (absent but influential) | ROI framing cited by Richard as "value at risk" model | N/A |
 | Natalia Plant (referenced) | Gatekeeper for API access | Blocked Gainsight/Salesforce programmatic access | N/A |
 
 ## Stakeholder Signals

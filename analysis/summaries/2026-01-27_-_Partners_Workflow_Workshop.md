@@ -7,7 +7,7 @@
 ## Key Points
 - In-person workshop (London office) to define partner management requirements for CLARA, held immediately after the tracker next steps meeting
 - Azmain walked the partner team through the current CLARA interface, showing customer tracking, blocker categories, use case progress, and account team structures
-- The team identified that current Salesforce data is being enriched manually by Catherine Papavich -- partners want to eliminate this manual bottleneck just as the customer side does
+- The team identified that current Salesforce data is being enriched manually by Kathryn Palkovics Papavich -- partners want to eliminate this manual bottleneck just as the customer side does
 - Partner-specific requirements emerged: (1) which customers have partners assigned, (2) partner engagement stage (introduced, proposal submitted, selected), (3) implementation progress through partner lens, (4) partner-specific blockers as a separate category
 - Geography/region flagged as an important missing data point -- partners operate differently across North America, Europe, APAC, and the partner relationship network (e.g., Deloitte UK vs Deloitte US) has regional jurisdictions
 - Blocker taxonomy needs expansion: current blockers are internal/product-focused, but partners surface external blockers (e.g., Duck Creek integration issues) that are not product blockers but implementation blockers

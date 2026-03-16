@@ -41,7 +41,7 @@
 | 22:00-27:00 | Sequencing (partners first, then PM module), closing | Azmain, Diana |
 
 ## Power Dynamics
-- **Azmain is pitching to Diana, not the other way around.** He has come with a pre-formed idea (project management in CLARA) and is seeking an ally before taking it to Ben Brooks. Diana's endorsement gives him a user champion for the feature.
+- **Azmain is pitching to Diana, not the other way around.** He has come with a pre-formed idea (project management in CLARA) and is seeking an ally before taking it to Ben Brookes. Diana's endorsement gives him a user champion for the feature.
 - **Diana holds institutional knowledge about the advisory meetings' dysfunction.** Her willingness to call the Wednesday meeting "absolutely useless" gives Azmain ammunition to propose changes.
 - **Azmain's team move request is strategically significant.** By choosing to report to Diana rather than staying under Natalia, he is signalling where he sees his future — closer to advisory/PM work and further from pure CS operations.
 
@@ -81,4 +81,4 @@
 - "I think this meeting is absolutely useless." -- Diana, on the Wednesday advisory project review
 
 ## Narrative Notes
-This conversation is the origin story of what will later become the Friday PM app. Azmain is thinking about project management visibility independently of anyone asking for it — he sees the gap because he works on projects and knows the PowerPoint-based process is broken. Diana is the perfect first audience: she owns the broken process, hates it, and wants to change it. The MS Ambian example is powerful — an account that looks green in CLARA but is universally known to be a nightmare — because it crystallises the missing layer. What is striking is Azmain's ambition: he is simultaneously planning to build partner tracking, a PM module, and continue CLARA's core development, while managing the CSM workshop and dealing with Catherine's data issues. The gap between his vision and his bandwidth is growing, and this session adds fuel to both sides.
+This conversation is the origin story of what will later become the Friday PM app. Azmain is thinking about project management visibility independently of anyone asking for it — he sees the gap because he works on projects and knows the PowerPoint-based process is broken. Diana is the perfect first audience: she owns the broken process, hates it, and wants to change it. The MS Ambian example is powerful — an account that looks green in CLARA but is universally known to be a nightmare — because it crystallises the missing layer. What is striking is Azmain's ambition: he is simultaneously planning to build partner tracking, a PM module, and continue CLARA's core development, while managing the CSM workshop and dealing with Kathryn Palkovics' data issues. The gap between his vision and his bandwidth is growing, and this session adds fuel to both sides.

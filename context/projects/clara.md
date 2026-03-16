@@ -27,7 +27,7 @@ The name "CLARA" was crowd-sourced from the CSM team during the January 2026 rol
 - Scorecard dashboard requirements being refined with Stacy and Natalia (migration burn-down, quarterly view, actuals vs forecast)
 - Portfolio Review grey box with inaccurate priority account counter being removed (Natalia/Diya priority)
 - Reports functionality being tested by Stacy (modelled on Salesforce reports structure)
-- Analytics tab under review by Stacy and Catherine to remove confusing/outdated metrics
+- Analytics tab under review by Stacy and Kathryn Palkovics to remove confusing/outdated metrics
 - Full user-facing documentation and knowledge base generated (in dev, pending promotion)
 - 113 Alembic migration heads squashed to one base level (in staging as of 3 March)
 
@@ -92,7 +92,7 @@ The name "CLARA" was crowd-sourced from the CSM team during the January 2026 rol
 | 5 Feb 2026 | **Priority redefined: 31 scorecard migration accounts** | Natalia reframes from arbitrary "high priority" to the accounts on the 2026 migration timeline. 17 "accelerated" accounts are a subset. |
 | 5 Feb 2026 | Status vs stage distinction requested | Natalia identifies filter/search gaps in UI. Wants rotating focus: priorities one week, accelerated the next. |
 | 9 Feb 2026 | Claude Code access secured | Via AWS Bedrock pilot. Not desktop interface -- connecting to AWS environment. |
-| 9 Feb 2026 | **Decision: Holistic data fix** | Richard: "If we don't tackle it holistically, all that's going to happen is every week there's a new schema change." Catherine to sense-check complex accounts. |
+| 9 Feb 2026 | **Decision: Holistic data fix** | Richard: "If we don't tackle it holistically, all that's going to happen is every week there's a new schema change." Kathryn Palkovics to sense-check complex accounts. |
 | 12 Feb 2026 | **CSM Workshop hands-on sessions** | George's London workshop. Azmain commits: "Any updates from yesterday onwards will be preserved." Parent/subsidiary rollup issues discovered. Miles used as workflow guinea pig. |
 | 12 Feb 2026 | **Decision: Data preserved going forward** | Explicit commitment to CSMs. No more wipe-and-reload deployments. |
 | 20 Feb 2026 | **Andy Frappe demo** | Ben demos to President of Moody's Analytics. Highest visibility moment. Azmain scrambles to fix orphan data and duplicate records. Discovers blockers page making 60+ individual API calls; optimises to single batch call. |
@@ -108,11 +108,11 @@ The name "CLARA" was crowd-sourced from the CSM team during the January 2026 rol
 | 3 Mar 2026 | 113 migration heads squashed | Alembic migration heads consolidated to single base. Pushed through dev to staging without breakage. |
 | 3 Mar 2026 | Priorities confirmed: feedback > blockers > adoption charters | Azmain sets sequence: (1) consolidated feedback triage, (2) blocker intelligence with Bedrock API, (3) adoption charter parsing. |
 | 4 Mar 2026 | **Migration dashboard requirements session with Stacy & Natalia** | Hosting Plus rolls into Risk Link numbers; RBO rolls into Risk Browser. Grey box removed from Portfolio Review. Scorecard tab to become default on Management Dashboard. Quarterly view added. "Reported year of completion" field proposed for 4 pre-2026 completions. Actuals year-to-date to be shown alongside forecast. |
-| 4 Mar 2026 | Analytics tab review initiated | Stacy to coordinate with Catherine on what to keep/remove. Archetype data and outdated metrics flagged for removal. |
+| 4 Mar 2026 | Analytics tab review initiated | Stacy to coordinate with Kathryn Palkovics on what to keep/remove. Archetype data and outdated metrics flagged for removal. |
 | 5 Mar 2026 | **CLARA standup: Work allocation confirmed** | Chris on bug fixes/defects. Richard testing Rhett's adoption charter Excel integration. Azmain building migration burn-down and management dashboard changes. Richard reviewing feature requests for feasibility. |
 | 5 Mar 2026 | User documentation generated | Full knowledge base for CLARA created at 2am by Azmain. In dev, pending promotion. Intended to power future AI assistant chatbot within CLARA. |
 | ~6 Mar 2026 | **Bedrock API key confirmed working** | Nikhil has it working locally via IAM role-based authentication. No hard-coded keys. Unblocks LLM integration into CLARA for blocker intelligence. |
-| 6 Mar 2026 | **Pre-Gainsight team meeting** | Catherine, Richard, Azmain, BenVH, Chris align before Thursday meeting with Gainsight team. Agreed: CLARA is a small part of overall customer health (Gainsight's purview). CLARA will adapt its architecture to fit Gainsight, not vice versa. Also agreed to include Salesforce integration requirements in same meeting. Governance framework for app factory discussed. |
+| 6 Mar 2026 | **Pre-Gainsight team meeting** | Kathryn Palkovics, Richard, Azmain, BenVH, Chris align before Thursday meeting with Gainsight team. Agreed: CLARA is a small part of overall customer health (Gainsight's purview). CLARA will adapt its architecture to fit Gainsight, not vice versa. Also agreed to include Salesforce integration requirements in same meeting. Governance framework for app factory discussed. |
 | 6 Mar 2026 | BenVH working on automated staging sync | Script to periodically sync production database to staging (once weekly target). |
 | 6 Mar 2026 | Chris working through feedback backlog | Using Cursor to analyse resolved vs unresolved items. Starting with most recent feedback first. Most early-Feb items already fixed. |
 | 7 Apr 2026 (planned) | Two rotating graduates join | One New York, one London. Will take over bug fix and maintenance work from Chris. |
@@ -160,7 +160,7 @@ The name "CLARA" was crowd-sourced from the CSM team during the January 2026 rol
 | RBAC (Role-Based Access Control) | Live | Admin, CSM, management roles. Implemented Feb. |
 | Team Member Assignment | Live | Added without database field changes to avoid breaking deployment (Jan). |
 | Reports Section | Live (testing) | Modelled on Salesforce reports structure. Multi-object support. Filter logic has bugs (multi-filter queries breaking). Stacy testing. |
-| Analytics Tab | Live (under review) | Recreation of golden source Excel dashboard. Stacy/Catherine reviewing to remove confusing metrics (archetype data, outdated production stats). |
+| Analytics Tab | Live (under review) | Recreation of golden source Excel dashboard. Stacy/Kathryn Palkovics reviewing to remove confusing metrics (archetype data, outdated production stats). |
 | Adoption Charter (WS4) | Partially built | v1 section exists in CLARA but needs modification. Complexity: actual charters are large Word documents with embedded images, diagrams, delivery plans. Parsing requires OCR/multi-modal AI. Bi-directional flow needed (app to document, document back to app). Rhett built separate Excel-based version without consensus. Richard integrating Rhett's work. |
 | Solution Blueprint attachment flow | Planned | Richard working on it. Steve Gentilli's "solution fit matrix" may be separate app. |
 | Blocker Intelligence (AI analysis) | Planned (next priority) | Use Bedrock/Claude API to validate blocker quality, extract insights, identify patterns. Bedrock key now working. Second priority after feedback triage. |
@@ -225,7 +225,7 @@ The name "CLARA" was crowd-sourced from the CSM team during the January 2026 rol
 | 7 | 23 Jan | Fold adoption charter workflow into CLARA (WS4) | Rather than building a separate system, absorb charter functionality into the tracker. |
 | 8 | 26 Jan | CLARA is interim; target end-state is Sales Recon | Agreed at executive session with Ari, Jamie, Diya. CS workflow should migrate to Sales Recon by end of FY26. |
 | 9 | 5 Feb | Priority = 31 scorecard migration accounts | Natalia reframed from arbitrary "high priority" list to the accounts on the 2026 migration timeline. 17 "accelerated" accounts are a subset. |
-| 10 | 9 Feb | Holistic data fix, not incremental patches | Richard: "If we don't tackle it holistically, all that's going to happen is every week there's a new schema change." Catherine to sense-check complex accounts. |
+| 10 | 9 Feb | Holistic data fix, not incremental patches | Richard: "If we don't tackle it holistically, all that's going to happen is every week there's a new schema change." Kathryn Palkovics to sense-check complex accounts. |
 | 11 | 12 Feb | Data preserved from "yesterday onwards" | After data loss incident, explicit commitment to CSMs that entered data will persist. No more wipe-and-reload deployments. |
 | 12 | 23 Feb | Three programme pillars formalised at Diya governance session | (1) IRP portfolio governance (CLARA + account planner), (2) Customer intelligence / Sales Recon alignment, (3) Platform enablement. |
 | 13 | 23 Feb | 8-week resource plan | Nikhil 50%, Martin (back from holiday), Chris 50%. Priorities: finish CLARA features, address CSM feedback, platform infrastructure. |
@@ -347,7 +347,7 @@ The name "CLARA" was crowd-sourced from the CSM team during the January 2026 rol
 
 8. **Long-term resourcing:** Azmain stretched across programme management and development. Promotion being held over his head. Richard reportedly exploring opportunities outside Moody's. If either leaves, programme faces significant knowledge loss.
 
-9. **App factory governance:** Who approves what goes into app factory? Azmain raised need for approval board. Catherine offered to help with governance framework. No formal process yet.
+9. **App factory governance:** Who approves what goes into app factory? Azmain raised need for approval board. Kathryn Palkovics offered to help with governance framework. No formal process yet.
 
 10. **LLM worker architecture:** How will multiple apps (CLARA, Stacy's app, Amanda's, Rhett's, others) spin up AI agents? Per-OU IAM roles proposed for cost allocation. BenVH's phantom agent solution under discussion but not yet introduced to leadership.
 
@@ -381,7 +381,7 @@ All transcripts that touch CLARA, organised chronologically with brief relevance
 | 19 Jan | `19-01-2026_-_Deployment_Troubleshooting_Database_Connectivity_Review.txt` | Continued deployment debugging. |
 | 20 Jan | `20-01-2026_-_Programme_Alignment_and_Stakeholder_Readiness_Meeting.txt` | Diya prep. Elevator pitch strategy. |
 | 21 Jan | `21-01-2026_-_Data_chat_with_richard.txt` | Data model and schema discussions. |
-| 21 Jan | `21-01-2026_-_Data_input_call_with_PM_s.txt` | Data input hub explained to PMs (Vlad, Diana). |
+| 21 Jan | `21-01-2026_-_Data_input_call_with_PM_s.txt` | Data input hub explained to PMs (Vlad, Diana Kazakova-Ivanova). |
 | 21 Jan | `21-01-2026_-_Portfolio_Review_-_new_process_w_Nat_BenB.txt` | Portfolio Review structure designed with Natalia and Ben. |
 | 22 Jan | `22-01-2026_-_Chat_with_Rich_-_Diya_s_priorities.txt` | Diya's priorities sought. Sales Recon convergence question. |
 | 23 Jan | `23-01-2026_-_chat_with_ben.txt` | UI cleanup before launch. |
@@ -407,7 +407,7 @@ All transcripts that touch CLARA, organised chronologically with brief relevance
 | 3 Feb | `03-02-2026_-_Workshop_discussion_with_George__1_.txt` | George plans workshop. Clara hands-on sessions. CLARA vs Gainsight scope. |
 | 4 Feb | `2026-02-04_-_Tracker_next_steps.txt` | Tracker feature planning. |
 | 5 Feb | `2026-02-05_-_Portfolio_review_with_Natalia__1_.txt` | Priority redefined to 31 scorecard accounts. Filter/search requirements. |
-| 5 Feb | `2026-02-05_-_Tracker_discussion_with_Josh.txt` | Josh/Catherine data alignment. CSM update requirements. |
+| 5 Feb | `2026-02-05_-_Tracker_discussion_with_Josh.txt` | Josh/Kathryn Palkovics data alignment. CSM update requirements. |
 | 5 Feb | `2026-02-05_Chat_with_Rich.txt` | Development planning. |
 | 9 Feb | `2026-02-09_-_Monday_Tracker_Standup.txt` | Claude Code access. Data strategy reset. Dev/staging/prod plan. |
 | 9 Feb | `2026-02-09_-_session_with_Josh_Kathryn.txt` | Action plans pushed to prod. Orphan data issues. |
@@ -439,4 +439,4 @@ All transcripts that touch CLARA, organised chronologically with brief relevance
 | 5 Mar | `2026-03-05 - Clara standup (1).txt` | Work allocation: Chris on defects, Richard testing Rhett's adoption charter work, Azmain on migration burn-down and management dashboard. Chris getting CLARA running locally. User documentation generated. CI/CD walkthrough planned. |
 | 6 Mar | `2026-03-06 - Chat with Chris.txt` | Chris working through feedback backlog. Most early-Feb items already fixed. Bug fixes are "nice to have" -- critical items already done. Two graduates arriving April for ongoing maintenance. Bedrock API key working. Personal Claude accounts flagged by security audit. |
 | 6 Mar | `2026-03-06 - Chat with BenVH.txt` | BenVH concerns about Nikhil. App factory protection. Automated staging sync script. Friday repo deployment. Team dynamics and credit attribution. |
-| 6 Mar | `2026-03-06 - Pre Gainsight team meeting.txt` | Catherine, Richard, Azmain, BenVH, Chris pre-align before Gainsight meeting. CLARA to adapt to Gainsight architecture. Salesforce access to be raised. Governance framework discussion. |
+| 6 Mar | `2026-03-06 - Pre Gainsight team meeting.txt` | Kathryn Palkovics, Richard, Azmain, BenVH, Chris pre-align before Gainsight meeting. CLARA to adapt to Gainsight architecture. Salesforce access to be raised. Governance framework discussion. |

@@ -135,19 +135,19 @@ deliverables (D4/D5).
 completed before the day, every participant builds their own agent.
 ```
 
-Example — action title: "Resolve Catherine's COE overlap with AI programme scope":
+Example — action title: "Resolve Kathryn Palkovics' COE overlap with AI programme scope":
 ```
-**Catherine's Centre of Excellence (COE)** has three pillars: digital engagement,
+**Kathryn Palkovics' Centre of Excellence (COE)** has three pillars: digital engagement,
 enablement, and Gainsight/SFDC retirement. The **first pillar (digital engagement)
 directly overlaps** with the AI programme's scope.
 
-Key incidents: Catherine organised the Gainsight team meeting **without consulting
+Key incidents: Kathryn Palkovics organised the Gainsight team meeting **without consulting
 the CLARA team**, blindsiding them. She finds trivial CLARA issues every two days,
 claims CSMs complained (they haven't). Her objectives were **approved by Natalia
 Orzechowska and signed off by Diya**.
 
-**Strategy**: Frame "digital enablement" (Catherine's domain) as distinct from "AI
-enablement" (Azmain's domain). Diana to discuss with Natalia O. Richard to raise
+**Strategy**: Frame "digital enablement" (Kathryn Palkovics' domain) as distinct from "AI
+enablement" (Azmain's domain). Diana Kazakova-Ivanova to discuss with Natalia O. Richard to raise
 with Diya during London visit. Risk R#045.
 ```
 

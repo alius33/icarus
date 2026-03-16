@@ -1,6 +1,6 @@
 # Chat with Rich Martin
 **Date:** 2026-01-08
-**Attendees:** Richard Dosoo, Azmain Hossain, Martin Davies (Ben Brooks mentioned but not on the call -- "work from home divorce" joke about joining)
+**Attendees:** Richard Dosoo, Azmain Hossain, Martin Davies (Ben Brookes mentioned but not on the call -- "work from home divorce" joke about joining)
 **Duration context:** Long (~48 minutes, transcript ~468 lines)
 **Workstreams touched:** WS2 (CLARA/IRP Adoption Tracker)
 
@@ -102,4 +102,4 @@
 ## Narrative Notes
 This is the low point of Week 1 -- a debugging session that produces no working output. Three engineers spend an evening trying to get the same codebase running and all fail in different ways. The root cause is a combination of factors: Ben pushed code that may not have been fully tested, each developer has a different local environment, VPN degrades performance, and Cursor token limits actively prevent further debugging.
 
-The Cursor budget revelation is significant: $10,000 across 1,200 users gives $8/month per person, but power users (like this team) can burn through that in days. Richard has already exhausted his allocation. This tooling constraint will become a recurring theme -- the team is trying to build with AI-assisted development tools but the enterprise budget model does not accommodate intensive usage patterns. The evening ends with the realistic acknowledgment that they need Ben Brooks on the call to identify which version of the code actually works. The tight personal banter (football, family) reveals a team with good chemistry despite the technical frustration.
+The Cursor budget revelation is significant: $10,000 across 1,200 users gives $8/month per person, but power users (like this team) can burn through that in days. Richard has already exhausted his allocation. This tooling constraint will become a recurring theme -- the team is trying to build with AI-assisted development tools but the enterprise budget model does not accommodate intensive usage patterns. The evening ends with the realistic acknowledgment that they need Ben Brookes on the call to identify which version of the code actually works. The tight personal banter (football, family) reveals a team with good chemistry despite the technical frustration.

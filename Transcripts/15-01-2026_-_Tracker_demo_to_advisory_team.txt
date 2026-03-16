@@ -25,31 +25,31 @@ So wanted to start off with showing you guys how the first landing page looks ki
 Speaker 1  5:00  
 So big picture. What we're talking about here are existing customers only. Is that the intent? The intent? Because if we think we have like existing we have clients that are on the already on their adoption path, clients that are not yet on their adoption path, and people that are not clients at all yet. And the last two categories are both pipe. We consider pipeline. So I just want to make sure
 
-Ben Brooks  5:20  
+Ben Brookes  5:20  
 anyone that's it's anyone that's been sold, been sold, should be anyone that's been sold. And then I think sold. IRP, yeah, the data set that we're using may have not sold yet as well, but there's going to be pretty sparse if they haven't been sold, so they should essentially have no use cases. I'm with you, and we probably want to put a flag on there Azmain, says, you know, not, not sold. Maybe there's a status needed, but in flight, complete, yeah, not started.
 
 Richard Dosoo  5:48  
 But Liz is talking about the other side of the coin, right? Ben, which is the adoption, which is the pipeline tracking, stuff that you spoke about, right? Which is like, where eventually, we're
 
-Ben Brooks  5:58  
+Ben Brookes  5:58  
 not going to do sales yet, we might get there at some point, but for the time being, no, that's going to cause a mass freak out if we do that. So we'll do it later. Makes sense.
 
 Speaker 2  6:08  
 So Ben, is there going to be any guidance on, like, what gets entered, as far as blockers or actions, so that it doesn't get loaded with a bunch of shit out there that, like, that's in Salesforce right now, where somebody enters something, and you read it and you're like, it doesn't make sense. That's not a blocker, or it's not worded appropriately, to know what the hell it even means. So structure
 
-Ben Brooks  6:31  
+Ben Brookes  6:31  
 one, no, not yet, but this is exactly the sort of like control we should start to put in there. So when you open up a new blocker, maybe there's a blurb in there that says a good block of description should contain the following and just make it really hard. Well, someone can submit crap if they want, but we'll just It will then be very visible to everybody, and we'll call them out on it later. So maybe, maybe there's a little, you know, we've got the little information icons all over the place Azmain, like, if we, if you get a couple of descriptions from the team of what a good blocker looks like. We could just paste that in there super quickly, and it'll be really obvious to everybody what they would be entering.
 
 Azmain Hossain  7:08  
 We can even put like little like in very small font, just like a little example, there's already like, a little blurb of what a blocker is and how you should think of it.
 
-Ben Brooks  7:19  
+Ben Brookes  7:19  
 Yeah, when we let's not do it for v1 but for v2 We should catch stuff like that, run it through an anthropic API and say that's a pile of shit. Do it again, because it's not good enough as a blocker description.
 
 Speaker 1  7:31  
 And what can also be helpful for later is what isn't you mean something that's annoying, something that's a feature, a feature request, which isn't a block. I mean, sometimes the putting the the negative of something can actually be more instructive,
 
-Ben Brooks  7:46  
+Ben Brookes  7:46  
 but some of that can come out of the pipeline review as well. Because, you will, we'll sit down every Monday with everybody, and we'll look at the blockers, and then we can just say, hey, you know, come on, come on last let's not block her. That's something else.
 
 Unknown Speaker  7:56  
@@ -58,16 +58,16 @@ Yeah, that's just it would be nice to have.
 Steve Getilli  7:59  
 So I was gonna say, is the blocker gonna have a drop down list? So if, if you want, obviously, to be able to group stuff up, to be able to report so it's like, if you get a schedule, and it's, you know, a frame building can be multiple different spellings of frame type thing, is it going to have a drop down list? And if it doesn't, that list doesn't satisfy you can create a new one so that you can start grouping up.
 
-Ben Brooks  8:18  
+Ben Brookes  8:18  
 We haven't, we haven't templated it yet, but I think that would be a pretty interesting place to go over time. Once we've got a collection of good understanding of what we think the blockers look like, maybe we can then categorise them. And there's obviously going to be loads for HD, so there'll be some tagging on things like that, but it might be that we can come up with some templates for blockers at a point later. Or we could say, Use existing and you could choose something with a keyword in it, or something like that. But because it
 
 Steve Getilli  8:51  
 was, yeah, because HD could be HD, H, hyphen, D, high def, you know you you're going to get loads of different. One of
 
-Ben Brooks  8:59  
+Ben Brookes  8:59  
 the reasons I haven't gone there to start with. I did think about blockers can be across multiple customers. I'm worried that it gets lazy so that the data entry becomes or they're blocked by HD as well. Fuck it. I'll move on to the next thing. And it's not a real problem, and we we need to sort of force the clear up a bit. So, so for the time being, let's just go free form, but with a description of what a good description looks like. That makes sense. And then later on, I think we could easily, well, this is part of the purpose is we'll get a very rich data set of all the things that are holding somebody up, and then we can triage them and say we need to address this with this product feature, or what have you down the line.
 
-Ben Brooks  9:40  
+Ben Brookes  9:40  
 I don't know if you want to block an owner on a blocker. I'm not sure about that. I think the owner is on the action and the and the block is on the account, and the account is owned. Okay, I'm not sure you want somebody to be entering Ji Hans name in there, because it's not he doesn't own that. He owns product, yeah,
 
 Azmain Hossain  9:58  
@@ -79,13 +79,13 @@ anyone think through? And it depends on what you mean by action plan here, versu
 Speaker 2  11:28  
 yeah, I think I think of everything as an action item, because you're right. Liz, because you can have an action item to tackle a blocker, and you can have an action item on the account that has nothing to do with a blocker. It's something like, oh, I have to take this action to do something for the migration. I have to do this action to do something for the renewal. Like you could have a whole action log associated with a client that has nothing to do with a blocker, but it you could have a whole action log associated with this which would be great to have all in one place.
 
-Ben Brooks  12:03  
+Ben Brookes  12:03  
 Yeah, so that. So that's, that's later, and potentially a different application that ties in. If we stand this up and it starts to work, we're going to start seeing strategic account planning applications, sales, pipeline management applications, overnight. And that's, that's great, but I don't want to conflate this with I almost don't want to conflate it with adoption. This is focused on migration right now, hence the blockers and the action plans and migration critical flags and all the rest of it. But it could very easily be extended to there is just some action I have to take on this account, like going to the weekly review meeting and taking some notes, but that's not unlocking a blocker, so we don't care right now. So the action plan is all about the blocker, and it contains a bunch of items.
 
 Azmain Hossain  12:52  
 Yeah. And then within each action plan, you'll have multiple items which can then be checked off. And these are the things. One of the things that I wanted to ask is these action items, whether or not we should have an assignee, so that when somebody logs in, yeah, you know, obviously they're going to get their dashboard, they're going to be like, I'm this person, and I want to see my own account, that they see all of their action items. What? What's happening is, if you own an account and there are action items, it gets assigned to you, so it shows up in this section. But I wanted, do you want people to be able to assign stuff to others? That's where that comes in.
 
-Ben Brooks  13:38  
+Ben Brookes  13:38  
 Yeah, we want to be able to assign an implementation lead, potentially in future, a partner, we'll get to that point. Yeah. So there's definitely a person per item.
 
 Unknown Speaker  13:49  
@@ -94,25 +94,25 @@ Okay, well, yeah, that's gonna be my question.
 Speaker 1  13:53  
 If we need to be conscious, who would have access to this in what phase?
 
-Ben Brooks  13:57  
+Ben Brookes  13:57  
 Yeah, maybe that's the visibility is all about getting those guys to see what's going on for sure, whether they're going to be willing to use a CE system, I don't know, but we'll find out. And then, related to that Azmain, like when somebody makes a new action plan and sticks your name on it, it would be good to fire off an email. Be good to bring you back into the app to check it out as the assignee. But again, that's that can be v2 stuff just to make the user usability better later.
 
 Azmain Hossain  14:24  
 Yeah, yeah, that's a great idea. Anything that's I want to do
 
-Ben Brooks  14:28  
+Ben Brookes  14:28  
 things like daily summaries, like, let me get a daily summary email of all the progress that's been made on my accounts today from the whole cross functional team that's been working on it. Yeah, but that will show up in the dashboard as well if we, if we choose to. So we don't really need to do that without any urgency.
 
 Azmain Hossain  14:45  
 Yeah, I think the primary goal has to be, how do we make it the easiest possible for CSMs to input data? Because the thing that we're missing right now is data exactly. It will be a manual exercise, but. In any way that we can help, all the way from from functionality to like, make the buttons easier, to click it bigger, whatever feedback.
 
-Ben Brooks  15:09  
+Ben Brookes  15:09  
 Just a quick data point. I'm at the top. You've got 280 accounts. I don't think there are 280 accounts. I think there might be something going on with the number of use cases, number of accounts, double counting somewhere, looks like we've got 155 rag statuses, which also seems a bit low. So you might want to, you might want to check that. But if that's if that's pulling for Danton, then it's doing something weird on on the Yeah.
 
 Speaker 1  15:34  
 Anyway, I was also about to say you had Alex limford and Danton as CSMs, and none of those are, they're both sales. So I don't know what your pool of Asher is
 
-Ben Brooks  15:44  
+Ben Brookes  15:44  
 shit that shit data is, danton's are probably all over the golden source,
 
 Azmain Hossain  15:49  
@@ -127,7 +127,7 @@ Now, basically none of the accounts have a CSM assign. This is like the first bi
 Christine  16:44  
 When Ben made a comment a couple minutes ago about wanting a daily report or something, it sparked data thing here. So I see here you have a last modified date on this action plan. Is it that makes sense to have like the last modified date on some other level of detail, like, just generally speaking, across the account, because I could see it getting really annoying if we're getting the same report with data that's six months old. Or also, just for general tracking, making sure that we understand whether an account has been kind of stagnant for a couple weeks, or nobody's doing anything with it. That could be a red flag. And is that possible?
 
-Ben Brooks  17:29  
+Ben Brookes  17:29  
 Yeah, so one of one of the iterations on dashboards that we had a while ago had a panel, I think, was in the exact one I was being provocative with the most active and the least active accounts shown in a table. And it's just one sort of had records changed, versus not in recent past. Yeah, things like that would be, would be very helpful.
 
 Speaker 1  17:48  
@@ -139,7 +139,7 @@ Yeah, one of the things that I've been speaking to rich about adding in this is,
 Christine  19:29  
 on the blockers too. Do we have an option? I see have all status and all types? Is there a category where we could specify whether it's an internal blocker to meeting that migration date or an external blocker. I think that would be helpful. I think good like, let's say they're delayed on an update to one of their systems
 
-Ben Brooks  19:50  
+Ben Brookes  19:50  
 that's in there. It should be down as product, client or enablement, so we know whether it's basically C has to do something, product has to do something. On the client has to do something
 
 Azmain Hossain  20:02  
@@ -148,13 +148,13 @@ awesome, and we've made it so that blockers have to be assigned to a use case. C
 Speaker 2  20:23  
 you guys, I think it should be mandatory. If we just have a blocker out there that has no action plan to it, it's worthless. Yeah.
 
-Ben Brooks  20:30  
+Ben Brookes  20:30  
 And then the other thing I wondered about on action plans is whether they should be client verified or not. Let's start forcing an issue of whether the customer has agreed that that thing will unblock them, even if it's on us, if we have to go and release exporting from risk data lake, has the customer agreed that that solves that problem. And therefore, when it's met, we can all move on.
 
 Azmain Hossain  20:52  
 So we can add in a toggle of whether or not, yeah, this action plan is customer approved or not, and then a report of all the non approved action plans. Yeah, exactly, just for the ease of use. I think then, like, because this is the functionality since your build, I think this is what Opus did, just for ease of use. If you want to create a create a blocker, you don't want to be like, Oh, now I got to close this thing. Go into another thing. It lets you create the blocker, yeah, and then just kind of, you can, sorry,
 
-Ben Brooks  21:31  
+Ben Brookes  21:31  
 where is it within the I think that's right. Then on this page, it should smack you between the eyes that you don't have an action plan, you need to create one, yeah?
 
 Azmain Hossain  21:37  
@@ -163,7 +163,7 @@ So I've there's this, but you're right. It needs to be kind of like a warning si
 Christine  21:50  
 attached. Can we go into a definition conversation on a blocker versus a dependency? Again? I mean, what I'm where I'm going with that is, if there's a blocker, when does that get identified as a blocker because something's been missed or because we've already missed it, we anticipate missing it, right? Versus, like a dependency could be a known thing where, if there's a client that was like, we can't go into production until, I
 
-Ben Brooks  22:20  
+Ben Brookes  22:20  
 think that comes from the RAD status. So the rag status is obviously red, amber, green. Stupid That statement was and if it's not green, it must be blocked. It must be something in the way of it being green. It can be green with dependencies, but, but I hadn't thought to try to track dependencies in any meaningful way. I was focused on, what is it that's making this slower than it needs to be, which is more of a blocker notion.
 
 Richard Dosoo  22:49  
@@ -178,7 +178,7 @@ thinking about it in a few different ways, right? But we can definitely have tho
 Christine  23:43  
 maybe that's a phase two, I think, isn't
 
-Ben Brooks  23:46  
+Ben Brookes  23:46  
 that a, isn't that you, you make it Amber, you put a blocker, and the blocker is product, and you shove the epic in there, yeah,
 
 Unknown Speaker  23:55  
@@ -187,25 +187,25 @@ it can be a link, or if you want, I think that's a blocker,
 Azmain Hossain  23:57  
 yeah, yeah. You can always just put it in the Issue Details, and
 
-Ben Brooks  24:02  
+Ben Brookes  24:02  
 then, and then, I think we just help people understand best practice that green is green, everyone's happy. Red is, we've come to a screaming halt. Amber is, we might be fine. We might not. There's some dependency that is in the future that we need to work through.
 
 Unknown Speaker  24:17  
 Yeah, whether, whether it says Amber
 
-Ben Brooks  24:19  
+Ben Brookes  24:19  
 is at risk, but it doesn't really define what at risk means. Yeah.
 
 Richard Dosoo  24:22  
 At risk means. Open for was, like, we could very quickly and easily figure out which features have the highest number of customers dependent on them, if there's not any changes. But like, we have to go and communicate to customers, right? Something is shifted. It's mutual,
 
-Ben Brooks  24:43  
+Ben Brookes  24:43  
 yeah, but I think, I think we just, we use AI for that on our on our back end, rather than trying to define it, design it in and if the if the CSM or the adoption lead isn't taking good notes, that will make that difficult. But otherwise, I think we'll just get into a pickle where people are inventing blockers, or we. Using existing blockers, and you've got different versions of the same thing floating around. We might as well go the whole hog and have it relatively free form. But then do trend analysis on top of it just keeps it simpler from the user point of view.
 
 Speaker 1  25:15  
 And again, this could be a phase two, but from where there's a product blocker, whether we want some kind of best practice of what to put in there, or there's a specific thing of, is it on the roadmap, and who at product said on what date it is on the roadmap versus which ones are not on a roadmap?
 
-Ben Brooks  25:40  
+Ben Brookes  25:40  
 Yeah, that's that's an amber dependency versus a red stymied,
 
 Christine  25:49  
@@ -220,7 +220,7 @@ we're coming up at the top of the album. I know Azmain, you probably had a few m
 Azmain Hossain  26:57  
 So although I'm really glad that we really kind of dove into blockers and got to have this discussion about.
 
-Ben Brooks  27:04  
+Ben Brookes  27:04  
 So yeah. So my proposal is v1 of this thing sort of stops after team members in the collaboration tab on the side menu, because we just need to get this right. We need to get it out there. We need to get it populated with data, and then we'll have a much better chance of actually making some progress very quickly after that. I want to get to charters, blueprints, that, and then partners, is probably third wave after that.
 
 Azmain Hossain  27:31  
@@ -232,19 +232,19 @@ please have a look. Yeah, I guess is the purpose here to track what's in the cha
 Richard Dosoo  28:00  
 Will be both. So once we press the button, and that will generate the Word doc, so you guys then have to put it together, and then that can be sent.
 
-Ben Brooks  28:09  
+Ben Brookes  28:09  
 That might, that might be hard, because I think there's a lot of stuff in there that is linguistic, but what I was hoping we could do is draw out the nuggets that matter to the way we work in something systematic,
 
 Speaker 1  28:21  
 yeah, I think it's far more realistic to once one's created, or there is a version, it goes and says, it goes and reads X, Y and Z table and chucks it in.
 
-Ben Brooks  28:31  
+Ben Brookes  28:31  
 Yeah? Because there's things like the your your plan on a page type setups that would be very useful in a system that could also go into a document, but it's not the whole charter at that point.
 
 Unknown Speaker  28:47  
 You don't yeah,
 
-Ben Brooks  28:49  
+Ben Brookes  28:49  
 I gotta jump, and I'll let you guys carry on. Thank you.
 
 Richard Dosoo  28:52  

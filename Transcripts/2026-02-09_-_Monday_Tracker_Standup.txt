@@ -56,21 +56,21 @@ Azmain Hossain  5:16
 Let's see. So yeah, but basically, once these, once these two are done, and we confirm that the action plans are all on production, I think that's everything we need. For, for Josh to give the green light and everything else for, for Natalia to run the portfolio review call is will be already there. Oh no, that's awesome. Yeah. The only thing like I said in the email is I just, you know those priority for 2026 customers need to make sure that those are tagged correctly. Accelerated accounts tagged correctly. Cat accelerate customers. So those three tags, you just need to check them manually. But other than that, there's nothing left.
 
 Richard Dosoo  6:16  
-Okay, no, that's cool, because then once you've got those working in or once those are in depth and a little bit, then we'll take it back up. And then I know the next thing we wanted to look at was the adoption charters and blueprints. But I didn't want to push any of that stuff in Azmain until we were properly so we were happy with your build, and I did not introduce some exchanges until that was good. So I think that would be the plan for today. Let's get priority, let's get all the data fixes, and let's get it ready. You got a meeting with Josh at two o'clock once, once you guys are happy with the build, then we can start. I can start looking at the adoption charter pieces and the blueprint, there's a few things I need to change, and there's some other capabilities that I need to check in, but yeah, priority number one is to get the stuff ready for Josh and Sally for This afternoon. Yeah, Ben, just to catch you up. So we had a few builds last week that were good. We are just bringing Josh and Catherine up this week. Sorry, I meant the other bit sorry, but Josh and Catherine are going to basically sign off on data before the portfolio review call this afternoon. So that's what we're going to do next. Basically, we just want to make sure those guys are happy with the data so we don't get as much feedback as we did last week. So Azmain has walked through the issues with them, got through some fixes, which is great. Once that's done, then we can now those fixes are in, we're going to start chewing our way through the rest of the items same priority order. That's the blueprints, the adoption Charter, the SAT tracker as well. Because I don't think we've got a great way of doing that at the moment. I know we haven't got as much pipeline right now, so it's not as Provo, but to kind of round off all the stuff that we need to support, Ben support Liz and do we cheers?
+Okay, no, that's cool, because then once you've got those working in or once those are in depth and a little bit, then we'll take it back up. And then I know the next thing we wanted to look at was the adoption charters and blueprints. But I didn't want to push any of that stuff in Azmain until we were properly so we were happy with your build, and I did not introduce some exchanges until that was good. So I think that would be the plan for today. Let's get priority, let's get all the data fixes, and let's get it ready. You got a meeting with Josh at two o'clock once, once you guys are happy with the build, then we can start. I can start looking at the adoption charter pieces and the blueprint, there's a few things I need to change, and there's some other capabilities that I need to check in, but yeah, priority number one is to get the stuff ready for Josh and Sally for This afternoon. Yeah, Ben, just to catch you up. So we had a few builds last week that were good. We are just bringing Josh and Kathryn Palkovics up this week. Sorry, I meant the other bit sorry, but Josh and Kathryn Palkovics are going to basically sign off on data before the portfolio review call this afternoon. So that's what we're going to do next. Basically, we just want to make sure those guys are happy with the data so we don't get as much feedback as we did last week. So Azmain has walked through the issues with them, got through some fixes, which is great. Once that's done, then we can now those fixes are in, we're going to start chewing our way through the rest of the items same priority order. That's the blueprints, the adoption Charter, the SAT tracker as well. Because I don't think we've got a great way of doing that at the moment. I know we haven't got as much pipeline right now, so it's not as Provo, but to kind of round off all the stuff that we need to support, Ben support Liz and do we cheers?
 
-Ben Brooks  8:29  
+Ben Brookes  8:29  
 Cheers, guys. Do we want to think about any of the kind of pragmatic CSM and adoption usage stuff sooner than later, like uploading a transcript and having it populate, you know, an update from a meeting or a conversation, that kind of stuff. I feel like if we make these guys lives much easier, they'll use it more, and we'll get better tractions. I think that might that, I don't know if that's the better short term win than solution architecture tracking or something.
 
 Richard Dosoo  8:58  
 So that that's a really good point being that Azmain, I'm glad you brought it up, because Azmain mentioned something similar to this last week. There's, yeah, let's, let's do usability for those guys, but also the partner, Alexandra and those guys, right? And the reason I bring that up is right now, as you know, right? The partner stuff I'm talking about this, Liz is talking about this, or Liz will be talking to premium mcew. I'm talking to premium IQ, and sometimes at cross purposes, like I'm talking part always of a conversation. And like, no one knows right what the right hand and what the left hand is doing. And I think if we the sooner we nail that partner piece actually will formalise the process and help us. So yeah, CSM is definitely but probably partner management piece, even if it's just manage moving the partner management pipeline piece in, it's probably going to help us in the short term, especially when we want to get them up to speed.
 
-Ben Brooks  9:51  
+Ben Brookes  9:51  
 I think, I think it all helps. I'm just sort of questioning whether we make the app sort of rich. Sure are more complicated in its structure and how to use it, versus make it easiest as it can be, to do the basics and then add those layers on top. I think I'd go that way, to be honest. The part, you know, the partner stuff is the burning platforms are in two or three places that we've got control of anyway. I think I want to get, I want to get to all of that, like, as soon as possible. I'm just thinking about the immediate, like next few days sequencing, especially if Josh needs to chill out a bit.
 
 Richard Dosoo  10:34  
 The Azmain, do you mind bringing up death? Because Ben, I don't know. Ben, if you've seen them put some usability fixes in and change and made like all the user experience flow we type, we did some tidy up for that last week.
 
-Ben Brooks  10:47  
+Ben Brookes  10:47  
 Okay, cool. Let me. Let me pull
 
 Azmain Hossain  11:01  
@@ -82,25 +82,25 @@ We basically ran it like we ran a prompt that audited the UI and looked at user 
 Azmain Hossain  11:39  
 Okay, great. The other thing is, I had a session with Natalia. How do you want to run this call and kind of cater, kind of cater this portfolio review screen to her? So, like, first thing she wants to do is the scorecard migrations, so go through those, and then non priority reds and ambers, so you can flip through and then, if there's time, accelerated adoption clients, and then the timeline stays as it is, okay, that's how she wants to run it. So right now, that's how it's structured. But the one piece that Natalia is really keen on is to have a management dashboard so someone like you or Natalia, or maybe even dia, they log in, and based on their user, it takes them not to this dashboard, but straight to the management dashboard. And that would be as close to the PowerPoint deck that that DIA is getting right now, which is easy enough to do?
 
-Ben Brooks  12:43  
+Ben Brookes  12:43  
 Yeah, okay, I'm not. I hate that PowerPoint deck, but whatever, if that's what they want to see.
 
 Richard Dosoo  12:49  
 You know what might be cool? Ben on this is so we've met with Idris when he was here week before last, and he's got a really slick management dashboard that he uses for banking, and he wants to put, like we said to him, Look, when you're ready, we want to steal that and we put some of his stuff on our so maybe that will be there. But I
 
-Ben Brooks  13:07  
+Ben Brookes  13:07  
 just think, I think dia asked for a PowerPoint because he doesn't know any other way to run a programme, right? I think. And this speaks to the usability piece, if we put in the because we, because we can hit bedrock broad models by the sound of it. Now, rich, right? You saw that email from Friday, yeah, if we, if we put in a LLM call that pumps the data into the back end and says two things, one, like triage this transcript and tell me how to enter it and pre populate the fields, and then CSM, or implementation lead, or whoever can, you know, human in the loop, the thing before hitting save. That's like one easy win for the users. And then for the execs, I'd have a chat window to ask questions about implementations. Yeah, what's which one has been fastest? Which one has been slowest? How long have the last 10 taken? You know, whatever the fuck they want to know. And I think that's sort of what that PowerPoint was. Was about trying to create the structure that would enable those questions, but then the questions are still a week long process on top of that PowerPoint, yeah, and then I think we pre populate that stuff with some things that we know are going to move the debate forward, right? You know, one of the sample questions should be, what's the biggest blocker? And the sample answer should be, export from risk data lake, right? And it just whacks everybody between the eyes on day one with, with what the issues are, yeah, yeah.
 
 Richard Dosoo  14:34  
 Well, that's been that's definitely now we they're going to enable our access to that environment. We can definitely, we can work on that integration. And we're talking to Ben about this earlier, once, once we have the red button, API keys and stuff, we can embed that in so
 
-Ben Brooks  14:50  
+Ben Brookes  14:50  
 yeah, because then the contents of this PowerPoint are just a bunch of prompts, aren't they? And of course, we can build a report for it.
 
 Azmain Hossain  14:57  
 Yeah, one question I wanted to ask. If we, if we get our own Claude access, instead of faffing around with like, an open AI API key or something, could we just plug Claude into the app and have that answer the question, because that's a lot smarter than chatgpt,
 
-Ben Brooks  15:17  
+Ben Brookes  15:17  
 yeah, yeah, yeah. I think so
 
 Azmain Hossain  15:19  
@@ -121,31 +121,31 @@ she's got her own NPS categorization for customers, it's insane. Okay, so there'
 Richard Dosoo  16:08  
 to take, she's gonna she's gonna give us a PRD, and we're going to compare it to the features we have, and then figure out what we can steal or what we can't. And Natalia gave us some good feedback not to try and replicate what she's done, because she's like, you're going to piss off the game side team, because the game side team already pissed
 
-Ben Brooks  16:32  
+Ben Brookes  16:32  
 off the savings required for the MCO stock price to bounce Back soon, weren't they?
 
 Unknown Speaker  16:38  
 Don't get me started, right?
 
-Ben Brooks  16:42  
+Ben Brookes  16:42  
 Please. Pages fired their entire marketing team last week. You see that? No, no, I did.
 
 Richard Dosoo  16:47  
 I've seen I saw that. It was all the legal firms.
 
-Ben Brooks  16:52  
+Ben Brookes  16:52  
 When plugins were announced last week, it was, yeah.
 
 Azmain Hossain  16:56  
 I saw like, Thomson, Reuters and all these legal firms, prices just cratered a bit.
 
-Ben Brooks  17:02  
+Ben Brookes  17:02  
 Yeah, yeah, yeah. Moody's and SMP both took a hit Tuesday, Wednesday last week, not as big as some of the others. Though.
 
 Speaker 1  17:09  
 I don't know if you saw this. This is kind of relevant, kind of not, but JP, Morgan Chase got a massive, almost $1 billion fine for shorting the silver market. Oh, really, yeah, they got caught manipulating the silver market. I mean, so they made half, didn't it? They made way more than a billion. But they got fine. They got fined a billion.
 
-Ben Brooks  17:34  
+Ben Brookes  17:34  
 Check that every day.
 
 Richard Dosoo  17:42  
@@ -154,19 +154,19 @@ So, of course, what we'll do then as main, top, top priority, prs. So for Josh, 
 Azmain Hossain  18:37  
 Azmain go I was gonna say so for me to work on. Obviously, today, priority is get everything ready for the call. The call tomorrow. I want to have a look at just the partner piece. Because honestly, what Alexander and Liz McLagan have asked for, it's a really low hanging fruit. They just want to be able to assign partners to customers and then see how many customers each partner has. That's really easy to do. So I want to get that done for them, if possible. But after that, what will be the priority? In my head, it was adoption, charters,
 
-Ben Brooks  19:09  
+Ben Brookes  19:09  
 so on, the partners. Thing I'm sure, what they've asked for is pretty simple. I think it needs to have the like in discussion. Element of it, whether an introduction has been made, not not whether there's a specific working relationship there as well. There's like phases to it, yeah,
 
 Azmain Hossain  19:27  
 Alexander sent me the the Excel sheet of like, where they are with each Okay, they're on the stages. So I can
 
-Ben Brooks  19:32  
+Ben Brookes  19:32  
 that'll be put in, but that's by partner, by client, or just where we are with the partner in the stages, just with the partner. Okay, so, because what I'm describing is that we need, we need to be able to track and manage the fact that we have introduced Hiscox to Ey and imagine era and premium IQ, but win that project right the partner pipeline, as well as. This partner, actual engagement.
 
 Richard Dosoo  20:04  
 And that's been what I'm saying, that I think we should do that, because right now, like, Liz doesn't know, like, I've messaged Liz and said, Oh, I've done this. It's bringing a bit more. I think if we nail that, it makes our lives a little bit easier in
 
-Ben Brooks  20:17  
+Ben Brookes  20:17  
 the short term. I guess, I guess my point is the flip side Rich is the thing that matters this year is migrations. The targets 40 like losing a couple of weeks of CSM engagement is going to cost us a lot in the long run, whereas putting up with a shit spreadsheet for partners for another two weeks makes no difference to anybody.
 
 Unknown Speaker  20:38  
@@ -175,13 +175,13 @@ Got it? Yeah, that makes
 Azmain Hossain  20:39  
 sense. That makes sense. And
 
-Ben Brooks  20:41  
+Ben Brookes  20:41  
 so I think let's if we, if we hammer, like usability for the CSMs implementations, sat teams and then execs as well for visibility, so that we're really, you know, crunching down on everybody to use this thing because the visibility is forcing it, then I would go to partners after that.
 
 Azmain Hossain  21:03  
 Okay, the so the reason we want to, we decided to keep it really simple, is that they, you know, just like we've got a Gainsight team implementing Gainsight, they've bought a PRM, like a CRM, but for partners, and that's being built out and implemented for like, the past year, but they've got no idea when they're going to get their hands on it. That's why they're asking me to do this little simple thing, so that so they can just see stuff in one screen.
 
-Ben Brooks  21:31  
+Ben Brookes  21:31  
 Okay? I mean, maybe, maybe the simple version, and I'm over complicating, it is half an hour, and it doesn't matter. That's cool, too. But I guess I don't want to, I don't want to delay getting to the, like, CSMs, get to upload a transcript and make life really easy, yeah, as fast as possible.
 
 Azmain Hossain  21:47  
@@ -262,7 +262,7 @@ And then Martin, I'll also try and find some time for us to catch up, if not tod
 Richard Dosoo  28:53  
 walking through the plan for to go spend some time going over the plan You put together. And then non Dutch Ben. So Martin raised a really good point last week, which is, are we going to have any demos at exceedance this year, like we've done in previous years, or is the goal to because the work that Martin is doing might overlay nicely into that, but I didn't want to sign us up for anything without having to chat about it first.
 
-Ben Brooks  29:21  
+Ben Brookes  29:21  
 Yeah, why don't we? Why don't we stick a half hour in and have a proper conversation about that? I'm not quite sure where things are at with exceedance. I need to plug back in a bit this week. Yeah, yeah, that would be good.
 
 Martin Davies  29:34  
@@ -277,6 +277,6 @@ Cool. All right, all right, that's everything
 Unknown Speaker  30:03  
 awesome. Thanks. Azma, thank
 
-Ben Brooks  30:04  
+Ben Brookes  30:04  
 you. Thanks guys. Thank you.
 

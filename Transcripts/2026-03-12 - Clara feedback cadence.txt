@@ -8,7 +8,7 @@ Stacy  1:13
 Yeah, yeah. I agree. I think the big thing is,
 
 Azmain Hossain  1:17  
-Stacy and Catherine, this you were the brain behind it of the changes that were made. So I'll let you explain
+Stacy and Kathryn Palkovics, this you were the brain behind it of the changes that were made. So I'll let you explain
 
 Stacy  1:24  
 well, and I think the reason for the mad dash was a couple of things. We had the monthly report that we wanted to get out, and I did not want to send that out until we had the numbers correct to be able to do the graph. I didn't want say how to have to fix the graph manually. And then leading up to the islt, we want to make sure that we get all this information accurate as well. So I think that's the reason for so much of the rapid fire. I don't envision this happening like this, go forward hopefully. I think it's we're in a pretty good spot now, and as we've been in the tool, more of us playing around and spending more daily time in it, I guess you start to find more and more stuff like, Oh, look at this. Or Oh, this isn't feeling right, because that's what I'm finding anyway, is the more you play, the more you're like, wait a second, that's my thought on why the rapid fire.
@@ -77,7 +77,7 @@ Azmain Hossain  13:53
 I, I remember that's just to add a client. Yeah, into here, add a client. But I don't know if it's because I'm an admin. I thought everyone who's an editor has access to it, but Evie might not have editor access. That's the thing. Okay, I did put everyone in advisory as editor, but, yeah, it will be stuff like that, where it just, if a person just clicks around, they can figure it out. But rather than that, they they think.
 
 Natalia  14:26  
-But let's look at this request, really, because she's asking to add Canada life who had already migrated. But it would be good to have a record. Do we want to have that? I mean, again, we would have one more migration that we learn about in 2026 it's just that I think for this one, definitely, we need you, Catherine and Stacey to verify. Is this a record we want to maintain? And probably, I don't know. I'm just thinking it's kind of interesting, because we would. To enter it and already make it complete. Migrated, get the dates.
+But let's look at this request, really, because she's asking to add Canada life who had already migrated. But it would be good to have a record. Do we want to have that? I mean, again, we would have one more migration that we learn about in 2026 it's just that I think for this one, definitely, we need you, Kathryn Palkovics and Stacey to verify. Is this a record we want to maintain? And probably, I don't know. I'm just thinking it's kind of interesting, because we would. To enter it and already make it complete. Migrated, get the dates.
 
 Kathryn  15:08  
 I would want to check that they actually were using an on prem. I would want to

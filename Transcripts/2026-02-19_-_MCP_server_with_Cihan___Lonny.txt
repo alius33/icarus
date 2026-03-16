@@ -28,13 +28,13 @@ Yeah, yeah. Just if we can reduce duplication of efforts, that would just be a h
 Speaker 1  2:55  
 Yeah, I might be able to demo what I'm currently working on as part of today, if time permits, definitely, definitely makes sense to join the forces and build it. Yeah, capacity is costly, so I would, I would build, I will join the forces as much as
 
-Ben Brooks  3:18  
+Ben Brookes  3:18  
 well capacity. Capacity is costly, but if it's the most important thing to do, we could probably try and help.
 
 Richard Dosoo  3:25  
 But I guess she and Alani are running a bit late, Ben, but they join in a second.
 
-Ben Brooks  3:29  
+Ben Brookes  3:29  
 Sorry. Ben, go. Let me sort of ask whether we were complete or whether we were expecting.
 
 Richard Dosoo  3:35  
@@ -52,7 +52,7 @@ Let me show you. So you may have been heard that there is an incubator programme
 Unknown Speaker  5:26  
 is joined as well. Hey, sorry.
 
-Ben Brooks  5:28  
+Ben Brookes  5:28  
 Hey guys, it's normally me that's late. You're stealing my my role being late to everything. I was very conscious. I'm always late to your meetings.
 
 Unknown Speaker  5:38  
@@ -67,7 +67,7 @@ So I was just taking the opportunity well because you have seen this me means yo
 Speaker 2  6:13  
 So what one thing I think we're we're kind of getting to a point where we feel it's MCP is kind of well adapted. It's, it's not one of those standards that's going to go away. So I think from production standpoint, one of my asks was, can we, out of your experiment, produce our first MCP server? I know we're going to version things, and it's not going to be the last version of our MCP server. I now, thanks to Bala, I understand what what it takes to define one and put put one out, and what kind of things are important in it, and why it's different than our API documentation being in, you know, why couldn't I just read the documents and figure out what our API is, what so I now understand the difference, but I wanted us to kind of get to a point where we could get grow comfortable shipping the first version of the MCP server by June. Out of your experiment. Mala, that's what I was. I'm super impressed with what you've you've done, and I think, you know, the quality bar is a little interesting as to what the MCP quality is. I use quite a few, and I see different results. Like, you know, JIRA has an interesting one. I can't say that. It actually figures out everything very, very well, but it seems to be able to do most of what I need. And it's grouped actually gotten better over time. So I don't know what they do in the background, but I don't know if it's the agent or it's the MCP server that's that's improving. But anyway, I generally feel like we should be ready in June to be able to kind of push something out of your experiment. And I don't think MCP server is going to just like the API Gate, Gate. We're not going to say, oh, because you're coming to the MCP server, you have to pay differently. I'm hoping it's just, you know, in my mind, MCP is just like, just like API's and UIs, MCP is just another interface, and it would be free and available and allow us to consume more traffic across all of our applications on IRP. So what do you guys think about that? I guess is my first question, is anybody not comfortable? And in the meantime, can we actually have like Ben Richard? You know, everybody on this call kind of utilise it, try it. What would it take for us to get there, to actually push it out by June as GA I
 
-Ben Brooks  8:36  
+Ben Brookes  8:36  
 guess, totally comfortable with that jihad. I mean, I think, I think there's some really interesting questions for us above and beyond this, around, what does our business look like in an agentic universe? Because, you know, for example, I don't think people gonna wait hours for models to run when you're talking to an agent to try and get an answer, right? So how do we have to shift what we do against that backdrop? But I think our customers are, you know, hopefully sort of behind us from a sort of general adoption of these sorts of things, but we'll be quickly looking to work this way. And so it's great, like I would have no concerns from a pricing, packaging perspective, at opening up the sort of Third, Fourth Avenue of how people consume. I think it dropped. I think it, I think it will drive a lot of consumption. To be honest with you, people will ask questions because it's easy, rather than because they have
 
 Richard Dosoo  9:27  
@@ -91,7 +91,7 @@ MCP server, in my opinion, is just an API layer for the LLM to play. However you
 Richard Dosoo  13:34  
 let's follow up on on that ballot, because Azmain, I know that's why he's had his hand up. We're trying to do something like that in services to help us drive demos. So we're all trying to solve the safe problem. But this is great while we're coming together. Sorry, Azmain, let me not cut you off.
 
-Ben Brooks  13:50  
+Ben Brookes  13:50  
 These guys are going so fast and so close. They know each other's questions.
 
 Unknown Speaker  13:53  
@@ -145,7 +145,7 @@ yes, there is a tool to execute the API. So if you see execute the API, it can e
 Speaker 2  23:15  
 So the reason I like the MCP boundary Bala is because, number one, it kind of, you know, we're not necessarily responsible. It's just like APIs, you know. And if you want to use your own kind of coding environment or whatever, I don't know, these things seem to be going so fast that, you know, two, three weeks ago with cursor, I was seeing my code. Now I don't I see a terminal, no. And, you know, I usually, like when I use Codex outside, I open it up to see my files. They don't even show you the files that they're generating anymore. The code disappeared. It is, if that is the direction of this, I wonder if MCP server is the right way to say, we can generate all the things, but we don't have to pay any extra money for you to buy something new from us. You can, you know, if the goal is integration, and you're trying to do something like in a coding environment, etc, the MCP server can be your your way to get there, and it almost feels safe to to kind of stop there for a second to watch what happens next. But I think, you know, I one, my one question is, wouldn't you want to put this into the if you were going with the old strategy, right? Saying, oh, all the, all the conversational interfaces have to be in one box. IRP Navigator is the only way that we all have that. So you should ask all the questions to that thing. Never have to kind of know what questions to ask. What you would want this in IRP navigator, I guess, right, but you wouldn't want a purpose. I don't, I don't know if you want one. Some type of questions to come to one box, and other type of questions to come to the text. Is the way in which you will interact with it. If you're writing code, it seems a little unique and different to me than the MCP server. You know, your own code. We're almost kind of carrying ourselves into their environment with that. This pulls it back into the IRP navigator. And I don't know, I felt like IRP navigator keeps falling behind, because we also, I mean, just architecturally, it's not it's not there, but, you know, it's got its own kind of issues. I see a lot of people using it. It's not like, it's not popular. But at some point I think people will say, look, if I want to do something repeatable, are you going to run it on my behalf with an IRP navigator too? Are you going to just kind of execute this now we got to, you know, provision sandboxes for these guys, or deploy some scheduled task, etc. Which are things I do with cursor. I think this will be very, very small. Scripting jobs like generate the code is not it seems like generate the code is less interesting. Generate the code and run it for me is a lot more interesting. Yeah, and that's why photos and all these other things are kind of a lot more more useful.
 
-Ben Brooks  26:19  
+Ben Brookes  26:19  
 Yeah, a little workflow, application building experience pegged on top of the MCP would, would be a way in which a lot of companies, who are probably less far ahead in their, you know, general enablement of 14,000 people to do this shit on their own, couldn't, could engage with this stuff that might be good for a couple of years.
 
 Richard Dosoo  26:37  
@@ -181,13 +181,13 @@ So there are other tools that I was starting with Lonnie as well that we just br
 Speaker 2  32:48  
 Yeah, I Yeah, we should. We should talk about these two for sure. Sorry, I need to run to the next meeting. But so if nobody has objections on the MCP server, can we do GA or not? I think that's the discussion we should have with Lonnie and see how you know where we feel, or should it just stay a preview at that point? So I think that's the discussion we should we should have together.
 
-Ben Brooks  33:15  
+Ben Brookes  33:15  
 Let's do it. I would be super bullish. I think, I think we get a long way down the road from an integration point of view with these sorts of capable sorts of capabilities. Really interesting.
 
 Richard Dosoo  33:25  
 I know, like the customers we've already engaged with were like, this would have helped they engage. This would have helped those transitions. This would be key
 
-Ben Brooks  33:33  
+Ben Brookes  33:33  
 for AIG. Another way to slice it would be like the first GA release, is partners, only us and partners, right? And then you get to control it a little bit, but you speed up the prime process. You get those guys humming really fast. That's right. Suddenly everyone's gonna follow this relationship with the partner.
 
 Speaker 2  33:49  

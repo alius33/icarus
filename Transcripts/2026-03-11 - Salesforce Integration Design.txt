@@ -26,13 +26,13 @@ Speaker 1  1:43
 So if it helps, an MP MC MCP client is basically anything that consumes a MP MCP server. Yeah, so like and like to be completely transparent. It's just a fancy way of saying an API. So it's any any application running there, like the app or like Clara or whatever, they'll just be consuming the MCP server, and that can be either via API or AI or whatever. But yeah, I'll have a, essentially a middleware. So that way, if we do connect Salesforce and everything along those lines, that will go through the to my MCP server, and then that can be leveraged across any application, if that makes sense. Yeah, yeah. So like the app factory is essentially the man in the middle in that, in that situation, yeah,
 
 Azmain Hossain  2:41  
-Hey, Catherine, sorry, we kind of got into the discussion a little bit.
+Hey, Kathryn Palkovics, sorry, we kind of got into the discussion a little bit.
 
 Speaker 2  2:45  
 No, that's fine. I'm sorry. I am a few minutes late.
 
 Richard Dosoo  2:49  
-No, all good, Catherine, we the reason I wanted us to get together is we're we need to start breaking out our tasks. Essentially, we need to align on the design so we can start working on that, on the actual task, to get this thing up and running, like the dev tasks, the estimates, and I'm planning that out. And the key real decision points for us are a couple of things. So let me bring this up. I guess I know you had a you had a chance to look through the document, right? Yeah. Cool. So for us, there's a couple of things that came out of it, and the key things really were the integration between our environment and Salesforce. We my initial assumption was that it was going to be only be one way, so that would be data flowing into our application from Salesforce. There was no need for bi directional flow, ie, for us to go back and update Salesforce if there's any updates in cloud. And that's a question, right? And Azmain for you as well. I think the use cases that we're working on now, the predominant ones are just read only data from Salesforce, right? There isn't that much requirement to push anything back into Salesforce from Clara is, that is my understanding,
+No, all good, Kathryn Palkovics, we the reason I wanted us to get together is we're we need to start breaking out our tasks. Essentially, we need to align on the design so we can start working on that, on the actual task, to get this thing up and running, like the dev tasks, the estimates, and I'm planning that out. And the key real decision points for us are a couple of things. So let me bring this up. I guess I know you had a you had a chance to look through the document, right? Yeah. Cool. So for us, there's a couple of things that came out of it, and the key things really were the integration between our environment and Salesforce. We my initial assumption was that it was going to be only be one way, so that would be data flowing into our application from Salesforce. There was no need for bi directional flow, ie, for us to go back and update Salesforce if there's any updates in cloud. And that's a question, right? And Azmain for you as well. I think the use cases that we're working on now, the predominant ones are just read only data from Salesforce, right? There isn't that much requirement to push anything back into Salesforce from Clara is, that is my understanding,
 
 Azmain Hossain  4:06  
 yeah, because I feel like, firstly, I I have no idea what the structure data structure is in Salesforce. It's a, it becomes a huge can of worms. If we start trying to push stuff, pulling data in, we can, we can organise the data however. We need to for our apps to read it. That's fine, so let it's good to start
@@ -95,7 +95,7 @@ Richard Dosoo  15:13
 Yes. So no, that's cool. So going into tomorrow, then we can, I can send this over as a primer to the guys. I'll update this so it says, like, it's more specific about exactly what we need, but we can say the question going forward is we want to focus phase one on blockers, action plans, case fee, right? That's something we need to we need, but the other information that comes from gain side, we want to follow on in the second phase, where we are pull that information from gain side, and then Azmain, we'll need to look at the data model and see, is there anything that we have that we want to push back?
 
 Azmain Hossain  15:56  
-I mean, if they will let us. But the the one question I had, and Catherine, you'll be the best person to answer it. When is Gainsight going live? Because I keep hearing so many different dates.
+I mean, if they will let us. But the the one question I had, and Kathryn Palkovics, you'll be the best person to answer it. When is Gainsight going live? Because I keep hearing so many different dates.
 
 Unknown Speaker  16:10  
 March 30, okay?
@@ -128,7 +128,7 @@ Azmain Hossain  18:14
 Yeah, yeah.
 
 Richard Dosoo  18:18  
-Cool. All right, so let's do this. Then, in terms of next steps, I'm going to tidy this off Azmain. I'm that's my job today. After I finish some stuff for Ben the other Ben, Ben, we need to just talk through this. Maybe I might connect with you in about an hour. I just want to tighten up the MCP approach to make sure it's aligned to our latest thinking. And then Catherine, I over to you so you can share with a wider team for tomorrow.
+Cool. All right, so let's do this. Then, in terms of next steps, I'm going to tidy this off Azmain. I'm that's my job today. After I finish some stuff for Ben the other Ben, Ben, we need to just talk through this. Maybe I might connect with you in about an hour. I just want to tighten up the MCP approach to make sure it's aligned to our latest thinking. And then Kathryn Palkovics, I over to you so you can share with a wider team for tomorrow.
 
 Speaker 2  18:44  
 School. Sure, perfect. That sounds good. I really appreciate prepping this information. I think it'll help us go faster tomorrow. Yeah, no. 100% Oh, one thing I wanted to comment, MPs information. Have you guys talked to the voice? Guys talked to the voice of the customer team on the surveys that they run?

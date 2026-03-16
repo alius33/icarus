@@ -5,7 +5,7 @@
 **Workstreams touched:** WS2 CLARA
 
 ## Key Points
-- Ben Brooks has dropped a surprise: he is meeting Andy Frappe (President of Moody's Analytics, one level below the board) on Monday 23 Feb to demo CLARA. None of the dev team knew this was coming. Richard is visibly alarmed.
+- Ben Brookes has dropped a surprise: he is meeting Andy Frappe (President of Moody's Analytics, one level below the board) on Monday 23 Feb to demo CLARA. None of the dev team knew this was coming. Richard is visibly alarmed.
 - Critical data issues discovered in production:
   1. **Orphan records** causing API failures
   2. **Duplicate customer accounts** created during the golden source data import -- happened only in production, not in dev/staging. The import was careful not to overwrite existing data (which it achieved) but inadvertently created duplicate account records.
@@ -52,13 +52,13 @@
 - **Richard controls the conversation** -- he frames the Andy Frappe demo as a crisis, proposes the soft-delete solution, and directs the response plan. Despite not being the developer, he is making architectural decisions in real-time.
 - **Azmain is the problem-solver under pressure** -- he found the 60-call performance issue and fixed it, and he is transparent about the duplicate account problem. He operates at the tactical level while Richard operates at the strategic level.
 - **BenVH is the infrastructure enabler** -- he cannot fix the data issues himself but provides the critical capability (database snapshots, staging environment) that makes safe testing possible. His offer to snapshot production immediately is the right response.
-- **Ben Brooks (absent but driving the crisis)** -- his decision to demo to Andy Frappe without telling the dev team is the source of all Monday pressure. This is characteristic of his "just do it" approach but creates real risk for the team.
+- **Ben Brookes (absent but driving the crisis)** -- his decision to demo to Andy Frappe without telling the dev team is the source of all Monday pressure. This is characteristic of his "just do it" approach but creates real risk for the team.
 
 ## Stakeholder Signals
 - **Richard Dosoo:** Visibly alarmed by the Andy Frappe demo timing. His first instinct is to assess risk ("what's the safest and least risky way?"), not to rush a fix. This is the "don't break things" posture he adopted in recent weeks. Also carrying guilt about Idris -- the team has made promises they have not delivered on.
 - **Azmain Hossain:** Problem-solving efficiently under pressure. His insight about needing AI skills/prompts for performance analysis rather than generic instructions shows growing sophistication in how he uses AI tools. Pragmatic about the duplicate account issue -- "we achieved our purpose, everything is totally as it was."
 - **BenVH:** Collaborative and solution-oriented. His offer to snapshot production immediately demonstrates competence and willingness to work late. He is the calm technical anchor in what is otherwise a panicked conversation.
-- **Ben Brooks (absent):** His unannounced Andy Frappe demo is a high-risk, high-reward move. If it goes well, CLARA gets executive visibility at the highest level. If orphan data causes an API failure during the demo, it could damage programme credibility at the worst possible level.
+- **Ben Brookes (absent):** His unannounced Andy Frappe demo is a high-risk, high-reward move. If it goes well, CLARA gets executive visibility at the highest level. If orphan data causes an API failure during the demo, it could damage programme credibility at the worst possible level.
 - **Andy Frappe (absent):** President of Moody's Analytics, one level below the board. This is the highest-stakes audience CLARA has ever had. His reaction to the demo is an open question that will shape the programme's trajectory.
 
 ## Commitments Made
@@ -106,7 +106,7 @@
 - "We achieved our purpose. Everything is totally as it was, no data was touched." -- Azmain, silver-lining the duplicate import problem
 
 ## Narrative Notes
-This is a crisis management meeting disguised as a standup. Ben Brooks's decision to demo CLARA to Andy Frappe -- the President of Moody's Analytics, one level below the board -- without informing the development team is the single most consequential event of the week. It transforms a routine data quality discussion into an urgent production fix with the highest possible stakes.
+This is a crisis management meeting disguised as a standup. Ben Brookes's decision to demo CLARA to Andy Frappe -- the President of Moody's Analytics, one level below the board -- without informing the development team is the single most consequential event of the week. It transforms a routine data quality discussion into an urgent production fix with the highest possible stakes.
 
 The team's response reveals their crisis mode dynamics. Richard immediately shifts to risk assessment, not panic. He proposes the soft-delete approach (safe, reversible, no cascading risks) and ensures a staging environment is available for testing. Azmain has already found and fixed the most visible performance issue (60 API calls reduced to 1 join query). BenVH offers the critical infrastructure support (production snapshot) without hesitation. This is a team that has been through enough fires to know how to respond.
 

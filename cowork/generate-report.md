@@ -52,7 +52,7 @@ If audience is specified, also read their profile from `context/stakeholders.md`
 - No slide should have more than 6 bullet points
 - Use the weekly report narrative voice (executive assistant briefing style)
 - If audience is Diya: lead with outcomes and metrics, keep text minimal
-- If audience is Ben Brooks: include product/strategy context
+- If audience is Ben Brookes: include product/strategy context
 - Save to project root as `executive-debrief-YYYY-MM-DD.pptx`
 
 ---

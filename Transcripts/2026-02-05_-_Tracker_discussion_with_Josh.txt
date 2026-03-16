@@ -1,5 +1,5 @@
 Speaker 1  0:00  
-Gonna come in after lunch? Yeah, I'll give you an update. I spoke to Josh and Catherine last night. There's just some there's some daily issues, the ones that documented in this chat last night that she wanted to talk through. I said to Josh that basically with I showed him the build that he done in dev. They're very, very impressed. I said, our goal is to now, obviously, we've got a stability building, we've got the UX improvements in, we've got the branding, and we're going to just fix data issues now. And so the call on Monday has that. So most of the biggest issue was the action items that were not migrated. But you were saying that they are migrated, like, it's by design when it's that way. Yeah, they were talking about this. Did they, like, show you an example, like, clicking into the app, like, this is what we're saying. This is
+Gonna come in after lunch? Yeah, I'll give you an update. I spoke to Josh and Kathryn Palkovics last night. There's just some there's some daily issues, the ones that documented in this chat last night that she wanted to talk through. I said to Josh that basically with I showed him the build that he done in dev. They're very, very impressed. I said, our goal is to now, obviously, we've got a stability building, we've got the UX improvements in, we've got the branding, and we're going to just fix data issues now. And so the call on Monday has that. So most of the biggest issue was the action items that were not migrated. But you were saying that they are migrated, like, it's by design when it's that way. Yeah, they were talking about this. Did they, like, show you an example, like, clicking into the app, like, this is what we're saying. This is
 
 Speaker 1  1:02  
 what we're saying, This is what we want, yeah, so I looked at just like Beasley. That was the first one that was in my history that Philip looked at, and there was a blocker in there, and there was nothing in the action plans table. So then she brought up, then went into what they told you, and I can kind of understand what the
@@ -32,7 +32,7 @@ Azmain Hossain  4:39
 engineering are thinking about as they are. Reported to us. So if we follow Josh's thinking, this blocker would have an action item, sorry, an action plan, and in that action plan would be one action item face. Now imagine someone like Natalia or
 
 Speaker 2  4:56  
-Stacy or Ben Brooks. Going in, is that an action item?
+Stacy or Ben Brookes. Going in, is that an action item?
 
 Azmain Hossain  5:02  
 And this is what Ben was saying as well. They're not thinking structurally. They're just like, Why doesn't it look like Salesforce, and why doesn't it act like Salesforce? Just make it
@@ -59,7 +59,7 @@ Unknown Speaker  6:17
 well, where software wasn't coming through because people were, like, when I go into a blocker or used
 
 Speaker 1  6:37  
-Yeah, do you mind Azmain Going back to the spreadsheet, because there's some inconsistencies in the data that may so what we're supposed to be looking at here is the model adoption, like each client in the product adoption. Sorry, you should have all rows for any given client, one for each app. But if you look at Chubb, for example, there's multiple rows for responder, and that's because the product adoption record, the pa t number is different, even though nothing else is different. So I asked Catherine. I was like, Well, how's that? What are we looking at here? And she was like, oh, obviously Salesforce is tracking editor row, but it's only ever displaying the latest rows for each product, so the latest responder only the latest row For exposure IQ save has the caption duplicates that day.
+Yeah, do you mind Azmain Going back to the spreadsheet, because there's some inconsistencies in the data that may so what we're supposed to be looking at here is the model adoption, like each client in the product adoption. Sorry, you should have all rows for any given client, one for each app. But if you look at Chubb, for example, there's multiple rows for responder, and that's because the product adoption record, the pa t number is different, even though nothing else is different. So I asked Kathryn Palkovics. I was like, Well, how's that? What are we looking at here? And she was like, oh, obviously Salesforce is tracking editor row, but it's only ever displaying the latest rows for each product, so the latest responder only the latest row For exposure IQ save has the caption duplicates that day.
 
 Speaker 2  7:40  
 Like all of
@@ -113,7 +113,7 @@ Unknown Speaker  11:11
 the table. Yeah, that should be fun. I
 
 Speaker 1  11:29  
-any other feedback. Josh basically said his team will continue to look at issues and send us the data issues to look through. I said I'll put a call with Catherine later on today, maybe like five o'clock UK, time to go through where we're at. I said we'll do any changes in dev and let them have a look in there before we migrate the moment to pod
+any other feedback. Josh basically said his team will continue to look at issues and send us the data issues to look through. I said I'll put a call with Kathryn Palkovics later on today, maybe like five o'clock UK, time to go through where we're at. I said we'll do any changes in dev and let them have a look in there before we migrate the moment to pod
 
 Speaker 1  11:55  
 sa Azmain. What I'll do is I'm going to be coming into the office after lunch, and I will sit through with you, and we'll go through some of the issues there, Martin, the reason I included you in this was to won't just bring you up to speed with what we're doing and where we are, but I'm also need to spend some time with you today, planning out, going through The scope for the other work stream, the cursor for pipeline development, or broad code for pipeline development, or whatever we decide to use. And obviously that links into the art factory work that Ben was talking about. So maybe, actually, if I put it there and with the information I sent you last night, did I give you everything you needed
@@ -140,7 +140,7 @@ Martin Davies  16:19
 that would be okay. No, that sounds good to me. I don't know how your what's your time like on this at the moment, like you have time to go through, or are you too? Is your time all taken up with this at the moment? I
 
 Azmain Hossain  16:40  
-be what Josh and Catherine fed back, and then they've got an Excel sheet, so I'm going to go through that. But the vast majority of those bugs that they put on the Excel sheet was from two weeks ago and changes and fixed a bunch of stuff, so I just need to go through
+be what Josh and Kathryn Palkovics fed back, and then they've got an Excel sheet, so I'm going to go through that. But the vast majority of those bugs that they put on the Excel sheet was from two weeks ago and changes and fixed a bunch of stuff, so I just need to go through
 
 Speaker 2  16:55  
 them and be like, which ones are still relevant and worth fixing? That's literally

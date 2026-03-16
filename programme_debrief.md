@@ -21,7 +21,7 @@
 
 The programme originated from Azmain being asked to create a 30-slide presentation for Diya — one slide per customer — summarising adoption status across the portfolio. Rather than building it manually from the various Excel sheets, Azmain used Cursor to generate a dashboard that surfaced all the data for senior leadership in one place. That single act of automation became the proof point that something much bigger was possible. It snowballed into Copilot Studio experiments, Cursor training sessions, and eventually a formal programme with six workstreams.
 
-Ben Brooks independently built the first version of what became CLARA over Christmas 2025 — he spent evenings in Cursor building a process management system because the existing approach (Stacy managing 300-slide PowerPoint decks, fire drills to find account statuses, five people scraping data from spreadsheets) was unsustainable. His core insight: the team was collecting data to answer questions rather than structuring data to be queried.
+Ben Brookes independently built the first version of what became CLARA over Christmas 2025 — he spent evenings in Cursor building a process management system because the existing approach (Stacy managing 300-slide PowerPoint decks, fire drills to find account statuses, five people scraping data from spreadsheets) was unsustainable. His core insight: the team was collecting data to answer questions rather than structuring data to be queried.
 
 The formal programme structure was established at the December 2025 steerco, where Richard presented the five (later six) workstreams. The steerco feedback was that training should be elevated to its own workstream, making it six total.
 
@@ -35,7 +35,7 @@ The formal programme structure was established at the December 2025 steerco, whe
 
 **What happened:**
 
-- **Ben Brooks demos the tracker to Azmain and Richard (6 Jan).** Ben walks through the app he built over Christmas: dashboard, use cases, blockers, action plans, data quality views. Richard recognises this as breaking the golden source (O&M spreadsheet) into a proper data model. Key concepts established: migration vs adoption distinction, migration-critical workflows, RAG status, the "Let's Go" culture prompt. Ben proposes natural language querying and a report builder.
+- **Ben Brookes demos the tracker to Azmain and Richard (6 Jan).** Ben walks through the app he built over Christmas: dashboard, use cases, blockers, action plans, data quality views. Richard recognises this as breaking the golden source (O&M spreadsheet) into a proper data model. Key concepts established: migration vs adoption distinction, migration-critical workflows, RAG status, the "Let's Go" culture prompt. Ben proposes natural language querying and a report builder.
 
 - **Richard frames the programme for Azmain (6 Jan).** Six projects laid out: (1) Training & Enablement, (2) PMO Dashboard / Tracker, (3) Customer Success Agent (Kevin Pern's Copilot Studio work), (4) Adoption Charter Workflow, (5) IRP Navigator L1 Automation, (6) Cursor for Pipeline Sales. Richard explicitly positions this as a career growth vehicle for Azmain — getting elevation, visibility with Colin Holmes, building PM competencies. The North Star is a full customer journey system from prospect to renewal.
 
@@ -169,7 +169,7 @@ The formal programme structure was established at the December 2025 steerco, whe
 
 - **Martin onboarded to Build in Five (5 Feb).** Azmain and Martin discuss the Cursor for Pipeline project (later called "Build in Five"). The concept: build a framework that allows non-technical users to scope, design, and deploy apps on IRP's Risk Data Lake using Cursor in a controlled environment. Both admit they don't fully understand the end goal and need more input from Richard.
 
-- **Josh/Catherine data alignment (5 Feb).** Richard's plan: Catherine takes the most complex accounts (reinsurer, primary, broker, global entity), does a side-by-side comparison of Salesforce vs Clara data, signs off in a spreadsheet, then data gets loaded. Goal: tackle 80-90% of data mapping issues in one pass. Azmain's frustration with Josh/Catherine's pushback on data they themselves provided: "I don't know how many times you can tell the same thing to people, especially the person that gave you the data."
+- **Josh/Kathryn Palkovics data alignment (5 Feb).** Richard's plan: Kathryn Palkovics takes the most complex accounts (reinsurer, primary, broker, global entity), does a side-by-side comparison of Salesforce vs Clara data, signs off in a spreadsheet, then data gets loaded. Goal: tackle 80-90% of data mapping issues in one pass. Azmain's frustration with Josh/Kathryn Palkovics' pushback on data they themselves provided: "I don't know how many times you can tell the same thing to people, especially the person that gave you the data."
 
 **Key evolution:**
 - Data loss incident damages credibility with CSMs — critical trust issue
@@ -187,9 +187,9 @@ The formal programme structure was established at the December 2025 steerco, whe
 
 - **Claude Code access secured (9 Feb).** Richard confirms they'll be onboarded to the Claude Code pilot via AWS. Not the desktop interface — they'll connect Claude Code to the AWS environment. Both Richard and Azmain running out of personal subscriptions.
 
-- **Data strategy reset (9 Feb).** Richard's plan: Catherine must take complicated accounts and sense-check against Clara data this week. If it reveals schema changes needed, they handle Wednesday. Goal: build to dev Monday, staging Thursday, prod Thursday. "If we don't tackle it holistically, all that's going to happen is every week there's a new schema change, a new data fix, and that's all we'll be doing."
+- **Data strategy reset (9 Feb).** Richard's plan: Kathryn Palkovics must take complicated accounts and sense-check against Clara data this week. If it reveals schema changes needed, they handle Wednesday. Goal: build to dev Monday, staging Thursday, prod Thursday. "If we don't tackle it holistically, all that's going to happen is every week there's a new schema change, a new data fix, and that's all we'll be doing."
 
-- **Josh and Catherine session (9 Feb).** Action plans pushed to prod. Catherine finding data that vanished after computer upgrade. The orphan data and action plan visibility issues identified — front-end filter blocking action plans from displaying. Josh starting to engage but remains cautious about CSM data entry.
+- **Josh and Kathryn Palkovics session (9 Feb).** Action plans pushed to prod. Kathryn Palkovics finding data that vanished after computer upgrade. The orphan data and action plan visibility issues identified — front-end filter blocking action plans from displaying. Josh starting to engage but remains cautious about CSM data entry.
 
 - **Diana discusses ILS team (11 Feb).** Diana explains she's helping the ILS (cat bond) team adopt basic Microsoft tools — they didn't even use Teams. Building them lists and Power BI reporting. Shows how far behind some teams are on basic tooling.
 
@@ -323,7 +323,7 @@ The formal programme structure was established at the December 2025 steerco, whe
 
 ### Decision Makers
 - **Diya Sawhny** — Executive sponsor. Communication style: impatient with detail, wants elevator pitch, scrolls phone during long explanations. Feedback on sessions: "Should feel like continuation, not reset." Engaged properly by late Feb.
-- **Ben Brooks** — De facto product owner/visionary. Built the original app. Pushes hard for speed. Key phrases: "Just do it, press the button." Wants to "kill CSMs with kindness." Running 5am training sessions. Races HighRox.
+- **Ben Brookes** — De facto product owner/visionary. Built the original app. Pushes hard for speed. Key phrases: "Just do it, press the button." Wants to "kill CSMs with kindness." Running 5am training sessions. Races HighRox.
 - **Natalia** — CS lead, Azmain's manager. Runs portfolio reviews. Practical, process-focused. Pushed back on separate portfolio review tab. Wants existing dashboard to demonstrate tool value. Key concern: CSM workload perception.
 - **Richard Dosoo** — Programme/operational owner. Technical bridge between Ben's vision and Azmain's execution. Manages up to Diya, across to Sales Recon, down to dev team. Carries the deployment knowledge.
 

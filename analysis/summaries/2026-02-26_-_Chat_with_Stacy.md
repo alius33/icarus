@@ -8,7 +8,7 @@
 - Stacy scopes her reporting requirements for Andy Frappe's central migration dashboard. Banking has a full-time resource building a Power BI dashboard; insurance needs to feed into it.
 - Key decision: monthly Excel export from CLARA is sufficient. No APIs, no automated feeds. Stacy will build a simple report, export it, and send it to the banking team for Power BI integration. This is pragmatic given how much is changing in CLARA.
 - Azmain demos the reports functionality he built specifically with Stacy in mind, modelled exactly on Salesforce's report builder (choose data source, select columns, add related objects, export).
-- Critical bug discovered: when a CSM manually updates a switch-off date, it is not overriding the golden source import date. Catherine found this discrepancy. Azmain has the fix ready to deploy.
+- Critical bug discovered: when a CSM manually updates a switch-off date, it is not overriding the golden source import date. Kathryn Palkovics found this discrepancy. Azmain has the fix ready to deploy.
 - Reports functionality breaks when adding a second object (customer legacy products) -- needs debugging.
 - Scorecard target: 34 legacy product switch-offs in 2026. But the target is built on shaky ground -- CSMs made up dates in December that are already shifting. Six clients already pushed out of 2026. Four retroactive wins discovered (products switched off years ago but never recorded).
 - Strategic reporting decision: pace the reporting to match a linear trajectory against the 34 target. Do not reveal all wins early, or leadership will increase the target. Report wins on the exact week they should appear for a linear trajectory.
@@ -38,7 +38,7 @@
 1. **Migration dashboard requirements** (0:00-5:00) -- Andy Frappe's ask, banking's Power BI dashboard, Stacy scoping insurance data
 2. **Reports functionality walkthrough** (5:00-12:00) -- Azmain demos Salesforce-style report builder, discovers object-add bug
 3. **Scorecard politics and date integrity** (12:00-22:00) -- CSMs making up dates, retroactive wins, pacing strategy
-4. **Date override bug and cleanup** (22:00-25:00) -- Catherine's discrepancy, fix deployment, CSM data nervousness
+4. **Date override bug and cleanup** (22:00-25:00) -- Kathryn Palkovics' discrepancy, fix deployment, CSM data nervousness
 
 ## Power Dynamics
 - **Stacy is the political strategist for reporting.** Her decision to pace scorecard reporting to avoid target ratcheting shows sophisticated understanding of executive dynamics.
@@ -47,7 +47,7 @@
 ## Stakeholder Signals
 - **Stacy Dixstra:** Political savvy about scorecard reporting. Doing the unglamorous work of individual CSM data cleanup meetings. Pragmatic about Excel over APIs. Worried about banking team's full-time dashboard resource -- "where do you guys get like" (the luxury).
 - **Azmain Hossain:** Built reports feature with Stacy specifically in mind. Quick to identify and commit to fixing the date override bug. Creative problem-solver with the "reported off date" field.
-- **Catherine (absent, referenced):** Found the date override discrepancy. In this context, her data quality attention is productive (unlike her chat complaints).
+- **Kathryn Palkovics (absent, referenced):** Found the date override discrepancy. In this context, her data quality attention is productive (unlike her chat complaints).
 - **Andy Frappe (absent, referenced):** Wants all migrations on one central dashboard. Banking team has a full-time resource for Power BI. Insurance is apples to oranges (switch-offs vs pipeline).
 
 ## Commitments Made

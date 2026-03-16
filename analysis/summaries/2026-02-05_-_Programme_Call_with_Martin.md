@@ -17,7 +17,7 @@
 - Resource approval flow: Martin scopes estimates, Richard/Azmain pitch to Diya while she is in London next week, Diya gives green light, Martin executes upon return from holiday
 - Martin going on holiday Wednesday next week for two weeks (Caribbean cruise) -- can only contribute Monday/Tuesday next week
 - Diya described as having "no patience and no attention span" -- 15 minutes and 2 slides maximum for the pitch
-- Ben Brooks is pushing for Claude Code access via AWS Bedrock at his level -- using his seniority to unblock what Richard could not. Hoping for access before end of next week.
+- Ben Brookes is pushing for Claude Code access via AWS Bedrock at his level -- using his seniority to unblock what Richard could not. Hoping for access before end of next week.
 - Introduction to Harry Lawrence planned -- George's team member who has built apps but cannot get them hosted. Good guinea pig for Build in Five.
 - Richard wants directional estimates (not to-the-hour) -- t-shirt sizing for the Diya pitch
 - Ben has drafted KPIs for the advisory group with a "10x with AI" theme -- Richard needs to translate these into tech consulting goals
@@ -35,7 +35,7 @@
 | Create scope/estimates for Build in Five | Martin/Azmain | Mon-Tue next week (before Martin's holiday) | Open | Medium |
 | Prepare 2-slide Diya pitch covering all 5 workstreams | Richard/Azmain | Next week (while Diya in London) | Open | High |
 | Introduce Martin to Harry Lawrence | Richard | This week | Open | High |
-| Secure Claude Code access via AWS Bedrock | Ben Brooks | Before end of next week | Open | Medium |
+| Secure Claude Code access via AWS Bedrock | Ben Brookes | Before end of next week | Open | Medium |
 | Define architecture guidelines README for app factory guardrails | Azmain/BenVH | TBD | Open | Low |
 | Translate Ben's AI KPIs into tech consulting goals | Richard | Next week | Open | Medium |
 
@@ -55,7 +55,7 @@
 ## Stakeholder Signals
 - **Martin Davies:** Now properly oriented for the first time. The "Cursor for Pipeline" naming confusion was not poor attention -- it was poor labelling. His reaction ("don't understand how much clearer this is now") suggests genuine engagement once he has the right context. About to disappear for two weeks, which creates a gap.
 - **Richard Dosoo:** Finally imposing programme structure. His admission that four workstreams have had zero progress and need to be "treated like projects in their own right" marks a significant governance shift. He is also connecting people -- introducing Martin to Harry Lawrence, linking Victor in Miami.
-- **Ben Brooks (offscreen):** Pushing for Claude Code access at his seniority level. His 10x AI KPIs for the advisory group signal strategic ambition beyond the current programme scope.
+- **Ben Brookes (offscreen):** Pushing for Claude Code access at his seniority level. His 10x AI KPIs for the advisory group signal strategic ambition beyond the current programme scope.
 - **Diya (offscreen):** Consistently described as impatient with no attention span. The 15-minute, 2-slide constraint is not a presentation format -- it is a character description. Getting her approval is essential for resourcing.
 - **Harry Lawrence (offscreen):** Identified as an ideal guinea pig for Build in Five -- has engineering familiarity, has built things, but cannot deploy them. Exactly the user profile the framework is designed for.
 
@@ -66,7 +66,7 @@
 | Richard | Pitch to Diya next week | Team | Firm |
 | Richard | Introduce Martin to Harry Lawrence | Martin | Firm |
 | Richard | Introduce Martin to Victor in Miami | Martin | Firm |
-| Ben Brooks | Secure Claude Code access | Team | Moderate |
+| Ben Brookes | Secure Claude Code access | Team | Moderate |
 
 ## Meeting Effectiveness
 - **Clarity of purpose:** 8/10 -- Build in Five scope finally clarified after weeks of ambiguity
@@ -80,7 +80,7 @@
 - **Four of five workstreams have had zero progress** -- Richard's admission that only CLARA has been "kicked off in earnest" means the programme is significantly behind its committed scope. Severity: HIGH
 - **Diya pitch is high-stakes with a narrow window** -- 15 minutes, 2 slides, no patience. If the pitch fails or Diya is unclear, resource approval stalls indefinitely. Severity: HIGH
 - **Naming and communication debt** -- Martin's confusion about "Cursor for Pipeline" lasted weeks. If naming confuses the delivery team, it will confuse stakeholders too. Severity: MEDIUM
-- **Claude Code access dependency** -- Ben Brooks pushing for access but no guarantee of timeline. If it does not arrive, internal productivity demos are hampered. Severity: MEDIUM
+- **Claude Code access dependency** -- Ben Brookes pushing for access but no guarantee of timeline. If it does not arrive, internal productivity demos are hampered. Severity: MEDIUM
 
 ## Open Questions Raised
 - What exactly should the Build in Five demo look like at exceedance? Needs Bala as sponsor.

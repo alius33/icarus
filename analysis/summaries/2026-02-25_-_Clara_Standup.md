@@ -1,6 +1,6 @@
 # Clara Standup — Martin Onboarding and Programme Catch-up
 **Date:** 2026-02-25
-**Attendees:** Richard Dosoo, Azmain Hossain, BenVH, Martin Davies, Ben Brooks (remote)
+**Attendees:** Richard Dosoo, Azmain Hossain, BenVH, Martin Davies, Ben Brookes (remote)
 **Duration context:** Long (~44 minutes)
 **Workstreams touched:** WS2 CLARA, WS6 Build in Five, WS1 Training
 
@@ -19,7 +19,7 @@
 ## Decisions Made
 | Decision | Type | Confidence | Owner |
 |----------|------|------------|-------|
-| Martin allocated 75% to Building in Five for 12 weeks | Resourcing | High | Ben Brooks (sign-off pending Stacy) |
+| Martin allocated 75% to Building in Five for 12 weeks | Resourcing | High | Ben Brookes (sign-off pending Stacy) |
 | CLARA flat-pack model for cross-OU reuse, not shared multi-tenant | Architecture | High | Azmain |
 | Four delivery mechanisms for Building in Five intake | Design | Medium | Richard / Azmain |
 | March 21 exceedance event remains the target for Build in Five demo | Timeline | Medium | Richard / Martin |

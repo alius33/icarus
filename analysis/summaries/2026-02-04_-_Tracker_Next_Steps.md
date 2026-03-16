@@ -21,7 +21,7 @@
 
 ## Decisions Made
 - **Partner section is the next quick-win before adoption charter** | Type: Prioritisation | Confidence: High | Owner: Richard/Azmain
-- **Adoption charter waits for Ben Brooks to finalise format with Steve Gentilli/Liz** | Type: Dependency | Confidence: Medium | Owner: Ben Brooks
+- **Adoption charter waits for Ben Brookes to finalise format with Steve Gentilli/Liz** | Type: Dependency | Confidence: Medium | Owner: Ben Brookes
 - **Three-environment deployment: dev, staging, production** | Type: Technical/Process | Confidence: High | Owner: BenVH
 - **Martin to scope Build in Five and produce directional estimates before holiday** | Type: Planning | Confidence: Medium | Owner: Martin/Azmain
 - **Diya pitch planned: 2 slides, 15 minutes, all workstreams** | Type: Strategic | Confidence: High | Owner: Richard
@@ -77,7 +77,7 @@
 - **Programme management gap** -- Richard's admission that they need to "treat these like projects in their own right" confirms that programme governance has been absent. Severity: MEDIUM
 
 ## Open Questions Raised
-- When will Ben Brooks finalise the adoption charter format?
+- When will Ben Brookes finalise the adoption charter format?
 - How to handle Idris's banking app -- separate infrastructure or shared?
 - Navigator L1 workstream -- needs a separate meeting, too complex for quick discussion
 - How to get non-technical users building apps safely (the Build in Five challenge)

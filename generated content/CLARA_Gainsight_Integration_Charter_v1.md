@@ -31,7 +31,7 @@ This charter defines the scope, responsibilities, timeline, and success criteria
 | Name | Role |
 |------|------|
 | Azmain Hossain | Programme Manager & Lead Developer, CLARA |
-| Ben Brooks | Product Owner, CLARA |
+| Ben Brookes | Product Owner, CLARA |
 | Richard Dosoo | Programme & Operational Owner |
 | BenVH (Van Houten) | Infrastructure Engineer (AWS, CI/CD, App Factory) |
 

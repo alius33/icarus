@@ -86,7 +86,7 @@ Chris M  7:46
 Got it? Okay? So I'm on the bugs. I'll focus on that and just start going back from there. Hopefully I get the data access. We get that data access, so then and iterate and resolve honestly.
 
 Azmain Hossain  8:00  
-Man, the the bug fixes right now are a nice to have, not a must have, because anything that's a must have I've I've already done so that okay, like my manager, Natalia, can run the portfolio view Ben Brooks and BIA can look at the management dashboard and see the numbers that they want. Everything else is user problems. And the thing is, the users don't even want to use it. They they sign in on like Sunday evening, put in a few updates, and then, you know, ready for the Monday call, and then that's it. They don't touch it for the rest of the week.
+Man, the the bug fixes right now are a nice to have, not a must have, because anything that's a must have I've I've already done so that okay, like my manager, Natalia, can run the portfolio view Ben Brookes and BIA can look at the management dashboard and see the numbers that they want. Everything else is user problems. And the thing is, the users don't even want to use it. They they sign in on like Sunday evening, put in a few updates, and then, you know, ready for the Monday call, and then that's it. They don't touch it for the rest of the week.
 
 Chris M  8:35  
 Okay, so Well, that's good to know. So this is a good learning opportunity. It's almost where I can get learning and get it acquainted with

@@ -41,16 +41,16 @@ def _extract_title_candidates(title: str) -> list[str]:
                 seen.add(canonical)
 
     # Handle ambiguous "Ben" — if title has "Ben" but no qualifier
-    if "Ben" in title and "Ben Brooks" not in seen and "Ben Van Houten" not in seen:
+    if "Ben" in title and "Ben Brookes" not in seen and "Ben Van Houten" not in seen:
         # Check for infrastructure context
         if re.search(r'(?i)aws|deploy|cicd|infrastructure|env|phantom', title):
             if "Ben Van Houten" not in seen:
                 candidates.append("Ben Van Houten")
                 seen.add("Ben Van Houten")
         else:
-            if "Ben Brooks" not in seen:
-                candidates.append("Ben Brooks")
-                seen.add("Ben Brooks")
+            if "Ben Brookes" not in seen:
+                candidates.append("Ben Brookes")
+                seen.add("Ben Brookes")
 
     return candidates
 

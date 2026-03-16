@@ -31,13 +31,13 @@ I mean, I'm sure I'm, I don't know i I'm sure they, I'm sure you're secure me. I
 Richard Dosoo  3:01  
 that I do. The whole reason we're in this figure is because we used to share all these memes on Instagram, on the chat, in Slack, and that was fine, and they moved us over to teams, and then all the meme traffic stopped because everything was getting blocked. So I'm sure that's what, to be honest guys on the list, but yeah, now the thing has come through harmful content, but it's fine. I've saved it now. So the good news is we have this version of the app running. This has the dashboard with some meaningful rack status is wonder if Ben's done, click through. So I missed, No, it hasn't. We've got migration status is not there yet, but that's fine. Upcoming milestones and action items. We've got the use cases by customer on the dashboard. Then if you go down to use cases, we've got more detail of the customers and the use cases that we could pull out here. We've got some blockers, which is good. And then we've got some data issues. So use cases green, but no blockers, use cases without current statuses. So when Ben jumps on in a minute, oh, period, oh now we had to leave. Sorry, I'm late. We're just going through bed. So this is the AWS deployment that's up and running the base version, and we're going to demo this tomorrow. Well, potentially we'll demo with some upgrades that has made, or we can potentially work on in the morning and deploy before the corpus. So that plan A is we'll go through the build as it stands. Plan B is, if we get everything all done running with the deployment the automated pipeline, then we can deploy some changes to their tomorrow. But I guess Ben, what we've got you, it's great to that, dear, and we've got engagement from. Support more broadly from like, even as far as I've heard as Andy Fripp, what do you need in terms of collateral from us to prep for that kind of meeting, or drive that meeting, or when is it going to happen? And we can work backwards and make sure that we have, you know, really good demo,
 
-Ben Brooks  5:18  
+Ben Brookes  5:18  
 yeah, no, no. Firm date. Probably. Wednesday or Thursday next week, earliest Tuesday next week. I think, I think, like the exam question for that meeting is, what can you show us to give us confidence that we're going to achieve the 35 migrations we need this year, which is our bunch of stuff. So there's a presentation that various people are going to are going to pull together, but we may want to show the system and the way of working and the programme review and all that good stuff to sort of make the point that, no, we maybe can't give you the confidence in that answer in terms of the underlying data right now, but we can give you confidence that we're doing a better job of servicing the visibility that's required and the plans that are required through this kind
 
 Richard Dosoo  6:12  
 of thing, the exact dashboard for that meeting, right?
 
-Ben Brooks  6:16  
+Ben Brookes  6:16  
 No, probably not, to be honest, more the process of how we're going to manage the whole thing. So the contextualised dashboard, the showing the use cases, showing the blockers, showing the action plans, so that everybody can understand how we're going about this now in a better way, yeah,
 
 Richard Dosoo  6:41  
@@ -49,7 +49,7 @@ once second deck from
 Richard Dosoo  7:13  
 Git. No, there was a previous version that was more process orientated, and it had, it's just had a couple of slides in there. I'm just going to bring it up now, or maybe Ben, if the structure of these slides is good, then maybe that's what we focus on. In parallel, we'll build out those that messaging, and then in parallel, we're working on the build and the features, while I'm bringing that up, just, I guess the game plan for tomorrow, more broadly, was to go and solicit some feedback from Liz Christine Steve, because the Ben they had already discussed, or they have already been discussing potential enhancements that they wanted the adoption charter process. So I was thinking that once we go through the app with them tomorrow, that we can get their feedback, and then that can also then feed into what set of priorities Azmain and myself are going to start.
 
-Ben Brooks  8:12  
+Ben Brookes  8:12  
 I think, I think let's stage it so. So first, let's do general clean up, context aware data entry get the thing working, sort of across the down to the solution, part of the menu, right? Yes, the first five, whatever that is, seven things, and then charters, blueprints, milestones, next, with whatever refinement is needed to those sections. But I want to get use cases, blockers, data issues, action plans, team members nailed in an impressive way, because that's the core of the visibility the data visibility problem, right? Yeah, but at that point we can, we can get people to go in there and start entering shit, and we start to create data that we can have faith in and report and turn down the number of fire drills we have and all that kind of thing. And then after that, we can say, okay, great. How do we capture the right material from the charters, the right material from the blueprints? Because that's going to be an exercise of uploading existing material in the right formats anyway, right? So I think, I think I'd phase it that way.
 
 Richard Dosoo  9:28  
@@ -58,19 +58,19 @@ Yeah, okay. No, that makes sense. Well, the CRUD operations for those seven enti
 Azmain Hossain  9:51  
 repo version and that's deployed, I'm going to just branch off from that. So I'm just, yeah, you give me. The steps that I need to so, yeah, I'll just create a branch, start testing it and start showing you when I
 
-Ben Brooks  10:07  
+Ben Brookes  10:07  
 can, yep, so can I, can I just, can I just check rich that URL advisory, app factory.com/irp, adoption tracker. That's just the pretty URL on top of the link that we were using earlier. Is it?
 
 Richard Dosoo  10:21  
 Yeah, that's the unblocked URL that then,
 
-Ben Brooks  10:25  
+Ben Brookes  10:25  
 yeah, but pointing to the side that it's not a different version of it or anything like that. We're still, yeah, it's AWS, all of the intra ID stuff, yeah. Okay, cool. So then that's great,
 
 Speaker 1  10:41  
 multiple versions, and sorry, we'll have multiple staging environments and stuff like that configured once everything's in motion.
 
-Ben Brooks  10:49  
+Ben Brookes  10:49  
 Yep, great. But if, but if, Azmain could pull down a version tonight and start iterating on improving each of those pages tomorrow. I think I don't know, but I suspect the trickier bit is the well, we need to get the team members loaded in there in order that we can do the context aware part of the team, of the user, seeing what is relevant to them only. So we need to get that right and after that, and also the Edit ability only edit stuff that you're on the team for, and then potentially it can go relatively live or to a small subset of people that we trust first to start entering stuff, yeah.
 
 Richard Dosoo  11:29  
@@ -112,19 +112,19 @@ Okay, okay, yeah, oh, this was just linting. Okay, yeah, we can go through this 
 Richard Dosoo  15:28  
 But what? In the meanwhile, Azmain, you can branch off this. Well, first you can check the code out locally, pull it down, and you can start making your changes locally. And then we can talk more about when you want to do a pull request tomorrow morning. Okay, tomorrow morning, but yeah, the immediate actions will be CRUD operations for these first seven tables. And then once you've tested that locally and you have data locally, then by the time we connect tomorrow morning as well, we'll be ready to do the pull request. Cool. All right. Well, Ben, I think that's that's us in good shape then, yeah, but that'll be the plan. Yeah, I'm going to work with Azmain on it tomorrow. I'm sure we're going to speak tomorrow, and I'll update you where we are, and then when that meeting is in the calendar for Tuesday, we would have had more than ample time to have gone through the demo, have got all the data in and got some sample data there to show the CSMs and show Stacy and stuff how it's worked. So it should be good.
 
-Ben Brooks  16:31  
+Ben Brookes  16:31  
 Yeah, great. So the Polish layer, the edits, the context, and then there are a few data bits that Azmain was hopefully might be able to get pushed in there in terms of migration workflows. There was something else in there. I think I pinged you on it, Azmain, that'd be brilliant, if we can do all of that. And if it's helpful in the short term, we can switch off the menu items for the bottom half of that current menu, just to sharpen the focus a bit, but I mean everything, but everything below, like solution, basically for the time being,
 
 Richard Dosoo  17:08  
 yeah, the partner and partner bench, but Azmain gets through right, because he's quite good at the stuff where I see,
 
-Ben Brooks  17:14  
+Ben Brookes  17:14  
 no, totally, totally, I'm I'm v2 can happen next week. This is awesome.
 
 Unknown Speaker  17:21  
 Let me. Let me know, anticipating
 
-Ben Brooks  17:24  
+Ben Brookes  17:24  
 next time I log in, it's going to be like, do you like this version? Or do you like
 
 Speaker 1  17:30  
@@ -136,7 +136,7 @@ just make it so that I can just edit it within the UI, yeah, yeah, yeah. Some ha
 Richard Dosoo  18:00  
 And then, and Ben, one thing that I did want to sync up with you on was the I need to set up a separate call with Idris just anyway to more like we got a load of prep we need to do for this meeting on the 26 with Mike Steele and stuff. But what I wanted to do was, I think it would be good idea to walk Ari la Harvey and Jamie Stark through this. And more importantly, some of the other things that we want to do to track, manage our adoption is because ideally you want them in sales recon, long term, right? So in that meeting on the 26th that I'm sure I know I've got you an invite in there Ben, is we're going over all of the things that we need to do today and all of the scope of what we're doing today to manage our customer adoption. And we, we want to show that to the sales recon team so they can add it to their roadmap and give dear commitments of what they're going to deliver at some point during this year. So I think this will be, if we get this, this would be a great way to kind of draw everyone around the discussion, to say, Okay, guys, while we're doing this in the short term now, to meet our needs, how are all of these requirements going to get put into sales recon going forward? So we don't even have to have this tool in outside in the longer term, like in 27 or the latter part of 26 and the and that opportunity dashboard that you spoke about is a really key like is a good use case, because that's the kind of insight that they want from sales recon right to look at opportunities and qualify them, and look at whiteboard, look at white space, or look at other stuff. So even if we just had, like, a wireframe or prototype in there that did it. It'd be very helpful, like driving that discussion, especially because Idris is trying to do exactly the same thing on the banking segment as well.
 
-Ben Brooks  19:51  
+Ben Brookes  19:51  
 Yeah, cool. I guess I, I don't want to do anything that kind of slows us down waiting for a solution that's that's on the. Way, but I don't know. I don't know that's what you're saying.
 
 Richard Dosoo  20:05  
@@ -184,7 +184,7 @@ Yeah, yeah. So now when you're in cursor, you should be able to connect to that 
 Richard Dosoo  24:59  
 Oh. It's got an open not workspace.
 
-Ben Brooks  25:10  
+Ben Brookes  25:10  
 Is that universal, then rich? Or is it just to the window you're currently working on locally? Because it looks like a universal setting.
 
 Richard Dosoo  25:19  
@@ -214,25 +214,25 @@ plan as you guys, but half the time I try and use Opus. It's like, it's currentl
 Richard Dosoo  27:52  
 else. No, but that's send a screenshot to that thread that I added you on is the cursor, guys, and we can ask the question, because they we shouldn't be running out or or that's we want to push on there to get more budget. Trust me, Opus is like superior in line. It's just Yeah, it's better for, for, for these kind of talks. I
 
-Ben Brooks  28:23  
+Ben Brookes  28:23  
 So where are you using Opus now rich on this kind of stuff that Azmain is doing here, or on, like broader refactoring kind of stuff,
 
 Richard Dosoo  28:32  
 nice. I've got Azmain. You mind if I should.
 
-Ben Brooks  28:35  
+Ben Brookes  28:35  
 I know you've got your I know you're on plot code and stuff like that. Yeah.
 
 Richard Dosoo  28:39  
 So I basically I've first I was using Claude chat, then I've now using Claude code. I collected Claude code to the GitHub repo, and I've basically pushed my changes into get from here. I can also use it to make updates to the app and deploy locally as well. Well, I was doing this because my cursor is busted around. I'm still waiting for them to come back to me and tell me how to fix it.
 
-Ben Brooks  29:01  
+Ben Brookes  29:01  
 Yeah. But you're using Opus for everything, or you're just,
 
 Richard Dosoo  29:06  
 no, I'm using it for everything. I mean, I don't have to. I could use it. I could use sonnet. I could use but I was just like, you know, this is the model that I want to use, because it's the the faster.
 
-Ben Brooks  29:19  
+Ben Brookes  29:19  
 Yeah, must be running up a bill
 
 Richard Dosoo  29:23  
@@ -250,43 +250,43 @@ right, and I'll reach out if I ask, if I've got any
 Richard Dosoo  30:42  
 questions or stuff cool, and then Ben. Now, I guess Ben, all that leaves us with now is figuring out, like I've got an email that the deployment fed, but yeah, so let me give you a call and we can talk through it
 
-Ben Brooks  30:55  
+Ben Brookes  30:55  
 sounds good. Cool, that one. Does anybody know what the bloody hell is going on with teams and links and unsafe this?
 
 Unknown Speaker  31:07  
 It's probably me.
 
-Ben Brooks  31:08  
+Ben Brookes  31:08  
 No, it's not. It's not. It's I've just tried to share that link with the guys that I showed it to on the stand up, and it's doing the same thing to me. There is somebody that is insistent we mustn't succeed here. Win at some point.
 
 Speaker 1  31:25  
 Let me I'm going to, since I'm going to share this with I'm taking a screenshot, I'm going to share this with the domain team.
 
-Ben Brooks  31:36  
+Ben Brookes  31:36  
 Oh yeah, yeah. Like this for the time being, I'm going to send everybody an image of that link, and they can type it in. It's just like, Could you really stop getting in the way? Mr. Security Policy, whoever it is,
 
 Speaker 1  31:50  
 yeah, I mean, I'm pretty certain I'm that they like so the security team is paying extra special attention to me right now.
 
-Ben Brooks  32:01  
+Ben Brookes  32:01  
 Well, and me, it seems
 
 Unknown Speaker  32:03  
 Yeah, well, it's just the Ben thing.
 
-Ben Brooks  32:09  
+Ben Brookes  32:09  
 All right, good stuff. We're getting there guys. Thank you. Really appreciate it. And then Azmain is on superpower dashboard duty tomorrow. That's awesome. We're excited.
 
 Azmain Hossain  32:20  
 I I
 
-Ben Brooks  32:23  
+Ben Brookes  32:23  
 know you will, and it's more than any of us have ever seen before. Progress wise, that's why it's so fun. So much fun. Awesome.
 
 Speaker 1  32:31  
 Let me know, Azmain, if you run into any issues or anything like that, I can, I can hop on. In essence, I'll reach out to you, because you're the person that is technically still working true. I mean, granted, I don't know the hours that Richard works, but it seems to compete with mine.
 
-Ben Brooks  32:50  
+Ben Brookes  32:50  
 It's easier to count the ones he doesn't. Yeah,
 
 Richard Dosoo  32:55  

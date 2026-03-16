@@ -8,13 +8,13 @@
 | 2026-01-07 | Natalia | Pragmatic, cautious | Baseline | Portfolio review needs | IRP Admin Support | N/A | High |
 | 2026-01-09 | Stacy | Administrative concern | Baseline | Licence procurement | AI Licenses Request | N/A | Medium |
 | 2026-01-09 | BenVH | Patient, methodical | Stable | AWS deployment | AWS Deployment | N/A | High |
-| 2026-01-14 | Ben Brooks | Visionary, engaged | Baseline | CLARA as platform | Chat with Ben B | N/A | High |
+| 2026-01-14 | Ben Brookes | Visionary, engaged | Baseline | CLARA as platform | Chat with Ben B | N/A | High |
 | 2026-01-16 | Josh Everett | Cautious, impressed | Baseline | CLARA demo | Demo and Feedback from Josh E | N/A | High |
 | 2026-01-19 | George Dyke | Collaborative | Baseline | Account planner overlap | Account Planner w George D | N/A | High |
 | 2026-01-19 | Cara | Supportive | Baseline | Sales Recon roadmap | CS Sales Recon Roadmap | N/A | Medium |
 | 2026-01-19 | BenVH | Frustrated | Declining | Deployment failures | Deployment DB Sync Debugging | N/A | High |
 | 2026-01-21 | Natalia | Genuinely engaged | Positive shift | Portfolio review structure | Portfolio Review New Process | N/A | High |
-| 2026-01-21 | Ben Brooks | Motivational | Stable | Monday demo narrative | Portfolio Review New Process | N/A | High |
+| 2026-01-21 | Ben Brookes | Motivational | Stable | Monday demo narrative | Portfolio Review New Process | N/A | High |
 | 2026-01-22 | Richard Dosoo | Strategically confident | Stable | Sales Recon convergence | Richard George SalesRecon Prep | N/A | High |
 | 2026-01-23 | Steve Gentilli | Enthusiastic ally | Baseline | Adoption charter consolidation | Adoption Charter w Steve | "If we had 20 columns, you've already got 15" | High |
 | 2026-01-23 | Idris | Very impressed | Baseline | CLARA as data hub | Pre-Monday Demo | "Very impressive" | High |
@@ -35,7 +35,7 @@
 | 2026-02-05 | Richard Dosoo | Politically worried | Declining | Gainsight as threat to CLARA | Chat with Rich | N/A | High |
 | 2026-02-05 | Natalia | Requirements-focused | Stable | 31 priority accounts defined | Portfolio Review with Natalia | N/A | High |
 | 2026-02-05 | Josh Everett | Tonal shift to partnership | Positive shift | CLARA relationship | Tracker Discussion with Josh | N/A | High |
-| 2026-02-09 | Ben Brooks | Authoritative | Stable | CSM usability override | Monday Tracker Standup | N/A | High |
+| 2026-02-09 | Ben Brookes | Authoritative | Stable | CSM usability override | Monday Tracker Standup | N/A | High |
 | 2026-02-09 | Josh Everett | Collaborative partner | Positive shift | RBAC restriction removed | Session with Josh Kathryn | N/A | High |
 | 2026-02-09 | Catherine | Constructive engagement | Positive shift | Golden source data gaps | Session with Josh Kathryn | N/A | High |
 | 2026-02-11 | Naveen | Proactive, only engaged CSM | Baseline | Data entry initiative | CSM Session with Naveen | N/A | High |
@@ -53,7 +53,7 @@
 | 2026-02-23 | Diya | Three-pillar endorsement | Major positive shift | Programme direction approved | Meeting with Diya | N/A | High |
 | 2026-02-23 | Richard Dosoo | Relieved | Improving | Governance clarity | Meeting with Diya | N/A | High |
 | 2026-02-23 | Azmain Hossain | Token budget crisis | Declining | $750 in 3 days | Next 2 Weeks Plan | N/A | High |
-| 2026-02-23 | Catherine | Identified as detractor | Negative signal | Maps team reversal | Tracker Standup | N/A | Medium |
+| 2026-02-23 | Kathryn Palkovics | Identified as detractor | Negative signal | Maps team reversal | Tracker Standup | N/A | Medium |
 | 2026-02-25 | Martin Davies | Re-engaged post holiday | Improving | 12-week plan confirmed | Clara Standup | N/A | Medium |
 | 2026-02-26 | Nikhil | Eager but friction-causing | Baseline | Cat Accelerate onboarding | AI Infrastructure | N/A | Medium |
 | 2026-02-26 | Chris | Methodical, humble | Baseline | Onboarding to CLARA | AI Infrastructure | N/A | Medium |
@@ -79,7 +79,7 @@
 | 2026-03-06 | Azmain Hossain | Protective, also looking | Mixed | Career frustrations | Chat with BenVH | N/A | High |
 | 2026-03-06 | Richard Dosoo | Briefly considering options | Stable | Personal considerations (resolved mid-March) | Chat with BenVH (revealed) | N/A | Low |
 | 2026-03-06 | Chris | Adapting well | Stable | Bug work as onboarding | Chat with Chris | N/A | Medium |
-| 2026-03-06 | Catherine | Critical new ally | Major positive shift | Governance volunteer | Pre Gainsight Team Meeting | "You're speaking my love language" | High |
+| 2026-03-06 | Kathryn Palkovics | Critical new ally | Major positive shift | Governance volunteer | Pre Gainsight Team Meeting | "You're speaking my love language" | High |
 | 2026-03-06 | Azmain Hossain | Strategically using governance | Mixed | Welcomed slowdown | Pre Gainsight Team Meeting | "We're exhausted" | High |
 | 2026-03-09 | Azmain Hossain | Frustrated with CSMs, creating space | Mixed | CSM support burden | Bug fixes chat with Chris M | "It's been four weeks, and you're an adult and it's 2026" | High |
 | 2026-03-09 | Chris M | Honeymoon phase, methodical | Stable | CLARA onboarding | Bug fixes chat with Chris M | N/A | High |
@@ -90,21 +90,21 @@
 | 2026-03-11 | Richard Dosoo | Protective/Combative | Escalating (toward confrontation) | BenVH defence | App Factory Standup | Ready to directly confront Nikhil. "Nobody likes that... if you cant work collaboratively, work with your team" | High |
 | 2026-03-11 | Azmain Hossain | Self-aware/Assertive | Positive shift | Own authority | App Factory Standup | Acknowledged need to be more assertive about his PM role. People questioning why someone junior is running things. | High |
 | 2026-03-11 | Nikhil | Impressed/Unaware | Baseline (unaware of resistance) | Build in Five demo | Build in 5 standup | Genuinely impressed by Martin work. Does not appear aware of plans to redirect him away from App Factory. | High |
-| 2026-03-11 | Catherine | Enthusiastic ally | Positive shift (UP) | App Factory approach | Salesforce Integration Design | Called the approach "breaking down siloed walls" — strongest endorsement yet. Now fully engaged. | High |
+| 2026-03-11 | Kathryn Palkovics | Enthusiastic ally | Positive shift (UP) | App Factory approach | Salesforce Integration Design | Called the approach "breaking down siloed walls" — strongest endorsement yet. Now fully engaged. | High |
 | 2026-03-11 | Juliet Valencia | Pragmatic/Cooperative | Baseline | Infrastructure struggles | Sales team apps in App Factory | Hitting same walls as everyone. Self-reliant (chose own infra over shared hosting). Good data governance instincts. | Medium |
-| 2026-03-12 | Azmain Hossain | Furious / frustrated | Down | Catherine blindside + Gainsight integration | Post Gainsight team meeting debrief | N/A | High |
-| 2026-03-12 | Ben Brooks | Strategically aggressive | Stable | Gainsight integration waste of time | Post Gainsight team meeting debrief | N/A | High |
+| 2026-03-12 | Azmain Hossain | Furious / frustrated | Down | Kathryn Palkovics blindside + Gainsight integration | Post Gainsight team meeting debrief | N/A | High |
+| 2026-03-12 | Ben Brookes | Strategically aggressive | Stable | Gainsight integration waste of time | Post Gainsight team meeting debrief | N/A | High |
 | 2026-03-12 | BenVH | Angry but productive | Stable | Vendor lock-in frustration channelled into MCP server | Post Gainsight team meeting debrief | N/A | High |
-| 2026-03-12 | Richard Dosoo | Emotionally reactive | Down | Catherine prep failure, time wasted | Post Gainsight team meeting debrief | N/A | High |
+| 2026-03-12 | Richard Dosoo | Emotionally reactive | Down | Kathryn Palkovics prep failure, time wasted | Post Gainsight team meeting debrief | N/A | High |
 | 2026-03-12 | Natalia Plant | Governance-focused, calm | Stable | Establishing structure for Clara releases | Clara feedback cadence | N/A | High |
 | 2026-03-12 | Stacy | Pragmatic, relieved | Up | Clara stabilising, ISLT using tool directly | Clara feedback cadence | N/A | High |
 | 2026-03-12 | Natalia Orzechowska | Calm, reassuring | Stable | Gainsight POC timeline pressure defused | Post Gainsight call with Natalia | N/A | High |
-| 2026-03-12 | Azmain Hossain | Relieved / assertive | Up | Gainsight pressure removed; Catherine strategy discussed with Diana | Post Gainsight call + Diana 1-1 | N/A | High |
-| 2026-03-12 | Diana | Engaged, politically astute | Up | Programme scope understanding; advisory role on Catherine | Diana 1-1 | N/A | High |
-| 2026-03-12 | Catherine | Monitoring/controlling | Stable | Raising Clara issues, governance concerns, organising Gainsight meeting | Clara feedback cadence (discussed across multiple) | N/A | Medium |
+| 2026-03-12 | Azmain Hossain | Relieved / assertive | Up | Gainsight pressure removed; Kathryn Palkovics strategy discussed with Diana | Post Gainsight call + Diana 1-1 | N/A | High |
+| 2026-03-12 | Diana | Engaged, politically astute | Up | Programme scope understanding; advisory role on Kathryn Palkovics | Diana 1-1 | N/A | High |
+| 2026-03-12 | Kathryn Palkovics | Monitoring/controlling | Stable | Raising Clara issues, governance concerns, organising Gainsight meeting | Clara feedback cadence (discussed across multiple) | N/A | Medium |
 | 2026-03-13 | Cihan | Full champion | Major positive shift | CLARA as strategic enabler for customer obsession | CLARA Demo to Product & Tech teams | "An amazing source to actually get all of the information you need" | High |
 | 2026-03-13 | Nils | Collaborative, generous | Baseline | Cross-OU AI training methodology sharing | How Credit team in Banking does AI training | N/A | High |
 | 2026-03-13 | Wasim | Pragmatic, adoption-focused | Baseline | Agent day design and knowledge sharing | How Credit team in Banking does AI training | N/A | High |
 | 2026-03-13 | Lucia | Engaged, proactive | Baseline | Dashboard needs and App Factory interest | Review AI Powered Dashboards | N/A | High |
-| 2026-03-13 | Ben Brooks | Strategically measured | Stable | CLARA as cross-functional collaboration tool | CLARA Demo to Product & Tech teams | N/A | High |
+| 2026-03-13 | Ben Brookes | Strategically measured | Stable | CLARA as cross-functional collaboration tool | CLARA Demo to Product & Tech teams | N/A | High |
 | 2026-03-13 | Azmain Hossain | Confident, candid | Up | Large audience demo; token cost transparency | CLARA Demo to Product & Tech teams | "I honestly believe because of Clara, we've done more than half of our yearly target" | High |

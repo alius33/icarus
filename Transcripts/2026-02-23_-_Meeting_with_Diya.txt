@@ -19,7 +19,7 @@ sorry, just on this one, there is a follow up there, right, which we talked abou
 Natalia  1:25  
 I actually had a conversation with Julien on Monday because we were already talking about that world at life, and I was just explaining, it's not really very IRP specific, where it can be reused for others. But then my advice would be focused on having building with a particular programme, not like go to for everything, because we have it for IRB, let them have it for EGL hosted. So something specific to cover. Yep.
 
-Ben Brooks  1:52  
+Ben Brookes  1:52  
 And then we were going to do it today, but we couldn't make it because we're at Lloyds. We're going to spend 20 minutes with Christos leadership team. Oh, good. Talk about the architecture. It's all on that kind of stuff. And I think the ask is, and same with Courtney. Let's have an Courtney combination of domain specific completely. So, you know, someone who understands the IRP programme, like Azmain did to be able to say, I'm going to help build combined with, like, centralised, his how we're going to get his best case recommended stuff, and then I think we can do it. And we Courtney, someone like Carlin, would be amazing if we could get her time to invest in this, but that might be a big ask, so that we need to figure out exactly we need the business to prioritise that. Same with George, yep. Next is
 
 Speaker 2  2:52  
@@ -40,19 +40,19 @@ recon, it's part of their vision for sales refund. It was supposed to be slated.
 Richard Dosoo  3:58  
 So I think we would have, ideally, that would have been delivered by the end of March. It's going to be late. So what do we do in the meanwhile? So I'll touch on that on the timeline. And then the other piece on here is the we're waiting on the delivery from the platform team. They've got this capability called IRP navigator. We want to use it to actually not only enable our partners, but we want to use it to resolve our one ticket staff embrace. So we're going to build some an extension to that tool that can be leveraged to answer tickets that have come in. And Courtney is part of this requirements for that. So that falls into that.
 
-Ben Brooks  4:41  
+Ben Brookes  4:41  
 Point. So with Courtney, we've talked a little bit about getting the data pipelines right first, like the way to connect into user, voice and Mixpanel, Salesforce, all the rest of it. She's a little nervous about shooting for the stars in terms of what we actually put in practice too quickly. Wants to get that right. I think we can do both in parallel, because we know.
 
 Speaker 2  5:00  
 Meet again. Can we make this to our you know, we have a scorecard objective on navigators, and we do see turnaround time. So, and
 
-Ben Brooks  5:12  
+Ben Brookes  5:12  
 is this, is this proposing to use Barlas thing as well?
 
 Richard Dosoo  5:15  
 Or it is, essentially, we bought some tooling on top of buyers agent, yeah, and it takes the first pass of answering a ticket, if it's valid, then maybe that's a separate meeting.
 
-Ben Brooks  5:27  
+Ben Brookes  5:27  
 Well, that's the MCP server that she had and CO are building.
 
 Speaker 2  5:31  
@@ -106,7 +106,7 @@ Azmain may freak out the statement, I don't overly worry about the value, becaus
 Speaker 2  8:36  
 week, right? It helps almost your iteration.
 
-Ben Brooks  8:40  
+Ben Brookes  8:40  
 Yeah, exactly. And I think you can, then you can take whatever we build and, say, building a PRD for this thing, hand it over to the sales rep guys, and they can find the difference.
 
 Speaker 2  8:49  
@@ -118,7 +118,7 @@ Well, disagree, but I think make it robust enough that it's usable. Yeah, it doe
 Speaker 2  9:07  
 and I think you also have to manage expectations from the CSM team, right? Like this is here to help you for the here and now. It's possible this will live in Salesforce or Gainsight or something in the future.
 
-Ben Brooks  9:20  
+Ben Brookes  9:20  
 Yeah, yeah. So some help on that front will be good if you are able to sort of, I mean, maybe this afternoon session, like what we're building, is at a pace that we call on you guys. But I think there's a there's a kind of reluctance to start using something until the CSM space is entirely comfortable that it will never fall over, and they will never have to double into one piece of data. And I'm kind of saying fail fast move if you have to double entry on Monday, on a Friday, one weekend. Not a problem, really not a problem, guys. Let's be realistic. I think that would that culturally needs to. Should begin to go faster.
 
 Azmain Hossain  10:01  
@@ -137,7 +137,7 @@ Speaker 2  10:48
 the thing to do Natalia is you can help investigate with Charlotte Tang, right? Hey, we're building, want to build this account planning feature and talk to Idris and say, Hey, this is something that leads banking. It's gonna make sense for everyone. So, you know, we want to do the ideation, we want to do it offline. We'll do kind of the requirements gathering. What's the integration process? If we build an agent on
 
 Natalia  11:12  
-top of games, I'll definitely have Katrin engaged in it, because Catherine is very much overlooking our hindsight.
+top of games, I'll definitely have Katrin engaged in it, because Kathryn Palkovics is very much overlooking our hindsight.
 
 Speaker 2  11:18  
 That's fine, but, yeah, okay, don't, don't, don't, like, just say, Look, we would like to do this. We'd like to understand that, and I can help reinforce it. Yeah, I was gonna ask, actually, is it Salesforce, as it gains, like in parallel
@@ -151,7 +151,7 @@ drive the internal capacity. The work that come up with the
 Richard Dosoo  12:00  
 app, factory building fire is all of platform, and then the content platform is something that they're actually inspired us to do, which is have some multilayer management. We
 
-Ben Brooks  12:27  
+Ben Brookes  12:27  
 up before. So there's a few things that I'm feeling at the moment with the team, which is that people don't know how to what are they shooting for if they try and get better at this stuff. So there's a little bit of it that is laying out in different functions. What does it mean to be aI enabled? And there's a framework we can build for that, you know, dinosaur, three to 5x or whatever, and then. But what does that look like for the job of doing account planning, or the job of making a cap one happen, or the job of implementation? And how should people expect those things to come to life? If we can show them examples of where you can give it every implementation project we've ever done and have it give you back recommendations. Those are the sorts of things you can build relatively easily given the domain understanding that is inherent in all the deliverables. But people don't think about that, yeah. They think, oh, I'm meeting the scorecard objective of one times copilot use per week. I'm fine. And I also want the advisory guys to think of themselves as they need to be pretty on this capability. So if we're not in the top 500 users across the business, that's a problem. There's two people in the top 500 users from my team right now. No, no, actually, because they're mostly doing it in Claude. But the and that's totally excused. That's fine. On bedrock, right? That's fine. So, but it's this understanding, and it's this kind of, what I need, an element and a train that we know we need to embrace the self learning opportunity and get faster. And, you know, we're, we're fairly sure there's something pretty powerful here that we want to explore, basically, and try to get it
 
 Speaker 2  14:02  
@@ -175,7 +175,7 @@ up with them, and then we, Dennis, coming from the team, has offered to review o
 Speaker 2  15:29  
 So something like sales recon, right? Like, that's kind of a hybrid, I suppose. All I'm saying is, I'm trying to figure out, like, what's the vision in terms of building on IRP versus anything over here? That is because the content is very linked to PNS, which is IRP. Are there scenarios in which, if it was not IRP, and there's a choice, right where, let's say the IP is today, sitting on IRP, but if there was a fork in the road, which is the IP is not sitting anywhere, or it's sitting somewhere else, like, if there was a project that draws upon Lewis's data state, right, like that, I would say we just be open minded. Like the default should not be like IRP for everything. It should be use case specific, right, definitely.
 
-Ben Brooks  16:24  
+Ben Brookes  16:24  
 But I think architecturally, almost all that stuff is API first anyway, so you can put it from where you need
 
 Unknown Speaker  16:29  
@@ -187,19 +187,19 @@ bump into is the permission side of it and the wall gardener. Well, I
 Speaker 2  16:35  
 just don't know how we are like, this is just a blind spot for me right now, right
 
-Ben Brooks  16:40  
+Ben Brookes  16:40  
 from a and that you mean that from a long term technology strategy, yeah.
 
 Richard Dosoo  16:45  
 But this can be the power, right? We can incentivize Sheila to open up the connectivity for us, because we have to say, look, we need this IP, yeah, that's going to help you. It helps us to help clients. You can productize it, give us the landed spot where we can put these things. Maybe that's the sell. Because in the past, we've asked them, it's been a bit hesitant to unlock any kind of capability for us to do this kind of stuff. But maybe if we can show them the value,
 
-Ben Brooks  17:08  
+Ben Brookes  17:08  
 it's a, I think it's a question for the islt conversation on this stuff is, what does Moody's want to be? Does it own the customer experience or not? Because if you want to own the way people interact with your information, kind of visually or workflow, any that kind of stuff. You have a strategy that I think is quite different to our current one, with, you know, massive, monolithic applications. Or do you want the data mode? Do you want the API rich, rich data and analytics, background as context? Well? I mean,
 
 Speaker 2  17:37  
 I think, you know, for Moody's generally and insurance is no different. Is it's the IP is going to be special sauce, right? And all of these become kind of delivery mechanisms. This is the conversation. But I think that's pretty loaded. I think maybe it's in the Gen AI thing which I'm trying to get you
 
-Ben Brooks  18:04  
+Ben Brookes  18:04  
 to be a partner. I think there's something about helping the user build their bespoke experience that we should be focused on, whether that's by service or partner or actual application.
 
 Richard Dosoo  18:20  
@@ -208,13 +208,13 @@ Yeah, I think just in the interest of time, because I know Rahul is going to com
 Unknown Speaker  19:03  
 yeah, something we'll discuss. Yeah, I
 
-Ben Brooks  19:05  
+Ben Brookes  19:05  
 think it's a smallish team, 345, people, but whether something of a kind of prioritisation and roadmap of things we want to go touch well,
 
 Speaker 2  19:12  
 and then we have to, like, what is the outcomes from that? Right? Like, it's building all of this stuff. But what does that mean? Is it productivity in terms of output, or is it productivity in terms of efficiency gains, right, where we, let's say, you know, we have done over in the team, like we're not going to replace that person, because now we don't need to, right? We're better tools, right?
 
-Ben Brooks  19:35  
+Ben Brookes  19:35  
 I think people get really nervous about that as a message. They shouldn't be. They should accept it. It's the here and now, but you can do that. But I think there's a way of doing that, that is with an account planning application. CSM, can manage 10 accounts on five exactly, or five in a much richer way. And same is true across all the different jobs that we. Something too, I think. But then organisation, I think we need to think about, well, you know, where does something like this sit if we have an AI ops kind of thing going on, how we all make that work? I think we can be a fairly fluid and creative on
 
 Azmain Hossain  20:15  

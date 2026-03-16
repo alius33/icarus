@@ -1,10 +1,10 @@
-Ben Brooks  0:43  
+Ben Brookes  0:43  
 Hey, good, thanks. Yeah, we did in the office. You've wasted an hour of good vibe coding time on the tube or train or something, right?
 
 Azmain Hossain  0:54  
 Do you know what the level of the speed? It's shocking me as well. Uh huh. Where, like, literally, I closed my laptop yesterday and then I just had an idea where I was like, why are we asking people to fill in an Excel sheet to put in the data? Why not just make a data input, like, page? Literally, I opened up Claude and just talked to it. I was like, Yeah, can you structure
 
-Ben Brooks  1:21  
+Ben Brookes  1:21  
 Yeah, It's bonkers, isn't it? It's totally mad. I've been toying with ditching most of my ridiculous AI subscriptions and just shoving it all on Claude. And I was sitting there in the app yesterday, on the desktop app, I asked it to do something, and I didn't even know it was capable. Suddenly, like, shit started happening in my browser. It was reading things as this, what you wanted? Uh huh, yeah, the desktop app was just like, off doing shit on my computer. And, I mean, it was a little bit unnerving, because I don't recall giving it permission. The other thing Claude does, that I chat GPT may do. I just haven't really noticed it be particularly intelligent. It is beginning to know me, which was really fucking freaked me out last night, because I don't, I don't tend to say to it things like, you know, the names of my kids and stuff like that. But I asked it last night because kit had finished his latest book, we didn't know what to read like. We don't have that many kids books in the house, because ALEC is his older sister. He wouldn't want to read the same shit, right? So I was just like, What should I go buy on Amazon? My prompt was something like, give me recommendations for a nine year old boy, some sci fi elements. Loves a good space movie. What can I get him hooked on a book with? And it came back and it said, kit's favourite books are likely to be I was like, How the fuck do you know my child's name? And what I realised is, like, in a different prompt a couple of weeks ago, I was trying to build, I'm sick of paying sky 150 quid a month or whatever it costs. Now it's an absolute piss take just to watch Netflix and stuff like that. So I've been designing my own, like, home, you know, streaming aggregator and and I told it kit's name as part of that for the profile that he will look into. And it's, it's just like, Jesus man, it's, it's gonna know me better than me soon. It's terrifying that
 
 Azmain Hossain  3:20  
@@ -13,55 +13,55 @@ needs to be a setting, but for us, for example, it could be massively helpful. Y
 Speaker 1  3:31  
 my headphones, so we have to take loud calls in meeting rooms. Yeah. Not allowed. Not allowed.
 
-Ben Brooks  3:41  
+Ben Brookes  3:41  
 Okay, good stuff. Yeah. So I set up half an hour for us to chat about the structure of that meeting, really Natalia. I mean, obviously there's the whatever we want to do on Monday as a kind of kickoff and what we want to present and how we get people on board. But I was also thinking, as part of that conversation, we sort of want to let the team know what the expectation is going to be every week. And so us sort of agreeing what that structure needs to look like will be pretty helpful to explain it to other people. And so that was, that was the topic, really. But then I started to try to put some thoughts down, open PowerPoint, and realised I was wasting my time, open cursor, and started building shit. So I started to put together a page that we could use to structure the conversation. I don't know if it's good. I'm very happy to be told it's not. But I was thinking in each one of those hours, we want to probably go through near term priority migration accounts as, like, the big flashing red light, like, That's the commitment that we've made in the in the MA scorecard, and we have to deliver sort of thing. So if we have, like, a by quarter view of when the target. Completion dates of migration are that would give us like the equivalent of a closing date on a sales pipeline for the pipeline conversation priority. And then I was thinking, we just want to show the status of each of those, any that have anything but green. What's going on? Do we have a plan? Are we all happy? Yes, great, next. And so kind of structuring the conversation that way is how I had in mind. But let me stop talking and see if that is a collective understanding, or you would think about it differently.
 
 Natalia  5:40  
 The way I see it is that, because we do have a high prior list, this high prior list should always be on the agenda regardless what the status is. It's only 20 customers, but we always have to talk about them, whether they're green or amber, obviously, if red, anyway, we talk about them, but it has to be a given that we always give attention to those. So that's the first point. Second point, I would be suggesting to look at those that are red and non priority. Because obviously, if they're right, we need to say why. And then again, depending how many reds we have, next step would be looking at at numbers only those that that particular CSMs would like to mention, and kind of not talk about greens. So that's from the perspective of of the status. But then there is a second part, which I know Ben you wanted to focus on, but I'm not sure to what extent our tool is able to show this kind of reporting, and that would be the level of CSM activities, because I remember you wanted to have some sort of a scorecard for CSM showing who didn't touch on a client in the last few weeks, et cetera. I think this could be our overall priority too in the portfolio review, but I wouldn't like that to become the major focus of the call, because that's not about how good CSMs are. I would probably rather keep the CSM scorecards for Josh and George to review and discuss with their groups individually, rather in this call. So that's how I see it. We always talk about prior list, and then we look at reds, we look at some numbers, and we don't really talk greens.
 
-Ben Brooks  7:32  
+Ben Brookes  7:32  
 Okay, cool. Totally agree. This is I was just gonna say the way I was kind of thinking about the structure of the meeting, and it's probably too much fit in, but we'll get it back. Tim, but we'll give it a bash if we think about the prioritisation of accounts, and let's, let's do that by high prior priority, but also by quarter, so we make sure we don't miss anything that's in the current quarter, but low priority, because we just want to make sure it's going to happen. But then there's, there's topics of conversation around the action owners. So like, are we collectively clear on what the actions are? Are we collectively clear on who's got the bat on, on it, and we know what's got to happen? A a section on, like, knowledge gaps, where we are, we can show that we're missing information. But that's not the same as a CSM scorecard. That isn't like a, you know, this guy never fills in his timesheets type conversation. It's a where are the knowledge gaps? Let's quickly populate them from the voices in the room, or work out the subset of people that need to meet for 20 minutes after this call, and fill in those gaps because we know the answers, or the triage process to collect that information because we don't know or the conversation we have to have with the customer, whatever it is. So there's a knowledge gaps bucket, and then I'd like to have a sort of accelerate bucket, where towards the end of the conversation we can say, here's a category, which is probably a pretty positive story, where use cases are all green. It's all on track. There's only 20% to go on this, but the date is q2 Why is the date q2 let's bring it forward. How do we make that happen? Okay, so those so, so the structure I had as as like timeline, action owners, knowledge gaps and accelerate, I think you're right to say, let's put the priority accounts in there.
 
 Natalia  9:19  
 How do we identify based on our current tool, where we have knowledge gaps?
 
-Ben Brooks  9:29  
+Ben Brookes  9:29  
 It's things like data completeness issues. Stale accounts are the two that it's flagged automatically. But as we, as we get into I think that's probably it for now, to be honest. But as we get into this, we'll be able to have better intelligence about there was a surprise over here. What did we learn from it?
 
 Natalia  9:48  
 So that would be the blockers view with the type data issue. And then we put this on the screen and say, Okay, we have this kind of data issues.
 
-Ben Brooks  9:58  
+Ben Brookes  9:58  
 Let me, let me show. Of ice cream, see if this makes sense. So Azmain, I pulled the whole thing locally. I'm not touching anything that's on GitHub, and I figured we'll just take a screen grab of this, and you can do it the right way against the right structured data at the right point in time. Here's here's what I got, or I can write a spec for it your view
 
 Azmain Hossain  10:26  
 on how, how it
 
-Ben Brooks  10:31  
+Ben Brookes  10:31  
 would be helpful for you to have it structured. So we've got, I was just checking out your data input file, but where are we? So I added a management section down here and a portfolio review page. And so this is what it's come up with. I told it sort of rough outline of what we wanted to do up here with running a portfolio review progress. You know, we need to know some of the following things, when's it due? What's the status? What are the blockers? And it the structuring of the challenge is kind of around, I told it by quarter, right? So that was, that was my instruction. So that will update this to be by high priority, as you suggested. Natalia, yeah, but starting by quarter, you know, we don't need to talk about this one. We don't need to talk about that one unless we can see something screaming at us that suggests it shouldn't be green. But basically, where are the amber ones? Where are the blockers on those Amber ones? Why are they not green? Here's one here that has a blocker. So we might spend a couple of minutes talking about that one. And there's just a little overview panel that will give us the detail on that without leaving the page if we want it, so that we can say these are the and I've asked it to call out the discussion points. It's not this is sort of slightly shifting the rhetoric in the application from, yeah, Woe that cowboy. You've got a you've got a red thing, but no blocker sorted out, to instead, oh, look, there's a discussion point here. What's blocking this customer? How do we unlock that? So the squad can have a conversation about it and do that a little bit, lie only for a couple of minutes, otherwise the whole thing gets derailed. And there's also a missing information capture here as well. But then, if you wanted to click through and look at more detail, you could, you could just be taken off to the Account page and come back afterwards. So I was, I was thinking that might help us sort of structure the conversation, and we would essentially go through and say, Okay, right now, we're on to, you know, bring on defence. Limited. Who's going to give us the speech on that one? We're all good, right? Okay, great. Move on and work through the pipeline that way.
 
 Natalia  12:41  
 So, okay, I think what you build here, what you're showing is like an extra menu specifically for Portfolio Review meeting, right? Okay, would I'm not saying no to this, because that's maybe structuring exactly how we should have a conversation. But I feel that maybe from the better usability of the tracker, it would be, it would be easier to have to use the existing dashboard or use case, or blockers, tabs and and to use what's, what is the possible filtering there during the meeting, because I think that also would show the people who are the audience participants, how we are using this tab, if we only, if we have a separate tab specifically for portfolio view. Okay, fair enough. It's a dashboard that is consolidating all of it, indeed. But I'm, I'm like, it's, I don't know, somehow I feel that it's, how do we justify the usability of dashboard customers use cases, blah, blah, blah. If we have something extra for that meeting, maybe it's just me thinking that this tool should give us enough flexibility to go through the agenda using the existing, existing dashboards. It's probably a matter of having the right filters.
 
-Ben Brooks  14:04  
+Ben Brookes  14:04  
 So yes, it is, yeah, you're right, yeah. Okay, so why don't? What I wonder is whether we dive around in the conversation. That would be absolutely fine. Let's say that we have a snapshot that says this is everything we expect in q1 because I don't think that really comes to life in other places in the app. Yet we don't have that kind of funnel thing embedded, and we can, we could use this as the prep rather than the meeting itself. So everyone knows nine o'clock on Monday morning that this is essentially the constituents of the conversation, and then in the actual discussion itself, we're in here looking for whatever Klingon, and we're talking about the zombie outbreak response use case, and we're editing it in the apple. Application is that, is that what you're looking for as a
 
 Natalia  15:05  
 enable, I would refrain from making any edits during the meeting. It usually takes too much time. And I think it's also somehow make it unclear who's responsible for updates.
 
-Ben Brooks  15:17  
+Ben Brookes  15:17  
 That's that's fine. I don't know. I don't really mean that this suddenly becomes a permanent, you know, 50 people on a teams call session. Okay, I think we.
 
 Natalia  15:26  
 Can I do? Can I do like this? I'll put this list that I just said in terms of priorities, what I would like to see, and then Azmain, if you can just test with with one of the PMS. Can we have this view already now? And if not, can we? Can we make this little adjustment? Because I do agree with you, Ben, that the quarter thing, it will be an important information for us. And so far, I didn't found it. Plus, I'm not sure how we are tagging the accelerated ones. Probably we're not, and maybe we need a tag on those, because this is a set list. So yeah, let me just give that to Azmain today, and then we do maybe some sort of a dry run tomorrow afternoon, if we can see this data. So we'll make a dry run of the of the meeting. Because what I would like to do on Monday is is basically give a short explanation. This is why we have this meeting. This is the running agenda of the meeting, and this is how we will be using the tool to make this meeting happen. That's, that's for Monday,
 
-Ben Brooks  16:28  
+Ben Brookes  16:28  
 exactly, yeah, yeah, exactly. So, so just, but let me just kind of pick a little bit what's, what's the underlying thing that you want to get achieved in the way that you're suggesting working Natalia. Is it the encouragement of the teams, the squads, to be using the tool and updating the data? Is it? Is it something else?
 
 Natalia  16:58  
 The goal of the meeting is to know why particular client is red and why particular client is Amber, and what can we do, or who can do it to make it different. And basically, every week, look at those and ask questions, because if client is in red for, let's say, a month, something's weird. It should not be a red for a month. Maybe it shouldn't be even read. So it's about checking the status, but same time also challenging the status, but then making Yeah,
 
-Ben Brooks  17:29  
+Ben Brookes  17:29  
 so fully agree. What's the but what's the reason for not having a view in the application that supports that pipeline? Conversation? And you'd and you'd rather be on a particular account page or block a page to do that, what? What's the what's the reason for that? Just, I think
 
 Azmain Hossain  17:52  
@@ -70,25 +70,25 @@ what Natalia suggested works really well in the beginning, because we give peopl
 Natalia  18:24  
 now, just talk to me and back to this particular view. It's a gut feeling. It's not a very reasonable reason. Let's say something I cannot really grip now. But if it makes the if it makes it more efficient to have the view. Let's have it. I'm just conscious about the time, and I don't want to build again, some different view, and instead spending that time on on making sure that the current dashboard can show us what we need to have because my question would be, what's the difference then, between the dashboard and the portfolio view? Oh, I
 
-Ben Brooks  19:05  
+Ben Brookes  19:05  
 totally agree with that, and I don't want to do anything here. That doesn't happen in a matter of hours. I guess what I how I have thought about that, is that the the app is for the day to day usage, entering of information management as a citizen. You know, I've got three accounts. I want to see them all together. I want to think about them as a mini portfolio for me, all that sort of stuff. The other thing I was thinking we we might put here is like a team review page for a given account, which might you know, you could argue that is the dashboard for a given account, or something like that, but it's the what is, if you were going to have a score adoption, meeting with with our squad for score, what would you want that squad to have access to talk about, think through together and present all of that information to them? You. In the right form.
 
 Natalia  20:01  
 Okay, so I think I'm getting your point that the way we want to target this tool and the current menu items that we have on the left side, like dashboard customers, etc, is to actually have a proper tool for CSMs view. Yeah. And then when we do the weekly review, there is a consolidated, again, dashboard that is only looking at the things we want to cover during the meeting, so then we also, somehow, I don't know, save time of clicking through those through the different venues. Okay, that makes sense.
 
-Ben Brooks  20:34  
+Ben Brookes  20:34  
 Yeah. I feel like there are some quite different lenses about the way people in different functions want to look at all of this data. So we'll have a, I think we need a management portfolio review thing that just calms Mike and Colin down on this stuff. Frankly, yeah, I think we need, we would ideally add a Solution Architect view, because those guys have a different set of conversations about their pipeline of activities to the one that we'll have in the management portfolio review conversation, and they have all of their tracking spreadsheets. They're completely separate. They're full of all sorts of shit that doesn't end up in our tracking database. And I was having a go at them about that yesterday, because it's no good on the side, protected from the CSMs. It needs to be visible to everybody and and and it's also, I think the way that we work will become quite important in this because, I mean, I was sitting there listening to Christine and Liz talk about AIG for half an hour on our solution architecture call yesterday. I'm like, Guys, I tuned out after five minutes because you're way in the weeds. But what I know is that nobody else in the organisation knows most of what you've just talked about and you've just blown hot air at each other for half an hour, turn on the transcript, record it, and structure that information so that the company can benefit from it, because I don't want to have to phone you up every time Mike steel needs an update on AIG. So how do we start doing that in the way that we work, so that this becomes a source truth for everybody, and that that would not be that hard to do, given the tools that we have, but it that for that to happen, the tool needs to support the different types of conversations that people want to have. So there's the solution architecture team, there's the implementation team, there's the programme management team, there's an executive team, all of whom can have their own views. And I came at this in trying to think about the migration pipeline review meeting, or whatever we end up calling it, programme review, project review, and it led to consequential thoughts. So the first you know that all of these things down the side here, dashboard, customers, use cases, blockers, favourite state of issues, this is all somebody engaging with the data to keep it up to date, whether it's the CSM or the implementation leader or solution architect, they can go in and see my customers. What do I need to tell everybody else about this customer and get on with it. And it should present itself in the way that encourages that. You know, this one's red, but there's no blocker sorted out. You know, add that information, that kind of thing. This is maybe a something that would evolve towards those team and collaborative conversations. So, you know, maybe action plans should actually be a page that says, team, review, team, account review, or something like that, right where we go, and we talk about that account for half an hour, and it's a proper conversation, not a two minute pipeline conversation. You know, the three of us are not in that discussion because we don't need to be but, but what is surfaced facilitates that conversation that I don't know. This particular function should already have. It this
 
 Natalia  23:51  
 particular function I think we would have when we go to customers and then open the details of a particular customer, then this can be used as a team conversation. But anyway, I'm sorry. I don't want
 
-Ben Brooks  24:01  
+Ben Brookes  24:01  
 to diverge. I think you're absolutely right. That's that's all good. I don't
 
 Natalia  24:05  
 want to duplicate on another view what is already available. And this is exactly the good case. This is a possibility for the team to look at it, plus, you know, quick actions, etc. So okay, fine. So we should have a view that is called portfolio review. I will list based on our conversation today, what I what are the running agenda points? So then when you can see if we're missing anything, and then this view should allow us to see that quickly. Yeah, okay, yeah.
 
-Ben Brooks  24:42  
+Ben Brookes  24:42  
 All right. So, you know, this was stuff like, who's got the actions across the accounts? It's not currently for the high priorities or for the of the current quarter, but that would be easy to change. Then we've got the sort of knowledge gap stuff of, you know, are there data completeness issues in the current quarter that we should freak out? About, are there stale accounts that haven't been touched, or whatever the right way to think about that problem is. And then, where are the ones where, you know, we are complete, they're nearly done. Why aren't they finished yet? Can we pull them forward from an accelerate point of view? Okay, so one thing that I just wanted
 
 Azmain Hossain  25:17  
@@ -106,37 +106,37 @@ Then within the priority account, what is the most critical information that we 
 Natalia  25:50  
 the status, the reason for status, the path to green, and obviously the target migration date, because those are the ones that we're looking at and least priority on, we have that list, so I'll share in the chat
 
-Ben Brooks  26:04  
+Ben Brookes  26:04  
 the migration critical workflows is use cases is also pretty important.
 
 Azmain Hossain  26:08  
 Yeah, if I could have a list of that, I will then I can flag those and like VPNs, when we start talking to CSMs to fill in the data, we can be like, Let's do
 
-Ben Brooks  26:18  
+Ben Brookes  26:18  
 these first. We wonders whether we should talk to CSMs about filling in the first parts of it like we've got a golden source if we don't have a view of migration critical. I'm tempted just to say, You know what, Kate, sit down and go through that list. Tell me which ones you think are migration critical, get it in there, and then we can refine it later. We don't have some freak out from 50 people about entering three data fields because they have a client meeting. It's just that takes a week every time, and I don't understand why.
 
 Azmain Hossain  26:45  
 Whichever is quickest and easiest to
 
-Ben Brooks  26:47  
+Ben Brookes  26:47  
 do, yeah? And then in the in the opening kind of training session, we should say we've loaded this with the golden source. The Golden source is not always accurate, so your first job is to go through your account and own the data, yeah, and make sure it looks
 
 Natalia  27:01  
 good, yeah. I think that's why we we need to really highlight what will be the structure of the meeting so they know what will be the first thing we will be looking at. Yeah, I think we will. I will send the invitation for a 90 minute meeting. So some people will be scared, but it is how long it takes.
 
-Ben Brooks  27:20  
+Ben Brookes  27:20  
 Yeah, that's cool, yeah. Okay. And so we will, I do, imagine doing that twice, with the US and with Europe, no or shorter ones.
 
 Natalia  27:28  
 Then, okay, no, we do it weekly. We do it global. If it's if it proves to be inefficient, then we we do maybe one hour, which with each of the groups. But at least on the beginning, I think it makes sense to make it global also to see if this resonates with people, if they know what's happening. And we don't have a pack to cover, we look only at America and at North America and Europe. So I think global would probably be better, not probably
 
-Ben Brooks  27:59  
+Ben Brookes  27:59  
 better for the first one, yeah, yeah, definitely, yeah. Someone's going to ask about a pack pretty soon as to
 
 Natalia  28:05  
 then we split into two sessions. But for now, I think it's better to have a group, because group will learn from each other.
 
-Ben Brooks  28:12  
+Ben Brookes  28:12  
 Yeah, yeah. Okay, yeah. Cool. All right. All right. Excellent. Thanks. Azmain, do you want to spend any more time on anything? Priority wise, or are you good with what we just talked through? I just
 
 Azmain Hossain  28:29  
@@ -148,48 +148,48 @@ use case. I'll drop off and send the list of priority thanks.
 Azmain Hossain  28:41  
 Yeah, they had just had basic questions like, Okay, this is a use case. What? What product is this use case for? Why does it not say it there, like, event response. But What product are they buying so little things that now they can notice? Okay, so I'm gonna collecting that and making, like, one plan to put all that in, and then, and then I'll message you for the critical stuff, how to go about it.
 
-Ben Brooks  29:07  
+Ben Brookes  29:07  
 So, so a couple of things, is the is the Edit restriction in there yet where you can only edit things you're on the account for
 
 Azmain Hossain  29:15  
 No, because we don't have any way to map who is signed in with a person in the team structure that's in the app.
 
-Ben Brooks  29:24  
+Ben Brookes  29:24  
 You should do through the intro login. Okay.
 
 Azmain Hossain  29:29  
 The thing is, I, I didn't want to mess around with the back end, with Ben Van Houten being out. Yeah, okay. I want, that's the first thing I want to get before next week. Is when somebody logs in, it recognises this is the person that's logged in. That's kind of the basis behind a lot of the things that we want to do.
 
-Ben Brooks  29:48  
+Ben Brookes  29:48  
 Yes, yeah, exactly. And then also, I don't know whether Opus would take care of it easily, but the audit trails on most edits are quite important to. From especially while the Edit isn't restricted, yeah, yeah,
 
 Azmain Hossain  30:07  
 it's a live version. So I've added in the audit trail with, like, a visual timeline chart. It's just again, it needs to know who is signed in and who is making these edits, so that it can actually know what to do. Hopefully you can see my screen. So, yeah, if you, if you go into any of the objects, yeah, there's a committee timeline.
 
-Ben Brooks  30:39  
+Ben Brookes  30:39  
 And is that actively updating. I noticed if I clicked on some stuff, it didn't
 
 Azmain Hossain  30:43  
 updating a because nothing's being changed and because it doesn't know who the people are. Okay, yeah, so Okay, we have to do some work, because I feel like everything here, there'll be more people than just under dia that will use this platform or might be assigned stuff. So we need to expand the org chart and the amount of people that are actually in here, because otherwise we can't assign a thingy when somebody logs in,
 
-Ben Brooks  31:09  
+Ben Brookes  31:09  
 sure, sure. Yeah, okay.
 
 Azmain Hossain  31:12  
 So yeah, once he's running the race today. So tomorrow, I'll start
 
-Ben Brooks  31:20  
+Ben Brookes  31:20  
 working on that. If you run an American or something in Amsterdam, I think, okay, yeah, people don't make any excuse to go and get stoned. I'll believe it was an excellent race. I'm so hungry stop for the munchies halfway around. Good stuff. Okay, cool. So shall I, if
 
 Azmain Hossain  31:43  
 I've got any kind of questions and stuff, if you keep working on the portfolio review, like, what your thoughts are, we can kind of align otherwise other people, and then I can get a version of that and actually make it usable. Cool.
 
-Ben Brooks  31:58  
+Ben Brookes  31:58  
 Yeah, sounds good. Okay, thank you. I'll keep fiddling with that, and I'll send you screen grabs and spec and stuff to hopefully make it easy to add. I think from
 
 Azmain Hossain  32:07  
 screen grabs they can pick it up, because I've had it literally could be entire websites design from just a screenshot. Just be like, yeah, look
 
-Ben Brooks  32:17  
+Ben Brookes  32:17  
 like this. Yeah. Okay, cool. Nice one. Thanks, mate. All right, see you soon. Take care.
 

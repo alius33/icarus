@@ -1,6 +1,6 @@
 # Deployment Database Synchronization Debugging Session
 **Date:** 2026-01-19
-**Attendees:** Richard Dosoo, Azmain Hossain (Ben Brooks absent but referenced, BenVH unavailable — racing in Amsterdam)
+**Attendees:** Richard Dosoo, Azmain Hossain (Ben Brookes absent but referenced, BenVH unavailable — racing in Amsterdam)
 **Duration context:** Medium (~22 minutes)
 **Workstreams touched:** WS2 CLARA (infrastructure)
 

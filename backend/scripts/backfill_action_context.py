@@ -50,7 +50,7 @@ actions = [
             "2. **Courtney Spillers** \u2014 HD adoption blockers from support cases (2,000-3,000 cases)\n"
             "3. **Kevin Pern** \u2014 ticket info + possibly User Voice data\n"
             "4. **Azmain/CLARA** \u2014 blocker intelligence synced from Salesforce\n\n"
-            "**Phase 1** focuses on Cases and Case Feed objects only. Catherine confirmed Gainsight "
+            "**Phase 1** focuses on Cases and Case Feed objects only. Kathryn Palkovics confirmed Gainsight "
             "goes live March 30 \u2014 CLARA and Gainsight are complementary (IRP-specific vs. overall "
             "CSM BAU)."
         ),
@@ -59,16 +59,16 @@ actions = [
         "id": 74,
         "source_transcript_id": 118,
         "context": (
-            "**Catherine's Centre of Excellence (COE)** has three pillars: digital engagement, "
+            "**Kathryn Palkovics' Centre of Excellence (COE)** has three pillars: digital engagement, "
             "enablement, and Gainsight/SFDC retirement. The **first pillar (digital engagement) "
             "directly overlaps** with the AI programme's scope.\n\n"
             "Key incidents (from 12 Mar Diana 1-1 and Post-Gainsight debrief):\n"
-            "- Catherine organised the Gainsight team meeting **without consulting the CLARA team**, "
+            "- Kathryn Palkovics organised the Gainsight team meeting **without consulting the CLARA team**, "
             "blindsiding them\n"
             "- She finds trivial CLARA issues every two days, claims CSMs complained (they haven't)\n"
             "- She gatekeeps Gainsight/Salesforce access\n"
             "- Her objectives were **approved by Natalia Orzechowska and signed off by Diya**\n\n"
-            "**Strategy**: Frame \"digital enablement\" (Catherine's domain) as distinct from \"AI "
+            "**Strategy**: Frame \"digital enablement\" (Kathryn Palkovics' domain) as distinct from \"AI "
             "enablement\" (Azmain's domain). Diana to discuss with Natalia O. Richard to raise with "
             "Diya during London visit. Risk R#045."
         ),
@@ -152,7 +152,7 @@ actions = [
             "- Scheduling deployment meetings 30 minutes after being told no\n\n"
             "BenVH explicitly stated he'd **\"prefer to work overtime rather than have Nikhil interact "
             "with any App Factory app.\"** Richard is planning a direct confrontation with Nikhil about "
-            "boundary violations and intends to escalate to Ben Brooks.\n\n"
+            "boundary violations and intends to escalate to Ben Brookes.\n\n"
             "**Neutralisation strategy:** redirect Nikhil to Salesforce integration or AIG project, "
             "away from App Factory."
         ),
@@ -191,7 +191,7 @@ actions = [
         "id": 82,
         "source_transcript_id": 89,
         "context": (
-            "**Slidey** is Ben Brooks's presentation app \u2014 he built it as a personal tool and it "
+            "**Slidey** is Ben Brookes's presentation app \u2014 he built it as a personal tool and it "
             "gained traction internally. The Life Insurance team reacted strongly to it. Ben mentioned "
             "he \"nearly didn't make it a Moody's app.\"\n\n"
             "Slidey is now positioned as part of the App Factory platform alongside Martin's dashboard "

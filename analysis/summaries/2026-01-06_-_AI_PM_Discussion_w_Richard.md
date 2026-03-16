@@ -69,7 +69,7 @@
 | Azmain Hossain | supportive | UP | Taking on PM role | "I genuinely have the bandwidth and the capacity to do that" |
 | Natalia (mentioned) | supportive | STABLE | Azmain's allocation | Agreed to 50-75% of Azmain's time |
 | Diya (mentioned) | champion | NEW | Programme sponsorship | "keen to get moving as soon as possible" |
-| Ben Brooks (mentioned) | champion | STABLE | Technical delivery | Refused to wait for Gainsight, building interim solution |
+| Ben Brookes (mentioned) | champion | STABLE | Technical delivery | Refused to wait for Gainsight, building interim solution |
 
 ## Commitments Made
 | Person | Commitment | Implied Deadline | Condition | Confidence |

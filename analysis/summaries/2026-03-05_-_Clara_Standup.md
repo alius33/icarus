@@ -8,7 +8,7 @@
 - Richard walked Azmain through the scorecard tab requirements in detail using the playground. The prompt is specific: replicate the account burndown widgets but based on Risk Link/Risk Browser switch-off dates instead of use cases. Two tabs: migration and adoption burndown. Per-client rows show Risk Link and Risk Browser separately.
 - Richard is in "testing hell" with Rhett's adoption charter code. He reverse-engineered Rhett's app, created a PRD, then discovered the spec was incomplete -- half the features were not built. This has wasted an entire day.
 - Azmain asked why Richard was personally doing the testing instead of sending it back to Rhett. Richard's answer: he just wants to get it done and move past it.
-- Azmain wanted to escalate the Rhett issue to Ben Brooks -- Rhett never consulted CSMs about his Excel approach, and the agreed plan was Word-to-app, not Excel. Richard explicitly warned against this: "Trust me, you're going to be taking shots at his favourite. It doesn't work out."
+- Azmain wanted to escalate the Rhett issue to Ben Brookes -- Rhett never consulted CSMs about his Excel approach, and the agreed plan was Word-to-app, not Excel. Richard explicitly warned against this: "Trust me, you're going to be taking shots at his favourite. It doesn't work out."
 - Richard revealed his exhaustion level: "I'm tired. I don't even want to argue anymore." He spent his weekend rebuilding Steve Gentilli's app, only for Steve to redo it himself.
 - Chris is working through the consolidated feedback list. He found that many early items were already fixed but never documented. He needs local data access to verify some issues.
 - Chris found the READMEs antiquated and incomplete. Azmain told him to just ask Cursor to deploy locally rather than reading documentation.
@@ -19,7 +19,7 @@
 ## Decisions Made
 | Decision | Type | Confidence | Owner |
 |----------|------|------------|-------|
-| Do not escalate Rhett issue to Ben Brooks | Political | High (Richard's advice) | Richard/Azmain |
+| Do not escalate Rhett issue to Ben Brookes | Political | High (Richard's advice) | Richard/Azmain |
 | Chris focuses on bugs first, features later | Prioritisation | High | Azmain |
 | Knowledge base generated for future chatbot | Feature prep | Medium | Azmain |
 
@@ -49,7 +49,7 @@
 - **Richard** -- CRITICAL SIGNAL: "I'm tired. I don't even want to argue anymore." Combined with the interview revelation from BenVH's call on March 6, this is a man at breaking point. He spent his weekend on Steve's app, spent a day on Rhett's code, and is now resigned rather than energised.
 - **Azmain** -- Working at 2am generating documentation. Still energised but stretched beyond sustainability. His instinct to escalate the Rhett issue shows political awareness.
 - **Chris** -- Adaptable and humble. Found that many early feedback items were already fixed -- a sign that the feedback management has been poor, not the actual product quality. Good at methodical work.
-- **Rhett** (discussed, not present) -- Built an Excel-based adoption charter without consulting any CSMs. Richard describes it as a "let me just do what I want to do" approach. He is Ben Brooks' "favourite," which gives him political protection.
+- **Rhett** (discussed, not present) -- Built an Excel-based adoption charter without consulting any CSMs. Richard describes it as a "let me just do what I want to do" approach. He is Ben Brookes' "favourite," which gives him political protection.
 
 ## Commitments Made
 | Who | Commitment | To Whom | Context |
@@ -70,7 +70,7 @@
 
 ## Risk Signals
 - **CRITICAL: Richard at breaking point.** "I'm tired. I don't even want to argue anymore." Combined with weekend work, wasted effort on Steve's app, and the upcoming revelation that he is interviewing for other jobs, this is the clearest indicator yet that he is disengaging.
-- **HIGH: Rhett operating without coordination.** Built an Excel solution nobody asked for, contradicting the agreed Word-to-app approach. Ben Brooks' favouritism provides political cover. Richard explicitly advises against challenging this.
+- **HIGH: Rhett operating without coordination.** Built an Excel solution nobody asked for, contradicting the agreed Word-to-app approach. Ben Brookes' favouritism provides political cover. Richard explicitly advises against challenging this.
 - **MEDIUM: Documentation debt confirmed.** Chris found READMEs outdated. Azmain has never read them. The 2am knowledge base generation is a band-aid, not a solution.
 - **MEDIUM: Feedback management gap.** Many early items were already fixed but never marked as resolved. This means users think their issues are being ignored when they have actually been addressed.
 
@@ -81,8 +81,8 @@
 
 ## Raw Quotes of Note
 - "I'm tired. I don't even want to argue anymore. I just want to get it done." -- Richard, on the Rhett situation
-- "Trust me, you're going to be taking shots at his favourite. It doesn't work out." -- Richard, warning Azmain not to escalate to Ben Brooks
+- "Trust me, you're going to be taking shots at his favourite. It doesn't work out." -- Richard, warning Azmain not to escalate to Ben Brookes
 - "That's basically where I am. That's what anyway. But you get me, I'm tired." -- Richard, showing resignation
 
 ## Narrative Notes
-This standup is the emotional nadir of the week for Richard. His exhaustion is palpable -- he spent his weekend on Steve's app (wasted effort), a full day on Rhett's code (frustrating reverse-engineering), and he is explicitly advising Azmain not to fight battles that should be fought. The "don't take shots at his favourite" warning reveals the political reality: Rhett has Ben Brooks' protection, and challenging him would backfire on Azmain. Richard's response to all of this is not anger but resignation: "I just want to get it done." This is the language of someone who has decided the system cannot be changed from within. This standup captures a man who is frustrated with the political dynamics. [Note: Richard subsequently committed to the programme by mid-March.] The one bright spot is Chris, whose methodical approach to the bug list is exactly what the programme needs -- someone who does the unglamorous work without drama.
+This standup is the emotional nadir of the week for Richard. His exhaustion is palpable -- he spent his weekend on Steve's app (wasted effort), a full day on Rhett's code (frustrating reverse-engineering), and he is explicitly advising Azmain not to fight battles that should be fought. The "don't take shots at his favourite" warning reveals the political reality: Rhett has Ben Brookes' protection, and challenging him would backfire on Azmain. Richard's response to all of this is not anger but resignation: "I just want to get it done." This is the language of someone who has decided the system cannot be changed from within. This standup captures a man who is frustrated with the political dynamics. [Note: Richard subsequently committed to the programme by mid-March.] The one bright spot is Chris, whose methodical approach to the bug list is exactly what the programme needs -- someone who does the unglamorous work without drama.
