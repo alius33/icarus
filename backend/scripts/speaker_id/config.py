@@ -11,7 +11,7 @@ STAKEHOLDER_ALIASES: dict[str, list[str]] = {
     "Colin Holmes": ["Colin", "colin"],
 
     # Tier 2 — Core Product & Delivery
-    "Ben Brookes": ["Ben B", "BenB", "ben b", "Ben Brookes", "Ben Brookes"],
+    "Ben Brookes": ["Ben B", "BenB", "ben b", "Ben Brooks", "Ben Brookes"],
     "Richard Dosoo": ["Richard", "Rich", "richard", "rich"],
     "Azmain Hossain": ["Azmain", "azmain"],
     "Natalia Plant": ["Natalia", "Nat", "natalia", "nat"],
