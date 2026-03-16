@@ -1064,3 +1064,19 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 700 | 15 Mar | Resolve HTML output reviewability — Diya couldn't comment on HTML presentation; investigate PDF or annotation-friendly format | Ben Brookes | Next release | teams-channel: slidey |  |
 | 701 | 14 Mar | Complete content/narrative layer implementation in Slidey UI — CONTENT-LAYER.md spec created, needs building | Richard | This week | teams-channel: slidey |  |
 | 702 | 12 Mar | Connect with Amit Gondha on API key for Slidey early testing | Richard | This week | teams-channel: slidey |  |
+| 703 | 16 Mar | Frame Kathryn Palkovics issue for Ben Brookes — meet in office to discuss boundaries and alignment risk | Richard | 17 Mar | transcript: Chat with Richard |  |
+| 704 | 16 Mar | Review weekly plan together — extended meeting covering all deliverables and priorities | Azmain / Richard / Ben Brookes | 17 Mar | transcript: Chat with Richard |  |
+| 705 | 16 Mar | Follow up with Bernard on Salesforce API key for Customer Success Agent data access | Richard | 17 Mar | transcript: Chat with Richard |  |
+| 706 | 16 Mar | Add knowledge graph for IQ research to Diya deliverable plan — Diya personally requested this | Richard | This week | transcript: Chat with Richard |  |
+| 707 | 16 Mar | Add Slidey as a Pillar 3 (Internal Productivity) project in deliverable plan | Azmain | This week | transcript: Chat with Richard |  |
+| 708 | 16 Mar | Attend Maria Canamero team meeting Thursday — demo how to build stuff with AI tools | Azmain | 20 Mar (Thu) | transcript: Chat with Richard |  |
+| 709 | 16 Mar | Chat with Jake (Maria Canamero new hire) about KYC/governance role pipeline opportunities | Azmain | 20 Mar (Thu) | transcript: Chat with Richard |  |
+| 710 | 16 Mar | Enter HD model data for ~35 Americas/brokers clients in CLARA before April 1 IRP report | CSMs (Americas) | 31 Mar | transcript: HD Guidance to CSMs |  |
+| 711 | 16 Mar | Share HD licence spreadsheet with CSM team and provide additional IOP manager standup bullet points | Stacy | This week | transcript: HD Guidance to CSMs |  |
+| 712 | 16 Mar | Discuss bulk upload option for HD data with CSM in 1-1 call | Stacy | This week | transcript: HD Guidance to CSMs |  |
+| 713 | 16 Mar | Set up requirements call with Chernell for HD model bulk update feature in CLARA | Azmain | This week | transcript: HD Guidance to CSMs |  |
+| 714 | 16 Mar | Re-enable and fix project management section in CLARA for PM consulting project tracking | Azmain | This week | transcript: Weekly PM forum |  |
+| 715 | 16 Mar | Meet with Rhett and Kate Wednesday — consulting project governance and IRP digital runbook collaboration | Diana | 18 Mar (Wed) | transcript: Weekly PM forum |  |
+| 716 | 16 Mar | Determine admin access rights for IRP digital runbook editing — can PMs edit directly or continue via Excel feedback? | Diana / Rhett | 18 Mar (Wed) | transcript: Weekly PM forum |  |
+| 717 | 16 Mar | PMs to share templates and materials to PM best practices shared channel for runbook contribution | All PMs | Ongoing | transcript: Weekly PM forum |  |
+| 718 | 16 Mar | Propose governance framework for IRP consulting project tracking — regular meetings with implementation leads | Diana | 18 Mar (Wed) | transcript: Weekly PM forum |  |

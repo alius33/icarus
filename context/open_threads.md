@@ -1,6 +1,6 @@
 # Open Threads & Unresolved Questions
 
-Last updated: 2026-03-16 (project updates through 16 March processed)
+Last updated: 2026-03-16 (transcripts through 16 March processed)
 
 Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially addressed, needs follow-up), or **CLOSED** (resolved — move to bottom with resolution date).
 
@@ -35,11 +35,13 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 - **Question:** What was the reaction? Any new asks, escalations, or mandates?
 - **Why it matters:** Highest-visibility moment for the programme. Reaction shapes resourcing and priority.
 
-### 5. Kevin Pern's CS Agent (WS3)
+### 5. Customer Success Agent — BLOCKED ON SALESFORCE API ACCESS
 - **First raised:** 6 Jan
-- **Context:** Kevin built a Copilot Studio + Salesforce prototype. Working alone. No programme oversight.
-- **Question:** Has anyone formally engaged him? What does the prototype actually do?
-- **Why it matters:** This workstream is essentially orphaned. Could be valuable or could be wasted effort.
+- **Updated:** 16 Mar — Genuinely blocked. Needs Salesforce API access to pull customer data. Gainsight team getting Salesforce access — Richard hoping to piggyback on their access pattern. Christopher and Nick were supposed to continue work this week but got derailed by the Gainsight meeting. Richard needs to follow up with Bernard tomorrow (17 Mar) about the API key. Wednesday CLARA POC scope call (Azmain, Ben, BenVH) is the next milestone.
+- **Previous:** Kevin built a Copilot Studio + Salesforce prototype. Working alone. No programme oversight.
+- **Context:** The Salesforce API access dependency is now the concrete blocker, not just programme neglect.
+- **Question:** Will the Wednesday call unblock Salesforce access? Can Richard get the API key from Bernard this week?
+- **Why it matters:** CS Agent was front and centre in the Diya presentation but has made zero progress. The Salesforce dependency connects to the broader Gainsight integration pipeline.
 
 ### 6. User Voice Integration Design
 - **First raised:** 26 Feb
@@ -110,12 +112,13 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 - **Question:** RESOLVED. Knowledge documentation should continue as good practice.
 - **Why it matters:** Resolved. Richard committed to programme. Knowledge documentation continues.
 
-### 17. BenVH / Nikhil Conflict — CRISIS LEVEL
+### 17. BenVH / Nikhil Conflict — POTENTIALLY RESOLVED
 - **First raised:** 6 Mar
-- **Updated:** 12 Mar — BenVH still stopped responding to Nikhil. Making progress on MCP server using Bedrock AI agents. Channelling anger productively. Richard planning confrontation and Ben Brookes escalation this week.
-- **Context:** BenVH feels Nikhil is taking credit for his App Factory work, renaming it, and presenting his architecture as his own. BenVH's recent absence was not illness but being worn down. This is a serious morale/retention risk.
-- **Question:** Has Richard confronted Nikhil yet? Has Ben Brookes been briefed?
-- **Why it matters:** BenVH is the only person who can deploy. Losing him would be catastrophic for infrastructure.
+- **Updated:** 16 Mar — Richard claims to have sorted it: Nikhil's resources being redirected to AIG. Azmain sceptical it'll stick ("he's gonna ask you for another report mid-month"). Needs confirmation that the redirect is permanent and BenVH is satisfied.
+- **Previous:** 12 Mar — BenVH still stopped responding to Nikhil. Making progress on MCP server using Bedrock AI agents. Richard planning confrontation and Ben Brookes escalation.
+- **Context:** BenVH felt Nikhil was taking credit for his App Factory work, renaming it, and presenting his architecture as his own. BenVH's recent absence was not illness but being worn down.
+- **Question:** Is the AIG redirect permanent? Has BenVH been told? Does BenVH accept this resolution?
+- **Why it matters:** BenVH is the only person who can deploy. The redirect is the right move but Nikhil's pattern of boundary-crossing may reassert.
 
 ### 18. Security Audit / Personal Claude Usage
 - **First raised:** 6 Mar
@@ -155,9 +158,10 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 
 ### 24. Kathryn Palkovics (Catherine) COE Political Threat to AI Programme — ESCALATING
 - **First raised:** 12 Mar (Diana 1-1 and Post Gainsight debrief)
-- **Updated:** 16 Mar (from project update) — Kathryn now asserting COE authority directly on the Gainsight integration charter. Requested to be added to the project team, claiming COE "typically handles business reqs for the CSMs when we are scoping." Pushed back on Richard's frustration, framing the prior meeting as "just exploring" and a "POC which we do not need to do." Offered Gainsight demo. Her positioning is strategic: embedding herself in the charter process gives her legitimate authority over the integration.
+- **Updated:** 16 Mar (from transcript) — Azmain and Richard strategizing how to frame the issue for Ben Brookes. Richard's approach: tell the story factually — pattern of overreach, misalignment, risk to the Diya-approved programme. Key rhetorical point: when they sat with Diya, Kathryn's name never came up; the stakeholders that matter are Dennis Clement (MD DCR), Keith Berry, Christoph. Richard's honest preference: not involved at all. Azmain: need delineation of responsibilities, can't push her out. Richard to discuss with Ben Brookes in person this week.
+- **Previous:** 16 Mar (from project update) — Kathryn asserting COE authority on Gainsight integration charter, requesting to join the project team.
 - **Context:** Kathryn's COE mandate (digital engagement, enablement, Gainsight/SFDC retirement) overlaps directly with the AI programme. Diana revealed her objectives were approved by Natalia Orzechowska and signed off by Diya. Diana suspects Josh Ellingson may be Kathryn's senior backer.
-- **Question:** Can the team keep Kathryn in an advisory role rather than an ownership role? Her request to join the project team is a concrete step toward control.
+- **Question:** Will Ben Brookes take action? Can the team frame this as a programme risk rather than a personal conflict?
 - **Why it matters:** If Kathryn's COE absorbs the AI programme, Azmain stated he will leave. The charter process is becoming the mechanism through which this could happen.
 - **Note:** "Catherine" in earlier audio transcripts = "Kathryn Palkovics" per Teams chat (confirmed 14 Mar).
 
@@ -214,6 +218,24 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 - **Context:** Ben Brookes wants to use Slidey on "live stuff" and fix/nudge it simultaneously. Requested dev/staging/prod environments back, asked for a lesson on updating via GitHub without asking for help, and suggested setting up release notes. These signals indicate the product is crossing from lab/demo mode into real-use mode, but engineering hygiene is missing.
 - **Question:** Will environments be set up before wider rollout? Who manages the release process? Is this BenVH's responsibility alongside everything else?
 - **Why it matters:** Without environment separation, every change risks breaking the live product. This is the same pattern that caused problems with CLARA early on (see thread #12).
+
+### 34. IRP Consulting Project Tracking Gap — NO VISIBILITY
+- **First raised:** 16 Mar (Weekly PM forum)
+- **Context:** Diana Kazakova-Ivanova identified that IRP implementation and cat accelerate consulting projects have **no forum, no tracking, and no status updates**. Advisory projects (cat bond etc.) have functioning calls, but consulting/implementation work under Rhett and Kate is invisible. Diana pushing to resolve by: (a) resuming Wednesday calls with implementation leads, (b) enabling CLARA's project management section as temporary tracking tool. Wednesday meeting with Rhett and Kate is the next milestone.
+- **Question:** Will Rhett and Kate agree to a governance framework? Can CLARA's PM section be made functional quickly enough?
+- **Why it matters:** Without visibility, revenue-generating consulting work (e.g., AZSA's $800K budget) silently consumes the same resources needed for IRP adoption. Diana called this "the most important" gap.
+
+### 35. HD Model Data Entry Deadline — 1 April
+- **First raised:** 16 Mar (HD Guidance to CSMs)
+- **Context:** Only 26 of ~68 clients have HD data in CLARA (migrated from Salesforce). ~35 Americas/brokers clients need data entered by end of March for the April 1 IRP report to leadership. Data needed at use-case-level granularity per HD model. CSMs pushing back on manual entry — want bulk upload capability. Stacy cautious about data quality from bulk uploads. Requirements call with Chernell planned for the bulk update feature.
+- **Question:** Can the bulk update feature be built before the deadline? Will CSMs comply with manual entry if not?
+- **Why it matters:** First IRP report with HD data goes to leadership April 1. Incomplete data undermines the data-driven narrative Ben Brookes is building.
+
+### 36. Knowledge Graph for IQ — Diya Request
+- **First raised:** 16 Mar (Chat with Richard)
+- **Context:** Diya personally asked Richard and Ben to look into adding a knowledge graph on top of IQ. Richard worked on it over the weekend. Needs to be added to the 12-week deliverable plan — falls under same pillar.
+- **Question:** Where does this fit in the pillar structure? How much effort is involved? Is there a demo target date?
+- **Why it matters:** Diya-originated request. Must be tracked and delivered or risk executive disappointment.
 
 ---
 

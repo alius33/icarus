@@ -30,12 +30,14 @@ On 23 January, Steve Gentilli and Azmain agreed to **fold the adoption charter f
 
 With adoption charter functionality folding into CLARA, the WS4 slot became available for Friday. The exact date of Friday's inception is not recorded in the transcripts, but by early March 2026, Azmain references it as an active side project built using Claude Code.
 
-## Current Status (as of 9 March 2026)
+## Current Status (as of 16 March 2026)
 
-- **State:** Early / iterative development
-- **Tooling:** Being built using Claude Code in a cloud environment (Azmain's preferred approach -- avoids permission prompts, runs dependencies freely)
-- **Latest update (4 Mar):** Azmain ran a major build cycle with expanded skills ("I added like 415 skills all in one through like three Git repos"), performed a full analysis and build. The output visually appeared unchanged because the latest changes had not been pulled down and built locally. He acknowledged needing to do that step.
-- **Visibility:** Low. Friday has not been presented to stakeholders. It is primarily Azmain's internal tool at this stage.
+- **State:** Skeleton built, not yet customised. Blocked by Slidey priority.
+- **Tooling:** Being built using Claude Code in a cloud environment
+- **Latest update (16 Mar):** Azmain revealed Friday skeleton to the PM group (Diana, Kristin) for the first time. Described it as combining Asana/Trello/Monday.com/JIRA. Not customised to team needs yet. Missing resource planning (waiting for Stacy's Cursor-built version to fold in).
+- **Strategic shift:** Diana agreed that Friday is the long-term play, but the immediate priority is enabling CLARA's project management section as a temporary tool for consulting project tracking. This gives the team a stepping stone — use CLARA PM features now, build the case for a dedicated tool (Friday) through usage data and demonstrated need.
+- **Visibility:** Now revealed to PM team. Still not presented to broader leadership. Diana explicitly said: "people need to feel the pain before you give them the medicine."
+- **Blocker:** Slidey consumed the team's bandwidth for the entire previous week. Friday, Rhett's runbook, Philip Oliver's app all stuck as a result.
 
 ## Team
 

@@ -14,22 +14,21 @@ The name "CLARA" was crowd-sourced from the CSM team during the January 2026 rol
 
 ## Status
 
-**As of 9 March 2026: LIVE -- Stabilising, with active feature development**
+**As of 16 March 2026: LIVE -- Stabilising, expanding scope to PM tracking and HD model data**
 
 - Deployed on AWS with CI/CD pipeline across dev/staging/prod environments
 - Used weekly in Portfolio Reviews facilitated by Natalia
-- Management Dashboard being rebuilt with new migration burn-down and scorecard tab (active work as of 5 March)
-- Chris M onboarded as dedicated CLARA developer handling bug fixes and feedback triage
-- Nikhil providing 50% time, split between CLARA and app factory infrastructure work
-- Two rotating graduates arriving in April for ongoing bug fix and maintenance work
-- Gainsight integration conversation formally initiated -- first meeting with Gainsight team scheduled for week of 10 March
-- Bedrock API key now working (confirmed ~6 March), unblocking LLM integration features
-- Scorecard dashboard requirements being refined with Stacy and Natalia (migration burn-down, quarterly view, actuals vs forecast)
-- Portfolio Review grey box with inaccurate priority account counter being removed (Natalia/Diya priority)
-- Reports functionality being tested by Stacy (modelled on Salesforce reports structure)
-- Analytics tab under review by Stacy and Kathryn Palkovics to remove confusing/outdated metrics
-- Full user-facing documentation and knowledge base generated (in dev, pending promotion)
-- 113 Alembic migration heads squashed to one base level (in staging as of 3 March)
+- Fortnightly release cadence established by Natalia Plant (12 Mar). Next release: 27 March.
+- Ben Brookes restricted to sandbox — no production changes outside release cycle
+- Two rotating graduates arriving 7 April for dedicated maintenance
+- Chris M handling bug fixes and feedback triage
+- Nikhil being redirected to AIG (16 Mar) — resources moving away from CLARA/App Factory
+- Gainsight integration charter V1 created (14 Mar). POC earliest May after grads arrive.
+- **HD model data gap**: Only 26 of ~68 clients have HD data. 35 Americas clients need data entry by end of March. CSMs demanding bulk upload capability. Matrix UI proposed by Ben Brookes (use cases × HD models × status). Requirements call with Chernell being set up.
+- **PM extension**: Diana pushing to enable project management section for consulting project tracking (IRP implementations + cat accelerate). Temporary measure until dedicated PM tool budget approved.
+- Customer Success Agent blocked on Salesforce API access — Wednesday call is next milestone
+- ~5,000 viewers imported via SSO (13 Mar). Product/tech teams actively engaged.
+- Knowledge graph for IQ — new Diya request, Richard working on it
 
 ---
 
