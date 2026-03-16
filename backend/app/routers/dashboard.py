@@ -73,6 +73,21 @@ def _week_monday(d: date) -> date:
     return d - timedelta(days=d.weekday())
 
 
+def _compute_utilization(resources: list) -> tuple[float, int]:
+    """Compute avg utilization % and overloaded count from ResourceAllocation list."""
+    if not resources:
+        return 0.0, 0
+    total_pct = 0.0
+    for r in resources:
+        if r.allocations and isinstance(r.allocations, list):
+            total_pct += sum(
+                a.get("percentage", 0) for a in r.allocations if isinstance(a, dict)
+            )
+    avg_util = round(total_pct / len(resources), 1)
+    overloaded = sum(1 for r in resources if r.capacity_status == "overloaded")
+    return avg_util, overloaded
+
+
 # ---------------------------------------------------------------------------
 # Batch helpers — called once per dashboard load, not per entity
 # ---------------------------------------------------------------------------
@@ -104,6 +119,10 @@ async def _compute_weekly_counts(
     db: AsyncSession,
     today: date,
     weeks: int = 7,
+    *,
+    critical_high_risks: int,
+    blocked_deps: int,
+    resources: list,
 ) -> dict[str, list]:
     """Pre-compute weekly bucket counts for KPI sparklines.
 
@@ -112,28 +131,46 @@ async def _compute_weekly_counts(
     """
     monday = _week_monday(today)
 
-    # Transcript counts per week
-    transcript_counts: list[int] = []
     # Action snapshot per week (open at end of that week)
     action_counts: list[int] = []
-    # Risk counts per week (open critical/high threads)
-    risk_counts: list[int] = []
     # Blocked dependency counts per week — approximated as current snapshot
     blocked_counts: list[int] = []
     # Utilization per week — approximated as current snapshot
     utilization_values: list[float] = []
 
-    # -- Transcripts per week (actual, from meeting_date) --
+    # -- Transcripts per week (single GROUP BY on PostgreSQL, fallback loop on SQLite) --
     week_starts = [monday - timedelta(weeks=i) for i in range(weeks - 1, -1, -1)]
-    for ws in week_starts:
-        we = ws + timedelta(days=7)
-        count = (await db.execute(
-            select(func.count(Transcript.id)).where(
-                Transcript.meeting_date >= ws,
-                Transcript.meeting_date < we,
+    oldest_monday = week_starts[0]
+    newest_end = week_starts[-1] + timedelta(days=7)
+
+    is_pg = db.bind.dialect.name == "postgresql" if db.bind else True
+    if is_pg:
+        week_col = func.date_trunc('week', Transcript.meeting_date).label('week')
+        transcript_result = await db.execute(
+            select(week_col, func.count(Transcript.id))
+            .where(
+                Transcript.meeting_date >= oldest_monday,
+                Transcript.meeting_date < newest_end,
             )
-        )).scalar_one()
-        transcript_counts.append(count)
+            .group_by(week_col)
+        )
+        week_count_map: dict[date, int] = {}
+        for row in transcript_result.all():
+            week_date = row[0].date() if hasattr(row[0], 'date') else row[0]
+            week_count_map[week_date] = row[1]
+        transcript_counts = [week_count_map.get(ws, 0) for ws in week_starts]
+    else:
+        # SQLite fallback: one query per week
+        transcript_counts = []
+        for ws in week_starts:
+            we = ws + timedelta(days=7)
+            count = (await db.execute(
+                select(func.count(Transcript.id)).where(
+                    Transcript.meeting_date >= ws,
+                    Transcript.meeting_date < we,
+                )
+            )).scalar_one()
+            transcript_counts.append(count)
 
     # -- Open actions per week: approximate as current open count minus
     #    actions completed in future weeks. This gives a rough backward
@@ -161,38 +198,15 @@ async def _compute_weekly_counts(
     raw_action_counts.reverse()
     action_counts = [c for _, c in raw_action_counts]
 
-    # -- Risks per week: same backward-projection approach
-    current_risks = (await db.execute(
-        select(func.count(OpenThread.id)).where(
-            OpenThread.status == "OPEN",
-            OpenThread.severity.in_(["CRITICAL", "HIGH"]),
-        )
-    )).scalar_one()
-    for _ in week_starts:
-        risk_counts.append(current_risks)
+    # -- Risks per week: use pre-computed count (passed from caller)
+    risk_counts = [critical_high_risks] * weeks
 
-    # -- Blocked deps: current snapshot replicated
-    current_blocked = (await db.execute(
-        select(func.count(Dependency.id)).where(Dependency.status == "blocked")
-    )).scalar_one()
-    for _ in week_starts:
-        blocked_counts.append(current_blocked)
+    # -- Blocked deps: use pre-computed count (passed from caller)
+    blocked_counts = [blocked_deps] * weeks
 
-    # -- Utilization: current snapshot replicated
-    resources_result = await db.execute(select(ResourceAllocation))
-    resources = resources_result.scalars().all()
-    if resources:
-        total_pct = 0.0
-        for r in resources:
-            if r.allocations and isinstance(r.allocations, list):
-                total_pct += sum(
-                    a.get("percentage", 0) for a in r.allocations if isinstance(a, dict)
-                )
-        avg_util = total_pct / len(resources) if resources else 0.0
-    else:
-        avg_util = 0.0
-    for _ in week_starts:
-        utilization_values.append(round(avg_util, 1))
+    # -- Utilization: use pre-loaded resources (passed from caller)
+    avg_util, _ = _compute_utilization(resources)
+    utilization_values = [avg_util] * weeks
 
     return {
         "transcripts": transcript_counts,
@@ -461,17 +475,21 @@ async def get_dashboard(
     activity_items = activity_items[:10]
 
     # ==================================================================
-    # 4. Needs Attention — batch project lookups
+    # 4. Needs Attention — lightweight column fetch + single loop
     # ==================================================================
 
     open_actions_result = await db.execute(
-        select(Task).where(Task.status.in_(["TODO", "IN_PROGRESS", "IN_REVIEW"]))
+        select(
+            Task.id, Task.number, Task.description, Task.owner,
+            Task.status, Task.deadline, Task.action_date,
+        ).where(Task.status.in_(["TODO", "IN_PROGRESS", "IN_REVIEW"]))
     )
-    all_open_actions = open_actions_result.scalars().all()
+    all_open_actions = open_actions_result.all()
 
-    # Determine which actions need attention and collect their IDs
+    # Single loop: determine attention items AND count overdue
     attention_action_ids: list[int] = []
-    action_attention_data: list[tuple] = []  # (action, reason, days)
+    action_attention_data: list[tuple] = []  # (row, reason, days)
+    overdue_actions_count = 0
     for a in all_open_actions:
         parsed_deadline = _parse_date_string(a.deadline)
         reason = None
@@ -479,6 +497,7 @@ async def get_dashboard(
         if parsed_deadline and parsed_deadline < today:
             reason = "overdue"
             days = (today - parsed_deadline).days
+            overdue_actions_count += 1
         elif a.action_date and (today - a.action_date).days > 14:
             reason = "stale"
             days = (today - a.action_date).days
@@ -619,21 +638,10 @@ async def get_dashboard(
         ))
 
     # ==================================================================
-    # 6. KPI sparkline data
+    # 6. Pre-compute shared values for KPI + Insights + Programme Status
     # ==================================================================
 
-    weekly = await _compute_weekly_counts(db, today, weeks=7)
-
-    transcripts_this_week = (await db.execute(
-        select(func.count(Transcript.id)).where(Transcript.meeting_date >= week_start)
-    )).scalar_one()
-
-    overdue_actions_count = 0
-    for a in all_open_actions:
-        parsed = _parse_date_string(a.deadline)
-        if parsed and parsed < today:
-            overdue_actions_count += 1
-
+    # These are queried once and passed to helpers to avoid duplicates
     critical_high_risks = (await db.execute(
         select(func.count(OpenThread.id)).where(
             OpenThread.status == "OPEN",
@@ -656,20 +664,32 @@ async def get_dashboard(
         select(func.count(Dependency.id)).where(Dependency.status == "in-progress")
     )).scalar_one()
 
+    # Load resources ONCE — used by KPI, weekly counts, and programme status
     resources_result = await db.execute(select(ResourceAllocation))
     all_resources = resources_result.scalars().all()
-    if all_resources:
-        total_util = 0.0
-        for r in all_resources:
-            if r.allocations and isinstance(r.allocations, list):
-                total_util += sum(
-                    a.get("percentage", 0) for a in r.allocations if isinstance(a, dict)
-                )
-        avg_utilization = round(total_util / len(all_resources), 1)
-        overloaded_count = sum(1 for r in all_resources if r.capacity_status == "overloaded")
-    else:
-        avg_utilization = 0.0
-        overloaded_count = 0
+    avg_utilization, overloaded_count = _compute_utilization(all_resources)
+
+    total_actions = (await db.execute(
+        select(func.count(Task.id))
+    )).scalar_one()
+    completed_actions = (await db.execute(
+        select(func.count(Task.id)).where(Task.status.in_(["DONE", "CANCELLED"]))
+    )).scalar_one()
+
+    # ==================================================================
+    # 7. KPI sparkline data (uses pre-computed values)
+    # ==================================================================
+
+    weekly = await _compute_weekly_counts(
+        db, today, weeks=7,
+        critical_high_risks=critical_high_risks,
+        blocked_deps=blocked_deps,
+        resources=all_resources,
+    )
+
+    transcripts_this_week = (await db.execute(
+        select(func.count(Transcript.id)).where(Transcript.meeting_date >= week_start)
+    )).scalar_one()
 
     active_projects = sum(1 for c in project_cards if c.status == "active")
 
@@ -694,15 +714,9 @@ async def get_dashboard(
     )
 
     # ==================================================================
-    # 7. Insights
+    # 8. Insights (uses pre-computed total_actions / completed_actions)
     # ==================================================================
 
-    total_actions = (await db.execute(
-        select(func.count(Task.id))
-    )).scalar_one()
-    completed_actions = (await db.execute(
-        select(func.count(Task.id)).where(Task.status.in_(["DONE", "CANCELLED"]))
-    )).scalar_one()
     action_completion_rate = round(
         (completed_actions / total_actions * 100) if total_actions > 0 else 0.0, 1
     )
@@ -748,16 +762,19 @@ async def get_dashboard(
     )
 
     # ==================================================================
-    # 8. Programme Status — health computation
+    # 9. Programme Status — health computation (uses pre-computed values)
     # ==================================================================
 
     programme_status = await _compute_programme_status(
         db, today, open_actions_count, overdue_actions_count,
-        critical_high_risks, escalating_risks, all_open_actions, all_open_threads,
+        critical_high_risks, escalating_risks,
+        total_actions=total_actions,
+        completed_actions=completed_actions,
+        resources=all_resources,
     )
 
     # ==================================================================
-    # 9. Analysis Insights (deep analysis engine)
+    # 10. Analysis Insights (deep analysis engine)
     # ==================================================================
 
     analysis_insights = await _compute_analysis_insights(db)
@@ -793,19 +810,14 @@ async def _compute_programme_status(
     overdue_count: int,
     critical_risks: int,
     escalating_risks: int,
-    all_open_actions: list,
-    all_open_threads: list,
+    *,
+    total_actions: int,
+    completed_actions: int,
+    resources: list,
 ) -> ProgrammeStatus:
     """Compute the programme health narrative, RAG, biggest win, biggest risk."""
 
     # Health score: weighted combination
-    # Action completion contributes positively
-    total_actions = (await db.execute(
-        select(func.count(Task.id))
-    )).scalar_one()
-    completed_actions = (await db.execute(
-        select(func.count(Task.id)).where(Task.status.in_(["DONE", "CANCELLED"]))
-    )).scalar_one()
     completion_rate = (completed_actions / total_actions * 100) if total_actions > 0 else 50.0
 
     # Overdue ratio penalises
@@ -820,13 +832,11 @@ async def _compute_programme_status(
         risk_score -= min(30, escalating_risks * 10)
     risk_score = max(0, risk_score)
 
-    # Resource strain
-    resources_result = await db.execute(select(ResourceAllocation))
-    all_resources = resources_result.scalars().all()
-    overloaded = sum(1 for r in all_resources if r.capacity_status == "overloaded")
+    # Resource strain (uses pre-loaded resources)
+    _, overloaded = _compute_utilization(resources)
     resource_score = 100.0
-    if all_resources:
-        overloaded_pct = overloaded / len(all_resources) * 100
+    if resources:
+        overloaded_pct = overloaded / len(resources) * 100
         resource_score = max(0, 100 - overloaded_pct * 2)
 
     # Weighted average

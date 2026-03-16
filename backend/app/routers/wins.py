@@ -5,7 +5,7 @@ from fastapi import APIRouter, Depends, Query
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.database import get_db
+from app.database import get_db, utcnow
 from app.exceptions import NotFoundError
 from app.models.programme_win import ProgrammeWin
 from app.schemas.programme_win import (
@@ -98,9 +98,9 @@ async def create_win(body: ProgrammeWinCreate, db: AsyncSession = Depends(get_db
         try:
             date_recorded = datetime.strptime(body.date_recorded, "%Y-%m-%d").date()
         except ValueError:
-            date_recorded = datetime.utcnow().date()
+            date_recorded = utcnow().date()
     else:
-        date_recorded = datetime.utcnow().date()
+        date_recorded = utcnow().date()
 
     win = ProgrammeWin(
         category=body.category,
@@ -139,7 +139,7 @@ async def update_win(win_id: int, body: ProgrammeWinUpdate, db: AsyncSession = D
         except ValueError:
             pass
 
-    win.updated_at = datetime.utcnow()
+    win.updated_at = utcnow()
     await db.commit()
     await db.refresh(win)
     return _schema(win)

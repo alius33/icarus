@@ -1,8 +1,6 @@
-from datetime import datetime
-
 from sqlalchemy import Column, DateTime, ForeignKey, Index, Integer, UniqueConstraint
 
-from app.database import Base
+from app.database import Base, utcnow
 
 
 class OutreachLink(Base):
@@ -11,7 +9,7 @@ class OutreachLink(Base):
     id = Column(Integer, primary_key=True)
     outreach_id = Column(Integer, ForeignKey("outreach.id", ondelete="CASCADE"), nullable=False)
     transcript_id = Column(Integer, ForeignKey("transcripts.id", ondelete="CASCADE"), nullable=False)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=utcnow)
 
     __table_args__ = (
         UniqueConstraint("outreach_id", "transcript_id", name="uq_outreach_transcript"),

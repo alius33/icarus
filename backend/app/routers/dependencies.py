@@ -1,10 +1,8 @@
-from datetime import datetime
-
 from fastapi import APIRouter, Depends
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.database import get_db
+from app.database import get_db, utcnow
 from app.exceptions import NotFoundError
 from app.models.dependency import Dependency
 from app.schemas.dependency import DependencyCreate, DependencySchema, DependencyUpdate
@@ -75,7 +73,7 @@ async def update_dependency(dep_id: int, body: DependencyUpdate, db: AsyncSessio
         if val is not None:
             setattr(dep, field, val)
 
-    dep.updated_at = datetime.utcnow()
+    dep.updated_at = utcnow()
     await db.commit()
     await db.refresh(dep)
     return _schema(dep)

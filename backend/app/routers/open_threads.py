@@ -1,10 +1,8 @@
-from datetime import datetime
-
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy import func, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.database import get_db
+from app.database import get_db, utcnow
 from app.exceptions import NotFoundError
 from app.models.deleted_import import DeletedImport
 from app.models.open_thread import OpenThread
@@ -154,7 +152,7 @@ async def create_open_thread(body: OpenThreadCreate, db: AsyncSession = Depends(
         number=next_number,
         title=body.title,
         status=body.status,
-        first_raised=body.first_raised or datetime.utcnow().strftime("%Y-%m-%d"),
+        first_raised=body.first_raised or utcnow().strftime("%Y-%m-%d"),
         context=body.context,
         question=body.question,
         why_it_matters=body.why_it_matters,
@@ -174,7 +172,7 @@ async def create_open_thread(body: OpenThreadCreate, db: AsyncSession = Depends(
         number=thread.number,
         title=body.title,
         status=body.status or "OPEN",
-        first_raised=body.first_raised or datetime.utcnow().strftime("%Y-%m-%d"),
+        first_raised=body.first_raised or utcnow().strftime("%Y-%m-%d"),
         context=body.context,
         question=body.question,
         why_it_matters=body.why_it_matters,
@@ -214,7 +212,7 @@ async def update_open_thread(thread_id: int, body: OpenThreadUpdate, db: AsyncSe
         thread.trend = body.trend
 
     thread.is_manual = True
-    thread.updated_at = datetime.utcnow()
+    thread.updated_at = utcnow()
     await db.commit()
     await db.refresh(thread)
 
@@ -252,7 +250,7 @@ async def update_thread_position(
     thread.status = body.status
     thread.position = body.position
     thread.is_manual = True
-    thread.updated_at = datetime.utcnow()
+    thread.updated_at = utcnow()
     await db.commit()
     await db.refresh(thread)
 

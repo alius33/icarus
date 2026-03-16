@@ -1,10 +1,10 @@
-from datetime import date, datetime
+from datetime import date
 
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy import func, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.database import get_db
+from app.database import get_db, utcnow
 from app.exceptions import NotFoundError
 from app.models.deleted_import import DeletedImport
 from app.models.project import Project
@@ -384,7 +384,7 @@ async def update_task(task_id: int, body: TaskUpdate, db: AsyncSession = Depends
         task.parent_id = body.parent_id
 
     task.is_manual = True
-    task.updated_at = datetime.utcnow()
+    task.updated_at = utcnow()
     await db.commit()
     await db.refresh(task)
 
@@ -410,7 +410,7 @@ async def update_task_position(
     old_status = task.status
     task.status = body.status
     task.position = body.position
-    task.updated_at = datetime.utcnow()
+    task.updated_at = utcnow()
 
     if body.status == "DONE" and not task.completed_date:
         task.completed_date = date.today()
@@ -438,7 +438,7 @@ async def complete_task(task_id: int, db: AsyncSession = Depends(get_db)):
     task.status = "DONE"
     task.completed_date = date.today()
     task.is_manual = True
-    task.updated_at = datetime.utcnow()
+    task.updated_at = utcnow()
     await db.commit()
     await db.refresh(task)
 

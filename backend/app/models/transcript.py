@@ -1,10 +1,8 @@
-from datetime import datetime
-
 from sqlalchemy import Column, Date, DateTime, ForeignKey, Index, Integer, String, Text
 from sqlalchemy.dialects.postgresql import ARRAY, TSVECTOR
 from sqlalchemy.orm import relationship
 
-from app.database import Base
+from app.database import Base, utcnow
 
 
 class Transcript(Base):
@@ -38,8 +36,8 @@ class Transcript(Base):
     )
     source_file = Column(String, nullable=False)
     file_hash = Column(String, nullable=False)
-    imported_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    imported_at = Column(DateTime, default=utcnow)
+    updated_at = Column(DateTime, default=utcnow, onupdate=utcnow)
 
     primary_project = relationship("Project", foreign_keys=[primary_project_id])
     secondary_project = relationship("Project", foreign_keys=[secondary_project_id])

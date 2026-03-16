@@ -1,10 +1,8 @@
-from datetime import datetime
-
 from fastapi import APIRouter, Depends
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.database import get_db
+from app.database import get_db, utcnow
 from app.exceptions import NotFoundError
 from app.models.division_profile import DivisionProfile
 from app.schemas.division_profile import DivisionProfileCreate, DivisionProfileSchema, DivisionProfileUpdate
@@ -67,7 +65,7 @@ async def update_division(division_id: int, body: DivisionProfileUpdate, db: Asy
         if val is not None:
             setattr(d, field, val)
 
-    d.updated_at = datetime.utcnow()
+    d.updated_at = utcnow()
     await db.commit()
     await db.refresh(d)
     return _schema(d)

@@ -1,8 +1,6 @@
-from datetime import datetime
-
 from sqlalchemy import Column, Date, DateTime, Index, Integer, String, Text
 
-from app.database import Base
+from app.database import Base, utcnow
 
 
 class AdoptionMetric(Base):
@@ -14,7 +12,7 @@ class AdoptionMetric(Base):
     value = Column(Integer, nullable=False)
     project = Column(String)
     notes = Column(Text)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=utcnow)
 
     __table_args__ = (
         Index("idx_adoption_date", "date"),

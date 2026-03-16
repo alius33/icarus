@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, Query
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.database import get_db
+from app.database import get_db, utcnow
 from app.exceptions import NotFoundError
 from app.models.outreach import Outreach
 from app.schemas.outreach import OutreachCreate, OutreachSchema, OutreachUpdate
@@ -110,7 +110,7 @@ async def update_outreach(outreach_id: int, body: OutreachUpdate, db: AsyncSessi
         if val is not None:
             setattr(o, date_field, _parse_date(val))
 
-    o.updated_at = datetime.utcnow()
+    o.updated_at = utcnow()
     await db.commit()
     await db.refresh(o)
     return _schema(o)

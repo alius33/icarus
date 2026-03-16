@@ -1,10 +1,8 @@
-from datetime import datetime
-
 from sqlalchemy import Boolean, Column, Date, DateTime, ForeignKey, Index, Integer, String, Text
 from sqlalchemy.dialects.postgresql import ARRAY, TSVECTOR
 from sqlalchemy.orm import relationship
 
-from app.database import Base
+from app.database import Base, utcnow
 
 TASK_STATUSES = ["TODO", "IN_PROGRESS", "IN_REVIEW", "DONE", "CANCELLED"]
 TASK_PRIORITIES = ["URGENT", "HIGH", "MEDIUM", "LOW", "NONE"]
@@ -41,12 +39,12 @@ class Task(Base):
     search_vector = Column(TSVECTOR)
     source_file = Column(String, nullable=False, default="manual")
     file_hash = Column(String, nullable=False, default="")
-    imported_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    imported_at = Column(DateTime, default=utcnow)
+    updated_at = Column(DateTime, default=utcnow, onupdate=utcnow)
 
     project = relationship("Project", foreign_keys=[project_id])
-    parent = relationship("Task", remote_side=[id], foreign_keys=[parent_id])
-    children = relationship("Task", foreign_keys=[parent_id])
+    parent = relationship("Task", remote_side=[id], foreign_keys=[parent_id], back_populates="children")
+    children = relationship("Task", foreign_keys=[parent_id], back_populates="parent")
 
     __table_args__ = (
         Index("idx_tasks_status", "status"),

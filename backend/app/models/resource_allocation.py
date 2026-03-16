@@ -1,9 +1,7 @@
-from datetime import datetime
-
 from sqlalchemy import Column, DateTime, Index, Integer, String, Text
 from sqlalchemy.dialects.postgresql import JSON
 
-from app.database import Base
+from app.database import Base, utcnow
 
 
 class ResourceAllocation(Base):
@@ -17,8 +15,8 @@ class ResourceAllocation(Base):
     notes = Column(Text)
     start_date = Column(String)
     end_date = Column(String)
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    created_at = Column(DateTime, default=utcnow)
+    updated_at = Column(DateTime, default=utcnow, onupdate=utcnow)
 
     __table_args__ = (
         Index("idx_resources_capacity", "capacity_status"),

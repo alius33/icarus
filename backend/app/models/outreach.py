@@ -1,8 +1,6 @@
-from datetime import datetime
-
 from sqlalchemy import Column, Date, DateTime, Index, Integer, String, Text
 
-from app.database import Base
+from app.database import Base, utcnow
 
 
 class Outreach(Base):
@@ -22,8 +20,8 @@ class Outreach(Base):
     next_step_date = Column(Date)
     external_id = Column(String)
     external_source = Column(String)
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    created_at = Column(DateTime, default=utcnow)
+    updated_at = Column(DateTime, default=utcnow, onupdate=utcnow)
 
     __table_args__ = (
         Index("idx_outreach_status", "status"),

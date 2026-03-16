@@ -1,9 +1,7 @@
-from datetime import datetime
-
 from sqlalchemy import Boolean, Column, Date, DateTime, ForeignKey, Index, Integer, String, Text
 from sqlalchemy.dialects.postgresql import ARRAY, TSVECTOR
 
-from app.database import Base
+from app.database import Base, utcnow
 
 
 class Decision(Base):
@@ -22,8 +20,8 @@ class Decision(Base):
     is_manual = Column(Boolean, nullable=False, default=False)
     source_file = Column(String, nullable=False, default="context/decisions.md")
     file_hash = Column(String, nullable=False, default="")
-    imported_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    imported_at = Column(DateTime, default=utcnow)
+    updated_at = Column(DateTime, default=utcnow, onupdate=utcnow)
 
     __table_args__ = (
         Index("idx_decisions_date", "decision_date"),

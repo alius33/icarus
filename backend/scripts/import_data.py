@@ -17,7 +17,12 @@ import os
 import re
 import sys
 import traceback
-from datetime import date, datetime
+from datetime import date, datetime, timezone
+
+
+def _utcnow() -> datetime:
+    """Naive UTC now — compatible with TIMESTAMP WITHOUT TIME ZONE columns."""
+    return _utcnow().replace(tzinfo=None)
 from pathlib import Path
 
 from sqlalchemy import delete, select, text
@@ -327,7 +332,7 @@ async def import_transcripts(
                 for key, val in data.items():
                     if hasattr(existing, key):
                         setattr(existing, key, val)
-                existing.updated_at = datetime.utcnow()
+                existing.updated_at = _utcnow()
                 stats["updated"] += 1
                 _log(f"  Updated: {filepath.name}", verbose)
             else:
@@ -440,7 +445,7 @@ async def import_stakeholders(
                     for key, val in data.items():
                         if hasattr(existing, key):
                             setattr(existing, key, val)
-                    existing.updated_at = datetime.utcnow()
+                    existing.updated_at = _utcnow()
                     stats["updated"] += 1
                     _log(f"  Updated: {data['name']}", verbose)
                 else:
@@ -504,7 +509,7 @@ async def import_decisions(
                     for key, val in data.items():
                         if hasattr(existing, key):
                             setattr(existing, key, val)
-                    existing.updated_at = datetime.utcnow()
+                    existing.updated_at = _utcnow()
                     stats["updated"] += 1
                     _log(f"  Updated: Decision #{data['number']}", verbose)
                 else:
@@ -572,7 +577,7 @@ async def import_open_threads(
                     for key, val in data.items():
                         if hasattr(existing, key):
                             setattr(existing, key, val)
-                    existing.updated_at = datetime.utcnow()
+                    existing.updated_at = _utcnow()
                     stats["updated"] += 1
                     _log(f"  Updated: Thread #{data['number']} ({data['status']})", verbose)
                 else:
@@ -674,7 +679,7 @@ async def import_action_items(
                     for key, val in data.items():
                         if hasattr(existing, key):
                             setattr(existing, key, val)
-                    existing.updated_at = datetime.utcnow()
+                    existing.updated_at = _utcnow()
                     stats["updated"] += 1
                     _log(f"  Updated: Action #{data['number']}", verbose)
                 else:
@@ -738,7 +743,7 @@ async def import_glossary(
                     for key, val in data.items():
                         if hasattr(existing, key):
                             setattr(existing, key, val)
-                    existing.updated_at = datetime.utcnow()
+                    existing.updated_at = _utcnow()
                     stats["updated"] += 1
                     _log(f"  Updated: {data['term']}", verbose)
                 else:
@@ -949,7 +954,7 @@ async def import_summaries(
                 existing.file_hash = file_hash
                 existing.source_file = source_file
                 existing.transcript_id = transcript_id
-                existing.updated_at = datetime.utcnow()
+                existing.updated_at = _utcnow()
                 stats["updated"] += 1
                 _log(f"  Updated: {filename}", verbose)
             else:
@@ -1142,7 +1147,7 @@ async def import_weekly_reports(
                 existing.week_end = week_end
                 existing.file_hash = file_hash
                 existing.source_file = source_file
-                existing.updated_at = datetime.utcnow()
+                existing.updated_at = _utcnow()
                 stats["updated"] += 1
                 _log(f"  Updated: {filename}", verbose)
             else:
@@ -1205,7 +1210,7 @@ async def import_programme_debrief(
                 existing.doc_type = "debrief"
                 existing.file_hash = file_hash
                 existing.source_file = source_file
-                existing.updated_at = datetime.utcnow()
+                existing.updated_at = _utcnow()
                 stats["updated"] += 1
                 _log(f"  Updated: {filename}", verbose)
         else:
@@ -1279,7 +1284,7 @@ async def import_project_pages(
                 existing.content = content
                 existing.file_hash = file_hash
                 existing.source_file = source_file
-                existing.updated_at = datetime.utcnow()
+                existing.updated_at = _utcnow()
                 stats["updated"] += 1
                 _log(f"  Updated: {filename}", verbose)
             else:

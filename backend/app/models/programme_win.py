@@ -1,8 +1,6 @@
-from datetime import datetime
-
 from sqlalchemy import Boolean, Column, Date, DateTime, Index, Integer, String, Text
 
-from app.database import Base
+from app.database import Base, utcnow
 
 
 class ProgrammeWin(Base):
@@ -19,8 +17,8 @@ class ProgrammeWin(Base):
     date_recorded = Column(Date)
     notes = Column(Text)
     is_manual = Column(Boolean, nullable=False, default=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    created_at = Column(DateTime, default=utcnow)
+    updated_at = Column(DateTime, default=utcnow, onupdate=utcnow)
 
     __table_args__ = (
         Index("idx_wins_category", "category"),

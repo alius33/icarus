@@ -1,10 +1,8 @@
-from datetime import datetime
-
 from fastapi import APIRouter, Depends
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.database import get_db
+from app.database import get_db, utcnow
 from app.exceptions import NotFoundError
 from app.models.resource_allocation import ResourceAllocation
 from app.schemas.resource_allocation import (
@@ -88,7 +86,7 @@ async def update_resource(res_id: int, body: ResourceAllocationUpdate, db: Async
     if body.end_date is not None:
         res.end_date = body.end_date
 
-    res.updated_at = datetime.utcnow()
+    res.updated_at = utcnow()
     await db.commit()
     await db.refresh(res)
     return _schema(res)

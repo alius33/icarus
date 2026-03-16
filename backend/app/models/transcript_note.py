@@ -1,9 +1,7 @@
-from datetime import datetime
-
 from sqlalchemy import Column, DateTime, ForeignKey, Index, Integer, Text
 from sqlalchemy.orm import relationship
 
-from app.database import Base
+from app.database import Base, utcnow
 
 
 class TranscriptNote(Base):
@@ -17,7 +15,7 @@ class TranscriptNote(Base):
     )
     content = Column(Text, nullable=False)
     version = Column(Integer, nullable=False, default=1)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=utcnow)
 
     transcript = relationship("Transcript", back_populates="notes")
 

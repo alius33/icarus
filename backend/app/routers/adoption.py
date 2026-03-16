@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, Query
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.database import get_db
+from app.database import get_db, utcnow
 from app.exceptions import NotFoundError
 from app.models.adoption_metric import AdoptionMetric
 from app.schemas.adoption_metric import AdoptionMetricCreate, AdoptionMetricSchema
@@ -45,7 +45,7 @@ async def create_adoption_metric(body: AdoptionMetricCreate, db: AsyncSession = 
     try:
         metric_date = datetime.strptime(body.date, "%Y-%m-%d").date()
     except ValueError:
-        metric_date = datetime.utcnow().date()
+        metric_date = utcnow().date()
 
     metric = AdoptionMetric(
         date=metric_date,

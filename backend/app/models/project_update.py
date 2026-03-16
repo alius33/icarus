@@ -1,8 +1,6 @@
-from datetime import datetime
-
 from sqlalchemy import Boolean, Column, DateTime, Index, Integer, String, Text
 
-from app.database import Base
+from app.database import Base, utcnow
 
 
 class ProjectUpdate(Base):
@@ -16,8 +14,8 @@ class ProjectUpdate(Base):
     summary = Column(Text, nullable=True)
     is_processed = Column(Boolean, nullable=False, default=False)
     processed_at = Column(DateTime, nullable=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    created_at = Column(DateTime, default=utcnow)
+    updated_at = Column(DateTime, default=utcnow, onupdate=utcnow)
 
     __table_args__ = (
         Index("idx_project_updates_created", "created_at"),

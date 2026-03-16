@@ -163,7 +163,7 @@ async def write_context_notes_file(
 
     Writes to analysis/context_notes/{YYYY-MM-DD_-_Title}.md
     """
-    from datetime import datetime
+    from app.database import utcnow
 
     # Get transcript info for filename
     t_result = await db.execute(
@@ -202,7 +202,7 @@ async def write_context_notes_file(
     lines = [
         f"# Context Notes: {transcript.title}",
         f"**Transcript:** {transcript.filename}",
-        f"**Last updated:** {datetime.utcnow().isoformat()}Z",
+        f"**Last updated:** {utcnow().isoformat()}Z",
         "",
     ]
 

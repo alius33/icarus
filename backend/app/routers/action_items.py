@@ -3,13 +3,13 @@
 Thin wrapper over the Task model that maps new task fields back to the
 legacy ActionItemSchema so existing consumers keep working.
 """
-from datetime import date, datetime
+from datetime import date
 
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.database import get_db
+from app.database import get_db, utcnow
 from app.exceptions import NotFoundError
 from app.models.deleted_import import DeletedImport
 from app.models.task import Task
@@ -137,7 +137,7 @@ async def update_action_item(item_id: int, body: ActionItemUpdate, db: AsyncSess
             item.completed_date = date.today()
 
     item.is_manual = True
-    item.updated_at = datetime.utcnow()
+    item.updated_at = utcnow()
     await db.commit()
     await db.refresh(item)
 
@@ -157,7 +157,7 @@ async def complete_action_item(item_id: int, db: AsyncSession = Depends(get_db))
     item.status = "DONE"
     item.completed_date = date.today()
     item.is_manual = True
-    item.updated_at = datetime.utcnow()
+    item.updated_at = utcnow()
     await db.commit()
     await db.refresh(item)
 

@@ -1,11 +1,10 @@
 from collections import defaultdict
-from datetime import datetime
 
 from fastapi import APIRouter, Depends
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.database import get_db
+from app.database import get_db, utcnow
 from app.exceptions import DuplicateError, NotFoundError
 from app.models.deleted_import import DeletedImport
 from app.models.glossary import GlossaryEntry
@@ -65,7 +64,7 @@ async def update_glossary_entry(entry_id: int, body: GlossaryUpdate, db: AsyncSe
     if body.category is not None:
         entry.category = body.category
     entry.is_manual = True
-    entry.updated_at = datetime.utcnow()
+    entry.updated_at = utcnow()
     await db.commit()
     await db.refresh(entry)
     return _entry_schema(entry)

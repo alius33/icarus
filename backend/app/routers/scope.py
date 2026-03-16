@@ -1,10 +1,8 @@
-from datetime import datetime
-
 from fastapi import APIRouter, Depends
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.database import get_db
+from app.database import get_db, utcnow
 from app.exceptions import NotFoundError
 from app.models.scope_item import ScopeItem
 from app.schemas.scope_item import ScopeItemCreate, ScopeItemSchema, ScopeItemUpdate
@@ -48,7 +46,7 @@ async def create_scope_item(body: ScopeItemCreate, db: AsyncSession = Depends(ge
         name=body.name,
         scope_type=body.scope_type,
         project=body.project,
-        added_date=body.added_date or datetime.utcnow().strftime("%Y-%m-%d"),
+        added_date=body.added_date or utcnow().strftime("%Y-%m-%d"),
         estimated_effort=body.estimated_effort,
         budgeted=body.budgeted,
         status=body.status,
@@ -75,7 +73,7 @@ async def update_scope_item(item_id: int, body: ScopeItemUpdate, db: AsyncSessio
         if val is not None:
             setattr(item, field, val)
 
-    item.updated_at = datetime.utcnow()
+    item.updated_at = utcnow()
     await db.commit()
     await db.refresh(item)
     return _schema(item)

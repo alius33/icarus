@@ -1,9 +1,7 @@
-from datetime import datetime
-
 from sqlalchemy import Boolean, Column, DateTime, Index, Integer, String, Text
 from sqlalchemy.dialects.postgresql import TSVECTOR
 
-from app.database import Base
+from app.database import Base, utcnow
 
 
 class OpenThread(Base):
@@ -25,8 +23,8 @@ class OpenThread(Base):
     search_vector = Column(TSVECTOR)
     source_file = Column(String, nullable=False, default="context/open_threads.md")
     file_hash = Column(String, nullable=False, default="")
-    imported_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    imported_at = Column(DateTime, default=utcnow)
+    updated_at = Column(DateTime, default=utcnow, onupdate=utcnow)
 
     __table_args__ = (
         Index("idx_threads_status", "status"),

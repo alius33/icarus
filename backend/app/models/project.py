@@ -1,9 +1,7 @@
-from datetime import datetime
-
 from sqlalchemy import Boolean, Column, Date, DateTime, Index, Integer, String, Text
 from sqlalchemy.orm import relationship
 
-from app.database import Base
+from app.database import Base, utcnow
 
 
 class Project(Base):
@@ -21,7 +19,7 @@ class Project(Base):
     keywords = Column(Text, nullable=True)
     division = Column(String, nullable=True)
     last_analysed_date = Column(Date, nullable=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    created_at = Column(DateTime, default=utcnow)
+    updated_at = Column(DateTime, default=utcnow, onupdate=utcnow)
 
     links = relationship("ProjectLink", back_populates="project", cascade="all, delete-orphan")

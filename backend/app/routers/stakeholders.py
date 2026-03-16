@@ -1,10 +1,8 @@
-from datetime import datetime
-
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.database import get_db
+from app.database import get_db, utcnow
 from app.exceptions import DuplicateError, NotFoundError
 from app.models.deleted_import import DeletedImport
 from app.models.stakeholder import Stakeholder
@@ -121,7 +119,7 @@ async def update_stakeholder(stakeholder_id: int, body: StakeholderUpdate, db: A
     if body.morale_notes is not None:
         s.morale_notes = body.morale_notes
     s.is_manual = True
-    s.updated_at = datetime.utcnow()
+    s.updated_at = utcnow()
     await db.commit()
     await db.refresh(s)
 

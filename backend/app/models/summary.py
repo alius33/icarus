@@ -1,10 +1,8 @@
-from datetime import datetime
-
 from sqlalchemy import Column, DateTime, ForeignKey, Index, Integer, String, Text
 from sqlalchemy.dialects.postgresql import TSVECTOR
 from sqlalchemy.orm import relationship
 
-from app.database import Base
+from app.database import Base, utcnow
 
 
 class Summary(Base):
@@ -17,8 +15,8 @@ class Summary(Base):
     search_vector = Column(TSVECTOR)
     source_file = Column(String, nullable=False)
     file_hash = Column(String, nullable=False)
-    imported_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    imported_at = Column(DateTime, default=utcnow)
+    updated_at = Column(DateTime, default=utcnow, onupdate=utcnow)
 
     transcript = relationship("Transcript", back_populates="summary")
 

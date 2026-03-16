@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, Query
 from sqlalchemy import func, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.database import get_db
+from app.database import get_db, utcnow
 from app.exceptions import NotFoundError
 from app.models.decision import Decision
 from app.models.deleted_import import DeletedImport
@@ -188,9 +188,9 @@ async def create_decision(body: DecisionCreate, db: AsyncSession = Depends(get_d
         try:
             decision_date = datetime.strptime(body.date, "%Y-%m-%d").date()
         except ValueError:
-            decision_date = datetime.utcnow().date()
+            decision_date = utcnow().date()
     else:
-        decision_date = datetime.utcnow().date()
+        decision_date = utcnow().date()
 
     d = Decision(
         number=next_number,
@@ -247,7 +247,7 @@ async def update_decision(decision_id: int, body: DecisionUpdate, db: AsyncSessi
             pass
 
     d.is_manual = True
-    d.updated_at = datetime.utcnow()
+    d.updated_at = utcnow()
     await db.commit()
     await db.refresh(d)
 
@@ -270,7 +270,7 @@ async def update_decision_position(
     d.execution_status = body.execution_status
     d.position = body.position
     d.is_manual = True
-    d.updated_at = datetime.utcnow()
+    d.updated_at = utcnow()
     await db.commit()
     await db.refresh(d)
 

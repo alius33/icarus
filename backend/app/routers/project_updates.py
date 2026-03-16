@@ -1,10 +1,8 @@
-from datetime import datetime
-
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy import select, func, delete
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.database import get_db
+from app.database import get_db, utcnow
 from app.exceptions import NotFoundError
 from app.models.project import Project
 from app.models.project_link import ProjectLink
@@ -196,7 +194,7 @@ async def update_project_update(
     if body.project_ids is not None:
         await _sync_project_links(u.id, body.project_ids, db)
 
-    u.updated_at = datetime.utcnow()
+    u.updated_at = utcnow()
     await db.commit()
     await db.refresh(u)
     return await _build_base(u, db)
@@ -210,8 +208,8 @@ async def mark_processed(update_id: int, db: AsyncSession = Depends(get_db)):
         raise NotFoundError("Project update", update_id)
 
     u.is_processed = True
-    u.processed_at = datetime.utcnow()
-    u.updated_at = datetime.utcnow()
+    u.processed_at = utcnow()
+    u.updated_at = utcnow()
     await db.commit()
     await db.refresh(u)
     return await _build_base(u, db)

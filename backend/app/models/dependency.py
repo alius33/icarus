@@ -1,8 +1,6 @@
-from datetime import datetime
-
 from sqlalchemy import Column, DateTime, Index, Integer, String, Text
 
-from app.database import Base
+from app.database import Base, utcnow
 
 
 class Dependency(Base):
@@ -18,8 +16,8 @@ class Dependency(Base):
     affected_projects = Column(Text)  # comma-separated
     priority = Column(String, default="MEDIUM")  # CRITICAL, HIGH, MEDIUM, LOW
     notes = Column(Text)
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    created_at = Column(DateTime, default=utcnow)
+    updated_at = Column(DateTime, default=utcnow, onupdate=utcnow)
 
     __table_args__ = (
         Index("idx_dependencies_status", "status"),

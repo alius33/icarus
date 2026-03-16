@@ -9,13 +9,13 @@ with in-memory file bytes rather than filesystem paths.
 import hashlib
 import logging
 import re
-from datetime import datetime
 from pathlib import Path
 
 from sqlalchemy import delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.config import settings
+from app.database import utcnow
 from app.models.stakeholder import Stakeholder
 from app.models.transcript import Transcript
 from app.models.transcript_mention import TranscriptMention
@@ -217,7 +217,7 @@ async def process_uploaded_transcript(
         existing.participants = participants
         existing.file_hash = file_hash
         existing.source_file = f"Transcripts/{filename}"
-        existing.updated_at = datetime.utcnow()
+        existing.updated_at = utcnow()
         if primary_project_id is not None:
             existing.primary_project_id = primary_project_id
         if secondary_project_id is not None:
