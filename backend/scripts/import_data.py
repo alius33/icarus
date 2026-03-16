@@ -367,7 +367,22 @@ async def _merge_stakeholder_duplicates(session: AsyncSession, verbose: bool):
             _log(f"  Renamed stakeholder '{old_name}' -> '{correct_name}'", verbose)
             continue
 
-        # Both exist — merge mentions from old into new, then delete old
+        # Both exist — merge mentions from old into new, then delete old.
+        # First delete mentions that would conflict (same transcript+mention_type
+        # already exists on the new stakeholder), then move the rest.
+        await session.execute(
+            text("""
+                DELETE FROM transcript_mentions old_m
+                WHERE old_m.stakeholder_id = :old_id
+                  AND EXISTS (
+                    SELECT 1 FROM transcript_mentions new_m
+                    WHERE new_m.stakeholder_id = :new_id
+                      AND new_m.transcript_id = old_m.transcript_id
+                      AND new_m.mention_type = old_m.mention_type
+                  )
+            """),
+            {"new_id": new_sh.id, "old_id": old_sh.id},
+        )
         await session.execute(
             text("UPDATE transcript_mentions SET stakeholder_id = :new_id WHERE stakeholder_id = :old_id"),
             {"new_id": new_sh.id, "old_id": old_sh.id},
