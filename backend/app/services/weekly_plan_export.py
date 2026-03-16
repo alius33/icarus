@@ -68,6 +68,7 @@ def _serialize_plan(plan: WeeklyPlan) -> dict:
                 "is_ai_generated": a.is_ai_generated,
                 "carried_from_week": a.carried_from_week,
                 "source_transcript_id": a.source_transcript_id,
+                "source_update_id": a.source_update_id,
                 "context": a.context,
             }
             for a in actions

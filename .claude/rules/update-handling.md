@@ -28,6 +28,14 @@ When the user says "analyse updates" or "analyse my updates":
    - Stakeholder updates (roles, relationships, attitudes)
    - Project status changes
 
+### Phase 2b: Generate Update Summaries
+
+5b. **Write an analytical summary** for each update (same quality as transcript summaries):
+    - Structured markdown, 5-10 bullet points covering: key decisions, actions, stakeholder dynamics, implications
+    - Store via `PATCH /api/project-updates/{id}` with `{summary: "<markdown>"}`
+    - This summary is displayed in "Current Status" on project pages and as context in weekly plan actions
+    - Do NOT use the raw update text — write an analytical summary like you would for a transcript
+
 ### Phase 3: Update Context Files (Markdown)
 
 6. **Update context files** — these are the source of truth for the import pipeline:
@@ -52,10 +60,16 @@ When the user says "analyse updates" or "analyse my updates":
    - `POST /api/tasks` with `{title, description, status, priority, assignee, project_id, due_date}`
    - Use tasks for actionable items that need tracking (prefer tasks over legacy action_items)
 
-10. **Link updates to relevant projects**:
+10. **Link updates to relevant projects** (MANDATORY — verify links exist):
     - `POST /api/projects/{project_id}/links` with `{links: [{entity_type: "project_update", entity_id: <update_id>}]}`
     - EVERY update must be linked to at least one project — this is how they appear on project pages
     - Determine relevant projects from the content of each update
+    - After creating links, verify with `GET /api/projects/{project_id}/hub` that the update appears
+
+10b. **Create ProjectSummary entries** for each linked project (MANDATORY):
+    - `POST /api/project-summaries` with `{project_id, project_update_id: <update_id>, date: "<YYYY-MM-DD>", relevance: "HIGH"|"MEDIUM"|"LOW", content: "<project-specific summary>"}`
+    - The `content` should be the portion of the analytical summary relevant to this specific project
+    - This is what powers "Current Status" on project pages — without it, updates are invisible there
 
 11. **Update stakeholders** if needed:
     - `POST /api/stakeholders` for new people, or `PATCH /api/stakeholders/{id}` for updates
@@ -64,7 +78,9 @@ When the user says "analyse updates" or "analyse my updates":
 
 12. **Update the weekly plan** with new actions derived from the updates:
     - Check current plan: `GET /api/weekly-plans/current`
-    - Add new actions: `POST /api/weekly-plans/{plan_id}/actions` with `{category, title, description, priority, owner, status, deliverable_id, context}`
+    - Add new actions: `POST /api/weekly-plans/{plan_id}/actions` with `{category, title, description, priority, owner, status, deliverable_id, source_update_id: <update_id>, context: "<rich analytical context from the summary>"}`
+    - The `context` field MUST contain rich analytical content from the update summary — NOT just "From project update: <title>"
+    - The `source_update_id` field MUST be set so the UI can link back to the source update
     - Categories: `deliverable_strategic`, `deliverable_tactical`, `programme_strategic`, `programme_tactical`
     - If no current plan exists, create one: `POST /api/weekly-plans`
 
@@ -103,3 +119,13 @@ When the user says "analyse updates" or "analyse my updates":
 - "Sales Recon" is NOT a project — never create a project for it
 - All API calls go to the **production** Railway URL, not localhost (updates are on production)
 - The project overview tab shows "Recent Updates" only if ProjectLink entries exist for that project
+- "Current Status" on project pages requires ProjectSummary entries — without them, updates are invisible there
+- Weekly plan actions MUST include `source_update_id` + rich `context` from the summary
+
+## Processing Checklist (Verify Every Time)
+
+- [ ] Analytical summary generated and stored on each update record (`PATCH /api/project-updates/{id}`)
+- [ ] ProjectLink entries created for ALL relevant projects
+- [ ] ProjectSummary entries created for each linked project (powers "Current Status")
+- [ ] Weekly plan actions include `source_update_id` + rich analytical context
+- [ ] Context files updated (stakeholders, decisions, threads, trackers, projects)

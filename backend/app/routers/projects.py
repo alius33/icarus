@@ -310,6 +310,7 @@ async def get_project_hub(project_id: int, db: AsyncSession = Depends(get_db)):
             id=ps.id,
             project_id=ps.project_id,
             transcript_id=ps.transcript_id,
+            project_update_id=ps.project_update_id,
             date=str(ps.date) if ps.date else None,
             relevance=ps.relevance,
             content=ps.content,

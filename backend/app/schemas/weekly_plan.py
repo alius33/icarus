@@ -18,6 +18,8 @@ class WeeklyPlanActionBase(BaseModel):
     carried_from_week: int | None = None
     source_transcript_id: int | None = None
     source_transcript_title: str | None = None
+    source_update_id: int | None = None
+    source_update_title: str | None = None
     context: str | None = None
 
 
@@ -33,6 +35,7 @@ class WeeklyPlanActionCreate(BaseModel):
     is_ai_generated: bool = True
     carried_from_week: int | None = None
     source_transcript_id: int | None = None
+    source_update_id: int | None = None
     context: str | None = None
 
 
@@ -47,6 +50,7 @@ class WeeklyPlanActionUpdate(BaseModel):
     position: int | None = None
     is_ai_generated: bool | None = None
     source_transcript_id: int | None = None
+    source_update_id: int | None = None
     context: str | None = None
 
 

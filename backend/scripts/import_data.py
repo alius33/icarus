@@ -2097,7 +2097,8 @@ async def seed_weekly_plans(session: AsyncSession, verbose: bool) -> dict:
                     action_fields = (
                         "description", "priority", "owner", "status",
                         "deliverable_id", "position", "is_ai_generated",
-                        "carried_from_week", "source_transcript_id", "context",
+                        "carried_from_week", "source_transcript_id",
+                        "source_update_id", "context",
                     )
                     for i, action_data in enumerate(actions_data):
                         title = action_data["title"]
@@ -2126,6 +2127,7 @@ async def seed_weekly_plans(session: AsyncSession, verbose: bool) -> dict:
                                 is_ai_generated=action_data.get("is_ai_generated", True),
                                 carried_from_week=action_data.get("carried_from_week"),
                                 source_transcript_id=action_data.get("source_transcript_id"),
+                                source_update_id=action_data.get("source_update_id"),
                                 context=action_data.get("context"),
                             )
                             session.add(action)
@@ -2173,6 +2175,7 @@ async def seed_weekly_plans(session: AsyncSession, verbose: bool) -> dict:
                     is_ai_generated=action_data.get("is_ai_generated", True),
                     carried_from_week=action_data.get("carried_from_week"),
                     source_transcript_id=action_data.get("source_transcript_id"),
+                    source_update_id=action_data.get("source_update_id"),
                     context=action_data.get("context"),
                 )
                 session.add(action)

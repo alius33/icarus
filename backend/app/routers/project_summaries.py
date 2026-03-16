@@ -1,6 +1,6 @@
 from datetime import date
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -20,6 +20,7 @@ def _schema(s: ProjectSummary) -> ProjectSummaryBase:
         id=s.id,
         project_id=s.project_id,
         transcript_id=s.transcript_id,
+        project_update_id=s.project_update_id,
         date=str(s.date) if s.date else None,
         relevance=s.relevance,
         content=s.content,
@@ -56,9 +57,12 @@ async def get_project_summary(summary_id: int, db: AsyncSession = Depends(get_db
 
 @router.post("/project-summaries", response_model=ProjectSummaryBase, status_code=201)
 async def create_project_summary(body: ProjectSummaryCreate, db: AsyncSession = Depends(get_db)):
+    if body.transcript_id is None and body.project_update_id is None:
+        raise HTTPException(400, "Either transcript_id or project_update_id must be provided")
     record = ProjectSummary(
         project_id=body.project_id,
         transcript_id=body.transcript_id,
+        project_update_id=body.project_update_id,
         date=date.fromisoformat(body.date) if body.date else None,
         relevance=body.relevance,
         content=body.content,

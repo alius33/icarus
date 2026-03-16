@@ -151,6 +151,13 @@ export default function ProjectOverviewTab({ project, hub, timeline }: Props) {
     return map;
   }, [hub.transcripts]);
 
+  // Map project_update_id → title for update title lookup
+  const updateTitles = useMemo(() => {
+    const map = new Map<number, string>();
+    for (const u of hub.project_updates || []) if (u.title) map.set(u.id, u.title);
+    return map;
+  }, [hub.project_updates]);
+
   const statusEntries = useMemo(() => {
     const summaries = hub.project_summaries || [];
     if (summaries.length > 0) {
@@ -284,12 +291,22 @@ export default function ProjectOverviewTab({ project, hub, timeline }: Props) {
                   </div>
                   <div className="space-y-3">
                     {entry.items.map((s) => {
-                      const title = transcriptTitles.get(s.transcript_id);
+                      const isUpdate = !s.transcript_id && !!s.project_update_id;
+                      const title = s.transcript_id
+                        ? transcriptTitles.get(s.transcript_id)
+                        : s.project_update_id
+                          ? updateTitles.get(s.project_update_id)
+                          : undefined;
                       return (
                         <div key={s.id} className="border-l-2 border-blue-300 dark:border-blue-700 pl-4 py-1">
                           <div className="flex items-center gap-2 mb-1.5">
                             {title && (
                               <span className="text-sm font-medium text-forest-800 dark:text-forest-100">{title}</span>
+                            )}
+                            {isUpdate && (
+                              <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300">
+                                Update
+                              </span>
                             )}
                             {relevanceBadge(s.relevance)}
                           </div>

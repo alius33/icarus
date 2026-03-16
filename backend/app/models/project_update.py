@@ -13,6 +13,7 @@ class ProjectUpdate(Base):
     content = Column(Text, nullable=False)
     raw_content = Column(Text, nullable=True)
     content_type = Column(String, nullable=False, default="note")  # "note" | "teams_chat"
+    summary = Column(Text, nullable=True)
     is_processed = Column(Boolean, nullable=False, default=False)
     processed_at = Column(DateTime, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)

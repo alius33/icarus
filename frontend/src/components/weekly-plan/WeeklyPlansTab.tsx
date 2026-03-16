@@ -69,7 +69,7 @@ function PillarProgressCard({ deliverables }: { deliverables: ProgrammeDeliverab
 function ActionRow({ action, onToggle }: { action: WeeklyPlanAction; onToggle: (id: number, status: string) => void }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const isDone = action.status === "DONE" || action.status === "SKIPPED";
-  const hasContext = !!(action.source_transcript_id || action.context);
+  const hasContext = !!(action.source_transcript_id || action.source_update_id || action.context);
   const priorityColors: Record<string, string> = {
     HIGH: "text-red-700 bg-red-100 dark:text-red-400 dark:bg-red-900/30",
     MEDIUM: "text-amber-700 bg-amber-100 dark:text-amber-400 dark:bg-amber-900/30",
@@ -135,7 +135,19 @@ function ActionRow({ action, onToggle }: { action: WeeklyPlanAction; onToggle: (
               </Link>
             </div>
           )}
-          {action.source_transcript_id && action.context && (
+          {action.source_update_id && (
+            <div className="flex items-center gap-1.5 text-xs">
+              <Link2 className="h-3 w-3 text-purple-400" />
+              <span className="text-forest-400">From update:</span>
+              <Link
+                href={`/updates/${action.source_update_id}`}
+                className="text-purple-600 dark:text-purple-400 hover:underline font-medium"
+              >
+                {action.source_update_title || `Update #${action.source_update_id}`}
+              </Link>
+            </div>
+          )}
+          {(action.source_transcript_id || action.source_update_id) && action.context && (
             <hr className="border-forest-200 dark:border-forest-700" />
           )}
           {action.context && (

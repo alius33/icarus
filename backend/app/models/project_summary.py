@@ -17,7 +17,13 @@ class ProjectSummary(Base):
     transcript_id = Column(
         Integer,
         ForeignKey("transcripts.id", ondelete="CASCADE"),
-        nullable=False,
+        nullable=True,
+    )
+    project_update_id = Column(
+        Integer,
+        ForeignKey("project_updates.id", ondelete="CASCADE"),
+        nullable=True,
+        index=True,
     )
     date = Column(Date, nullable=True, index=True)
     relevance = Column(String, nullable=True)  # HIGH | MEDIUM | LOW

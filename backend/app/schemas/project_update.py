@@ -6,6 +6,7 @@ class ProjectUpdateBase(BaseModel):
     title: str
     content: str
     content_type: str
+    summary: str | None = None
     is_processed: bool
     created_at: str
     updated_at: str
@@ -29,3 +30,4 @@ class ProjectUpdateUpdate(BaseModel):
     content: str | None = None
     content_type: str | None = None
     project_ids: list[int] | None = None
+    summary: str | None = None

@@ -48,6 +48,10 @@ def _action_schema(a: WeeklyPlanAction) -> WeeklyPlanActionBase:
     transcript_title = None
     if a.source_transcript_id and a.source_transcript:
         transcript_title = a.source_transcript.title
+    # Resolve update title from relationship if available
+    update_title = None
+    if a.source_update_id and a.source_update:
+        update_title = a.source_update.title
     return WeeklyPlanActionBase(
         id=a.id,
         weekly_plan_id=a.weekly_plan_id,
@@ -63,6 +67,8 @@ def _action_schema(a: WeeklyPlanAction) -> WeeklyPlanActionBase:
         carried_from_week=a.carried_from_week,
         source_transcript_id=a.source_transcript_id,
         source_transcript_title=transcript_title,
+        source_update_id=a.source_update_id,
+        source_update_title=update_title,
         context=a.context,
     )
 
@@ -124,6 +130,7 @@ async def get_current_plan(db: AsyncSession = Depends(get_db)):
         select(WeeklyPlan)
         .options(
             selectinload(WeeklyPlan.actions).selectinload(WeeklyPlanAction.source_transcript),
+            selectinload(WeeklyPlan.actions).selectinload(WeeklyPlanAction.source_update),
             selectinload(WeeklyPlan.snapshots),
         )
         .where(WeeklyPlan.week_number == week_num)
@@ -135,6 +142,7 @@ async def get_current_plan(db: AsyncSession = Depends(get_db)):
             select(WeeklyPlan)
             .options(
                 selectinload(WeeklyPlan.actions).selectinload(WeeklyPlanAction.source_transcript),
+            selectinload(WeeklyPlan.actions).selectinload(WeeklyPlanAction.source_update),
                 selectinload(WeeklyPlan.snapshots),
             )
             .order_by(WeeklyPlan.week_number.desc())
@@ -152,6 +160,7 @@ async def get_plan(plan_id: int, db: AsyncSession = Depends(get_db)):
         select(WeeklyPlan)
         .options(
             selectinload(WeeklyPlan.actions).selectinload(WeeklyPlanAction.source_transcript),
+            selectinload(WeeklyPlan.actions).selectinload(WeeklyPlanAction.source_update),
             selectinload(WeeklyPlan.snapshots),
         )
         .where(WeeklyPlan.id == plan_id)
@@ -193,6 +202,7 @@ async def create_plan(body: WeeklyPlanCreate, bg: BackgroundTasks, db: AsyncSess
             is_ai_generated=action_data.is_ai_generated,
             carried_from_week=action_data.carried_from_week,
             source_transcript_id=action_data.source_transcript_id,
+            source_update_id=action_data.source_update_id,
             context=action_data.context,
         )
         db.add(action)
@@ -221,6 +231,7 @@ async def create_plan(body: WeeklyPlanCreate, bg: BackgroundTasks, db: AsyncSess
         select(WeeklyPlan)
         .options(
             selectinload(WeeklyPlan.actions).selectinload(WeeklyPlanAction.source_transcript),
+            selectinload(WeeklyPlan.actions).selectinload(WeeklyPlanAction.source_update),
             selectinload(WeeklyPlan.snapshots),
         )
         .where(WeeklyPlan.id == plan.id)
@@ -234,6 +245,7 @@ async def update_plan(plan_id: int, body: WeeklyPlanUpdate, db: AsyncSession = D
         select(WeeklyPlan)
         .options(
             selectinload(WeeklyPlan.actions).selectinload(WeeklyPlanAction.source_transcript),
+            selectinload(WeeklyPlan.actions).selectinload(WeeklyPlanAction.source_update),
             selectinload(WeeklyPlan.snapshots),
         )
         .where(WeeklyPlan.id == plan_id)
@@ -277,11 +289,12 @@ async def add_action(plan_id: int, body: WeeklyPlanActionCreate, db: AsyncSessio
         is_ai_generated=body.is_ai_generated,
         carried_from_week=body.carried_from_week,
         source_transcript_id=body.source_transcript_id,
+        source_update_id=body.source_update_id,
         context=body.context,
     )
     db.add(action)
     await db.commit()
-    await db.refresh(action, ["source_transcript"])
+    await db.refresh(action, ["source_transcript", "source_update"])
     return _action_schema(action)
 
 
@@ -314,11 +327,13 @@ async def update_action(action_id: int, body: WeeklyPlanActionUpdate, db: AsyncS
         a.is_ai_generated = body.is_ai_generated
     if body.source_transcript_id is not None:
         a.source_transcript_id = body.source_transcript_id
+    if body.source_update_id is not None:
+        a.source_update_id = body.source_update_id
     if body.context is not None:
         a.context = body.context
 
     await db.commit()
-    await db.refresh(a, ["source_transcript"])
+    await db.refresh(a, ["source_transcript", "source_update"])
 
     # Auto-export all plans to seed JSON for Railway deploys
     await export_plans_to_seed(db)

@@ -47,6 +47,7 @@ async def _build_base(u: ProjectUpdate, db: AsyncSession) -> ProjectUpdateBase:
         title=u.title,
         content=u.content,
         content_type=u.content_type,
+        summary=u.summary,
         is_processed=u.is_processed,
         created_at=u.created_at.isoformat() if u.created_at else "",
         updated_at=u.updated_at.isoformat() if u.updated_at else "",
@@ -64,6 +65,7 @@ async def _build_detail(u: ProjectUpdate, db: AsyncSession) -> ProjectUpdateDeta
         content=u.content,
         raw_content=u.raw_content,
         content_type=u.content_type,
+        summary=u.summary,
         is_processed=u.is_processed,
         created_at=u.created_at.isoformat() if u.created_at else "",
         updated_at=u.updated_at.isoformat() if u.updated_at else "",
@@ -189,6 +191,8 @@ async def update_project_update(
     elif body.content_type is not None:
         u.content_type = body.content_type
 
+    if body.summary is not None:
+        u.summary = body.summary
     if body.project_ids is not None:
         await _sync_project_links(u.id, body.project_ids, db)
 

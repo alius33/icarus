@@ -36,7 +36,8 @@ export interface TranscriptList {
 
 export interface SummaryBase {
   id: number;
-  transcript_id: number;
+  transcript_id: number | null;
+  project_update_id: number | null;
   transcript_title: string | null;
   date: string | null;
   tldr: string | null;
@@ -88,7 +89,8 @@ export interface StakeholderDetail extends StakeholderBase {
 }
 
 export interface MentionItem {
-  transcript_id: number;
+  transcript_id: number | null;
+  project_update_id: number | null;
   transcript_title: string | null;
   date: string | null;
   snippet: string;
@@ -261,6 +263,8 @@ export interface ActionItemSchema {
   due_date: string | null;
   source_transcript_id: number | null;
   source_transcript_title: string | null;
+  source_update_id: number | null;
+  source_update_title: string | null;
   project: string | null;
   is_manual?: boolean;
 }
@@ -559,6 +563,7 @@ export interface ProjectUpdateBase {
   title: string;
   content: string;
   content_type: "note" | "teams_chat";
+  summary: string | null;
   is_processed: boolean;
   created_at: string;
   updated_at: string;
@@ -1123,7 +1128,8 @@ export interface ContradictionSchema {
 
 export interface MeetingScoreSchema {
   id: number;
-  transcript_id: number;
+  transcript_id: number | null;
+  project_update_id: number | null;
   date: string | null;
   meeting_title: string | null;
   meeting_type: string | null;
@@ -1175,7 +1181,8 @@ export interface RiskHeatmapRow {
 export interface ProjectSummarySchema {
   id: number;
   project_id: number;
-  transcript_id: number;
+  transcript_id: number | null;
+  project_update_id: number | null;
   date: string | null;
   relevance: string | null;
   content: string;
@@ -1186,7 +1193,8 @@ export interface ProjectSummarySchema {
 
 export interface TranscriptNoteBase {
   id: number;
-  transcript_id: number;
+  transcript_id: number | null;
+  project_update_id: number | null;
   content: string;
   version: number;
   created_at: string;
@@ -1205,7 +1213,8 @@ export interface TranscriptNoteHistory {
 
 export interface TranscriptAttachment {
   id: number;
-  transcript_id: number;
+  transcript_id: number | null;
+  project_update_id: number | null;
   original_filename: string;
   file_type: string;
   size_bytes: number;
@@ -1338,6 +1347,8 @@ export interface WeeklyPlanAction {
   carried_from_week: number | null;
   source_transcript_id: number | null;
   source_transcript_title: string | null;
+  source_update_id: number | null;
+  source_update_title: string | null;
   context: string | null;
 }
 

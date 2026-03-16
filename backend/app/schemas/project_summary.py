@@ -4,7 +4,8 @@ from pydantic import BaseModel
 class ProjectSummaryBase(BaseModel):
     id: int
     project_id: int
-    transcript_id: int
+    transcript_id: int | None = None
+    project_update_id: int | None = None
     date: str | None = None
     relevance: str | None = None
     content: str
@@ -13,7 +14,8 @@ class ProjectSummaryBase(BaseModel):
 
 class ProjectSummaryCreate(BaseModel):
     project_id: int
-    transcript_id: int
+    transcript_id: int | None = None
+    project_update_id: int | None = None
     date: str | None = None
     relevance: str | None = None
     content: str
