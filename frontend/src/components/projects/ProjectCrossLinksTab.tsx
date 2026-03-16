@@ -13,7 +13,7 @@ import EntityModal, {
 const LINK_TYPE_COLORS: Record<string, string> = {
   dependency: "bg-orange-50 text-orange-700 border-orange-200",
   blocker: "bg-red-50 text-red-700 border-red-200",
-  related: "bg-blue-50 text-blue-700 border-blue-200",
+  related: "bg-forest-100 text-forest-600 border-blue-200",
   synergy: "bg-green-50 text-green-700 border-green-200",
   conflict: "bg-rose-50 text-rose-700 border-rose-200",
   input: "bg-purple-50 text-purple-700 border-purple-200",
@@ -179,7 +179,7 @@ export default function ProjectCrossLinksTab({
 
   if (loading)
     return (
-      <p className="text-base text-gray-500 py-4">
+      <p className="text-base text-forest-400 py-4">
         Loading cross-project links...
       </p>
     );
@@ -196,15 +196,15 @@ export default function ProjectCrossLinksTab({
       <div className="flex justify-end">
         <button
           onClick={openCreate}
-          className="px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 text-base font-medium text-white bg-forest-500 rounded-md hover:bg-forest-600 transition-colors"
         >
           + New Link
         </button>
       </div>
 
       {links.length === 0 ? (
-        <div className="rounded-lg border border-gray-200 bg-white p-8 text-center">
-          <p className="text-base text-gray-500">
+        <div className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800 p-8 text-center">
+          <p className="text-base text-forest-400">
             No cross-project links detected yet.
           </p>
         </div>
@@ -223,7 +223,7 @@ export default function ProjectCrossLinksTab({
             return (
               <div
                 key={link.id}
-                className="bg-white rounded-lg border border-gray-200 p-4 hover:border-gray-300 transition-colors"
+                className="bg-white dark:bg-forest-800 rounded-lg border border-forest-200 p-4 hover:border-forest-200 transition-colors"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex items-start gap-3">
@@ -236,13 +236,13 @@ export default function ProjectCrossLinksTab({
                     <div className="space-y-1">
                       {/* Project names and direction */}
                       <div className="flex items-center gap-2 text-base">
-                        <span className="font-medium text-gray-900">
+                        <span className="font-medium text-forest-950">
                           This project
                         </span>
-                        <span className="text-gray-400">{direction}</span>
+                        <span className="text-forest-300">{direction}</span>
                         <Link
                           href={`/projects/${otherId}`}
-                          className="font-medium text-blue-600 hover:text-blue-700 hover:underline"
+                          className="font-medium text-forest-500 hover:text-forest-600 hover:underline"
                         >
                           {otherName || `Project #${otherId}`}
                         </Link>
@@ -250,7 +250,7 @@ export default function ProjectCrossLinksTab({
 
                       {/* Description */}
                       {link.description && (
-                        <p className="text-base text-gray-600">
+                        <p className="text-base text-forest-500">
                           {link.description}
                         </p>
                       )}
@@ -258,7 +258,7 @@ export default function ProjectCrossLinksTab({
                       {/* Badges row */}
                       <div className="flex items-center gap-2 mt-1">
                         <span
-                          className={`inline-flex items-center px-2 py-0.5 rounded-full text-sm font-medium border capitalize ${LINK_TYPE_COLORS[link.link_type] || "bg-gray-50 text-gray-600 border-gray-200"}`}
+                          className={`inline-flex items-center px-2 py-0.5 rounded-full text-sm font-medium border capitalize ${LINK_TYPE_COLORS[link.link_type] || "bg-forest-50 text-forest-500 border-forest-200"}`}
                         >
                           {link.link_type}
                         </span>
@@ -268,13 +268,13 @@ export default function ProjectCrossLinksTab({
                               ? "bg-green-50 text-green-700 border-green-200"
                               : link.status === "monitoring"
                                 ? "bg-yellow-50 text-yellow-700 border-yellow-200"
-                                : "bg-gray-50 text-gray-600 border-gray-200"
+                                : "bg-forest-50 text-forest-500 border-forest-200"
                           }`}
                         >
                           {link.status}
                         </span>
                         {link.date_detected && (
-                          <span className="text-sm text-gray-400">
+                          <span className="text-sm text-forest-300">
                             Detected {formatDate(link.date_detected)}
                           </span>
                         )}
@@ -285,7 +285,7 @@ export default function ProjectCrossLinksTab({
                   {/* Edit button */}
                   <button
                     onClick={() => openEdit(link)}
-                    className="text-gray-400 hover:text-blue-600 flex-shrink-0"
+                    className="text-forest-300 hover:text-forest-500 flex-shrink-0"
                     title="Edit"
                   >
                     <svg

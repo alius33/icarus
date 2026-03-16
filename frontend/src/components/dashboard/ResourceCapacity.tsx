@@ -55,26 +55,26 @@ export default function ResourceCapacity() {
   };
 
   if (loading) {
-    return <div className="p-4 text-base text-gray-500">Loading resources...</div>;
+    return <div className="p-4 text-base text-forest-400">Loading resources...</div>;
   }
 
   return (
     <div>
       <div className="flex items-center justify-between mb-3">
-        <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
+        <h4 className="text-sm font-semibold text-forest-400 uppercase tracking-wider flex items-center gap-1.5">
           <UserCog className="h-3.5 w-3.5" />
           Resource Capacity ({resources.length})
         </h4>
         <button
           onClick={handleCreate}
-          className="flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800"
+          className="flex items-center gap-1 text-sm text-forest-500 hover:text-blue-800"
         >
           <Plus className="h-3 w-3" /> Add
         </button>
       </div>
 
       {resources.length === 0 ? (
-        <p className="text-base text-gray-500">No resource allocations tracked.</p>
+        <p className="text-base text-forest-400">No resource allocations tracked.</p>
       ) : (
         <div className="space-y-2">
           {resources.map((r) => {
@@ -86,11 +86,11 @@ export default function ResourceCapacity() {
               <button
                 key={r.id}
                 onClick={() => handleEdit(r)}
-                className="flex items-start gap-3 w-full text-left rounded-md border border-gray-100 bg-white px-3 py-2.5 hover:bg-gray-50 transition-colors"
+                className="flex items-start gap-3 w-full text-left rounded-md border border-gray-100 bg-white dark:bg-forest-800 px-3 py-2.5 hover:bg-forest-50 transition-colors"
               >
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    <span className="text-base font-medium text-gray-900">
+                    <span className="text-base font-medium text-forest-950">
                       {r.person_name}
                     </span>
                     <span
@@ -100,25 +100,25 @@ export default function ResourceCapacity() {
                     </span>
                   </div>
                   {r.role && (
-                    <p className="text-[10px] text-gray-500">{r.role}</p>
+                    <p className="text-[10px] text-forest-400">{r.role}</p>
                   )}
 
                   {/* Allocation bar */}
                   <div className="mt-1.5 w-full">
                     <div className="flex items-center gap-2">
-                      <div className="relative h-2 flex-1 rounded-full bg-gray-100">
+                      <div className="relative h-2 flex-1 rounded-full bg-forest-100">
                         <div
                           className={`absolute inset-y-0 left-0 rounded-full ${
                             totalPct > 100
                               ? "bg-red-500"
                               : totalPct > 80
                                 ? "bg-amber-500"
-                                : "bg-blue-500"
+                                : "bg-forest-500"
                           }`}
                           style={{ width: `${Math.min(totalPct, 100)}%` }}
                         />
                       </div>
-                      <span className="text-[10px] font-medium text-gray-500 tabular-nums w-8 text-right">
+                      <span className="text-[10px] font-medium text-forest-400 tabular-nums w-8 text-right">
                         {totalPct}%
                       </span>
                     </div>
@@ -127,16 +127,16 @@ export default function ResourceCapacity() {
                         {r.allocations.map((a, i) => (
                           <span
                             key={i}
-                            className="text-[10px] text-gray-400"
+                            className="text-[10px] text-forest-300"
                           >
-                            {a.workstream} {a.percentage}%
+                            {a.project} {a.percentage}%
                           </span>
                         ))}
                       </div>
                     )}
                   </div>
                 </div>
-                <Edit2 className="h-3 w-3 text-gray-400 flex-shrink-0 mt-1" />
+                <Edit2 className="h-3 w-3 text-forest-300 flex-shrink-0 mt-1" />
               </button>
             );
           })}

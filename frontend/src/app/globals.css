@@ -4,18 +4,18 @@
 
 @layer base {
   :root {
-    --bg-primary: 249 250 251;
+    --bg-primary: 241 242 237;
     --bg-card: 255 255 255;
-    --text-primary: 17 24 39;
-    --text-secondary: 107 114 128;
-    --border-color: 229 231 235;
+    --text-primary: 46 45 29;
+    --text-secondary: 91 109 73;
+    --border-color: 200 205 181;
   }
   .dark {
-    --bg-primary: 17 24 39;
-    --bg-card: 31 41 55;
-    --text-primary: 243 244 246;
-    --text-secondary: 156 163 175;
-    --border-color: 55 65 81;
+    --bg-primary: 46 45 29;
+    --bg-card: 30 51 16;
+    --text-primary: 241 242 237;
+    --text-secondary: 162 172 130;
+    --border-color: 58 74 45;
   }
 }
 
@@ -30,7 +30,15 @@ html {
 }
 
 body {
-  @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+  @apply bg-forest-50 text-forest-950 dark:bg-forest-950 dark:text-forest-50;
+}
+
+/* Text selection */
+::selection {
+  background-color: rgba(91, 109, 73, 0.25);
+}
+.dark ::selection {
+  background-color: rgba(162, 172, 130, 0.3);
 }
 
 /* Toast slide-in animation */
@@ -59,6 +67,6 @@ body {
 
 /* Keyboard navigation focus indicator */
 *:focus-visible {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid #5B6D49;
   outline-offset: 2px;
 }

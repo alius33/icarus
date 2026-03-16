@@ -22,7 +22,7 @@ Read these files in parallel:
 
 1. `analysis/trackers/topic_evolution.md` -- existing topic tracking data
 2. `context/glossary.md` -- for recognising topic-related terminology
-3. `context/workstreams.md` -- for mapping topics to workstreams
+3. All files in `context/projects/` -- for mapping topics to projects
 4. ALL files in `analysis/summaries/` -- list with `ls analysis/summaries/`, then read each file
 
 **Context window strategy:** If there are more than 30 summaries, process in chronological batches of 15. Carry forward a compressed topic state between batches (topic name, last mention date, mention count, last known intensity).
@@ -94,7 +94,7 @@ Flag topics where:
 
 Look for topics that SHOULD be discussed but are not:
 
-1. **Expected topics from workstream status**: Read `context/workstreams.md`. Are there active workstreams or initiatives that have not been discussed recently?
+1. **Expected topics from project status**: Read all files in `context/projects/`. Are there active projects or initiatives that have not been discussed recently?
 2. **Open threads**: Read `context/open_threads.md`. Are there unresolved threads that have gone quiet?
 3. **Previous week's concerns**: Read the most recent weekly summary. Were any "Emerging Risks" or "Carried Forward" items not addressed in subsequent meetings?
 4. **Seasonal or deadline-driven topics**: Are there upcoming deadlines or milestones that should be generating discussion but are not?

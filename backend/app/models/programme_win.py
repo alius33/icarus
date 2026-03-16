@@ -14,7 +14,7 @@ class ProgrammeWin(Base):
     description = Column(Text)
     before_state = Column(String)
     after_state = Column(String)
-    workstream = Column(String)
+    project = Column(String)
     confidence = Column(String, nullable=False, default="estimated")  # measured | estimated | anecdotal
     date_recorded = Column(Date)
     notes = Column(Text)

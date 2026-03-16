@@ -14,7 +14,7 @@ $ARGUMENTS = week date (e.g. "2026-03-03") or "latest"
 3. Find all summaries in `analysis/summaries/` that fall within the target week
 4. Read all relevant summaries
 5. Load context:
-   - `context/workstreams.md`
+   - All files in `context/projects/`
    - `context/stakeholders.md`
    - `context/open_threads.md`
 

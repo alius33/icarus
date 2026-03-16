@@ -50,10 +50,10 @@ export default function NeedsAttention({ items, onItemClick }: Props) {
 
   return (
     <section>
-      <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+      <h3 className="text-sm font-semibold text-forest-400 uppercase tracking-wider mb-3 flex items-center gap-1.5">
         <AlertTriangle className="h-3.5 w-3.5 text-amber-500" />
         Needs Attention
-        <span className="ml-1 text-gray-400">({items.length})</span>
+        <span className="ml-1 text-forest-300">({items.length})</span>
       </h3>
       <div className="space-y-3">
         {sections.map((section) => (
@@ -62,7 +62,7 @@ export default function NeedsAttention({ items, onItemClick }: Props) {
             className={`rounded-lg border ${section.color} divide-y divide-gray-100/50`}
           >
             <div className="px-4 py-2">
-              <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-500">
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-forest-400">
                 {section.label} ({section.items.length})
               </span>
             </div>
@@ -89,10 +89,10 @@ function FlatList({
 }) {
   return (
     <section>
-      <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+      <h3 className="text-sm font-semibold text-forest-400 uppercase tracking-wider mb-3 flex items-center gap-1.5">
         <AlertTriangle className="h-3.5 w-3.5 text-amber-500" />
         Needs Attention
-        <span className="ml-1 text-gray-400">({items.length})</span>
+        <span className="ml-1 text-forest-300">({items.length})</span>
       </h3>
       <div className="rounded-lg border border-amber-200 bg-amber-50/40 divide-y divide-amber-100">
         {items.map((item) => (
@@ -121,10 +121,10 @@ function AttentionRow({
     >
       <AttentionIcon reason={item.reason} />
       <div className="flex-1 min-w-0">
-        <p className="text-base text-gray-900">
+        <p className="text-base text-forest-950">
           <span className="font-medium">{item.title}</span>
           {item.owner && (
-            <span className="text-gray-500"> — {item.owner}</span>
+            <span className="text-forest-400"> — {item.owner}</span>
           )}
         </p>
         <div className="flex items-center gap-2 mt-0.5">
@@ -142,7 +142,7 @@ function AttentionRow({
             </span>
           )}
           {item.project_name && (
-            <span className="text-[10px] text-gray-400">
+            <span className="text-[10px] text-forest-300">
               {item.project_name}
             </span>
           )}

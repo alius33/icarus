@@ -30,7 +30,7 @@ Also ask for:
 2. All weekly reports from `analysis/weekly/` covering the specified period
 3. `analysis/trackers/risk_register.md` — CRITICAL and HIGH risks
 4. `context/decisions.md` — decisions made during the period
-5. `context/workstreams.md` — current workstream status
+5. All files in `context/projects/` — current project context
 6. `analysis/trackers/action_items.md` — read last 200 lines for open items
 7. `analysis/trackers/sentiment_tracker.md` — shifts during the period
 
@@ -101,7 +101,7 @@ If audience is specified, also read their profile from `context/stakeholders.md`
 4. `analysis/trackers/contradictions.md` — contradictions and gaps
 5. `analysis/trackers/meeting_scores.md` — meeting effectiveness
 6. `analysis/trackers/topic_evolution.md` — topic trends
-7. `context/workstreams.md` — workstream status
+7. All files in `context/projects/` — project context
 8. `context/open_threads.md` — unresolved threads
 9. `context/decisions.md` — decision log
 
@@ -112,7 +112,7 @@ If audience is specified, also read their profile from `context/stakeholders.md`
 4. **Commitments** — full table, highlight overdue/broken entries
 5. **Contradictions** — both contradictions and information gaps
 6. **Open Threads** — all OPEN and WATCHING threads with severity
-7. **Workstream Status** — one row per workstream: name, lead, status, RAG, last milestone
+7. **Project Status** — one row per active project: name, lead, status, RAG, last milestone
 8. **Meeting Scores** — full scores table
 9. **Topic Trends** — topics filtered to Rising or Escalating trends
 
@@ -159,10 +159,10 @@ The user describes what they need. Use the data source reference below to identi
 |--------|------|----------|
 | Stakeholders | `context/stakeholders.md` | 40+ people with roles, tiers, dynamics |
 | Decisions | `context/decisions.md` | 56 decisions with rationale |
-| Workstreams | `context/workstreams.md` | 6 workstream status and history |
+| Projects | `context/projects/` | Per-project context and status |
 | Open threads | `context/open_threads.md` | Unresolved questions |
 | Glossary | `context/glossary.md` | Names, acronyms, jargon |
-| Project docs | `context/projects/ws*.md` | Per-workstream context |
+| Project docs | `context/projects/*.md` | Per-project context |
 
 ### Custom Report Rules
 - Save to project root with a descriptive filename: `[report-type]-YYYY-MM-DD.[ext]`

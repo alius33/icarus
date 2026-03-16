@@ -12,8 +12,6 @@ import type {
   SummaryDetail,
   WeeklyReportBase,
   WeeklyReportDetail,
-  WorkstreamBase,
-  WorkstreamDetail,
   StakeholderBase,
   StakeholderDetail,
   MentionItem,
@@ -89,6 +87,9 @@ import type {
   WeeklyPlan,
   WeeklyPlanFull,
   WeeklyPlanAction,
+  ProjectUpdateBase,
+  ProjectUpdateDetail,
+  ProjectUpdateCreate,
 } from "./types";
 
 async function mutateApi<T>(
@@ -161,11 +162,6 @@ export const api = {
   getTranscriptSummary: (id: number) =>
     fetchApi<SummaryDetail>(`/api/transcripts/${id}/summary`),
 
-  // Workstreams
-  getWorkstreams: () => fetchApi<WorkstreamBase[]>("/api/workstreams"),
-  getWorkstream: (id: number) =>
-    fetchApi<WorkstreamDetail>(`/api/workstreams/${id}`),
-
   // Stakeholders
   getStakeholders: (tier?: number) =>
     fetchApi<StakeholderBase[]>(
@@ -181,17 +177,11 @@ export const api = {
   getDecisions: (params?: Record<string, string>) =>
     fetchApi<DecisionSchema[]>("/api/decisions", params),
   getDecision: (id: number) => fetchApi<DecisionSchema>(`/api/decisions/${id}`),
-  getDecisionBoard: (workstreamId?: number, projectId?: number) => {
-    const params: Record<string, string> = {};
-    if (workstreamId) params.workstream_id = String(workstreamId);
-    if (projectId) params.project_id = String(projectId);
-    return fetchApi<DecisionBoardResponse>("/api/decisions/board", Object.keys(params).length ? params : undefined);
+  getDecisionBoard: (projectId?: number) => {
+    return fetchApi<DecisionBoardResponse>("/api/decisions/board", projectId ? { project_id: String(projectId) } : undefined);
   },
-  getDecisionTimeline: (workstreamId?: number, projectId?: number) => {
-    const params: Record<string, string> = {};
-    if (workstreamId) params.workstream_id = String(workstreamId);
-    if (projectId) params.project_id = String(projectId);
-    return fetchApi<DecisionTimelineResponse>("/api/decisions/timeline", Object.keys(params).length ? params : undefined);
+  getDecisionTimeline: (projectId?: number) => {
+    return fetchApi<DecisionTimelineResponse>("/api/decisions/timeline", projectId ? { project_id: String(projectId) } : undefined);
   },
   createDecision: (data: DecisionCreate) =>
     mutateApi<DecisionSchema>("/api/decisions", "POST", data),
@@ -386,8 +376,8 @@ export const api = {
     mutateApi<{ ok: boolean }>(`/api/wins/${id}`, "DELETE"),
 
   // Adoption Metrics
-  getAdoption: (workstream?: string) =>
-    fetchApi<AdoptionMetricSchema[]>("/api/adoption", workstream ? { workstream } : undefined),
+  getAdoption: (project?: string) =>
+    fetchApi<AdoptionMetricSchema[]>("/api/adoption", project ? { project } : undefined),
   createAdoption: (data: AdoptionMetricCreate) =>
     mutateApi<AdoptionMetricSchema>("/api/adoption", "POST", data),
   deleteAdoption: (id: number) =>
@@ -588,4 +578,22 @@ export const api = {
     mutateApi<WeeklyPlanAction>(`/api/weekly-plans/actions/${id}`, "PATCH", body),
   deletePlanAction: (id: number) =>
     mutateApi<{ ok: boolean }>(`/api/weekly-plans/actions/${id}`, "DELETE"),
+
+  // Project Updates
+  getProjectUpdates: (params?: { project_id?: number; content_type?: string; is_processed?: boolean }) => {
+    const searchParams = new URLSearchParams();
+    if (params?.project_id) searchParams.set("project_id", String(params.project_id));
+    if (params?.content_type) searchParams.set("content_type", params.content_type);
+    if (params?.is_processed !== undefined) searchParams.set("is_processed", String(params.is_processed));
+    const qs = searchParams.toString();
+    return fetchApi<ProjectUpdateBase[]>(`/api/project-updates${qs ? `?${qs}` : ""}`);
+  },
+  getProjectUpdate: (id: number) =>
+    fetchApi<ProjectUpdateDetail>(`/api/project-updates/${id}`),
+  createProjectUpdate: (body: ProjectUpdateCreate) =>
+    mutateApi<ProjectUpdateBase>("/api/project-updates", "POST", body),
+  updateProjectUpdate: (id: number, body: Record<string, unknown>) =>
+    mutateApi<ProjectUpdateBase>(`/api/project-updates/${id}`, "PATCH", body),
+  deleteProjectUpdate: (id: number) =>
+    mutateApi<{ ok: boolean }>(`/api/project-updates/${id}`, "DELETE"),
 };

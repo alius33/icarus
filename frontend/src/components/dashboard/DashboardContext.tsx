@@ -21,7 +21,7 @@ interface DashboardState {
 
 const initialFilters: DashboardFilters = {
   timeFilter: "2w",
-  workstreamFilter: null,
+  projectFilter: null,
   activeTab: "risks",
 };
 
@@ -42,7 +42,7 @@ type DashboardAction =
   | { type: "SET_ERROR"; payload: { section: string; message: string } }
   | { type: "CLEAR_ERROR"; payload: string }
   | { type: "SET_TIME_FILTER"; payload: TimeFilter }
-  | { type: "SET_WORKSTREAM_FILTER"; payload: string | null }
+  | { type: "SET_PROJECT_FILTER"; payload: string | null }
   | { type: "SET_TAB"; payload: DashboardTab }
   | { type: "OPEN_MODAL"; payload: { type: string; data?: unknown } }
   | { type: "CLOSE_MODAL" }
@@ -66,8 +66,8 @@ function dashboardReducer(state: DashboardState, action: DashboardAction): Dashb
     }
     case "SET_TIME_FILTER":
       return { ...state, filters: { ...state.filters, timeFilter: action.payload } };
-    case "SET_WORKSTREAM_FILTER":
-      return { ...state, filters: { ...state.filters, workstreamFilter: action.payload } };
+    case "SET_PROJECT_FILTER":
+      return { ...state, filters: { ...state.filters, projectFilter: action.payload } };
     case "SET_TAB":
       return { ...state, filters: { ...state.filters, activeTab: action.payload } };
     case "OPEN_MODAL":

@@ -30,8 +30,8 @@ export function useDashboardFilters() {
     updateUrl({ time: value === "2w" ? null : value }); // 2w is default, don't show in URL
   }, [dispatch, updateUrl]);
 
-  const setWorkstreamFilter = useCallback((value: string | null) => {
-    dispatch({ type: "SET_WORKSTREAM_FILTER", payload: value });
+  const setProjectFilter = useCallback((value: string | null) => {
+    dispatch({ type: "SET_PROJECT_FILTER", payload: value });
     updateUrl({ ws: value });
   }, [dispatch, updateUrl]);
 
@@ -46,14 +46,14 @@ export function useDashboardFilters() {
     const ws = searchParams.get("ws");
     const tab = searchParams.get("tab") as DashboardTab | null;
     if (time) dispatch({ type: "SET_TIME_FILTER", payload: time });
-    if (ws) dispatch({ type: "SET_WORKSTREAM_FILTER", payload: ws });
+    if (ws) dispatch({ type: "SET_PROJECT_FILTER", payload: ws });
     if (tab) dispatch({ type: "SET_TAB", payload: tab });
   }, [searchParams, dispatch]);
 
   return {
     filters: state.filters,
     setTimeFilter,
-    setWorkstreamFilter,
+    setProjectFilter,
     setTab,
     initFromUrl,
   };

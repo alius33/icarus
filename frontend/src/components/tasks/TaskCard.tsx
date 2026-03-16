@@ -39,21 +39,21 @@ export default function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
       {...listeners}
       onClick={() => onClick(task)}
       className={`
-        bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700
+        bg-white dark:bg-forest-800 border border-forest-200 dark:border-forest-700
         rounded-lg p-3 cursor-pointer hover:shadow-md transition-shadow
-        ${isDragging ? "shadow-lg ring-2 ring-blue-400" : ""}
+        ${isDragging ? "shadow-lg ring-2 ring-forest-400" : ""}
       `}
     >
       {/* Top row: identifier + priority */}
       <div className="flex items-center justify-between mb-1">
-        <span className="text-sm font-mono text-gray-400">{task.identifier}</span>
+        <span className="text-sm font-mono text-forest-300">{task.identifier}</span>
         {task.priority !== "NONE" && (
           <span className={`w-2 h-2 rounded-full ${priorityCfg.dotColor}`} title={priorityCfg.label} />
         )}
       </div>
 
       {/* Title */}
-      <p className="text-base font-medium text-gray-900 dark:text-gray-100 line-clamp-2 mb-2">
+      <p className="text-base font-medium text-forest-950 dark:text-forest-50 line-clamp-2 mb-2">
         {task.title}
       </p>
 
@@ -63,13 +63,13 @@ export default function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
           {task.labels.slice(0, 3).map((label) => (
             <span
               key={label}
-              className="px-1.5 py-0.5 text-sm rounded bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300"
+              className="px-1.5 py-0.5 text-sm rounded bg-forest-100 dark:bg-forest-900/30 text-forest-600 dark:text-forest-200"
             >
               {label}
             </span>
           ))}
           {task.labels.length > 3 && (
-            <span className="px-1.5 py-0.5 text-sm text-gray-400">
+            <span className="px-1.5 py-0.5 text-sm text-forest-300">
               +{task.labels.length - 3}
             </span>
           )}
@@ -77,7 +77,7 @@ export default function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
       )}
 
       {/* Bottom row: assignee, due date, sub-tasks */}
-      <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
+      <div className="flex items-center gap-3 text-sm text-forest-400 dark:text-forest-300">
         {task.assignee && (
           <span className="flex items-center gap-1 truncate">
             <User className="h-3 w-3" />
@@ -100,7 +100,7 @@ export default function TaskCard({ task, onClick, isDragging }: TaskCardProps) {
 
       {/* Project badge */}
       {task.project_name && (
-        <div className="mt-2 text-sm text-gray-400 truncate">
+        <div className="mt-2 text-sm text-forest-300 truncate">
           {task.project_name}
         </div>
       )}

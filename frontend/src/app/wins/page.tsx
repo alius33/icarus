@@ -54,7 +54,7 @@ function categoryColor(cat: string): string {
     case "time_saved":
       return "bg-purple-50 border-purple-200 text-purple-700";
     case "adoption":
-      return "bg-blue-50 border-blue-200 text-blue-700";
+      return "bg-blue-50 border-blue-200 text-forest-600";
     case "quality":
       return "bg-green-50 border-green-200 text-green-700";
     case "reach":
@@ -62,7 +62,7 @@ function categoryColor(cat: string): string {
     case "process_improvement":
       return "bg-indigo-50 border-indigo-200 text-indigo-700";
     default:
-      return "bg-gray-50 border-gray-200 text-gray-700";
+      return "bg-forest-50 border-forest-200 text-forest-600";
   }
 }
 
@@ -83,7 +83,7 @@ function confidenceBadge(confidence: string) {
     case "anecdotal":
     default:
       return (
-        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-600 border border-gray-200">
+        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-sm font-medium bg-forest-100 text-forest-500 border border-forest-200">
           Anecdotal
         </span>
       );
@@ -211,7 +211,7 @@ export default function WinsPage() {
   const [formDescription, setFormDescription] = useState("");
   const [formBefore, setFormBefore] = useState("");
   const [formAfter, setFormAfter] = useState("");
-  const [formWorkstream, setFormWorkstream] = useState("");
+  const [formProject, setFormProject] = useState("");
   const [formConfidence, setFormConfidence] = useState("estimated");
   const [formDate, setFormDate] = useState("");
   const [formNotes, setFormNotes] = useState("");
@@ -242,7 +242,7 @@ export default function WinsPage() {
     setFormDescription("");
     setFormBefore("");
     setFormAfter("");
-    setFormWorkstream("");
+    setFormProject("");
     setFormConfidence("estimated");
     setFormDate("");
     setFormNotes("");
@@ -262,7 +262,7 @@ export default function WinsPage() {
     setFormDescription(win.description || "");
     setFormBefore(win.before_state || "");
     setFormAfter(win.after_state || "");
-    setFormWorkstream(win.workstream || "");
+    setFormProject(win.project || "");
     setFormConfidence(win.confidence);
     setFormDate(win.date_recorded || "");
     setFormNotes(win.notes || "");
@@ -284,7 +284,7 @@ export default function WinsPage() {
         description: formDescription.trim() || undefined,
         before_state: formBefore.trim() || undefined,
         after_state: formAfter.trim() || undefined,
-        workstream: formWorkstream.trim() || undefined,
+        project: formProject.trim() || undefined,
         confidence: formConfidence,
         date_recorded: formDate || undefined,
         notes: formNotes.trim() || undefined,
@@ -334,16 +334,16 @@ export default function WinsPage() {
   );
 
   const measuredCount = wins.filter((w) => w.confidence === "measured").length;
-  const uniqueWorkstreams = new Set(
-    wins.map((w) => w.workstream).filter(Boolean),
+  const uniqueProjects = new Set(
+    wins.map((w) => w.project).filter(Boolean),
   );
 
   /* render */
   if (loading) {
     return (
       <div className="space-y-6">
-        <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">Programme Wins</h2>
-        <p className="text-base text-gray-500">Loading wins...</p>
+        <h2 className="text-xl md:text-2xl font-bold text-forest-950 dark:text-forest-50">Programme Wins</h2>
+        <p className="text-base text-forest-400">Loading wins...</p>
       </div>
     );
   }
@@ -351,7 +351,7 @@ export default function WinsPage() {
   if (error) {
     return (
       <div className="space-y-6">
-        <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">Programme Wins</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-forest-950 dark:text-forest-50">Programme Wins</h2>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
           <p className="text-base text-red-700">{error}</p>
         </div>
@@ -364,14 +364,14 @@ export default function WinsPage() {
       {/* header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">Programme Wins</h2>
-          <p className="mt-1 text-base text-gray-500">
+          <h2 className="text-xl md:text-2xl font-bold text-forest-950 dark:text-forest-50">Programme Wins</h2>
+          <p className="mt-1 text-base text-forest-400">
             Track and celebrate measurable programme achievements
           </p>
         </div>
         <button
           onClick={openCreate}
-          className="px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 text-base font-medium text-white bg-forest-500 rounded-md hover:bg-forest-600 transition-colors"
         >
           + New Win
         </button>
@@ -379,30 +379,30 @@ export default function WinsPage() {
 
       {/* summary stats bar */}
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-        <div className="bg-white rounded-lg border border-gray-200 p-4">
-          <p className="text-sm font-medium uppercase tracking-wider text-gray-500">
+        <div className="bg-white dark:bg-forest-800 rounded-lg border border-forest-200 p-4">
+          <p className="text-sm font-medium uppercase tracking-wider text-forest-400">
             Total Wins
           </p>
-          <p className="mt-1 text-2xl font-bold text-gray-900">{wins.length}</p>
+          <p className="mt-1 text-2xl font-bold text-forest-950">{wins.length}</p>
         </div>
-        <div className="bg-white rounded-lg border border-gray-200 p-4">
-          <p className="text-sm font-medium uppercase tracking-wider text-gray-500">
+        <div className="bg-white dark:bg-forest-800 rounded-lg border border-forest-200 p-4">
+          <p className="text-sm font-medium uppercase tracking-wider text-forest-400">
             Measured
           </p>
           <p className="mt-1 text-2xl font-bold text-green-600">
             {measuredCount}
           </p>
         </div>
-        <div className="bg-white rounded-lg border border-gray-200 p-4">
-          <p className="text-sm font-medium uppercase tracking-wider text-gray-500">
-            Workstreams
+        <div className="bg-white dark:bg-forest-800 rounded-lg border border-forest-200 p-4">
+          <p className="text-sm font-medium uppercase tracking-wider text-forest-400">
+            Projects
           </p>
-          <p className="mt-1 text-2xl font-bold text-blue-600">
-            {uniqueWorkstreams.size}
+          <p className="mt-1 text-2xl font-bold text-forest-500">
+            {uniqueProjects.size}
           </p>
         </div>
-        <div className="bg-white rounded-lg border border-gray-200 p-4">
-          <p className="text-sm font-medium uppercase tracking-wider text-gray-500">
+        <div className="bg-white dark:bg-forest-800 rounded-lg border border-forest-200 p-4">
+          <p className="text-sm font-medium uppercase tracking-wider text-forest-400">
             Categories
           </p>
           <p className="mt-1 text-2xl font-bold text-purple-600">
@@ -413,13 +413,13 @@ export default function WinsPage() {
 
       {/* category filter */}
       <div className="flex items-center gap-2 flex-wrap">
-        <span className="text-base font-medium text-gray-700">Filter:</span>
+        <span className="text-base font-medium text-forest-600">Filter:</span>
         <button
           onClick={() => setFilterCategory("all")}
           className={`px-3 py-1 text-sm font-medium rounded-full border transition-colors ${
             filterCategory === "all"
-              ? "bg-gray-900 text-gray-900 dark:text-white border-gray-900"
-              : "bg-white text-gray-600 border-gray-300 hover:border-gray-400"
+              ? "bg-forest-900 text-forest-950 dark:text-white border-gray-900"
+              : "bg-white dark:bg-forest-800 text-forest-500 border-forest-200 hover:border-gray-400"
           }`}
         >
           All
@@ -430,8 +430,8 @@ export default function WinsPage() {
             onClick={() => setFilterCategory(cat.value)}
             className={`px-3 py-1 text-sm font-medium rounded-full border transition-colors ${
               filterCategory === cat.value
-                ? "bg-gray-900 text-gray-900 dark:text-white border-gray-900"
-                : "bg-white text-gray-600 border-gray-300 hover:border-gray-400"
+                ? "bg-forest-900 text-forest-950 dark:text-white border-gray-900"
+                : "bg-white dark:bg-forest-800 text-forest-500 border-forest-200 hover:border-gray-400"
             }`}
           >
             {cat.label}
@@ -442,7 +442,7 @@ export default function WinsPage() {
       {/* wins by category */}
       {filteredWins.length === 0 ? (
         <div className="text-center py-12">
-          <p className="text-base text-gray-500">
+          <p className="text-base text-forest-400">
             No wins recorded yet. Click &ldquo;+ New Win&rdquo; to add your
             first programme win.
           </p>
@@ -456,10 +456,10 @@ export default function WinsPage() {
                 <div className={`p-1.5 rounded-md border ${categoryColor(category)}`}>
                   <CategoryIconSvg category={category} />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-lg font-semibold text-forest-950">
                   {categoryLabel(category)}
                 </h3>
-                <span className="text-base text-gray-400">
+                <span className="text-base text-forest-300">
                   ({catWins.length})
                 </span>
               </div>
@@ -467,13 +467,13 @@ export default function WinsPage() {
                 {catWins.map((win) => (
                   <div
                     key={win.id}
-                    className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                    className="bg-white dark:bg-forest-800 rounded-lg border border-forest-200 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
                     onClick={() => openEdit(win)}
                   >
                     <div className="p-5">
                       {/* top row: title + confidence */}
                       <div className="flex items-start justify-between gap-3 mb-3">
-                        <h4 className="text-base font-semibold text-gray-900 leading-tight">
+                        <h4 className="text-base font-semibold text-forest-950 leading-tight">
                           {win.title}
                         </h4>
                         {confidenceBadge(win.confidence)}
@@ -481,7 +481,7 @@ export default function WinsPage() {
 
                       {/* description */}
                       {win.description && (
-                        <p className="text-base text-gray-600 mb-3">
+                        <p className="text-base text-forest-500 mb-3">
                           {win.description}
                         </p>
                       )}
@@ -502,7 +502,7 @@ export default function WinsPage() {
                           {win.before_state && win.after_state && (
                             <div className="flex items-center">
                               <svg
-                                className="w-5 h-5 text-gray-400"
+                                className="w-5 h-5 text-forest-300"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -530,10 +530,10 @@ export default function WinsPage() {
                       )}
 
                       {/* meta row */}
-                      <div className="flex items-center gap-3 text-sm text-gray-400">
-                        {win.workstream && (
-                          <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200 font-medium">
-                            {win.workstream}
+                      <div className="flex items-center gap-3 text-sm text-forest-300">
+                        {win.project && (
+                          <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-forest-100 text-forest-600 border border-blue-200 font-medium">
+                            {win.project}
                           </span>
                         )}
                         {win.date_recorded && (
@@ -596,10 +596,10 @@ export default function WinsPage() {
         </div>
         <div className="grid grid-cols-2 gap-4">
           <FormInput
-            label="Workstream"
-            value={formWorkstream}
-            onChange={setFormWorkstream}
-            placeholder="e.g. WS2"
+            label="Project"
+            value={formProject}
+            onChange={setFormProject}
+            placeholder="e.g. CLARA"
           />
           <FormSelect
             label="Confidence"

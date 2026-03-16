@@ -55,32 +55,32 @@ export default function ProjectStakeholdersTab({
   return (
     <div className="space-y-4">
       <div className="flex justify-end">
-        <button onClick={openCreate} className="px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">+ New Stakeholder</button>
+        <button onClick={openCreate} className="px-4 py-2 text-base font-medium text-white bg-forest-500 rounded-md hover:bg-forest-600 transition-colors">+ New Stakeholder</button>
       </div>
 
       {stakeholders.length === 0 ? (
-        <div className="rounded-lg border border-gray-200 bg-white p-8 text-center">
-          <p className="text-base text-gray-500">No stakeholders linked to this project yet.</p>
+        <div className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800 p-8 text-center">
+          <p className="text-base text-forest-400">No stakeholders linked to this project yet.</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {stakeholders.map((s) => (
-            <div key={s.id} className="relative group rounded-lg border border-gray-200 bg-white p-4 transition-shadow hover:shadow-md">
+            <div key={s.id} className="relative group rounded-lg border border-forest-200 bg-white dark:bg-forest-800 p-4 transition-shadow hover:shadow-md">
               <button onClick={(e) => { e.preventDefault(); openEdit(s); }}
-                className="absolute top-4 right-4 text-gray-400 hover:text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" title="Edit">
+                className="absolute top-4 right-4 text-forest-300 hover:text-forest-500 opacity-0 group-hover:opacity-100 transition-opacity" title="Edit">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
               </button>
               <Link href={`/stakeholders/${s.id}`} className="block">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h4 className="text-base font-semibold text-gray-900">{s.name}</h4>
-                    {s.role && <p className="mt-0.5 text-sm text-gray-500">{s.role}</p>}
+                    <h4 className="text-base font-semibold text-forest-950">{s.name}</h4>
+                    {s.role && <p className="mt-0.5 text-sm text-forest-400">{s.role}</p>}
                   </div>
-                  <span className="inline-flex items-center rounded-full bg-blue-50 px-2 py-0.5 text-sm font-medium text-blue-700">
+                  <span className="inline-flex items-center rounded-full bg-blue-50 px-2 py-0.5 text-sm font-medium text-forest-600">
                     Tier {s.tier}
                   </span>
                 </div>
-                <div className="mt-3 flex items-center justify-between text-sm text-gray-400">
+                <div className="mt-3 flex items-center justify-between text-sm text-forest-300">
                   <span>{tierLabels[s.tier] || `Tier ${s.tier}`}</span>
                   <span>{s.mention_count} mentions</span>
                 </div>

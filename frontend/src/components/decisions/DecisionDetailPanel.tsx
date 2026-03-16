@@ -17,7 +17,6 @@ export default function DecisionDetailPanel({ decision, onClose, onUpdated }: De
   const [executionStatus, setExecutionStatus] = useState(decision.execution_status);
   const [date, setDate] = useState(decision.date || "");
   const [keyPeople, setKeyPeople] = useState(decision.key_people.join(", "));
-  const [workstream, setWorkstream] = useState(decision.workstream || "");
   const [saving, setSaving] = useState(false);
   const [deleting, setDeleting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -29,7 +28,6 @@ export default function DecisionDetailPanel({ decision, onClose, onUpdated }: De
     setExecutionStatus(decision.execution_status);
     setDate(decision.date || "");
     setKeyPeople(decision.key_people.join(", "));
-    setWorkstream(decision.workstream || "");
     setDirty(false);
     setError(null);
   }, [decision]);
@@ -52,7 +50,6 @@ export default function DecisionDetailPanel({ decision, onClose, onUpdated }: De
         execution_status: executionStatus,
         date: date || undefined,
         key_people: people,
-        workstream: workstream || undefined,
       };
       await api.updateDecision(decision.id, body);
       setDirty(false);
@@ -91,15 +88,15 @@ export default function DecisionDetailPanel({ decision, onClose, onUpdated }: De
     <div className="fixed inset-0 z-40">
       {/* Backdrop — click to close */}
       <div className="absolute inset-0 bg-black/20" onClick={onClose} />
-      <div className="absolute bg-white dark:bg-gray-900 shadow-2xl flex flex-col md:inset-y-0 md:right-0 md:w-full md:max-w-md md:border-l md:border-gray-200 dark:md:border-gray-700 max-md:inset-x-0 max-md:bottom-0 max-md:top-[10vh] max-md:rounded-t-2xl max-md:border-t max-md:border-gray-200 dark:max-md:border-gray-700">
+      <div className="absolute bg-white dark:bg-forest-800 dark:bg-forest-900 shadow-2xl flex flex-col md:inset-y-0 md:right-0 md:w-full md:max-w-md md:border-l md:border-forest-200 dark:md:border-gray-700 max-md:inset-x-0 max-md:bottom-0 max-md:top-[10vh] max-md:rounded-t-2xl max-md:border-t max-md:border-forest-200 dark:max-md:border-gray-700">
       {/* Mobile drag handle */}
       <div className="md:hidden flex justify-center pt-2 pb-1">
-        <div className="w-10 h-1 bg-gray-300 dark:bg-gray-600 rounded-full" />
+        <div className="w-10 h-1 bg-gray-300 dark:bg-forest-700 rounded-full" />
       </div>
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-700">
-        <span className="text-sm font-mono text-gray-400">Decision #{decision.number}</span>
-        <button onClick={onClose} className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-forest-200 dark:border-forest-700">
+        <span className="text-sm font-mono text-forest-300">Decision #{decision.number}</span>
+        <button onClick={onClose} className="text-forest-300 hover:text-forest-500 dark:hover:text-gray-300">
           <X className="h-5 w-5" />
         </button>
       </div>
@@ -114,24 +111,24 @@ export default function DecisionDetailPanel({ decision, onClose, onUpdated }: De
 
         {/* Decision text */}
         <div>
-          <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Decision</label>
+          <label className="block text-sm font-medium text-forest-400 dark:text-forest-300 mb-1">Decision</label>
           <textarea
             value={decisionText}
             onChange={(e) => { setDecisionText(e.target.value); markDirty(); }}
             rows={3}
-            className="w-full text-base text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="w-full text-base text-forest-600 dark:text-forest-200 bg-forest-50 dark:bg-forest-800 border border-forest-200 dark:border-forest-700 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-forest-500"
             placeholder="What was decided?"
           />
         </div>
 
         {/* Rationale */}
         <div>
-          <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Rationale</label>
+          <label className="block text-sm font-medium text-forest-400 dark:text-forest-300 mb-1">Rationale</label>
           <textarea
             value={rationale}
             onChange={(e) => { setRationale(e.target.value); markDirty(); }}
             rows={3}
-            className="w-full text-base text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="w-full text-base text-forest-600 dark:text-forest-200 bg-forest-50 dark:bg-forest-800 border border-forest-200 dark:border-forest-700 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-forest-500"
             placeholder="Why was this decided?"
           />
         </div>
@@ -139,11 +136,11 @@ export default function DecisionDetailPanel({ decision, onClose, onUpdated }: De
         {/* Status + Date */}
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Status</label>
+            <label className="block text-sm font-medium text-forest-400 dark:text-forest-300 mb-1">Status</label>
             <select
               value={executionStatus}
               onChange={(e) => { setExecutionStatus(e.target.value); markDirty(); }}
-              className="w-full text-base border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1.5 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+              className="w-full text-base border border-forest-200 dark:border-forest-700 rounded-md px-2 py-1.5 bg-white dark:bg-forest-800 text-forest-950 dark:text-forest-50"
             >
               {DECISION_STATUSES.map((s) => (
                 <option key={s} value={s}>{DECISION_STATUS_CONFIG[s as DecisionStatus].label}</option>
@@ -151,47 +148,36 @@ export default function DecisionDetailPanel({ decision, onClose, onUpdated }: De
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Date</label>
+            <label className="block text-sm font-medium text-forest-400 dark:text-forest-300 mb-1">Date</label>
             <input
               type="date"
               value={date}
               onChange={(e) => { setDate(e.target.value); markDirty(); }}
-              className="w-full text-base border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1.5 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+              className="w-full text-base border border-forest-200 dark:border-forest-700 rounded-md px-2 py-1.5 bg-white dark:bg-forest-800 text-forest-950 dark:text-forest-50"
             />
           </div>
         </div>
 
         {/* Key People */}
         <div>
-          <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Key People (comma-separated)</label>
+          <label className="block text-sm font-medium text-forest-400 dark:text-forest-300 mb-1">Key People (comma-separated)</label>
           <input
             value={keyPeople}
             onChange={(e) => { setKeyPeople(e.target.value); markDirty(); }}
-            className="w-full text-base border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1.5 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+            className="w-full text-base border border-forest-200 dark:border-forest-700 rounded-md px-2 py-1.5 bg-white dark:bg-forest-800 text-forest-950 dark:text-forest-50"
             placeholder="Alice, Bob, Charlie"
           />
         </div>
 
-        {/* Workstream */}
-        <div>
-          <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Workstream</label>
-          <input
-            value={workstream}
-            onChange={(e) => { setWorkstream(e.target.value); markDirty(); }}
-            className="w-full text-base border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1.5 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-            placeholder="e.g. WS2 CLARA"
-          />
-        </div>
-
         {/* Metadata */}
-        <div className="pt-2 border-t border-gray-200 dark:border-gray-700 text-sm text-gray-400 space-y-1">
+        <div className="pt-2 border-t border-forest-200 dark:border-forest-700 text-sm text-forest-300 space-y-1">
           {decision.transcript_title && <p>Source: {decision.transcript_title}</p>}
           {decision.owner && <p>Owner: {decision.owner}</p>}
         </div>
       </div>
 
       {/* Footer actions */}
-      <div className="flex items-center justify-between px-4 py-3 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+      <div className="flex items-center justify-between px-4 py-3 border-t border-forest-200 dark:border-forest-700 bg-forest-50 dark:bg-forest-800/50">
         <button
           onClick={handleDelete}
           disabled={deleting}
@@ -203,7 +189,7 @@ export default function DecisionDetailPanel({ decision, onClose, onUpdated }: De
         <button
           onClick={handleSave}
           disabled={saving || !dirty}
-          className="px-4 py-1.5 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50"
+          className="px-4 py-1.5 text-base font-medium text-white bg-forest-500 rounded-md hover:bg-forest-600 transition-colors disabled:opacity-50"
         >
           {saving ? "Saving..." : "Save"}
         </button>

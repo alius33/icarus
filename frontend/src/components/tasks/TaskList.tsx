@@ -74,11 +74,11 @@ export default function TaskList({ tasks, onTaskClick, onStatusChange, onPriorit
     <div className="space-y-4">
       {/* Controls */}
       <div className="flex flex-wrap items-center gap-2 md:gap-3">
-        <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Group by:</span>
+        <span className="text-sm font-medium text-forest-400 dark:text-forest-300">Group by:</span>
         <select
           value={groupBy}
           onChange={(e) => setGroupBy(e.target.value as GroupKey)}
-          className="text-base border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+          className="text-base border border-forest-200 dark:border-forest-700 rounded-md px-2 py-1 bg-white dark:bg-forest-800 text-forest-950 dark:text-forest-50"
         >
           <option value="none">None</option>
           <option value="status">Status</option>
@@ -86,7 +86,7 @@ export default function TaskList({ tasks, onTaskClick, onStatusChange, onPriorit
           <option value="assignee">Assignee</option>
           <option value="project_name">Project</option>
         </select>
-        <span className="ml-auto text-sm text-gray-400">{tasks.length} tasks</span>
+        <span className="ml-auto text-sm text-forest-300">{tasks.length} tasks</span>
       </div>
 
       {/* Mobile card view */}
@@ -95,12 +95,12 @@ export default function TaskList({ tasks, onTaskClick, onStatusChange, onPriorit
           <div key={group.label || "all"}>
             {group.label && (
               <button
-                className="flex items-center gap-2 text-base font-medium text-gray-700 dark:text-gray-300 py-1"
+                className="flex items-center gap-2 text-base font-medium text-forest-600 dark:text-forest-200 py-1"
                 onClick={() => toggleGroup(group.label)}
               >
                 {collapsedGroups.has(group.label) ? <ChevronRight className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                 {group.label}
-                <span className="text-sm text-gray-400 font-normal">({group.tasks.length})</span>
+                <span className="text-sm text-forest-300 font-normal">({group.tasks.length})</span>
               </button>
             )}
             {!collapsedGroups.has(group.label) &&
@@ -111,14 +111,14 @@ export default function TaskList({ tasks, onTaskClick, onStatusChange, onPriorit
                 return (
                   <div
                     key={task.id}
-                    className="rounded-lg border border-gray-200 dark:border-gray-700 p-3 active:bg-gray-50 dark:active:bg-gray-800 cursor-pointer"
+                    className="rounded-lg border border-forest-200 dark:border-forest-700 p-3 active:bg-forest-50 dark:active:bg-gray-800 cursor-pointer"
                     onClick={() => onTaskClick(task)}
                   >
                     <div className="flex items-center gap-2 mb-1">
                       <span className={`w-2 h-2 rounded-full shrink-0 ${priorityCfg?.dotColor ?? "bg-gray-300"}`} />
-                      <span className="text-gray-900 dark:text-gray-100 text-base line-clamp-2">{task.title}</span>
+                      <span className="text-forest-950 dark:text-forest-50 text-base line-clamp-2">{task.title}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
+                    <div className="flex items-center gap-2 text-sm text-forest-400 dark:text-forest-300 mb-2">
                       <span>{task.assignee || "Unassigned"}</span>
                       {task.due_date && (
                         <>
@@ -130,16 +130,16 @@ export default function TaskList({ tasks, onTaskClick, onStatusChange, onPriorit
                       )}
                     </div>
                     <div className="flex flex-wrap items-center gap-1.5">
-                      <span className={`text-sm font-medium px-2 py-0.5 rounded ${statusCfg?.bgColor ?? "bg-gray-100"} ${statusCfg?.color ?? "text-gray-600"}`}>
+                      <span className={`text-sm font-medium px-2 py-0.5 rounded ${statusCfg?.bgColor ?? "bg-forest-100"} ${statusCfg?.color ?? "text-forest-500"}`}>
                         {statusCfg?.label ?? task.status}
                       </span>
                       {task.project_name && (
-                        <span className="text-sm text-gray-400">{task.project_name}</span>
+                        <span className="text-sm text-forest-300">{task.project_name}</span>
                       )}
                       {task.labels.slice(0, 2).map((label) => (
-                        <span key={label} className="text-sm px-1.5 py-0.5 rounded bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300">{label}</span>
+                        <span key={label} className="text-sm px-1.5 py-0.5 rounded bg-blue-50 dark:bg-blue-900/30 text-forest-500 dark:text-blue-300">{label}</span>
                       ))}
-                      {task.labels.length > 2 && <span className="text-sm text-gray-400">+{task.labels.length - 2}</span>}
+                      {task.labels.length > 2 && <span className="text-sm text-forest-300">+{task.labels.length - 2}</span>}
                     </div>
                   </div>
                 );
@@ -147,16 +147,16 @@ export default function TaskList({ tasks, onTaskClick, onStatusChange, onPriorit
           </div>
         ))}
         {tasks.length === 0 && (
-          <div className="rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 p-8 text-center">
-            <p className="text-base text-gray-500">No tasks yet.</p>
+          <div className="rounded-lg border-2 border-dashed border-forest-200 dark:border-forest-700 p-8 text-center">
+            <p className="text-base text-forest-400">No tasks yet.</p>
           </div>
         )}
       </div>
 
       {/* Desktop table */}
-      <div className="hidden md:block border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      <div className="hidden md:block border border-forest-200 dark:border-forest-700 rounded-lg overflow-hidden">
         <table className="w-full text-base">
-          <thead className="bg-gray-50 dark:bg-gray-800">
+          <thead className="bg-forest-50 dark:bg-forest-800">
             <tr>
               {(
                 [
@@ -170,7 +170,7 @@ export default function TaskList({ tasks, onTaskClick, onStatusChange, onPriorit
               ).map((col) => (
                 <th
                   key={col.key}
-                  className={`px-3 py-2 text-left font-medium text-gray-500 dark:text-gray-400 cursor-pointer hover:text-gray-700 dark:hover:text-gray-200 ${col.w}`}
+                  className={`px-3 py-2 text-left font-medium text-forest-400 dark:text-forest-300 cursor-pointer hover:text-forest-600 dark:hover:text-gray-200 ${col.w}`}
                   onClick={() => handleSort(col.key)}
                 >
                   <span className="flex items-center gap-1">
@@ -181,14 +181,14 @@ export default function TaskList({ tasks, onTaskClick, onStatusChange, onPriorit
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+          <tbody className="divide-y divide-forest-200 dark:divide-forest-700">
             {groups.map((group) => (
               <>
                 {group.label && (
                   <tr key={`group-${group.label}`}>
-                    <td colSpan={6} className="px-3 py-2 bg-gray-100 dark:bg-gray-800/80">
+                    <td colSpan={6} className="px-3 py-2 bg-forest-100 dark:bg-forest-800/80">
                       <button
-                        className="flex items-center gap-2 text-base font-medium text-gray-700 dark:text-gray-300"
+                        className="flex items-center gap-2 text-base font-medium text-forest-600 dark:text-forest-200"
                         onClick={() => toggleGroup(group.label)}
                       >
                         {collapsedGroups.has(group.label) ? (
@@ -197,7 +197,7 @@ export default function TaskList({ tasks, onTaskClick, onStatusChange, onPriorit
                           <ChevronDown className="h-4 w-4" />
                         )}
                         {group.label}
-                        <span className="text-sm text-gray-400 font-normal">({group.tasks.length})</span>
+                        <span className="text-sm text-forest-300 font-normal">({group.tasks.length})</span>
                       </button>
                     </td>
                   </tr>
@@ -211,15 +211,15 @@ export default function TaskList({ tasks, onTaskClick, onStatusChange, onPriorit
                     return (
                       <tr
                         key={task.id}
-                        className="hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer"
+                        className="hover:bg-forest-50 dark:hover:bg-forest-700/50 cursor-pointer"
                         onClick={() => onTaskClick(task)}
                       >
                         <td className="px-3 py-2">
                           <div className="flex items-center gap-2">
-                            <span className="text-sm font-mono text-gray-400 shrink-0">{task.identifier}</span>
-                            <span className="text-gray-900 dark:text-gray-100 truncate">{task.title}</span>
+                            <span className="text-sm font-mono text-forest-300 shrink-0">{task.identifier}</span>
+                            <span className="text-forest-950 dark:text-forest-50 truncate">{task.title}</span>
                             {task.labels.length > 0 && (
-                              <span className="text-sm px-1.5 py-0.5 rounded bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 shrink-0">
+                              <span className="text-sm px-1.5 py-0.5 rounded bg-blue-50 dark:bg-blue-900/30 text-forest-500 dark:text-blue-300 shrink-0">
                                 {task.labels[0]}
                                 {task.labels.length > 1 && `+${task.labels.length - 1}`}
                               </span>
@@ -231,14 +231,14 @@ export default function TaskList({ tasks, onTaskClick, onStatusChange, onPriorit
                             <select
                               value={task.status}
                               onChange={(e) => onStatusChange(task.id, e.target.value)}
-                              className={`text-sm font-medium rounded px-2 py-1 border-0 ${statusCfg?.bgColor ?? "bg-gray-100"} ${statusCfg?.color ?? "text-gray-600"}`}
+                              className={`text-sm font-medium rounded px-2 py-1 border-0 ${statusCfg?.bgColor ?? "bg-forest-100"} ${statusCfg?.color ?? "text-forest-500"}`}
                             >
                               {Object.entries(STATUS_CONFIG).map(([k, v]) => (
                                 <option key={k} value={k}>{v.label}</option>
                               ))}
                             </select>
                           ) : (
-                            <span className={`text-sm font-medium px-2 py-1 rounded ${statusCfg?.bgColor ?? "bg-gray-100"} ${statusCfg?.color ?? "text-gray-600"}`}>
+                            <span className={`text-sm font-medium px-2 py-1 rounded ${statusCfg?.bgColor ?? "bg-forest-100"} ${statusCfg?.color ?? "text-forest-500"}`}>
                               {statusCfg?.label ?? task.status}
                             </span>
                           )}
@@ -261,13 +261,13 @@ export default function TaskList({ tasks, onTaskClick, onStatusChange, onPriorit
                             </span>
                           )}
                         </td>
-                        <td className="px-3 py-2 text-gray-500 dark:text-gray-400 truncate">
+                        <td className="px-3 py-2 text-forest-400 dark:text-forest-300 truncate">
                           {task.assignee || "—"}
                         </td>
-                        <td className={`px-3 py-2 text-sm ${overdue ? "text-red-500 font-medium" : "text-gray-500 dark:text-gray-400"}`}>
+                        <td className={`px-3 py-2 text-sm ${overdue ? "text-red-500 font-medium" : "text-forest-400 dark:text-forest-300"}`}>
                           {task.due_date ? new Date(task.due_date).toLocaleDateString("en-GB", { day: "numeric", month: "short" }) : "—"}
                         </td>
-                        <td className="px-3 py-2 text-sm text-gray-400 truncate">
+                        <td className="px-3 py-2 text-sm text-forest-300 truncate">
                           {task.project_name || "—"}
                         </td>
                       </tr>

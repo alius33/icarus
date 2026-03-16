@@ -10,7 +10,7 @@ class OpenThreadSchema(BaseModel):
     owner: str | None = None
     opened_date: str | None = None
     last_discussed: str | None = None
-    workstream: str | None = None
+    project: str | None = None
     severity: str | None = None
     trend: str | None = None
     position: int = 0

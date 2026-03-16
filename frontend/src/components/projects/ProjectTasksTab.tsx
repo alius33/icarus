@@ -151,7 +151,7 @@ export default function ProjectTasksTab({ projectId, projects = [] }: Props) {
         />
         <button
           onClick={() => setShowCreate(true)}
-          className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-base font-medium rounded-lg hover:bg-blue-700 transition-colors"
+          className="flex items-center gap-2 px-4 py-2 bg-forest-500 text-white text-base font-medium rounded-lg hover:bg-forest-600 transition-colors"
         >
           <Plus className="h-4 w-4" />
           New Task
@@ -160,7 +160,7 @@ export default function ProjectTasksTab({ projectId, projects = [] }: Props) {
 
       {loading && (
         <div className="flex items-center justify-center py-12">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-forest-500" />
         </div>
       )}
 

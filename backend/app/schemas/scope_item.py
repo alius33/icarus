@@ -5,7 +5,7 @@ class ScopeItemSchema(BaseModel):
     id: int
     name: str
     scope_type: str
-    workstream: str | None = None
+    project: str | None = None
     added_date: str | None = None
     estimated_effort: str | None = None
     budgeted: bool = False
@@ -17,7 +17,7 @@ class ScopeItemSchema(BaseModel):
 class ScopeItemCreate(BaseModel):
     name: str
     scope_type: str = "addition"
-    workstream: str | None = None
+    project: str | None = None
     added_date: str | None = None
     estimated_effort: str | None = None
     budgeted: bool = False
@@ -29,7 +29,7 @@ class ScopeItemCreate(BaseModel):
 class ScopeItemUpdate(BaseModel):
     name: str | None = None
     scope_type: str | None = None
-    workstream: str | None = None
+    project: str | None = None
     added_date: str | None = None
     estimated_effort: str | None = None
     budgeted: bool | None = None

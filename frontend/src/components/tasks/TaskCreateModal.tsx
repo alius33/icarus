@@ -120,7 +120,7 @@ export default function TaskCreateModal({
       )}
 
       <div>
-        <label className="block text-base font-medium text-gray-700 dark:text-gray-300 mb-1">Labels</label>
+        <label className="block text-base font-medium text-forest-600 dark:text-forest-200 mb-1">Labels</label>
         <LabelTagInput labels={labels} onChange={setLabels} suggestions={existingLabels} />
       </div>
     </EntityModal>

@@ -58,10 +58,10 @@ export default async function DashboardPage() {
     return (
       <div className="space-y-6">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-forest-950">
             Programme Dashboard
           </h2>
-          <p className="mt-1 text-base text-gray-500">
+          <p className="mt-1 text-base text-forest-400">
             Gen AI Programme overview and status.
           </p>
         </div>

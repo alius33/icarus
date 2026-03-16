@@ -11,6 +11,6 @@ class WeeklyReportBase(BaseModel):
 
 class WeeklyReportDetail(WeeklyReportBase):
     content: str
-    workstream_updates: list[str]
+    project_updates: list[str]
     highlights: list[str]
     risks: list[str]

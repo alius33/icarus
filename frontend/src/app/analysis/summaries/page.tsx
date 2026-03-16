@@ -15,7 +15,7 @@ export default async function SummariesListPage() {
   if (error) {
     return (
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold text-gray-900">Summaries</h2>
+        <h2 className="text-2xl font-bold text-forest-950">Summaries</h2>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
           <p className="text-base text-red-700">{error}</p>
         </div>
@@ -25,35 +25,35 @@ export default async function SummariesListPage() {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-gray-900">Summaries</h2>
+      <h2 className="text-2xl font-bold text-forest-950">Summaries</h2>
 
       {!summaries || summaries.length === 0 ? (
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 text-center">
-          <p className="text-gray-500 text-base">
+        <div className="bg-white dark:bg-forest-800 rounded-lg shadow-sm border border-forest-200 p-8 text-center">
+          <p className="text-forest-400 text-base">
             No summaries have been generated yet. Process transcripts with
             Claude to generate summaries.
           </p>
         </div>
       ) : (
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-          <ul className="divide-y divide-gray-200">
+        <div className="bg-white dark:bg-forest-800 rounded-lg shadow-sm border border-forest-200 overflow-hidden">
+          <ul className="divide-y divide-forest-200">
             {summaries.map((s) => (
               <li key={s.id}>
                 <Link
                   href={`/analysis/summaries/${s.id}`}
-                  className="flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors"
+                  className="flex items-center justify-between px-6 py-4 hover:bg-forest-50 transition-colors"
                 >
                   <div className="min-w-0">
-                    <p className="text-base font-medium text-blue-600 hover:text-blue-800 truncate">
+                    <p className="text-base font-medium text-forest-500 hover:text-blue-800 truncate">
                       {s.transcript_title || `Summary #${s.id}`}
                     </p>
                     {s.tldr && (
-                      <p className="mt-1 text-sm text-gray-500 truncate">
+                      <p className="mt-1 text-sm text-forest-400 truncate">
                         {s.tldr}
                       </p>
                     )}
                   </div>
-                  <span className="text-sm text-gray-400 ml-4 flex-shrink-0">
+                  <span className="text-sm text-forest-300 ml-4 flex-shrink-0">
                     {s.date ? formatDate(s.date) : "—"}
                   </span>
                 </Link>

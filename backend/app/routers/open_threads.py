@@ -44,7 +44,7 @@ def _thread_schema(t: OpenThread) -> OpenThreadSchema:
         owner=None,
         opened_date=t.first_raised,
         last_discussed=None,
-        workstream=None,
+        project=None,
         severity=t.severity,
         trend=t.trend,
         position=t.position,

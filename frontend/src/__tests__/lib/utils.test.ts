@@ -89,7 +89,7 @@ describe('getStatusColor', () => {
   });
 
   it('returns fallback for an unknown status', () => {
-    expect(getStatusColor('UNKNOWN_STATUS')).toBe('bg-gray-100 text-gray-600 border-gray-200');
+    expect(getStatusColor('UNKNOWN_STATUS')).toBe('bg-forest-100 text-forest-500 border-forest-200');
   });
 
   it('returns the correct color for OPEN', () => {
@@ -98,7 +98,7 @@ describe('getStatusColor', () => {
 });
 
 // ---------------------------------------------------------------------------
-// ragDotColor — RAG dot colour for project / workstream status
+// ragDotColor — RAG dot colour for project status
 // ---------------------------------------------------------------------------
 describe('ragDotColor', () => {
   it('returns green for LIVE', () => {
@@ -168,7 +168,7 @@ describe('severityColor', () => {
   });
 
   it('returns gray fallback for unknown severity', () => {
-    expect(severityColor('UNKNOWN')).toBe('bg-gray-100 text-gray-600 border-gray-200');
+    expect(severityColor('UNKNOWN')).toBe('bg-forest-100 text-forest-500 border-forest-200');
   });
 });
 
@@ -195,7 +195,7 @@ describe('capacityColor', () => {
   });
 
   it('returns gray fallback for unknown capacity', () => {
-    expect(capacityColor('unknown')).toBe('text-gray-500');
+    expect(capacityColor('unknown')).toBe('text-forest-400');
   });
 });
 
@@ -220,7 +220,7 @@ describe('trendArrow', () => {
   it('returns flat arrow when current === previous', () => {
     const result = trendArrow(5, 5);
     expect(result.icon).toBe('→');
-    expect(result.color).toBe('text-gray-400');
+    expect(result.color).toBe('text-forest-300');
     expect(result.label).toBe('flat');
   });
 });
@@ -263,7 +263,7 @@ describe('healthRagTextColor', () => {
   });
 
   it('returns gray fallback for unknown rag', () => {
-    expect(healthRagTextColor('unknown')).toBe('text-gray-500');
+    expect(healthRagTextColor('unknown')).toBe('text-forest-400');
   });
 });
 

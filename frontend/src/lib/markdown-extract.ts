@@ -92,7 +92,7 @@ function buildTerms(projectName: string): string[] {
 
 /**
  * Extract project-specific content from a programme-wide weekly report.
- * Pulls the matching workstream section, plus relevant risks and decisions.
+ * Pulls the matching project section, plus relevant risks and decisions.
  * Used by the Overview tab's "Current Status" section.
  */
 export function extractProjectStatus(
@@ -105,7 +105,7 @@ export function extractProjectStatus(
   const sections: string[] = [];
   const terms = buildTerms(projectName);
 
-  // 1. Extract the matching project section from "## Workstream Progress"
+  // 1. Extract the matching project section from "## Project Progress"
   const wsContent = extractSection(lines, (heading) => {
     const h = heading.toLowerCase();
     return terms.some((term) => h.includes(term));
@@ -137,7 +137,7 @@ export function extractProjectStatus(
 }
 
 /**
- * Extract project-specific headlines + workstream progress from a weekly report.
+ * Extract project-specific headlines + progress from a weekly report.
  * Used by the Summaries tab to show only relevant content per project.
  */
 export function extractProjectContent(
@@ -159,7 +159,7 @@ export function extractProjectContent(
     }
   }
 
-  // 2. Extract the matching workstream progress section
+  // 2. Extract the matching project progress section
   const wsContent = extractSection(lines, (heading) => {
     const h = heading.toLowerCase();
     return terms.some((term) => h.includes(term));

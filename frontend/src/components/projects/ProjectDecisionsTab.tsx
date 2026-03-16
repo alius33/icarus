@@ -25,7 +25,7 @@ export default function ProjectDecisionsTab({ projectId }: Props) {
 
   const [filters, setFilters] = useState({
     execution_status: searchParams.get("execution_status") || "",
-    workstream: "",
+    project: "",
     search: searchParams.get("search") || "",
   });
   const [showFilters, setShowFilters] = useState(Object.values(filters).some(Boolean));
@@ -63,7 +63,7 @@ export default function ProjectDecisionsTab({ projectId }: Props) {
     setLoading(true);
     try {
       if (view === "board") {
-        const data = await api.getDecisionBoard(undefined, projectId);
+        const data = await api.getDecisionBoard(projectId);
         setBoardData(data);
       } else if (view === "list") {
         const params: Record<string, string> = { project_id: String(projectId) };
@@ -72,7 +72,7 @@ export default function ProjectDecisionsTab({ projectId }: Props) {
         const data = await api.getDecisions(params);
         setListData(data);
       } else {
-        const data = await api.getDecisionTimeline(undefined, projectId);
+        const data = await api.getDecisionTimeline(projectId);
         setTimelineData(data);
       }
     } catch (e) {
@@ -121,7 +121,7 @@ export default function ProjectDecisionsTab({ projectId }: Props) {
         />
         <button
           onClick={() => setShowCreate(true)}
-          className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-base font-medium rounded-lg hover:bg-blue-700 transition-colors"
+          className="flex items-center gap-2 px-4 py-2 bg-forest-500 text-white text-base font-medium rounded-lg hover:bg-forest-600 transition-colors"
         >
           <Plus className="h-4 w-4" />
           New Decision
@@ -130,7 +130,7 @@ export default function ProjectDecisionsTab({ projectId }: Props) {
 
       {loading && (
         <div className="flex items-center justify-center py-12">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-forest-500" />
         </div>
       )}
 

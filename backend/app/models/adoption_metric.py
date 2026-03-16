@@ -12,7 +12,7 @@ class AdoptionMetric(Base):
     date = Column(Date, nullable=False, index=True)
     metric_type = Column(String, nullable=False)  # active_users | data_entries | reviews_completed | queries_run
     value = Column(Integer, nullable=False)
-    workstream = Column(String)
+    project = Column(String)
     notes = Column(Text)
     created_at = Column(DateTime, default=datetime.utcnow)
 

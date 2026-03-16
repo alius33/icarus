@@ -27,7 +27,7 @@ def _schema(w: ProgrammeWin) -> ProgrammeWinSchema:
         description=w.description,
         before_state=w.before_state,
         after_state=w.after_state,
-        workstream=w.workstream,
+        project=w.project,
         confidence=w.confidence or "estimated",
         date_recorded=str(w.date_recorded) if w.date_recorded else None,
         notes=w.notes,
@@ -58,14 +58,14 @@ async def wins_summary(db: AsyncSession = Depends(get_db)):
 async def list_wins(
     grouped: bool = Query(False, description="Group results by category"),
     category: str | None = Query(None),
-    workstream: str | None = Query(None),
+    project: str | None = Query(None),
     db: AsyncSession = Depends(get_db),
 ):
     query = select(ProgrammeWin)
     if category:
         query = query.where(ProgrammeWin.category == category)
-    if workstream:
-        query = query.where(ProgrammeWin.workstream == workstream)
+    if project:
+        query = query.where(ProgrammeWin.project == project)
 
     result = await db.execute(query.order_by(ProgrammeWin.date_recorded.desc().nullslast(), ProgrammeWin.created_at.desc()))
     wins = [_schema(w) for w in result.scalars().all()]
@@ -108,7 +108,7 @@ async def create_win(body: ProgrammeWinCreate, db: AsyncSession = Depends(get_db
         description=body.description,
         before_state=body.before_state,
         after_state=body.after_state,
-        workstream=body.workstream,
+        project=body.project,
         confidence=body.confidence,
         date_recorded=date_recorded,
         notes=body.notes,
@@ -128,7 +128,7 @@ async def update_win(win_id: int, body: ProgrammeWinUpdate, db: AsyncSession = D
         raise NotFoundError("Programme win", win_id)
 
     for field in ["category", "title", "description", "before_state", "after_state",
-                  "workstream", "confidence", "notes"]:
+                  "project", "confidence", "notes"]:
         val = getattr(body, field)
         if val is not None:
             setattr(win, field, val)

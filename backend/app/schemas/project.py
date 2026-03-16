@@ -6,6 +6,7 @@ from app.schemas.action_item import ActionItemSchema
 from app.schemas.decision import DecisionSchema
 from app.schemas.open_thread import OpenThreadSchema
 from app.schemas.project_summary import ProjectSummaryBase
+from app.schemas.project_update import ProjectUpdateBase
 from app.schemas.stakeholder import StakeholderBase
 from app.schemas.summary import SummaryBase
 from app.schemas.transcript import TranscriptBase
@@ -13,6 +14,7 @@ from app.schemas.transcript import TranscriptBase
 EntityType = Literal[
     "transcript", "summary", "decision",
     "action_item", "open_thread", "stakeholder",
+    "project_update",
 ]
 
 
@@ -32,8 +34,7 @@ class ProjectBase(BaseModel):
     status: str
     color: str | None = None
     icon: str | None = None
-    workstream_id: int | None = None
-    workstream_code: str | None = None
+    code: str | None = None
     transcript_count: int = 0
     summary_count: int = 0
     decision_count: int = 0
@@ -69,6 +70,7 @@ class ProjectHub(BaseModel):
     open_threads: list[OpenThreadSchema]
     stakeholders: list[StakeholderBase]
     project_summaries: list[ProjectSummaryBase] = []
+    project_updates: list[ProjectUpdateBase] = []
 
 
 class ProjectLinkCreate(BaseModel):

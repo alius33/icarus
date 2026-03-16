@@ -93,7 +93,7 @@ from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sess
 
 from app.database import Base, get_db  # noqa: E402
 from app.models import (  # noqa: E402, F401
-    Transcript, Summary, WeeklyReport, Workstream, WorkstreamMilestone,
+    Transcript, Summary, WeeklyReport,
     Stakeholder, Decision, OpenThread, ActionItem, GlossaryEntry,
     TranscriptMention, Document, Project, ProjectLink, DeletedImport,
     Dependency, ResourceAllocation, ScopeItem, ProgrammeWin,

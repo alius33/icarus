@@ -43,11 +43,11 @@ export default function LabelTagInput({ labels, onChange, suggestions = [], plac
 
   return (
     <div className="relative">
-      <div className="flex flex-wrap gap-1.5 border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1.5 bg-white dark:bg-gray-700 focus-within:ring-1 focus-within:ring-blue-500 focus-within:border-blue-500">
+      <div className="flex flex-wrap gap-1.5 border border-forest-200 dark:border-forest-700 rounded-md px-2 py-1.5 bg-white dark:bg-forest-800 focus-within:ring-1 focus-within:ring-forest-500 focus-within:border-forest-500">
         {labels.map((label) => (
           <span
             key={label}
-            className="inline-flex items-center gap-1 px-2 py-0.5 text-sm rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300"
+            className="inline-flex items-center gap-1 px-2 py-0.5 text-sm rounded-full bg-blue-100 dark:bg-blue-900/40 text-forest-600 dark:text-forest-200"
           >
             {label}
             <button
@@ -69,19 +69,19 @@ export default function LabelTagInput({ labels, onChange, suggestions = [], plac
           onFocus={() => setShowSuggestions(true)}
           onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
           placeholder={labels.length === 0 ? placeholder : ""}
-          className="flex-1 min-w-[80px] text-base bg-transparent outline-none text-gray-900 dark:text-gray-100 placeholder-gray-400"
+          className="flex-1 min-w-[80px] text-base bg-transparent outline-none text-forest-950 dark:text-forest-50 placeholder-forest-400"
         />
       </div>
 
       {/* Suggestions dropdown */}
       {showSuggestions && input && filtered.length > 0 && (
-        <div className="absolute z-10 mt-1 w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg max-h-32 overflow-y-auto">
+        <div className="absolute z-10 mt-1 w-full bg-white dark:bg-forest-800 border border-forest-200 dark:border-forest-700 rounded-md shadow-lg max-h-32 overflow-y-auto">
           {filtered.slice(0, 8).map((s) => (
             <button
               key={s}
               type="button"
               onMouseDown={() => addLabel(s)}
-              className="w-full text-left px-3 py-1.5 text-base hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100"
+              className="w-full text-left px-3 py-1.5 text-base hover:bg-forest-100 dark:hover:bg-forest-700 text-forest-950 dark:text-forest-50"
             >
               {s}
             </button>

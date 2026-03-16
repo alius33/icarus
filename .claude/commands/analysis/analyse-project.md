@@ -28,10 +28,9 @@ Required project info:
 - **slug**: lowercase-hyphenated identifier (generate if missing: lowercase, replace spaces with hyphens, strip special characters)
 - **description**: what the project is about
 - **keywords**: terms likely to appear in transcripts when this project is discussed
-- **workstream**: which of the 6 workstreams this project belongs to (if any)
 - **key_stakeholders**: people most closely associated with this project
 
-If the project does not exist in the system yet, ask the user to provide description, keywords, workstream, and key stakeholders. Create the directory: `mkdir -p "analysis/projects/{slug}/"`
+If the project does not exist in the system yet, ask the user to provide description, keywords, and key stakeholders. Create the directory: `mkdir -p "analysis/projects/{slug}/"`
 
 ---
 
@@ -56,7 +55,7 @@ Parse the response:
 Read these files in parallel:
 1. `context/glossary.md` -- names and acronyms the transcript might use
 2. `context/stakeholders.md` -- who is involved, roles, dynamics
-3. `context/workstreams.md` -- workstream context for the project
+3. All files in `context/projects/` -- per-project context
 4. Project details from Step 1 (description, keywords, stakeholders)
 5. `analysis/trackers/action_items.md` -- existing actions that may relate to this project
 6. `analysis/trackers/risk_register.md` -- existing risks for cross-referencing
@@ -77,7 +76,7 @@ For each transcript in the range:
    - Project name (exact match, case-insensitive)
    - Project keywords (from project config)
    - Key stakeholder names (when discussing topics related to this project's domain)
-   - Workstream references (when discussing this project's workstream in context)
+   - Related project references (when discussing projects in a related context)
 
 3. **Classify relevance level:**
    - **HIGH**: project was a primary discussion topic. Multiple exchanges, decisions made, actions assigned. The project name or core keywords appear 3+ times in substantive context.
@@ -137,7 +136,7 @@ Write as a narrative, not bullet points. Be specific -- "CSMs reported that bloc
 - "[quote relevant to this project]" -- [Speaker]
 
 ## Connections to Other Projects
-- [If the discussion linked this project to another project or workstream, note it here]
+- [If the discussion linked this project to another project, note it here]
 ```
 
 For LOW relevance transcripts, do NOT create a full project summary. Instead, add a brief entry to a tracking note at `analysis/projects/{slug}/mentions.md`:

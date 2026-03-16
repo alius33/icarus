@@ -335,9 +335,9 @@ export default function UploadPage() {
       case "inserted":
         return <CheckCircle2 className="h-4 w-4 text-green-600" />;
       case "updated":
-        return <CheckCircle2 className="h-4 w-4 text-blue-600" />;
+        return <CheckCircle2 className="h-4 w-4 text-forest-500" />;
       case "skipped":
-        return <CheckCircle2 className="h-4 w-4 text-gray-400" />;
+        return <CheckCircle2 className="h-4 w-4 text-forest-300" />;
       case "error":
         return <AlertCircle className="h-4 w-4 text-red-600" />;
       default:
@@ -380,14 +380,14 @@ export default function UploadPage() {
       : sortedProjects;
     return (
       <div className="flex items-center gap-2">
-        <span className="text-sm text-gray-400 w-20 flex-shrink-0">{label}{required && <span className="text-red-400">*</span>}</span>
+        <span className="text-sm text-forest-300 w-20 flex-shrink-0">{label}{required && <span className="text-red-400">*</span>}</span>
         <select
           value={value ?? ""}
           onChange={(e) => onChange(e.target.value ? Number(e.target.value) : null)}
-          className={`text-sm border rounded-md px-2 py-1.5 bg-gray-900 text-gray-700 dark:text-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none flex-1 min-w-[180px] ${
+          className={`text-sm border rounded-md px-2 py-1.5 bg-forest-900 text-forest-600 dark:text-forest-200 focus:border-forest-500 focus:ring-1 focus:ring-forest-500 focus:outline-none flex-1 min-w-[180px] ${
             required && !value
               ? "border-amber-500/50"
-              : "border-gray-300 dark:border-gray-600"
+              : "border-forest-200 dark:border-forest-700"
           }`}
         >
           <option value="">{required ? "Select project..." : "None"}</option>
@@ -404,13 +404,13 @@ export default function UploadPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-forest-950">
           Upload Transcripts
         </h2>
-        <p className="mt-1 text-base text-gray-500">
+        <p className="mt-1 text-base text-forest-400">
           Upload <code>.txt</code> transcript files. Filenames should follow the
           pattern{" "}
-          <code className="text-sm bg-gray-100 px-1 py-0.5 rounded">
+          <code className="text-sm bg-forest-100 px-1 py-0.5 rounded">
             YYYY-MM-DD_-_Title.txt
           </code>{" "}
           for automatic date and title extraction.
@@ -425,21 +425,21 @@ export default function UploadPage() {
         onClick={() => inputRef.current?.click()}
         className={`relative flex flex-col items-center justify-center rounded-lg border-2 border-dashed p-12 text-center cursor-pointer transition-colors ${
           dragActive
-            ? "border-blue-500 bg-blue-50"
-            : "border-gray-300 bg-gray-50 hover:border-gray-400 hover:bg-gray-100"
+            ? "border-forest-500 bg-blue-50"
+            : "border-forest-200 bg-forest-50 hover:border-gray-400 hover:bg-forest-100"
         }`}
       >
         <Upload
           className={`h-10 w-10 mb-3 ${
-            dragActive ? "text-blue-500" : "text-gray-400"
+            dragActive ? "text-forest-500" : "text-forest-300"
           }`}
         />
-        <p className="text-base font-medium text-gray-700">
+        <p className="text-base font-medium text-forest-600">
           {dragActive
             ? "Drop files here"
             : "Drag & drop transcript files, or click to browse"}
         </p>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-forest-400">
           Accepts .txt files up to 10 MB each
         </p>
         <input
@@ -457,19 +457,19 @@ export default function UploadPage() {
 
       {/* File list with project assignment + context */}
       {files.length > 0 && (
-        <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm">
-          <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 px-4 py-3">
-            <h3 className="text-base font-semibold text-gray-800 dark:text-gray-100">
+        <div className="rounded-lg border border-forest-200 dark:border-forest-700 bg-white dark:bg-forest-800 shadow-sm">
+          <div className="flex items-center justify-between border-b border-forest-200 dark:border-forest-700 px-4 py-3">
+            <h3 className="text-base font-semibold text-forest-950 dark:text-forest-50">
               {files.length} file{files.length !== 1 ? "s" : ""} selected
             </h3>
             <button
               onClick={clearAll}
-              className="text-sm text-gray-400 hover:text-gray-200"
+              className="text-sm text-forest-300 hover:text-gray-200"
             >
               Clear all
             </button>
           </div>
-          <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+          <ul className="divide-y divide-forest-200 dark:divide-forest-700">
             {files.map((file) => {
               const a = getAssignment(file.name);
               const isExpanded = contextExpanded[file.name] ?? false;
@@ -480,18 +480,18 @@ export default function UploadPage() {
               return (
                 <li key={file.name} className="px-4 py-3">
                   <div className="flex items-center gap-3 mb-3">
-                    <FileText className="h-4 w-4 flex-shrink-0 text-gray-400" />
+                    <FileText className="h-4 w-4 flex-shrink-0 text-forest-300" />
                     <div className="min-w-0 flex-1">
-                      <span className="text-base text-gray-700 dark:text-gray-200 truncate block">
+                      <span className="text-base text-forest-600 dark:text-forest-200 truncate block">
                         {file.name}
                       </span>
-                      <span className="text-sm text-gray-500">
+                      <span className="text-sm text-forest-400">
                         {formatFileSize(file.size)}
                       </span>
                     </div>
                     <button
                       onClick={() => removeFile(file.name)}
-                      className="text-gray-500 hover:text-red-400"
+                      className="text-forest-400 hover:text-red-400"
                     >
                       <X className="h-4 w-4" />
                     </button>
@@ -522,7 +522,7 @@ export default function UploadPage() {
                   <div className="ml-7 mt-2">
                     <button
                       onClick={() => toggleContext(file.name)}
-                      className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-gray-200 transition-colors"
+                      className="inline-flex items-center gap-1.5 text-sm text-forest-300 hover:text-gray-200 transition-colors"
                     >
                       {isExpanded ? (
                         <ChevronDown className="h-3.5 w-3.5" />
@@ -532,7 +532,7 @@ export default function UploadPage() {
                       <Paperclip className="h-3 w-3" />
                       Add context
                       {!isExpanded && hasContext && (
-                        <span className="text-blue-400 ml-1">
+                        <span className="text-forest-300 ml-1">
                           {[
                             noteText.trim() ? "notes" : null,
                             atts.length > 0 ? `${atts.length} file${atts.length !== 1 ? "s" : ""}` : null,
@@ -542,10 +542,10 @@ export default function UploadPage() {
                     </button>
 
                     {isExpanded && (
-                      <div className="mt-2 space-y-3 pl-3 border-l-2 border-gray-200 dark:border-gray-700 ml-1">
+                      <div className="mt-2 space-y-3 pl-3 border-l-2 border-forest-200 dark:border-forest-700 ml-1">
                         {/* Notes textarea */}
                         <div>
-                          <label className="text-sm text-gray-400 block mb-1">
+                          <label className="text-sm text-forest-300 block mb-1">
                             Context notes
                           </label>
                           <textarea
@@ -553,15 +553,15 @@ export default function UploadPage() {
                             onChange={(e) => setNote(file.name, e.target.value)}
                             rows={3}
                             placeholder="Meeting agenda, key topics to watch, pre-read notes..."
-                            className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-gray-900 px-3 py-2 text-base text-gray-700 dark:text-gray-200 placeholder:text-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none resize-y"
+                            className="w-full rounded-md border border-forest-200 dark:border-forest-700 bg-forest-900 px-3 py-2 text-base text-forest-600 dark:text-forest-200 placeholder:text-forest-400 focus:border-forest-500 focus:ring-1 focus:ring-forest-500 focus:outline-none resize-y"
                           />
                         </div>
 
                         {/* Attachment picker */}
                         <div>
-                          <label className="text-sm text-gray-400 block mb-1">
+                          <label className="text-sm text-forest-300 block mb-1">
                             Supporting documents
-                            <span className="text-gray-500 ml-1">(PDF, PPTX, DOCX, max 25 MB)</span>
+                            <span className="text-forest-400 ml-1">(PDF, PPTX, DOCX, max 25 MB)</span>
                           </label>
                           <div className="flex items-center gap-2 mb-2">
                             <button
@@ -591,12 +591,12 @@ export default function UploadPage() {
                                 input.click();
                               }}
                               disabled={atts.length >= MAX_ATTACHMENTS_PER_TRANSCRIPT}
-                              className="inline-flex items-center gap-1 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-2.5 py-1.5 text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                              className="inline-flex items-center gap-1 rounded-md border border-forest-200 dark:border-forest-700 bg-white dark:bg-forest-800 px-2.5 py-1.5 text-sm text-forest-500 dark:text-forest-200 hover:bg-forest-100 dark:hover:bg-forest-700 hover:text-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                             >
                               <Paperclip className="h-3 w-3" />
                               Choose files
                             </button>
-                            <span className="text-sm text-gray-500">
+                            <span className="text-sm text-forest-400">
                               {atts.length}/{MAX_ATTACHMENTS_PER_TRANSCRIPT}
                             </span>
                           </div>
@@ -606,7 +606,7 @@ export default function UploadPage() {
                               {atts.map((att, attIdx) => (
                                 <li
                                   key={`${att.name}-${att.size}-${attIdx}`}
-                                  className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-800/50 rounded px-2 py-1.5"
+                                  className="flex items-center gap-2 text-sm text-forest-500 dark:text-forest-200 bg-forest-50 dark:bg-forest-800/50 rounded px-2 py-1.5"
                                 >
                                   <FileText
                                     className={`h-3 w-3 flex-shrink-0 ${
@@ -614,16 +614,16 @@ export default function UploadPage() {
                                         ? "text-red-500"
                                         : att.name.endsWith(".pptx")
                                         ? "text-orange-500"
-                                        : "text-blue-500"
+                                        : "text-forest-500"
                                     }`}
                                   />
                                   <span className="truncate flex-1">{att.name}</span>
-                                  <span className="text-gray-500 flex-shrink-0">
+                                  <span className="text-forest-400 flex-shrink-0">
                                     {formatFileSize(att.size)}
                                   </span>
                                   <button
                                     onClick={() => removeContextFile(file.name, attIdx)}
-                                    className="text-gray-500 hover:text-red-400 flex-shrink-0"
+                                    className="text-forest-400 hover:text-red-400 flex-shrink-0"
                                   >
                                     <X className="h-3 w-3" />
                                   </button>
@@ -639,11 +639,11 @@ export default function UploadPage() {
               );
             })}
           </ul>
-          <div className="border-t border-gray-200 dark:border-gray-700 px-4 py-3 flex items-center gap-3">
+          <div className="border-t border-forest-200 dark:border-forest-700 px-4 py-3 flex items-center gap-3">
             <button
               onClick={handleUpload}
               disabled={uploading || !allHavePrimary}
-              className="inline-flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="inline-flex items-center gap-2 rounded-md bg-forest-500 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-forest-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               {uploading ? (
                 <>
@@ -698,9 +698,9 @@ export default function UploadPage() {
 
       {/* Results */}
       {response && (
-        <div className="rounded-lg border border-gray-200 bg-white shadow-sm">
-          <div className="border-b border-gray-200 px-4 py-3">
-            <h3 className="text-base font-semibold text-gray-900">
+        <div className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800 shadow-sm">
+          <div className="border-b border-forest-200 px-4 py-3">
+            <h3 className="text-base font-semibold text-forest-950">
               Upload complete &mdash; {response.uploaded} of {response.total}{" "}
               file{response.total !== 1 ? "s" : ""} processed
             </h3>
@@ -712,11 +712,11 @@ export default function UploadPage() {
                 <li key={r.filename} className="flex items-center gap-3 px-4 py-3">
                   {statusIcon(r.status)}
                   <div className="min-w-0 flex-1">
-                    <p className="text-base font-medium text-gray-900 truncate">
+                    <p className="text-base font-medium text-forest-950 truncate">
                       {r.title || r.filename}
                     </p>
                     <div className="flex items-center gap-2">
-                      <p className="text-sm text-gray-500">{r.filename}</p>
+                      <p className="text-sm text-forest-400">{r.filename}</p>
                       {ctx?.notes && (
                         <span className="inline-flex items-center rounded-full bg-purple-50 px-1.5 py-0.5 text-[10px] font-medium text-purple-700">
                           notes
@@ -737,9 +737,9 @@ export default function UploadPage() {
                       r.status === "inserted"
                         ? "bg-green-50 text-green-700"
                         : r.status === "updated"
-                        ? "bg-blue-50 text-blue-700"
+                        ? "bg-forest-100 text-forest-600"
                         : r.status === "skipped"
-                        ? "bg-gray-100 text-gray-600"
+                        ? "bg-forest-100 text-forest-500"
                         : "bg-red-50 text-red-700"
                     }`}
                   >
@@ -748,7 +748,7 @@ export default function UploadPage() {
                   {r.id && (
                     <Link
                       href={`/transcripts/${r.id}`}
-                      className="text-sm text-blue-600 hover:text-blue-800 hover:underline flex-shrink-0"
+                      className="text-sm text-forest-500 hover:text-blue-800 hover:underline flex-shrink-0"
                     >
                       View
                     </Link>
@@ -757,10 +757,10 @@ export default function UploadPage() {
               );
             })}
           </ul>
-          <div className="border-t border-gray-200 px-4 py-3">
+          <div className="border-t border-forest-200 px-4 py-3">
             <Link
               href="/transcripts"
-              className="text-base text-blue-600 hover:text-blue-800 hover:underline"
+              className="text-base text-forest-500 hover:text-blue-800 hover:underline"
             >
               Go to Transcripts &rarr;
             </Link>

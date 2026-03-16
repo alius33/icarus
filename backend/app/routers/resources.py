@@ -21,7 +21,7 @@ def _schema(r: ResourceAllocation) -> ResourceAllocationSchema:
     allocs = []
     if r.allocations:
         for a in r.allocations:
-            allocs.append(AllocationEntry(workstream=a.get("workstream", ""), percentage=a.get("percentage", 0)))
+            allocs.append(AllocationEntry(project=a.get("project", a.get("workstream", "")), percentage=a.get("percentage", 0)))
     return ResourceAllocationSchema(
         id=r.id,
         person_name=r.person_name,

@@ -21,7 +21,7 @@ def _schema(d: Dependency) -> DependencySchema:
         blocking_reason=d.blocking_reason,
         estimated_effort=d.estimated_effort,
         assigned_to=d.assigned_to,
-        affected_workstreams=d.affected_workstreams,
+        affected_projects=d.affected_projects,
         priority=d.priority or "MEDIUM",
         notes=d.notes,
     )
@@ -51,7 +51,7 @@ async def create_dependency(body: DependencyCreate, db: AsyncSession = Depends(g
         blocking_reason=body.blocking_reason,
         estimated_effort=body.estimated_effort,
         assigned_to=body.assigned_to,
-        affected_workstreams=body.affected_workstreams,
+        affected_projects=body.affected_projects,
         priority=body.priority,
         notes=body.notes,
     )
@@ -69,7 +69,7 @@ async def update_dependency(dep_id: int, body: DependencyUpdate, db: AsyncSessio
         raise NotFoundError("Dependency", dep_id)
 
     for field in ["name", "dependency_type", "status", "blocking_reason",
-                  "estimated_effort", "assigned_to", "affected_workstreams",
+                  "estimated_effort", "assigned_to", "affected_projects",
                   "priority", "notes"]:
         val = getattr(body, field)
         if val is not None:

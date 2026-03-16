@@ -49,7 +49,8 @@ def _decision_schema(d: Decision) -> DecisionSchema:
         rationale=d.rationale,
         key_people=d.key_people or [],
         owner=", ".join(d.key_people) if d.key_people else None,
-        workstream=None,
+        project_id=d.project_id,
+        project_name=None,
         position=d.position,
         transcript_id=None,
         transcript_title=None,
@@ -60,7 +61,6 @@ def _decision_schema(d: Decision) -> DecisionSchema:
 # --- List (flat with filters) ---
 @router.get("/decisions", response_model=list[DecisionSchema])
 async def list_decisions(
-    workstream_id: int | None = Query(None),
     project_id: int | None = Query(None),
     execution_status: str | None = Query(None),
     key_person: str | None = Query(None),
@@ -74,8 +74,6 @@ async def list_decisions(
             ProjectLink.entity_type == "decision",
         )
         query = query.where(Decision.id.in_(linked_ids))
-    if workstream_id is not None:
-        query = query.where(Decision.workstream_id == workstream_id)
     if execution_status is not None:
         query = query.where(Decision.execution_status == execution_status)
     if key_person:
@@ -95,7 +93,6 @@ async def list_decisions(
 # --- Board (grouped by execution_status) ---
 @router.get("/decisions/board", response_model=DecisionBoardResponse)
 async def get_decision_board(
-    workstream_id: int | None = Query(None),
     project_id: int | None = Query(None),
     db: AsyncSession = Depends(get_db),
 ):
@@ -106,8 +103,6 @@ async def get_decision_board(
             ProjectLink.entity_type == "decision",
         )
         query = query.where(Decision.id.in_(linked_ids))
-    if workstream_id is not None:
-        query = query.where(Decision.workstream_id == workstream_id)
     result = await db.execute(query)
     rows = result.scalars().all()
 
@@ -137,7 +132,6 @@ async def get_decision_board(
 # --- Timeline ---
 @router.get("/decisions/timeline", response_model=DecisionTimelineResponse)
 async def get_decision_timeline(
-    workstream_id: int | None = Query(None),
     project_id: int | None = Query(None),
     db: AsyncSession = Depends(get_db),
 ):
@@ -148,8 +142,6 @@ async def get_decision_timeline(
             ProjectLink.entity_type == "decision",
         )
         query = query.where(Decision.id.in_(linked_ids))
-    if workstream_id is not None:
-        query = query.where(Decision.workstream_id == workstream_id)
     result = await db.execute(query.order_by(Decision.decision_date.asc(), Decision.number.asc()))
     rows = result.scalars().all()
 
@@ -161,7 +153,7 @@ async def get_decision_timeline(
             execution_status=d.execution_status or "made",
             key_people=d.key_people or [],
             decision_date=str(d.decision_date) if d.decision_date else None,
-            workstream=None,
+            project_name=None,
         )
         for d in rows
     ]
@@ -207,6 +199,7 @@ async def create_decision(body: DecisionCreate, db: AsyncSession = Depends(get_d
         rationale=body.rationale,
         key_people=body.key_people or [],
         execution_status=es,
+        project_id=body.project_id,
         position=next_position,
         is_manual=True,
         source_file="manual",
@@ -245,6 +238,8 @@ async def update_decision(decision_id: int, body: DecisionUpdate, db: AsyncSessi
         d.key_people = body.key_people
     if body.execution_status is not None:
         d.execution_status = body.execution_status
+    if body.project_id is not None:
+        d.project_id = body.project_id
     if body.date is not None:
         try:
             d.decision_date = datetime.strptime(body.date, "%Y-%m-%d").date()

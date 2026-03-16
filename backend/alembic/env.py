@@ -11,8 +11,6 @@ from app.models import (  # noqa: F401
     Transcript,
     Summary,
     WeeklyReport,
-    Workstream,
-    WorkstreamMilestone,
     Stakeholder,
     Decision,
     OpenThread,

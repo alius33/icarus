@@ -46,7 +46,7 @@ def _action_schema(t: Task) -> ActionItemSchema:
         due_date=str(t.due_date) if t.due_date else t.deadline,
         source_transcript_id=None,
         source_transcript_title=None,
-        workstream=None,
+        project=None,
         is_manual=t.is_manual,
     )
 

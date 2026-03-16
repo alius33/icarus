@@ -16,21 +16,17 @@ const routeMap: Record<string, string> = {
   "/analysis/summaries": "Summaries",
   "/analysis/weekly": "Weekly Reports",
   "/projects": "Project Hub",
-  "/workstreams": "Workstreams",
   "/stakeholders": "Stakeholders",
   "/decisions": "Decisions",
   "/action-items": "Actions",
   "/open-threads": "Open Threads",
   "/commitments": "Commitments",
   "/my-items": "My Items",
-  "/risks": "Risk Register",
-  "/dependencies": "Dependencies",
-  "/resources": "Resources",
-  "/scope": "Scope",
   "/wins": "Programme Wins",
   "/outreach": "Outreach Tracker",
   "/glossary": "Glossary",
   "/search": "Search",
+  "/updates": "Updates",
 };
 
 /**
@@ -91,7 +87,7 @@ export default function BreadcrumbBar() {
   if (items.length === 0) return null;
 
   return (
-    <div className="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 md:px-8 py-2.5 overflow-hidden">
+    <div className="border-b border-forest-200 dark:border-forest-700 bg-white dark:bg-forest-950 px-4 md:px-8 py-2.5 overflow-hidden">
       <Breadcrumbs items={items} />
     </div>
   );

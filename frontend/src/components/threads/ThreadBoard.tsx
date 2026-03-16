@@ -42,26 +42,26 @@ function DroppableColumn({
 }) {
   const { setNodeRef, isOver } = useDroppable({ id: column.status });
   const collapsed = collapsedColumns.has(column.status);
-  const cfg = THREAD_STATUS_CONFIG[column.status as ThreadStatus] ?? { label: column.label, color: "text-gray-600", bgColor: "bg-gray-100" };
+  const cfg = THREAD_STATUS_CONFIG[column.status as ThreadStatus] ?? { label: column.label, color: "text-forest-500", bgColor: "bg-forest-100" };
 
   return (
     <div
       ref={setNodeRef}
       className={`
         flex flex-col min-w-[280px] max-w-[320px] max-md:min-w-0 max-md:max-w-none max-md:w-full
-        bg-gray-50 dark:bg-gray-800/50
-        rounded-lg border border-gray-200 dark:border-gray-700
-        ${isOver ? "ring-2 ring-blue-400" : ""}
+        bg-forest-50 dark:bg-forest-800/50
+        rounded-lg border border-forest-200 dark:border-forest-700
+        ${isOver ? "ring-2 ring-forest-400" : ""}
       `}
     >
       {/* Column header */}
       <button
         onClick={() => toggleCollapse(column.status)}
-        className="flex items-center gap-2 px-3 py-2.5 border-b border-gray-200 dark:border-gray-700"
+        className="flex items-center gap-2 px-3 py-2.5 border-b border-forest-200 dark:border-forest-700"
       >
-        {collapsed ? <ChevronRight className="h-4 w-4 text-gray-400" /> : <ChevronDown className="h-4 w-4 text-gray-400" />}
+        {collapsed ? <ChevronRight className="h-4 w-4 text-forest-300" /> : <ChevronDown className="h-4 w-4 text-forest-300" />}
         <span className={`text-base font-semibold ${cfg.color}`}>{cfg.label}</span>
-        <span className="ml-auto text-sm text-gray-400 bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded-full">
+        <span className="ml-auto text-sm text-forest-300 bg-gray-200 dark:bg-forest-800 px-1.5 py-0.5 rounded-full">
           {column.count}
         </span>
       </button>
@@ -75,7 +75,7 @@ function DroppableColumn({
             ))}
           </SortableContext>
           {column.threads.length === 0 && (
-            <p className="text-sm text-gray-400 text-center py-4">No threads</p>
+            <p className="text-sm text-forest-300 text-center py-4">No threads</p>
           )}
         </div>
       )}

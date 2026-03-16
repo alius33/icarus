@@ -7,7 +7,6 @@ import type {
   TranscriptList,
   TranscriptNoteCurrent,
   TranscriptAttachment as TranscriptAttachmentType,
-  WorkstreamBase,
   StakeholderBase,
   DecisionSchema,
   ActionItemSchema,
@@ -37,6 +36,8 @@ import type {
   DeliverableOverview,
   WeeklyPlan,
   WeeklyPlanFull,
+  ProjectUpdateBase,
+  ProjectUpdateDetail,
 } from "./types";
 
 const defaultConfig: SWRConfiguration = {
@@ -62,15 +63,6 @@ export function useTranscripts(
   return useSWR<TranscriptList>(
     ["transcripts", page, limit],
     () => api.getTranscripts(page, limit),
-    { ...defaultConfig, ...config },
-  );
-}
-
-// Workstreams
-export function useWorkstreams(config?: SWRConfiguration) {
-  return useSWR<WorkstreamBase[]>(
-    "workstreams",
-    () => api.getWorkstreams(),
     { ...defaultConfig, ...config },
   );
 }
@@ -364,6 +356,24 @@ export function useCurrentWeeklyPlan(config?: SWRConfiguration) {
   return useSWR<WeeklyPlanFull | null>(
     "weekly-plan-current",
     () => api.getCurrentWeeklyPlan(),
+    { ...defaultConfig, ...config },
+  );
+}
+
+// ── Project Updates ─────────────────────────────────────────────────────
+
+export function useProjectUpdates(projectId?: number, config?: SWRConfiguration) {
+  return useSWR<ProjectUpdateBase[]>(
+    projectId ? ["project-updates", projectId] : "project-updates",
+    () => api.getProjectUpdates(projectId ? { project_id: projectId } : undefined),
+    { ...defaultConfig, ...config },
+  );
+}
+
+export function useProjectUpdate(id: number | null, config?: SWRConfiguration) {
+  return useSWR<ProjectUpdateDetail>(
+    id ? ["project-update", id] : null,
+    () => api.getProjectUpdate(id!),
     { ...defaultConfig, ...config },
   );
 }

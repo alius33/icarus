@@ -100,7 +100,7 @@ export default function RiskDependencyBoard() {
   };
 
   if (loading) {
-    return <div className="p-6 text-base text-gray-500">Loading risks & dependencies...</div>;
+    return <div className="p-6 text-base text-forest-400">Loading risks & dependencies...</div>;
   }
 
   const criticalThreads = threads.filter((t) => t.severity === "CRITICAL");
@@ -115,13 +115,13 @@ export default function RiskDependencyBoard() {
       {/* Risk Heat Map */}
       <div>
         <div className="flex items-center justify-between mb-3">
-          <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
+          <h4 className="text-sm font-semibold text-forest-400 uppercase tracking-wider flex items-center gap-1.5">
             <ShieldAlert className="h-3.5 w-3.5" />
             Open Risks ({threads.length})
           </h4>
           <button
             onClick={handleThreadCreate}
-            className="flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800"
+            className="flex items-center gap-1 text-sm text-forest-500 hover:text-blue-800"
           >
             <Plus className="h-3 w-3" /> Add
           </button>
@@ -138,7 +138,7 @@ export default function RiskDependencyBoard() {
             <RiskGroup label="Other" items={otherThreads} onEdit={handleThreadEdit} />
           )}
           {threads.length === 0 && (
-            <p className="text-base text-gray-500">No open risks.</p>
+            <p className="text-base text-forest-400">No open risks.</p>
           )}
         </div>
       </div>
@@ -146,13 +146,13 @@ export default function RiskDependencyBoard() {
       {/* Dependency List */}
       <div>
         <div className="flex items-center justify-between mb-3">
-          <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
+          <h4 className="text-sm font-semibold text-forest-400 uppercase tracking-wider flex items-center gap-1.5">
             <Link2 className="h-3.5 w-3.5" />
             Dependencies ({dependencies.length})
           </h4>
           <button
             onClick={handleDepCreate}
-            className="flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800"
+            className="flex items-center gap-1 text-sm text-forest-500 hover:text-blue-800"
           >
             <Plus className="h-3 w-3" /> Add
           </button>
@@ -173,7 +173,7 @@ export default function RiskDependencyBoard() {
 
         {activeDeps.length > 0 && (
           <div>
-            <span className="text-[10px] font-semibold uppercase text-gray-500 mb-1 block">
+            <span className="text-[10px] font-semibold uppercase text-forest-400 mb-1 block">
               Active ({activeDeps.length})
             </span>
             <div className="space-y-1.5">
@@ -185,7 +185,7 @@ export default function RiskDependencyBoard() {
         )}
 
         {dependencies.length === 0 && (
-          <p className="text-base text-gray-500">No dependencies tracked.</p>
+          <p className="text-base text-forest-400">No dependencies tracked.</p>
         )}
       </div>
 
@@ -272,7 +272,7 @@ function RiskGroup({
 }) {
   return (
     <div>
-      <span className="text-[10px] font-semibold uppercase text-gray-500 mb-1 block">
+      <span className="text-[10px] font-semibold uppercase text-forest-400 mb-1 block">
         {label} ({items.length})
       </span>
       <div className="space-y-1.5">
@@ -280,7 +280,7 @@ function RiskGroup({
           <button
             key={t.id}
             onClick={() => onEdit(t)}
-            className="flex items-start gap-2 w-full text-left rounded-md border border-gray-100 bg-white px-3 py-2 hover:bg-gray-50 transition-colors"
+            className="flex items-start gap-2 w-full text-left rounded-md border border-gray-100 bg-white dark:bg-forest-800 px-3 py-2 hover:bg-forest-50 transition-colors"
           >
             <span
               className={`mt-0.5 inline-flex rounded-full border px-1.5 py-0.5 text-[10px] font-medium ${severityColor(t.severity || "")}`}
@@ -288,16 +288,16 @@ function RiskGroup({
               {t.severity || "?"}
             </span>
             <div className="flex-1 min-w-0">
-              <p className="text-base font-medium text-gray-900 truncate">
+              <p className="text-base font-medium text-forest-950 truncate">
                 {t.title}
               </p>
               {t.trend && (
-                <span className="text-[10px] text-gray-500">
+                <span className="text-[10px] text-forest-400">
                   Trend: {t.trend}
                 </span>
               )}
             </div>
-            <Edit2 className="h-3 w-3 text-gray-400 flex-shrink-0 mt-1" />
+            <Edit2 className="h-3 w-3 text-forest-300 flex-shrink-0 mt-1" />
           </button>
         ))}
       </div>
@@ -314,7 +314,7 @@ function DepCard({
 }) {
   const statusColors: Record<string, string> = {
     blocked: "bg-red-100 text-red-700",
-    "in-progress": "bg-blue-100 text-blue-700",
+    "in-progress": "bg-blue-100 text-forest-600",
     pending: "bg-yellow-100 text-yellow-700",
     completed: "bg-green-100 text-green-700",
   };
@@ -322,22 +322,22 @@ function DepCard({
   return (
     <button
       onClick={onEdit}
-      className="flex items-start gap-2 w-full text-left rounded-md border border-gray-100 bg-white px-3 py-2 hover:bg-gray-50 transition-colors"
+      className="flex items-start gap-2 w-full text-left rounded-md border border-gray-100 bg-white dark:bg-forest-800 px-3 py-2 hover:bg-forest-50 transition-colors"
     >
       <span
-        className={`mt-0.5 inline-flex rounded-full px-1.5 py-0.5 text-[10px] font-medium ${statusColors[dep.status] || "bg-gray-100 text-gray-600"}`}
+        className={`mt-0.5 inline-flex rounded-full px-1.5 py-0.5 text-[10px] font-medium ${statusColors[dep.status] || "bg-forest-100 text-forest-500"}`}
       >
         {dep.status}
       </span>
       <div className="flex-1 min-w-0">
-        <p className="text-base font-medium text-gray-900 truncate">{dep.name}</p>
+        <p className="text-base font-medium text-forest-950 truncate">{dep.name}</p>
         {dep.blocking_reason && (
-          <p className="text-[10px] text-gray-500 truncate">
+          <p className="text-[10px] text-forest-400 truncate">
             {dep.blocking_reason}
           </p>
         )}
       </div>
-      <Edit2 className="h-3 w-3 text-gray-400 flex-shrink-0 mt-1" />
+      <Edit2 className="h-3 w-3 text-forest-300 flex-shrink-0 mt-1" />
     </button>
   );
 }

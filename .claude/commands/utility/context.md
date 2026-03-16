@@ -8,7 +8,7 @@ Read these files in parallel:
 
 1. `context/glossary.md` — names, acronyms, systems, jargon
 2. `context/stakeholders.md` — people, roles, dynamics
-3. `context/workstreams.md` — six workstreams and their current status
+3. All files in `context/projects/` — per-project context
 4. `context/decisions.md` — decision log
 5. `context/open_threads.md` — unresolved questions
 6. The most recent file in `analysis/weekly/` — latest weekly summary

@@ -9,7 +9,7 @@ class DashboardProjectCard(BaseModel):
     name: str
     status: str
     color: str | None = None
-    workstream_code: str | None = None
+    code: str | None = None
     is_custom: bool
     transcript_count: int = 0
     action_count: int = 0

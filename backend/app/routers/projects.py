@@ -13,17 +13,18 @@ from app.models.open_thread import OpenThread
 from app.models.project import Project
 from app.models.project_link import ProjectLink
 from app.models.project_summary import ProjectSummary
+from app.models.project_update import ProjectUpdate as ProjectUpdateModel
 from app.models.stakeholder import Stakeholder
 from app.models.summary import Summary
 from app.models.transcript import Transcript
 from app.models.transcript_mention import TranscriptMention
 from app.models.weekly_report import WeeklyReport
-from app.models.workstream import Workstream
 from app.schemas.action_item import ActionItemSchema
 from app.schemas.task import TaskSchema
 from app.schemas.decision import DecisionSchema
 from app.schemas.open_thread import OpenThreadSchema
 from app.schemas.project_summary import ProjectSummaryBase
+from app.schemas.project_update import ProjectUpdateBase as ProjectUpdateBaseSchema
 from app.schemas.project import (
     ProjectBase,
     ProjectCreate,
@@ -55,14 +56,6 @@ async def _get_project_or_404(project_id: int, db: AsyncSession) -> Project:
 
 
 async def _build_project_base(project: Project, db: AsyncSession) -> ProjectBase:
-    # Get workstream code if linked
-    ws_code = None
-    if project.workstream_id:
-        ws_result = await db.execute(
-            select(Workstream.code).where(Workstream.id == project.workstream_id)
-        )
-        ws_code = ws_result.scalar_one_or_none()
-
     # Count links by entity type
     count_result = await db.execute(
         select(ProjectLink.entity_type, func.count(ProjectLink.id))
@@ -86,8 +79,7 @@ async def _build_project_base(project: Project, db: AsyncSession) -> ProjectBase
         status=project.status,
         color=project.color,
         icon=project.icon,
-        workstream_id=project.workstream_id,
-        workstream_code=ws_code,
+        code=project.code,
         transcript_count=counts.get("transcript", 0),
         summary_count=ps_count,
         decision_count=counts.get("decision", 0),
@@ -131,7 +123,8 @@ def _decision_schema(d: Decision) -> DecisionSchema:
         date=str(d.decision_date) if d.decision_date else None,
         status="recorded",
         owner=", ".join(d.key_people) if d.key_people else None,
-        workstream=None,
+        project_id=None,
+        project_name=None,
         transcript_id=None,
         transcript_title=None,
     )
@@ -147,7 +140,7 @@ def _action_schema(a: Task) -> ActionItemSchema:
         due_date=str(a.due_date) if a.due_date else a.deadline,
         source_transcript_id=None,
         source_transcript_title=None,
-        workstream=None,
+        project=None,
     )
 
 
@@ -161,7 +154,7 @@ def _thread_schema(t: OpenThread) -> OpenThreadSchema:
         owner=None,
         opened_date=t.first_raised,
         last_discussed=None,
-        workstream=None,
+        project=None,
     )
 
 
@@ -325,6 +318,29 @@ async def get_project_hub(project_id: int, db: AsyncSession = Depends(get_db)):
         for ps in ps_result.scalars().all()
     ]
 
+    # Fetch project updates
+    update_ids = links_by_type.get("project_update", [])
+    project_updates_list: list[ProjectUpdateBaseSchema] = []
+    if update_ids:
+        pu_result = await db.execute(
+            select(ProjectUpdateModel).where(ProjectUpdateModel.id.in_(update_ids))
+            .order_by(ProjectUpdateModel.created_at.desc())
+        )
+        project_updates_list = [
+            ProjectUpdateBaseSchema(
+                id=pu.id,
+                title=pu.title,
+                content=pu.content,
+                content_type=pu.content_type,
+                is_processed=pu.is_processed,
+                created_at=pu.created_at.isoformat() if pu.created_at else "",
+                updated_at=pu.updated_at.isoformat() if pu.updated_at else "",
+                project_ids=[project_id],
+                project_names=[project_base.name],
+            )
+            for pu in pu_result.scalars().all()
+        ]
+
     return ProjectHub(
         project=project_base,
         transcripts=transcripts,
@@ -334,6 +350,7 @@ async def get_project_hub(project_id: int, db: AsyncSession = Depends(get_db)):
         open_threads=open_threads,
         stakeholders=stakeholders,
         project_summaries=project_summaries_list,
+        project_updates=project_updates_list,
     )
 
 
@@ -602,7 +619,7 @@ async def delete_project(project_id: int, db: AsyncSession = Depends(get_db)):
     project = await _get_project_or_404(project_id, db)
 
     if not project.is_custom:
-        raise ForbiddenError("Cannot delete workstream-backed projects. Only custom projects can be deleted.")
+        raise ForbiddenError("Cannot delete seed projects. Only custom projects can be deleted.")
 
     await db.delete(project)
     await db.commit()

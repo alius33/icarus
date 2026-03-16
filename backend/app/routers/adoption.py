@@ -18,20 +18,20 @@ def _schema(m: AdoptionMetric) -> AdoptionMetricSchema:
         date=str(m.date) if m.date else "",
         metric_type=m.metric_type,
         value=m.value,
-        workstream=m.workstream,
+        project=m.project,
         notes=m.notes,
     )
 
 
 @router.get("/adoption", response_model=list[AdoptionMetricSchema])
 async def list_adoption_metrics(
-    workstream: str | None = Query(None),
+    project: str | None = Query(None),
     metric_type: str | None = Query(None),
     db: AsyncSession = Depends(get_db),
 ):
     query = select(AdoptionMetric)
-    if workstream:
-        query = query.where(AdoptionMetric.workstream == workstream)
+    if project:
+        query = query.where(AdoptionMetric.project == project)
     if metric_type:
         query = query.where(AdoptionMetric.metric_type == metric_type)
 
@@ -51,7 +51,7 @@ async def create_adoption_metric(body: AdoptionMetricCreate, db: AsyncSession = 
         date=metric_date,
         metric_type=body.metric_type,
         value=body.value,
-        workstream=body.workstream,
+        project=body.project,
         notes=body.notes,
     )
     db.add(metric)

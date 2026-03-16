@@ -10,7 +10,7 @@ class ActionItemSchema(BaseModel):
     due_date: str | None = None
     source_transcript_id: int | None = None
     source_transcript_title: str | None = None
-    workstream: str | None = None
+    project: str | None = None
     is_manual: bool = False
 
 

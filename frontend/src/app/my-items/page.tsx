@@ -71,10 +71,10 @@ export default function MyItemsPage() {
   if (loading) {
     return (
       <div className="space-y-6">
-        <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">What Needs My Attention</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-forest-950 dark:text-forest-50">What Needs My Attention</h2>
         <div className="animate-pulse space-y-4">
-          <div className="h-10 bg-gray-100 rounded w-64" />
-          <div className="h-32 bg-gray-100 rounded" />
+          <div className="h-10 bg-forest-100 rounded w-64" />
+          <div className="h-32 bg-forest-100 rounded" />
         </div>
       </div>
     );
@@ -84,10 +84,10 @@ export default function MyItemsPage() {
     <div className="space-y-6">
       <div className="flex items-start justify-between">
         <div>
-          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">
+          <h2 className="text-xl md:text-2xl font-bold text-forest-950 dark:text-forest-50">
             What Needs My Attention
           </h2>
-          <p className="mt-1 text-base text-gray-500">
+          <p className="mt-1 text-base text-forest-400">
             Person-centric view of all open items.
           </p>
         </div>
@@ -95,11 +95,11 @@ export default function MyItemsPage() {
 
       {/* Person selector */}
       <div className="flex items-center gap-3">
-        <User className="h-4 w-4 text-gray-400" />
+        <User className="h-4 w-4 text-forest-300" />
         <select
           value={selectedPerson}
           onChange={(e) => setSelectedPerson(e.target.value)}
-          className="rounded-md border border-gray-300 bg-white px-3 py-2 text-base text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500"
+          className="rounded-md border border-forest-200 bg-white dark:bg-forest-800 px-3 py-2 text-base text-forest-600 focus:outline-none focus:ring-1 focus:ring-forest-500"
         >
           <option value="">All People</option>
           {people.map((p) => (
@@ -107,7 +107,7 @@ export default function MyItemsPage() {
           ))}
         </select>
         {selectedPerson && (
-          <span className="text-base text-gray-500">
+          <span className="text-base text-forest-400">
             {personItems.actions.length} actions ({overdueActions.length} overdue)
             {personItems.commitments.length > 0 && `, ${personItems.commitments.length} commitments`}
             {personItems.threads.length > 0 && `, ${personItems.threads.length} threads`}
@@ -117,13 +117,13 @@ export default function MyItemsPage() {
 
       {/* Summary cards */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <div className="rounded-lg border border-gray-200 bg-white p-4">
+        <div className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800 p-4">
           <div className="flex items-center gap-2 mb-2">
             <CheckSquare className="h-4 w-4 text-green-500" />
-            <span className="text-base font-semibold text-gray-900">Open Actions</span>
+            <span className="text-base font-semibold text-forest-950">Open Actions</span>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="text-2xl font-bold text-gray-900">
+            <span className="text-2xl font-bold text-forest-950">
               {personItems.actions.length}
             </span>
             {overdueActions.length > 0 && (
@@ -134,22 +134,22 @@ export default function MyItemsPage() {
           </div>
         </div>
 
-        <div className="rounded-lg border border-gray-200 bg-white p-4">
+        <div className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800 p-4">
           <div className="flex items-center gap-2 mb-2">
             <Handshake className="h-4 w-4 text-amber-500" />
-            <span className="text-base font-semibold text-gray-900">Pending Commitments</span>
+            <span className="text-base font-semibold text-forest-950">Pending Commitments</span>
           </div>
-          <span className="text-2xl font-bold text-gray-900">
+          <span className="text-2xl font-bold text-forest-950">
             {personItems.commitments.length}
           </span>
         </div>
 
-        <div className="rounded-lg border border-gray-200 bg-white p-4">
+        <div className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800 p-4">
           <div className="flex items-center gap-2 mb-2">
             <AlertCircle className="h-4 w-4 text-red-500" />
-            <span className="text-base font-semibold text-gray-900">Owned Threads</span>
+            <span className="text-base font-semibold text-forest-950">Owned Threads</span>
           </div>
-          <span className="text-2xl font-bold text-gray-900">
+          <span className="text-2xl font-bold text-forest-950">
             {personItems.threads.length}
           </span>
         </div>
@@ -158,27 +158,27 @@ export default function MyItemsPage() {
       {/* Action items */}
       {personItems.actions.length > 0 && (
         <section>
-          <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
+          <h3 className="text-sm font-semibold text-forest-400 uppercase tracking-wider mb-3">
             Open Actions
           </h3>
-          <div className="rounded-lg border border-gray-200 bg-white divide-y divide-gray-100">
+          <div className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800 divide-y divide-gray-100">
             {personItems.actions.map((action) => {
               const isOverdue = action.due_date && new Date(action.due_date) < new Date();
               return (
                 <div key={action.id} className="flex items-start gap-3 px-4 py-3">
                   <CheckSquare
-                    className={`h-4 w-4 mt-0.5 flex-shrink-0 ${isOverdue ? "text-red-500" : "text-gray-400"}`}
+                    className={`h-4 w-4 mt-0.5 flex-shrink-0 ${isOverdue ? "text-red-500" : "text-forest-300"}`}
                   />
                   <div className="flex-1 min-w-0">
-                    <p className="text-base text-gray-900">
+                    <p className="text-base text-forest-950">
                       {action.title || action.description}
                     </p>
                     <div className="flex items-center gap-2 mt-0.5">
                       {action.owner && (
-                        <span className="text-sm text-gray-500">{action.owner}</span>
+                        <span className="text-sm text-forest-400">{action.owner}</span>
                       )}
                       {action.due_date && (
-                        <span className={`text-sm ${isOverdue ? "text-red-600 font-medium" : "text-gray-400"}`}>
+                        <span className={`text-sm ${isOverdue ? "text-red-600 font-medium" : "text-forest-300"}`}>
                           <Clock className="inline h-3 w-3 mr-0.5" />
                           {formatDate(action.due_date)}
                         </span>
@@ -195,22 +195,22 @@ export default function MyItemsPage() {
       {/* Commitments */}
       {personItems.commitments.length > 0 && (
         <section>
-          <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
+          <h3 className="text-sm font-semibold text-forest-400 uppercase tracking-wider mb-3">
             Pending Commitments
           </h3>
-          <div className="rounded-lg border border-gray-200 bg-white divide-y divide-gray-100">
+          <div className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800 divide-y divide-gray-100">
             {personItems.commitments.map((c) => (
               <div key={c.id} className="flex items-start gap-3 px-4 py-3">
                 <Handshake className="h-4 w-4 mt-0.5 text-amber-500 flex-shrink-0" />
                 <div className="flex-1 min-w-0">
-                  <p className="text-base text-gray-900">{c.commitment}</p>
+                  <p className="text-base text-forest-950">{c.commitment}</p>
                   <div className="flex items-center gap-2 mt-0.5">
-                    <span className="text-sm text-gray-500">{c.person}</span>
+                    <span className="text-sm text-forest-400">{c.person}</span>
                     {c.deadline_text && (
-                      <span className="text-sm text-gray-400">{c.deadline_text}</span>
+                      <span className="text-sm text-forest-300">{c.deadline_text}</span>
                     )}
                     {c.condition && (
-                      <span className="text-[10px] text-gray-400 italic">
+                      <span className="text-[10px] text-forest-300 italic">
                         if: {c.condition}
                       </span>
                     )}
@@ -222,7 +222,7 @@ export default function MyItemsPage() {
                       ? "bg-amber-100 text-amber-700"
                       : c.status === "broken"
                         ? "bg-red-100 text-red-700"
-                        : "bg-gray-100 text-gray-600"
+                        : "bg-forest-100 text-forest-500"
                   }`}
                 >
                   {c.status}
@@ -236,17 +236,17 @@ export default function MyItemsPage() {
       {/* Threads */}
       {personItems.threads.length > 0 && (
         <section>
-          <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
+          <h3 className="text-sm font-semibold text-forest-400 uppercase tracking-wider mb-3">
             Owned Threads
           </h3>
-          <div className="rounded-lg border border-gray-200 bg-white divide-y divide-gray-100">
+          <div className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800 divide-y divide-gray-100">
             {personItems.threads.map((t) => (
               <div key={t.id} className="flex items-start gap-3 px-4 py-3">
                 <AlertCircle className="h-4 w-4 mt-0.5 text-red-500 flex-shrink-0" />
                 <div className="flex-1 min-w-0">
-                  <p className="text-base font-medium text-gray-900">{t.title}</p>
+                  <p className="text-base font-medium text-forest-950">{t.title}</p>
                   {t.description && (
-                    <p className="text-sm text-gray-500 mt-0.5 truncate">
+                    <p className="text-sm text-forest-400 mt-0.5 truncate">
                       {t.description}
                     </p>
                   )}
@@ -258,7 +258,7 @@ export default function MyItemsPage() {
                         ? "bg-red-100 text-red-700"
                         : t.severity === "HIGH"
                           ? "bg-orange-100 text-orange-700"
-                          : "bg-gray-100 text-gray-600"
+                          : "bg-forest-100 text-forest-500"
                     }`}
                   >
                     {t.severity}
@@ -273,8 +273,8 @@ export default function MyItemsPage() {
       {personItems.actions.length === 0 &&
         personItems.commitments.length === 0 &&
         personItems.threads.length === 0 && (
-          <div className="rounded-lg border border-gray-200 bg-gray-50 p-8 text-center">
-            <p className="text-base text-gray-500">
+          <div className="rounded-lg border border-forest-200 bg-forest-50 p-8 text-center">
+            <p className="text-base text-forest-400">
               {selectedPerson
                 ? `No open items found for ${selectedPerson}.`
                 : "No open items found."}

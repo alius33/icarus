@@ -12,7 +12,8 @@ class DecisionSchema(BaseModel):
     rationale: str | None = None
     key_people: list[str] = []
     owner: str | None = None
-    workstream: str | None = None
+    project_name: str | None = None
+    project_id: int | None = None
     position: int = 0
     transcript_id: int | None = None
     transcript_title: str | None = None
@@ -25,7 +26,7 @@ class DecisionCreate(BaseModel):
     rationale: str | None = None
     key_people: list[str] = []
     execution_status: str = "made"
-    workstream: str | None = None
+    project_id: int | None = None
 
 
 class DecisionUpdate(BaseModel):
@@ -34,7 +35,7 @@ class DecisionUpdate(BaseModel):
     rationale: str | None = None
     key_people: list[str] | None = None
     execution_status: str | None = None
-    workstream: str | None = None
+    project_id: int | None = None
 
 
 class DecisionPositionUpdate(BaseModel):
@@ -63,7 +64,7 @@ class DecisionTimelineItem(BaseModel):
     execution_status: str
     key_people: list[str] = []
     decision_date: str | None = None
-    workstream: str | None = None
+    project_name: str | None = None
 
 
 class DecisionTimelineResponse(BaseModel):

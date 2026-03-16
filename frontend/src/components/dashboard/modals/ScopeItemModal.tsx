@@ -27,7 +27,7 @@ export default function ScopeItemModal({
 }: Props) {
   const [name, setName] = useState("");
   const [scopeType, setScopeType] = useState("original");
-  const [workstream, setWorkstream] = useState("");
+  const [project, setProject] = useState("");
   const [status, setStatus] = useState("planned");
   const [description, setDescription] = useState("");
   const [impactNotes, setImpactNotes] = useState("");
@@ -37,14 +37,14 @@ export default function ScopeItemModal({
     if (initial) {
       setName(initial.name || "");
       setScopeType(initial.scope_type || "original");
-      setWorkstream(initial.workstream || "");
+      setProject(initial.project || "");
       setStatus(initial.status || "planned");
       setDescription(initial.description || "");
       setImpactNotes(initial.impact_notes || "");
     } else {
       setName("");
       setScopeType("original");
-      setWorkstream("");
+      setProject("");
       setStatus("planned");
       setDescription("");
       setImpactNotes("");
@@ -61,7 +61,7 @@ export default function ScopeItemModal({
     onSave({
       name: name.trim(),
       scope_type: scopeType,
-      workstream: workstream.trim() || undefined,
+      project: project.trim() || undefined,
       status,
       description: description.trim() || undefined,
       impact_notes: impactNotes.trim() || undefined,
@@ -107,10 +107,10 @@ export default function ScopeItemModal({
           ]}
         />
         <FormInput
-          label="Workstream"
-          value={workstream}
-          onChange={setWorkstream}
-          placeholder="e.g. WS2"
+          label="Project"
+          value={project}
+          onChange={setProject}
+          placeholder="e.g. CLARA"
         />
       </div>
       <FormTextarea

@@ -5,6 +5,7 @@ import Sidebar from "@/components/layout/Sidebar";
 import Header from "@/components/layout/Header";
 import BreadcrumbBar from "@/components/layout/BreadcrumbBar";
 import MobileBottomNav from "@/components/layout/MobileBottomNav";
+import QuickUpdateFAB from "@/components/updates/QuickUpdateFAB";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { SidebarProvider } from "@/lib/hooks/useSidebarState";
 import { ToastProvider } from "@/lib/hooks/useToast";
@@ -39,8 +40,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: "cover",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#111827" },
+    { media: "(prefers-color-scheme: light)", color: "#F1F2ED" },
+    { media: "(prefers-color-scheme: dark)", color: "#2E2D1D" },
   ],
 };
 
@@ -66,6 +67,7 @@ export default function RootLayout({
                 </main>
               </div>
               <MobileBottomNav />
+              <QuickUpdateFAB />
             </SidebarProvider>
           </ToastProvider>
         </ThemeProvider>

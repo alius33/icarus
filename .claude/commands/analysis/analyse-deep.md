@@ -44,7 +44,7 @@ Read ALL of these files into memory before any analysis begins. Read them in par
 **Core context:**
 1. `context/glossary.md` -- names, acronyms, systems, jargon
 2. `context/stakeholders.md` -- who matters, roles, dynamics
-3. `context/workstreams.md` -- six workstreams, current status
+3. All files in `context/projects/` -- per-project context and status
 
 **Continuity:**
 4. The most recent file in `analysis/weekly/` (sort by filename descending, take first) -- last weekly summary for narrative continuity
@@ -60,7 +60,9 @@ Read ALL of these files into memory before any analysis begins. Read them in par
 12. `analysis/trackers/risk_register.md`
 
 **Projects:**
-13. Read all project data. Try `GET /api/projects` if backend is running, otherwise scan `analysis/projects/` directories. When running without a local backend (e.g., Railway-deployed workflow), project data is loaded from filesystem only — this is fine. For each project, need: name, slug, description, keywords, linked workstream, key stakeholders. Store as a lookup table for project segmentation.
+13. Read all project data. Try `GET /api/projects` if backend is running, otherwise scan `analysis/projects/` directories. When running without a local backend (e.g., Railway-deployed workflow), project data is loaded from filesystem only — this is fine. For each project, need: name, slug, description, keywords, key stakeholders. Store as a lookup table for project segmentation.
+14. Current programme wins: `GET /api/wins` (if backend running) — needed to avoid creating duplicate wins
+15. Current outreach contacts: `GET /api/outreach` (if backend running) — needed to update existing contacts vs create new ones
 
 If any tracker files are missing, create them with empty table headers as shown above.
 
@@ -107,7 +109,8 @@ Create `analysis/summaries/YYYY-MM-DD_-_Title.md` for each transcript:
 **Date:** YYYY-MM-DD
 **Attendees:** [names mentioned or identified in transcript]
 **Duration context:** [short/medium/long — short: <2000 words, medium: 2000-5000, long: >5000]
-**Workstreams touched:** [list which of the 6 workstreams are relevant]
+**Primary project:** [name of the primary project this transcript relates to]
+**Secondary projects:** [list of other projects touched, if any]
 
 ## Key Points
 - [Bullet points -- what was discussed, decided, revealed]
@@ -173,6 +176,20 @@ Create `analysis/summaries/YYYY-MM-DD_-_Title.md` for each transcript:
 |---------|--------|-------|----------|------------|-------------|------------|
 | R-XXX or NEW | new/update | [short title] | CRITICAL/HIGH/MEDIUM/LOW | escalating/stable/de-escalating | explicit/implicit/absence_inferred | HIGH/MEDIUM/LOW |
 
+## Programme Wins Detected
+| Category | Title | Description | Before State | After State | Project | Confidence |
+|----------|-------|-------------|--------------|-------------|---------|------------|
+| time_saved/adoption/quality/reach/process_improvement | [short title] | [what was achieved] | [how it was before] | [how it is now] | [project slug] | HIGH/MEDIUM/LOW |
+
+(Extract: milestone completions, "we shipped X", "X is now live", time/effort savings mentioned with numbers, adoption figures, process changes. Only include concrete achievements, not aspirations. Leave empty if none.)
+
+## Outreach Signals
+| Contact | Role | Division | Signal Type | Detail | Interest Level |
+|---------|------|----------|-------------|--------|----------------|
+| [name] | [role] | [division] | new_contact/status_change/meeting/next_step | [what happened] | 1-5 |
+
+(Extract: new people from other divisions mentioned for the first time, existing contacts with engagement changes, meetings scheduled/held with cross-divisional stakeholders, next steps agreed for outreach. Leave empty if none.)
+
 ## Open Questions Raised
 - [Questions that came up but were not resolved in the meeting]
 
@@ -201,7 +218,7 @@ Matching criteria (check in order):
 1. Is the project name explicitly mentioned in the transcript?
 2. Are the project's keywords mentioned?
 3. Are project-specific stakeholders present AND discussing project-relevant topics?
-4. Are project-related workstreams discussed in a way that relates to this project?
+4. Are related projects discussed in a way that connects to this project?
 
 For each match, assign relevance:
 - **HIGH**: project was a primary discussion topic (multiple exchanges, decisions made)
@@ -270,6 +287,14 @@ Spawn 4 analysis agents IN PARALLEL using Agent tool. Each agent receives:
    - What was discussed, who knows, who should know but might not
    - Include in the summary's Information Flow table
 
+6. **Outreach signals** -- Cross-divisional engagement updates:
+   - New contacts: people from other divisions mentioned for the first time (not already in loaded outreach data from Step 1)
+   - Status changes: existing contacts whose engagement level has visibly shifted (e.g., attended a demo = interested→engaged)
+   - Meeting evidence: any cross-divisional meetings held or scheduled
+   - Next steps: agreed follow-ups with cross-divisional contacts
+   - For each signal: contact_name, contact_role, division, signal_type (new_contact/status_change/meeting/next_step), detail, suggested interest_level (1-5)
+   - Populate the "Outreach Signals" table in the summary
+
 ### Agent B: Decision-Commitment-Action Analyst
 
 **Mission:** Extract decisions at 4 levels, commitments with deadline parsing, and action items.
@@ -296,6 +321,14 @@ Spawn 4 analysis agents IN PARALLEL using Agent tool. Each agent receives:
    - Include: action, owner, deadline, status (Open), project slug, confidence
    - Append new items to `analysis/trackers/action_items.md`
    - Check existing actions in action_items.md -- if a previously open action was addressed in this meeting, update its status
+
+4. **Programme Wins** -- Concrete achievements or milestones:
+   - Look for: shipped features, adoption numbers, time savings, process improvements, quality improvements, new reach/partnerships
+   - Categories: time_saved (quantified time/effort reduction), adoption (usage numbers, migration targets), quality (improved outputs/processes), reach (new audiences, endorsements, cross-OU expansion), process_improvement (workflow changes, governance improvements)
+   - Each win needs: category, title, description, before_state, after_state, project slug, confidence
+   - Only log concrete achievements backed by evidence in the transcript — not plans or aspirations
+   - Cross-reference loaded wins (from Step 1) to avoid duplicates — skip if a win with the same title already exists
+   - Populate the "Programme Wins Detected" table in the summary
 
 ### Agent C: Risk-Contradiction-Gap Analyst
 
@@ -458,7 +491,17 @@ Review the analysis outputs and update context files where changes occurred. Onl
   - A notable attitude/sentiment shift was detected
   - New relationship dynamics emerged
   - A new stakeholder appeared for the first time
-- **`context/workstreams.md`** -- Update if meaningful progress was reported on any workstream
+- **`context/projects/*.md`** -- Update relevant project context files if meaningful progress was reported
+
+- **Programme Wins** (via API) -- For each win extracted by Agent B:
+  - Check if a win with the same title exists in the loaded wins data (from Step 1). If so, skip.
+  - `POST /api/wins` with: `{ "category": "...", "title": "...", "description": "...", "before_state": "...", "after_state": "...", "project": "...", "confidence": "estimated", "date_recorded": "YYYY-MM-DD", "notes": "Auto-extracted from: [transcript filename]" }`
+  - If the backend is not running, list the wins in the final report and note they need manual entry.
+
+- **Outreach contacts** (via API) -- For each outreach signal from Agent A:
+  - If signal_type is `new_contact`: `POST /api/outreach` with contact details, `status="initial_contact"`, `first_contact_date` = transcript date
+  - If signal_type is `status_change`, `meeting`, or `next_step` for an existing contact: `PATCH /api/outreach/{id}` with updated fields (`status`, `last_contact_date`, `meeting_count` increment, `next_step`, append to `notes`)
+  - If the backend is not running, list the outreach updates in the final report.
 
 ---
 
@@ -493,15 +536,6 @@ If updating an existing weekly summary (because new transcripts were added to a 
 [What moved forward, what stalled, what is new for this project this week. Written in prose.]
 
 ### [Other active projects...]
-
-## Workstream Progress
-[One subsection per active workstream, written in prose. Reference last week's state for each.]
-
-### WS1 [Name]
-[Progress since last week...]
-
-### WS2 CLARA
-[Progress since last week...]
 
 ## Key Decisions
 [Decisions made this week. Include who, rationale, and any dissent. Reference decision type.]
@@ -573,6 +607,8 @@ Output a comprehensive report:
   - Risks: N (new) + N (updated)
   - Meeting scores: N
 **Weekly summaries created/updated:** N
+**Programme wins logged:** N new (M skipped as duplicates)
+**Outreach updates:** N new contacts, M existing contacts updated
 **Context files modified:** [list which files were touched]
 **Verification:** N items spot-checked, N passed, N flagged [UNVERIFIED]
 **Backend import:** [success/skipped/failed]

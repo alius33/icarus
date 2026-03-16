@@ -53,7 +53,7 @@ export default function CopyBriefButton() {
         <button
           onClick={() => handleCopy("leadership")}
           disabled={state === "loading"}
-          className="inline-flex items-center gap-1.5 rounded-l-md border border-gray-300 bg-white px-3 py-1.5 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 disabled:opacity-50"
+          className="inline-flex items-center gap-1.5 rounded-l-md border border-forest-200 bg-white dark:bg-forest-800 px-3 py-1.5 text-base font-medium text-forest-600 transition-colors hover:bg-forest-50 disabled:opacity-50"
         >
           {state === "loading" && <Loader2 className="h-4 w-4 animate-spin" />}
           {state === "copied" && <Check className="h-4 w-4 text-green-600" />}
@@ -62,19 +62,19 @@ export default function CopyBriefButton() {
         </button>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="inline-flex items-center rounded-r-md border border-l-0 border-gray-300 bg-white px-2 py-1.5 text-gray-500 hover:bg-gray-50"
+          className="inline-flex items-center rounded-r-md border border-l-0 border-forest-200 bg-white dark:bg-forest-800 px-2 py-1.5 text-forest-400 hover:bg-forest-50"
         >
           <ChevronDown className="h-3.5 w-3.5" />
         </button>
       </div>
 
       {menuOpen && (
-        <div className="absolute right-0 z-10 mt-1 w-44 rounded-md border border-gray-200 bg-white shadow-lg">
+        <div className="absolute right-0 z-10 mt-1 w-44 rounded-md border border-forest-200 bg-white dark:bg-forest-800 shadow-lg">
           {BRIEF_OPTIONS.map((opt) => (
             <button
               key={opt.value}
               onClick={() => handleCopy(opt.value)}
-              className="block w-full px-3 py-2 text-left text-base text-gray-700 hover:bg-gray-50 first:rounded-t-md last:rounded-b-md"
+              className="block w-full px-3 py-2 text-left text-base text-forest-600 hover:bg-forest-50 first:rounded-t-md last:rounded-b-md"
             >
               {opt.label}
             </button>

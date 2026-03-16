@@ -12,7 +12,7 @@ export default function Sparkline({
   data,
   width = 60,
   height = 20,
-  color = "#3b82f6",
+  color = "#5B6D49",
   className = "",
 }: SparklineProps) {
   if (!data.length) return null;

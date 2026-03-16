@@ -13,7 +13,7 @@ interface TranscriptAttachmentsSectionProps {
 const FILE_TYPE_ICONS: Record<string, string> = {
   pdf: "text-red-500",
   pptx: "text-orange-500",
-  docx: "text-blue-500",
+  docx: "text-forest-500",
 };
 
 const MAX_FILE_SIZE = 25 * 1024 * 1024; // 25 MB
@@ -86,12 +86,12 @@ export default function TranscriptAttachmentsSection({ transcriptId }: Transcrip
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+    <div className="bg-white dark:bg-forest-800 rounded-lg shadow-sm border border-forest-200 p-6">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <h3 className="text-lg font-semibold text-gray-900">Attachments</h3>
+          <h3 className="text-lg font-semibold text-forest-950">Attachments</h3>
           {attachments && attachments.length > 0 && (
-            <span className="text-sm text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">
+            <span className="text-sm text-forest-300 bg-forest-100 px-2 py-0.5 rounded-full">
               {attachments.length}
             </span>
           )}
@@ -99,7 +99,7 @@ export default function TranscriptAttachmentsSection({ transcriptId }: Transcrip
         <button
           onClick={() => fileInputRef.current?.click()}
           disabled={uploading || (attachments?.length || 0) >= 10}
-          className="inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800 disabled:text-gray-400 disabled:cursor-not-allowed transition-colors"
+          className="inline-flex items-center gap-1 text-sm text-forest-500 hover:text-blue-800 disabled:text-forest-300 disabled:cursor-not-allowed transition-colors"
         >
           {uploading ? (
             <>
@@ -137,7 +137,7 @@ export default function TranscriptAttachmentsSection({ transcriptId }: Transcrip
       )}
 
       {(!attachments || attachments.length === 0) && !uploading && (
-        <p className="text-base text-gray-400 italic">
+        <p className="text-base text-forest-300 italic">
           Attach supporting files (PDF, PPTX, DOCX) to include in analysis.
         </p>
       )}
@@ -147,16 +147,16 @@ export default function TranscriptAttachmentsSection({ transcriptId }: Transcrip
           {attachments.map((att) => (
             <li key={att.id} className="border border-gray-100 rounded-md">
               <div className="flex items-center gap-3 px-3 py-2.5">
-                <FileText className={`h-4 w-4 flex-shrink-0 ${FILE_TYPE_ICONS[att.file_type] || "text-gray-400"}`} />
+                <FileText className={`h-4 w-4 flex-shrink-0 ${FILE_TYPE_ICONS[att.file_type] || "text-forest-300"}`} />
                 <div className="min-w-0 flex-1">
-                  <p className="text-base font-medium text-gray-800 truncate">
+                  <p className="text-base font-medium text-forest-950 truncate">
                     {att.original_filename}
                   </p>
                   <div className="flex items-center gap-2 mt-0.5">
-                    <span className="text-sm text-gray-400 uppercase">{att.file_type}</span>
-                    <span className="text-sm text-gray-400">{formatSize(att.size_bytes)}</span>
+                    <span className="text-sm text-forest-300 uppercase">{att.file_type}</span>
+                    <span className="text-sm text-forest-300">{formatSize(att.size_bytes)}</span>
                     {att.created_at && (
-                      <span className="text-sm text-gray-400">{formatDate(att.created_at)}</span>
+                      <span className="text-sm text-forest-300">{formatDate(att.created_at)}</span>
                     )}
                     {att.has_extracted_text && (
                       <button
@@ -175,7 +175,7 @@ export default function TranscriptAttachmentsSection({ transcriptId }: Transcrip
                 </div>
                 <a
                   href={api.getAttachmentDownloadUrl(transcriptId, att.id)}
-                  className="text-gray-400 hover:text-blue-600 transition-colors"
+                  className="text-forest-300 hover:text-forest-500 transition-colors"
                   title="Download"
                 >
                   <Download className="h-4 w-4" />
@@ -190,7 +190,7 @@ export default function TranscriptAttachmentsSection({ transcriptId }: Transcrip
                     </button>
                     <button
                       onClick={() => setConfirmDelete(null)}
-                      className="text-sm text-gray-400 hover:text-gray-600"
+                      className="text-sm text-forest-300 hover:text-forest-500"
                     >
                       Cancel
                     </button>
@@ -198,7 +198,7 @@ export default function TranscriptAttachmentsSection({ transcriptId }: Transcrip
                 ) : (
                   <button
                     onClick={() => setConfirmDelete(att.id)}
-                    className="text-gray-400 hover:text-red-500 transition-colors"
+                    className="text-forest-300 hover:text-red-500 transition-colors"
                     title="Delete"
                   >
                     <Trash2 className="h-4 w-4" />
@@ -230,7 +230,7 @@ function ExtractedTextPreview({ transcriptId, attachmentId }: { transcriptId: nu
   if (loading) {
     return (
       <div className="px-3 pb-3 border-t border-gray-100 pt-2">
-        <p className="text-sm text-gray-400">Loading extracted text...</p>
+        <p className="text-sm text-forest-300">Loading extracted text...</p>
       </div>
     );
   }
@@ -238,14 +238,14 @@ function ExtractedTextPreview({ transcriptId, attachmentId }: { transcriptId: nu
   if (!text) {
     return (
       <div className="px-3 pb-3 border-t border-gray-100 pt-2">
-        <p className="text-sm text-gray-400 italic">No text available</p>
+        <p className="text-sm text-forest-300 italic">No text available</p>
       </div>
     );
   }
 
   return (
     <div className="px-3 pb-3 border-t border-gray-100 pt-2">
-      <pre className="text-sm text-gray-600 whitespace-pre-wrap max-h-60 overflow-y-auto font-sans">
+      <pre className="text-sm text-forest-500 whitespace-pre-wrap max-h-60 overflow-y-auto font-sans">
         {text.length > 2000 ? text.substring(0, 2000) + "\n\n[... truncated]" : text}
       </pre>
     </div>

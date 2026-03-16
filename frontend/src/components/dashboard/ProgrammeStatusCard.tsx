@@ -10,14 +10,14 @@ interface Props {
 
 export default function ProgrammeStatusCard({ status }: Props) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-5">
+    <div className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800 p-5">
       <div className="flex items-start gap-4">
         {/* Health RAG indicator */}
         <div className="flex flex-col items-center gap-1">
           <div
             className={`h-10 w-10 rounded-full flex items-center justify-center ${healthRagColor(status.health_rag)}`}
           >
-            <Shield className="h-5 w-5 text-gray-900 dark:text-white" />
+            <Shield className="h-5 w-5 text-forest-950 dark:text-white" />
           </div>
           <span
             className={`text-[10px] font-semibold uppercase ${healthRagTextColor(status.health_rag)}`}
@@ -28,10 +28,10 @@ export default function ProgrammeStatusCard({ status }: Props) {
 
         {/* Narrative */}
         <div className="flex-1 min-w-0">
-          <h3 className="text-base font-semibold text-gray-900 mb-1">
+          <h3 className="text-base font-semibold text-forest-950 mb-1">
             Programme Health
           </h3>
-          <p className="text-base text-gray-700 leading-relaxed">
+          <p className="text-base text-forest-600 leading-relaxed">
             {status.narrative}
           </p>
 
@@ -70,12 +70,12 @@ export default function ProgrammeStatusCard({ status }: Props) {
         <div className="hidden sm:flex gap-4 text-center">
           <div>
             <div className="flex items-center justify-center gap-1">
-              <CheckCircle2 className="h-3.5 w-3.5 text-gray-400" />
-              <span className="text-lg font-bold text-gray-900">
+              <CheckCircle2 className="h-3.5 w-3.5 text-forest-300" />
+              <span className="text-lg font-bold text-forest-950">
                 {status.open_actions}
               </span>
             </div>
-            <span className="text-[10px] text-gray-500">Open Actions</span>
+            <span className="text-[10px] text-forest-400">Open Actions</span>
           </div>
           <div>
             <div className="flex items-center justify-center gap-1">
@@ -84,7 +84,7 @@ export default function ProgrammeStatusCard({ status }: Props) {
                 {status.overdue_count}
               </span>
             </div>
-            <span className="text-[10px] text-gray-500">Overdue</span>
+            <span className="text-[10px] text-forest-400">Overdue</span>
           </div>
           <div>
             <div className="flex items-center justify-center gap-1">
@@ -93,7 +93,7 @@ export default function ProgrammeStatusCard({ status }: Props) {
                 {status.critical_risks}
               </span>
             </div>
-            <span className="text-[10px] text-gray-500">Critical Risks</span>
+            <span className="text-[10px] text-forest-400">Critical Risks</span>
           </div>
         </div>
       </div>

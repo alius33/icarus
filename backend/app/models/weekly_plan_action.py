@@ -28,11 +28,18 @@ class WeeklyPlanAction(Base):
     position = Column(Integer, nullable=False, default=0)
     is_ai_generated = Column(Boolean, nullable=False, default=True)
     carried_from_week = Column(Integer, nullable=True)
+    source_transcript_id = Column(
+        Integer,
+        ForeignKey("transcripts.id", ondelete="SET NULL"),
+        nullable=True,
+    )
+    context = Column(Text, nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
     plan = relationship("WeeklyPlan", back_populates="actions")
     deliverable = relationship("ProgrammeDeliverable")
+    source_transcript = relationship("Transcript")
 
     __table_args__ = (
         Index("idx_weekly_plan_actions_plan", "weekly_plan_id"),

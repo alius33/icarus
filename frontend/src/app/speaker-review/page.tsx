@@ -113,12 +113,12 @@ export default function SpeakerReviewPage() {
       {/* Header */}
       <div>
         <div className="flex items-center gap-3">
-          <AudioLines className="h-7 w-7 text-blue-600" />
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+          <AudioLines className="h-7 w-7 text-forest-500" />
+          <h1 className="text-2xl font-bold text-forest-950 dark:text-forest-50">
             Speaker Identification Review
           </h1>
         </div>
-        <p className="text-base text-gray-500 dark:text-gray-400 mt-1">
+        <p className="text-base text-forest-400 dark:text-forest-300 mt-1">
           Review and confirm speaker identifications from the automated pipeline
         </p>
       </div>
@@ -126,7 +126,7 @@ export default function SpeakerReviewPage() {
       {/* Loading state */}
       {loading && (
         <div className="flex items-center justify-center py-12">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-forest-500" />
         </div>
       )}
 
@@ -181,19 +181,19 @@ export default function SpeakerReviewPage() {
                 .map(([method, count]) => (
                   <span
                     key={method}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-gray-100 dark:bg-gray-800 px-3 py-1 text-sm text-gray-600 dark:text-gray-300"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-forest-100 dark:bg-forest-800 px-3 py-1 text-sm text-forest-500 dark:text-forest-200"
                   >
                     <span className="font-medium">
                       {method.replace(/_/g, " ")}
                     </span>
-                    <span className="text-gray-400 dark:text-gray-500">{count}</span>
+                    <span className="text-forest-300 dark:text-forest-400">{count}</span>
                   </span>
                 ))}
             </div>
           )}
 
           {/* Tabs */}
-          <div className="flex items-center gap-1 border-b border-gray-200 dark:border-gray-700">
+          <div className="flex items-center gap-1 border-b border-forest-200 dark:border-forest-700">
             <TabButton
               active={tab === "review"}
               onClick={() => setTab("review")}
@@ -218,7 +218,7 @@ export default function SpeakerReviewPage() {
           </div>
 
           {/* Table */}
-          <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+          <div className="bg-white dark:bg-forest-800 dark:bg-forest-900 rounded-xl border border-forest-200 dark:border-forest-700 overflow-hidden">
             <SpeakerReviewTable
               items={filteredItems}
               stakeholderNames={data.stakeholder_names}
@@ -230,12 +230,12 @@ export default function SpeakerReviewPage() {
 
           {/* Action bar */}
           {(pendingActions.length > 0 || submitResult) && (
-            <div className="sticky bottom-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-4">
+            <div className="sticky bottom-0 bg-white dark:bg-forest-800 dark:bg-forest-900 border-t border-forest-200 dark:border-forest-700 rounded-xl shadow-lg p-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4 text-base">
                   {pendingActions.length > 0 && (
                     <>
-                      <span className="text-gray-600 dark:text-gray-400">
+                      <span className="text-forest-500 dark:text-forest-300">
                         {pendingActions.length} pending change{pendingActions.length !== 1 && "s"}
                       </span>
                       {acceptCount > 0 && (
@@ -270,7 +270,7 @@ export default function SpeakerReviewPage() {
                   {tab === "review" && reviewCount > 0 && (
                     <button
                       onClick={handleAcceptAllFlagged}
-                      className="flex items-center gap-2 px-3 py-2 text-base text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                      className="flex items-center gap-2 px-3 py-2 text-base text-forest-500 dark:text-forest-200 border border-forest-200 dark:border-forest-700 rounded-lg hover:bg-forest-50 dark:hover:bg-forest-700 transition-colors"
                     >
                       <CheckCheck className="h-4 w-4" />
                       Accept All Flagged
@@ -280,14 +280,14 @@ export default function SpeakerReviewPage() {
                     <>
                       <button
                         onClick={() => setActions(new Map())}
-                        className="px-3 py-2 text-base text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
+                        className="px-3 py-2 text-base text-forest-500 dark:text-forest-300 hover:text-forest-950 dark:hover:text-gray-200"
                       >
                         Clear
                       </button>
                       <button
                         onClick={handleSubmit}
                         disabled={submitting}
-                        className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-base font-medium rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                        className="flex items-center gap-2 px-4 py-2 bg-forest-500 text-white text-base font-medium rounded-lg hover:bg-forest-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                       >
                         <Send className="h-4 w-4" />
                         {submitting ? "Applying…" : `Apply ${pendingActions.length} Changes`}
@@ -321,7 +321,7 @@ function MetricCard({
   color: "blue" | "green" | "amber" | "red";
 }) {
   const colorMap = {
-    blue: "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-800",
+    blue: "bg-blue-50 dark:bg-blue-900/20 text-forest-500 dark:text-forest-300 border-blue-200 dark:border-blue-800",
     green: "bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 border-green-200 dark:border-green-800",
     amber: "bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 border-amber-200 dark:border-amber-800",
     red: "bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 border-red-200 dark:border-red-800",
@@ -354,7 +354,7 @@ function TabButton({
   const badgeColors = {
     amber: "bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300",
     green: "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300",
-    gray: "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300",
+    gray: "bg-forest-100 dark:bg-forest-800 text-forest-500 dark:text-forest-200",
   };
 
   return (
@@ -363,8 +363,8 @@ function TabButton({
       className={cn(
         "px-4 py-2.5 text-base font-medium border-b-2 transition-colors",
         active
-          ? "border-blue-600 text-blue-600 dark:text-blue-400"
-          : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
+          ? "border-forest-500 text-forest-500 dark:text-forest-300"
+          : "border-transparent text-forest-400 dark:text-forest-300 hover:text-forest-600 dark:hover:text-gray-200"
       )}
     >
       {label}

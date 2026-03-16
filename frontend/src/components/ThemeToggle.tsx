@@ -33,7 +33,7 @@ export default function ThemeToggle() {
       onClick={cycleTheme}
       aria-label={`Current: ${themeLabels[theme]}. Click to switch.`}
       title={themeLabels[theme]}
-      className="rounded-md p-1.5 text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition-colors"
+      className="rounded-md p-1.5 text-forest-300 hover:bg-forest-100 dark:hover:bg-forest-700 hover:text-forest-950 dark:hover:text-white transition-colors"
     >
       <Icon className="h-4 w-4" />
     </button>

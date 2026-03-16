@@ -42,7 +42,7 @@ export default async function ProjectHubPage({
       <div className="space-y-6">
         <Link
           href="/projects"
-          className="text-base text-blue-600 hover:text-blue-800"
+          className="text-base text-forest-500 hover:text-blue-800"
         >
           &larr; Back to Projects
         </Link>
@@ -70,14 +70,14 @@ export default async function ProjectHubPage({
       <div className="mb-4">
         <Link
           href="/projects"
-          className="text-base text-blue-600 hover:text-blue-800"
+          className="text-base text-forest-500 hover:text-blue-800"
         >
           &larr; Back to Projects
         </Link>
       </div>
 
       {/* Project header */}
-      <div className="rounded-t-lg border border-gray-200 bg-white p-6">
+      <div className="rounded-t-lg border border-forest-200 bg-white dark:bg-forest-800 p-6">
         <div className="flex items-start justify-between">
           <div>
             <div className="mb-2 flex items-center gap-2">
@@ -87,7 +87,7 @@ export default async function ProjectHubPage({
                 {project.status}
               </span>
             </div>
-            <h2 className="text-2xl font-bold text-gray-900">
+            <h2 className="text-2xl font-bold text-forest-950">
               {project.name}
             </h2>
           </div>
@@ -108,7 +108,7 @@ export default async function ProjectHubPage({
 
       {/* Tab content */}
       <div className="mt-6">
-        <Suspense fallback={<div className="flex items-center justify-center py-12"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" /></div>}>
+        <Suspense fallback={<div className="flex items-center justify-center py-12"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-forest-500" /></div>}>
           {activeTab === "overview" && (
             <ProjectOverviewTab
               project={project}

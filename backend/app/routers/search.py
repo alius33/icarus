@@ -29,13 +29,6 @@ SEARCH_QUERIES = {
         FROM weekly_reports, plainto_tsquery('english', :q) query
         WHERE search_vector @@ query
     """,
-    "workstreams": """
-        SELECT 'workstream' AS type, id, name AS title,
-               ts_headline('english', coalesce(description,'') || ' ' || coalesce(current_state,''), query, 'MaxWords=40, MinWords=20') AS snippet,
-               ts_rank(search_vector, query) AS score
-        FROM workstreams, plainto_tsquery('english', :q) query
-        WHERE search_vector @@ query
-    """,
     "stakeholders": """
         SELECT 'stakeholder' AS type, id, name AS title,
                ts_headline('english', coalesce(role,'') || ' ' || coalesce(concerns,'') || ' ' || coalesce(key_contributions,''), query, 'MaxWords=40, MinWords=20') AS snippet,
@@ -123,7 +116,6 @@ URL_PREFIXES = {
     "transcript": "/transcripts",
     "summary": "/summaries",
     "weekly_report": "/weekly-reports",
-    "workstream": "/workstreams",
     "stakeholder": "/stakeholders",
     "decision": "/decisions",
     "open_thread": "/open-threads",

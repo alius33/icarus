@@ -15,7 +15,7 @@ import { Plus } from "lucide-react";
 
 export default function DecisionsPage() {
   return (
-    <Suspense fallback={<div className="flex items-center justify-center py-12"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" /></div>}>
+    <Suspense fallback={<div className="flex items-center justify-center py-12"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-forest-500" /></div>}>
       <DecisionsContent />
     </Suspense>
   );
@@ -30,7 +30,7 @@ function DecisionsContent() {
 
   const [filters, setFilters] = useState({
     execution_status: searchParams.get("execution_status") || "",
-    workstream: searchParams.get("workstream") || "",
+    project: searchParams.get("project") || "",
     search: searchParams.get("search") || "",
   });
   const [showFilters, setShowFilters] = useState(Object.values(filters).some(Boolean));
@@ -116,14 +116,14 @@ function DecisionsContent() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Decisions</h1>
-          <p className="text-base text-gray-500 dark:text-gray-400 mt-1">
+          <h1 className="text-2xl font-bold text-forest-950 dark:text-forest-50">Decisions</h1>
+          <p className="text-base text-forest-400 dark:text-forest-300 mt-1">
             Track and manage programme decisions with full audit trail
           </p>
         </div>
         <button
           onClick={() => setShowCreate(true)}
-          className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-base font-medium rounded-lg hover:bg-blue-700 transition-colors"
+          className="flex items-center gap-2 px-4 py-2 bg-forest-500 text-white text-base font-medium rounded-lg hover:bg-forest-600 transition-colors"
         >
           <Plus className="h-4 w-4" />
           New Decision
@@ -141,7 +141,7 @@ function DecisionsContent() {
 
       {loading && (
         <div className="flex items-center justify-center py-12">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-forest-500" />
         </div>
       )}
 

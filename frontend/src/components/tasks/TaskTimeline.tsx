@@ -80,17 +80,17 @@ export default function TaskTimeline({ tasks, onTaskClick }: TaskTimelineProps) 
 
   if (tasks.length === 0) {
     return (
-      <div className="flex items-center justify-center py-12 text-gray-400 text-base">
+      <div className="flex items-center justify-center py-12 text-forest-300 text-base">
         No tasks with dates to show on timeline. Add start or due dates to see tasks here.
       </div>
     );
   }
 
   return (
-    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+    <div className="border border-forest-200 dark:border-forest-700 rounded-lg overflow-hidden">
       {/* Header: week columns */}
-      <div className="flex bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-        <div className="w-64 shrink-0 px-3 py-2 text-sm font-medium text-gray-500 dark:text-gray-400 border-r border-gray-200 dark:border-gray-700">
+      <div className="flex bg-forest-50 dark:bg-forest-800 border-b border-forest-200 dark:border-forest-700">
+        <div className="w-64 shrink-0 px-3 py-2 text-sm font-medium text-forest-400 dark:text-forest-300 border-r border-forest-200 dark:border-forest-700">
           Task
         </div>
         <div className="flex-1 relative">
@@ -98,7 +98,7 @@ export default function TaskTimeline({ tasks, onTaskClick }: TaskTimelineProps) 
             {weekLabels.map((wl, i) => (
               <div
                 key={i}
-                className="text-sm text-gray-400 px-2 py-2 border-r border-gray-200 dark:border-gray-700"
+                className="text-sm text-forest-300 px-2 py-2 border-r border-forest-200 dark:border-forest-700"
                 style={{ width: "120px" }}
               >
                 {wl.label}
@@ -124,13 +124,13 @@ export default function TaskTimeline({ tasks, onTaskClick }: TaskTimelineProps) 
           const statusCfg = STATUS_CONFIG[task.status as TaskStatus];
           const priorityCfg = PRIORITY_CONFIG[task.priority as TaskPriority];
           const barColor = statusCfg?.bgColor ?? "bg-gray-200";
-          const textColor = statusCfg?.color ?? "text-gray-600";
+          const textColor = statusCfg?.color ?? "text-forest-500";
 
           return (
-            <div key={task.id} className="flex border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/30">
+            <div key={task.id} className="flex border-b border-gray-100 dark:border-forest-700 hover:bg-forest-50 dark:hover:bg-forest-700/30">
               {/* Task label */}
               <div
-                className="w-64 shrink-0 px-3 py-2 border-r border-gray-200 dark:border-gray-700 cursor-pointer"
+                className="w-64 shrink-0 px-3 py-2 border-r border-forest-200 dark:border-forest-700 cursor-pointer"
                 onClick={() => onTaskClick(task.id)}
               >
                 <div className="flex items-center gap-2">
@@ -138,8 +138,8 @@ export default function TaskTimeline({ tasks, onTaskClick }: TaskTimelineProps) 
                     <span className={`w-2 h-2 rounded-full shrink-0 ${priorityCfg.dotColor}`} />
                   )}
                   <div className="min-w-0">
-                    <p className="text-base text-gray-900 dark:text-gray-100 truncate">{task.title}</p>
-                    <p className="text-sm text-gray-400">{task.identifier} {task.assignee && `· ${task.assignee}`}</p>
+                    <p className="text-base text-forest-950 dark:text-forest-50 truncate">{task.title}</p>
+                    <p className="text-sm text-forest-300">{task.identifier} {task.assignee && `· ${task.assignee}`}</p>
                   </div>
                 </div>
               </div>
@@ -150,7 +150,7 @@ export default function TaskTimeline({ tasks, onTaskClick }: TaskTimelineProps) 
                 {weekLabels.map((_, i) => (
                   <div
                     key={i}
-                    className="absolute top-0 bottom-0 border-r border-gray-100 dark:border-gray-800"
+                    className="absolute top-0 bottom-0 border-r border-gray-100 dark:border-forest-700"
                     style={{ left: `${((i * 7) / totalDays) * 100}%` }}
                   />
                 ))}

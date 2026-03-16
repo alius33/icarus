@@ -21,7 +21,7 @@ export default async function StakeholderDetailPage({
       {/* Back link */}
       <Link
         href="/stakeholders"
-        className="inline-flex items-center gap-1 text-base text-gray-500 hover:text-gray-700"
+        className="inline-flex items-center gap-1 text-base text-forest-400 hover:text-forest-600"
       >
         <ArrowLeft className="h-4 w-4" />
         Back to Stakeholders
@@ -29,19 +29,19 @@ export default async function StakeholderDetailPage({
 
       {/* Header */}
       <div>
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-forest-950">
           {stakeholder.name}
         </h2>
         <div className="mt-3 flex flex-wrap items-center gap-3">
-          <span className="inline-flex items-center rounded-full bg-blue-50 px-2.5 py-0.5 text-sm font-medium text-blue-700 border border-blue-200">
+          <span className="inline-flex items-center rounded-full bg-blue-50 px-2.5 py-0.5 text-sm font-medium text-forest-600 border border-blue-200">
             Tier {stakeholder.tier} &mdash;{" "}
             {tierLabels[stakeholder.tier] || "Other"}
           </span>
           {stakeholder.role && (
-            <span className="text-base text-gray-600">{stakeholder.role}</span>
+            <span className="text-base text-forest-500">{stakeholder.role}</span>
           )}
           {stakeholder.organisation && (
-            <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-700">
+            <span className="inline-flex items-center rounded-full bg-forest-100 px-2.5 py-0.5 text-sm font-medium text-forest-600">
               {stakeholder.organisation}
             </span>
           )}
@@ -50,12 +50,12 @@ export default async function StakeholderDetailPage({
 
       {/* Aliases */}
       {stakeholder.aliases.length > 0 && (
-        <div className="text-base text-gray-500">
+        <div className="text-base text-forest-400">
           Also known as:{" "}
           {stakeholder.aliases.map((alias, i) => (
             <span key={i}>
               {i > 0 && ", "}
-              <span className="font-medium text-gray-600">{alias}</span>
+              <span className="font-medium text-forest-500">{alias}</span>
             </span>
           ))}
         </div>
@@ -63,15 +63,15 @@ export default async function StakeholderDetailPage({
 
       {/* Notes */}
       {stakeholder.notes && (
-        <section className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-          <h3 className="text-lg font-semibold text-gray-900 mb-3">Notes</h3>
+        <section className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800 p-6 shadow-sm">
+          <h3 className="text-lg font-semibold text-forest-950 mb-3">Notes</h3>
           <MarkdownContent>{stakeholder.notes}</MarkdownContent>
         </section>
       )}
 
       {/* Transcript Appearances */}
-      <section className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-        <h3 className="text-lg font-semibold text-gray-900 mb-3">
+      <section className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800 p-6 shadow-sm">
+        <h3 className="text-lg font-semibold text-forest-950 mb-3">
           Transcript Appearances
         </h3>
 
@@ -81,20 +81,20 @@ export default async function StakeholderDetailPage({
               <Link
                 key={i}
                 href={`/transcripts/${mention.transcript_id}`}
-                className="block rounded-md border border-gray-100 bg-gray-50 p-4 transition-colors hover:bg-gray-100"
+                className="block rounded-md border border-gray-100 bg-forest-50 p-4 transition-colors hover:bg-forest-100"
               >
                 <div className="flex items-center justify-between">
-                  <p className="text-base font-medium text-gray-900">
+                  <p className="text-base font-medium text-forest-950">
                     {mention.transcript_title || `Transcript #${mention.transcript_id}`}
                   </p>
                   {mention.date && (
-                    <span className="text-sm text-gray-500">
+                    <span className="text-sm text-forest-400">
                       {formatDate(mention.date)}
                     </span>
                   )}
                 </div>
                 {mention.snippet && (
-                  <p className="mt-1 text-base text-gray-600 line-clamp-2">
+                  <p className="mt-1 text-base text-forest-500 line-clamp-2">
                     &ldquo;{mention.snippet}&rdquo;
                   </p>
                 )}
@@ -102,7 +102,7 @@ export default async function StakeholderDetailPage({
             ))}
           </div>
         ) : (
-          <p className="text-base text-gray-500">
+          <p className="text-base text-forest-400">
             No transcript appearances recorded.
           </p>
         )}

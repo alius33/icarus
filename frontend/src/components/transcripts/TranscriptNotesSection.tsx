@@ -72,12 +72,12 @@ export default function TranscriptNotesSection({ transcriptId }: TranscriptNotes
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+    <div className="bg-white dark:bg-forest-800 rounded-lg shadow-sm border border-forest-200 p-6">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <h3 className="text-lg font-semibold text-gray-900">Analyst Notes</h3>
+          <h3 className="text-lg font-semibold text-forest-950">Analyst Notes</h3>
           {note && (
-            <span className="text-sm text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">
+            <span className="text-sm text-forest-300 bg-forest-100 px-2 py-0.5 rounded-full">
               v{note.version}
             </span>
           )}
@@ -87,7 +87,7 @@ export default function TranscriptNotesSection({ transcriptId }: TranscriptNotes
             <button
               onClick={loadHistory}
               disabled={historyLoading}
-              className="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700 transition-colors"
+              className="inline-flex items-center gap-1 text-sm text-forest-400 hover:text-forest-600 transition-colors"
             >
               <History className="h-3.5 w-3.5" />
               {mode === "history" ? "Hide" : `${note.version_count} versions`}
@@ -96,7 +96,7 @@ export default function TranscriptNotesSection({ transcriptId }: TranscriptNotes
           {mode === "view" && (
             <button
               onClick={startEdit}
-              className="inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800 transition-colors"
+              className="inline-flex items-center gap-1 text-sm text-forest-500 hover:text-blue-800 transition-colors"
             >
               <Pencil className="h-3.5 w-3.5" />
               {note ? "Edit" : "Add notes"}
@@ -108,11 +108,11 @@ export default function TranscriptNotesSection({ transcriptId }: TranscriptNotes
       {mode === "view" && (
         <>
           {note ? (
-            <div className="prose prose-sm max-w-none text-gray-700 whitespace-pre-wrap">
+            <div className="prose prose-sm max-w-none text-forest-600 whitespace-pre-wrap">
               {note.content}
             </div>
           ) : (
-            <p className="text-base text-gray-400 italic">
+            <p className="text-base text-forest-300 italic">
               Add notes to provide context for analysis (meeting agendas, key topics, pre-reads).
             </p>
           )}
@@ -126,21 +126,21 @@ export default function TranscriptNotesSection({ transcriptId }: TranscriptNotes
             onChange={(e) => setEditContent(e.target.value)}
             rows={8}
             placeholder="Add context for this transcript... (meeting agenda, key topics to watch, pre-read notes)"
-            className="w-full rounded-md border border-gray-300 px-3 py-2 text-base text-gray-900 placeholder:text-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none resize-y"
+            className="w-full rounded-md border border-forest-200 px-3 py-2 text-base text-forest-950 placeholder:text-forest-300 focus:border-forest-500 focus:ring-1 focus:ring-forest-500 focus:outline-none resize-y"
             autoFocus
           />
           <div className="flex items-center gap-2">
             <button
               onClick={saveNote}
               disabled={saving || !editContent.trim()}
-              className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="inline-flex items-center gap-1.5 rounded-md bg-forest-500 px-3 py-1.5 text-sm font-medium text-white hover:bg-forest-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <Save className="h-3.5 w-3.5" />
               {saving ? "Saving..." : "Save"}
             </button>
             <button
               onClick={cancelEdit}
-              className="inline-flex items-center gap-1.5 rounded-md border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors"
+              className="inline-flex items-center gap-1.5 rounded-md border border-forest-200 px-3 py-1.5 text-sm font-medium text-forest-500 hover:bg-forest-50 transition-colors"
             >
               <X className="h-3.5 w-3.5" />
               Cancel
@@ -155,27 +155,27 @@ export default function TranscriptNotesSection({ transcriptId }: TranscriptNotes
             <div key={v.id} className="border border-gray-100 rounded-md">
               <button
                 onClick={() => toggleVersion(v.version)}
-                className="w-full flex items-center gap-2 px-3 py-2 text-left hover:bg-gray-50 transition-colors"
+                className="w-full flex items-center gap-2 px-3 py-2 text-left hover:bg-forest-50 transition-colors"
               >
                 {expandedVersions.has(v.version) ? (
-                  <ChevronDown className="h-3.5 w-3.5 text-gray-400 flex-shrink-0" />
+                  <ChevronDown className="h-3.5 w-3.5 text-forest-300 flex-shrink-0" />
                 ) : (
-                  <ChevronRight className="h-3.5 w-3.5 text-gray-400 flex-shrink-0" />
+                  <ChevronRight className="h-3.5 w-3.5 text-forest-300 flex-shrink-0" />
                 )}
-                <span className="text-sm font-medium text-gray-700">
+                <span className="text-sm font-medium text-forest-600">
                   Version {v.version}
                 </span>
-                <span className="text-sm text-gray-400">
+                <span className="text-sm text-forest-300">
                   {v.created_at ? formatDate(v.created_at) : ""}
                 </span>
                 {v.version === note?.version && (
-                  <span className="text-sm bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded-full">
+                  <span className="text-sm bg-blue-100 text-forest-600 px-1.5 py-0.5 rounded-full">
                     current
                   </span>
                 )}
               </button>
               {expandedVersions.has(v.version) && (
-                <div className="px-3 pb-3 text-base text-gray-600 whitespace-pre-wrap border-t border-gray-100 pt-2">
+                <div className="px-3 pb-3 text-base text-forest-500 whitespace-pre-wrap border-t border-gray-100 pt-2">
                   {v.content}
                 </div>
               )}

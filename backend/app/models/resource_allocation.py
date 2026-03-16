@@ -12,7 +12,7 @@ class ResourceAllocation(Base):
     id = Column(Integer, primary_key=True)
     person_name = Column(String, nullable=False)
     role = Column(String)
-    allocations = Column(JSON, default=list)  # [{workstream: str, percentage: int}]
+    allocations = Column(JSON, default=list)  # [{project: str, percentage: int}]
     capacity_status = Column(String, default="available")  # available, stretched, overloaded
     notes = Column(Text)
     start_date = Column(String)

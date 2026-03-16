@@ -16,7 +16,7 @@ export default async function ProjectsListPage() {
   if (error) {
     return (
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold text-gray-900">Project Hub</h2>
+        <h2 className="text-2xl font-bold text-forest-950">Project Hub</h2>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
           <p className="text-base text-red-700">{error}</p>
         </div>
@@ -30,15 +30,15 @@ export default async function ProjectsListPage() {
     <div className="space-y-8">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">Project Hub</h2>
-          <p className="mt-1 text-base text-gray-500">
+          <h2 className="text-2xl font-bold text-forest-950">Project Hub</h2>
+          <p className="mt-1 text-base text-forest-400">
             Each project aggregates all related transcripts, decisions, actions,
             and more.
           </p>
         </div>
         <Link
           href="/projects/new"
-          className="inline-flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-base font-medium text-white hover:bg-blue-700 transition-colors"
+          className="inline-flex items-center gap-2 rounded-md bg-forest-500 px-4 py-2 text-base font-medium text-white hover:bg-forest-600 transition-colors"
         >
           <Plus className="h-4 w-4" />
           New Project
@@ -55,9 +55,9 @@ export default async function ProjectsListPage() {
       )}
 
       {(!projects || projects.length === 0) && (
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 text-center">
-          <p className="text-gray-500 text-base">
-            No projects yet. Projects are automatically created from workstreams
+        <div className="bg-white dark:bg-forest-800 rounded-lg shadow-sm border border-forest-200 p-8 text-center">
+          <p className="text-forest-400 text-base">
+            No projects yet. Projects are automatically created
             when the import pipeline runs.
           </p>
         </div>
@@ -66,7 +66,7 @@ export default async function ProjectsListPage() {
   );
 }
 
-function ProjectCard({ project: p }: { project: { id: number; name: string; description: string | null; is_custom: boolean; status: string; color: string | null; workstream_code: string | null; transcript_count: number; decision_count: number; action_count: number; open_thread_count: number; stakeholder_count: number } }) {
+function ProjectCard({ project: p }: { project: { id: number; name: string; description: string | null; is_custom: boolean; status: string; color: string | null; code: string | null; transcript_count: number; decision_count: number; action_count: number; open_thread_count: number; stakeholder_count: number } }) {
   const totalItems =
     p.transcript_count +
     p.decision_count +
@@ -77,7 +77,7 @@ function ProjectCard({ project: p }: { project: { id: number; name: string; desc
   return (
     <Link
       href={`/projects/${p.id}`}
-      className="block rounded-lg border border-gray-200 bg-white shadow-sm transition-all hover:border-blue-300 hover:shadow-md overflow-hidden"
+      className="block rounded-lg border border-forest-200 bg-white dark:bg-forest-800 shadow-sm transition-all hover:border-blue-300 hover:shadow-md overflow-hidden"
     >
       {/* Color accent bar */}
       <div
@@ -95,10 +95,10 @@ function ProjectCard({ project: p }: { project: { id: number; name: string; desc
           </span>
         </div>
 
-        <h3 className="text-base font-semibold text-gray-900">{p.name}</h3>
+        <h3 className="text-base font-semibold text-forest-950">{p.name}</h3>
 
         {p.description && (
-          <p className="mt-1 text-sm text-gray-500 line-clamp-2">
+          <p className="mt-1 text-sm text-forest-400 line-clamp-2">
             {p.description}
           </p>
         )}
@@ -138,7 +138,7 @@ function CountPill({
   label: string;
 }) {
   return (
-    <span className="inline-flex items-center gap-1 rounded-full bg-gray-100 px-2 py-0.5 text-sm text-gray-600">
+    <span className="inline-flex items-center gap-1 rounded-full bg-forest-100 px-2 py-0.5 text-sm text-forest-500">
       {icon}
       {count} {label}
     </span>

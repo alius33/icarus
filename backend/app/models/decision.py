@@ -15,7 +15,7 @@ class Decision(Base):
     decision = Column(Text, nullable=False)
     rationale = Column(Text)
     key_people = Column(ARRAY(String), default=[])
-    workstream_id = Column(Integer, ForeignKey("workstreams.id"), nullable=True)
+    project_id = Column(Integer, ForeignKey("projects.id", ondelete="SET NULL"), nullable=True)
     search_vector = Column(TSVECTOR)
     execution_status = Column(String, default="made")  # made | in_progress | implemented | reversed | superseded
     position = Column(Integer, nullable=False, default=0)

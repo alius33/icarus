@@ -63,7 +63,7 @@ from app.routers import (
     weekly_plans,
     weekly_reports,
     wins,
-    workstreams,
+    project_updates,
 )
 
 app = FastAPI(title="Icarus Dashboard API", version="0.1.0", lifespan=lifespan)
@@ -87,7 +87,6 @@ app.include_router(auth_router, prefix="/api")
 app.include_router(transcripts.router, prefix="/api")
 app.include_router(summaries.router, prefix="/api")
 app.include_router(weekly_reports.router, prefix="/api")
-app.include_router(workstreams.router, prefix="/api")
 app.include_router(stakeholders.router, prefix="/api")
 app.include_router(decisions.router, prefix="/api")
 app.include_router(open_threads.router, prefix="/api")
@@ -119,6 +118,7 @@ app.include_router(project_summaries.router, prefix="/api")
 app.include_router(transcript_extras.router, prefix="/api")
 app.include_router(programme_deliverables.router, prefix="/api")
 app.include_router(weekly_plans.router, prefix="/api")
+app.include_router(project_updates.router, prefix="/api")
 
 
 @app.get("/")

@@ -13,7 +13,7 @@ This task detects new transcripts, creates individual call summaries, updates we
 
 1. List all `.txt` files in `Transcripts/` and all `.md` files in `analysis/summaries/`
 2. Identify which transcripts have no matching summary (normalise filenames: convert `DD-MM-YYYY` → `YYYY-MM-DD`, match stems)
-3. Read `context/glossary.md`, `context/stakeholders.md`, `context/workstreams.md`
+3. Read `context/glossary.md`, `context/stakeholders.md`, all files in `context/projects/`
 4. Read the most recent weekly summary from `analysis/weekly/`
 5. Write the list of new transcripts and affected weeks to a shared note for other agents
 
@@ -69,7 +69,7 @@ Same as Agent 2 (including context notes from Agent 1b), for the remaining trans
    - `context/decisions.md` — append new decisions
    - `context/open_threads.md` — add/close threads
    - `context/stakeholders.md` — update if dynamics shifted
-   - `context/workstreams.md` — update if meaningful progress
+   - `context/projects/*.md` — update project context if meaningful progress
    - `analysis/trackers/action_items.md` — add/update actions
 
 ### Agent 5: Import & Report

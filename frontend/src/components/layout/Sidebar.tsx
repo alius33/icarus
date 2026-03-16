@@ -7,9 +7,8 @@ import {
   FileText,
   FileBarChart,
   CalendarDays,
-  Network,
   Users,
-  Clock,
+
   Gavel,
   KanbanSquare,
   AlertCircle,
@@ -17,20 +16,13 @@ import {
   Search,
   Upload,
   FolderKanban,
-  ShieldAlert,
-  Link2,
-  UserCog,
-  Target,
   Handshake,
   Trophy,
   Globe,
   User,
   AudioLines,
-  TrendingUp,
-  GitBranch,
-  AlertTriangle,
-  BarChart3,
   Rocket,
+  MessageSquarePlus,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -58,9 +50,14 @@ const navSections: NavSection[] = [
         icon: <LayoutDashboard className="h-4 w-4" />,
       },
       {
-        label: "Timeline",
-        href: "/timeline",
-        icon: <Clock className="h-4 w-4" />,
+        label: "Weekly Plan",
+        href: "/weekly-plan",
+        icon: <Rocket className="h-4 w-4" />,
+      },
+      {
+        label: "Weekly Reports",
+        href: "/analysis/weekly",
+        icon: <CalendarDays className="h-4 w-4" />,
       },
     ],
   },
@@ -76,6 +73,11 @@ const navSections: NavSection[] = [
         label: "Upload",
         href: "/upload",
         icon: <Upload className="h-4 w-4" />,
+      },
+      {
+        label: "Updates",
+        href: "/updates",
+        icon: <MessageSquarePlus className="h-4 w-4" />,
       },
       {
         label: "Speaker Review",
@@ -108,11 +110,6 @@ const navSections: NavSection[] = [
         label: "Project Hub",
         href: "/projects",
         icon: <FolderKanban className="h-4 w-4" />,
-      },
-      {
-        label: "Workstreams",
-        href: "/workstreams",
-        icon: <Network className="h-4 w-4" />,
       },
       {
         label: "Stakeholders",
@@ -152,58 +149,8 @@ const navSections: NavSection[] = [
     ],
   },
   {
-    title: "Intelligence",
-    items: [
-      {
-        label: "Risk Register",
-        href: "/risks",
-        icon: <ShieldAlert className="h-4 w-4" />,
-      },
-      {
-        label: "Dependencies",
-        href: "/dependencies",
-        icon: <Link2 className="h-4 w-4" />,
-      },
-      {
-        label: "Resources",
-        href: "/resources",
-        icon: <UserCog className="h-4 w-4" />,
-      },
-      {
-        label: "Scope",
-        href: "/scope",
-        icon: <Target className="h-4 w-4" />,
-      },
-      {
-        label: "Topic Evolution",
-        href: "/topic-evolution",
-        icon: <TrendingUp className="h-4 w-4" />,
-      },
-      {
-        label: "Influence Map",
-        href: "/influence-graph",
-        icon: <GitBranch className="h-4 w-4" />,
-      },
-      {
-        label: "Contradictions",
-        href: "/contradictions",
-        icon: <AlertTriangle className="h-4 w-4" />,
-      },
-      {
-        label: "Meeting Scores",
-        href: "/meeting-scores",
-        icon: <BarChart3 className="h-4 w-4" />,
-      },
-    ],
-  },
-  {
     title: "Strategy",
     items: [
-      {
-        label: "Weekly Plan",
-        href: "/weekly-plan",
-        icon: <Rocket className="h-4 w-4" />,
-      },
       {
         label: "Programme Wins",
         href: "/wins",
@@ -259,8 +206,8 @@ function NavLink({
         "flex items-center gap-3 rounded-md px-3 py-3 md:py-2 text-base font-medium transition-colors",
         indent && "ml-4",
         isActive
-          ? "bg-blue-600 text-white"
-          : "text-gray-300 hover:bg-gray-800 hover:text-white",
+          ? "bg-forest-500 text-white"
+          : "text-forest-100 hover:bg-forest-700 hover:text-white",
       )}
     >
       {item.icon}
@@ -286,7 +233,7 @@ export default function Sidebar() {
 
       <aside
         className={cn(
-          "fixed inset-y-0 left-0 z-50 flex w-64 flex-col bg-gray-900 dark:bg-gray-950",
+          "fixed inset-y-0 left-0 z-50 flex w-64 flex-col bg-gradient-to-b from-forest-900 to-forest-950",
           "transition-transform duration-200 ease-in-out",
           "md:translate-x-0",
           isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
@@ -296,7 +243,7 @@ export default function Sidebar() {
         aria-hidden={!isOpen ? true : undefined}
       >
         {/* Logo / Title */}
-        <div className="flex h-16 items-center border-b border-gray-800 px-6">
+        <div className="flex h-16 items-center border-b border-forest-700 px-6">
           <span className="text-lg font-bold tracking-widest text-white">
             ICARUS
           </span>
@@ -306,14 +253,14 @@ export default function Sidebar() {
         <nav className="flex-1 space-y-1 overflow-y-auto px-3 py-4">
           {navSections.map((section) => (
             <div key={section.title} className="mb-4">
-              <p className="mb-1 px-3 text-sm font-semibold uppercase tracking-wider text-gray-500">
+              <p className="mb-1 px-3 text-sm font-semibold uppercase tracking-wider text-forest-300">
                 {section.title}
               </p>
               {section.items.map((item) => (
                 <div key={item.href}>
                   {item.children ? (
                     <>
-                      <div className="flex items-center gap-3 px-3 py-3 md:py-2 text-base font-medium text-gray-400">
+                      <div className="flex items-center gap-3 px-3 py-3 md:py-2 text-base font-medium text-forest-300">
                         {item.icon}
                         {item.label}
                       </div>
@@ -336,8 +283,8 @@ export default function Sidebar() {
         </nav>
 
         {/* Footer */}
-        <div className="border-t border-gray-800 px-6 py-4 flex items-center justify-between">
-          <p className="text-sm text-gray-500">Icarus v1.0</p>
+        <div className="border-t border-forest-700 px-6 py-4 flex items-center justify-between">
+          <p className="text-sm text-forest-300">Icarus v1.0</p>
           <ThemeToggle />
         </div>
       </aside>

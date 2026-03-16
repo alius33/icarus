@@ -23,14 +23,14 @@ function formatTranscriptContent(rawText: string): React.ReactNode[] {
 
       return (
         <div key={i} className="mb-1">
-          <span className="font-semibold text-blue-700">
+          <span className="font-semibold text-forest-600">
             {match[1].trim()}
           </span>
-          <span className="text-sm text-gray-400 ml-2">
+          <span className="text-sm text-forest-300 ml-2">
             {timestampMatch ? timestampMatch[0] : ""}
           </span>
           <br />
-          <span className="text-gray-800">
+          <span className="text-forest-950">
             {line.substring(timestampEnd).trim()}
           </span>
         </div>
@@ -42,7 +42,7 @@ function formatTranscriptContent(rawText: string): React.ReactNode[] {
     }
 
     return (
-      <div key={i} className="text-gray-800 mb-1">
+      <div key={i} className="text-forest-950 mb-1">
         {line}
       </div>
     );
@@ -69,7 +69,7 @@ export default async function TranscriptDetailPage({
       <div className="space-y-6">
         <Link
           href="/transcripts"
-          className="text-base text-blue-600 hover:text-blue-800"
+          className="text-base text-forest-500 hover:text-blue-800"
         >
           &larr; Back to Transcripts
         </Link>
@@ -86,32 +86,32 @@ export default async function TranscriptDetailPage({
     <div className="space-y-6">
       <Link
         href="/transcripts"
-        className="inline-block text-base text-blue-600 hover:text-blue-800"
+        className="inline-block text-base text-forest-500 hover:text-blue-800"
       >
         &larr; Back to Transcripts
       </Link>
 
       {/* Header */}
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-        <h2 className="text-2xl font-bold text-gray-900">
+      <div className="bg-white dark:bg-forest-800 rounded-lg shadow-sm border border-forest-200 p-6">
+        <h2 className="text-2xl font-bold text-forest-950">
           {transcript.title || transcript.file_name}
         </h2>
 
         <div className="mt-3 flex flex-wrap items-center gap-3">
           {transcript.date && (
-            <span className="text-base text-gray-500">
+            <span className="text-base text-forest-400">
               {formatDate(transcript.date)}
             </span>
           )}
 
-          <span className="px-2 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-600 border border-gray-200">
+          <span className="px-2 py-1 rounded-full text-sm font-medium bg-forest-100 text-forest-500 border border-forest-200">
             {transcript.word_count.toLocaleString()} words
           </span>
 
           {transcript.summary && (
             <Link
               href={`/analysis/summaries/${transcript.summary.id}`}
-              className="px-2 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-700 border border-blue-200 hover:bg-blue-200 transition-colors"
+              className="px-2 py-1 rounded-full text-sm font-medium bg-blue-100 text-forest-600 border border-blue-200 hover:bg-blue-200 transition-colors"
             >
               View Summary
             </Link>
@@ -121,14 +121,14 @@ export default async function TranscriptDetailPage({
         {/* Participants */}
         {transcript.participants.length > 0 && (
           <div className="mt-4">
-            <p className="text-sm font-medium uppercase tracking-wider text-gray-500 mb-2">
+            <p className="text-sm font-medium uppercase tracking-wider text-forest-400 mb-2">
               Participants
             </p>
             <div className="flex flex-wrap gap-2">
               {transcript.participants.map((name) => (
                 <span
                   key={name}
-                  className="px-2 py-1 rounded-full text-sm font-medium bg-blue-50 text-blue-700 border border-blue-200"
+                  className="px-2 py-1 rounded-full text-sm font-medium bg-forest-100 text-forest-600 border border-blue-200"
                 >
                   {name}
                 </span>
@@ -145,8 +145,8 @@ export default async function TranscriptDetailPage({
       <TranscriptAttachmentsSection transcriptId={transcriptId} />
 
       {/* Transcript Content */}
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">
+      <div className="bg-white dark:bg-forest-800 rounded-lg shadow-sm border border-forest-200 p-6">
+        <h3 className="text-lg font-semibold text-forest-950 mb-4">
           Transcript
         </h3>
         <div className="font-mono text-base leading-relaxed max-w-none">

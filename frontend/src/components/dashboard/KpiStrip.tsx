@@ -28,7 +28,7 @@ function buildTiles(kpi: KpiData): KpiTile[] {
       primary: kpi.total_transcripts,
       sub: `${kpi.transcripts_this_week} this week`,
       sparkData: kpi.weekly_transcript_counts,
-      icon: <FileText className="h-4 w-4 text-blue-500" />,
+      icon: <FileText className="h-4 w-4 text-forest-500" />,
     },
     {
       label: "Open Actions",
@@ -36,7 +36,7 @@ function buildTiles(kpi: KpiData): KpiTile[] {
       sub: `${kpi.overdue_actions} overdue`,
       subColor: kpi.overdue_actions > 0 ? "text-red-600" : undefined,
       sparkData: kpi.weekly_open_action_counts,
-      sparkColor: kpi.overdue_actions > 0 ? "#ef4444" : "#3b82f6",
+      sparkColor: kpi.overdue_actions > 0 ? "#ef4444" : "#5B6D49",
       icon: <CheckSquare className="h-4 w-4 text-green-500" />,
     },
     {
@@ -86,20 +86,20 @@ export default function KpiStrip({ kpi }: Props) {
       {tiles.map((tile) => (
         <div
           key={tile.label}
-          className="rounded-lg border border-gray-200 bg-white p-3"
+          className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800 p-3"
         >
           <div className="flex items-center justify-between mb-1">
-            <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-500">
+            <span className="text-[10px] font-semibold uppercase tracking-wider text-forest-400">
               {tile.label}
             </span>
             {tile.icon}
           </div>
           <div className="flex items-end justify-between">
             <div>
-              <span className="text-xl font-bold text-gray-900">
+              <span className="text-xl font-bold text-forest-950">
                 {tile.label === "Utilization" ? `${tile.primary}%` : tile.primary}
               </span>
-              <p className={`text-[10px] mt-0.5 ${tile.subColor || "text-gray-500"}`}>
+              <p className={`text-[10px] mt-0.5 ${tile.subColor || "text-forest-400"}`}>
                 {tile.sub}
               </p>
             </div>
@@ -108,7 +108,7 @@ export default function KpiStrip({ kpi }: Props) {
                 data={tile.sparkData}
                 width={50}
                 height={18}
-                color={tile.sparkColor || "#3b82f6"}
+                color={tile.sparkColor || "#5B6D49"}
               />
             )}
           </div>

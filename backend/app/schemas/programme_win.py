@@ -8,7 +8,7 @@ class ProgrammeWinSchema(BaseModel):
     description: str | None = None
     before_state: str | None = None
     after_state: str | None = None
-    workstream: str | None = None
+    project: str | None = None
     confidence: str = "estimated"
     date_recorded: str | None = None
     notes: str | None = None
@@ -21,7 +21,7 @@ class ProgrammeWinCreate(BaseModel):
     description: str | None = None
     before_state: str | None = None
     after_state: str | None = None
-    workstream: str | None = None
+    project: str | None = None
     confidence: str = "estimated"
     date_recorded: str | None = None
     notes: str | None = None
@@ -33,7 +33,7 @@ class ProgrammeWinUpdate(BaseModel):
     description: str | None = None
     before_state: str | None = None
     after_state: str | None = None
-    workstream: str | None = None
+    project: str | None = None
     confidence: str | None = None
     date_recorded: str | None = None
     notes: str | None = None

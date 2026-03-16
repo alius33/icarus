@@ -31,7 +31,7 @@ export default function DependencyModal({
   const [blockingReason, setBlockingReason] = useState("");
   const [estimatedEffort, setEstimatedEffort] = useState("");
   const [assignedTo, setAssignedTo] = useState("");
-  const [affectedWorkstreams, setAffectedWorkstreams] = useState("");
+  const [affectedProjects, setAffectedProjects] = useState("");
   const [priority, setPriority] = useState("medium");
   const [notes, setNotes] = useState("");
   const [validationError, setValidationError] = useState<string | null>(null);
@@ -44,7 +44,7 @@ export default function DependencyModal({
       setBlockingReason(initial.blocking_reason || "");
       setEstimatedEffort(initial.estimated_effort || "");
       setAssignedTo(initial.assigned_to || "");
-      setAffectedWorkstreams(initial.affected_workstreams || "");
+      setAffectedProjects(initial.affected_projects || "");
       setPriority(initial.priority || "medium");
       setNotes(initial.notes || "");
     } else {
@@ -54,7 +54,7 @@ export default function DependencyModal({
       setBlockingReason("");
       setEstimatedEffort("");
       setAssignedTo("");
-      setAffectedWorkstreams("");
+      setAffectedProjects("");
       setPriority("medium");
       setNotes("");
     }
@@ -74,7 +74,7 @@ export default function DependencyModal({
       blocking_reason: blockingReason.trim() || undefined,
       estimated_effort: estimatedEffort.trim() || undefined,
       assigned_to: assignedTo.trim() || undefined,
-      affected_workstreams: affectedWorkstreams.trim() || undefined,
+      affected_projects: affectedProjects.trim() || undefined,
       priority,
       notes: notes.trim() || undefined,
     });
@@ -147,9 +147,9 @@ export default function DependencyModal({
         placeholder="Who owns this?"
       />
       <FormInput
-        label="Affected Workstreams"
-        value={affectedWorkstreams}
-        onChange={setAffectedWorkstreams}
+        label="Affected Projects"
+        value={affectedProjects}
+        onChange={setAffectedProjects}
         placeholder="e.g. WS2, WS4"
       />
       <FormTextarea

@@ -53,7 +53,7 @@ function methodBadge(method: string) {
     .replace(/_/g, " ")
     .replace(/\b\w/g, (c) => c.toUpperCase());
   return (
-    <span className="inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-700 px-2 py-0.5 text-sm text-gray-600 dark:text-gray-300">
+    <span className="inline-flex items-center rounded-md bg-forest-100 dark:bg-forest-800 px-2 py-0.5 text-sm text-forest-500 dark:text-forest-200">
       {short}
     </span>
   );
@@ -106,7 +106,7 @@ export default function SpeakerReviewTable({
 
   if (items.length === 0) {
     return (
-      <div className="text-center py-12 text-gray-500 dark:text-gray-400">
+      <div className="text-center py-12 text-forest-400 dark:text-forest-300">
         <p className="text-lg font-medium">No items in this view</p>
         <p className="text-base mt-1">All identifications are in other tabs.</p>
       </div>
@@ -117,30 +117,30 @@ export default function SpeakerReviewTable({
     <div className="overflow-x-auto">
       <table className="w-full text-base">
         <thead>
-          <tr className="border-b border-gray-200 dark:border-gray-700 text-left">
+          <tr className="border-b border-forest-200 dark:border-forest-700 text-left">
             <th className="w-8 p-3" />
             <th
-              className="p-3 font-medium text-gray-500 dark:text-gray-400 cursor-pointer hover:text-gray-700 dark:hover:text-gray-200"
+              className="p-3 font-medium text-forest-400 dark:text-forest-300 cursor-pointer hover:text-forest-600 dark:hover:text-gray-200"
               onClick={() => handleSort("transcript")}
             >
               Transcript {sortField === "transcript" && (sortAsc ? "↑" : "↓")}
             </th>
-            <th className="p-3 font-medium text-gray-500 dark:text-gray-400">Speaker Label</th>
-            <th className="p-3 font-medium text-gray-500 dark:text-gray-400">→ Identified As</th>
+            <th className="p-3 font-medium text-forest-400 dark:text-forest-300">Speaker Label</th>
+            <th className="p-3 font-medium text-forest-400 dark:text-forest-300">→ Identified As</th>
             <th
-              className="p-3 font-medium text-gray-500 dark:text-gray-400 cursor-pointer hover:text-gray-700 dark:hover:text-gray-200"
+              className="p-3 font-medium text-forest-400 dark:text-forest-300 cursor-pointer hover:text-forest-600 dark:hover:text-gray-200"
               onClick={() => handleSort("confidence")}
             >
               Confidence {sortField === "confidence" && (sortAsc ? "↑" : "↓")}
             </th>
             <th
-              className="p-3 font-medium text-gray-500 dark:text-gray-400 cursor-pointer hover:text-gray-700 dark:hover:text-gray-200"
+              className="p-3 font-medium text-forest-400 dark:text-forest-300 cursor-pointer hover:text-forest-600 dark:hover:text-gray-200"
               onClick={() => handleSort("method")}
             >
               Method {sortField === "method" && (sortAsc ? "↑" : "↓")}
             </th>
-            <th className="p-3 font-medium text-gray-500 dark:text-gray-400">Status</th>
-            <th className="p-3 font-medium text-gray-500 dark:text-gray-400 text-right">Actions</th>
+            <th className="p-3 font-medium text-forest-400 dark:text-forest-300">Status</th>
+            <th className="p-3 font-medium text-forest-400 dark:text-forest-300 text-right">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -228,7 +228,7 @@ function TableRow({
     <>
       <tr
         className={cn(
-          "border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors",
+          "border-b border-gray-100 dark:border-forest-700 hover:bg-forest-50 dark:hover:bg-forest-700/50 transition-colors",
           rowHighlight
         )}
       >
@@ -236,7 +236,7 @@ function TableRow({
         <td className="p-3">
           <button
             onClick={onToggleExpand}
-            className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+            className="text-forest-300 hover:text-forest-500 dark:hover:text-gray-300"
           >
             {isExpanded ? (
               <ChevronDown className="h-4 w-4" />
@@ -248,22 +248,22 @@ function TableRow({
 
         {/* Transcript */}
         <td className="p-3">
-          <span className="text-gray-900 dark:text-gray-100 font-medium" title={item.transcript_filename}>
+          <span className="text-forest-950 dark:text-forest-50 font-medium" title={item.transcript_filename}>
             {truncateFilename(item.transcript_filename)}
           </span>
           {item.timestamp && (
-            <span className="ml-2 text-sm text-gray-400">@{item.timestamp}</span>
+            <span className="ml-2 text-sm text-forest-300">@{item.timestamp}</span>
           )}
         </td>
 
         {/* Speaker Label */}
-        <td className="p-3 text-gray-600 dark:text-gray-300">
+        <td className="p-3 text-forest-500 dark:text-forest-200">
           {item.speaker_label}
         </td>
 
         {/* Identified As */}
         <td className="p-3">
-          <span className="font-medium text-gray-900 dark:text-gray-100">
+          <span className="font-medium text-forest-950 dark:text-forest-50">
             {action?.action === "manual" && action.manual_name
               ? action.manual_name
               : item.identified_as || "—"}
@@ -273,7 +273,7 @@ function TableRow({
         {/* Confidence */}
         <td className="p-3">
           <div className="flex items-center gap-2">
-            <div className="w-16 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+            <div className="w-16 h-2 bg-gray-200 dark:bg-forest-800 rounded-full overflow-hidden">
               <div
                 className={cn("h-full rounded-full", confidenceColor(item.confidence))}
                 style={{ width: `${Math.round(item.confidence * 100)}%` }}
@@ -297,7 +297,7 @@ function TableRow({
             <button
               onClick={onViewContext}
               title="View transcript context"
-              className="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400"
+              className="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-forest-700 text-forest-400 dark:text-forest-300"
             >
               <Eye className="h-4 w-4" />
             </button>
@@ -310,7 +310,7 @@ function TableRow({
                 "p-1.5 rounded",
                 action?.action === "accept"
                   ? "bg-green-100 dark:bg-green-900/40 text-green-600"
-                  : "hover:bg-green-100 dark:hover:bg-green-900/30 text-gray-500 dark:text-gray-400 hover:text-green-600"
+                  : "hover:bg-green-100 dark:hover:bg-green-900/30 text-forest-400 dark:text-forest-300 hover:text-green-600"
               )}
             >
               <Check className="h-4 w-4" />
@@ -324,7 +324,7 @@ function TableRow({
                 "p-1.5 rounded",
                 action?.action === "reject"
                   ? "bg-red-100 dark:bg-red-900/40 text-red-600"
-                  : "hover:bg-red-100 dark:hover:bg-red-900/30 text-gray-500 dark:text-gray-400 hover:text-red-600"
+                  : "hover:bg-red-100 dark:hover:bg-red-900/30 text-forest-400 dark:text-forest-300 hover:text-red-600"
               )}
             >
               <X className="h-4 w-4" />
@@ -335,8 +335,8 @@ function TableRow({
               className={cn(
                 "p-1.5 rounded",
                 action?.action === "manual"
-                  ? "bg-blue-100 dark:bg-blue-900/40 text-blue-600"
-                  : "hover:bg-blue-100 dark:hover:bg-blue-900/30 text-gray-500 dark:text-gray-400 hover:text-blue-600"
+                  ? "bg-blue-100 dark:bg-blue-900/40 text-forest-500"
+                  : "hover:bg-blue-100 dark:hover:bg-blue-900/30 text-forest-400 dark:text-forest-300 hover:text-forest-500"
               )}
             >
               <Pencil className="h-4 w-4" />
@@ -350,7 +350,7 @@ function TableRow({
         <tr className="bg-blue-50/50 dark:bg-blue-900/10">
           <td colSpan={8} className="p-3 pl-12">
             <div className="flex items-center gap-2 relative">
-              <label className="text-base text-gray-600 dark:text-gray-400 whitespace-nowrap">
+              <label className="text-base text-forest-500 dark:text-forest-300 whitespace-nowrap">
                 Assign to:
               </label>
               <div className="relative flex-1 max-w-xs">
@@ -363,11 +363,11 @@ function TableRow({
                     if (e.key === "Escape") setShowManual(false);
                   }}
                   placeholder="Type stakeholder name…"
-                  className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-1.5 text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full rounded-md border border-forest-200 dark:border-forest-700 bg-white dark:bg-forest-800 px-3 py-1.5 text-base focus:outline-none focus:ring-2 focus:ring-forest-500"
                   autoFocus
                 />
                 {suggestions.length > 0 && (
-                  <div className="absolute z-10 top-full left-0 right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg">
+                  <div className="absolute z-10 top-full left-0 right-0 mt-1 bg-white dark:bg-forest-800 border border-forest-200 dark:border-forest-700 rounded-md shadow-lg">
                     {suggestions.map((name) => (
                       <button
                         key={name}
@@ -375,7 +375,7 @@ function TableRow({
                           onManualChange(name);
                           submitManual(name);
                         }}
-                        className="block w-full text-left px-3 py-2 text-base hover:bg-blue-50 dark:hover:bg-blue-900/30 text-gray-700 dark:text-gray-200"
+                        className="block w-full text-left px-3 py-2 text-base hover:bg-forest-100 dark:hover:bg-blue-900/30 text-forest-600 dark:text-forest-200"
                       >
                         {name}
                       </button>
@@ -386,13 +386,13 @@ function TableRow({
               <button
                 onClick={() => submitManual(manualVal)}
                 disabled={!manualVal.trim()}
-                className="px-3 py-1.5 text-base bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-3 py-1.5 text-base bg-forest-500 text-white rounded-md hover:bg-forest-600 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Apply
               </button>
               <button
                 onClick={() => setShowManual(false)}
-                className="px-3 py-1.5 text-base text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
+                className="px-3 py-1.5 text-base text-forest-500 dark:text-forest-300 hover:text-forest-950 dark:hover:text-gray-200"
               >
                 Cancel
               </button>
@@ -403,32 +403,32 @@ function TableRow({
 
       {/* Expanded evidence row */}
       {isExpanded && (
-        <tr className="bg-gray-50/50 dark:bg-gray-800/30">
+        <tr className="bg-forest-50/50 dark:bg-forest-800/30">
           <td colSpan={8} className="p-4 pl-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-base">
               <div>
-                <h4 className="font-medium text-gray-700 dark:text-gray-300 mb-1">Evidence</h4>
-                <p className="text-gray-600 dark:text-gray-400 whitespace-pre-wrap">
+                <h4 className="font-medium text-forest-600 dark:text-forest-200 mb-1">Evidence</h4>
+                <p className="text-forest-500 dark:text-forest-300 whitespace-pre-wrap">
                   {item.evidence || "No evidence provided."}
                 </p>
               </div>
               <div>
-                <h4 className="font-medium text-gray-700 dark:text-gray-300 mb-1">Details</h4>
+                <h4 className="font-medium text-forest-600 dark:text-forest-200 mb-1">Details</h4>
                 <dl className="space-y-1">
                   <div className="flex gap-2">
-                    <dt className="text-gray-500 dark:text-gray-500">Meeting type:</dt>
-                    <dd className="text-gray-700 dark:text-gray-300">{item.meeting_type}</dd>
+                    <dt className="text-forest-400 dark:text-forest-400">Meeting type:</dt>
+                    <dd className="text-forest-600 dark:text-forest-200">{item.meeting_type}</dd>
                   </div>
                   <div className="flex gap-2">
-                    <dt className="text-gray-500 dark:text-gray-500">Known speakers:</dt>
-                    <dd className="text-gray-700 dark:text-gray-300">
+                    <dt className="text-forest-400 dark:text-forest-400">Known speakers:</dt>
+                    <dd className="text-forest-600 dark:text-forest-200">
                       {item.known_speakers.join(", ") || "—"}
                     </dd>
                   </div>
                   {item.timestamp && (
                     <div className="flex gap-2">
-                      <dt className="text-gray-500 dark:text-gray-500">Timestamp:</dt>
-                      <dd className="text-gray-700 dark:text-gray-300">{item.timestamp}</dd>
+                      <dt className="text-forest-400 dark:text-forest-400">Timestamp:</dt>
+                      <dd className="text-forest-600 dark:text-forest-200">{item.timestamp}</dd>
                     </div>
                   )}
                 </dl>

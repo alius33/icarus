@@ -12,19 +12,19 @@ const TIME_OPTIONS: { value: TimeFilter; label: string }[] = [
 ];
 
 interface Props {
-  workstreams: { code: string; name: string }[];
+  projects: { code: string; name: string }[];
 }
 
-export default function DashboardHeader({ workstreams }: Props) {
-  const { filters, setTimeFilter, setWorkstreamFilter } = useDashboardFilters();
+export default function DashboardHeader({ projects }: Props) {
+  const { filters, setTimeFilter, setProjectFilter } = useDashboardFilters();
 
   return (
     <div className="flex items-start justify-between flex-wrap gap-3">
       <div>
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-forest-950">
           Programme Dashboard
         </h2>
-        <p className="mt-1 text-base text-gray-500">
+        <p className="mt-1 text-base text-forest-400">
           Gen AI Programme &middot; Updated{" "}
           {new Date().toLocaleDateString("en-GB", {
             day: "numeric",
@@ -39,7 +39,7 @@ export default function DashboardHeader({ workstreams }: Props) {
         <select
           value={filters.timeFilter}
           onChange={(e) => setTimeFilter(e.target.value as TimeFilter)}
-          className="rounded-md border border-gray-300 bg-white px-3 py-1.5 text-base text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500"
+          className="rounded-md border border-forest-200 bg-white dark:bg-forest-800 px-3 py-1.5 text-base text-forest-600 focus:outline-none focus:ring-1 focus:ring-forest-500"
         >
           {TIME_OPTIONS.map((opt) => (
             <option key={opt.value} value={opt.value}>
@@ -50,16 +50,16 @@ export default function DashboardHeader({ workstreams }: Props) {
 
         {/* Project filter */}
         <select
-          value={filters.workstreamFilter || ""}
+          value={filters.projectFilter || ""}
           onChange={(e) =>
-            setWorkstreamFilter(e.target.value || null)
+            setProjectFilter(e.target.value || null)
           }
-          className="rounded-md border border-gray-300 bg-white px-3 py-1.5 text-base text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500"
+          className="rounded-md border border-forest-200 bg-white dark:bg-forest-800 px-3 py-1.5 text-base text-forest-600 focus:outline-none focus:ring-1 focus:ring-forest-500"
         >
           <option value="">All Projects</option>
-          {workstreams.map((ws) => (
-            <option key={ws.code} value={ws.code}>
-              {ws.name}
+          {projects.map((p) => (
+            <option key={p.code} value={p.code}>
+              {p.name}
             </option>
           ))}
         </select>

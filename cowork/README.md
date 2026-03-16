@@ -90,6 +90,6 @@ Every cowork agent should read these at session start:
 3. `context/stakeholders.md` — who's who
 
 Then read additional context based on the task:
-- Transcript processing → also read `context/workstreams.md`
+- Transcript processing → also read all files in `context/projects/`
 - Decision tracking → also read `context/decisions.md`
 - Gap analysis → also read `context/open_threads.md`

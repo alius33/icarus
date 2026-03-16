@@ -63,49 +63,49 @@ export default function ProjectActionsTab({
   return (
     <div className="space-y-4">
       <div className="flex justify-end">
-        <button onClick={openCreate} className="px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">+ New Action</button>
+        <button onClick={openCreate} className="px-4 py-2 text-base font-medium text-white bg-forest-500 rounded-md hover:bg-forest-600 transition-colors">+ New Action</button>
       </div>
 
       {actions.length === 0 ? (
-        <div className="rounded-lg border border-gray-200 bg-white p-8 text-center">
-          <p className="text-base text-gray-500">No action items linked to this project yet.</p>
+        <div className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800 p-8 text-center">
+          <p className="text-base text-forest-400">No action items linked to this project yet.</p>
         </div>
       ) : (
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <div className="bg-white dark:bg-forest-800 rounded-lg shadow-sm border border-forest-200 overflow-hidden">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-gray-200 bg-gray-50">
+              <tr className="border-b border-forest-200 bg-forest-50">
                 <th className="px-3 py-3 w-10"></th>
-                <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-12">#</th>
-                <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500">Action</th>
-                <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-36">Owner</th>
-                <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-28">Deadline</th>
-                <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-36">Status</th>
+                <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-forest-400 w-12">#</th>
+                <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-forest-400">Action</th>
+                <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-forest-400 w-36">Owner</th>
+                <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-forest-400 w-28">Deadline</th>
+                <th className="px-4 py-3 text-left text-sm font-medium uppercase tracking-wider text-forest-400 w-36">Status</th>
                 <th className="px-3 py-3 w-10"></th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200">
+            <tbody className="divide-y divide-forest-200">
               {actions.map((a) => (
-                <tr key={a.id} className="hover:bg-gray-50 transition-colors cursor-pointer" onClick={() => openEdit(a)}>
+                <tr key={a.id} className="hover:bg-forest-50 transition-colors cursor-pointer" onClick={() => openEdit(a)}>
                   <td className="px-3 py-4 text-center">
                     {a.status !== "COMPLETED" && (
-                      <button onClick={(e) => { e.stopPropagation(); handleComplete(a.id); }} title="Mark complete" className="text-gray-400 hover:text-green-600">
+                      <button onClick={(e) => { e.stopPropagation(); handleComplete(a.id); }} title="Mark complete" className="text-forest-300 hover:text-green-600">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                       </button>
                     )}
                   </td>
-                  <td className="px-4 py-4 text-base text-gray-400 tabular-nums">{a.id}</td>
+                  <td className="px-4 py-4 text-base text-forest-300 tabular-nums">{a.id}</td>
                   <td className="px-4 py-4">
-                    <p className="text-base text-gray-900">{a.title}</p>
-                    {a.description && <p className="mt-1 text-sm text-gray-500">{a.description}</p>}
+                    <p className="text-base text-forest-950">{a.title}</p>
+                    {a.description && <p className="mt-1 text-sm text-forest-400">{a.description}</p>}
                   </td>
-                  <td className="px-4 py-4 text-base text-gray-600">{a.owner || "\u2014"}</td>
-                  <td className="px-4 py-4 text-base text-gray-500 whitespace-nowrap">{a.due_date ? formatDate(a.due_date) : "\u2014"}</td>
+                  <td className="px-4 py-4 text-base text-forest-500">{a.owner || "\u2014"}</td>
+                  <td className="px-4 py-4 text-base text-forest-400 whitespace-nowrap">{a.due_date ? formatDate(a.due_date) : "\u2014"}</td>
                   <td className="px-4 py-4">
                     <span className={`px-2 py-1 rounded-full text-sm font-medium border ${getStatusColor(a.status)}`}>{a.status.replace(/_/g, " ")}</span>
                   </td>
                   <td className="px-3 py-4 text-center">
-                    <button onClick={(e) => { e.stopPropagation(); openEdit(a); }} className="text-gray-400 hover:text-blue-600" title="Edit">
+                    <button onClick={(e) => { e.stopPropagation(); openEdit(a); }} className="text-forest-300 hover:text-forest-500" title="Edit">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
                     </button>
                   </td>

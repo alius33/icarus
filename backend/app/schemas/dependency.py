@@ -9,7 +9,7 @@ class DependencySchema(BaseModel):
     blocking_reason: str | None = None
     estimated_effort: str | None = None
     assigned_to: str | None = None
-    affected_workstreams: str | None = None
+    affected_projects: str | None = None
     priority: str = "MEDIUM"
     notes: str | None = None
 
@@ -21,7 +21,7 @@ class DependencyCreate(BaseModel):
     blocking_reason: str | None = None
     estimated_effort: str | None = None
     assigned_to: str | None = None
-    affected_workstreams: str | None = None
+    affected_projects: str | None = None
     priority: str = "MEDIUM"
     notes: str | None = None
 
@@ -33,6 +33,6 @@ class DependencyUpdate(BaseModel):
     blocking_reason: str | None = None
     estimated_effort: str | None = None
     assigned_to: str | None = None
-    affected_workstreams: str | None = None
+    affected_projects: str | None = None
     priority: str | None = None
     notes: str | None = None

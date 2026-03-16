@@ -58,8 +58,8 @@ export default function StakeholdersPage() {
     finally { setDeleting(false); }
   };
 
-  if (loading) return (<div className="space-y-6"><h2 className="text-2xl font-bold text-gray-900">Stakeholders</h2><p className="text-base text-gray-500">Loading stakeholders...</p></div>);
-  if (error) return (<div className="space-y-6"><h2 className="text-2xl font-bold text-gray-900">Stakeholders</h2><div className="rounded-lg border border-red-200 bg-red-50 p-6"><p className="text-base text-red-700">{error}</p></div></div>);
+  if (loading) return (<div className="space-y-6"><h2 className="text-2xl font-bold text-forest-950">Stakeholders</h2><p className="text-base text-forest-400">Loading stakeholders...</p></div>);
+  if (error) return (<div className="space-y-6"><h2 className="text-2xl font-bold text-forest-950">Stakeholders</h2><div className="rounded-lg border border-red-200 bg-red-50 p-6"><p className="text-base text-red-700">{error}</p></div></div>);
 
   const grouped = stakeholders.reduce<Record<number, StakeholderBase[]>>((acc, s) => {
     const tier = s.tier || 4;
@@ -73,35 +73,35 @@ export default function StakeholdersPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">Stakeholders</h2>
-          <p className="mt-1 text-base text-gray-500">{stakeholders.length} stakeholders across {tiers.length} tiers</p>
+          <h2 className="text-2xl font-bold text-forest-950">Stakeholders</h2>
+          <p className="mt-1 text-base text-forest-400">{stakeholders.length} stakeholders across {tiers.length} tiers</p>
         </div>
-        <button onClick={openCreate} className="px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">+ New Stakeholder</button>
+        <button onClick={openCreate} className="px-4 py-2 text-base font-medium text-white bg-forest-500 rounded-md hover:bg-forest-600 transition-colors">+ New Stakeholder</button>
       </div>
 
       {tiers.map((tier) => (
         <section key={tier}>
-          <h3 className="text-xl font-bold text-gray-800 mb-4 mt-8">Tier {tier} &mdash; {tierLabels[tier] || "Other"}</h3>
+          <h3 className="text-xl font-bold text-forest-950 mb-4 mt-8">Tier {tier} &mdash; {tierLabels[tier] || "Other"}</h3>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {grouped[tier].map((s) => (
-              <div key={s.id} className="relative group rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+              <div key={s.id} className="relative group rounded-lg border border-forest-200 bg-white dark:bg-forest-800 p-6 shadow-sm transition-shadow hover:shadow-md">
                 <button onClick={(e) => { e.preventDefault(); openEdit(s); }}
-                  className="absolute top-4 right-4 text-gray-400 hover:text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" title="Edit">
+                  className="absolute top-4 right-4 text-forest-300 hover:text-forest-500 opacity-0 group-hover:opacity-100 transition-opacity" title="Edit">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
                 </button>
                 <Link href={`/stakeholders/${s.id}`} className="block">
                   <div className="flex items-start justify-between">
                     <div>
-                      <p className="font-semibold text-gray-900">{s.name}</p>
-                      {s.role && <p className="mt-1 text-base text-gray-500">{s.role}</p>}
-                      {s.organisation && <p className="mt-0.5 text-sm text-gray-400">{s.organisation}</p>}
+                      <p className="font-semibold text-forest-950">{s.name}</p>
+                      {s.role && <p className="mt-1 text-base text-forest-400">{s.role}</p>}
+                      {s.organisation && <p className="mt-0.5 text-sm text-forest-300">{s.organisation}</p>}
                     </div>
                     {s.risk_level && s.risk_level !== "none" && (
                       <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold ${
                         s.risk_level === "critical" ? "bg-red-100 text-red-800 border border-red-300" :
                         s.risk_level === "high" ? "bg-orange-100 text-orange-800 border border-orange-300" :
                         s.risk_level === "medium" ? "bg-yellow-100 text-yellow-800 border border-yellow-300" :
-                        "bg-gray-100 text-gray-600 border border-gray-300"
+                        "bg-forest-100 text-forest-500 border border-forest-200"
                       }`}>
                         {s.risk_level.toUpperCase()} RISK
                       </span>
@@ -113,8 +113,8 @@ export default function StakeholdersPage() {
                     </p>
                   )}
                   <div className="mt-3 flex flex-wrap items-center gap-2">
-                    <span className="inline-flex items-center rounded-full bg-blue-50 px-2 py-0.5 text-sm font-medium text-blue-700 border border-blue-200">Tier {s.tier}</span>
-                    {s.mention_count > 0 && <span className="text-sm text-gray-500">Mentioned in {s.mention_count} transcript{s.mention_count !== 1 ? "s" : ""}</span>}
+                    <span className="inline-flex items-center rounded-full bg-blue-50 px-2 py-0.5 text-sm font-medium text-forest-600 border border-blue-200">Tier {s.tier}</span>
+                    {s.mention_count > 0 && <span className="text-sm text-forest-400">Mentioned in {s.mention_count} transcript{s.mention_count !== 1 ? "s" : ""}</span>}
                   </div>
                 </Link>
               </div>
@@ -124,7 +124,7 @@ export default function StakeholdersPage() {
       ))}
 
       {stakeholders.length === 0 && (
-        <div className="rounded-lg border border-gray-200 bg-white p-12 text-center shadow-sm"><p className="text-gray-500">No stakeholders found.</p></div>
+        <div className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800 p-12 text-center shadow-sm"><p className="text-forest-400">No stakeholders found.</p></div>
       )}
 
       <EntityModal open={modalOpen} onClose={() => setModalOpen(false)} title={editingItem ? "Edit Stakeholder" : "New Stakeholder"}

@@ -7,7 +7,7 @@ $ARGUMENTS = focus area (e.g. "CLARA adoption", "stakeholder dynamics", "risks",
 
 ## Steps
 
-1. Load all context files (glossary, stakeholders, workstreams)
+1. Load all context files (glossary, stakeholders, project context files in `context/projects/`)
 2. Read ALL summaries from `analysis/summaries/`
 3. Read ALL weekly reports from `analysis/weekly/`
 
@@ -34,7 +34,7 @@ $ARGUMENTS = focus area (e.g. "CLARA adoption", "stakeholder dynamics", "risks",
 
 ### Programme Momentum
 - Is the programme accelerating, steady, or decelerating?
-- Which workstreams are moving vs. stalled?
+- Which projects are moving vs. stalled?
 - Resource allocation vs. stated priorities
 - Scope creep trajectory
 

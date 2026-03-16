@@ -93,18 +93,18 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
     <div className="space-y-4">
       {/* Controls */}
       <div className="flex flex-wrap items-center gap-2 md:gap-3">
-        <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Group by:</span>
+        <span className="text-sm font-medium text-forest-400 dark:text-forest-300">Group by:</span>
         <select
           value={groupBy}
           onChange={(e) => setGroupBy(e.target.value as GroupKey)}
-          className="text-base border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+          className="text-base border border-forest-200 dark:border-forest-700 rounded-md px-2 py-1 bg-white dark:bg-forest-800 text-forest-950 dark:text-forest-50"
         >
           <option value="none">None</option>
           <option value="status">Status</option>
           <option value="severity">Severity</option>
           <option value="trend">Trend</option>
         </select>
-        <span className="ml-auto text-sm text-gray-400">{threads.length} threads</span>
+        <span className="ml-auto text-sm text-forest-300">{threads.length} threads</span>
       </div>
 
       {/* Mobile card view */}
@@ -113,12 +113,12 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
           <React.Fragment key={group.label || "all"}>
             {group.label && (
               <button
-                className="flex items-center gap-2 text-base font-medium text-gray-700 dark:text-gray-300 py-1"
+                className="flex items-center gap-2 text-base font-medium text-forest-600 dark:text-forest-200 py-1"
                 onClick={() => toggleGroup(group.label)}
               >
                 {collapsedGroups.has(group.label) ? <ChevronRight className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                 {group.label}
-                <span className="text-sm text-gray-400 font-normal">({group.threads.length})</span>
+                <span className="text-sm text-forest-300 font-normal">({group.threads.length})</span>
               </button>
             )}
             {!collapsedGroups.has(group.label) &&
@@ -128,19 +128,19 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
                 return (
                   <div
                     key={thread.id}
-                    className="rounded-lg border border-gray-200 dark:border-gray-700 p-3 active:bg-gray-50 dark:active:bg-gray-800 cursor-pointer"
+                    className="rounded-lg border border-forest-200 dark:border-forest-700 p-3 active:bg-forest-50 dark:active:bg-gray-800 cursor-pointer"
                     onClick={() => onThreadClick(thread)}
                   >
                     <div className="flex items-center gap-2 mb-1">
                       {severityCfg && <span className={`w-2 h-2 rounded-full shrink-0 ${severityCfg.dotColor}`} />}
-                      <span className="text-gray-900 dark:text-gray-100 text-base line-clamp-2">{thread.title}</span>
+                      <span className="text-forest-950 dark:text-forest-50 text-base line-clamp-2">{thread.title}</span>
                     </div>
                     <div className="flex flex-wrap items-center gap-2 mb-1">
-                      <span className={`text-sm font-medium px-2 py-0.5 rounded ${statusCfg?.bgColor ?? "bg-gray-100"} ${statusCfg?.color ?? "text-gray-600"}`}>
+                      <span className={`text-sm font-medium px-2 py-0.5 rounded ${statusCfg?.bgColor ?? "bg-forest-100"} ${statusCfg?.color ?? "text-forest-500"}`}>
                         {statusCfg?.label ?? thread.status}
                       </span>
                       {severityCfg && (
-                        <span className="text-sm text-gray-500">{severityCfg.label}</span>
+                        <span className="text-sm text-forest-400">{severityCfg.label}</span>
                       )}
                       {thread.trend && (
                         <span className={`text-sm font-medium px-2 py-0.5 rounded-full ${
@@ -152,7 +152,7 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
                         </span>
                       )}
                     </div>
-                    <div className="text-sm text-gray-400">
+                    <div className="text-sm text-forest-300">
                       {thread.opened_date ? new Date(thread.opened_date).toLocaleDateString("en-GB", { day: "numeric", month: "short" }) : ""}
                     </div>
                   </div>
@@ -161,16 +161,16 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
           </React.Fragment>
         ))}
         {threads.length === 0 && (
-          <div className="rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 p-8 text-center">
-            <p className="text-base text-gray-500">No threads yet.</p>
+          <div className="rounded-lg border-2 border-dashed border-forest-200 dark:border-forest-700 p-8 text-center">
+            <p className="text-base text-forest-400">No threads yet.</p>
           </div>
         )}
       </div>
 
       {/* Desktop table */}
-      <div className="hidden md:block border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      <div className="hidden md:block border border-forest-200 dark:border-forest-700 rounded-lg overflow-hidden">
         <table className="w-full text-base">
-          <thead className="bg-gray-50 dark:bg-gray-800">
+          <thead className="bg-forest-50 dark:bg-forest-800">
             <tr>
               {(
                 [
@@ -183,7 +183,7 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
               ).map((col) => (
                 <th
                   key={col.key}
-                  className={`px-3 py-2 text-left font-medium text-gray-500 dark:text-gray-400 cursor-pointer hover:text-gray-700 dark:hover:text-gray-200 ${col.w}`}
+                  className={`px-3 py-2 text-left font-medium text-forest-400 dark:text-forest-300 cursor-pointer hover:text-forest-600 dark:hover:text-gray-200 ${col.w}`}
                   onClick={() => handleSort(col.key)}
                 >
                   <span className="flex items-center gap-1">
@@ -194,14 +194,14 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+          <tbody className="divide-y divide-forest-200 dark:divide-forest-700">
             {groups.map((group) => (
               <React.Fragment key={group.label || "all"}>
                 {group.label && (
                   <tr>
-                    <td colSpan={5} className="px-3 py-2 bg-gray-100 dark:bg-gray-800/80">
+                    <td colSpan={5} className="px-3 py-2 bg-forest-100 dark:bg-forest-800/80">
                       <button
-                        className="flex items-center gap-2 text-base font-medium text-gray-700 dark:text-gray-300"
+                        className="flex items-center gap-2 text-base font-medium text-forest-600 dark:text-forest-200"
                         onClick={() => toggleGroup(group.label)}
                       >
                         {collapsedGroups.has(group.label) ? (
@@ -210,7 +210,7 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
                           <ChevronDown className="h-4 w-4" />
                         )}
                         {group.label}
-                        <span className="text-sm text-gray-400 font-normal">({group.threads.length})</span>
+                        <span className="text-sm text-forest-300 font-normal">({group.threads.length})</span>
                       </button>
                     </td>
                   </tr>
@@ -223,7 +223,7 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
                     return (
                       <tr
                         key={thread.id}
-                        className="hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer"
+                        className="hover:bg-forest-50 dark:hover:bg-forest-700/50 cursor-pointer"
                         onClick={() => onThreadClick(thread)}
                       >
                         <td className="px-3 py-2">
@@ -231,7 +231,7 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
                             {severityCfg && (
                               <span className={`w-2 h-2 rounded-full shrink-0 ${severityCfg.dotColor}`} />
                             )}
-                            <span className="text-gray-900 dark:text-gray-100 truncate">{thread.title}</span>
+                            <span className="text-forest-950 dark:text-forest-50 truncate">{thread.title}</span>
                           </div>
                         </td>
                         <td className="px-3 py-2" onClick={(e) => e.stopPropagation()}>
@@ -239,14 +239,14 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
                             <select
                               value={thread.status}
                               onChange={(e) => onStatusChange(thread.id, e.target.value)}
-                              className={`text-sm font-medium rounded px-2 py-1 border-0 ${statusCfg?.bgColor ?? "bg-gray-100"} ${statusCfg?.color ?? "text-gray-600"}`}
+                              className={`text-sm font-medium rounded px-2 py-1 border-0 ${statusCfg?.bgColor ?? "bg-forest-100"} ${statusCfg?.color ?? "text-forest-500"}`}
                             >
                               {THREAD_STATUSES.map((s) => (
                                 <option key={s} value={s}>{THREAD_STATUS_CONFIG[s].label}</option>
                               ))}
                             </select>
                           ) : (
-                            <span className={`text-sm font-medium px-2 py-1 rounded ${statusCfg?.bgColor ?? "bg-gray-100"} ${statusCfg?.color ?? "text-gray-600"}`}>
+                            <span className={`text-sm font-medium px-2 py-1 rounded ${statusCfg?.bgColor ?? "bg-forest-100"} ${statusCfg?.color ?? "text-forest-500"}`}>
                               {statusCfg?.label ?? thread.status}
                             </span>
                           )}
@@ -281,7 +281,7 @@ export default function ThreadList({ threads, onThreadClick, onStatusChange, onS
                             </span>
                           )}
                         </td>
-                        <td className="px-3 py-2 text-sm text-gray-500 dark:text-gray-400">
+                        <td className="px-3 py-2 text-sm text-forest-400 dark:text-forest-300">
                           {thread.opened_date ? new Date(thread.opened_date).toLocaleDateString("en-GB", { day: "numeric", month: "short" }) : "\u2014"}
                         </td>
                       </tr>

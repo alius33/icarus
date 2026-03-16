@@ -191,13 +191,13 @@ export default function ProjectWeeklyOverviewTab({
           return (
             <div
               key={card.key}
-              className="rounded-lg border border-gray-200 bg-white p-4"
+              className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800 p-4"
             >
               <div className={`inline-flex rounded-md p-2 ${card.color}`}>
                 <Icon className="h-4 w-4" />
               </div>
-              <p className="mt-2 text-2xl font-bold text-gray-900">{count}</p>
-              <p className="text-sm text-gray-500">{card.label}</p>
+              <p className="mt-2 text-2xl font-bold text-forest-950">{count}</p>
+              <p className="text-sm text-forest-400">{card.label}</p>
             </div>
           );
         })}
@@ -207,17 +207,17 @@ export default function ProjectWeeklyOverviewTab({
       {currentStatus && (
         <div className="rounded-lg border border-blue-200 bg-gradient-to-br from-blue-50/80 to-white p-6">
           <div className="mb-3 flex items-center justify-between">
-            <h3 className="flex items-center gap-2 text-base font-semibold text-gray-900">
-              <Activity className="h-4 w-4 text-blue-600" />
+            <h3 className="flex items-center gap-2 text-base font-semibold text-forest-950">
+              <Activity className="h-4 w-4 text-forest-500" />
               Current Status
             </h3>
             {statusWeekLabel && (
-              <span className="text-sm text-gray-400">
+              <span className="text-sm text-forest-300">
                 as of {statusWeekLabel}
               </span>
             )}
           </div>
-          <div className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-h2:mt-4 prose-h2:mb-2 prose-h2:text-base prose-h2:font-semibold prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900">
+          <div className="prose prose-sm max-w-none prose-headings:text-forest-950 prose-h2:mt-4 prose-h2:mb-2 prose-h2:text-base prose-h2:font-semibold prose-p:text-forest-600 prose-li:text-forest-600 prose-strong:text-forest-950">
             <MarkdownContent>{currentStatus}</MarkdownContent>
           </div>
         </div>
@@ -225,9 +225,9 @@ export default function ProjectWeeklyOverviewTab({
 
       {/* ── ACTIONS (up front) ──────────────────────────────── */}
       {allActions.length > 0 && (
-        <div className="rounded-lg border border-gray-200 bg-white">
+        <div className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800">
           <div className="flex items-center justify-between border-b border-gray-100 px-5 py-4">
-            <h3 className="flex items-center gap-2 text-base font-semibold text-gray-900">
+            <h3 className="flex items-center gap-2 text-base font-semibold text-forest-950">
               <CheckSquare className="h-4 w-4 text-green-600" />
               Actions
               {openActions.length > 0 && (
@@ -239,7 +239,7 @@ export default function ProjectWeeklyOverviewTab({
             {completedActions.length > 0 && (
               <button
                 onClick={() => setShowCompletedActions(!showCompletedActions)}
-                className="text-sm text-gray-500 hover:text-gray-700"
+                className="text-sm text-forest-400 hover:text-forest-600"
               >
                 {showCompletedActions
                   ? "Hide completed"
@@ -252,7 +252,7 @@ export default function ProjectWeeklyOverviewTab({
             {/* Open actions */}
             {openActions.length === 0 && (
               <div className="px-5 py-4">
-                <p className="text-base text-gray-400 italic">
+                <p className="text-base text-forest-300 italic">
                   No open actions — all caught up.
                 </p>
               </div>
@@ -264,18 +264,18 @@ export default function ProjectWeeklyOverviewTab({
               >
                 <CircleDot className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-500" />
                 <div className="min-w-0 flex-1">
-                  <p className="text-base text-gray-900">
+                  <p className="text-base text-forest-950">
                     {a.description || a.title}
                   </p>
                   <div className="mt-1 flex flex-wrap items-center gap-3">
                     {a.owner && (
-                      <span className="flex items-center gap-1 text-sm text-gray-500">
+                      <span className="flex items-center gap-1 text-sm text-forest-400">
                         <User className="h-3 w-3" />
                         {a.owner}
                       </span>
                     )}
                     {a.due_date && (
-                      <span className="flex items-center gap-1 text-sm text-gray-400">
+                      <span className="flex items-center gap-1 text-sm text-forest-300">
                         <Clock className="h-3 w-3" />
                         {a.due_date}
                       </span>
@@ -295,16 +295,16 @@ export default function ProjectWeeklyOverviewTab({
               completedActions.map((a) => (
                 <div
                   key={a.id}
-                  className="flex items-start gap-3 bg-gray-50/50 px-5 py-3 opacity-70"
+                  className="flex items-start gap-3 bg-forest-50/50 px-5 py-3 opacity-70"
                 >
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-400" />
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-forest-300" />
                   <div className="min-w-0 flex-1">
-                    <p className="text-base text-gray-500 line-through">
+                    <p className="text-base text-forest-400 line-through">
                       {a.description || a.title}
                     </p>
                     <div className="mt-1 flex flex-wrap items-center gap-3">
                       {a.owner && (
-                        <span className="flex items-center gap-1 text-sm text-gray-400">
+                        <span className="flex items-center gap-1 text-sm text-forest-300">
                           <User className="h-3 w-3" />
                           {a.owner}
                         </span>
@@ -324,8 +324,8 @@ export default function ProjectWeeklyOverviewTab({
 
       {/* ── WEEKLY TIMELINE ─────────────────────────────────── */}
       {timeline.weeks.length === 0 ? (
-        <div className="rounded-lg border border-gray-200 bg-white p-6">
-          <p className="text-base text-gray-500">
+        <div className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800 p-6">
+          <p className="text-base text-forest-400">
             No dated activity found for this project yet.
           </p>
         </div>
@@ -333,10 +333,10 @@ export default function ProjectWeeklyOverviewTab({
         <div className="space-y-3">
           {/* Timeline header with controls */}
           <div className="flex items-center justify-between">
-            <h3 className="flex items-center gap-2 text-base font-semibold text-gray-900">
-              <Calendar className="h-4 w-4 text-gray-500" />
+            <h3 className="flex items-center gap-2 text-base font-semibold text-forest-950">
+              <Calendar className="h-4 w-4 text-forest-400" />
               Weekly Summaries
-              <span className="text-sm font-normal text-gray-400">
+              <span className="text-sm font-normal text-forest-300">
                 ({timeline.total_weeks} week
                 {timeline.total_weeks !== 1 ? "s" : ""})
               </span>
@@ -344,14 +344,14 @@ export default function ProjectWeeklyOverviewTab({
             <div className="flex gap-2">
               <button
                 onClick={expandAll}
-                className="text-sm text-blue-600 hover:text-blue-800"
+                className="text-sm text-forest-500 hover:text-blue-800"
               >
                 Expand all
               </button>
-              <span className="text-sm text-gray-600 dark:text-gray-300">|</span>
+              <span className="text-sm text-forest-500 dark:text-forest-200">|</span>
               <button
                 onClick={collapseAll}
-                className="text-sm text-blue-600 hover:text-blue-800"
+                className="text-sm text-forest-500 hover:text-blue-800"
               >
                 Collapse all
               </button>
@@ -370,8 +370,8 @@ export default function ProjectWeeklyOverviewTab({
                 key={week.week_start}
                 className={`overflow-hidden rounded-lg border ${
                   empty
-                    ? "border-gray-100 bg-gray-50/50"
-                    : "border-gray-200 bg-white"
+                    ? "border-gray-100 bg-forest-50/50"
+                    : "border-forest-200 bg-white dark:bg-forest-800"
                 }`}
               >
                 {/* Week header */}
@@ -380,20 +380,20 @@ export default function ProjectWeeklyOverviewTab({
                   className={`flex w-full items-center justify-between px-5 py-3 text-left transition-colors ${
                     empty
                       ? "cursor-default"
-                      : "cursor-pointer hover:bg-gray-50"
+                      : "cursor-pointer hover:bg-forest-50"
                   }`}
                 >
                   <div className="flex items-center gap-2">
                     {empty ? (
-                      <Minus className="h-4 w-4 flex-shrink-0 text-gray-600 dark:text-gray-300" />
+                      <Minus className="h-4 w-4 flex-shrink-0 text-forest-500 dark:text-forest-200" />
                     ) : isOpen ? (
-                      <ChevronDown className="h-4 w-4 flex-shrink-0 text-gray-400" />
+                      <ChevronDown className="h-4 w-4 flex-shrink-0 text-forest-300" />
                     ) : (
-                      <ChevronRight className="h-4 w-4 flex-shrink-0 text-gray-400" />
+                      <ChevronRight className="h-4 w-4 flex-shrink-0 text-forest-300" />
                     )}
                     <span
                       className={`text-base font-semibold ${
-                        empty ? "text-gray-400" : "text-gray-900"
+                        empty ? "text-forest-300" : "text-forest-950"
                       }`}
                     >
                       {week.week_label}
@@ -405,7 +405,7 @@ export default function ProjectWeeklyOverviewTab({
                       </span>
                     )}
                     {empty && (
-                      <span className="text-sm italic text-gray-400">
+                      <span className="text-sm italic text-forest-300">
                         No activity this week
                       </span>
                     )}
@@ -413,7 +413,7 @@ export default function ProjectWeeklyOverviewTab({
                   {!empty && (
                     <div className="flex flex-shrink-0 items-center gap-2">
                       {week.transcript_count > 0 && (
-                        <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-medium text-blue-700">
+                        <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-medium text-forest-600">
                           <FileText className="h-3 w-3" />
                           {week.transcript_count}
                         </span>
@@ -437,7 +437,7 @@ export default function ProjectWeeklyOverviewTab({
                 {/* Collapsed preview */}
                 {!isOpen && !empty && !hasReport && week.transcripts.length > 0 && (
                   <div className="-mt-1 px-5 pb-3">
-                    <p className="pl-6 text-sm text-gray-400 line-clamp-2">
+                    <p className="pl-6 text-sm text-forest-300 line-clamp-2">
                       {week.transcripts
                         .filter((t) => t.summary_tldr)
                         .map((t) => t.title || t.file_name)
@@ -452,7 +452,7 @@ export default function ProjectWeeklyOverviewTab({
                     {/* ── WEEKLY REPORT (primary content) ─────────── */}
                     {hasReport && (
                       <div className="px-6 py-5">
-                        <div className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-h2:mt-6 prose-h2:mb-3 prose-h2:text-base prose-h3:mt-4 prose-h3:mb-2 prose-h3:text-base prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900">
+                        <div className="prose prose-sm max-w-none prose-headings:text-forest-950 prose-h2:mt-6 prose-h2:mb-3 prose-h2:text-base prose-h3:mt-4 prose-h3:mb-2 prose-h3:text-base prose-p:text-forest-600 prose-li:text-forest-600 prose-strong:text-forest-950">
                           <MarkdownContent>
                             {week.weekly_report_content!}
                           </MarkdownContent>
@@ -463,22 +463,22 @@ export default function ProjectWeeklyOverviewTab({
                     {/* ── INDIVIDUAL CALL SUMMARIES (drill-down) ──── */}
                     {week.transcripts.length > 0 && (
                       <div
-                        className={`border-t border-gray-100 ${hasReport ? "bg-gray-50/30" : ""}`}
+                        className={`border-t border-gray-100 ${hasReport ? "bg-forest-50/30" : ""}`}
                       >
                         <button
                           onClick={() => toggleCallList(idx)}
-                          className="flex w-full items-center gap-2 px-5 py-3 text-left hover:bg-gray-50"
+                          className="flex w-full items-center gap-2 px-5 py-3 text-left hover:bg-forest-50"
                         >
                           {callsOpen ? (
-                            <ChevronDown className="h-3.5 w-3.5 text-gray-400" />
+                            <ChevronDown className="h-3.5 w-3.5 text-forest-300" />
                           ) : (
-                            <ChevronRight className="h-3.5 w-3.5 text-gray-400" />
+                            <ChevronRight className="h-3.5 w-3.5 text-forest-300" />
                           )}
-                          <FileText className="h-3.5 w-3.5 text-blue-500" />
-                          <span className="text-sm font-semibold uppercase tracking-wider text-gray-500">
+                          <FileText className="h-3.5 w-3.5 text-forest-500" />
+                          <span className="text-sm font-semibold uppercase tracking-wider text-forest-400">
                             Individual Call Summaries
                           </span>
-                          <span className="text-sm text-gray-400">
+                          <span className="text-sm text-forest-300">
                             ({week.transcripts.length} call
                             {week.transcripts.length !== 1 ? "s" : ""})
                           </span>
@@ -494,26 +494,26 @@ export default function ProjectWeeklyOverviewTab({
                                 <div key={t.id} className="px-5 py-3">
                                   {/* Call header */}
                                   <div className="flex items-center gap-2">
-                                    <FileText className="h-4 w-4 flex-shrink-0 text-blue-500" />
+                                    <FileText className="h-4 w-4 flex-shrink-0 text-forest-500" />
                                     <Link
                                       href={`/transcripts/${t.id}`}
-                                      className="text-base font-semibold text-blue-700 hover:underline"
+                                      className="text-base font-semibold text-forest-600 hover:underline"
                                     >
                                       {t.title || t.file_name}
                                     </Link>
                                     {t.date && (
-                                      <span className="text-sm text-gray-400">
+                                      <span className="text-sm text-forest-300">
                                         {t.date}
                                       </span>
                                     )}
                                     <div className="ml-auto flex flex-shrink-0 items-center gap-1.5">
                                       {t.participant_count > 0 && (
-                                        <span className="text-[10px] text-gray-400">
+                                        <span className="text-[10px] text-forest-300">
                                           {t.participant_count} participants
                                         </span>
                                       )}
                                       {t.word_count > 0 && (
-                                        <span className="text-[10px] text-gray-400">
+                                        <span className="text-[10px] text-forest-300">
                                           · ~{Math.round(t.word_count / 150)}{" "}
                                           min
                                         </span>
@@ -538,21 +538,21 @@ export default function ProjectWeeklyOverviewTab({
                                       </button>
 
                                       {callOpen ? (
-                                        <div className="rounded-md border border-gray-100 bg-white p-4">
+                                        <div className="rounded-md border border-gray-100 bg-white dark:bg-forest-800 p-4">
                                           <MarkdownContent>
                                             {t.summary_content}
                                           </MarkdownContent>
                                         </div>
                                       ) : (
                                         t.summary_tldr && (
-                                          <p className="text-base text-gray-600 line-clamp-2">
+                                          <p className="text-base text-forest-500 line-clamp-2">
                                             {t.summary_tldr}
                                           </p>
                                         )
                                       )}
                                     </div>
                                   ) : (
-                                    <p className="ml-6 mt-1 text-sm italic text-gray-400">
+                                    <p className="ml-6 mt-1 text-sm italic text-forest-300">
                                       No summary available.
                                     </p>
                                   )}
@@ -567,7 +567,7 @@ export default function ProjectWeeklyOverviewTab({
                     {/* ── DECISIONS ───────────────────────────────── */}
                     {week.decisions.length > 0 && !hasReport && (
                       <div className="border-t border-gray-100 px-5 py-4">
-                        <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-gray-500">
+                        <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-forest-400">
                           <Gavel className="h-3.5 w-3.5 text-amber-500" />
                           Decisions Made
                         </h4>
@@ -578,20 +578,20 @@ export default function ProjectWeeklyOverviewTab({
                               className="rounded-md border border-amber-100 bg-amber-50/40 p-3"
                             >
                               <p className="text-base">
-                                <span className="font-semibold text-gray-900">
+                                <span className="font-semibold text-forest-950">
                                   Decision #{d.number}:
                                 </span>{" "}
-                                <span className="text-gray-700">
+                                <span className="text-forest-600">
                                   {d.decision}
                                 </span>
                               </p>
                               {d.rationale && (
-                                <p className="mt-1 text-sm italic text-gray-500">
+                                <p className="mt-1 text-sm italic text-forest-400">
                                   Rationale: {d.rationale}
                                 </p>
                               )}
                               {d.key_people.length > 0 && (
-                                <p className="mt-1 text-[10px] text-gray-400">
+                                <p className="mt-1 text-[10px] text-forest-300">
                                   Involved: {d.key_people.join(", ")}
                                 </p>
                               )}
@@ -604,7 +604,7 @@ export default function ProjectWeeklyOverviewTab({
                     {/* ── ACTIONS ─────────────────────────────────── */}
                     {week.action_items.length > 0 && !hasReport && (
                       <div className="border-t border-gray-100 px-5 py-4">
-                        <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-gray-500">
+                        <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-forest-400">
                           <CheckSquare className="h-3.5 w-3.5 text-green-500" />
                           Actions
                         </h4>
@@ -615,20 +615,20 @@ export default function ProjectWeeklyOverviewTab({
                               className="flex items-start gap-2 py-1 text-base"
                             >
                               <div className="min-w-0 flex-1">
-                                <span className="font-medium text-gray-900">
+                                <span className="font-medium text-forest-950">
                                   {a.number}:
                                 </span>{" "}
-                                <span className="text-gray-700">
+                                <span className="text-forest-600">
                                   {a.description}
                                 </span>
                                 {a.owner && (
-                                  <span className="text-sm text-gray-500">
+                                  <span className="text-sm text-forest-400">
                                     {" "}
                                     — {a.owner}
                                   </span>
                                 )}
                                 {a.deadline && (
-                                  <span className="text-sm text-gray-400">
+                                  <span className="text-sm text-forest-300">
                                     {" "}
                                     (due: {a.deadline})
                                   </span>

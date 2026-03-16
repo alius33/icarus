@@ -11,7 +11,7 @@ $ARGUMENTS = project name
 2. Load context files for background:
    - `context/glossary.md`
    - `context/stakeholders.md`
-   - `context/workstreams.md`
+   - All files in `context/projects/`
 3. Fetch the project's keywords from the API. If no keywords, use the project name + description as search terms.
 4. Read ALL summaries from `analysis/summaries/*.md` (not raw transcripts).
 5. Two-pass relevance detection:

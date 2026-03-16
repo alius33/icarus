@@ -15,7 +15,7 @@ class Dependency(Base):
     blocking_reason = Column(Text)
     estimated_effort = Column(String)  # e.g. "2 weeks", "3 sprints"
     assigned_to = Column(String)
-    affected_workstreams = Column(Text)  # comma-separated
+    affected_projects = Column(Text)  # comma-separated
     priority = Column(String, default="MEDIUM")  # CRITICAL, HIGH, MEDIUM, LOW
     notes = Column(Text)
     created_at = Column(DateTime, default=datetime.utcnow)

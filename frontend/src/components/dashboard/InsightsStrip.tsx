@@ -76,16 +76,16 @@ export default function InsightsStrip({ insights }: Props) {
   const metrics = buildMetrics(insights);
 
   return (
-    <div className="flex flex-wrap items-center gap-4 rounded-lg border border-gray-100 bg-gray-50/50 px-4 py-2.5">
-      <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400">
+    <div className="flex flex-wrap items-center gap-4 rounded-lg border border-gray-100 bg-forest-50/50 px-4 py-2.5">
+      <span className="text-[10px] font-semibold uppercase tracking-wider text-forest-300">
         Insights
       </span>
       {metrics.map((m) => (
         <div key={m.label} className="flex items-center gap-1.5">
           <span className={`h-2 w-2 rounded-full ${m.dotColor}`} />
-          <span className="text-sm text-gray-600">
+          <span className="text-sm text-forest-500">
             {m.label}:{" "}
-            <span className="font-semibold text-gray-900">{m.value}</span>
+            <span className="font-semibold text-forest-950">{m.value}</span>
           </span>
         </div>
       ))}

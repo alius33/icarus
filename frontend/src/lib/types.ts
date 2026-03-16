@@ -62,37 +62,9 @@ export interface WeeklyReportBase {
 
 export interface WeeklyReportDetail extends WeeklyReportBase {
   content: string;
-  workstream_updates: string[];
+  project_updates: string[];
   highlights: string[];
   risks: string[];
-}
-
-// ── Workstream ──────────────────────────────────────────────────────────────
-
-export interface MilestoneSchema {
-  id: number;
-  workstream_id: number;
-  title: string;
-  status: string;
-  target_date: string | null;
-  notes: string | null;
-}
-
-export interface WorkstreamBase {
-  id: number;
-  code: string;
-  name: string;
-  owner: string | null;
-  status: string;
-  progress_pct: number | null;
-  blocker_reason: string | null;
-  assigned_fte: string | null;
-}
-
-export interface WorkstreamDetail extends WorkstreamBase {
-  description: string | null;
-  milestones: MilestoneSchema[];
-  recent_mentions: string[];
 }
 
 // ── Stakeholder ─────────────────────────────────────────────────────────────
@@ -146,7 +118,7 @@ export interface DecisionSchema {
   rationale: string | null;
   key_people: string[];
   owner: string | null;
-  workstream: string | null;
+  project_name: string | null;
   position: number;
   transcript_id: number | null;
   transcript_title: string | null;
@@ -159,7 +131,7 @@ export interface DecisionCreate {
   rationale?: string;
   key_people?: string[];
   execution_status?: string;
-  workstream?: string;
+  project_id?: number;
 }
 
 export interface DecisionUpdate {
@@ -168,7 +140,7 @@ export interface DecisionUpdate {
   rationale?: string;
   key_people?: string[];
   execution_status?: string;
-  workstream?: string;
+  project_id?: number;
 }
 
 export interface DecisionPositionUpdate { execution_status: string; position: number; }
@@ -191,7 +163,7 @@ export interface DecisionTimelineItem {
   execution_status: string;
   key_people: string[];
   decision_date: string | null;
-  workstream: string | null;
+  project_name: string | null;
 }
 
 export interface DecisionTimelineResponse { decisions: DecisionTimelineItem[]; total: number; }
@@ -230,7 +202,7 @@ export interface OpenThreadSchema {
   owner: string | null;
   opened_date: string | null;
   last_discussed: string | null;
-  workstream: string | null;
+  project: string | null;
   severity: string | null;
   trend: string | null;
   position: number;
@@ -289,7 +261,7 @@ export interface ActionItemSchema {
   due_date: string | null;
   source_transcript_id: number | null;
   source_transcript_title: string | null;
-  workstream: string | null;
+  project: string | null;
   is_manual?: boolean;
 }
 
@@ -468,7 +440,7 @@ export interface DashboardProjectCard {
   name: string;
   status: string;
   color: string | null;
-  workstream_code: string | null;
+  code: string | null;
   is_custom: boolean;
   transcript_count: number;
   action_count: number;
@@ -535,7 +507,8 @@ export type EntityType =
   | "decision"
   | "action_item"
   | "open_thread"
-  | "stakeholder";
+  | "stakeholder"
+  | "project_update";
 
 export interface ProjectBase {
   id: number;
@@ -545,8 +518,7 @@ export interface ProjectBase {
   status: string;
   color: string | null;
   icon: string | null;
-  workstream_id: number | null;
-  workstream_code: string | null;
+  code: string | null;
   transcript_count: number;
   summary_count: number;
   decision_count: number;
@@ -572,11 +544,37 @@ export interface ProjectHub {
   open_threads: OpenThreadSchema[];
   stakeholders: StakeholderBase[];
   project_summaries: ProjectSummarySchema[];
+  project_updates: ProjectUpdateBase[];
 }
 
 export interface ProjectLinkCreate {
   entity_type: EntityType;
   entity_id: number;
+}
+
+// ── Project Updates ────────────────────────────────────────────────────────
+
+export interface ProjectUpdateBase {
+  id: number;
+  title: string;
+  content: string;
+  content_type: "note" | "teams_chat";
+  is_processed: boolean;
+  created_at: string;
+  updated_at: string;
+  project_ids: number[];
+  project_names: string[];
+}
+
+export interface ProjectUpdateDetail extends ProjectUpdateBase {
+  raw_content: string | null;
+}
+
+export interface ProjectUpdateCreate {
+  title: string;
+  content: string;
+  content_type?: "note" | "teams_chat";
+  project_ids: number[];
 }
 
 // ── Project Weekly Timeline ────────────────────────────────────────────────
@@ -659,7 +657,7 @@ export interface DependencySchema {
   blocking_reason: string | null;
   estimated_effort: string | null;
   assigned_to: string | null;
-  affected_workstreams: string | null;
+  affected_projects: string | null;
   priority: string;
   notes: string | null;
 }
@@ -671,7 +669,7 @@ export interface DependencyCreate {
   blocking_reason?: string;
   estimated_effort?: string;
   assigned_to?: string;
-  affected_workstreams?: string;
+  affected_projects?: string;
   priority?: string;
   notes?: string;
 }
@@ -679,7 +677,7 @@ export interface DependencyCreate {
 // ── Resource Allocation ────────────────────────────────────────────────────
 
 export interface AllocationEntry {
-  workstream: string;
+  project: string;
   percentage: number;
 }
 
@@ -710,7 +708,7 @@ export interface ScopeItemSchema {
   id: number;
   name: string;
   scope_type: string;
-  workstream: string | null;
+  project: string | null;
   added_date: string | null;
   estimated_effort: string | null;
   budgeted: boolean;
@@ -722,7 +720,7 @@ export interface ScopeItemSchema {
 export interface ScopeItemCreate {
   name: string;
   scope_type?: string;
-  workstream?: string;
+  project?: string;
   added_date?: string;
   estimated_effort?: string;
   budgeted?: boolean;
@@ -798,7 +796,7 @@ export type DashboardTab = "risks" | "resources" | "activity";
 
 export interface DashboardFilters {
   timeFilter: TimeFilter;
-  workstreamFilter: string | null; // workstream code or null for all
+  projectFilter: string | null;
   activeTab: DashboardTab;
 }
 
@@ -810,7 +808,7 @@ export interface ProgrammeWinSchema {
   description: string | null;
   before_state: string | null;
   after_state: string | null;
-  workstream: string | null;
+  project: string | null;
   confidence: string;
   date_recorded: string | null;
   notes: string | null;
@@ -823,7 +821,7 @@ export interface ProgrammeWinCreate {
   description?: string;
   before_state?: string;
   after_state?: string;
-  workstream?: string;
+  project?: string;
   confidence?: string;
   date_recorded?: string;
   notes?: string;
@@ -835,7 +833,7 @@ export interface AdoptionMetricSchema {
   date: string;
   metric_type: string;
   value: number;
-  workstream: string | null;
+  project: string | null;
   notes: string | null;
 }
 
@@ -843,7 +841,7 @@ export interface AdoptionMetricCreate {
   date: string;
   metric_type: string;
   value: number;
-  workstream?: string;
+  project?: string;
   notes?: string;
 }
 
@@ -1338,6 +1336,9 @@ export interface WeeklyPlanAction {
   position: number;
   is_ai_generated: boolean;
   carried_from_week: number | null;
+  source_transcript_id: number | null;
+  source_transcript_title: string | null;
+  context: string | null;
 }
 
 export interface WeeklyPlan {

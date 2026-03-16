@@ -45,7 +45,7 @@ export const tierLabels: Record<number, string> = {
   4: "Adjacent / Emerging",
 };
 
-/** RAG dot colour for project / workstream status */
+/** RAG dot colour for project status */
 export function ragDotColor(status: string): string {
   const s = status.toUpperCase();
   if (["LIVE", "ACTIVE", "COMPLETED"].some((k) => s.includes(k)))

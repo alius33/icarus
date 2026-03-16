@@ -13,7 +13,7 @@ function WeeklyPlanContent() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Weekly Plan</h1>
+        <h1 className="text-2xl font-bold text-forest-950 dark:text-white">Weekly Plan</h1>
       </div>
       <WeeklyPlanTabBar activeTab={activeTab} />
       {activeTab === "plans" && <WeeklyPlansTab />}
@@ -24,7 +24,7 @@ function WeeklyPlanContent() {
 
 export default function WeeklyPlanPage() {
   return (
-    <Suspense fallback={<div className="text-gray-400">Loading...</div>}>
+    <Suspense fallback={<div className="text-forest-300">Loading...</div>}>
       <WeeklyPlanContent />
     </Suspense>
   );

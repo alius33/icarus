@@ -19,7 +19,6 @@ from app.models.scope_item import ScopeItem
 from app.models.stakeholder import Stakeholder
 from app.models.transcript import Transcript
 from app.models.transcript_mention import TranscriptMention
-from app.models.workstream import Workstream
 from app.schemas.dashboard import (
     ActivityFeedItem,
     AnalysisInsightsData,
@@ -306,20 +305,19 @@ async def get_dashboard(
     # 2. Programme Pulse — Project cards via batch GROUP BY queries
     # ==================================================================
 
-    # 2a. All projects with workstream codes in one LEFT JOIN query
-    proj_ws_result = await db.execute(
+    # 2a. All projects with codes
+    proj_result = await db.execute(
         select(
             Project.id,
             Project.name,
             Project.status,
             Project.color,
             Project.is_custom,
-            Workstream.code.label("ws_code"),
+            Project.code,
         )
-        .outerjoin(Workstream, Project.workstream_id == Workstream.id)
         .order_by(Project.is_custom, Project.name)
     )
-    project_rows = proj_ws_result.all()
+    project_rows = proj_result.all()
     project_ids = [r[0] for r in project_rows]
 
     # 2b. Entity counts grouped by (project_id, entity_type) — one query
@@ -391,7 +389,7 @@ async def get_dashboard(
 
     # Assemble project cards — pure Python, no DB calls
     project_cards: list[DashboardProjectCard] = []
-    for pid, pname, pstatus, pcolor, pis_custom, ws_code in project_rows:
+    for pid, pname, pstatus, pcolor, pis_custom, pcode in project_rows:
         counts = link_counts.get(pid, {})
         recent = recent_map.get(pid, 0)
         prev = prev_map.get(pid, 0)
@@ -403,7 +401,7 @@ async def get_dashboard(
             name=pname,
             status=pstatus,
             color=pcolor,
-            workstream_code=ws_code,
+            code=pcode,
             is_custom=pis_custom,
             transcript_count=counts.get("transcript", 0),
             action_count=counts.get("task", 0) or counts.get("action_item", 0),
@@ -939,12 +937,14 @@ async def get_brief(db: AsyncSession = Depends(get_db)):
     today = date.today()
     week_start = _week_monday(today)
 
-    ws_result = await db.execute(select(Workstream).order_by(Workstream.code))
-    workstreams = ws_result.scalars().all()
+    proj_result = await db.execute(
+        select(Project).order_by(Project.code)
+    )
+    projects = proj_result.scalars().all()
 
     lines = [f"Programme Status -- {today.strftime('%d %b %Y')}", ""]
-    for ws in workstreams:
-        lines.append(f"{ws.code} {ws.name}: {ws.status}")
+    for p in projects:
+        lines.append(f"{p.code} {p.name}: {p.status}")
 
     # Overdue actions
     open_actions_result = await db.execute(

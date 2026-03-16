@@ -33,11 +33,15 @@ from app.models import (
     Decision,
     DeletedImport,
     DeliverableProgressSnapshot,
+    DivisionProfile,
+    Document,
     Document,
     GlossaryEntry,
     InfluenceSignal,
     MeetingScore,
     OpenThread,
+    Outreach,
+    ProgrammeWin,
     Project,
     ProjectLink,
     ProjectSummary,
@@ -52,8 +56,6 @@ from app.models import (
     WeeklyPlan,
     WeeklyPlanAction,
     WeeklyReport,
-    Workstream,
-    WorkstreamMilestone,
 )
 from scripts.parsers.action_item_parser import parse_action_items
 from scripts.parsers.commitment_parser import parse_commitments
@@ -69,7 +71,6 @@ from scripts.parsers.sentiment_parser import parse_sentiments
 from scripts.parsers.stakeholder_parser import parse_stakeholders
 from scripts.parsers.topic_signal_parser import parse_topic_signals
 from scripts.parsers.transcript_parser import parse_transcript
-from scripts.parsers.workstream_parser import parse_workstreams
 
 
 def _compute_file_hash(filepath: Path) -> str:
@@ -99,64 +100,179 @@ def _slugify(name: str) -> str:
 # Project seeding — ensures all expected projects exist in the DB
 # ---------------------------------------------------------------------------
 
-# Custom (non-workstream) project definitions.  Workstream-linked projects are
-# created dynamically from the workstreams table by seed_projects().
-CUSTOM_PROJECTS = [
-    {"name": "Cross OU Collaboration", "description": "Cross-operational unit collaboration — banking, life insurance, and asset management AI enablement", "is_custom": True, "status": "active", "color": "#10B981"},
-    {"name": "Program Management", "description": "Programme governance, standups, infrastructure, budget, and strategic alignment", "is_custom": True, "status": "active", "color": "#6366F1"},
-    {"name": "TSR Enhancements", "description": "TSR automation and AI enhancement work", "is_custom": True, "status": "active", "color": "#F59E0B"},
-    {"name": "App Factory", "description": "Automated environment and deployment platform for hosting AI apps. Led by BenVH. CI/CD pipeline, form-based app generation, multi-environment setup, Terraform infrastructure.", "is_custom": True, "status": "active", "color": "#8B5CF6"},
+# All projects in a single flat list.  Each entry carries enough data to
+# create a new project *or* update an existing one.  The ``code`` is set to
+# ``PR{id}`` after the row is flushed (so the DB-assigned id is known).
+ALL_PROJECTS = [
+    {
+        "name": "CLARA (IRP Adoption Tracker)",
+        "slug": "clara",
+        "description": "IRP adoption tracking tool",
+        "is_custom": False,
+        "status": "active",
+        "color": None,
+        "keywords": "clara,irp,adoption,tracker,csm",
+    },
+    {
+        "name": "Friday (CS AI Agent)",
+        "alt_names": ["Friday (Project Management App)"],
+        "slug": "friday",
+        "description": "CS AI agent / project management",
+        "is_custom": False,
+        "status": "active",
+        "color": None,
+        "keywords": "friday,ai agent,project management",
+    },
+    {
+        "name": "Build in Five",
+        "alt_names": ["Build in Five (Cursor for Pipeline Sales)"],
+        "slug": "build-in-five",
+        "description": "Rapid prototyping for pipeline sales",
+        "is_custom": False,
+        "status": "active",
+        "color": None,
+        "keywords": "build in five,cursor,pipeline,martin",
+    },
+    {
+        "name": "Training & Enablement",
+        "slug": "training-enablement",
+        "description": "Training and enablement programme",
+        "is_custom": False,
+        "status": "active",
+        "color": None,
+        "keywords": "training,enablement,onboarding",
+    },
+    {
+        "name": "Navigator L1 Automation",
+        "alt_names": ["IRP Navigator L1 Automation"],
+        "slug": "navigator-l1",
+        "description": "Navigator L1 automation",
+        "is_custom": False,
+        "status": "active",
+        "color": None,
+        "keywords": "navigator,l1,automation",
+    },
+    {
+        "name": "Customer Success Agent",
+        "slug": "cs-agent",
+        "description": "Customer success agent project",
+        "is_custom": False,
+        "status": "active",
+        "color": None,
+        "keywords": "customer success agent,cs agent",
+    },
+    {
+        "name": "Cross OU Collaboration",
+        "slug": "cross-ou",
+        "description": "Cross-OU banking, AM, life insurance",
+        "is_custom": True,
+        "status": "active",
+        "color": "#10B981",
+        "keywords": "cross ou,banking,asset management,life insurance,idrees",
+    },
+    {
+        "name": "Program Management",
+        "slug": "programme-mgmt",
+        "description": "Governance, steering, portfolio reviews",
+        "is_custom": True,
+        "status": "active",
+        "color": "#6366F1",
+        "keywords": "governance,steering,portfolio review,programme",
+    },
+    {
+        "name": "TSR Enhancements",
+        "slug": "tsr-enhancements",
+        "description": "TSR automation track",
+        "is_custom": True,
+        "status": "active",
+        "color": "#F59E0B",
+        "keywords": "tsr,technical service request,cat bond",
+    },
+    {
+        "name": "App Factory",
+        "slug": "app-factory",
+        "description": "Automated deployment platform for AI apps",
+        "is_custom": True,
+        "status": "active",
+        "color": "#8B5CF6",
+        "keywords": "app factory,phantom agent,advisoryappfactory,moplit",
+    },
 ]
 
 
 async def seed_projects(session: AsyncSession, verbose: bool) -> dict:
     """Ensure all projects exist in the database.
 
-    Creates workstream-linked projects from the workstreams table (migration
-    002 tries this too, but it runs before workstreams are imported on a fresh
-    DB).  Also creates non-workstream custom projects.
+    Iterates over ALL_PROJECTS and matches by name.  If the project already
+    exists its code and slug are backfilled when empty.  New projects are
+    created with all fields.  The code is always ``PR{id}``.
     """
-    stats = {"created": 0, "existing": 0}
+    stats = {"created": 0, "existing": 0, "updated": 0}
 
-    # 1. Create workstream-linked projects
-    ws_result = await session.execute(select(Workstream))
-    workstreams = ws_result.scalars().all()
-    for ws in workstreams:
-        result = await session.execute(
-            select(Project).where(Project.workstream_id == ws.id)
-        )
-        existing = result.scalar_one_or_none()
-        if existing:
-            stats["existing"] += 1
-            _log(f"  Project '{existing.name}' already exists (id={existing.id}, ws={ws.code})", verbose)
-        else:
-            project = Project(
-                name=ws.name,
-                description=ws.description,
-                workstream_id=ws.id,
-                is_custom=False,
-                status=ws.status or "active",
-            )
-            session.add(project)
-            await session.flush()
-            stats["created"] += 1
-            _log(f"  Created project '{ws.name}' (id={project.id}, ws={ws.code})", verbose)
-
-    # 2. Create custom (non-workstream) projects
-    for proj_data in CUSTOM_PROJECTS:
+    for proj_data in ALL_PROJECTS:
         result = await session.execute(
             select(Project).where(Project.name == proj_data["name"])
         )
         existing = result.scalar_one_or_none()
+
+        # Check alternative names if not found by primary name
+        if not existing:
+            for alt in proj_data.get("alt_names", []):
+                result = await session.execute(
+                    select(Project).where(Project.name == alt)
+                )
+                existing = result.scalar_one_or_none()
+                if existing:
+                    existing.name = proj_data["name"]
+                    _log(f"  Renamed project '{alt}' -> '{proj_data['name']}'", verbose)
+                    break
+
         if existing:
             stats["existing"] += 1
-            _log(f"  Project '{proj_data['name']}' already exists (id={existing.id})", verbose)
+            changed = False
+
+            # Backfill code if missing or empty
+            expected_code = f"PR{existing.id}"
+            if not existing.code or existing.code != expected_code:
+                existing.code = expected_code
+                changed = True
+
+            # Backfill slug if missing
+            if not existing.slug and proj_data.get("slug"):
+                existing.slug = proj_data["slug"]
+                changed = True
+
+            # Backfill keywords if missing
+            if not existing.keywords and proj_data.get("keywords"):
+                existing.keywords = proj_data["keywords"]
+                changed = True
+
+            # Backfill description if missing
+            if not existing.description and proj_data.get("description"):
+                existing.description = proj_data["description"]
+                changed = True
+
+            if changed:
+                stats["updated"] += 1
+                _log(f"  Updated project '{existing.name}' (id={existing.id}, code={existing.code})", verbose)
+            else:
+                _log(f"  Project '{existing.name}' already exists (id={existing.id})", verbose)
         else:
-            project = Project(**proj_data)
+            project = Project(
+                name=proj_data["name"],
+                slug=proj_data.get("slug"),
+                description=proj_data.get("description"),
+                is_custom=proj_data.get("is_custom", False),
+                status=proj_data.get("status", "active"),
+                color=proj_data.get("color"),
+                keywords=proj_data.get("keywords"),
+            )
             session.add(project)
             await session.flush()
+            # Set code based on DB-assigned id
+            project.code = f"PR{project.id}"
             stats["created"] += 1
-            _log(f"  Created project '{proj_data['name']}' (id={project.id})", verbose)
+            _log(f"  Created project '{project.name}' (id={project.id}, code={project.code})", verbose)
 
     await session.commit()
     return stats
@@ -342,94 +458,6 @@ async def import_decisions(
     except Exception as e:
         stats["errors"] += 1
         _log(f"ERROR parsing decisions.md: {e}", verbose)
-        if verbose:
-            traceback.print_exc()
-
-    return stats
-
-
-async def import_workstreams(
-    session: AsyncSession, data_root: Path, verbose: bool
-) -> dict:
-    """Import workstreams and milestones from context/workstreams.md."""
-    stats = {
-        "workstreams": {"inserted": 0, "updated": 0, "skipped": 0, "errors": 0},
-        "milestones": {"inserted": 0, "skipped": 0, "errors": 0},
-    }
-    filepath = data_root / "context" / "workstreams.md"
-
-    if not filepath.exists():
-        _log("workstreams.md not found, skipping.", verbose)
-        return stats
-
-    try:
-        workstream_list, milestone_list = parse_workstreams(filepath)
-        _log(f"Parsed {len(workstream_list)} workstreams, {len(milestone_list)} milestones.", verbose)
-
-        # Import workstreams
-        ws_code_to_id = {}
-        for data in workstream_list:
-            try:
-                result = await session.execute(
-                    select(Workstream).where(Workstream.code == data["code"])
-                )
-                existing = result.scalar_one_or_none()
-
-                if existing:
-                    if existing.file_hash == data["file_hash"]:
-                        stats["workstreams"]["skipped"] += 1
-                        ws_code_to_id[data["code"]] = existing.id
-                        continue
-                    for key, val in data.items():
-                        if hasattr(existing, key):
-                            setattr(existing, key, val)
-                    existing.updated_at = datetime.utcnow()
-                    stats["workstreams"]["updated"] += 1
-                    ws_code_to_id[data["code"]] = existing.id
-                    _log(f"  Updated: {data['code']}", verbose)
-                else:
-                    ws = Workstream(**data)
-                    session.add(ws)
-                    await session.flush()
-                    ws_code_to_id[data["code"]] = ws.id
-                    stats["workstreams"]["inserted"] += 1
-                    _log(f"  Inserted: {data['code']}", verbose)
-
-            except Exception as e:
-                stats["workstreams"]["errors"] += 1
-                _log(f"  ERROR importing workstream {data.get('code', '?')}: {e}", verbose)
-
-        await session.commit()
-
-        # Clear existing milestones for these workstreams and re-import
-        for code, ws_id in ws_code_to_id.items():
-            await session.execute(
-                delete(WorkstreamMilestone).where(
-                    WorkstreamMilestone.workstream_id == ws_id
-                )
-            )
-
-        # Import milestones
-        for data in milestone_list:
-            try:
-                ws_code = data.pop("workstream_code")
-                ws_id = ws_code_to_id.get(ws_code)
-                if ws_id is None:
-                    stats["milestones"]["errors"] += 1
-                    _log(f"  WARNING: No workstream found for milestone code {ws_code}", verbose)
-                    continue
-                milestone = WorkstreamMilestone(workstream_id=ws_id, **data)
-                session.add(milestone)
-                stats["milestones"]["inserted"] += 1
-            except Exception as e:
-                stats["milestones"]["errors"] += 1
-                _log(f"  ERROR importing milestone: {e}", verbose)
-
-        await session.commit()
-
-    except Exception as e:
-        stats["workstreams"]["errors"] += 1
-        _log(f"ERROR parsing workstreams.md: {e}", verbose)
         if verbose:
             traceback.print_exc()
 
@@ -696,16 +724,16 @@ def _parse_project_fields(content: str) -> tuple[str | None, list[str]]:
 
 
 def _extract_key_points(content: str) -> str:
-    """Extract the Key Points section from a summary as plain text for ProjectSummary."""
+    """Extract the Key Points section from a summary as markdown bullets for ProjectSummary."""
     m = re.search(r"^## Key Points\s*$", content, re.MULTILINE)
     if not m:
         return ""
     start = m.end()
     next_heading = re.search(r"^## ", content[start:], re.MULTILINE)
     section = content[start:start + next_heading.start()] if next_heading else content[start:]
-    # Clean up bullet points into a compact summary
-    lines = [line.strip().lstrip("- ").strip() for line in section.strip().splitlines() if line.strip()]
-    return "; ".join(lines[:5])  # First 5 key points, semicolon-separated
+    # Preserve original markdown bullet format
+    bullets = [line for line in section.strip().splitlines() if line.strip().startswith("- ")]
+    return "\n".join(bullets[:5])
 
 
 async def import_summaries(
@@ -1781,8 +1809,8 @@ _PROJECT_KEYWORDS: list[tuple[str, str]] = [
     ("martin", "build in five"),
     ("training", "training"),
     ("enablement", "training"),
-    ("navigator", "irp navigator"),
-    ("l1 automation", "irp navigator"),
+    ("navigator", "navigator"),
+    ("l1 automation", "navigator"),
     ("customer success agent", "customer success agent"),
     ("cs agent", "customer success agent"),
     ("cross ou", "cross ou"),
@@ -2095,6 +2123,8 @@ async def seed_weekly_plans(session: AsyncSession, verbose: bool) -> dict:
                     position=action_data.get("position", i),
                     is_ai_generated=action_data.get("is_ai_generated", True),
                     carried_from_week=action_data.get("carried_from_week"),
+                    source_transcript_id=action_data.get("source_transcript_id"),
+                    context=action_data.get("context"),
                 )
                 session.add(action)
 
@@ -2127,6 +2157,190 @@ async def seed_weekly_plans(session: AsyncSession, verbose: bool) -> dict:
     return stats
 
 
+async def seed_programme_wins(session: AsyncSession, verbose: bool) -> dict:
+    """Seed programme wins from JSON file. Idempotent by (title, date_recorded)."""
+    stats = {"inserted": 0, "skipped": 0, "errors": 0}
+    seed_file = Path(__file__).resolve().parent / "seed_data" / "wins.json"
+
+    if not seed_file.exists():
+        _log("No wins.json seed file found, skipping.", verbose)
+        return stats
+
+    try:
+        with open(seed_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, IOError) as e:
+        _log(f"Error reading wins.json: {e}", verbose)
+        stats["errors"] += 1
+        return stats
+
+    records = data if isinstance(data, list) else [data]
+
+    for rec in records:
+        title = rec.get("title", "").strip()
+        if not title:
+            stats["errors"] += 1
+            continue
+
+        date_str = rec.get("date_recorded")
+        date_val = None
+        if date_str:
+            try:
+                date_val = datetime.strptime(date_str, "%Y-%m-%d").date()
+            except ValueError:
+                date_val = None
+
+        # Check for existing by title + date
+        q = select(ProgrammeWin).where(ProgrammeWin.title == title)
+        if date_val:
+            q = q.where(ProgrammeWin.date_recorded == date_val)
+        existing = await session.execute(q)
+        if existing.scalar_one_or_none():
+            stats["skipped"] += 1
+            continue
+
+        try:
+            win = ProgrammeWin(
+                category=rec.get("category", "process_improvement"),
+                title=title,
+                description=rec.get("description"),
+                before_state=rec.get("before_state"),
+                after_state=rec.get("after_state"),
+                project=rec.get("project"),
+                confidence=rec.get("confidence", "estimated"),
+                date_recorded=date_val,
+                notes=rec.get("notes"),
+                is_manual=False,
+            )
+            session.add(win)
+            stats["inserted"] += 1
+        except Exception as e:
+            _log(f"Error creating win '{title}': {e}", verbose)
+            stats["errors"] += 1
+
+    await session.commit()
+    return stats
+
+
+async def seed_divisions(session: AsyncSession, verbose: bool) -> dict:
+    """Seed division profiles from JSON file. Idempotent by name (unique constraint)."""
+    stats = {"inserted": 0, "skipped": 0, "errors": 0}
+    seed_file = Path(__file__).resolve().parent / "seed_data" / "divisions.json"
+
+    if not seed_file.exists():
+        _log("No divisions.json seed file found, skipping.", verbose)
+        return stats
+
+    try:
+        with open(seed_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, IOError) as e:
+        _log(f"Error reading divisions.json: {e}", verbose)
+        stats["errors"] += 1
+        return stats
+
+    records = data if isinstance(data, list) else [data]
+
+    for rec in records:
+        name = rec.get("name", "").strip()
+        if not name:
+            stats["errors"] += 1
+            continue
+
+        existing = await session.execute(
+            select(DivisionProfile).where(DivisionProfile.name == name)
+        )
+        if existing.scalar_one_or_none():
+            stats["skipped"] += 1
+            continue
+
+        try:
+            div = DivisionProfile(
+                name=name,
+                status=rec.get("status", "prospect"),
+                current_tools=rec.get("current_tools"),
+                pain_points=rec.get("pain_points"),
+                key_contact=rec.get("key_contact"),
+                notes=rec.get("notes"),
+            )
+            session.add(div)
+            stats["inserted"] += 1
+        except Exception as e:
+            _log(f"Error creating division '{name}': {e}", verbose)
+            stats["errors"] += 1
+
+    await session.commit()
+    return stats
+
+
+async def seed_outreach(session: AsyncSession, verbose: bool) -> dict:
+    """Seed outreach contacts from JSON file. Idempotent by (contact_name, division)."""
+    stats = {"inserted": 0, "skipped": 0, "errors": 0}
+    seed_file = Path(__file__).resolve().parent / "seed_data" / "outreach.json"
+
+    if not seed_file.exists():
+        _log("No outreach.json seed file found, skipping.", verbose)
+        return stats
+
+    try:
+        with open(seed_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, IOError) as e:
+        _log(f"Error reading outreach.json: {e}", verbose)
+        stats["errors"] += 1
+        return stats
+
+    records = data if isinstance(data, list) else [data]
+
+    for rec in records:
+        name = rec.get("contact_name", "").strip()
+        if not name:
+            stats["errors"] += 1
+            continue
+
+        division = rec.get("division")
+
+        # Check for existing by name + division
+        q = select(Outreach).where(Outreach.contact_name == name)
+        if division:
+            q = q.where(Outreach.division == division)
+        existing = await session.execute(q)
+        if existing.scalar_one_or_none():
+            stats["skipped"] += 1
+            continue
+
+        def _parse_date_field(val):
+            if not val:
+                return None
+            try:
+                return datetime.strptime(val, "%Y-%m-%d").date()
+            except ValueError:
+                return None
+
+        try:
+            contact = Outreach(
+                contact_name=name,
+                contact_role=rec.get("contact_role"),
+                division=division,
+                status=rec.get("status", "initial_contact"),
+                interest_level=rec.get("interest_level", 3),
+                first_contact_date=_parse_date_field(rec.get("first_contact_date")),
+                last_contact_date=_parse_date_field(rec.get("last_contact_date")),
+                meeting_count=rec.get("meeting_count", 0),
+                notes=rec.get("notes"),
+                next_step=rec.get("next_step"),
+                next_step_date=_parse_date_field(rec.get("next_step_date")),
+            )
+            session.add(contact)
+            stats["inserted"] += 1
+        except Exception as e:
+            _log(f"Error creating outreach '{name}': {e}", verbose)
+            stats["errors"] += 1
+
+    await session.commit()
+    return stats
+
+
 # ---------------------------------------------------------------------------
 # Main orchestrator
 # ---------------------------------------------------------------------------
@@ -2149,7 +2363,7 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
 
     all_stats = {}
 
-    total_steps = 22
+    total_steps = 24
 
     async with Session() as session:
         # 1. Transcripts
@@ -2164,81 +2378,89 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
         print(f"[3/{total_steps}] Importing decisions...")
         all_stats["decisions"] = await import_decisions(session, root, verbose)
 
-        # 4. Workstreams + milestones
-        print(f"[4/{total_steps}] Importing workstreams...")
-        all_stats["workstreams"] = await import_workstreams(session, root, verbose)
-
-        # 5. Seed projects (must run after workstreams, before summaries)
-        print(f"[5/{total_steps}] Seeding projects...")
+        # 4. Seed projects (before summaries so project attribution works)
+        print(f"[4/{total_steps}] Seeding projects...")
         all_stats["project_seed"] = await seed_projects(session, verbose)
 
-        # 6. Open threads
-        print(f"[6/{total_steps}] Importing open threads...")
+        # 5. Open threads
+        print(f"[5/{total_steps}] Importing open threads...")
         all_stats["open_threads"] = await import_open_threads(session, root, verbose)
 
-        # 7. Action items
-        print(f"[7/{total_steps}] Importing action items...")
+        # 6. Action items
+        print(f"[6/{total_steps}] Importing action items...")
         all_stats["action_items"] = await import_action_items(session, root, verbose)
 
-        # 8. Glossary
-        print(f"[8/{total_steps}] Importing glossary...")
+        # 7. Glossary
+        print(f"[7/{total_steps}] Importing glossary...")
         all_stats["glossary"] = await import_glossary(session, root, verbose)
 
-        # 9. Summaries
-        print(f"[9/{total_steps}] Importing summaries...")
+        # 8. Summaries
+        print(f"[8/{total_steps}] Importing summaries...")
         all_stats["summaries"] = await import_summaries(session, root, verbose)
 
-        # 10. Weekly reports
-        print(f"[10/{total_steps}] Importing weekly reports...")
+        # 9. Weekly reports
+        print(f"[9/{total_steps}] Importing weekly reports...")
         all_stats["weekly_reports"] = await import_weekly_reports(session, root, verbose)
 
-        # 11. Programme debrief (as Document)
-        print(f"[11/{total_steps}] Importing programme debrief...")
+        # 10. Programme debrief (as Document)
+        print(f"[10/{total_steps}] Importing programme debrief...")
         all_stats["programme_debrief"] = await import_programme_debrief(session, root, verbose)
 
-        # 12. Project pages (as Documents)
-        print(f"[12/{total_steps}] Importing project pages...")
+        # 11. Project pages (as Documents)
+        print(f"[11/{total_steps}] Importing project pages...")
         all_stats["project_pages"] = await import_project_pages(session, root, verbose)
 
-        # 13. Sentiments
-        print(f"[13/{total_steps}] Importing sentiments...")
+        # 12. Sentiments
+        print(f"[12/{total_steps}] Importing sentiments...")
         all_stats["sentiments"] = await import_sentiments(session, root, verbose)
 
-        # 14. Commitments
-        print(f"[14/{total_steps}] Importing commitments...")
+        # 13. Commitments
+        print(f"[13/{total_steps}] Importing commitments...")
         all_stats["commitments"] = await import_commitments(session, root, verbose)
 
-        # 15. Topic signals
-        print(f"[15/{total_steps}] Importing topic signals...")
+        # 14. Topic signals
+        print(f"[14/{total_steps}] Importing topic signals...")
         all_stats["topic_signals"] = await import_topic_signals(session, root, verbose)
 
-        # 16. Influence signals
-        print(f"[16/{total_steps}] Importing influence signals...")
+        # 15. Influence signals
+        print(f"[15/{total_steps}] Importing influence signals...")
         all_stats["influence_signals"] = await import_influence_signals(session, root, verbose)
 
-        # 17. Contradictions
-        print(f"[17/{total_steps}] Importing contradictions...")
+        # 16. Contradictions
+        print(f"[16/{total_steps}] Importing contradictions...")
         all_stats["contradictions"] = await import_contradictions(session, root, verbose)
 
-        # 18. Meeting scores
-        print(f"[18/{total_steps}] Importing meeting scores...")
+        # 17. Meeting scores
+        print(f"[17/{total_steps}] Importing meeting scores...")
         all_stats["meeting_scores"] = await import_meeting_scores(session, root, verbose)
 
-        # 19. Risk entries
-        print(f"[19/{total_steps}] Importing risk entries...")
+        # 18. Risk entries
+        print(f"[18/{total_steps}] Importing risk entries...")
         all_stats["risk_entries"] = await import_risk_entries(session, root, verbose)
 
-        # 20. Project summaries
-        print(f"[20/{total_steps}] Importing project summaries...")
+        # 19. Project summaries
+        print(f"[19/{total_steps}] Importing project summaries...")
         all_stats["project_summaries"] = await import_project_summaries(session, root, verbose)
 
-        # 21. Seed weekly plans from JSON
-        print(f"[21/{total_steps}] Seeding weekly plans...")
+        # 20. Seed weekly plans from JSON
+        print(f"[20/{total_steps}] Seeding weekly plans...")
         all_stats["weekly_plans"] = await seed_weekly_plans(session, verbose)
 
-        # 22. Build project links for decisions, tasks, threads
-        print(f"[22/{total_steps}] Building project links...")
+        # 21. Build project links for decisions, tasks, threads
+        print(f"[21/{total_steps}] Building project links...")
         all_stats["project_links_built"] = await build_project_links(session, verbose)
+
+        # 22. Seed programme wins from JSON
+        print(f"[22/{total_steps}] Seeding programme wins...")
+        all_stats["programme_wins"] = await seed_programme_wins(session, verbose)
+
+        # 23. Seed division profiles from JSON
+        print(f"[23/{total_steps}] Seeding division profiles...")
+        all_stats["division_profiles"] = await seed_divisions(session, verbose)
+
+        # 24. Seed outreach contacts from JSON
+        print(f"[24/{total_steps}] Seeding outreach contacts...")
+        all_stats["outreach_contacts"] = await seed_outreach(session, verbose)
 
         # Generate slugs for projects that are missing them
         print("\nGenerating project slugs...")
@@ -2270,19 +2492,14 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
             print(f"  Transcript mentions: {stats['speaker']} speakers, "
                   f"{stats['mentioned']} mentioned, {stats['cleared']} cleared")
         elif entity == "project_seed":
-            print(f"  Project seed: {stats['created']} created, {stats['existing']} existing")
+            print(f"  Project seed: {stats['created']} created, "
+                  f"{stats.get('updated', 0)} updated, {stats['existing']} existing")
         elif entity == "project_links_built":
             print(f"  Project links: {stats['transcript_links']} transcript, {stats['task_links']} task, "
                   f"{stats['decision_links']} decision, {stats['thread_links']} thread")
             print(f"  Project attribution: {stats['transcript_project_ids']} transcript IDs set, "
                   f"{stats['task_project_ids']} task IDs set, "
                   f"{stats['project_summaries']} project summaries created")
-        elif entity == "workstreams":
-            ws = stats["workstreams"]
-            ms = stats["milestones"]
-            print(f"  Workstreams: {ws['inserted']} inserted, {ws['updated']} updated, "
-                  f"{ws['skipped']} skipped, {ws['errors']} errors")
-            print(f"  Milestones:  {ms['inserted']} inserted, {ms['errors']} errors")
         elif "deleted" in stats:
             # Bulk-replace style: influence_signals, contradictions
             label = entity.replace("_", " ").title()
@@ -2313,10 +2530,7 @@ async def import_all(data_root: str, db_url: str, verbose: bool = False):
     # Check for any errors
     total_errors = 0
     for entity, entity_stats in all_stats.items():
-        if entity == "workstreams":
-            total_errors += entity_stats["workstreams"].get("errors", 0)
-            total_errors += entity_stats["milestones"].get("errors", 0)
-        elif entity != "mentions":
+        if entity not in ("mentions", "project_seed"):
             total_errors += entity_stats.get("errors", 0)
 
     if total_errors > 0:

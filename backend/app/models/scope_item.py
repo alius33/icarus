@@ -11,7 +11,7 @@ class ScopeItem(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String, nullable=False)
     scope_type = Column(String, nullable=False, default="addition")  # original, addition
-    workstream = Column(String)
+    project = Column(String)
     added_date = Column(String)
     estimated_effort = Column(String)
     budgeted = Column(Boolean, default=False)

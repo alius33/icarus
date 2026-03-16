@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Banking — Customer Success",
+    "status": "in_discussion",
+    "current_tools": "Cursor (emerging adoption), no centralised AI platform",
+    "pain_points": "Siloed AI work with no centralised vision. No dedicated resources (side-of-desk). Deployment gap blocking productivity. Tool proliferation without standards. Executive pressure from MENA.",
+    "key_contact": "Gina Greer",
+    "notes": "Same stage as insurance was November 2025. Diya initiated cross-OU knowledge-sharing. Follow-up scheduled week of 23 March. Strong parallel to insurance journey — potential for shared infrastructure via App Factory."
+  },
+  {
+    "name": "Banking — Credit Team",
+    "status": "active",
+    "current_tools": "Cursor, MCP integrations, Copilot Studio, custom agents",
+    "pain_points": "None significant — team has solved most core AI adoption challenges independently",
+    "key_contact": "Nils",
+    "notes": "2-3 levels ahead of insurance on AI training. Structured Agent Days framework with pre-work, transit teachers, bi-weekly follow-ups. Non-coder adoption success (market sizing in 4 hours vs 1 week). Quarterly cross-OU cadence agreed. In-person lunch at Minster Court planned."
+  },
+  {
+    "name": "Product & Technology",
+    "status": "active",
+    "current_tools": "CLARA (daily usage by MD), internal product tooling",
+    "pain_points": "Data quality of blocker descriptions limiting thematic analysis. User Voice integration not yet enabled. Duplicate data entry with CSM teams.",
+    "key_contact": "Cihan",
+    "notes": "MD Cihan personally uses CLARA daily. Imported ~4,000-5,000 viewers via SSO. Full team (~40-50 people) attended demo 13 March. Product obsession culture, pod structure, technical sophistication. Next: per-customer AI agents, User Voice integration, feedback process."
+  },
+  {
+    "name": "Life Insurance",
+    "status": "in_discussion",
+    "current_tools": "None engaged yet — exploring NME and App Factory potential",
+    "pain_points": "Uncertainty about IRP capabilities. Model deployment constraints (MATLAB/Python models). Cloud migration strategy questions.",
+    "key_contact": "Jack Cheyne",
+    "notes": "Early education phase. Interested in Native Modelling Engine (NME) for containerised model deployment. Christian Curran focused on security/SSO. Next step: introduction to Derek Neil (NME product owner, California) for deeper dive."
+  },
+  {
+    "name": "Sales",
+    "status": "in_discussion",
+    "current_tools": "Cursor, Power BI, SPM (Tableau backend), Salesforce",
+    "pain_points": "Manual data ingestion workflows. Lack of API access for SPM data. Security governance barriers on Tableau/SPM data access. Commission data sensitivity.",
+    "key_contact": "Dan Flemington",
+    "notes": "Julia Valencia (sales analytics) building independent PowerPoint generator — Slidey convergence opportunity. Has direct Salesforce CDR database access (key enabler). Dan in Vienna until late week. Next: confirm data source ownership, request API access from SPM team, deploy Dan's app to App Factory."
+  },
+  {
+    "name": "Customer & Model Success",
+    "status": "pilot",
+    "current_tools": "Tableau (sunsetting Sep 2026), Salesforce, R/Streamlit",
+    "pain_points": "Tableau deprecation creating urgent demand for alternatives. Overwhelming dashboard requests from customers. Model Success team dashboarding scattered across tools.",
+    "key_contact": "Lucia",
+    "notes": "Lucia immediately saw App Factory value. Joel (R/Streamlit developer) keen to explore App Factory hosting. Maintaining Confluence documentation. First external App Factory customer. Urgent need due to Tableau sunset timeline."
+  },
+  {
+    "name": "Asset Management",
+    "status": "prospect",
+    "current_tools": null,
+    "pain_points": null,
+    "key_contact": null,
+    "notes": "Referenced in Richard's strategic framing as part of cross-OU demand signal. Engagement being organised for cross-OU showcase. Not yet directly engaged."
+  }
+]

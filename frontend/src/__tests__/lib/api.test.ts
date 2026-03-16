@@ -68,7 +68,7 @@ describe('api module', () => {
         json: () => Promise.reject(new Error('invalid json')),
       });
 
-      await expect(api.getWorkstreams()).rejects.toThrow('API error: 500');
+      await expect(api.getProjects()).rejects.toThrow('API error: 500');
     });
 
     it('throws for non-ok status (error propagates)', async () => {
@@ -92,10 +92,10 @@ describe('api module', () => {
         json: () => Promise.resolve([]),
       });
 
-      await api.getWorkstreams();
+      await api.getProjects();
 
       const calledUrl = String(mockFetch.mock.calls[0][0]);
-      expect(calledUrl).toContain('http://localhost:8000/api/workstreams');
+      expect(calledUrl).toContain('http://localhost:8000/api/projects');
     });
 
     it('appends query parameters correctly', async () => {

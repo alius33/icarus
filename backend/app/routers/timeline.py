@@ -7,7 +7,6 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.database import get_db
 from app.models.decision import Decision
 from app.models.transcript import Transcript
-from app.models.workstream import WorkstreamMilestone
 from app.schemas.timeline import TimelineEvent, TimelineResponse
 
 router = APIRouter(tags=["timeline"])
@@ -44,19 +43,7 @@ async def get_timeline(
     if to_date:
         decision_q = decision_q.where(Decision.decision_date <= to_date)
 
-    milestone_q = select(
-        cast(WorkstreamMilestone.milestone_date, Date).label("date"),
-        literal("milestone").label("type"),
-        WorkstreamMilestone.description.label("title"),
-        literal(None).label("description"),
-        WorkstreamMilestone.id.label("reference_id"),
-    ).where(WorkstreamMilestone.milestone_date.isnot(None))
-    if from_date:
-        milestone_q = milestone_q.where(WorkstreamMilestone.milestone_date >= from_date)
-    if to_date:
-        milestone_q = milestone_q.where(WorkstreamMilestone.milestone_date <= to_date)
-
-    combined = union_all(transcript_q, decision_q, milestone_q).subquery()
+    combined = union_all(transcript_q, decision_q).subquery()
     final_query = select(combined).order_by(combined.c.date.desc())
 
     result = await db.execute(final_query)

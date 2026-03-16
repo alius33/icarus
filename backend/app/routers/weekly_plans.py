@@ -3,7 +3,7 @@ from datetime import date, timedelta
 from fastapi import APIRouter, BackgroundTasks, Depends
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import selectinload
+from sqlalchemy.orm import selectinload, joinedload
 
 from app.database import get_db
 from app.exceptions import NotFoundError
@@ -44,6 +44,10 @@ def _week_dates(week_num: int) -> tuple[date, date]:
 
 
 def _action_schema(a: WeeklyPlanAction) -> WeeklyPlanActionBase:
+    # Resolve transcript title from relationship if available
+    transcript_title = None
+    if a.source_transcript_id and a.source_transcript:
+        transcript_title = a.source_transcript.title
     return WeeklyPlanActionBase(
         id=a.id,
         weekly_plan_id=a.weekly_plan_id,
@@ -57,6 +61,9 @@ def _action_schema(a: WeeklyPlanAction) -> WeeklyPlanActionBase:
         position=a.position,
         is_ai_generated=a.is_ai_generated,
         carried_from_week=a.carried_from_week,
+        source_transcript_id=a.source_transcript_id,
+        source_transcript_title=transcript_title,
+        context=a.context,
     )
 
 
@@ -116,7 +123,7 @@ async def get_current_plan(db: AsyncSession = Depends(get_db)):
     result = await db.execute(
         select(WeeklyPlan)
         .options(
-            selectinload(WeeklyPlan.actions),
+            selectinload(WeeklyPlan.actions).selectinload(WeeklyPlanAction.source_transcript),
             selectinload(WeeklyPlan.snapshots),
         )
         .where(WeeklyPlan.week_number == week_num)
@@ -127,7 +134,7 @@ async def get_current_plan(db: AsyncSession = Depends(get_db)):
         result = await db.execute(
             select(WeeklyPlan)
             .options(
-                selectinload(WeeklyPlan.actions),
+                selectinload(WeeklyPlan.actions).selectinload(WeeklyPlanAction.source_transcript),
                 selectinload(WeeklyPlan.snapshots),
             )
             .order_by(WeeklyPlan.week_number.desc())
@@ -144,7 +151,7 @@ async def get_plan(plan_id: int, db: AsyncSession = Depends(get_db)):
     result = await db.execute(
         select(WeeklyPlan)
         .options(
-            selectinload(WeeklyPlan.actions),
+            selectinload(WeeklyPlan.actions).selectinload(WeeklyPlanAction.source_transcript),
             selectinload(WeeklyPlan.snapshots),
         )
         .where(WeeklyPlan.id == plan_id)
@@ -185,6 +192,8 @@ async def create_plan(body: WeeklyPlanCreate, bg: BackgroundTasks, db: AsyncSess
             position=action_data.position if action_data.position else i,
             is_ai_generated=action_data.is_ai_generated,
             carried_from_week=action_data.carried_from_week,
+            source_transcript_id=action_data.source_transcript_id,
+            context=action_data.context,
         )
         db.add(action)
 
@@ -211,7 +220,7 @@ async def create_plan(body: WeeklyPlanCreate, bg: BackgroundTasks, db: AsyncSess
     result = await db.execute(
         select(WeeklyPlan)
         .options(
-            selectinload(WeeklyPlan.actions),
+            selectinload(WeeklyPlan.actions).selectinload(WeeklyPlanAction.source_transcript),
             selectinload(WeeklyPlan.snapshots),
         )
         .where(WeeklyPlan.id == plan.id)
@@ -224,7 +233,7 @@ async def update_plan(plan_id: int, body: WeeklyPlanUpdate, db: AsyncSession = D
     result = await db.execute(
         select(WeeklyPlan)
         .options(
-            selectinload(WeeklyPlan.actions),
+            selectinload(WeeklyPlan.actions).selectinload(WeeklyPlanAction.source_transcript),
             selectinload(WeeklyPlan.snapshots),
         )
         .where(WeeklyPlan.id == plan_id)
@@ -267,10 +276,12 @@ async def add_action(plan_id: int, body: WeeklyPlanActionCreate, db: AsyncSessio
         position=body.position,
         is_ai_generated=body.is_ai_generated,
         carried_from_week=body.carried_from_week,
+        source_transcript_id=body.source_transcript_id,
+        context=body.context,
     )
     db.add(action)
     await db.commit()
-    await db.refresh(action)
+    await db.refresh(action, ["source_transcript"])
     return _action_schema(action)
 
 
@@ -301,9 +312,13 @@ async def update_action(action_id: int, body: WeeklyPlanActionUpdate, db: AsyncS
         a.position = body.position
     if body.is_ai_generated is not None:
         a.is_ai_generated = body.is_ai_generated
+    if body.source_transcript_id is not None:
+        a.source_transcript_id = body.source_transcript_id
+    if body.context is not None:
+        a.context = body.context
 
     await db.commit()
-    await db.refresh(a)
+    await db.refresh(a, ["source_transcript"])
 
     # Auto-export all plans to seed JSON for Railway deploys
     await export_plans_to_seed(db)

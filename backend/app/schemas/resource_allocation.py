@@ -2,7 +2,7 @@ from pydantic import BaseModel
 
 
 class AllocationEntry(BaseModel):
-    workstream: str
+    project: str
     percentage: int
 
 

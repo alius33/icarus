@@ -26,7 +26,7 @@ export default async function TranscriptListPage({
   if (error || !data) {
     return (
       <div className="space-y-6">
-        <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">Transcripts</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-forest-950 dark:text-forest-50">Transcripts</h2>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
           <p className="text-base text-red-700">
             {error || "Unable to load transcripts. Please try again later."}
@@ -45,8 +45,8 @@ export default async function TranscriptListPage({
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">Transcripts</h2>
-        <span className="text-base text-gray-500">
+        <h2 className="text-xl md:text-2xl font-bold text-forest-950 dark:text-forest-50">Transcripts</h2>
+        <span className="text-base text-forest-400">
           {data.total} total transcript{data.total !== 1 ? "s" : ""}
         </span>
       </div>
@@ -54,27 +54,27 @@ export default async function TranscriptListPage({
       {/* Mobile card view */}
       <div className="space-y-2 md:hidden">
         {data.items.length === 0 ? (
-          <div className="rounded-lg border-2 border-dashed border-gray-300 p-8 text-center">
-            <p className="text-base text-gray-500">No transcripts found.</p>
+          <div className="rounded-lg border-2 border-dashed border-forest-200 p-8 text-center">
+            <p className="text-base text-forest-400">No transcripts found.</p>
           </div>
         ) : (
           data.items.map((t) => (
             <Link
               key={t.id}
               href={`/transcripts/${t.id}`}
-              className="block rounded-lg border border-gray-200 bg-white p-3 active:bg-gray-50"
+              className="block rounded-lg border border-forest-200 bg-white dark:bg-forest-800 p-3 active:bg-forest-50"
             >
-              <div className="text-sm text-gray-400 mb-1">
+              <div className="text-sm text-forest-300 mb-1">
                 {t.date ? formatDate(t.date) : "—"}
               </div>
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-base text-gray-900 line-clamp-2">
+                <span className="text-base text-forest-950 line-clamp-2">
                   {t.title || t.file_name}
                 </span>
                 {t.has_notes && <Pencil className="h-3.5 w-3.5 text-amber-500 shrink-0" />}
-                {t.attachments_count > 0 && <Paperclip className="h-3.5 w-3.5 text-gray-400 shrink-0" />}
+                {t.attachments_count > 0 && <Paperclip className="h-3.5 w-3.5 text-forest-300 shrink-0" />}
               </div>
-              <div className="text-sm text-gray-500">
+              <div className="text-sm text-forest-400">
                 {t.word_count.toLocaleString()} words
               </div>
             </Link>
@@ -83,45 +83,45 @@ export default async function TranscriptListPage({
       </div>
 
       {/* Desktop table */}
-      <div className="hidden md:block bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+      <div className="hidden md:block bg-white dark:bg-forest-800 rounded-lg shadow-sm border border-forest-200 overflow-hidden">
         <table className="w-full">
           <thead>
-            <tr className="border-b border-gray-200 bg-gray-50">
-              <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500">
+            <tr className="border-b border-forest-200 bg-forest-50">
+              <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-forest-400">
                 Date
               </th>
-              <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500">
+              <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-forest-400">
                 Title
               </th>
-              <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500">
+              <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-forest-400">
                 Participants
               </th>
-              <th className="px-6 py-3 text-right text-sm font-medium uppercase tracking-wider text-gray-500">
+              <th className="px-6 py-3 text-right text-sm font-medium uppercase tracking-wider text-forest-400">
                 Words
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-200">
+          <tbody className="divide-y divide-forest-200">
             {data.items.length === 0 ? (
               <tr>
                 <td
                   colSpan={4}
-                  className="px-6 py-8 text-center text-base text-gray-500"
+                  className="px-6 py-8 text-center text-base text-forest-400"
                 >
                   No transcripts found.
                 </td>
               </tr>
             ) : (
               data.items.map((t) => (
-                <tr key={t.id} className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-base text-gray-500 whitespace-nowrap">
+                <tr key={t.id} className="hover:bg-forest-50 transition-colors">
+                  <td className="px-6 py-4 text-base text-forest-400 whitespace-nowrap">
                     {t.date ? formatDate(t.date) : "—"}
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-2">
                       <Link
                         href={`/transcripts/${t.id}`}
-                        className="text-base text-blue-600 hover:text-blue-800"
+                        className="text-base text-forest-500 hover:text-blue-800"
                       >
                         {t.title || t.file_name}
                       </Link>
@@ -131,17 +131,17 @@ export default async function TranscriptListPage({
                         </span>
                       )}
                       {t.attachments_count > 0 && (
-                        <span className="inline-flex items-center gap-0.5 text-gray-400" title={`${t.attachments_count} attachment${t.attachments_count !== 1 ? "s" : ""}`}>
+                        <span className="inline-flex items-center gap-0.5 text-forest-300" title={`${t.attachments_count} attachment${t.attachments_count !== 1 ? "s" : ""}`}>
                           <Paperclip className="h-3.5 w-3.5" />
                           <span className="text-sm">{t.attachments_count}</span>
                         </span>
                       )}
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-base text-gray-600">
+                  <td className="px-6 py-4 text-base text-forest-500">
                     {formatParticipants(undefined)}
                   </td>
-                  <td className="px-6 py-4 text-base text-gray-500 text-right tabular-nums">
+                  <td className="px-6 py-4 text-base text-forest-400 text-right tabular-nums">
                     {t.word_count.toLocaleString()}
                   </td>
                 </tr>
@@ -158,29 +158,29 @@ export default async function TranscriptListPage({
             {currentPage > 1 ? (
               <Link
                 href={`/transcripts?page=${currentPage - 1}`}
-                className="rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
+                className="rounded-md border border-forest-200 bg-white dark:bg-forest-800 px-4 py-2 text-base font-medium text-forest-600 hover:bg-forest-50"
               >
                 Previous
               </Link>
             ) : (
-              <span className="rounded-md border border-gray-200 bg-gray-100 px-4 py-2 text-base font-medium text-gray-400 cursor-not-allowed">
+              <span className="rounded-md border border-forest-200 bg-forest-100 px-4 py-2 text-base font-medium text-forest-300 cursor-not-allowed">
                 Previous
               </span>
             )}
           </div>
-          <span className="text-base text-gray-500">
+          <span className="text-base text-forest-400">
             Page {currentPage} of {data.pages}
           </span>
           <div>
             {currentPage < data.pages ? (
               <Link
                 href={`/transcripts?page=${currentPage + 1}`}
-                className="rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
+                className="rounded-md border border-forest-200 bg-white dark:bg-forest-800 px-4 py-2 text-base font-medium text-forest-600 hover:bg-forest-50"
               >
                 Next
               </Link>
             ) : (
-              <span className="rounded-md border border-gray-200 bg-gray-100 px-4 py-2 text-base font-medium text-gray-400 cursor-not-allowed">
+              <span className="rounded-md border border-forest-200 bg-forest-100 px-4 py-2 text-base font-medium text-forest-300 cursor-not-allowed">
                 Next
               </span>
             )}

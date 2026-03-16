@@ -33,8 +33,8 @@ from app.models.transcript_attachment import TranscriptAttachment
 from app.models.transcript_mention import TranscriptMention
 from app.models.transcript_note import TranscriptNote
 from app.models.weekly_report import WeeklyReport
-from app.models.workstream import Workstream, WorkstreamMilestone
 from app.models.programme_deliverable import ProgrammeDeliverable
+from app.models.project_update import ProjectUpdate
 from app.models.deliverable_milestone import DeliverableMilestone
 from app.models.weekly_plan import WeeklyPlan
 from app.models.weekly_plan_action import WeeklyPlanAction
@@ -42,7 +42,6 @@ from app.models.deliverable_progress_snapshot import DeliverableProgressSnapshot
 
 __all__ = [
     "Transcript", "Summary", "WeeklyReport",
-    "Workstream", "WorkstreamMilestone",
     "Stakeholder", "Decision", "OpenThread",
     "Task", "ActionItem", "GlossaryEntry", "TranscriptMention",
     "Document", "Project", "ProjectLink", "DeletedImport",
@@ -54,4 +53,5 @@ __all__ = [
     "TranscriptNote", "TranscriptAttachment",
     "ProgrammeDeliverable", "DeliverableMilestone",
     "WeeklyPlan", "WeeklyPlanAction", "DeliverableProgressSnapshot",
+    "ProjectUpdate",
 ]

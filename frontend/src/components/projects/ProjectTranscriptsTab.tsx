@@ -9,8 +9,8 @@ export default function ProjectTranscriptsTab({
 }) {
   if (transcripts.length === 0) {
     return (
-      <div className="rounded-lg border border-gray-200 bg-white p-8 text-center">
-        <p className="text-base text-gray-500">
+      <div className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800 p-8 text-center">
+        <p className="text-base text-forest-400">
           No transcripts linked to this project yet.
         </p>
       </div>
@@ -18,45 +18,45 @@ export default function ProjectTranscriptsTab({
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+    <div className="bg-white dark:bg-forest-800 rounded-lg shadow-sm border border-forest-200 overflow-hidden">
       <table className="w-full">
         <thead>
-          <tr className="border-b border-gray-200 bg-gray-50">
-            <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500">
+          <tr className="border-b border-forest-200 bg-forest-50">
+            <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-forest-400">
               Title
             </th>
-            <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-28">
+            <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-forest-400 w-28">
               Date
             </th>
-            <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-28">
+            <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-forest-400 w-28">
               Participants
             </th>
-            <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-24">
+            <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-forest-400 w-24">
               Words
             </th>
-            <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-500 w-24">
+            <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-forest-400 w-24">
               Summary
             </th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-200">
+        <tbody className="divide-y divide-forest-200">
           {transcripts.map((t) => (
-            <tr key={t.id} className="hover:bg-gray-50 transition-colors">
+            <tr key={t.id} className="hover:bg-forest-50 transition-colors">
               <td className="px-6 py-4">
                 <Link
                   href={`/transcripts/${t.id}`}
-                  className="text-base font-medium text-blue-600 hover:text-blue-800"
+                  className="text-base font-medium text-forest-500 hover:text-blue-800"
                 >
                   {t.title || t.file_name}
                 </Link>
               </td>
-              <td className="px-6 py-4 text-base text-gray-500 whitespace-nowrap">
+              <td className="px-6 py-4 text-base text-forest-400 whitespace-nowrap">
                 {t.date ? formatDate(t.date) : "\u2014"}
               </td>
-              <td className="px-6 py-4 text-base text-gray-500">
+              <td className="px-6 py-4 text-base text-forest-400">
                 {t.participant_count}
               </td>
-              <td className="px-6 py-4 text-base text-gray-500">
+              <td className="px-6 py-4 text-base text-forest-400">
                 {t.word_count.toLocaleString()}
               </td>
               <td className="px-6 py-4">
@@ -65,7 +65,7 @@ export default function ProjectTranscriptsTab({
                     Yes
                   </span>
                 ) : (
-                  <span className="text-sm text-gray-400">No</span>
+                  <span className="text-sm text-forest-300">No</span>
                 )}
               </td>
             </tr>

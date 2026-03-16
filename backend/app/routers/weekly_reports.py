@@ -51,7 +51,7 @@ async def get_weekly_report(
         week_end=str(report.week_end) if report.week_end else "",
         period_label=None,
         content=report.content,
-        workstream_updates=[],
+        project_updates=[],
         highlights=[],
         risks=[],
     )

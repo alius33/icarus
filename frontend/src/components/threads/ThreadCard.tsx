@@ -20,11 +20,11 @@ function trendIndicator(trend: string | null): string {
 }
 
 function trendColor(trend: string | null): string {
-  if (!trend) return "text-gray-400";
+  if (!trend) return "text-forest-300";
   if (trend === "escalating") return "text-red-500";
   if (trend === "stable") return "text-yellow-500";
   if (trend === "de-escalating") return "text-green-500";
-  return "text-gray-400";
+  return "text-forest-300";
 }
 
 export default function ThreadCard({ thread, onClick, isDragging }: ThreadCardProps) {
@@ -54,9 +54,9 @@ export default function ThreadCard({ thread, onClick, isDragging }: ThreadCardPr
       {...listeners}
       onClick={() => onClick(thread)}
       className={`
-        bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700
+        bg-white dark:bg-forest-800 border border-forest-200 dark:border-forest-700
         rounded-lg p-3 cursor-pointer hover:shadow-md transition-shadow
-        ${isDragging ? "shadow-lg ring-2 ring-blue-400" : ""}
+        ${isDragging ? "shadow-lg ring-2 ring-forest-400" : ""}
       `}
     >
       {/* Top row: severity dot + trend */}
@@ -77,13 +77,13 @@ export default function ThreadCard({ thread, onClick, isDragging }: ThreadCardPr
       </div>
 
       {/* Title */}
-      <p className="text-base font-medium text-gray-900 dark:text-gray-100 line-clamp-2 mb-2">
+      <p className="text-base font-medium text-forest-950 dark:text-forest-50 line-clamp-2 mb-2">
         {thread.title}
       </p>
 
       {/* Description snippet */}
       {thread.description && (
-        <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2 mb-2">
+        <p className="text-sm text-forest-400 dark:text-forest-300 line-clamp-2 mb-2">
           {thread.description.length > 80
             ? thread.description.slice(0, 80) + "..."
             : thread.description}
@@ -91,7 +91,7 @@ export default function ThreadCard({ thread, onClick, isDragging }: ThreadCardPr
       )}
 
       {/* Bottom row: opened date */}
-      <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
+      <div className="flex items-center gap-3 text-sm text-forest-400 dark:text-forest-300">
         {thread.opened_date && (
           <span className="flex items-center gap-1">
             <Calendar className="h-3 w-3" />

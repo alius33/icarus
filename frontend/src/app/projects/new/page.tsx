@@ -54,14 +54,14 @@ export default function NewProjectPage() {
     <div className="space-y-6">
       <Link
         href="/projects"
-        className="inline-block text-base text-blue-600 hover:text-blue-800"
+        className="inline-block text-base text-forest-500 hover:text-blue-800"
       >
         &larr; Back to Projects
       </Link>
 
       <div className="mx-auto max-w-lg">
-        <h2 className="text-2xl font-bold text-gray-900">New Project</h2>
-        <p className="mt-1 text-base text-gray-500">
+        <h2 className="text-2xl font-bold text-forest-950">New Project</h2>
+        <p className="mt-1 text-base text-forest-400">
           Create a custom project to group related items.
         </p>
 
@@ -70,7 +70,7 @@ export default function NewProjectPage() {
           <div>
             <label
               htmlFor="name"
-              className="block text-base font-medium text-gray-700"
+              className="block text-base font-medium text-forest-600"
             >
               Project Name *
             </label>
@@ -80,7 +80,7 @@ export default function NewProjectPage() {
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="mt-1 block w-full rounded-md border border-forest-200 px-3 py-2 text-base shadow-sm focus:border-forest-500 focus:outline-none focus:ring-1 focus:ring-forest-500"
               placeholder="e.g. Q1 Data Migration"
             />
           </div>
@@ -89,7 +89,7 @@ export default function NewProjectPage() {
           <div>
             <label
               htmlFor="description"
-              className="block text-base font-medium text-gray-700"
+              className="block text-base font-medium text-forest-600"
             >
               Description
             </label>
@@ -98,7 +98,7 @@ export default function NewProjectPage() {
               rows={3}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="mt-1 block w-full rounded-md border border-forest-200 px-3 py-2 text-base shadow-sm focus:border-forest-500 focus:outline-none focus:ring-1 focus:ring-forest-500"
               placeholder="Brief description of what this project covers..."
             />
           </div>
@@ -107,7 +107,7 @@ export default function NewProjectPage() {
           <div>
             <label
               htmlFor="status"
-              className="block text-base font-medium text-gray-700"
+              className="block text-base font-medium text-forest-600"
             >
               Status
             </label>
@@ -115,7 +115,7 @@ export default function NewProjectPage() {
               id="status"
               value={status}
               onChange={(e) => setStatus(e.target.value)}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="mt-1 block w-full rounded-md border border-forest-200 px-3 py-2 text-base shadow-sm focus:border-forest-500 focus:outline-none focus:ring-1 focus:ring-forest-500"
             >
               {STATUS_OPTIONS.map((s) => (
                 <option key={s} value={s}>
@@ -127,7 +127,7 @@ export default function NewProjectPage() {
 
           {/* Color */}
           <div>
-            <label className="block text-base font-medium text-gray-700">
+            <label className="block text-base font-medium text-forest-600">
               Color
             </label>
             <div className="mt-2 flex gap-2">
@@ -159,13 +159,13 @@ export default function NewProjectPage() {
             <button
               type="submit"
               disabled={submitting || !name.trim()}
-              className="inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-base font-medium text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="inline-flex items-center rounded-md bg-forest-500 px-4 py-2 text-base font-medium text-white hover:bg-forest-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               {submitting ? "Creating..." : "Create Project"}
             </button>
             <Link
               href="/projects"
-              className="text-base text-gray-500 hover:text-gray-700"
+              className="text-base text-forest-400 hover:text-forest-600"
             >
               Cancel
             </Link>

@@ -6,7 +6,7 @@ class AdoptionMetricSchema(BaseModel):
     date: str
     metric_type: str
     value: int
-    workstream: str | None = None
+    project: str | None = None
     notes: str | None = None
 
 
@@ -14,5 +14,5 @@ class AdoptionMetricCreate(BaseModel):
     date: str
     metric_type: str
     value: int
-    workstream: str | None = None
+    project: str | None = None
     notes: str | None = None

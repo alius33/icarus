@@ -19,7 +19,10 @@ import {
   Clock,
   ArrowRight,
   AlertTriangle,
+  MessageSquarePlus,
+  MessageSquare,
 } from "lucide-react";
+import Link from "next/link";
 
 interface Props {
   project: ProjectBase;
@@ -77,15 +80,27 @@ function formatStatusDate(dateStr: string): string {
 function relevanceBadge(relevance: string | null) {
   if (!relevance) return null;
   const colors: Record<string, string> = {
-    HIGH: "bg-blue-100 text-blue-700",
-    MEDIUM: "bg-gray-100 text-gray-600",
-    LOW: "bg-gray-50 text-gray-400",
+    HIGH: "bg-blue-100 text-forest-600 dark:bg-blue-900/40 dark:text-blue-300",
+    MEDIUM: "bg-forest-100 text-forest-500 dark:bg-forest-800 dark:text-forest-300",
+    LOW: "bg-forest-50 text-forest-300 dark:bg-forest-900 dark:text-forest-400",
   };
   return (
     <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded ${colors[relevance] || colors.MEDIUM}`}>
       {relevance}
     </span>
   );
+}
+
+/** Normalise ProjectSummary content — handles both old semicolon format and new bullet format. */
+function normaliseContent(content: string): string {
+  // New format: already has markdown bullets
+  if (content.includes("\n- ")) return content;
+  // Old format: semicolon-separated points → convert to markdown bullets
+  if (content.includes("; ")) {
+    return content.split("; ").map((p) => `- ${p.trim()}`).join("\n");
+  }
+  // Single point without bullets or semicolons
+  return `- ${content}`;
 }
 
 export default function ProjectOverviewTab({ project, hub, timeline }: Props) {
@@ -124,10 +139,17 @@ export default function ProjectOverviewTab({ project, hub, timeline }: Props) {
       label: "Summaries",
       count: project.transcript_count,
       icon: FileText,
-      color: "text-blue-600 bg-blue-50 border-blue-200",
+      color: "text-forest-500 bg-blue-50 border-blue-200",
       tab: "summaries",
     },
   ];
+
+  // Map transcript_id → title for meeting title lookup
+  const transcriptTitles = useMemo(() => {
+    const map = new Map<number, string>();
+    for (const t of hub.transcripts || []) if (t.title) map.set(t.id, t.title);
+    return map;
+  }, [hub.transcripts]);
 
   const statusEntries = useMemo(() => {
     const summaries = hub.project_summaries || [];
@@ -239,8 +261,8 @@ export default function ProjectOverviewTab({ project, hub, timeline }: Props) {
       {/* Current Status */}
       {statusEntries && statusEntries.length > 0 && (
         <div className="rounded-lg border border-blue-200 bg-gradient-to-br from-blue-50/80 to-white p-6">
-          <h3 className="flex items-center gap-2 text-base font-semibold text-gray-900 mb-4">
-            <Activity className="h-4 w-4 text-blue-600" />
+          <h3 className="flex items-center gap-2 text-base font-semibold text-forest-950 mb-4">
+            <Activity className="h-4 w-4 text-forest-500" />
             Current Status
           </h3>
           <div className="space-y-4">
@@ -248,28 +270,36 @@ export default function ProjectOverviewTab({ project, hub, timeline }: Props) {
               if (entry.type === "legacy") {
                 return (
                   <div key={i}>
-                    <span className="text-sm text-gray-400 mb-2 block">as of {entry.weekLabel}</span>
-                    <div className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-h2:mt-4 prose-h2:mb-2 prose-h2:text-base prose-h2:font-semibold prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900">
+                    <span className="text-sm text-forest-300 mb-2 block">as of {entry.weekLabel}</span>
+                    <div className="prose prose-sm max-w-none prose-headings:text-forest-950 prose-h2:mt-4 prose-h2:mb-2 prose-h2:text-base prose-h2:font-semibold prose-p:text-forest-600 prose-li:text-forest-600 prose-strong:text-forest-950">
                       <MarkdownContent>{entry.content}</MarkdownContent>
                     </div>
                   </div>
                 );
               }
               return (
-                <div key={entry.date} className={i > 0 ? "border-t border-blue-100 pt-4" : ""}>
-                  <div className="mb-2 flex items-center gap-2">
-                    <span className="text-sm font-medium text-gray-600">{formatStatusDate(entry.date)}</span>
+                <div key={entry.date} className={i > 0 ? "border-t border-blue-100 dark:border-forest-700 pt-4" : ""}>
+                  <div className="mb-3 flex items-center gap-2">
+                    <span className="text-sm font-medium text-forest-500 dark:text-forest-300">{formatStatusDate(entry.date)}</span>
                   </div>
-                  {entry.items.map((s) => (
-                    <div key={s.id} className="mb-2 last:mb-0">
-                      <div className="flex items-center gap-2 mb-1">
-                        {relevanceBadge(s.relevance)}
-                      </div>
-                      <div className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900">
-                        <MarkdownContent>{s.content}</MarkdownContent>
-                      </div>
-                    </div>
-                  ))}
+                  <div className="space-y-3">
+                    {entry.items.map((s) => {
+                      const title = transcriptTitles.get(s.transcript_id);
+                      return (
+                        <div key={s.id} className="border-l-2 border-blue-300 dark:border-blue-700 pl-4 py-1">
+                          <div className="flex items-center gap-2 mb-1.5">
+                            {title && (
+                              <span className="text-sm font-medium text-forest-800 dark:text-forest-100">{title}</span>
+                            )}
+                            {relevanceBadge(s.relevance)}
+                          </div>
+                          <div className="prose prose-sm max-w-none prose-headings:text-forest-950 dark:prose-headings:text-forest-50 prose-p:text-forest-600 dark:prose-p:text-forest-300 prose-li:text-forest-600 dark:prose-li:text-forest-300 prose-strong:text-forest-950 dark:prose-strong:text-forest-100">
+                            <MarkdownContent>{normaliseContent(s.content)}</MarkdownContent>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               );
             })}
@@ -280,7 +310,7 @@ export default function ProjectOverviewTab({ project, hub, timeline }: Props) {
       {/* Attention Required */}
       {attentionItems.length > 0 && (
         <div className="rounded-lg border border-orange-200 bg-orange-50/50 p-5">
-          <h3 className="flex items-center gap-2 text-base font-semibold text-gray-900 mb-3">
+          <h3 className="flex items-center gap-2 text-base font-semibold text-forest-950 mb-3">
             <AlertTriangle className="h-4 w-4 text-orange-600" />
             Attention Required
           </h3>
@@ -289,7 +319,7 @@ export default function ProjectOverviewTab({ project, hub, timeline }: Props) {
               <div key={i} className="flex items-start gap-2 text-base">
                 <AlertCircle className="h-4 w-4 flex-shrink-0 text-orange-500 mt-0.5" />
                 <div>
-                  <span className="text-gray-900">{item.title}</span>
+                  <span className="text-forest-950">{item.title}</span>
                   {item.severity && (
                     <span className={`ml-2 text-[10px] font-semibold px-1.5 py-0.5 rounded ${
                       item.severity === "CRITICAL" ? "bg-red-100 text-red-700" : "bg-orange-100 text-orange-700"
@@ -304,12 +334,51 @@ export default function ProjectOverviewTab({ project, hub, timeline }: Props) {
         </div>
       )}
 
+      {/* Project Updates */}
+      {hub.project_updates && hub.project_updates.length > 0 && (
+        <div className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800">
+          <div className="border-b border-gray-100 dark:border-forest-700 px-5 py-4 flex items-center justify-between">
+            <h3 className="flex items-center gap-2 text-base font-semibold text-forest-950 dark:text-forest-50">
+              <MessageSquarePlus className="h-4 w-4 text-forest-400" />
+              Recent Updates
+            </h3>
+            <Link
+              href="/updates"
+              className="text-xs text-forest-500 hover:text-forest-700 dark:hover:text-forest-300"
+            >
+              View all
+            </Link>
+          </div>
+          <div className="divide-y divide-gray-50 dark:divide-forest-700">
+            {hub.project_updates.slice(0, 5).map((u) => (
+              <Link
+                key={u.id}
+                href={`/updates/${u.id}`}
+                className="flex items-start gap-3 px-5 py-3 hover:bg-forest-50 dark:hover:bg-forest-700/50 transition-colors"
+              >
+                {u.content_type === "teams_chat" ? (
+                  <MessageSquare className="h-4 w-4 flex-shrink-0 text-blue-400 mt-0.5" />
+                ) : (
+                  <FileText className="h-4 w-4 flex-shrink-0 text-forest-300 mt-0.5" />
+                )}
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm text-forest-900 dark:text-forest-100 truncate">{u.title}</p>
+                  <p className="text-xs text-forest-400 mt-0.5">
+                    {new Date(u.created_at).toLocaleDateString()}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Recent Activity */}
       {recentActivity.length > 0 && (
-        <div className="rounded-lg border border-gray-200 bg-white">
+        <div className="rounded-lg border border-forest-200 bg-white dark:bg-forest-800">
           <div className="border-b border-gray-100 px-5 py-4">
-            <h3 className="flex items-center gap-2 text-base font-semibold text-gray-900">
-              <Clock className="h-4 w-4 text-gray-500" />
+            <h3 className="flex items-center gap-2 text-base font-semibold text-forest-950">
+              <Clock className="h-4 w-4 text-forest-400" />
               Recent Activity
             </h3>
           </div>
@@ -320,15 +389,15 @@ export default function ProjectOverviewTab({ project, hub, timeline }: Props) {
                 <button
                   key={i}
                   onClick={() => navigateToTab(item.tab)}
-                  className="flex w-full items-start gap-3 px-5 py-3 text-left hover:bg-gray-50 transition-colors"
+                  className="flex w-full items-start gap-3 px-5 py-3 text-left hover:bg-forest-50 transition-colors"
                 >
-                  <TypeIcon className="h-4 w-4 flex-shrink-0 text-gray-400 mt-0.5" />
+                  <TypeIcon className="h-4 w-4 flex-shrink-0 text-forest-300 mt-0.5" />
                   <div className="min-w-0 flex-1">
-                    <p className="text-base text-gray-900 truncate">{item.title}</p>
+                    <p className="text-base text-forest-950 truncate">{item.title}</p>
                     <div className="mt-0.5 flex items-center gap-2">
-                      <span className="text-[10px] text-gray-400 capitalize">{item.type}</span>
+                      <span className="text-[10px] text-forest-300 capitalize">{item.type}</span>
                       {item.date && (
-                        <span className="text-[10px] text-gray-400">{item.date}</span>
+                        <span className="text-[10px] text-forest-300">{item.date}</span>
                       )}
                     </div>
                   </div>
