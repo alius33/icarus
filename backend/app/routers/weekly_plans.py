@@ -276,6 +276,53 @@ async def add_action(plan_id: int, body: WeeklyPlanActionCreate, db: AsyncSessio
     if not result.scalar_one_or_none():
         raise NotFoundError("WeeklyPlan", plan_id)
 
+    # --- Duplicate detection ---
+    # Check if an action with the same source already exists in this plan.
+    # This prevents duplicate entries when analysis re-processes transcripts/updates
+    # (e.g. after name corrections that change titles but keep the same source).
+    dupe_filters = [WeeklyPlanAction.weekly_plan_id == plan_id]
+    if body.source_transcript_id:
+        dupe_filters.append(WeeklyPlanAction.source_transcript_id == body.source_transcript_id)
+        dupe_result = await db.execute(
+            select(WeeklyPlanAction).where(*dupe_filters)
+        )
+        existing = dupe_result.scalars().all()
+        if existing:
+            # Same source transcript already has action(s) in this plan — update the first match instead
+            a = existing[0]
+            a.title = body.title
+            a.description = body.description
+            a.priority = body.priority
+            a.owner = body.owner
+            a.category = body.category
+            if body.context is not None:
+                a.context = body.context
+            if body.deliverable_id is not None:
+                a.deliverable_id = body.deliverable_id
+            await db.commit()
+            await db.refresh(a, ["source_transcript", "source_update"])
+            return _action_schema(a)
+    elif body.source_update_id:
+        dupe_filters.append(WeeklyPlanAction.source_update_id == body.source_update_id)
+        dupe_result = await db.execute(
+            select(WeeklyPlanAction).where(*dupe_filters)
+        )
+        existing = dupe_result.scalars().all()
+        if existing:
+            a = existing[0]
+            a.title = body.title
+            a.description = body.description
+            a.priority = body.priority
+            a.owner = body.owner
+            a.category = body.category
+            if body.context is not None:
+                a.context = body.context
+            if body.deliverable_id is not None:
+                a.deliverable_id = body.deliverable_id
+            await db.commit()
+            await db.refresh(a, ["source_transcript", "source_update"])
+            return _action_schema(a)
+
     action = WeeklyPlanAction(
         weekly_plan_id=plan_id,
         category=body.category,
