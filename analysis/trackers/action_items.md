@@ -1058,3 +1058,9 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 694 | 16 Mar | Update Idrees Deen on Gainsight integration progress | Richard | This afternoon (Fri 14 Mar) | project-update: gainsight integration |  |
 | 695 | 16 Mar | Set up requirements call with Chernell and others to scope HD model bulk update feature | Azmain | This week | project-update: bulk update |  |
 | 696 | 16 Mar | Design matrix-based bulk editor UI for HD models x use cases (Ben Brookes concept) | Azmain / Chris | TBD (after requirements call) | project-update: bulk update |  |
+| 697 | 16 Mar | Fix user-ID scoping in Slidey presentation queries — users currently see all content | Richard | Immediate | teams-channel: slidey |  |
+| 698 | 16 Mar | Set up dev/staging/prod environments for Slidey | BenVH / Richard | This week | teams-channel: slidey |  |
+| 699 | 16 Mar | Create release notes structure for Slidey — Ben Brookes requested engineering hygiene for production use | Ben Brookes | This week | teams-channel: slidey |  |
+| 700 | 15 Mar | Resolve HTML output reviewability — Diya couldn't comment on HTML presentation; investigate PDF or annotation-friendly format | Ben Brookes | Next release | teams-channel: slidey |  |
+| 701 | 14 Mar | Complete content/narrative layer implementation in Slidey UI — CONTENT-LAYER.md spec created, needs building | Richard | This week | teams-channel: slidey |  |
+| 702 | 12 Mar | Connect with Amit Gondha on API key for Slidey early testing | Richard | This week | teams-channel: slidey |  |

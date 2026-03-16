@@ -2,7 +2,7 @@
 
 ## What This Is
 
-An analytical workspace **with a full web application** for tracking the Customer Success Gen AI Programme at Moody's Analytics (Insurance division). The programme runs ten projects, active since January 2026. Primary tool: **CLARA** (IRP adoption tracker).
+An analytical workspace **with a full web application** for tracking the Customer Success Gen AI Programme at Moody's Analytics (Insurance division). The programme runs eleven projects, active since January 2026. Primary tool: **CLARA** (IRP adoption tracker).
 
 Two types of work happen here:
 1. **Transcript analysis** — processing meeting transcripts into summaries, weekly reports, and tracker updates (all markdown files, no database needed)
@@ -75,6 +75,7 @@ Full pipeline details are in the `/analyse` and `/analyse-deep` slash commands.
 | PR9 | Program Management | _(no context file yet)_ |
 | PR10 | App Factory | _(no context file yet)_ |
 | PR11 | TSR Enhancements | _(no context file yet)_ |
+| PR12 | Slidey (AI Presentations) | `context/projects/slidey.md` |
 
 Note: "Sales Recon" is NOT a project — it's another team's product that gets mentioned in discussions.
 

@@ -203,6 +203,18 @@ Each thread has a status: **OPEN** (unresolved), **WATCHING** (partially address
 - **Question:** When is Martin ready for the share-out? How does this relate to the exceedance event demo?
 - **Why it matters:** Build in Five is transitioning from internal development to external stakeholder engagement. This is the programme starting to commercialise the work.
 
+### 32. Slidey Data Scoping — Users Can See All Presentations
+- **First raised:** 16 Mar (Teams channel)
+- **Context:** Auth + logout landed 16 Mar (BenVH). But BenVH immediately noticed he could see all presentations — user-ID is not being taken into account in queries. Richard said he would investigate when he gets back. This is a next-order problem after auth hookup: access scoping / per-user filtering.
+- **Question:** When will user-ID filtering be implemented? Is this a query-level fix or does RBAC need deeper wiring?
+- **Why it matters:** Blocks wider rollout of Slidey. Without data scoping, every user sees every presentation — a security and UX problem that prevents sharing the tool beyond the core team.
+
+### 33. Slidey Environment Discipline — No Dev/Staging/Prod
+- **First raised:** 16 Mar (Teams channel)
+- **Context:** Ben Brookes wants to use Slidey on "live stuff" and fix/nudge it simultaneously. Requested dev/staging/prod environments back, asked for a lesson on updating via GitHub without asking for help, and suggested setting up release notes. These signals indicate the product is crossing from lab/demo mode into real-use mode, but engineering hygiene is missing.
+- **Question:** Will environments be set up before wider rollout? Who manages the release process? Is this BenVH's responsibility alongside everything else?
+- **Why it matters:** Without environment separation, every change risks breaking the live product. This is the same pattern that caused problems with CLARA early on (see thread #12).
+
 ---
 
 ## WATCHING

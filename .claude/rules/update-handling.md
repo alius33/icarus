@@ -110,6 +110,7 @@ When the user says "analyse updates" or "analyse my updates":
 | 8  | Program Management |
 | 9  | TSR Enhancements |
 | 10 | App Factory |
+| 11 | Slidey (AI Presentations) |
 
 ## Key Reminders
 

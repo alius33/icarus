@@ -197,6 +197,15 @@ ALL_PROJECTS = [
         "color": "#8B5CF6",
         "keywords": "app factory,phantom agent,advisoryappfactory,moplit",
     },
+    {
+        "name": "Slidey (AI Presentations)",
+        "slug": "slidey",
+        "description": "AI-powered collaborative presentation platform with markdown content layer, RBAC, and agentic extensions",
+        "is_custom": True,
+        "status": "active",
+        "color": "#EC4899",
+        "keywords": "slidey,presentations,slides,ai presentations,deck,storyboard,content layer,narrative",
+    },
 ]
 
 

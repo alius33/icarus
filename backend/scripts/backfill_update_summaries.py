@@ -104,7 +104,7 @@ def main():
             "relevance": relevance,
             "content": content,
         })
-        print(f"  Project {project_id} ← Update {update_id}: {r.status_code}")
+        print(f"  Project {project_id} <- Update {update_id}: {r.status_code}")
         if r.status_code not in (200, 201):
             print(f"    ERROR: {r.text[:200]}")
 
@@ -113,7 +113,7 @@ def main():
         r = requests.patch(f"{BASE}/weekly-plans/actions/{action_id}", json={
             "source_update_id": update_id,
         })
-        print(f"  Action {action_id} → Update {update_id}: {r.status_code}")
+        print(f"  Action {action_id} -> Update {update_id}: {r.status_code}")
         if r.status_code != 200:
             print(f"    ERROR: {r.text[:200]}")
 

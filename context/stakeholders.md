@@ -26,6 +26,7 @@ Last updated: 2026-03-16 (project updates through 16 March processed — gainsig
 - **Strategy:** "Kill CSMs with kindness." Shopping CLARA around internally (e.g., Life MD) to create independent demand.
 - **Week 3 signals:** Built local Portfolio Review prototype overnight in Cursor (21 Jan). First hands-on UX review of dashboard (23 Jan) — identified colour/RAG confusion. Accepted Natalia's pushback on separate Portfolio Review tab gracefully. Framing CSM instruction collaboratively: "Set up a meeting with your account team, fill out the data together." Also blocked on Cursor tokens by 23 Jan.
 - **14 Mar:** On Gainsight charter — demands business SLAs: integration cannot slow migration, cannot split CSMs between two systems, cannot block adoption squads from key info. Also added Samuel Gibson to Build in Five chat.
+- **Slidey role:** Product vision — identified use cases (agentic situations, account plans, charters, climate reports), UX pain points (can't edit text directly on slides), collaboration needs (multiple owners contributing sections). Proposed /data slash command for data analysis + charting. Sent Slidey to Diya (15 Mar) — Diya couldn't comment on HTML output (key product feedback). Driving transition from lab to production use (16 Mar: requesting environments, release notes, GitHub workflow help).
 - **Concern:** Becoming emotionally invested in adoption — may push past stakeholder readiness.
 - **Note:** Name previously misspelled as "Ben Brookes" in early analysis — correct spelling confirmed from Teams as "Ben Brookes."
 
@@ -67,10 +68,10 @@ Last updated: 2026-03-16 (project updates through 16 March processed — gainsig
 
 ### Richard Dosoo — Programme / Operational Owner
 - **Engagement level:** Maximum — but showing signs of exhaustion/disengagement by March.
-- **Role:** Technical bridge between Ben's vision and Azmain's execution. Manages up to Diya, across to Sales Recon, down to dev team.
+- **Role:** Technical bridge between Ben's vision and Azmain's execution. Manages up to Diya, across to Sales Recon, down to dev team. **Slidey architecture lead** — designed the markdown-per-slide content model, RBAC spec, and collaborative storyboard workflow.
 - **Style:** Strategic framing. Repackages messages for different audiences (note: tells Diya a different origin story than the actual one — confirmed 20 Jan).
 - **Week 3 signals:** Patient and instructive with Azmain during debugging (19 Jan). Personally paid for Azmain's Claude Code Max subscription (23 Jan). Shifted from "move fast" to "don't break things."
-- **March signals:** Was briefly considering other roles in early March but has since committed to the programme. Energy high from mid-March onwards -- driving cross-OU expansion, Build in Five cascade, and Idris onboarding.
+- **March signals:** Was briefly considering other roles in early March but has since committed to the programme. Energy high from mid-March onwards -- driving cross-OU expansion, Build in Five cascade, Idris onboarding, and Slidey architecture.
 - **Risk:** Carries significant institutional knowledge — programme strategy, stakeholder relationships, Diya management. Knowledge documentation should continue as good practice.
 
 ## Tier 3 — Technical & Delivery
@@ -88,6 +89,7 @@ Last updated: 2026-03-16 (project updates through 16 March processed — gainsig
 - **Asset:** Has a personal patented CICD orchestration project (Phantom Agent). Thinking about how to make deployment "idiot proof."
 - **March signals (CONCERNING):** Admitted his recent absence was not illness but being worn down by Nikhil Koli taking credit for his App Factory work, renaming it, and presenting his architecture as his own. Morale/retention risk. Also flagged on 3 Mar that four other apps are in the App Factory pipeline — he's under-resourced.
 - **11 Mar (CRITICAL):** Conflict with Nikhil Koli at peak. BenVH cancelled Nikhil Koli's meetings, stopped responding to his messages, described daily boundary violations as "getting my blood boiling" and "taking too much of my mental acuity." Pivoted entire App Factory to MCP server architecture — both technically correct and strategically designed to make Nikhil Koli's UI work irrelevant. Channelling anger productively but retention risk acute. Asia-Pac teams (Singapore, Japan, Australia) interested in App Factory — adds pressure and validation simultaneously.
+- **Slidey role:** Auth/infrastructure builder — implemented auth + logout (landed 16 Mar), RBAC wiring, late-night debugging. Also working on MCP server integration.
 
 ### Martin Davies — Developer (12-week assignment)
 - **Focus:** Build in Five workstream
@@ -143,6 +145,7 @@ Last updated: 2026-03-16 (project updates through 16 March processed — gainsig
 | Sam (grad) | Graduate (New York) | Arriving Q2 2026 for CLARA maintenance. Interviewed and chosen by Azmain specifically for AI work. Different person from Samuel Gibson. |
 | Elliot | Former member of Nikhil Koli's team | Brought into the AI programme (specific project TBD). Nikhil requesting a replacement for him through the grad rotation. |
 | Chernell | CSM / HD models stakeholder | New 16 Mar. Involved in HD model data requirements for CLARA. Azmain planning a requirements call with Chernell and others to scope the bulk update feature for use cases and HD models. |
+| Amit Gondha | Slidey early tester | New 11 Mar. Invited by Ben Brookes for early Slidey testing. API key coordination with Richard ongoing (12 Mar). First external user outside the core build team. |
 | DIA | Cross-OU coordination | Manages customer engagement across segments. Interested in Moody's-wide retention dashboards. Idrees looped her into retention dashboard thread (11 Mar). Key person for cross-OU pressure on Charlotte. |
 
 ## Dynamics to Watch
@@ -162,7 +165,7 @@ Last updated: 2026-03-16 (project updates through 16 March processed — gainsig
 13. **Bedrock cost trajectory (10 March)** — $1,163 in two weeks, on pace for $10K/month. No cost attribution. Tags broken. New frontier of the same budget problem.
 14. **App Factory MCP server pivot (NEW - 11 March)** — BenVH redefining App Factory as a middleware MCP server. Architecturally sound and addresses Asia-Pac demand, but adds more to BenVH's workload while he's already in crisis.
 15. **Salesforce integration design crystallising (11 March)** — One-way read, Cases/CaseFeed only, four consumer groups (Bernard, Courtney, Kevin, CLARA). Kathryn Palkovics fully engaged. Tomorrow's Gainsight meeting is the next milestone.
-16. **Slidey convergence (NEW - 11 March)** — Multiple teams (Richard, Juliet, Richard's manager) building PowerPoint generators independently. Cross-team meeting planned for next Tuesday. Could become App Factory's most widely adopted tool.
+16. **Slidey convergence and rapid development (11-16 March, ESCALATING)** — Multiple teams (Richard, Juliet, Richard's manager) building PowerPoint generators independently. Cross-team meeting planned. By 16 Mar: auth + RBAC landed, markdown content layer designed, collaborative workflow specified. Data scoping bug (users see all presentations) is immediate blocker. Ben Brookes requesting production discipline (environments, release notes). Diya already receiving Slidey outputs — product is past demo stage. Now a Pillar 3 deliverable for the 12-week plan.
 17. **Gainsight March 30 hard launch (11 March)** — Confirmed by Kathryn Palkovics. No IRP data expected at launch, but "does Clara sync?" questions will start immediately after.
 18. **Kathryn Palkovics (Catherine) COE political threat (12 March, ESCALATING 14 March)** — Kathryn's Centre of Excellence mandate (digital engagement, enablement, Gainsight/SFDC retirement) overlaps directly with AI programme. Organised Gainsight meeting as blindside. Full team (Azmain, Richard, Ben Brookes, BenVH) furious. Diana Kazakova-Ivanova advising tactically. Multiple interventions planned: Diana Kazakova-Ivanova→Natalia, Richard→Diya. **14 Mar: Kathryn now asserting COE authority on the Gainsight charter itself — requesting to be added to project team, claiming COE handles business reqs for CSMs. Pushing back on Richard's frustration, framing the initial meeting as "just exploring." The charter process is becoming a battleground for who controls the integration.**
 19. **CLARA entering maintenance mode (12 March)** — Natalia Plant established fortnightly release governance. Two grads arriving April 7 for dedicated maintenance. Ben Brookes restricted to sandbox. This is a programme maturation signal.
