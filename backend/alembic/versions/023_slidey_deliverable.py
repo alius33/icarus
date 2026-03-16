@@ -27,6 +27,22 @@ def upgrade() -> None:
     else:
         project_id = str(row[0])
 
+    # Fix sequence counter — migration 018 inserted with explicit IDs,
+    # leaving the serial sequence behind. Reset to max(id) so next
+    # auto-assigned ID doesn't collide.
+    conn.execute(
+        sa.text(
+            "SELECT setval('programme_deliverables_id_seq', "
+            "(SELECT COALESCE(MAX(id), 0) FROM programme_deliverables))"
+        )
+    )
+    conn.execute(
+        sa.text(
+            "SELECT setval('deliverable_milestones_id_seq', "
+            "(SELECT COALESCE(MAX(id), 0) FROM deliverable_milestones))"
+        )
+    )
+
     # Insert Pillar 3 deliverable for Slidey
     conn.execute(
         sa.text(f"""
