@@ -1,6 +1,6 @@
 # Stakeholder Map
 
-Last updated: 2026-03-16 (project updates through 16 March processed — gainsight integration charter, grad rotation, Build in Five expansion, Sam Gibson onboarding)
+Last updated: 2026-03-16 (project updates through 16 March processed — gainsight integration charter, grad rotation, Build in Five expansion, Sam Gibson onboarding, CLARA bulk update feature)
 
 ## Tier 1 — Decision Makers & Sponsors
 
@@ -142,6 +142,7 @@ Last updated: 2026-03-16 (project updates through 16 March processed — gainsig
 | Alvin | Graduate (London) | Arriving Q2 2026 for CLARA maintenance. Interviewed and chosen by Azmain specifically for AI work. |
 | Sam (grad) | Graduate (New York) | Arriving Q2 2026 for CLARA maintenance. Interviewed and chosen by Azmain specifically for AI work. Different person from Samuel Gibson. |
 | Elliot | Former member of Nikhil Koli's team | Brought into the AI programme (specific project TBD). Nikhil requesting a replacement for him through the grad rotation. |
+| Chernell | CSM / HD models stakeholder | New 16 Mar. Involved in HD model data requirements for CLARA. Azmain planning a requirements call with Chernell and others to scope the bulk update feature for use cases and HD models. |
 | DIA | Cross-OU coordination | Manages customer engagement across segments. Interested in Moody's-wide retention dashboards. Idrees looped her into retention dashboard thread (11 Mar). Key person for cross-OU pressure on Charlotte. |
 
 ## Dynamics to Watch

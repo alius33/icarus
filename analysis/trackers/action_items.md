@@ -1056,3 +1056,5 @@ Items are grouped by status. [C] = commitment, [D] = decision follow-up.
 | 692 | 16 Mar | Clarify with Emma Jaggs that Azmain's 2 grads (Alvin, Sam) are separate from Nikhil's Elliot replacement | Richard / Azmain | Immediate | project-update: grads rotation |  |
 | 693 | 16 Mar | Confirm which AI programme project Elliot was brought into | Azmain | TBD | project-update: grads rotation |  |
 | 694 | 16 Mar | Update Idrees Deen on Gainsight integration progress | Richard | This afternoon (Fri 14 Mar) | project-update: gainsight integration |  |
+| 695 | 16 Mar | Set up requirements call with Chernell and others to scope HD model bulk update feature | Azmain | This week | project-update: bulk update |  |
+| 696 | 16 Mar | Design matrix-based bulk editor UI for HD models x use cases (Ben Brookes concept) | Azmain / Chris | TBD (after requirements call) | project-update: bulk update |  |
