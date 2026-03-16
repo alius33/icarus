@@ -336,6 +336,51 @@ async def import_transcripts(
     return stats
 
 
+async def _merge_stakeholder_duplicates(session: AsyncSession, verbose: bool):
+    """One-time cleanup: merge stakeholder records that are duplicates due to name corrections.
+
+    When a name is corrected in the markdown (e.g. 'Ben Brooks' -> 'Ben Brookes'),
+    the import creates a new record instead of updating the old one. This function
+    merges the old record's transcript_mentions into the new one and deletes the old.
+    """
+    # Map of old_name -> correct_name (the correct one should exist in the DB)
+    NAME_CORRECTIONS = {
+        "Ben Brooks": "Ben Brookes",
+        "Natalia (Plant)": "Natalia Plant",
+    }
+
+    for old_name, correct_name in NAME_CORRECTIONS.items():
+        old_result = await session.execute(
+            select(Stakeholder).where(Stakeholder.name == old_name)
+        )
+        old_sh = old_result.scalar_one_or_none()
+        if not old_sh:
+            continue  # Already cleaned up
+
+        new_result = await session.execute(
+            select(Stakeholder).where(Stakeholder.name == correct_name)
+        )
+        new_sh = new_result.scalar_one_or_none()
+        if not new_sh:
+            # Correct name doesn't exist yet — just rename the old record
+            old_sh.name = correct_name
+            _log(f"  Renamed stakeholder '{old_name}' -> '{correct_name}'", verbose)
+            continue
+
+        # Both exist — merge mentions from old into new, then delete old
+        await session.execute(
+            text("UPDATE transcript_mentions SET stakeholder_id = :new_id WHERE stakeholder_id = :old_id"),
+            {"new_id": new_sh.id, "old_id": old_sh.id},
+        )
+        await session.execute(
+            text("DELETE FROM stakeholders WHERE id = :old_id"),
+            {"old_id": old_sh.id},
+        )
+        _log(f"  Merged stakeholder '{old_name}' (id={old_sh.id}) into '{correct_name}' (id={new_sh.id})", verbose)
+
+    await session.commit()
+
+
 async def import_stakeholders(
     session: AsyncSession, data_root: Path, verbose: bool
 ) -> dict:
@@ -346,6 +391,9 @@ async def import_stakeholders(
     if not filepath.exists():
         _log("stakeholders.md not found, skipping.", verbose)
         return stats
+
+    # Clean up any duplicate stakeholders from prior name corrections
+    await _merge_stakeholder_duplicates(session, verbose)
 
     try:
         stakeholder_list = parse_stakeholders(filepath)
