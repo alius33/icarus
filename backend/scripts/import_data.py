@@ -2043,7 +2043,7 @@ async def seed_weekly_plans(session: AsyncSession, verbose: bool) -> dict:
     any plans that don't already exist (matched by week_number).
     Idempotent: skips plans that already exist for a given week.
     """
-    stats = {"inserted": 0, "skipped": 0, "errors": 0}
+    stats = {"inserted": 0, "updated": 0, "skipped": 0, "errors": 0}
     seed_file = Path(__file__).resolve().parent / "seed_data" / "weekly_plans.json"
 
     if not seed_file.exists():
@@ -2074,7 +2074,7 @@ async def seed_weekly_plans(session: AsyncSession, verbose: bool) -> dict:
         )
         existing_plan = existing.scalar_one_or_none()
         if existing_plan:
-            # Update summary fields if they differ (allows reformatting)
+            # Update summary fields and actions if they differ
             try:
                 updated = False
                 for field in ("deliverable_progress_summary", "programme_actions_summary", "status"):
@@ -2082,9 +2082,58 @@ async def seed_weekly_plans(session: AsyncSession, verbose: bool) -> dict:
                     if new_val and getattr(existing_plan, field, None) != new_val:
                         setattr(existing_plan, field, new_val)
                         updated = True
+
+                # Update existing actions (match by title within plan)
+                actions_data = plan_data.get("actions", [])
+                if actions_data:
+                    existing_actions_result = await session.execute(
+                        select(WeeklyPlanAction).where(
+                            WeeklyPlanAction.weekly_plan_id == existing_plan.id
+                        )
+                    )
+                    existing_actions = {
+                        a.title: a for a in existing_actions_result.scalars().all()
+                    }
+                    action_fields = (
+                        "description", "priority", "owner", "status",
+                        "deliverable_id", "position", "is_ai_generated",
+                        "carried_from_week", "source_transcript_id", "context",
+                    )
+                    for i, action_data in enumerate(actions_data):
+                        title = action_data["title"]
+                        if title in existing_actions:
+                            # Update existing action fields
+                            action = existing_actions[title]
+                            for field in action_fields:
+                                new_val = action_data.get(field)
+                                if field == "position" and new_val is None:
+                                    new_val = i
+                                if new_val is not None and getattr(action, field) != new_val:
+                                    setattr(action, field, new_val)
+                                    updated = True
+                        else:
+                            # New action — insert it
+                            action = WeeklyPlanAction(
+                                weekly_plan_id=existing_plan.id,
+                                category=action_data["category"],
+                                title=title,
+                                description=action_data.get("description"),
+                                priority=action_data.get("priority", "MEDIUM"),
+                                owner=action_data.get("owner"),
+                                status=action_data.get("status", "PENDING"),
+                                deliverable_id=action_data.get("deliverable_id"),
+                                position=action_data.get("position", i),
+                                is_ai_generated=action_data.get("is_ai_generated", True),
+                                carried_from_week=action_data.get("carried_from_week"),
+                                source_transcript_id=action_data.get("source_transcript_id"),
+                                context=action_data.get("context"),
+                            )
+                            session.add(action)
+                            updated = True
+
                 if updated:
                     await session.commit()
-                    _log(f"Weekly plan for week {week_num} updated (summary fields).", verbose)
+                    _log(f"Weekly plan for week {week_num} updated (summary + actions).", verbose)
                     stats["updated"] += 1
                 else:
                     _log(f"Weekly plan for week {week_num} already exists, skipping.", verbose)
