@@ -25,7 +25,6 @@ import {
   MessageSquarePlus,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import ThemeToggle from "@/components/ThemeToggle";
 import { useSidebarState } from "@/lib/hooks/useSidebarState";
 
 interface NavItem {
@@ -283,9 +282,8 @@ export default function Sidebar() {
         </nav>
 
         {/* Footer */}
-        <div className="border-t border-forest-700 px-6 py-4 flex items-center justify-between">
+        <div className="border-t border-forest-700 px-6 py-4">
           <p className="text-sm text-forest-300">Icarus v1.0</p>
-          <ThemeToggle />
         </div>
       </aside>
     </>

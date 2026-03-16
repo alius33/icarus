@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 import typography from "@tailwindcss/typography";
 
 const config: Config = {
-  darkMode: "class",
+  darkMode: "class",  // kept as "class" so dark: prefixes are inert (no .dark class is ever added)
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
