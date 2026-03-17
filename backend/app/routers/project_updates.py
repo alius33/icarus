@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, Query
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import select, func, delete
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -176,6 +176,24 @@ async def update_project_update(
     if body.title is not None:
         u.title = body.title
     if body.content is not None:
+        # Guard: reject content updates that are dramatically shorter than the
+        # original (likely an accidental overwrite from analysis workflows).
+        # A genuine replacement would be similar in length or explicitly forced.
+        existing_len = len(u.content or "")
+        new_len = len(body.content)
+        if existing_len > 500 and new_len < existing_len * 0.25:
+            raise HTTPException(
+                status_code=422,
+                detail=(
+                    f"Content update rejected: new content ({new_len} chars) is less than "
+                    f"25% of existing content ({existing_len} chars). This looks like an "
+                    f"accidental overwrite. To update only the summary, omit the content "
+                    f"field from the PATCH payload."
+                ),
+            )
+        # Always preserve the original content in raw_content before overwriting
+        if u.raw_content is None and u.content:
+            u.raw_content = u.content
         ct = body.content_type or u.content_type
         if ct == "teams_chat" or detect_teams_chat(body.content):
             u.content_type = "teams_chat"
@@ -183,7 +201,6 @@ async def update_project_update(
             u.content = parse_teams_chat(body.content)
         else:
             u.content = body.content
-            u.raw_content = None
             if body.content_type:
                 u.content_type = body.content_type
     elif body.content_type is not None:

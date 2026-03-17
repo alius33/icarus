@@ -31,8 +31,10 @@ When the user says "analyse updates" or "analyse my updates":
 ### Phase 2b: Generate Update Summaries
 
 5b. **Write an analytical summary** for each update (same quality as transcript summaries):
-    - Structured markdown, 5-10 bullet points covering: key decisions, actions, stakeholder dynamics, implications
+    - Structured markdown with sections: trajectory, key decisions, engineering progress, blockers, people dynamics, strategic implications
+    - For long updates (>2000 chars), the summary should be 3000-6000 chars — proportional to the detail in the source
     - Store via `PATCH /api/project-updates/{id}` with `{summary: "<markdown>"}`
+    - **CRITICAL: The PATCH payload MUST contain ONLY the `summary` field. NEVER include `content` in the PATCH payload — this will overwrite the original update text and destroy it. The backend has a length guard but do not rely on it.**
     - This summary is displayed in "Current Status" on project pages and as context in weekly plan actions
     - Do NOT use the raw update text — write an analytical summary like you would for a transcript
 
@@ -114,6 +116,7 @@ When the user says "analyse updates" or "analyse my updates":
 
 ## Key Reminders
 
+- **NEVER include `content` in a PATCH payload** — only use `summary`, `title`, or `project_ids`. Including `content` will overwrite the original update text. The backend rejects overwrites <25% of original length, but do not test this.
 - Updates are stored in the database only — they do NOT create files in `Transcripts/`
 - The `content_type` field indicates whether it's a `note` (user's own context) or `teams_chat` (pasted from Teams)
 - Teams chats have timestamps embedded in the messages — use these for chronological ordering
