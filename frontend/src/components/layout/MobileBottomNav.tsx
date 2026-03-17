@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
-  FolderKanban,
   CheckSquare,
   Menu,
 } from "lucide-react";
@@ -13,7 +12,6 @@ import { useSidebarState } from "@/lib/hooks/useSidebarState";
 
 const tabs = [
   { label: "Dashboard", href: "/", icon: LayoutDashboard },
-  { label: "Projects", href: "/projects", icon: FolderKanban },
   { label: "Tasks", href: "/tasks", icon: CheckSquare },
 ] as const;
 

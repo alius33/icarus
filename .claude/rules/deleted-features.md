@@ -7,6 +7,7 @@ globs: frontend/src/**
 These pages were intentionally removed. Do not recreate routes, components, or navigation entries for them:
 - `/contradictions`, `/dependencies`, `/influence-graph`, `/meeting-scores`
 - `/resources`, `/risks`, `/scope`, `/topic-evolution`, `/workstreams`
+- `/projects` (Project Hub list page) — projects are now shown on the Dashboard via ProgrammePulse. Project detail pages (`/projects/[id]`) still exist.
 
 These backend models/routers were also removed:
 - `Workstream` model and `workstreams` router — replaced by the Project system (PR1-PR11)

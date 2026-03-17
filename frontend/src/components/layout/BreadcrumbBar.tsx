@@ -15,7 +15,7 @@ const routeMap: Record<string, string> = {
   "/analysis": "Analysis",
   "/analysis/summaries": "Summaries",
   "/analysis/weekly": "Weekly Reports",
-  "/projects": "Project Hub",
+  "/projects": "Projects",
   "/stakeholders": "Stakeholders",
   "/decisions": "Decisions",
   "/action-items": "Actions",

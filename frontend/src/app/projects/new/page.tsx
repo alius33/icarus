@@ -53,10 +53,10 @@ export default function NewProjectPage() {
   return (
     <div className="space-y-6">
       <Link
-        href="/projects"
+        href="/"
         className="inline-block text-base text-forest-500 hover:text-blue-800"
       >
-        &larr; Back to Projects
+        &larr; Back to Dashboard
       </Link>
 
       <div className="mx-auto max-w-lg">
@@ -164,7 +164,7 @@ export default function NewProjectPage() {
               {submitting ? "Creating..." : "Create Project"}
             </button>
             <Link
-              href="/projects"
+              href="/"
               className="text-base text-forest-400 hover:text-forest-600"
             >
               Cancel

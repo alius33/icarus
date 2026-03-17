@@ -41,10 +41,10 @@ export default async function ProjectHubPage({
     return (
       <div className="space-y-6">
         <Link
-          href="/projects"
+          href="/"
           className="text-base text-forest-500 hover:text-blue-800"
         >
-          &larr; Back to Projects
+          &larr; Back to Dashboard
         </Link>
         <div className="rounded-lg border border-red-200 bg-red-50 p-6">
           <p className="text-base text-red-700">
@@ -69,10 +69,10 @@ export default async function ProjectHubPage({
       {/* Back link */}
       <div className="mb-4">
         <Link
-          href="/projects"
+          href="/"
           className="text-base text-forest-500 hover:text-blue-800"
         >
-          &larr; Back to Projects
+          &larr; Back to Dashboard
         </Link>
       </div>
 
