@@ -15,6 +15,7 @@ import hashlib
 import json
 import os
 import re
+from difflib import SequenceMatcher
 import sys
 import traceback
 from datetime import date, datetime, timezone
@@ -2160,7 +2161,7 @@ async def seed_weekly_plans(session: AsyncSession, verbose: bool) -> dict:
                         setattr(existing_plan, field, new_val)
                         updated = True
 
-                # Update existing actions (match by title within plan)
+                # Update existing actions (match by title similarity within plan)
                 actions_data = plan_data.get("actions", [])
                 if actions_data:
                     existing_actions_result = await session.execute(
@@ -2168,26 +2169,59 @@ async def seed_weekly_plans(session: AsyncSession, verbose: bool) -> dict:
                             WeeklyPlanAction.weekly_plan_id == existing_plan.id
                         )
                     )
-                    existing_actions = {
-                        a.title: a for a in existing_actions_result.scalars().all()
-                    }
+                    existing_actions_list = list(existing_actions_result.scalars().all())
                     action_fields = (
                         "description", "priority", "owner", "status",
                         "deliverable_id", "position", "is_ai_generated",
                         "carried_from_week", "source_transcript_id",
                         "source_update_id", "context",
                     )
+
+                    def _norm_title(t: str) -> str:
+                        t = t.lower().strip()
+                        t = re.sub(r"\s+", " ", t)
+                        return t
+
+                    def _find_match(title: str, category: str, existing: list):
+                        """Find best matching action by title similarity."""
+                        norm = _norm_title(title)
+                        best_match = None
+                        best_sim = 0.0
+                        for action in existing:
+                            if action.category != category:
+                                continue
+                            sim = SequenceMatcher(
+                                None, norm, _norm_title(action.title)
+                            ).ratio()
+                            if sim > best_sim:
+                                best_sim = sim
+                                best_match = action
+                        if best_sim >= 0.70:
+                            return best_match
+                        return None
+
+                    matched_ids = set()
                     for i, action_data in enumerate(actions_data):
                         title = action_data["title"]
-                        if title in existing_actions:
-                            # Update existing action fields
-                            action = existing_actions[title]
+                        match = _find_match(
+                            title, action_data["category"], existing_actions_list
+                        )
+                        if match:
+                            matched_ids.add(match.id)
+                            # Update title (may have name corrections)
+                            if match.title != title:
+                                match.title = title
+                                updated = True
+                            # Update category
+                            if match.category != action_data["category"]:
+                                match.category = action_data["category"]
+                                updated = True
                             for field in action_fields:
                                 new_val = action_data.get(field)
                                 if field == "position" and new_val is None:
                                     new_val = i
-                                if new_val is not None and getattr(action, field) != new_val:
-                                    setattr(action, field, new_val)
+                                if new_val is not None and getattr(match, field) != new_val:
+                                    setattr(match, field, new_val)
                                     updated = True
                         else:
                             # New action — insert it
@@ -2208,6 +2242,18 @@ async def seed_weekly_plans(session: AsyncSession, verbose: bool) -> dict:
                                 context=action_data.get("context"),
                             )
                             session.add(action)
+                            updated = True
+
+                    # Remove seed-originated orphans not in the seed file
+                    # (duplicates from previous versions with wrong names)
+                    # Only remove actions that are ai_generated and have no
+                    # source_update_id (i.e. came from seed, not from update
+                    # analysis workflow)
+                    for action in existing_actions_list:
+                        if (action.id not in matched_ids
+                                and action.is_ai_generated
+                                and not action.source_update_id):
+                            await session.delete(action)
                             updated = True
 
                 if updated:
