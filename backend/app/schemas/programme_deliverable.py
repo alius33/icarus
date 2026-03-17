@@ -69,6 +69,7 @@ class ProgrammeDeliverableBase(BaseModel):
 
 
 class ProgrammeDeliverableUpdate(BaseModel):
+    project_id: int | None = None
     rag_status: str | None = None
     progress_percent: int | None = None
     notes: str | None = None

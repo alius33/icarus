@@ -17,14 +17,21 @@ import {
 // Programme Management identified by name (IDs differ across environments)
 const PM_NAME = "Program Management";
 
-// Fallback: map project names to pillar numbers when deliverable.project_id is null
+// Canonical project-to-pillar mapping — single source of truth for categorisation.
+// Always used (not just fallback) so the dashboard stays correct regardless of
+// whether deliverables have project_id set in the database.
 const PILLAR_NAME_MAP: Record<string, number> = {
+  // Pillar 1: IRP Portfolio Governance
   "CLARA (IRP Adoption Tracker)": 1,
+  // Pillar 2: Platform-Embedded Customer Intelligence
   "Customer Success Agent": 2,
   "Navigator L1 Automation": 2,
+  // Pillar 3: Internal Productivity & Revenue Acceleration
   "Build in Five": 3,
   "App Factory": 3,
   "Slidey (AI Presentations)": 3,
+  "Training & Enablement": 3,
+  "Cross OU Collaboration": 3,
 };
 
 function TrendIcon({ trend }: { trend: "up" | "down" | "flat" }) {
@@ -226,7 +233,13 @@ export default function ProgrammePulse({ projects }: Props) {
 
   const pillars = deliverableData?.pillars || [];
 
-  // Derive priority project IDs from deliverable data (any project linked to a deliverable)
+  // Priority = any project in PILLAR_NAME_MAP (always used, not just fallback).
+  // Also merge any deliverable-linked project IDs for completeness.
+  const nameMapIds = new Set(
+    projects
+      .filter((p) => p.name in PILLAR_NAME_MAP)
+      .map((p) => p.id)
+  );
   const deliverableLinkedIds = new Set(
     pillars.flatMap((pillar) =>
       pillar.deliverables
@@ -234,16 +247,7 @@ export default function ProgrammePulse({ projects }: Props) {
         .filter((id): id is number => id !== null)
     )
   );
-
-  // If deliverables have no project_id links, fall back to name-based mapping
-  const hasPillarLinks = deliverableLinkedIds.size > 0;
-  const priorityIds = hasPillarLinks
-    ? deliverableLinkedIds
-    : new Set(
-        projects
-          .filter((p) => p.name in PILLAR_NAME_MAP)
-          .map((p) => p.id)
-      );
+  const priorityIds = new Set([...nameMapIds, ...deliverableLinkedIds]);
 
   const pmProject = projects.find((p) => p.name === PM_NAME);
   const pmId = pmProject?.id;
@@ -255,24 +259,23 @@ export default function ProgrammePulse({ projects }: Props) {
     (p) => !priorityIds.has(p.id) && p.id !== pmId
   );
 
-  // Group priority projects by pillar
+  // Group priority projects by pillar — always use PILLAR_NAME_MAP,
+  // merge with any deliverable project_id links for completeness
   const pillarProjectMap = new Map<number, DashboardProjectCard[]>();
   for (const pillar of pillars) {
-    let pillarProjectIds: Set<number>;
-    if (hasPillarLinks) {
-      pillarProjectIds = new Set(
-        pillar.deliverables
-          .map((d) => d.project_id)
-          .filter((id): id is number => id !== null)
-      );
-    } else {
-      // Fallback: match projects by name to pillar number
-      pillarProjectIds = new Set(
-        projects
-          .filter((p) => PILLAR_NAME_MAP[p.name] === pillar.pillar)
-          .map((p) => p.id)
-      );
-    }
+    // Projects matched by name
+    const nameMatched = new Set(
+      projects
+        .filter((p) => PILLAR_NAME_MAP[p.name] === pillar.pillar)
+        .map((p) => p.id)
+    );
+    // Projects linked via deliverables
+    const deliverableMatched = new Set(
+      pillar.deliverables
+        .map((d) => d.project_id)
+        .filter((id): id is number => id !== null)
+    );
+    const pillarProjectIds = new Set([...nameMatched, ...deliverableMatched]);
     const cards = priorityProjects.filter((p) => pillarProjectIds.has(p.id));
     if (cards.length > 0) {
       pillarProjectMap.set(pillar.pillar, cards);

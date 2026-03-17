@@ -191,6 +191,8 @@ async def update_deliverable(
     if not d:
         raise NotFoundError("ProgrammeDeliverable", deliverable_id)
 
+    if body.project_id is not None:
+        d.project_id = body.project_id
     if body.rag_status is not None:
         d.rag_status = body.rag_status
     if body.progress_percent is not None:
