@@ -247,7 +247,7 @@ export default function ProgrammePulse({ projects }: Props) {
         .filter((id): id is number => id !== null)
     )
   );
-  const priorityIds = new Set([...nameMapIds, ...deliverableLinkedIds]);
+  const priorityIds = new Set([...Array.from(nameMapIds), ...Array.from(deliverableLinkedIds)]);
 
   const pmProject = projects.find((p) => p.name === PM_NAME);
   const pmId = pmProject?.id;
@@ -275,7 +275,7 @@ export default function ProgrammePulse({ projects }: Props) {
         .map((d) => d.project_id)
         .filter((id): id is number => id !== null)
     );
-    const pillarProjectIds = new Set([...nameMatched, ...deliverableMatched]);
+    const pillarProjectIds = new Set([...Array.from(nameMatched), ...Array.from(deliverableMatched)]);
     const cards = priorityProjects.filter((p) => pillarProjectIds.has(p.id));
     if (cards.length > 0) {
       pillarProjectMap.set(pillar.pillar, cards);
