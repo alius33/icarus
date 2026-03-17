@@ -17,6 +17,8 @@ class DashboardProjectCard(BaseModel):
     decision_count: int = 0
     last_activity_date: str | None = None
     trend: Literal["up", "down", "flat"] = "flat"
+    latest_summary: str | None = None
+    latest_summary_date: str | None = None
 
 
 # -- Activity Feed ------------------------------------------------------------

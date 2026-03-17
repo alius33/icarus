@@ -15,7 +15,6 @@ import {
   BookOpen,
   Search,
   Upload,
-  FolderKanban,
   Handshake,
   Trophy,
   Globe,
@@ -58,6 +57,11 @@ const navSections: NavSection[] = [
         href: "/analysis/weekly",
         icon: <CalendarDays className="h-4 w-4" />,
       },
+      {
+        label: "Updates",
+        href: "/updates",
+        icon: <MessageSquarePlus className="h-4 w-4" />,
+      },
     ],
   },
   {
@@ -72,11 +76,6 @@ const navSections: NavSection[] = [
         label: "Upload",
         href: "/upload",
         icon: <Upload className="h-4 w-4" />,
-      },
-      {
-        label: "Updates",
-        href: "/updates",
-        icon: <MessageSquarePlus className="h-4 w-4" />,
       },
       {
         label: "Speaker Review",
@@ -99,21 +98,6 @@ const navSections: NavSection[] = [
             icon: <CalendarDays className="h-4 w-4" />,
           },
         ],
-      },
-    ],
-  },
-  {
-    title: "Programme",
-    items: [
-      {
-        label: "Project Hub",
-        href: "/projects",
-        icon: <FolderKanban className="h-4 w-4" />,
-      },
-      {
-        label: "Stakeholders",
-        href: "/stakeholders",
-        icon: <Users className="h-4 w-4" />,
       },
     ],
   },
@@ -144,6 +128,11 @@ const navSections: NavSection[] = [
         label: "My Items",
         href: "/my-items",
         icon: <User className="h-4 w-4" />,
+      },
+      {
+        label: "Stakeholders",
+        href: "/stakeholders",
+        icon: <Users className="h-4 w-4" />,
       },
     ],
   },

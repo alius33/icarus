@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, Suspense } from "react";
+import Link from "next/link";
 import { DashboardProvider, useDashboardDispatch } from "./DashboardContext";
 import { useDashboardData } from "./hooks/useDashboardData";
 import ProgrammePulse from "./ProgrammePulse";
-import DiyaDeliverablesSummary from "./DiyaDeliverablesSummary";
 import type { DashboardDataV2 } from "@/lib/types";
+import { Plus } from "lucide-react";
 
 interface Props {
   initialData: DashboardDataV2;
@@ -25,16 +26,23 @@ function DashboardInner({ initialData }: Props) {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold text-forest-950">Programme Dashboard</h1>
-        <p className="text-base text-forest-400 mt-1">
-          {d.projects.length} projects &middot; {d.open_actions} open actions &middot; {d.total_transcripts} transcripts
-        </p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-2xl font-bold text-forest-950">Programme Dashboard</h1>
+          <p className="text-base text-forest-400 mt-1">
+            {d.projects.length} projects &middot; {d.open_actions} open actions &middot; {d.total_transcripts} transcripts
+          </p>
+        </div>
+        <Link
+          href="/projects/new"
+          className="flex items-center gap-1.5 rounded-lg border border-forest-200 bg-white px-3 py-2 text-sm font-medium text-forest-700 hover:bg-forest-50 transition-colors"
+        >
+          <Plus className="h-4 w-4" />
+          New Project
+        </Link>
       </div>
 
       <ProgrammePulse projects={d.projects} />
-
-      <DiyaDeliverablesSummary />
     </div>
   );
 }

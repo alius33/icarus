@@ -17,6 +17,7 @@ from app.models.project_link import ProjectLink
 from app.models.resource_allocation import ResourceAllocation
 from app.models.scope_item import ScopeItem
 from app.models.stakeholder import Stakeholder
+from app.models.project_summary import ProjectSummary
 from app.models.transcript import Transcript
 from app.models.transcript_mention import TranscriptMention
 from app.schemas.dashboard import (
@@ -401,6 +402,35 @@ async def get_dashboard(
     )
     prev_map: dict[int, int] = dict(prev_trend_result.all())
 
+    # 2e. Latest ProjectSummary per project — one query using DISTINCT ON
+    latest_summary_sub = (
+        select(
+            ProjectSummary.project_id,
+            ProjectSummary.content,
+            ProjectSummary.date,
+        )
+        .where(ProjectSummary.project_id.in_(project_ids))
+        .order_by(ProjectSummary.project_id, desc(ProjectSummary.date), desc(ProjectSummary.id))
+        .distinct(ProjectSummary.project_id)
+    )
+    try:
+        latest_summary_result = await db.execute(latest_summary_sub)
+        latest_summary_map: dict[int, tuple[str, date | None]] = {
+            row[0]: (row[1], row[2]) for row in latest_summary_result.all()
+        }
+    except Exception:
+        # DISTINCT ON is PostgreSQL-only; fallback for SQLite (tests)
+        latest_summary_map = {}
+        for pid in project_ids:
+            row = (await db.execute(
+                select(ProjectSummary.content, ProjectSummary.date)
+                .where(ProjectSummary.project_id == pid)
+                .order_by(desc(ProjectSummary.date), desc(ProjectSummary.id))
+                .limit(1)
+            )).first()
+            if row:
+                latest_summary_map[pid] = (row[0], row[1])
+
     # Assemble project cards — pure Python, no DB calls
     project_cards: list[DashboardProjectCard] = []
     for pid, pname, pstatus, pcolor, pis_custom, pcode in project_rows:
@@ -410,6 +440,7 @@ async def get_dashboard(
         trend = "up" if recent > prev else ("down" if recent < prev else "flat")
         la = last_activity_map.get(pid)
 
+        ls = latest_summary_map.get(pid)
         project_cards.append(DashboardProjectCard(
             id=pid,
             name=pname,
@@ -423,6 +454,8 @@ async def get_dashboard(
             decision_count=counts.get("decision", 0),
             last_activity_date=str(la) if la else None,
             trend=trend,
+            latest_summary=ls[0] if ls else None,
+            latest_summary_date=str(ls[1]) if ls and ls[1] else None,
         ))
 
     # ==================================================================

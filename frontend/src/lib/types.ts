@@ -452,6 +452,8 @@ export interface DashboardProjectCard {
   decision_count: number;
   last_activity_date: string | null;
   trend: "up" | "down" | "flat";
+  latest_summary: string | null;
+  latest_summary_date: string | null;
 }
 
 export interface ActivityFeedItem {
