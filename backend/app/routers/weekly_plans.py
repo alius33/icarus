@@ -1,4 +1,6 @@
+import re
 from datetime import date, timedelta
+from difflib import SequenceMatcher
 
 from fastapi import APIRouter, BackgroundTasks, Depends
 from sqlalchemy import select
@@ -322,6 +324,42 @@ async def add_action(plan_id: int, body: WeeklyPlanActionCreate, db: AsyncSessio
             await db.commit()
             await db.refresh(a, ["source_transcript", "source_update"])
             return _action_schema(a)
+
+    # --- Title-similarity dedup (catch-all for actions without source IDs) ---
+    # Normalise title: lowercase, strip parenthetical day names, collapse whitespace
+    def _normalise(t: str) -> str:
+        t = t.lower().strip()
+        t = re.sub(r"\s*\((?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)\)\s*", " ", t)
+        t = re.sub(r"\s+", " ", t)
+        return t
+
+    norm_title = _normalise(body.title)
+    all_result = await db.execute(
+        select(WeeklyPlanAction).where(
+            WeeklyPlanAction.weekly_plan_id == plan_id,
+            WeeklyPlanAction.category == body.category,
+        )
+    )
+    for existing_action in all_result.scalars().all():
+        norm_existing = _normalise(existing_action.title)
+        similarity = SequenceMatcher(None, norm_title, norm_existing).ratio()
+        if similarity >= 0.75:
+            # Update the existing action instead of creating a duplicate
+            existing_action.title = body.title
+            existing_action.description = body.description
+            existing_action.priority = body.priority
+            existing_action.owner = body.owner
+            if body.context is not None:
+                existing_action.context = body.context
+            if body.deliverable_id is not None:
+                existing_action.deliverable_id = body.deliverable_id
+            if body.source_transcript_id is not None:
+                existing_action.source_transcript_id = body.source_transcript_id
+            if body.source_update_id is not None:
+                existing_action.source_update_id = body.source_update_id
+            await db.commit()
+            await db.refresh(existing_action, ["source_transcript", "source_update"])
+            return _action_schema(existing_action)
 
     action = WeeklyPlanAction(
         weekly_plan_id=plan_id,
